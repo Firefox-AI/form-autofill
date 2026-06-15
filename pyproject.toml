@@ -1,0 +1,30 @@
+[project]
+name = "mozilla-autofill-generation"
+version = "0.1.0"
+description = "Training and evaluation of the Firefox address autofill model, orchestrated as a Metaflow flow."
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "outerbounds",
+    "metaflow>=2.12",
+    "transformers[torch]==5.10.2",
+    "huggingface-hub==1.17.0",
+    "datasets>=3.0",
+    "accelerate>=1.0",
+    "numpy>=1.26",
+    "pandas>=1.5",
+    "scikit-learn>=1.4",
+    "wandb>=0.18",
+    "google-cloud-storage>=2.10",
+    "google-auth>=2.0",
+    "google-cloud-secret-manager>=2.17",
+    "python-dotenv>=1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+# This is a script-style project (flat modules, no package), so don't try to
+# auto-discover an importable package to build.
+bypass-selection = true
