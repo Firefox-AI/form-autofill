@@ -16,8 +16,8 @@ from datasets import Dataset
 import os
 import sys
 import time
-import urllib.request
 import numpy as np
+import torch
 
 from sklearn.metrics import (
     accuracy_score,
@@ -139,6 +139,27 @@ class Config:
     # Append an extra string to the filename to test variations, e.g.
     # "-updated". Applied to both the saved model name and the dataVariant.
     modelSuffix: str = ""
+
+    # Override for the training dataset filename. When empty, the default
+    # "training<dataVariant>.txt" is used; set it to train on a different file
+    # such as "training-supported-expanded.txt".
+    trainFile: str = ""
+
+    # Training hyperparameters. Defaults match the HF Trainer defaults so that
+    # leaving them unset reproduces the previous behavior. learningRate of 0.0
+    # means "auto": the HF default (5e-5), or 2e-4 when LoRA is enabled.
+    learningRate: float = 0.0
+    trainBatchSize: int = 8
+    evalBatchSize: int = 8
+    weightDecay: float = 0.0
+
+    # LoRA / parameter-efficient fine-tuning. When useLora is set, the model is
+    # wrapped with a PEFT LoRA adapter for training and the adapter is merged
+    # back into the base weights before saving (so eval/inference is unchanged).
+    useLora: bool = False
+    loraR: int = 8
+    loraAlpha: int = 16
+    loraDropout: float = 0.1
 
     # Weights & Biases logging. If wandbProject is set, training reports to W&B
     # and the eval metrics are logged to the same run. Left empty (the default)
@@ -285,18 +306,19 @@ fieldNamesCloseDict = {
   "country-name": ["country"],
 }
 
-# Base URL the dataset files are fetched from when they are not present in the
-# working directory. Metaflow only ships code (.py) to remote @kubernetes pods,
-# so the *-supported.txt datasets do not travel with the run and are downloaded
-# directly from the source repo at runtime instead.
-DATA_BASE_URL = "https://raw.githubusercontent.com/Enndeakin/mozilla-autofill-generation/refs/heads/main/"
+def dataset_path(filename):
+  """Return a dataset filename, requiring it to be present locally.
 
-def ensure_dataset(filename):
-  """Return filename, downloading it from DATA_BASE_URL if not already local."""
+  The dataset .txt files travel with the run (Metaflow packages them when
+  .txt is included in METAFLOW_DEFAULT_PACKAGE_SUFFIXES), so they are read from
+  the working directory rather than downloaded at runtime.
+  """
   if not os.path.exists(filename):
-    url = DATA_BASE_URL + filename
-    print("Downloading " + url + " -> " + filename)
-    urllib.request.urlretrieve(url, filename)
+    raise FileNotFoundError(
+      f"Dataset file '{filename}' not found in the working directory. "
+      "Ensure it is present locally and that .txt is included in the Metaflow "
+      "package suffixes so it ships with the run."
+    )
   return filename
 
 def wandb_config(cfg):
@@ -306,12 +328,28 @@ def wandb_config(cfg):
     "data_variant": cfg.dataVariant,
     "num_epochs": cfg.numEpochs,
     "model_suffix": cfg.modelSuffix,
+    "train_file": cfg.trainFile,
+    "learning_rate": cfg.learningRate,
+    "train_batch_size": cfg.trainBatchSize,
+    "eval_batch_size": cfg.evalBatchSize,
+    "weight_decay": cfg.weightDecay,
+    "use_lora": cfg.useLora,
+    "lora_r": cfg.loraR,
+    "lora_alpha": cfg.loraAlpha,
+    "lora_dropout": cfg.loraDropout,
   }
 
 def readFile(filetype, cfg):
   list = []
 
-  file = open(ensure_dataset(filetype + cfg.dataVariant + ".txt"), encoding="utf-8")
+  # Allow training to read from an explicit file (e.g. an expanded dataset);
+  # otherwise derive the name from the filetype and data variant.
+  if filetype == "training" and cfg.trainFile:
+    filename = cfg.trainFile
+  else:
+    filename = filetype + cfg.dataVariant + ".txt"
+
+  file = open(dataset_path(filename), encoding="utf-8")
   lines = file.readlines()
 
   for line in lines:
@@ -326,7 +364,30 @@ def readFile(filetype, cfg):
   dataset = Dataset.from_list(list)
   return dataset
 
+def select_device():
+  """Pick the compute device for training/inference.
+
+  Honors an explicit AUTOFILL_DEVICE override (e.g. "cuda", "mps", "cpu");
+  otherwise auto-detects CUDA, then Apple-silicon MPS, then CPU. When MPS is
+  chosen we enable the CPU fallback so any op MPS hasn't implemented still runs
+  rather than erroring out.
+  """
+  override = os.environ.get("AUTOFILL_DEVICE", "").strip().lower()
+  if override:
+    device = override
+  elif torch.cuda.is_available():
+    device = "cuda"
+  elif getattr(torch.backends, "mps", None) is not None and torch.backends.mps.is_available():
+    device = "mps"
+  else:
+    device = "cpu"
+  if device == "mps":
+    os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
+  return device
+
 def train(cfg):
+  device = select_device()
+  print(f"Training on device: {device}")
   tokenizer = AutoTokenizer.from_pretrained(cfg.modelName)
 
   def preprocess_function(examples):
@@ -353,6 +414,20 @@ def train(cfg):
       id2label=fieldTypesReversedDict, label2id=fieldTypesDict
   )
 
+  if cfg.useLora:
+      from peft import LoraConfig, get_peft_model, TaskType
+      # task_type=SEQ_CLS lets PEFT auto-target the attention projections for
+      # the base architecture (e.g. query/value for BERT-family models), so we
+      # don't hardcode module names per model.
+      lora_cfg = LoraConfig(
+          task_type=TaskType.SEQ_CLS,
+          r=cfg.loraR,
+          lora_alpha=cfg.loraAlpha,
+          lora_dropout=cfg.loraDropout,
+      )
+      model = get_peft_model(model, lora_cfg)
+      model.print_trainable_parameters()
+
   # Enable Weights & Biases when a project is configured. We start the run
   # ourselves (rather than letting the Trainer auto-init) so it carries the
   # hyperparameters as config -- this is what parameter sweeps group/compare on
@@ -370,15 +445,22 @@ def train(cfg):
       )
       report_to = ["wandb"]
 
+  # learningRate of 0.0 means "auto": LoRA wants a higher rate than full
+  # fine-tuning, so default to 2e-4 with LoRA and the HF default (5e-5) without.
+  lr = cfg.learningRate if cfg.learningRate > 0 else (2e-4 if cfg.useLora else 5e-5)
+
   training_args = TrainingArguments(
       seed=189,
       data_seed=189,
       output_dir=cfg.saveModelName,
-#      learning_rate=1e-5,
-#      per_device_train_batch_size=16,
-#      per_device_eval_batch_size=16,
+      learning_rate=lr,
+      per_device_train_batch_size=cfg.trainBatchSize,
+      per_device_eval_batch_size=cfg.evalBatchSize,
       num_train_epochs=cfg.numEpochs,
-#      weight_decay=0.01,
+      weight_decay=cfg.weightDecay,
+      # The Trainer auto-selects CUDA/MPS when available; this only forces CPU
+      # when select_device() resolved to it (e.g. AUTOFILL_DEVICE=cpu).
+      use_cpu=(device == "cpu"),
       eval_strategy="epoch",
       save_strategy="epoch",
       load_best_model_at_end=True,
@@ -397,6 +479,14 @@ def train(cfg):
   )
 
   trainer.train()
+
+  if cfg.useLora:
+      # Merge the LoRA adapter into the base weights so the saved model is a
+      # plain AutoModelForSequenceClassification. This keeps the evaluate /
+      # inference path unchanged -- no PEFT needed to load the result.
+      merged = trainer.model.merge_and_unload()
+      trainer.model = merged
+
   trainer.save_model(cfg.saveModelDir)
 
   if cfg.wandbProject:
@@ -407,14 +497,18 @@ def train(cfg):
   return cfg.saveModelDir
 
 def evaluate_model(cfg, filename="testing"):
-  classifier = pipeline("text-classification", model=cfg.saveModelDir, truncation=True, max_length=512)
+  # Without an explicit device the pipeline runs on CPU; select_device() routes
+  # it to CUDA/MPS when available (override with AUTOFILL_DEVICE).
+  device = select_device()
+  print(f"Evaluating on device: {device}")
+  classifier = pipeline("text-classification", model=cfg.saveModelDir, truncation=True, max_length=512, device=device)
 
   list = []
   expectedList = []
   autocompleteList = []
   detailsList = []
 
-  file = open(ensure_dataset(filename + cfg.dataVariant + ".txt"), encoding="utf-8")
+  file = open(dataset_path(filename + cfg.dataVariant + ".txt"), encoding="utf-8")
   lines = file.readlines()
 
   count = 0
