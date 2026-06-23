@@ -33,7 +33,34 @@ import io
 import os
 import zipfile
 
+# Ensure the dataset .txt files are packaged with the run. The dotraining code
+# reads them from the working directory (no longer downloading them), so remote
+# @kubernetes steps only receive them if .txt is in the package suffixes. This
+# is set before importing metaflow -- which reads the value at import time --
+# and intentionally augments (rather than trusts) any narrower
+# METAFLOW_DEFAULT_PACKAGE_SUFFIXES inherited from the shell.
+_pkg_suffixes = [
+    s for s in os.environ.get("METAFLOW_DEFAULT_PACKAGE_SUFFIXES", ".py,.json").split(",") if s
+]
+if ".txt" not in _pkg_suffixes:
+    _pkg_suffixes.append(".txt")
+os.environ["METAFLOW_DEFAULT_PACKAGE_SUFFIXES"] = ",".join(_pkg_suffixes)
+
 from metaflow import FlowSpec, Parameter, step, kubernetes, current
+
+# Set AUTOFILL_LOCAL=1 to run every step as a local process instead of on
+# Kubernetes -- this turns the @kubernetes decorators below into no-ops so the
+# flow runs entirely on this machine (fastest for quick local iteration). Pair
+# it with a local Metaflow profile, e.g.:
+#     AUTOFILL_LOCAL=1 METAFLOW_PROFILE=local python autofill_flow.py run ...
+_RUN_LOCAL = os.environ.get("AUTOFILL_LOCAL") == "1"
+
+
+def maybe_kubernetes(**kwargs):
+    """@kubernetes(...) normally, but a no-op when AUTOFILL_LOCAL=1."""
+    def decorator(func):
+        return func if _RUN_LOCAL else kubernetes(**kwargs)(func)
+    return decorator
 
 from dotraining import (
     Config,
@@ -107,6 +134,12 @@ class AutofillFlow(FlowSpec):
         help="Extra suffix appended to the saved model name to test variations, e.g. '-updated'.",
         default="",
     )
+    train_file = Parameter(
+        "train_file",
+        help="Training dataset filename. Empty uses 'training<data_variant>.txt'; "
+             "set e.g. 'training-supported-expanded.txt' to train on a different file.",
+        default="",
+    )
     eval_dataset = Parameter(
         "eval_dataset",
         help="Base name of the dataset to evaluate against (e.g. 'testing' or 'together').",
@@ -115,7 +148,55 @@ class AutofillFlow(FlowSpec):
     wandb_project = Parameter(
         "wandb_project",
         help="Weights & Biases project to log to. Empty disables W&B logging.",
-        default="",
+        default="form_autofill_flow",
+    )
+    learning_rate = Parameter(
+        "learning_rate",
+        help="Learning rate. 0 = auto (HF default 5e-5, or 2e-4 with --use_lora).",
+        default=0.0,
+        type=float,
+    )
+    train_batch_size = Parameter(
+        "train_batch_size",
+        help="Per-device training batch size.",
+        default=8,
+        type=int,
+    )
+    eval_batch_size = Parameter(
+        "eval_batch_size",
+        help="Per-device eval batch size.",
+        default=8,
+        type=int,
+    )
+    weight_decay = Parameter(
+        "weight_decay",
+        help="Weight decay.",
+        default=0.0,
+        type=float,
+    )
+    use_lora = Parameter(
+        "use_lora",
+        help="Enable LoRA (parameter-efficient) fine-tuning.",
+        default=False,
+        type=bool,
+    )
+    lora_r = Parameter(
+        "lora_r",
+        help="LoRA rank.",
+        default=8,
+        type=int,
+    )
+    lora_alpha = Parameter(
+        "lora_alpha",
+        help="LoRA alpha (scaling).",
+        default=16,
+        type=int,
+    )
+    lora_dropout = Parameter(
+        "lora_dropout",
+        help="LoRA dropout.",
+        default=0.1,
+        type=float,
     )
 
     def _config(self):
@@ -124,6 +205,15 @@ class AutofillFlow(FlowSpec):
             dataVariant=self.data_variant,
             numEpochs=self.num_epochs,
             modelSuffix=self.model_suffix,
+            trainFile=self.train_file,
+            learningRate=self.learning_rate,
+            trainBatchSize=self.train_batch_size,
+            evalBatchSize=self.eval_batch_size,
+            weightDecay=self.weight_decay,
+            useLora=self.use_lora,
+            loraR=self.lora_r,
+            loraAlpha=self.lora_alpha,
+            loraDropout=self.lora_dropout,
         )
         if self.wandb_project:
             # One W&B run per Metaflow run, shared across the train and eval
@@ -134,18 +224,22 @@ class AutofillFlow(FlowSpec):
             cfg.wandbRunName = f"{cfg.saveModelName}-{current.run_id}"
         return cfg
 
-    @kubernetes(image=GPU_IMAGE)
+    @maybe_kubernetes(image=GPU_IMAGE)
     @step
     def start(self):
         """Resolve configuration and record where the model will be saved."""
         cfg = self._config()
         self.save_model_dir = cfg.saveModelDir
         self.save_model_name = cfg.saveModelName
+        train_file = self.train_file or f"training{self.data_variant}.txt"
         print(f"Training {self.model_name} -> {self.save_model_dir} "
-              f"({self.num_epochs} epochs, variant '{self.data_variant}')")
+              f"({self.num_epochs} epochs, variant '{self.data_variant}', "
+              f"train_file '{train_file}', "
+              f"lora={self.use_lora}, lr={self.learning_rate or 'auto'}, "
+              f"train_batch={self.train_batch_size})")
         self.next(self.train)
 
-    @kubernetes(image=GPU_IMAGE,
+    @maybe_kubernetes(image=GPU_IMAGE,
                 gpu_vendor="nvidia",
                 gpu=1
                 )
@@ -169,7 +263,7 @@ class AutofillFlow(FlowSpec):
               f"({len(self.model_artifact)} bytes archived)")
         self.next(self.evaluate)
 
-    @kubernetes(image=GPU_IMAGE,
+    @maybe_kubernetes(image=GPU_IMAGE,
                 gpu_vendor="nvidia",
                 gpu=1
                 )
