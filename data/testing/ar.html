@@ -1,0 +1,576 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 200px;
+}
+
+input {
+  margin: 2px;
+}
+
+.invisible {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<fieldset>
+
+<h3>www.musimundo.com</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <input id="streetname" name="streetname" type="text" value="" placeholder="fl" style="" data-moz-autofill-type="address-streetname">
+    <label for="streetname">Calle</label>
+  </div>
+  <div>
+    <input id="streetnumber" name="streetnumber" type="text" value="" placeholder="fl" style="" data-moz-autofill-type="address-housenumber">
+    <label for="streetnumber">Número</label>
+  </div>
+  <div>
+    <input id="apartment" name="apartment" type="text" value="" placeholder="fl" autocomplete="organization" style="" data-moz-autofill-type="floor">
+    <label for="apartment">Piso</label>
+  </div>
+  <div>
+    <input id="building" name="building" type="text" value="" placeholder="fl" style="" data-moz-autofill-type="building">
+    <label for="building">Depto</label>
+  </div>
+  <div>
+    <select id="department" name="department" tabindex="" value="Capital Federal" style="" data-moz-autofill-type="address-level1">
+      <option value=""></option>
+      <option value="Buenos Aires">Buenos Aires</option>
+      <option value="Capital Federal" selected="selected">Capital Federal</option>
+      <option value="Catamarca">Catamarca</option>
+      <option value="Chaco">Chaco</option>
+      <option value="Chubut">Chubut</option>
+      <option value="Corrientes">Corrientes</option>
+      <option value="Córdoba">Córdoba</option>
+      <option value="Entre Ríos">Entre Ríos</option>
+      <option value="Formosa">Formosa</option>
+      <option value="Jujuy">Jujuy</option>
+      <option value="La Pampa">La Pampa</option>
+      <option value="La Rioja">La Rioja</option>
+      <option value="Mendoza">Mendoza</option>
+      <option value="Misiones">Misiones</option>
+      <option value="Neuquén">Neuquén</option>
+      <option value="Río Negro">Río Negro</option>
+      <option value="Salta">Salta</option>
+      <option value="San Juan">San Juan</option>
+      <option value="San Luis">San Luis</option>
+      <option value="Santa Cruz">Santa Cruz</option>
+      <option value="Santa Fe">Santa Fe</option>
+      <option value="Santiago del Estero">Santiago del Estero</option>
+      <option value="Tierra del Fuego">Tierra del Fuego</option>
+      <option value="Tucumán">Tucumán</option>
+    </select>
+    <label for="department">Provincia</label>
+  </div>
+  <div>
+    <input id="townCity" name="townCity" type="text" value="" placeholder="fl" style="" data-moz-autofill-type="address-level2">
+    <label for="townCity">Ciudad</label>
+  </div>
+  <div>
+    <input id="postcode" name="postcode" type="text" value="" placeholder="fl" style="" data-moz-autofill-type="postal-code">
+    <label for="postcode">Código Postal</label>
+  </div>
+  <div>
+    <input id="observaciones" name="observaciones" type="text" value="" placeholder="fl" style="">
+    <label for="observaciones">Observaciones</label>
+  </div>
+  <div>
+    <input id="email" name="email" type="email" value="enndeakintest@gmail.com" placeholder="fl" style="" data-moz-autofill-type="email">
+    <label for="email">E-Mail</label>
+  </div>
+  <div>
+    <input id="firstName" name="firstName" type="text" maxlength="50" value="" placeholder="fl" style="" data-moz-autofill-type="given-name">
+    <label for="firstName">Nombre</label>
+  </div>
+  <div>
+    <input id="lastName" name="lastName" type="text" maxlength="50" value="" placeholder="fl" style="" data-moz-autofill-type="family-name">
+    <label for="lastName">Apellido</label>
+  </div>
+  <div>
+    <input id="contactAreaCode" name="contactAreaCode" type="tel" value="" placeholder="fl" style="" data-moz-autofill-type="tel-area-code">
+    <label for="contactAreaCode">Código de Área</label>
+  </div>
+  <div>
+    <input id="contactPhone" name="contactPhone" placeholder="fl" type="tel" value="" style="" data-moz-autofill-type="tel-local">
+    <label for="contactPhone">Teléfono</label>
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>tiendamia.com</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <label for="billing:firstname">
+      <em>*</em>Nombre
+    </label>
+  </div>
+  <div>
+    <input type="text" id="billing:firstname" name="billing[firstname]" maxlength="255" title="Nombre" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="billing:lastname">
+      <em>*</em>Apellido
+    </label>
+    <input type="text" id="billing:lastname" name="billing[lastname]" title="Apellido" maxlength="255" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="billing:direccion0">
+      <em>*</em>Calle
+    </label>
+    <input type="text" title="" name="billing[calle]" id="billing:direccion0" value="" style="" data-moz-autofill-type="address-streetname">
+  </div>
+  <div>
+    <label for="billing:direccion1">
+      <em>*</em>N° de Puerta
+    </label>
+    <input type="text" title="N° de Puerta" name="billing[numeroPuerta]" id="billing:direccion1" value="" style="" data-moz-autofill-type="address-housenumber">
+  </div>
+  <div>
+    <label for="billing:direccion2">Departamento</label>
+    <input type="text" title="Departamento" name="billing[apartamento]" id="billing:direccion2" value="" style="" data-moz-autofill-type="apartment">
+  </div>
+  <div>
+    <label for="billing:direccion3">Piso</label>
+    <input type="text" title="Piso" name="billing[piso]" id="billing:direccion3" value="" style="" data-moz-autofill-type="floor">
+  </div>
+  <div>
+    <label for="billing:region_id">
+      <em>*</em>Provincia
+    </label>
+  </div>
+  <div>
+    <select id="billing:region_id" name="billing[region_id]" title="Departamento/Estado" defaultvalue="" style="" data-moz-autofill-type="address-level1">
+                                
+      <option value="">Seleccionar provincia</option>
+                            
+      <option value="701">Buenos Aires</option>
+      <option value="707">Capital Federal</option>
+      <option value="702">Catamarca</option>
+      <option value="703">Chaco</option>
+      <option value="704">Chubut</option>
+      <option value="705">Cordoba</option>
+      <option value="706">Corrientes</option>
+      <option value="708">Entre Rios</option>
+      <option value="709">Formosa</option>
+      <option value="710">Jujuy</option>
+      <option value="711">La Pampa</option>
+      <option value="712">La Rioja</option>
+      <option value="713">Mendoza</option>
+      <option value="714">Misiones</option>
+      <option value="715">Neuquen</option>
+      <option value="716">Rio Negro</option>
+      <option value="717">Salta</option>
+      <option value="718">San Juan</option>
+      <option value="719">San Luis</option>
+      <option value="720">Santa Cruz</option>
+      <option value="721">Santa Fe</option>
+      <option value="722">Santiago del Estero</option>
+      <option value="723">Tierra del Fuego</option>
+      <option value="724">Tucuman</option>
+    </select>
+    <input type="text" id="billing:region" name="billing[region]" value="" title="Departamento/Estado" style="" data-moz-autofill-type="address-level1">
+  </div>
+  <div>
+    <label for="city">
+      <em>*</em> Localidad
+    </label>
+    <select title="Localidad" name="billing[select_city]" id="location_input" style="" data-moz-autofill-type="address-level2">
+      <option value="" selected="selected">Seleccioná una localidad</option>
+    </select>
+  </div>
+  <div>
+    <label for="billing:street1">
+      <em>*</em>Barrio y datos adicionales
+    </label>
+    <input type="text" title="Dirección 2" name="billing[street][]" id="billing:street2" value="" style="" data-moz-autofill-type="address-level3">
+  </div>
+  <div>
+    <label for="billing:postcode">
+      <em>*</em>Código postal fiscal
+    </label>
+  </div>
+  <div>
+    <input type="number" title="Código Postal" name="billing[postcode]" id="billing:postcode" placeholder="(Ej. 1041)" value="" maxlength="9" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label>
+      <em>*</em>País
+    </label>
+  </div>
+  <div>
+    <label for="billing:telephone">
+      <em>*</em>Teléfono / Celular
+    </label>
+  </div>
+  <div>
+    <input type="text" name="billing[telephone]" placeholder="Incluir prefijo internacional para móvil: Ej. +54 9 1234 5678" value="" title="Teléfono / Celular" id="billing:telephone" style="" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label for="billing:country_id">
+      <em>*</em>País -
+    </label>
+    <select name="billing[country_id]" id="billing:country_id" title="País" style="" data-moz-autofill-type="country">
+      <option value="" selected="selected"> </option>
+      <option value="AR" selected="selected">Argentina</option>
+    </select>
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.buscalibre.com.ar</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <label>País *</label>
+    <select name="direccion[c_pais]" id="direccion_c_pais" required="required" style="" data-moz-autofill-type="country">
+                                                                                            
+      <option value="10" selected="">Argentina</option>
+                                                                                            
+      <option value="42">Chile</option>
+                                                                                            
+      <option value="46">Colombia</option>
+                                                                                            
+      <option value="60">Ecuador</option>
+                                                                                            
+      <option value="64">España</option>
+                                                                                            
+      <option value="131">México</option>
+                                                                                            
+      <option value="160">Perú</option>
+                                                                                            
+      <option value="210">United Kingdom</option>
+                                                                                            
+      <option value="211">Estados Unidos</option>
+                                                                                            
+      <option value="212">Uruguay</option>
+                                                                                            
+      <option value="-1">------------</option>
+    </select>
+  </div>
+  <div>
+    <label for="direccion_codigo_postal">Código Postal *</label>
+    <input type="text" name="direccion[codigo_postal]" id="direccion_codigo_postal" required="required" maxlength="4" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label>Provincia *</label>
+    <select name="direccion[c_region]" id="direccion_c_region" required="required" style="" data-moz-autofill-type="address-level1">
+      <option value="0">Seleccione</option>
+      <option value="10002">Capital Federal</option>
+      <option value="242">Ciudad Autónoma de Buenos Aires</option>
+      <option value="244">Provincia de Buenos Aires</option>
+      <option value="262">Provincia de Catamarca</option>
+      <option value="245">Provincia de Córdoba</option>
+      <option value="253">Provincia de Corrientes</option>
+      <option value="252">Provincia de Chaco</option>
+      <option value="260">Provincia de Chubut</option>
+      <option value="249">Provincia de Entre Ríos</option>
+      <option value="258">Provincia de Formosa</option>
+      <option value="255">Provincia de Jujuy</option>
+      <option value="264">Provincia de La Pampa</option>
+      <option value="263">Provincia de La Rioja</option>
+      <option value="247">Provincia de Mendoza</option>
+      <option value="251">Provincia de Misiones</option>
+      <option value="259">Provincia de Neuquén</option>
+      <option value="257">Provincia de Río Negro</option>
+      <option value="250">Provincia de Salta</option>
+      <option value="256">Provincia de San Juan</option>
+      <option value="261">Provincia de San Luis</option>
+      <option value="265">Provincia de Santa Cruz</option>
+      <option value="246">Provincia de Santa Fe</option>
+      <option value="254">Provincia de Santiago del Estero</option>
+      <option value="266">Provincia de Tierra del Fuego</option>
+      <option value="248">Provincia de Tucumán</option>
+    </select>
+  </div>
+  <div>
+    <label for="direccion_c_comuna">Localidad *</label>
+    <select name="direccion[c_comuna]" id="direccion_c_comuna" required="required" style="" data-moz-autofill-type="address-level2">
+        
+      <option value="0">--</option>
+    </select>
+  </div>
+  <div>
+    <label for="direccion_calle">Calle/Avenida *</label>
+    <input autocomplete="nope" type="text" name="direccion[calle]" id="direccion_calle" required="required" maxlength="42" style="" data-moz-autofill-type="address-streetname">
+  </div>
+  <div>
+    <label for="direccion_numero">Numero *</label>
+    <input autocomplete="nope" type="text" name="direccion[numero]" id="direccion_numero" required="required" maxlength="8" style="" data-moz-autofill-type="address-housenumber">
+  </div>
+  <div>
+    <label for="direccion_departamento">Información adicional</label>
+    <input type="text" name="direccion[observaciones]" placeholder="Ej.: Piso 4, Dpto. C, Timbre 6." id="direccion_departamento" style="" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <label for="direccion_destinatario">Destinatario *</label>
+    <input autocomplete="nope" placeholder="Nombre y Apellido de quien recibe" type="text" name="direccion[destinatario]" value="" id="direccion_destinatario" required="required" maxlength="25" style="" data-moz-autofill-type="name">
+  </div>
+  <div>
+    <label for="direccion_telefono">Teléfono *</label>
+    <input type="text" name="direccion[telefono]" id="direccion_telefono" placeholder="Ej.: (11) 4321-1223" required="required" style="" data-moz-autofill-type="tel">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.fravega.com</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <input type="text" name="postalCode" autocomplete="off" maxlength="1000" value="" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label>Calle *</label>
+    <input type="text" name="street" autocomplete="off" maxlength="1000" value="" style="" data-moz-autofill-type="address-streetname">
+  </div>
+  <div>
+    <label>Numero *</label>
+    <input type="text" name="number" autocomplete="off" maxlength="1000" value="" style="" data-moz-autofill-type="address-housenumber">
+  </div>
+  <div>
+    <label>Tipo de domicilio</label>
+    <select name="addressType" style="">
+      <option value="departamento">Departamento</option>
+      <option value="casa">Casa</option>
+      <option value="barrio-privado">Barrio Privado</option>
+    </select>
+  </div>
+  <div>
+    <label>Piso/Departamento *</label>
+    <input type="text" name="complement" placeholder="1C" autocomplete="off" maxlength="1000" value="" style="" data-moz-autofill-type="apartment">
+  </div>
+  <div>
+    <label>Provincia</label>
+    <select name="state" style="" data-moz-autofill-type="address-level1">
+      <option></option>
+      <option value="CIUDAD AUTÓNOMA DE BUENOS AIRES">Ciudad Autónoma de Buenos Aires</option>
+      <option value="BUENOS AIRES">Buenos Aires</option>
+      <option value="CATAMARCA">Catamarca</option>
+      <option value="CHACO">Chaco</option>
+      <option value="CHUBUT">Chubut</option>
+      <option value="CORRIENTES">Corrientes</option>
+      <option value="CÓRDOBA">Córdoba</option>
+      <option value="ENTRE RÍOS">Entre Ríos</option>
+      <option value="FORMOSA">Formosa</option>
+      <option value="JUJUY">Jujuy</option>
+      <option value="LA PAMPA">La Pampa</option>
+      <option value="LA RIOJA">La Rioja</option>
+      <option value="MENDOZA">Mendoza</option>
+      <option value="MISIONES">Misiones</option>
+      <option value="NEUQUÉN">Neuquén</option>
+      <option value="RÍO NEGRO">Río Negro</option>
+      <option value="SALTA">Salta</option>
+      <option value="SAN JUAN">San Juan</option>
+      <option value="SAN LUIS">San Luis</option>
+      <option value="SANTA CRUZ">Santa Cruz</option>
+      <option value="SANTA FE">Santa Fe</option>
+      <option value="SANTIAGO DEL ESTERO">Santiago Del Estero</option>
+      <option value="TIERRA DEL FUEGO">Tierra Del Fuego</option>
+      <option value="TUCUMÁN">Tucumán</option>
+    </select>
+  </div>
+  <div>
+    <label>Ciudad</label>
+    <select name="city" style="" data-moz-autofill-type="address-level2">
+      <option></option>
+      <option value="Ciudad Autónoma Buenos Aires">Ciudad Autónoma Buenos Aires</option>
+    </select>
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.dexter.com.ar</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <input placeholder="* Nombre" type="text" id="shippingFirstNamedefault" aria-describedby="defaultFirstName" value="" name="dwfrm_shipping_shippingAddress_addressFields_firstName" required="" aria-required="true" maxlength="40" pattern="[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]" autocomplete="shipping given-name" style="" data-moz-autofill-type="given-name">
+    <label for="shippingFirstNamedefault">
+                * Nombre
+            </label>
+  </div>
+  <div>
+    <input placeholder="* Apellido" type="text" id="shippingLastNamedefault" aria-describedby="defaultLastName" value="" name="dwfrm_shipping_shippingAddress_addressFields_lastName" required="" aria-required="true" maxlength="50" pattern="[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]" autocomplete="shipping family-name" style="" data-moz-autofill-type="family-name">
+    <label for="shippingLastNamedefault">
+                * Apellido
+            </label>
+  </div>
+  <div>
+    <input placeholder="* Calle" type="text" id="shippingAddressOnedefault" aria-describedby="defaultAddressLine1" value="" name="dwfrm_shipping_shippingAddress_addressFields_address1" required="" aria-required="true" maxlength="50" pattern="[0-9a-zA-ZÀ-ÿ\u00f1\u00d1\\/°\.]+(\s*[0-9a-zA-ZÀ-ÿ\u00f1\u00d1\\/°\.]*)*[0-9a-zA-ZÀ-ÿ\u00f1\u00d1\\/°\.]" autocomplete="shipping address-line1" style="" data-moz-autofill-type="address-streetname">
+    <label for="shippingAddressOnedefault">
+                * Calle
+            </label>
+  </div>
+  <div>
+    <input placeholder="* Número" type="text" id="shippingNumberdefault" aria-describedby="defaultNumber" value="" name="dwfrm_shipping_shippingAddress_addressFields_number" required="" aria-required="true" maxlength="50" pattern="^[0-9]*$" autocomplete="shipping given-number" style="" data-moz-autofill-type="address-housenumber">
+    <label for="shippingNumberdefault">
+                * Número
+            </label>
+  </div>
+  <div>
+    <input placeholder="Piso, Depto, Lote" type="text" id="shippingPisoDptodefault" aria-describedby="defaultapartment" value="" name="dwfrm_shipping_shippingAddress_addressFields_apartment" maxlength="50" pattern="^[0-9a-zA-ZÀ-ÿ\u00f1\u00d1/°.\s]+$" autocomplete="shipping family-name" style="" data-moz-autofill-type="apartment">
+    <label for="shippingPisoDptodefault">
+                Piso, Depto, Lote
+            </label>
+  </div>
+  <div>
+    <input placeholder="* Código Postal" type="text" id="shippingZipCodedefault" aria-describedby="defaultZipCode" value="" name="dwfrm_shipping_shippingAddress_addressFields_postalCode" required="" aria-required="true" maxlength="10" minlength="4" pattern="^[0-9]*$" autocomplete="shipping postal-code" style="" data-moz-autofill-type="postal-code">
+    <label for="shippingZipCodedefault">
+                * Código Postal
+            </label>
+  </div>
+  <div>
+    <input placeholder="* Partido" type="text" id="shippingAddressCitydefault" aria-describedby="defaultCity" value="" name="dwfrm_shipping_shippingAddress_addressFields_city" required="" aria-required="true" maxlength="40" minlength="2" pattern="[0-9a-zA-ZÀ-ÿ\u00f1\u00d1\\/°\.]+(\s*[0-9a-zA-ZÀ-ÿ\u00f1\u00d1\\/°\.]*)*[0-9a-zA-ZÀ-ÿ\u00f1\u00d1\\/°\.]" autocomplete="shipping address-level2" style="" data-moz-autofill-type="address-level2">
+    <label for="shippingAddressCitydefault">
+                * Partido
+            </label>
+  </div>
+  <div>
+    <input placeholder="Aclaración Adicional" type="text" id="shippingObservationdefault" aria-describedby="defaultObservation" value="" name="dwfrm_shipping_shippingAddress_addressFields_observation" maxlength="255" pattern="[0-9a-zA-ZÀ-ÿ\u00f1\u00d1\\/°\.]+(\s*[0-9a-zA-ZÀ-ÿ\u00f1\u00d1\\/°\.]*)*[0-9a-zA-ZÀ-ÿ\u00f1\u00d1\\/°\.]" autocomplete="shipping observation" style=""
+    data-moz-autofill-type="address-line2">
+    <label for="shippingObservationdefault">
+                Aclaración Adicional
+            </label>
+  </div>
+  <div>
+    <select id="shippingStatedefault" name="dwfrm_shipping_shippingAddress_addressFields_states_stateCode" required="" aria-required="true" autocomplete="shipping address-level1" aria-describedby="defaultState" style="" data-moz-autofill-type="address-level1">
+            
+                
+      <option id="" value="">Seleccionar
+                </option>
+            
+                
+      <option id="A" value="A">Salta
+                </option>
+            
+                
+      <option id="B" value="B">Provincia de Buenos Aires
+                </option>
+            
+                
+      <option id="C" value="C">Ciudad Autónoma de Buenos Aires
+                </option>
+            
+                
+      <option id="D" value="D">San Luis
+                </option>
+            
+                
+      <option id="E" value="E">Entre Ríos
+                </option>
+            
+                
+      <option id="F" value="F">La Rioja
+                </option>
+            
+                
+      <option id="G" value="G">Santiago del Estero
+                </option>
+            
+                
+      <option id="H" value="H" lang="[object Object]">Chaco
+                </option>
+            
+                
+      <option id="J" value="J">San Juan
+                </option>
+            
+                
+      <option id="K" value="K">Catamarca
+                </option>
+            
+                
+      <option id="L" value="L">La Pampa
+                </option>
+            
+                
+      <option id="M" value="M">Mendoza
+                </option>
+            
+                
+      <option id="N" value="N">Misiones
+                </option>
+            
+                
+      <option id="P" value="P">Formosa
+                </option>
+            
+                
+      <option id="Q" value="Q">Neuquén
+                </option>
+            
+                
+      <option id="R" value="R">Río Negro
+                </option>
+            
+                
+      <option id="S" value="S">Santa Fe
+                </option>
+            
+                
+      <option id="T" value="T">Tucumán
+                </option>
+            
+                
+      <option id="U" value="U">Chubut
+                </option>
+            
+                
+      <option id="W" value="W">Corrientes
+                </option>
+            
+                
+      <option id="X" value="X">Córdoba
+                </option>
+            
+                
+      <option id="Y" value="Y">Jujuy
+                </option>
+            
+                
+      <option id="Z" value="Z">Santa Cruz
+                </option>
+    </select>
+    <label for="shippingStatedefault">
+                * Provincia
+            </label>
+  </div>
+  <div>
+    <input placeholder="* Número de Teléfono" type="tel" id="shippingPhoneNumberdefault" aria-describedby="defaultTelephoneNumber" value="" name="dwfrm_shipping_shippingAddress_addressFields_phone" required="" aria-required="true" maxlength="20" minlength="10" pattern="^$|^[+\-\s0-9]*$" autocomplete="shipping tel" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel">
+    <label for="shippingPhoneNumberdefault">
+                * Número de Teléfono
+            </label>
+  </div>
+</form>
+
+</fieldset>
+
+
+
+</body></html>

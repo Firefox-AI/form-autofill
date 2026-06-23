@@ -1,0 +1,448 @@
+Indexed 4767 existing sample files for dedup.
+Resuming: 3888 already accepted, 2312 remaining.
+Model=gpt-4o-mini  forms=2312  est. cost ~$0.75 (verify adds ~10% sample on gpt-4o)
+  [26] skip hybrid   verify flagged fields [6]
+  [41] skip hybrid   verify flagged fields [8]
+  [28] skip hybrid   verify flagged fields [6]
+  [32] skip hybrid   verify flagged fields [0]
+  [36] skip hybrid   verify flagged fields [8, 9]
+  [4] skip hybrid   verify flagged fields [7]
+  [18] OK  hybrid   GEN_tr-TR_profile_ornekwebsitesi_00018.html
+  [139] skip mutation anchor had no labeled fields
+  [141] skip mutation anchor had no labeled fields
+  [82] skip hybrid   verify flagged fields [9]
+  [66] OK  hybrid   GEN_tr-TR_profile_ornekwebsite_00066.html
+  [23] skip hybrid   verify flagged fields [4, 7, 8]
+  [166] skip mutation anchor had no labeled fields
+  [35] skip mutation verify flagged fields [7, 9]
+  [84] skip mutation spec: field 2: empty label for tel-national
+  [126] skip hybrid   verify flagged fields [5]
+  [60] skip mutation verify flagged fields [13, 14]
+  [144] skip hybrid   verify flagged fields [7]
+  [89] skip hybrid   verify flagged fields [1, 6]
+  [153] skip hybrid   verify flagged fields [6]
+  [120] skip hybrid   verify flagged fields [2]
+  [158] skip hybrid   verify flagged fields [10]
+  [112] skip mutation spec: field 5: empty label for address-level2
+  [206] skip mutation verify flagged fields [0, 2]
+  [195] skip mutation verify flagged fields [3]
+  [79] skip mutation spec: field 25: button must be __nonfill__
+  [90] skip mutation spec: field 9: empty label for building
+  [183] skip hybrid   verify flagged fields [10, 11]
+  [179] skip mutation verify flagged fields [7, 9, 10, 11]
+  [243] skip mutation anchor had no labeled fields
+  [169] skip mutation verify flagged fields [11, 12, 16]
+  [222] skip hybrid   duplicate signature
+  [202] skip hybrid   verify flagged fields [7, 8]
+  [70] skip mutation verify flagged fields [28]
+  [98] skip mutation spec: field 6: invalid autofill_type 'new-password'
+  [208] skip mutation duplicate signature
+  [209] skip hybrid   verify flagged fields [0]
+  [204] skip hybrid   verify flagged fields [0, 4, 5, 6, 9]
+  [229] OK  hybrid   GEN_it-IT_contact_esempio_00229.html
+  [47] skip mutation verify flagged fields [7, 12, 21]
+  [194] skip mutation verify flagged fields [0, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  [228] skip hybrid   verify flagged fields [8]
+  [252] skip mutation spec: field 1: invalid autofill_type 'password'
+  [213] skip mutation spec: field 1: empty label for country-name
+  [285] skip mutation duplicate signature
+  [231] skip hybrid   verify flagged fields [8]
+  [249] skip hybrid   verify flagged fields [6]
+  [184] skip mutation verify flagged fields [24]
+  [244] skip mutation verify flagged fields [7]
+  [248] skip hybrid   verify flagged fields [8]
+  [258] skip mutation verify flagged fields [0, 9]
+  [253] OK  hybrid   GEN_it-IT_billing_esempio_00253.html
+  [275] skip mutation spec: field 2: empty label for cc-exp-month
+  [269] skip hybrid   verify flagged fields [5]
+  [313] OK  hybrid   GEN_it-IT_registration_esempio_00313.html
+  [298] skip mutation verify flagged fields [0, 1, 5, 6]
+  [283] skip mutation verify flagged fields [11, 12]
+  [297] skip mutation spec: field 1: empty label for country-name
+  [321] skip hybrid   duplicate signature
+  [311] OK  hybrid   GEN_ro-RO_checkout_exemplu_00311.html
+  [307] skip hybrid   verify flagged fields [10]
+  [319] OK  hybrid   GEN_it-IT_billing_esempio_00319.html
+  [309] skip mutation spec: field 12: empty label for tel-country-code
+  [290] skip mutation spec: field 11: empty label for given-name
+  [325] skip mutation verify flagged fields [0, 3]
+  [324] OK  hybrid   GEN_es-ES_billing_ejemplo_00324.html
+  [348] skip hybrid   verify flagged fields [6]
+  [322] skip hybrid   verify flagged fields [6]
+  [345] skip hybrid   verify flagged fields [0, 7, 8, 9]
+  [329] skip mutation spec: field 9: empty label for building
+  [369] skip hybrid   duplicate signature
+  [356] OK  hybrid   GEN_pl-PL_billing_przykladowastron_00356.html
+  [363] skip mutation verify flagged fields [1]
+  [343] skip mutation spec: field 5: empty label for address-level2
+  [305] skip mutation spec: field 22: invalid autofill_type 'new-password'
+  [278] skip mutation spec: field 8: button must be __nonfill__
+  [378] skip hybrid   verify flagged fields [0, 7]
+  [387] skip mutation verify flagged fields [3]
+  [338] skip mutation spec: field 11: empty label for given-name
+  [403] skip hybrid   duplicate signature
+  [450] skip mutation duplicate signature
+  [407] skip mutation verify flagged fields [7]
+  [389] skip hybrid   verify flagged fields [8, 9]
+  [281] skip mutation verify flagged fields [6, 7, 8]
+  [390] skip hybrid   verify flagged fields [7]
+  [368] skip mutation verify flagged fields [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  [431] skip hybrid   verify flagged fields [2]
+  [394] skip mutation verify flagged fields [3, 5, 6, 7, 8, 9, 10]
+  [438] skip hybrid   verify flagged fields [9, 10]
+  [323] skip mutation spec: field 1: input_password must be __nonfill__
+  [460] OK  hybrid   GEN_it-IT_payment_esempio_00460.html
+  [498] skip mutation verify flagged fields [3]
+  [367] skip mutation verify flagged fields [7, 16]
+  [472] skip mutation verify flagged fields [0, 1, 5, 6]
+  [383] skip mutation verify flagged fields [13, 14, 15, 16, 17, 18, 19, 20, 21]
+  [501] skip hybrid   verify flagged fields [9, 10]
+  [508] skip hybrid   spec: field 5: empty label for bday-month
+  [517] skip hybrid   verify flagged fields [6]
+  [478] skip mutation verify flagged fields [4, 7]
+  [502] skip hybrid   verify flagged fields [7, 8]
+  [464] skip mutation verify flagged fields [1]
+  [452] skip mutation verify flagged fields [4, 11, 15]
+  [561] skip mutation anchor had no labeled fields
+  [461] skip mutation verify flagged fields [17]
+  [521] skip mutation verify flagged fields [7]
+  [499] skip mutation verify flagged fields [12]
+  [543] OK  mutation GEN_de-DE_payment_beispielseite_00543.html
+  [529] skip mutation verify flagged fields [0]
+  [536] skip hybrid   verify flagged fields [8]
+  [567] skip hybrid   duplicate signature
+  [553] skip hybrid   verify flagged fields [6, 7]
+  [575] skip hybrid   duplicate signature
+  [500] skip mutation spec: field 25: button must be __nonfill__
+  [541] skip hybrid   verify flagged fields [8]
+  [558] skip hybrid   verify flagged fields [0]
+  [520] skip mutation verify flagged fields [18]
+  [565] skip hybrid   verify flagged fields [8]
+  [560] skip hybrid   verify flagged fields [8]
+  [525] skip mutation verify flagged fields [1, 2, 3, 4, 5, 6, 7, 8, 16, 17]
+  [610] skip hybrid   verify flagged fields [5, 6]
+  [636] skip mutation anchor had no labeled fields
+  [589] OK  hybrid   GEN_it-IT_payment_esempio_00589.html
+  [601] skip hybrid   verify flagged fields [1]
+  [614] skip hybrid   verify flagged fields [6, 7]
+  [618] skip hybrid   verify flagged fields [0]
+  [617] skip mutation verify flagged fields [2]
+  [622] skip hybrid   verify flagged fields [9, 10]
+  [624] skip hybrid   verify flagged fields [6]
+  [632] skip hybrid   verify flagged fields [6]
+  [583] skip mutation verify flagged fields [0, 1, 14]
+  [644] skip hybrid   verify flagged fields [9]
+  [668] skip hybrid   verify flagged fields [8]
+  [357] skip mutation spec: field 21: empty label for address-level2
+  [581] skip hybrid   verify flagged fields [9]
+  [650] skip hybrid   verify flagged fields [7, 8]
+  [686] skip hybrid   verify flagged fields [5, 6]
+  [681] skip hybrid   verify flagged fields [8]
+  [619] skip mutation verify flagged fields [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  [652] skip hybrid   verify flagged fields [6]
+  [670] skip mutation spec: field 0: button must be __nonfill__
+  [685] skip hybrid   verify flagged fields [5]
+  [712] skip hybrid   verify flagged fields [3]
+  [669] skip mutation spec: field 1: empty label for email
+  [713] skip hybrid   verify flagged fields [1, 8]
+  [703] skip mutation verify flagged fields [7]
+  [717] skip hybrid   verify flagged fields [8]
+  [735] skip hybrid   duplicate signature
+  [721] skip hybrid   verify flagged fields [7]
+  [727] skip hybrid   verify flagged fields [6]
+  [754] skip hybrid   duplicate signature
+  [694] skip mutation spec: field 12: empty label for tel-country-code
+  [764] skip hybrid   duplicate signature
+  [729] skip hybrid   verify flagged fields [8]
+  [751] skip hybrid   verify flagged fields [6]
+  [769] skip hybrid   duplicate signature
+  [750] OK  hybrid   GEN_es-ES_checkout_ejemplo_00750.html
+  [559] skip mutation spec: field 1: input_password must be __nonfill__
+  [765] OK  hybrid   GEN_nl-NL_billing_voorbeeldsite_00765.html
+  [785] OK  hybrid   GEN_nl-NL_payment_betalingen_00785.html
+  [772] skip hybrid   verify flagged fields [0]
+  [777] skip hybrid   verify flagged fields [9, 10]
+  [794] skip hybrid   verify flagged fields [2]
+  [798] skip hybrid   duplicate signature
+  [795] skip hybrid   verify flagged fields [6]
+  [778] skip hybrid   verify flagged fields [1]
+  [804] skip hybrid   verify flagged fields [3, 6]
+  [787] skip hybrid   verify flagged fields [6]
+  [873] skip mutation duplicate signature
+  [852] skip mutation duplicate signature
+  [786] skip mutation verify flagged fields [0, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  [849] skip hybrid   verify flagged fields [0]
+  [633] skip mutation spec: field 21: empty label for address-level2
+  [863] OK  hybrid   GEN_pt-PT_profile_exemplo_00863.html
+  [886] skip hybrid   verify flagged fields [6]
+  [707] skip mutation spec: field 0: invalid autofill_type 'username'
+  [813] skip mutation verify flagged fields [5, 14]
+  [807] skip mutation spec: field 1: empty label for country-name
+  [829] skip mutation verify flagged fields [8, 10]
+  [595] OK  mutation GEN_de-DE_checkout_meineplattform_00595.html
+  [894] skip mutation verify flagged fields [6]
+  [921] skip hybrid   verify flagged fields [6]
+  [933] OK  hybrid   GEN_fr-FR_billing_exempleboutique_00933.html
+  [761] skip mutation spec: field 0: invalid autofill_type 'username'
+  [901] skip hybrid   verify flagged fields [6, 7, 8]
+  [897] skip hybrid   verify flagged fields [10]
+  [888] skip mutation verify flagged fields [13]
+  [814] skip mutation verify flagged fields [25]
+  [883] skip mutation verify flagged fields [0]
+  [942] OK  mutation GEN_en-US_contact_example_00942.html
+  [936] skip hybrid   verify flagged fields [2]
+  [732] skip mutation verify flagged fields [8, 10, 41]
+  [909] skip hybrid   verify flagged fields [9, 10]
+  [892] skip mutation verify flagged fields [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+  [971] skip mutation verify flagged fields [2]
+  [943] skip mutation spec: field 1: empty label for email
+  [948] skip hybrid   verify flagged fields [10]
+  [982] skip hybrid   duplicate signature
+  [951] skip hybrid   verify flagged fields [7, 8]
+  [963] skip hybrid   verify flagged fields [6]
+  [930] skip mutation spec: field 25: button must be __nonfill__
+  [992] skip mutation verify flagged fields [0, 1]
+  [961] skip hybrid   verify flagged fields [8, 9]
+  [931] skip mutation verify flagged fields [16, 20]
+  [940] skip mutation verify flagged fields [20]
+  [999] OK  hybrid   GEN_pl-PL_contact_przyklad_00999.html
+  [990] skip hybrid   verify flagged fields [5]
+  [1035] skip mutation duplicate signature
+  [985] skip mutation verify flagged fields [0, 1, 6, 7, 8, 12, 13]
+  [1015] skip hybrid   verify flagged fields [7]
+  [1021] skip hybrid   verify flagged fields [6]
+  [1016] skip hybrid   verify flagged fields [7, 8]
+  [1000] skip hybrid   verify flagged fields [5]
+  [1039] skip mutation verify flagged fields [5, 6]
+  [844] skip mutation verify flagged fields [6, 7, 8, 9, 12, 16, 21, 23, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48]
+  [1029] skip hybrid   verify flagged fields [11]
+  [1048] skip hybrid   duplicate signature
+  [973] skip mutation verify flagged fields [2, 7, 16]
+  [1037] skip hybrid   verify flagged fields [6, 7]
+  [939] skip mutation spec: field 0: invalid autofill_type 'username'
+  [1040] skip hybrid   verify flagged fields [3, 8]
+  [1006] skip mutation spec: field 4: empty label for tel-country-code
+  [1030] skip mutation verify flagged fields [11, 12, 14]
+  [1057] OK  hybrid   GEN_fr-FR_profile_exemple_01057.html
+  [1059] skip hybrid   verify flagged fields [8]
+  [1056] skip mutation duplicate signature
+  [1054] skip hybrid   verify flagged fields [0]
+  [1090] skip hybrid   duplicate signature
+  [1095] skip mutation spec: field 4: input_password must be __nonfill__
+  [1080] skip hybrid   verify flagged fields [9]
+  [1055] skip mutation verify flagged fields [11, 13, 14]
+  [1045] skip mutation verify flagged fields [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+  [1089] skip hybrid   verify flagged fields [8]
+  [1047] skip mutation spec: field 4: empty label for tel-country-code
+  [1081] skip hybrid   verify flagged fields [10]
+  [1077] skip hybrid   verify flagged fields [2]
+  [1104] skip hybrid   duplicate signature
+  [1098] OK  hybrid   GEN_da-DK_shipping_example_01098.html
+  [1134] skip hybrid   duplicate signature
+  [1139] OK  hybrid   GEN_es-ES_contact_ejemplo_01139.html
+  [1101] skip hybrid   verify flagged fields [7]
+  [1156] OK  hybrid   GEN_es-ES_contact_ejemplo_01156.html
+  [1107] skip mutation spec: field 9: empty label for tel-area-code
+  [1108] skip mutation verify flagged fields [0]
+  [1131] skip hybrid   verify flagged fields [8]
+  [1146] skip mutation spec: field 8: button must be __nonfill__
+  [1138] skip hybrid   verify flagged fields [6]
+  [1096] skip mutation verify flagged fields [0]
+  [1123] skip hybrid   verify flagged fields [8]
+  [1074] skip mutation spec: field 16: invalid autofill_type 'username'
+  [1185] skip mutation duplicate signature
+  [1207] skip hybrid   duplicate signature
+  [1163] OK  mutation GEN_en-GB_contact_fictitioussite_01163.html
+  [1167] skip hybrid   spec: field 5: empty label for bday-month
+  [1178] skip hybrid   verify flagged fields [0, 7]
+  [1191] skip hybrid   verify flagged fields [3]
+  [1204] skip hybrid   verify flagged fields [7]
+  [1220] skip hybrid   verify flagged fields [10]
+  [1209] skip hybrid   verify flagged fields [7, 9]
+  [1226] skip hybrid   verify flagged fields [5, 6, 7]
+  [1243] skip hybrid   verify flagged fields [5]
+  [1196] skip mutation spec: field 0: invalid autofill_type 'username'
+  [1238] skip mutation verify flagged fields [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+  [1162] skip mutation verify flagged fields [20]
+  [1200] skip mutation verify flagged fields [7, 14, 17]
+  [1253] skip mutation spec: field 1: empty label for address-level1
+  [1255] OK  hybrid   GEN_hu-HU_profile_example_01255.html
+  [1248] skip mutation verify flagged fields [8, 15]
+  [1232] skip hybrid   verify flagged fields [2, 6]
+  [1287] skip hybrid   duplicate signature
+  [1277] skip hybrid   verify flagged fields [7]
+  [1259] skip mutation verify flagged fields [3, 4]
+  [1265] skip hybrid   verify flagged fields [0]
+  [1297] skip hybrid   duplicate signature
+  [1244] OK  mutation GEN_de-DE_shipping_beispielshop_01244.html
+  [1300] skip mutation verify flagged fields [0, 1, 2, 3, 4, 5, 6, 7]
+  [1267] skip mutation spec: field 5: empty label for tel-local-prefix
+  [1183] skip mutation spec: field 4: invalid autofill_type 'username'
+  [1337] skip hybrid   duplicate signature
+  [1257] skip mutation spec: field 16: invalid autofill_type 'username'
+  [1296] skip hybrid   verify flagged fields [5, 8]
+  [1258] skip mutation verify flagged fields [1, 2, 3, 4, 6, 8, 9, 10, 17, 18, 19, 20, 25, 27]
+  [1308] skip hybrid   duplicate signature
+  [1343] skip hybrid   duplicate signature
+  [1157] skip mutation spec: field 40: empty label for given-name
+  [1354] skip hybrid   duplicate signature
+  [1329] OK  hybrid   GEN_pl-PL_contact_przyklad_01329.html
+  [1341] skip mutation verify flagged fields [6, 7]
+  [1303] skip mutation verify flagged fields [2, 11, 14, 15]
+  [1396] skip mutation anchor had no labeled fields
+  [1145] skip mutation spec: field 21: empty label for address-level2
+  [1371] skip hybrid   duplicate signature
+  [1360] skip hybrid   duplicate signature
+  [1321] skip mutation verify flagged fields [15, 17]
+  [1262] skip mutation verify flagged fields [0, 8, 9, 12, 13, 18, 19, 22, 29]
+  [1369] skip hybrid   duplicate signature
+  [1347] OK  mutation GEN_en-GB_payment_example_01347.html
+  [1372] skip hybrid   verify flagged fields [6, 9]
+  [1374] skip hybrid   verify flagged fields [9]
+  [1385] skip hybrid   duplicate signature
+  [1430] skip mutation duplicate signature
+  [1408] skip hybrid   duplicate signature
+  [1399] skip hybrid   spec: field 5: empty label for bday-month
+  [1395] skip hybrid   verify flagged fields [6, 7]
+  [1377] skip hybrid   verify flagged fields [0]
+  [1428] OK  hybrid   GEN_pl-PL_billing_przykladowastron_01428.html
+  [1469] skip mutation anchor had no labeled fields
+  [1455] skip hybrid   duplicate signature
+  [1444] skip hybrid   verify flagged fields [6]
+  [1454] skip hybrid   verify flagged fields [6]
+  [1394] skip hybrid   verify flagged fields [10]
+  [1438] skip mutation spec: field 5: empty label for tel-national
+  [1458] skip hybrid   verify flagged fields [5, 6]
+  [1464] OK  hybrid   GEN_es-ES_registration_ejemplo_01464.html
+  [1479] skip hybrid   duplicate signature
+  [1461] skip hybrid   verify flagged fields [2, 3, 8]
+  [1423] skip mutation verify flagged fields [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  [1436] skip mutation verify flagged fields [19, 20, 23]
+  [1484] skip hybrid   duplicate signature
+  [1388] skip mutation verify flagged fields [14]
+  [1487] OK  hybrid   GEN_fr-FR_contact_exemple_01487.html
+  [1451] skip mutation verify flagged fields [19, 20, 23]
+  [1459] skip mutation verify flagged fields [13, 14, 16]
+  [1473] skip mutation verify flagged fields [4, 5, 6]
+  [1507] OK  hybrid   GEN_fr-FR_profile_exemple_01507.html
+  [1525] skip hybrid   duplicate signature
+  [1475] skip mutation verify flagged fields [12]
+  [1496] skip hybrid   verify flagged fields [6, 7]
+  [1492] skip hybrid   verify flagged fields [8]
+  [1481] skip mutation spec: field 1: empty label for email
+  [1402] skip mutation spec: field 1: input_password must be __nonfill__
+  [1515] skip mutation verify flagged fields [4]
+  [1489] skip mutation verify flagged fields [5, 6, 7, 8, 9, 10, 11, 12]
+  [1501] OK  hybrid   GEN_ro-RO_checkout_exemplusite_01501.html
+  [1352] skip mutation verify flagged fields [19, 32]
+  [1508] skip hybrid   verify flagged fields [8]
+  [1527] skip hybrid   verify flagged fields [0]
+  [1526] skip hybrid   verify flagged fields [8]
+  [1470] skip mutation verify flagged fields [0, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+  [1533] OK  hybrid   GEN_uk-UA_payment_example_01533.html
+  [1553] skip hybrid   verify flagged fields [7]
+  [1534] OK  hybrid   GEN_sv-SE_profile_example_01534.html
+  [1571] skip mutation verify flagged fields [2]
+  [1547] skip hybrid   verify flagged fields [9, 10]
+  [1555] skip mutation verify flagged fields [0]
+  [1558] OK  mutation GEN_en-US_profile_example_01558.html
+  [1535] skip hybrid   verify flagged fields [0]
+  [1530] skip mutation verify flagged fields [9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+  [1581] skip hybrid   verify flagged fields [6]
+  [1589] skip hybrid   duplicate signature
+  [1567] skip hybrid   verify flagged fields [2]
+  [1557] skip mutation verify flagged fields [11]
+  [1531] skip mutation spec: field 16: invalid autofill_type 'username'
+  [1600] skip hybrid   duplicate signature
+  [1623] skip mutation anchor had no labeled fields
+  [1599] skip hybrid   duplicate signature
+  [1592] skip hybrid   duplicate signature
+  [1582] skip mutation spec: field 0: button must be __nonfill__
+  [1593] skip mutation verify flagged fields [3, 4, 5, 6, 7, 8, 9, 10]
+  [1613] skip hybrid   verify flagged fields [6]
+  [1561] skip mutation spec: field 0: invalid autofill_type 'username'
+  [1603] skip mutation verify flagged fields [2, 5, 6, 7, 8]
+  [1628] skip hybrid   duplicate signature
+  [1619] OK  hybrid   GEN_pl-PL_checkout_example_01619.html
+  [1606] skip hybrid   verify flagged fields [1]
+  [1654] skip hybrid   duplicate signature
+  [1602] skip hybrid   verify flagged fields [6, 7]
+  [1653] skip hybrid   duplicate signature
+  [1622] skip hybrid   verify flagged fields [7]
+  [1637] skip mutation verify flagged fields [0, 1, 2, 3, 4]
+  [1595] skip hybrid   verify flagged fields [9]
+  [1640] skip hybrid   verify flagged fields [8]
+  [1645] skip hybrid   verify flagged fields [6, 7]
+  [1566] skip mutation verify flagged fields [7, 12, 21]
+  [1625] skip mutation spec: field 6: invalid autofill_type 'new-password'
+  [1638] skip hybrid   verify flagged fields [6]
+  [1673] skip hybrid   duplicate signature
+  [1659] OK  hybrid   GEN_it-IT_profile_esempio_01659.html
+  [1539] skip mutation spec: field 4: invalid autofill_type 'username'
+  [1663] OK  hybrid   GEN_fr-FR_shipping_exemple_01663.html
+  [1713] skip hybrid   duplicate signature
+  [1670] skip hybrid   verify flagged fields [9]
+  [1656] skip mutation verify flagged fields [18]
+  [1690] skip mutation verify flagged fields [2, 3, 5, 6]
+  [1668] skip hybrid   verify flagged fields [6]
+  [1674] OK  hybrid   GEN_pt-BR_profile_exemplo_01674.html
+  [1710] skip mutation spec: field 0: button must be __nonfill__
+  [1719] skip hybrid   duplicate signature
+  [1704] OK  hybrid   GEN_el-GR_shipping_paravolo_01704.html
+  [1657] skip hybrid   verify flagged fields [0, 7, 9]
+  [1726] skip hybrid   duplicate signature
+  [1677] OK  mutation GEN_de-DE_shipping_beispielshop_01677.html
+  [1723] skip hybrid   verify flagged fields [6]
+  [1752] skip hybrid   duplicate signature
+  [1724] skip mutation verify flagged fields [0, 3]
+  [1753] skip hybrid   duplicate signature
+  [1755] skip hybrid   duplicate signature
+  [1528] skip mutation spec: field 70: input_password must be __nonfill__
+  [1728] OK  hybrid   GEN_bg-BG_shipping_примеренсайт_01728.html
+  [1734] skip hybrid   verify flagged fields [8]
+  [1743] skip hybrid   verify flagged fields [8]
+  [1751] skip hybrid   verify flagged fields [7]
+  [1767] skip hybrid   duplicate signature
+  [1761] skip hybrid   verify flagged fields [7]
+  [1779] skip hybrid   duplicate signature
+  [1759] OK  hybrid   GEN_pl-PL_shipping_example_01759.html
+  [1787] skip mutation spec: field 1: invalid autofill_type 'password'
+  [1792] skip hybrid   duplicate signature
+  [1765] skip hybrid   verify flagged fields [3, 9]
+  [1766] OK  mutation GEN_de-DE_profile_beispielseite_01766.html
+  [1793] skip hybrid   duplicate signature
+  [1775] skip hybrid   verify flagged fields [7, 8]
+  [1750] skip mutation spec: field 25: button must be __nonfill__
+  [1721] skip mutation verify flagged fields [6, 12, 13, 15]
+  [1666] skip mutation verify flagged fields [5]
+  [1799] skip hybrid   duplicate signature
+  [1808] skip hybrid   duplicate signature
+  [1866] skip mutation anchor had no labeled fields
+  [1813] skip hybrid   duplicate signature
+  [1716] skip mutation spec: field 0: invalid autofill_type 'username'
+  [1842] skip hybrid   duplicate signature
+  [1850] skip hybrid   duplicate signature
+  [1829] skip mutation verify flagged fields [4]
+  [1786] skip hybrid   verify flagged fields [6]
+  [1817] OK  hybrid   GEN_es-ES_shipping_ejemplo_01817.html
+  [1886] skip mutation anchor had no labeled fields
+  [1867] skip hybrid   duplicate signature
+  [1838] skip hybrid   verify flagged fields [8]
+  [1823] skip hybrid   verify flagged fields [5]
+  [1848] skip hybrid   verify flagged fields [6]
+  [1843] OK  hybrid   GEN_tr-TR_payment_odemeornek_01843.html
+  [1869] skip hybrid   verify flagged fields [7]
+  [1826] skip mutation verify flagged fields [1, 2, 10, 11, 13]
+  [1885] skip hybrid   duplicate signature
+  [1798] skip mutation duplicate signature
+  [1874] skip mutation verify flagged fields [0, 1, 5]
+  [1875] skip hybrid   duplicate signature
+  [1891] OK  hybrid   GEN_tr-TR_registration_ornekkayit_01891.html
+  [1778] skip mutation spec: field 1: input_password must be __nonfill__
+  [1879] skip hybrid   verify flagged fields [0]
+  [1899] skip hybrid   verify flagged fields [8]
+  [1913] skip hybrid   verify flagged fields [7, 8]
+  [1909] skip hybrid   spec: field 5: empty label for bday
+  [1901] skip hybrid   verify flagged fields [7]
+  [1927] skip mutation spec: field 1: invalid autofill_type 'password'
+  [1871] skip mutation verify flagged fields [13]

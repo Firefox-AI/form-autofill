@@ -1,0 +1,681 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 200px;
+}
+
+</style>
+</head>
+
+<body>
+
+<fieldset>
+<h3>microspot.ch</h3>
+<p><i>Street and house number not handled correctly but site has marked them incorrectly.</i></p>
+
+<form>
+    <div id="formControl-email">
+      <div>
+        <span>E-Mail-Adresse</span>
+        <abbr title="Pflichtfeld">*</abbr>
+      </div>
+      <input type="email" name="email" id="formControl-email-input" placeholder="" autocomplete="" maxlength="9999" aria-label="email" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="email">
+    </div>
+    <div>
+      <!--div id="invoice-formControl-salutation">
+        <div>
+          <span>Anrede</span>
+          <abbr title="Pflichtfeld">*</abbr>
+        </div>
+        <ul>
+          <label>
+            <i></i>
+            <input type="radio" name="salutation" value="Herr">
+            <div>Herr</div>
+          </label>
+          <label>
+            <i></i>
+            <input type="radio" name="salutation" value="Frau">
+            <div>Frau</div>
+          </label>
+        </ul>
+      </div-->
+      <div>
+        <div id="invoice-formControl-firstName">
+          <div>
+            <span>Vorname</span>
+            <abbr title="Pflichtfeld">*</abbr>
+          </div>
+          <input type="text" name="firstName" id="formControl-firstName-input" placeholder="" autocomplete="section-invoice given-name" maxlength="100" aria-label="firstName" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name">
+        </div>
+        <div id="invoice-formControl-lastName">
+          <div>
+            <span>Nachname</span>
+            <abbr title="Pflichtfeld">*</abbr>
+          </div>
+          <input type="text" name="lastName" id="formControl-lastName-input" placeholder="" autocomplete="section-invoice family-name" maxlength="100" aria-label="lastName" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name">
+        </div>
+      </div>
+      <div id="invoice-formControl-company">
+        <span>Firma</span>
+        <input type="text" name="company" id="formControl-company-input" placeholder="" autocomplete="section-invoice organization" maxlength="9999" aria-label="company" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="organization">
+      </div>
+      <div>
+        <div id="invoice-formControl-addressLine1">
+          <div>
+            <span>Strasse</span>
+            <abbr title="Pflichtfeld">*</abbr>
+          </div>
+          <input type="text" name="addressLine1" id="formControl-addressLine1-input" placeholder="" autocomplete="section-invoice address-line1" maxlength="60" aria-label="addressLine1" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-streetname">
+        </div>
+        <div id="invoice-formControl-addressLine2">
+          <span>Nr.</span>
+          <input type="text" name="addressLine2" id="formControl-addressLine2-input" placeholder="" autocomplete="section-invoice address-line2" maxlength="10" aria-label="addressLine2" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-housenumber">
+        </div>
+      </div>
+      <div id="invoice-formControl-addition">
+        <span>Adresszusatz</span>
+        <input type="text" name="addition" id="formControl-addition-input" placeholder="" autocomplete="section-invoice address-line3" maxlength="9999" aria-label="addition" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line2">
+      </div>
+      <div>
+        <div id="invoice-formControl-postalCode">
+          <div>
+            <span>PLZ</span>
+            <abbr title="Pflichtfeld">*</abbr>
+          </div>
+          <input type="tel" name="postalCode" id="formControl-postalCode-input" placeholder="" autocomplete="section-invoice postal-code" pattern="\d*" maxlength="4" aria-label="postalCode" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code">
+        </div>
+        <div id="invoice-formControl-town">
+          <div>
+            <span>Ort</span>
+            <abbr title="Pflichtfeld">*</abbr>
+          </div>
+          <input type="text" name="town" id="formControl-town-input" placeholder="" autocomplete="section-invoice address-level2" maxlength="9999" aria-label="town" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2">
+        </div>
+      </div>
+      <div>
+        <div id="invoice-formControl-country">
+          <div>
+            <span>Land</span>
+            <abbr title="Pflichtfeld">*</abbr>
+          </div>
+          <select aria-label="selectBox" name="country" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="country">
+            <option value="" disabled="" hidden="">Bitte wählen Sie ein Land aus.</option>
+            <option value="CH">Schweiz</option>
+            <option value="LI">Liechtenstein</option>
+          </select>
+        </div>
+        <div id="invoice-formControl-phone">
+          <div>
+            <span>Telefonnummer</span>
+            <abbr title="Pflichtfeld">*</abbr>
+          </div>
+          <input type="tel" name="phone" id="formControl-phone-input" placeholder="" autocomplete="section-invoice tel" maxlength="9999" aria-label="phone" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel">
+        </div>
+      </div>
+    </div>
+    <!--section id="FormBirthday">
+      <h2 id="">Geburtsdatum</h2>
+      <div id="formControl-birthday">
+        <div>
+          <span>Geburtsdatum</span>
+          <abbr title="Pflichtfeld">*</abbr>
+        </div>
+        <div>
+          <input type="tel" name="" placeholder="tt" maxlength="2" value="">
+          <input type="tel" name="" placeholder="mm" maxlength="2" value="">
+          <input type="tel" name="" placeholder="jjjj" maxlength="4" value="">
+        </div>
+      </div>
+      <small>*Pflichtfelder</small>
+    </section-->
+</form>
+</fieldset>
+
+<fieldset>
+
+<h3>www.interdiscount.ch</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <label for="_r_l_">E-Mail-Adresse</label>
+  </div>
+  <div>
+    <input autocapitalize="none" placeholder="name@domain.ch" id="_r_l_" aria-invalid="false" required="" type="text" value="" name="email" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="address.titleCode">Anrede</label>
+  </div>
+  <div>
+    <label for="address.titleCode1">
+      <input id="address.titleCode1" aria-disabled="false" aria-checked="false" aria-label="Herr" type="radio" value="mr" name="address.titleCode">Herr
+    </label>
+    <label for="address.titleCode2">
+      <input id="address.titleCode2" aria-disabled="false" aria-checked="false" aria-label="Frau" type="radio" value="mrs" name="address.titleCode">Frau
+    </label>
+  </div>
+  <div>
+    <label for="_r_p_">Vorname</label>
+    <input autocapitalize="words" id="_r_p_" aria-invalid="false" required="" type="text" value="" name="address.firstName" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="_r_q_">Nachname</label>
+    <input autocapitalize="words" id="_r_q_" aria-invalid="false" required="" type="text" value="" name="address.lastName" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="_r_r_">Strasse</label>
+    <input autocapitalize="sentences" id="_r_r_" aria-invalid="false" required="" type="text" value="" name="address.streetName" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-streetname">
+  </div>
+  <div>
+    <label for="_r_s_">Nr.
+      <span>&nbsp;</span>
+      <span>(optional)</span>
+    </label>
+    <input id="_r_s_" aria-invalid="false" type="text" value="" name="address.streetNumber" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-housenumber">
+  </div>
+  <div>
+    <label for="_r_t_">PLZ</label>
+    <input inputmode="numeric" autocomplete="postal-code" id="_r_t_" aria-invalid="false" required="" type="text" value="" name="address.postalCode" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="_r_u_">Ort</label>
+    <input autocapitalize="sentences" id="_r_u_" aria-invalid="false" required="" type="text" value="" name="address.town" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="_r_v_">Land</label>
+  </div>
+  <div>
+    <label for="_r_11_">Telefonnummer</label>
+    <input autocomplete="tel" inputmode="tel" id="_r_11_" aria-invalid="false" value="" name="address.phone" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel">
+  </div>
+  <div></div>
+</form>
+
+</fieldset>
+<fieldset>
+<h3>conforama.ch</h3>
+<p><i>Phone number not detected, no fields have a name or an id.</i></p>
+
+<form>
+  <div>
+    <div>
+      <div>
+        <div>
+          <input type="text" formcontrolname="firstName" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name">
+          <label>Vorname*</label>
+        </div>
+        <div>
+          <input type="text" formcontrolname="lastName" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name">
+          <label>Nachname*</label>
+        </div>
+      </div>
+      <div>
+        <input type="text" formcontrolname="companyName" autocomplete="organization" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="organization">
+        <label>Firma</label>
+      </div>
+      <div>
+        <div>
+          <input type="text" formcontrolname="line1" autocomplete="street-address" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-streetname">
+          <label>Strasse*</label>
+        </div>
+        <div>
+          <input type="text" formcontrolname="line2" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-housenumber">
+          <label>Hausnummer*</label>
+        </div>
+      </div>
+      <div>
+        <div>
+          <input type="text" formcontrolname="postalCode" autocomplete="postalCode" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code">
+          <label>Postleitzahl*</label>
+        </div>
+        <div>
+          <input type="text" formcontrolname="town" autocomplete="town" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2">
+          <label>Ort*</label>
+        </div>
+      </div>
+      <div>
+        <input type="text" formcontrolname="building" autocomplete="address-level4" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line2">
+        <label>Adresszusatz</label>
+      </div>
+      <div>
+          <!--div>
+            <div>
+              <button type="button" aria-expanded="false" aria-label="Selected country" aria-haspopup="true" aria-controls="iti-0__dropdown-content" role="combobox" tabindex="0" title="Switzerland">
+                <div>
+                  <span>Switzerland +41</span>
+                  <div aria-hidden="true"></div>
+                </div>
+                <div>+41</div>
+              </button>
+              <div id="iti-0__dropdown-content">
+                <input type="text" placeholder="Search" role="combobox" aria-expanded="true" aria-label="Search" aria-controls="iti-0__country-listbox" aria-autocomplete="list" autocomplete="off">
+                <span>4 results found</span>
+                <ul id="iti-0__country-listbox" role="listbox" aria-label="List of countries">
+                  <li id="iti-0__item-ch" tabindex="-1" role="option" aria-selected="false">
+                    <span>Switzerland</span>
+                    <span>+41</span>
+                  </li>
+                  <li id="iti-0__item-de" tabindex="-1" role="option" aria-selected="false">
+                    <span>Germany</span>
+                    <span>+49</span>
+                  </li>
+                  <li id="iti-0__item-fr" tabindex="-1" role="option" aria-selected="false">
+                    <span>France</span>
+                    <span>+33</span>
+                  </li>
+                  <li id="iti-0__item-it" tabindex="-1" role="option" aria-selected="false">
+                    <span>Italy</span>
+                    <span>+39</span>
+                  </li>
+                </ul>
+              </div>
+            </div-->
+            <input type="tel" autocomplete="off" placeholder="78 123 45 67" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel">
+          </div>
+        <label aria-required="true">
+          <div>
+            <div>
+              <div>Land *</div>
+              <div>
+                <span aria-hidden="true">×</span>
+                <span>Schweiz</span>
+              </div>
+              <input aria-autocomplete="list" type="text" autocorrect="off" autocapitalize="none" autocomplete="a45dce447760" readonly="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="country-name">
+            </div>
+            <span></span>
+          </div>
+        </label>
+      </div>
+    </div>
+  
+</form>
+</fieldset>
+
+<fieldset>
+<h3>fust.ch</h3>
+<p><i>Postal code field is detected as a city field.</i></p>
+
+<form id="shop_register" method="post" action="/de/ssl-shop-customer-register-step2.html" autocomplete="off">
+    <div id="shop_register_male">
+      <label id="labelshop_register_male">
+							Anrede*
+						</label>
+      <label for="gender_female" id="labelForgender_female">
+        <input type="radio" id="gender_female" name="male" value="0" required="required" tabindex="1">
+        <span>Frau</span>
+      </label>
+      <label for="gender_male" id="labelForgender_male">
+        <input type="radio" id="gender_male" name="male" value="1" required="required" tabindex="2">
+        <span>Herr</span>
+      </label>
+    </div>
+    <div id="shop_register_firstname">
+      <label for="firstname">
+						Vorname*
+					</label>
+      <input type="text" id="firstname" name="firstname" maxlength="30" required="required" tabindex="3" autocomplete="off" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name">
+    </div>
+    <div id="shop_register_lastname">
+      <label for="lastname">
+						Nachname*
+					</label>
+      <input type="text" id="lastname" name="lastname" maxlength="30" required="required" tabindex="4" autocomplete="off" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name">
+    </div>
+    <div id="shop_register_company">
+      <label for="company">
+						Firma
+					</label>
+      <input type="text" id="company" name="company" maxlength="30" tabindex="5" autocomplete="off" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="organization">
+    </div>
+    <div id="shop_register_addressline2">
+															
+      <label for="addressline2">
+						Referenz
+					</label>
+      <input type="text" id="addressline2" name="addressline2" maxlength="50" placeholder="Abteilung, Stockwerk, usw." tabindex="6" autocomplete="off" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="name">
+    </div>
+    <div id="shop_register_addressline1">
+      <label for="addressline1">
+						Strasse/Nr.*
+					</label>
+      <input type="text" id="addressline1" name="addressline1" maxlength="30" required="required" tabindex="7" autocomplete="off" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="street">
+    </div>
+    <div id="shop_register_zip">
+															
+      <label for="zip">
+						PLZ/Ort*
+					</label>
+      <input type="text" id="zip" name="zip" pattern="^[0-9]{4,5}$" required="required" tabindex="8" autocomplete="off" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code">
+      <input type="text" id="city" name="city" maxlength="30" required="required" tabindex="9" autocomplete="off" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2">
+    </div>
+    <div id="shop_register_country">
+      <label for="country">
+						Land*
+					</label>
+      <select id="country" name="country" size="1" tabindex="10" required="required" autocomplete="off" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="country-name">
+        <option value="60">Deutschland
+	</option>
+        <option value="76">Frankreich
+	</option>
+        <option value="106">Italien
+	</option>
+        <option value="15">Österreich
+	</option>
+        <option value="190">Schweiz / Liechtenstein
+	</option>
+        <option disabled="disabled" value="" selected="selected">-
+	</option>
+      </select>
+    </div>
+    <div id="shop_register_phoneDirectCountryOnlyWithphoneDirectNumberOnly">
+      <div id="shop_register_phoneDirectCountryOnly">
+        <label for="phoneDirectCountryOnly">
+						Tel. Privat
+					</label>
+        <select id="phoneDirectCountryOnly" name="phoneDirectCountryOnly" size="1" tabindex="16" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel-country-code">
+          <option value="+41" selected="selected">CH +41
+	</option>
+          <option value="+39">IT +39
+	</option>
+          <option value="+33">FR +33
+	</option>
+          <option value="+49">DE +49
+	</option>
+          <option value="+43">AT +43
+	</option>
+        </select>
+      </div>
+      <input type="text" id="phoneDirectNumberOnly" name="phoneDirectNumberOnly" value="" tabindex="21" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel-national">
+    </div>
+    <div id="shop_register_email">
+      <label for="email">
+						E-Mail*
+					</label>
+      <input type="email" id="email" name="email" maxlength="50" pattern="[-_a-zA-Z0-9#&amp;=\+]+(\.[-_a-zA-Z0-9#&amp;=\+]+)*@(?!.*@.*)[a-zA-ZäÄöÖüÜ0-9-]+(\.[a-zA-ZäÄöÖüÜ0-9-]+)*\.[a-zA-Z]{2,}" required="required" tabindex="17" autocomplete="off" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="email">
+    </div>
+</form>
+</fieldset>
+
+<fieldset>
+
+<h3>www.fust.ch (Version 2)</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <label>
+      <input type="radio" value="mr" name="titleCode">
+      <span>Herr</span>
+    </label>
+    <label>
+      <input type="radio" value="mrs" name="titleCode">
+      <span>Frau</span>
+    </label>
+  </div>
+  <div>
+    <label>
+      <span>Vorname*</span>
+      <span>
+        <div>
+          <input autocomplete="given-name" type="text" name="firstName" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name">
+        </div>
+      </span>
+    </label>
+    <label>
+      <span>Nachname*</span>
+      <span>
+        <div>
+          <input autocomplete="family-name" type="text" name="lastName" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name">
+        </div>
+      </span>
+    </label>
+  </div>
+  <div>
+    <label>
+      <span>Strasse*</span>
+      <div>
+        <span>
+          <div>
+            <input autocomplete="address-line1" type="text" name="streetName" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-streetname">
+          </div>
+        </span>
+      </div>
+    </label>
+    <label>
+      <span>Nummer</span>
+      <span>
+        <div>
+          <input autocomplete="address-line2" type="text" name="streetNumber" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-housenumber">
+        </div>
+      </span>
+    </label>
+  </div>
+  <div>
+    <label>
+      <span>PLZ*</span>
+      <div>
+        <span>
+          <div>
+            <input autocomplete="postal-code" type="text" name="postalCode" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code">
+          </div>
+        </span>
+      </div>
+    </label>
+    <label>
+      <span>Ort*</span>
+      <div>
+        <span>
+          <div>
+            <input autocomplete="address-level2" type="text" name="town" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2">
+          </div>
+        </span>
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>
+      <span>Land*</span>
+      <span>
+        <select name="countryIsoCode" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="country">
+          <option value="">Bitte wählen</option>
+          <option value="DE">Deutschland</option>
+          <option value="FR">Frankreich</option>
+          <option value="IT">Italien</option>
+          <option value="LI">Liechtenstein</option>
+          <option value="CH">Schweiz</option>
+          <option value="AT">Österreich</option>
+        </select>
+      </span>
+    </label>
+    <label>
+      <span>Telefon</span>
+      <span>
+        <div>
+          <input autocomplete="tel" type="text" name="phoneNumber" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel">
+        </div>
+      </span>
+    </label>
+    <label>
+      <span>Supercardnummer (ohne Leerzeichen eingeben)</span>
+      <span>
+        <div>
+          <input type="text" name="supercardNumber" style="background-color: rgb(255, 252, 200);">
+        </div>
+      </span>
+    </label>
+    <label>
+      <span>E-Mail*</span>
+      <span>
+        <div>
+          <input autocomplete="email" inputmode="email" type="email" name="email" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="email">
+        </div>
+      </span>
+    </label>
+    <label>
+      <span>Geburtsdatum*</span>
+      <span>
+        <div>
+          <input autocomplete="bday" type="date" name="dateOfBirth" data-moz-autofill-type="bday">
+        </div>
+      </span>
+    </label>
+  </div>
+  <div>
+    <button type="submit">Speichern</button>
+  </div>
+</form>
+
+</fieldset>
+<fieldset>
+<h3>migros.ch</h3>
+
+<form autocomplete="off">
+  <mat-radio-group role="radiogroup" color="accent">
+    <div mat-internal-form-field="">
+      <input type="radio" id="MR-input" name="mat-radio-group-9" value="MR" tabindex="0">
+      <label for="MR-input">Mr.</label>
+    </div>
+    <div mat-internal-form-field="">
+      <input type="radio" id="MS-input" name="mat-radio-group-9" value="MS" tabindex="-1">
+      <label for="MS-input">Ms.</label>
+    </div>
+  </mat-radio-group>
+  <div>
+    <div>
+      <span>First name</span>
+        <input id="firstName" required="" aria-required="true" maxlength="20" aria-describedby="mat-mdc-error-11" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name">
+    </div>
+    <div>
+      <span>Last name</span>
+        <input id="lastName" required="" aria-required="true" maxlength="50" aria-describedby="mat-mdc-error-12" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name">
+    </div>
+  </div>
+    <div>
+      <span>Postcode &amp; City</span>
+        <input id="zipCity" required="" autocomplete="nope" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-haspopup="listbox" aria-required="true" aria-describedby="messages_zipCity" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code-and-city">
+    </div>
+    <div>
+      <div>
+        <span>Street</span>
+        <input id="streetName" required="" autocomplete="nope" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-haspopup="listbox" aria-required="true" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-streetname">
+      </div>
+      <div>
+        <span>No.</span>
+        <input id="streetNumber" required="" autocomplete="nope" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-haspopup="listbox" aria-required="true" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-housenumber">
+      </div>
+    </div>
+    <div>
+      <span>Phone number</span>
+      <div>
+        <mat-form-field>
+          <div>
+            <input id="mat-input-website-js0" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel">
+          </div>
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <span>Company</span>
+      <input id="companyName" maxlength="50" aria-invalid="false" aria-required="false" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="organization">
+    </div>
+    <div>
+      <span>Door code</span>
+      <input id="entranceCode" maxlength="50" aria-invalid="false" aria-required="false">
+    </div>
+    <div>
+      <span>Floor</span>
+      <input id="floor" maxlength="10" aria-invalid="false" aria-required="false" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="floor">
+    </div>
+    <div>
+      <span>Delivery instructions</span>
+      <input id="otherInstructions" maxlength="255" aria-invalid="false" aria-required="false">
+    </div>
+</form>
+</fieldset>
+
+<fieldset>
+
+<h3>www.laredoute.fr</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <label for="billing-address-radio-address.title-MRS">
+      <span>
+        <input tabindex="0" type="radio" aria-invalid="false" autocomplete="off" name="address.title" id="billing-address-radio-address.title-MRS" required="" value="MRS" checked="">
+      </span>
+      <span>Madame</span>
+    </label>
+    <label for="billing-address-radio-address.title-MR">
+      <span>
+        <input tabindex="0" type="radio" aria-invalid="false" autocomplete="off" name="address.title" id="billing-address-radio-address.title-MR" required="" value="MR">
+      </span>
+      <span>Monsieur</span>
+    </label>
+  </div>
+  <div>
+    <label for="billing-address-address.firstname">Prénom</label>
+    <input type="text" id="billing-address-address.firstname" name="address.firstname" aria-invalid="false" required="" minlength="2" maxlength="32" autocomplete="given-name" placeholder="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="billing-address-address.lastname">Nom</label>
+    <input type="text" id="billing-address-address.lastname" name="address.lastname" aria-invalid="false" required="" minlength="2" maxlength="32" autocomplete="family-name" placeholder="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="billing-address-address.street">Adresse</label>
+    <input type="text" id="billing-address-address.street" name="address.street" aria-invalid="true" required="" maxlength="40" autocomplete="off" placeholder="" value="" tabindex="0" aria-describedby="error-billing-address-address.street" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <label for="billing-address-address.houseNumber">Appartement, étage, porte… • optionnel</label>
+    <input type="text" id="billing-address-address.houseNumber" name="address.houseNumber" aria-invalid="false" maxlength="40" autocomplete="address-line2" placeholder="" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <label for="billing-address-address.streetComplement">Batiment, résidence, entrée… • optionnel</label>
+    <input type="text" id="billing-address-address.streetComplement" name="address.streetComplement" aria-invalid="false" maxlength="40" autocomplete="address-line3" placeholder="" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line3">
+  </div>
+  <div>
+    <label for="billing-address-address.hamlet">Lieu dit, boite postale... • optionnel</label>
+    <input type="text" id="billing-address-address.hamlet" name="address.hamlet" aria-invalid="false" maxlength="40" autocomplete="hamlet" placeholder="" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line3">
+  </div>
+  <div>
+    <label for="billing-address-address.zipCode">Code postal</label>
+    <input type="text" id="billing-address-address.zipCode" name="address.zipCode" aria-invalid="false" required="" minlength="5" maxlength="5" autocomplete="postal-code" placeholder="" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="billing-address-address.city">Ville</label>
+    <input type="text" id="billing-address-address.city" name="address.city" aria-invalid="false" required="" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="billing-address-address.country">Pays</label>
+    <select id="billing-address-address.country" name="address.country" aria-invalid="false" required="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="country">
+      <option value="FR">France Métropolitaine</option>
+      <option value="GP">Guadeloupe</option>
+      <option value="GF">Guyane Francaise</option>
+      <option value="WF">Îles Wallis et Futuna</option>
+      <option value="MQ">Martinique</option>
+      <option value="YT">Mayotte</option>
+      <option value="MC">Monaco</option>
+      <option value="NC">Nouvelle-Calédonie</option>
+      <option value="PF">Polynésie française</option>
+      <option value="BL">Saint-Barthélemy</option>
+      <option value="MF">Saint-Martin</option>
+      <option value="PM">Saint-Pierre-et-Miquelon</option>
+    </select>
+  </div>
+  <div>
+    <label for="billing-address-address.phoneNumber">Téléphone</label>
+    <input type="tel" id="billing-address-address.phoneNumber" name="address.phoneNumber" aria-invalid="false" aria-describedby="hint-billing-address-address.phoneNumber" required="" autocomplete="tel-national" placeholder="" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel">
+  </div>
+</form>
+
+</fieldset>
+
+
+
+</body></html>

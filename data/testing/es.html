@@ -1,0 +1,212 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 200px;
+}
+
+input {
+  margin: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<fieldset>
+<h3>elcorteingles.es</h3>
+<p><i>address and name fields are duplicated. Many fields not recognized.</i></p>
+
+<p style="float: right; border: 1px solid black; margin-right: 50px; padding: 1em;">
+Translations:<br>
+ Nombre de la vía - Name of the road<br>
+ Número - Number<br>
+ Bloque/Edificio - Block/Building<br>
+ Escalera - Staircase<br>
+ Piso - Floor<br>
+ Puerta - Door<br>
+ Información adicional  - Additional information<br>
+ Código postal - Postal code<br>
+ Población - Population<br>
+ Persona de contacto - Contact person<br>
+ Nombre - Name<br>
+ Primer apellido - First surname<br>
+ Segundo apellido (opcional) - Second surname (optional)<br>
+ Teléfono - Phone
+</p>
+
+<form>
+  <select style="">
+    <option disabled="">Tipo de vía</option>
+    <option value="Agrupacion">Agrupacion</option>
+    <option value="Alameda">Alameda</option>
+    <option value="Apartamento">Apartamento</option>
+    <option value="Avenida">Avenida</option>
+    <option value="Bajada">Bajada</option>
+    <option value="Barranco">Barranco</option>
+    <option value="Barrio/barriada">Barrio/barriada</option>
+    <option value="Bloque">Bloque</option>
+    <option value="Calle">Calle</option>
+    <option value="Calleja/callejon">Calleja/callejon</option>
+    <option value="Camino">Camino</option>
+    <option value="Carretera">Carretera</option>
+    <option value="Caserio/casas">Caserio/casas</option>
+    <option value="Chalet">Chalet</option>
+    <option value="Colonia">Colonia</option>
+    <option value="Cuesta">Cuesta</option>
+    <option value="Diseminado">Diseminado</option>
+    <option value="Edificio">Edificio</option>
+    <option value="Glorieta">Glorieta</option>
+    <option value="Grupo">Grupo</option>
+    <option value="Lugar">Lugar</option>
+    <option value="Mercado">Mercado</option>
+    <option value="Parque">Parque</option>
+    <option value="Partida">Partida</option>
+    <option value="Pasaje">Pasaje</option>
+    <option value="Paseo">Paseo</option>
+    <option value="Plaza">Plaza</option>
+    <option value="Plazoleta/plazuela">Plazoleta/plazuela</option>
+    <option value="Poblado">Poblado</option>
+    <option value="Poligono">Poligono</option>
+    <option value="Prolongacion">Prolongacion</option>
+    <option value="Rambla">Rambla</option>
+    <option value="Ronda">Ronda</option>
+    <option value="Senda">Senda</option>
+    <option value="Subida">Subida</option>
+    <option value="Torrente">Torrente</option>
+    <option value="Travesia">Travesia</option>
+    <option value="Urbanizacion">Urbanizacion</option>
+  </select>
+  <div>
+    <input maxlength="50" placeholder=" " type="text" name="street_address" style="" data-moz-autofill-type="address-streetname">
+    <label>Nombre de la vía</label>
+  </div>
+  <div>
+    <div>
+      <input maxlength="5" placeholder=" " type="text" inputmode="numeric" name="street_number" style="" data-moz-autofill-type="address-housenumber">
+      <label>Número</label>
+    </div>
+    <div>
+      <input id="without_number" type="checkbox" name="without_number">
+      <label for="without_number">s/n</label>
+    </div>
+    <div>
+      <input maxlength="2" placeholder=" " type="text" name="building" inputmode="numeric" style="" data-moz-autofill-type="building">
+      <label>Bloque/Edificio</label>
+    </div>
+  </div>
+  <div>
+    <div>
+      <input maxlength="3" placeholder=" " type="text" name="stairs" style="" data-moz-autofill-type="stair">
+      <label>Escalera</label>
+    </div>
+    <div>
+      <input maxlength="4" placeholder=" " type="text" inputmode="numeric" name="floor" style="" data-moz-autofill-type="floor">
+      <label>Piso</label>
+    </div>
+    <div>
+      <input maxlength="3" placeholder=" " type="text" name="door" style="" data-moz-autofill-type="apartment">
+      <label>Puerta</label>
+    </div>
+  </div>
+  <div>
+    <input maxlength="27" placeholder=" " type="text" name="additional_info" style="" data-moz-autofill-type="address-line2">
+    <label>Información adicional</label>
+  </div>
+  <select style="" data-moz-autofill-type="country">
+    <option disabled="">País</option>
+    <option value="[object Object]">ESPAÑA</option>
+    <option value="[object Object]">PORTUGAL</option>
+  </select>
+  <select style="" data-moz-autofill-type="address-level1">
+    <option disabled="">Provincia</option>
+    <option value="[object Object]">A CORUÑA</option>
+    <option value="[object Object]">ALBACETE</option>
+    <option value="[object Object]">ALICANTE / ALACANT</option>
+    <option value="[object Object]">ALMERÍA</option>
+    <option value="[object Object]">ARABA / ÁLAVA</option>
+    <option value="[object Object]">ASTURIAS</option>
+    <option value="[object Object]">ÁVILA</option>
+    <option value="[object Object]">BADAJOZ</option>
+    <option value="[object Object]">BARCELONA</option>
+    <option value="[object Object]">BIZKAIA</option>
+    <option value="[object Object]">BURGOS</option>
+    <option value="[object Object]">CÁCERES</option>
+    <option value="[object Object]">CÁDIZ</option>
+    <option value="[object Object]">CANTABRIA</option>
+    <option value="[object Object]">CASTELLÓN / CASTELLÓ</option>
+    <option value="[object Object]">CEUTA</option>
+    <option value="[object Object]">CIUDAD REAL</option>
+    <option value="[object Object]">CÓRDOBA</option>
+    <option value="[object Object]">CUENCA</option>
+    <option value="[object Object]">GIPUZKOA</option>
+    <option value="[object Object]">GIRONA</option>
+    <option value="[object Object]">GRANADA</option>
+    <option value="[object Object]">GUADALAJARA</option>
+    <option value="[object Object]">HUELVA</option>
+    <option value="[object Object]">HUESCA</option>
+    <option value="[object Object]">ISLAS BALEARES / ILLES BALEARS</option>
+    <option value="[object Object]">JAÉN</option>
+    <option value="[object Object]">LA RIOJA</option>
+    <option value="[object Object]">LAS PALMAS</option>
+    <option value="[object Object]">LEÓN</option>
+    <option value="[object Object]">LLEIDA</option>
+    <option value="[object Object]">LUGO</option>
+    <option value="[object Object]">MADRID</option>
+    <option value="[object Object]">MÁLAGA</option>
+    <option value="[object Object]">MELILLA</option>
+    <option value="[object Object]">MURCIA</option>
+    <option value="[object Object]">NAVARRA</option>
+    <option value="[object Object]">OURENSE</option>
+    <option value="[object Object]">PALENCIA</option>
+    <option value="[object Object]">PONTEVEDRA</option>
+    <option value="[object Object]">SALAMANCA</option>
+    <option value="[object Object]">SANTA CRUZ DE TENERIFE</option>
+    <option value="[object Object]">SEGOVIA</option>
+    <option value="[object Object]">SEVILLA</option>
+    <option value="[object Object]">SORIA</option>
+    <option value="[object Object]">TARRAGONA</option>
+    <option value="[object Object]">TERUEL</option>
+    <option value="[object Object]">TOLEDO</option>
+    <option value="[object Object]">VALENCIA / VALÈNCIA</option>
+    <option value="[object Object]">VALLADOLID</option>
+    <option value="[object Object]">ZAMORA</option>
+    <option value="[object Object]">ZARAGOZA</option>
+  </select>
+  <div>
+    <input placeholder=" " type="text" inputmode="numeric" name="postal_code" maxlength="5" style="" data-moz-autofill-type="postal-code">
+    <label>Código postal</label>
+  </div>
+  <div>
+    <input placeholder=" " type="text" name="address_locality" style="">
+    <label>Población</label>
+  </div>
+  <p>Persona de contacto</p>
+  <div>
+    <input maxlength="41" type="text" placeholder=" " name="given_name" style="" data-moz-autofill-type="given-name">
+    <label>Nombre</label>
+  </div>
+  <div>
+    <input maxlength="41" type="text" placeholder=" " name="family_name" style="" data-moz-autofill-type="family-name">
+    <label>Primer apellido</label>
+  </div>
+  <div>
+    <input maxlength="41" type="text" placeholder=" " name="second_family_name" style="" data-moz-autofill-type="additional-name">
+    <label>Segundo apellido (opcional)</label>
+  </div>
+  <div>
+    <input maxlength="14" type="tel" inputmode="tel" placeholder=" " name="telephone_number" style="" data-moz-autofill-type="tel">
+    <label>Teléfono</label>
+  </div>
+</form>
+</fieldset>
+
+
+
+
+</body></html>

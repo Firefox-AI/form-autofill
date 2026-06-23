@@ -1,0 +1,821 @@
+<html dir="ltr" lang="de__ZVAB"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Tue, 09 Jun 2020 13:34:44 GMT"><link rel="original" href="https://www.zvab.com/servlet/CCManagementPL">
+      
+  
+      
+
+          
+
+  
+
+    
+                
+        
+    
+    
+    
+    
+    
+    
+
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  
+
+      <link rel="stylesheet" href="resources/DE_B378b/1.css" data-original-href="https://static.prod.abebookscdn.com/cdn/zvab/docs/CSS/zvab-ecf866d4f7.css">
+  
+  
+    
+  
+  
+
+      
+    
+    
+    
+
+              
+
+  
+  
+
+  
+  
+  <meta name="dcterms.audience" content="global">
+
+        <meta name="dcterms.rightsHolder" content="1996 - 2020 ZVAB.com">
+  <meta name="format-detection" content="telephone=no">
+
+  
+
+      <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+  
+  
+  
+  
+
+  
+
+
+      <title>Kreditkartenverwaltung</title>
+  
+        
+ 
+  
+      <link rel="stylesheet" href="resources/DE_B378b/2.css" type="text/css" media="all" data-original-href="https://static.prod.abebookscdn.com/cdn/zvab/docs/CSS/Servlets/checkout.css?v=">
+  
+  
+
+</head>
+<body>
+    
+    
+    
+
+  
+  <div id="abe-gdpr"><div>Wir <a href="https://www.zvab.com/unternehmen/datenschutzerklaerung.shtml">verwenden Cookies</a>, um unsere Dienste zu verbessern. Wenn Sie die ZVAB-Webseiten weiterhin nutzen, stimmen Sie der Verwendung von Cookies zu.<a class="gdpr-close"><img src="resources/DE_B378b/3.png" data-original-src="https://www.zvab.com/common/includes/images/icon_close.png"></a></div></div><div id="wrapper">
+        <header role="banner" class="locale-zvab">
+      <div id="abe-header">
+        <div class="top-nav">
+          <div class="wrapper cf">
+            <a id="logo" href="https://www.zvab.com/?cm_sp=TopNav-_-servlet-_-Logo" title="ZVAB Startseite">
+              <span class="sr-only">zvab.com <small>Zentrales Verzeichnis Antiquarischer Bücher</small></span>
+            </a>
+
+           <div id="account-nav" class="cf">
+                 <a id="sign-off" class="hidden-xs nav-de" href="https://www.zvab.com/servlet/SignOffPL?ph=2">Logout</a><a id="my-account" class="visible nav-de" href="https://www.zvab.com/servlet/MembersMenuPL?cm_sp=TopNav-_-servlet-_-MMM">Nutzerkonto</a><a id="basket" class="nav-de" href="https://www.zvab.com/servlet/ShopBasketPL?cm_sp=TopNav-_-servlet-_-SB"><span class="deftext">Warenkorb</span><span class="basket-icon">&nbsp;</span><span id="bskc" class="bs-count">1</span></a><a id="help" class="hidden-xs nav-de" href="http://kaeuferhilfe.zvab.com/?cm_sp=TopNav-_-servlet-_-Help">Hilfe</a>       </div>
+             </div>
+       </div>
+       <div id="main-navigation">
+                  <div class="wrapper">
+           <nav class="cf nst-component nst-manual-init nst-global">
+             <button id="mobile-menu" aria-controls="nav-mobile-menu" aria-expanded="false" type="button" class="nst-toggle">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="toggle-text">Menü</span>
+             </button>
+                                     <div id="header-searchbox-container-m" class="gnav-searchbox-container-m">
+               <form id="header-searchbox-form-m" method="post" action="https://www.zvab.com/servlet/SearchResults" name="nav-mobile-search">
+                 <input type="hidden" value="t" name="sts">
+                 <input type="hidden" id="cm-tag-m" name="cm_sp" value="SearchF-_-topnav-_-Results">
+                 <fieldset class="gnav-searchbox-m">
+                   <div class="gnav-searchbox-left-m">
+                     
+                         <div class="abeui-autosuggest" data-id="header-searchbox-input-m" data-name="kn" data-replace-id="header-searchbox-input-m" data-cm-id="cm-tag-m" data-cm-default="SearchF-_-topnav-_-Results" data-cm-selected="SearchF-_-TopNavISS-_-Results" data-class-name="gnav-searchbox-input-m" data-auto-submit="true" data-placeholder="Auf ZVAB suchen"><div><div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-1" aria-expanded="false" class="react-autosuggest__container"><input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-1" class="gnav-searchbox-input-m" id="header-searchbox-input-m" name="kn" placeholder="Auf ZVAB suchen" value="" style=""><div id="react-autowhatever-1" role="listbox" class="react-autosuggest__suggestions-container"></div></div><button id="header-searchbox-input-m-clear" type="button" class="far fa-times abeui-autosuggest-clear react-autosuggest-clear hidden"><span class="hidden" aria-hidden="true">Clear entry</span></button></div></div>
+                   </div>
+                   <div class="gnav-searchbox-right-m">
+                     <button id="header-searchbox-button-m" class="gnav-searchbox-button-m" type="submit" aria-label="Suchen"><span>Suchen</span></button>
+                   </div>
+                 </fieldset>
+               </form>
+             </div>
+           
+             <div class="nav-bar cf nst-content">
+               <div class="nav-wrapper s-toggle" id="nav-mobile-menu">
+                 <div id="global-nav-links">
+                                        <a class="visible-xs-block mobile-nav-bg" id="mobile-menu-account" href="https://www.zvab.com/servlet/MembersMenuPL?cm_sp=TopNav-_-servlet-_-MMM">Nutzerkonto</a>
+                   
+                                        <a class="visible-xs-block mobile-nav-bg" id="mobile-menu-orders" href="https://www.zvab.com/servlet/BuyerOrderTrackPL">• Meine Bestellungen</a>
+                   
+                                                               <a class="visible-xs-block mobile-nav-bg" id="mobile-menu-signon" href="https://www.zvab.com/servlet/SignOffPL?ph=2">• Logout</a>
+                                                           <a class="search-entry" title="Suchen Sie in Millionen von Artikeln" href="https://www.zvab.com/servlet/SearchEntry?cm_sp=TopNav-_-servlet-_-Advs">Detailsuche</a>
+                   <a class="collections-link" title="Stöbern Sie nach Büchern, Kunst &amp; Sammlerstücken" href="https://www.zvab.com/buecher-finden/?cm_sp=TopNav-_-servlet-_-Collections">Sammlungen</a>
+                   <a title="Entdecken Sie antiquarische und seltene Bücher" href="https://www.zvab.com/buecher-sammeln/?cm_sp=TopNav-_-servlet-_-RBR">Bücher sammeln</a>
+
+                   <a id="hdr-nbc" title="" href="https://www.zvab.com/sammlerstuecke/?cm_sp=TopNav-_-servlet-_-NBC">Kunst &amp; Sammlerstücke</a>
+
+                                    </div>
+
+                 <div id="sub-links" class="sub">
+                                                                                               <a id="hdr-sellers" title="Suchen Sie nach ZVAB-Antiquaren" href="https://www.zvab.com/antiquariate/?cm_sp=TopNav-_-servlet-_-Stores">Antiquariate finden</a>
+
+                   <a id="hdr-sell" title="Melden Sie sich als Verkäufer an" href="https://www.zvab.com/buecher-verkaufen.shtml?cm_sp=TopNav-_-servlet-_-Sell">Verkäufer werden</a>
+
+                                        <a class="visible-xs-block nav-de" id="mobile-menu-help" href="http://kaeuferhilfe.zvab.com/?cm_sp=TopNav-_-servlet-_-Help?cm_sp=TopNav-_-servlet-_-Help">Hilfe</a>
+                   
+                   <a class="visible-xs-block text-center mobile-close nst-toggle" id="mobile-menu-close" role="button" aria-controls="nav-mobile-menu" aria-expanded="true"><span>SCHLIESSEN</span></a>
+                 </div>
+               </div>
+             </div>
+           </nav>
+         </div>
+                </div>
+
+                  <div class="gnav-searchbox-container">
+            <div class="wrapper">
+              <form id="header-searchbox-form" action="https://www.zvab.com/servlet/SearchResults" method="post" name="quickSearch_B" role="search">
+                <input type="hidden" id="cm-tag" name="cm_sp" value="SearchF-_-topnav-_-Results">
+                <input type="hidden" name="sts" value="t">
+                                <fieldset class="gnav-searchbox">
+                  <div class="gnav-searchbox-left">
+                    <label class="gnav-searchbox-label" for="header-searchbox-input">Suche nach</label>
+                    <div class="gnav-searchbox-field">
+                      
+                      <div class="abeui-autosuggest" data-id="header-searchbox-input" data-name="kn" data-replace-id="header-searchbox-input" data-cm-id="cm-tag" data-cm-default="SearchF-_-topnav-_-Results" data-cm-selected="SearchF-_-TopNavISS-_-Results" data-class-name="gnav-searchbox-input" data-auto-submit="true" data-placeholder="Suche nach Stichwort, Titel, Autor oder ISBN"><div><div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-1" aria-expanded="false" class="react-autosuggest__container"><input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-1" class="gnav-searchbox-input" id="header-searchbox-input" name="kn" placeholder="Suche nach Stichwort, Titel, Autor oder ISBN" value="" style=""><div id="react-autowhatever-1" role="listbox" class="react-autosuggest__suggestions-container"></div></div><button id="header-searchbox-input-clear" type="button" class="far fa-times abeui-autosuggest-clear react-autosuggest-clear hidden"><span class="hidden" aria-hidden="true">Clear entry</span></button></div></div>
+                    </div>
+                    <div class="gnav-searchbox-right">
+                      <button id="header-searchbox-button" class="gnav-searchbox-button" type="submit"><span>Suchen</span></button>
+                      <a id="header-searchbox-advanced" class="gnav-searchbox-advanced link-cta" href="https://www.zvab.com/servlet/SearchEntry" title="Suchen Sie in Millionen von Artikeln">Detailsuche</a>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+              </div>
+    </header>
+<div id="abe-content" role="main" class="cf">
+   
+  
+
+
+
+
+<div id="main">
+      
+    
+
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 mt-lg">
+        <form class="form-horizontal" id="credit-card-form" action="https://www.zvab.com/servlet/CCManagement" autocomplete="off" method="post" data-fathom="form">
+          <input type="hidden" name="creditcardid" value="">
+          <input type="hidden" name="csrfAuthToken" value="cQ9UT29zHfGbNvek8ENVCYLiB0sftZ2sUrkBhhLpIlE=">
+
+          <fieldset>
+                          <legend class="legend-primary">Kreditkarteninformationen</legend>
+            
+
+            <div class="form-group">
+              <div class="col-sm-5">
+                <label for="email" class="required">Kreditkarte</label>
+                <select class="form-control" id="creditcard-select" name="creditcardselect" data-fathom="cc-type" style="" data-moz-autofill-type="cc-type">
+                                      <option value="noselection">Kreditkarte auswählen:</option>
+                  
+                                      <option value="New-01-0">Neue hinzufügen:  EuroCard/MasterCard</option>
+                                      <option value="New-02-0">Neue hinzufügen:  Visa</option>
+                                      <option value="New-03-0">Neue hinzufügen:  American Express</option>
+                                      <option value="New-23-0">Neue hinzufügen:  Carte Bleue</option>
+                                  </select>
+                <button type="submit" id="creditcard-submit" name="creditcardsubmit" value="Submit" style="display: none;">Submit</button>
+              </div>
+            </div>
+            <input type="hidden" value="0" name="readonly">
+            <input type="hidden" value="0" name="default">
+            <input type="hidden" value="0" name="isSelectedCC">
+
+            <input type="hidden" id="userdefinedname" name="userdefinedname" maxlength="80" value="">
+
+            <div class="panel col-sm-6 mt-md mb-0" style="border:1px solid #b8b9b9; background: #FAFAFA;">
+              <div class="panel-body p-md">
+
+                                  <div class="form-group">
+                    <div class="col-sm-10">
+                      <label class="required" for="card-number">Kartennummer:</label>
+                      <input class="form-control" type="number" maxlength="25" id="card-number" name="creditcardnumber" value="" data-fathom="cc-number" style=""
+                      data-moz-autofill-type="cc-number">
+                    </div>
+                  </div>
+                
+                <fieldset>
+                  <legend class="required mt-sm">Gültigkeitsdatum:</legend>
+
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <select class="form-control form-control-inline" aria-label="Monat:" name="expirymonth" id="expirymonth" aria-required="true" data-fathom="cc-exp-month" style="" data-moz-autofill-type="cc-exp-month">
+                                                  <option value="01">01</option>
+                                                  <option value="02">02</option>
+                                                  <option value="03">03</option>
+                                                  <option value="04">04</option>
+                                                  <option value="05">05</option>
+                                                  <option value="06">06</option>
+                                                  <option value="07">07</option>
+                                                  <option value="08">08</option>
+                                                  <option value="09">09</option>
+                                                  <option value="10">10</option>
+                                                  <option value="11">11</option>
+                                                  <option value="12">12</option>
+                                              </select>
+
+                      <select class="form-control form-control-inline" aria-label="Jahr:" name="expiryyear" id="expiryyear" aria-required="true" data-fathom="cc-exp-year" style="" data-moz-autofill-type="cc-exp-year">
+                                                  <option value="2020">2020</option>
+                                                  <option value="2021">2021</option>
+                                                  <option value="2022">2022</option>
+                                                  <option value="2023">2023</option>
+                                                  <option value="2024">2024</option>
+                                                  <option value="2025">2025</option>
+                                                  <option value="2026">2026</option>
+                                                  <option value="2027">2027</option>
+                                                  <option value="2028">2028</option>
+                                                  <option value="2029">2029</option>
+                                                  <option value="2030">2030</option>
+                                                  <option value="2031">2031</option>
+                                                  <option value="2032">2032</option>
+                                                  <option value="2033">2033</option>
+                                                  <option value="2034">2034</option>
+                                                  <option value="2035">2035</option>
+                                                  <option value="2036">2036</option>
+                                                  <option value="2037">2037</option>
+                                                  <option value="2038">2038</option>
+                                                  <option value="2039">2039</option>
+                                              </select>
+                    </div>
+                  </div>
+                </fieldset>
+
+
+                                  <div class="form-group">
+                    <div class="col-sm-10">
+                      <label class="required" for="cardholder-name">Karteninhaber</label> 
+                      <input class="form-control" type="text" maxlength="50" id="cardholder-name" name="nameoncard" value="" data-fathom="cc-name" style="" data-moz-autofill-type="cc-name">
+                    </div>
+                  </div>
+                
+
+                                                <div class="checkbox">
+                  <label>
+                    <input id="preferred-payment" type="checkbox" name="defaultpayment"> Als bevorzugte Zahlungsmethode speichern
+                  </label>
+                </div>
+              </div>
+            </div>
+
+          </fieldset>
+          <fieldset class="mt-lg">
+            <legend class="legend-primary">Rechnungsadresse des Karteninhabers</legend>
+            <div class="form-group">
+              <div class="col-sm-5 mt-md">
+                <label for="address-select">Rechnungsadresse des Karteninhabers auswählen:</label>
+                <select class="form-control" id="address-select" name="address" aria-required="true" style="">
+                                      <option value="0" selected="">
+                                              Neue Adresse
+                                          </option>
+                                  </select>
+                <input type="hidden" name="addressid" value="0">
+                <button type="submit" id="address-submit" name="addresssubmit" value="Submit" style="display: none;">Submit</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-5">
+                <label class="required" for="name">Vor- und Zuname:</label>
+                <input class="form-control" type="text" id="name" name="firstandlastname" maxlength="200" value="" aria-required="true" style="" data-moz-autofill-type="name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-5">
+                <label class="required" for="address1">Adressfeld 1:</label>
+                <input class="form-control" type="text" id="address1" name="address1" maxlength="50" value="" placeholder="Straße, Postfach, zu Händen" aria-required="true" style="" data-moz-autofill-type="address-line1">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-5">
+                <label for="address2">Adressfeld 2:</label>
+                <input class="form-control" type="text" id="address2" name="address2" maxlength="50" value="" placeholder="Wohnung, Etage, Zimmernummer usw." style="" data-moz-autofill-type="address-line2">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-3">
+                <label class="required" for="city">Stadt:</label>
+                <input class="form-control" type="text" id="city" name="city" maxlength="50" value="" aria-required="true" style="" data-moz-autofill-type="address-level2">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-3">
+                <label class="required" for="country">Land:</label>
+                <select class="form-control" id="country-select" name="countryisocode" aria-required="true" style="" data-moz-autofill-type="country-name">
+                  <option value=""></option>
+                                      <option value="AFG">Afghanistan</option>
+                                      <option value="EGY">Ägypten</option>
+                                      <option value="ALB">Albanien</option>
+                                      <option value="DZA">Algerien</option>
+                                      <option value="ASM">Amerikanisch Samoa</option>
+                                      <option value="AND">Andorra</option>
+                                      <option value="AGO">Angola</option>
+                                      <option value="AIA">Anguilla</option>
+                                      <option value="ATA">Antarktis</option>
+                                      <option value="ATG">Antigua und Barbuda</option>
+                                      <option value="GNQ">Äquatorial-Guinea</option>
+                                      <option value="ARG">Argentinien</option>
+                                      <option value="ARM">Armenien</option>
+                                      <option value="ABW">Aruba</option>
+                                      <option value="AZE">Aserbaidschan</option>
+                                      <option value="ETH">Äthiopien</option>
+                                      <option value="AUS">Australien</option>
+                                      <option value="BHS">Bahamas</option>
+                                      <option value="BHR">Bahrain</option>
+                                      <option value="BGD">Bangladesch</option>
+                                      <option value="BRB">Barbados</option>
+                                      <option value="BEL">Belgien</option>
+                                      <option value="BLZ">Belize</option>
+                                      <option value="BEN">Benin</option>
+                                      <option value="BMU">Bermuda</option>
+                                      <option value="BTN">Bhutan</option>
+                                      <option value="BOL">Bolivien</option>
+                                      <option value="BIH">Bosnien-Herzegowina</option>
+                                      <option value="BWA">Botswana</option>
+                                      <option value="BVT">Bouvetinsel</option>
+                                      <option value="BRA">Brasilien</option>
+                                      <option value="IOT">Britisches Territorium im indischen Ozean</option>
+                                      <option value="VGB">Britische Virgin-Inseln</option>
+                                      <option value="BRN">Brunei Darussalam</option>
+                                      <option value="BGR">Bulgarien</option>
+                                      <option value="BFA">Burkina Faso</option>
+                                      <option value="BDI">Burundi</option>
+                                      <option value="CPV">Cape Verde</option>
+                                      <option value="CHL">Chile</option>
+                                      <option value="CHN">China</option>
+                                      <option value="CCK">Cocosinseln</option>
+                                      <option value="COK">Cook-Inseln</option>
+                                      <option value="CRI">Costa Rica</option>
+                                      <option value="DNK">Dänemark</option>
+                                      <option value="COD">Democratic Republic of the Congo</option>
+                                      <option value="DEU">Deutschland</option>
+                                      <option value="DJI">Djibouti</option>
+                                      <option value="DMA">Dominica</option>
+                                      <option value="DOM">Dominikanische Republik</option>
+                                      <option value="CIV">Elfenbeinküste</option>
+                                      <option value="SLV">El Salvador</option>
+                                      <option value="ECU">Equador</option>
+                                      <option value="ERI">Eritrea</option>
+                                      <option value="EST">Estland</option>
+                                      <option value="FLK">Falkland Inseln</option>
+                                      <option value="FRO">Färöer Inseln</option>
+                                      <option value="FJI">Fidschi</option>
+                                      <option value="FIN">Finnland</option>
+                                      <option value="FRA">Frankreich</option>
+                                      <option value="ATF">Französische Südgebiete</option>
+                                      <option value="GUF">Französisch-Guyana</option>
+                                      <option value="PYF">Französisch-Polynesien</option>
+                                      <option value="GAB">Gabun</option>
+                                      <option value="GMB">Gambia</option>
+                                      <option value="GEO">Georgien</option>
+                                      <option value="GHA">Ghana</option>
+                                      <option value="GIB">Gibraltar</option>
+                                      <option value="GRD">Grenada</option>
+                                      <option value="GRC">Griechenland</option>
+                                      <option value="GRL">Grönland</option>
+                                      <option value="GLP">Guadeloupe</option>
+                                      <option value="GUM">Guam</option>
+                                      <option value="GTM">Guatemala</option>
+                                      <option value="GIN">Guinea</option>
+                                      <option value="GNB">Guinea-Bissau</option>
+                                      <option value="GUY">Guyana</option>
+                                      <option value="HTI">Haiti</option>
+                                      <option value="HMD">Heard und McDonald Islands</option>
+                                      <option value="HND">Honduras</option>
+                                      <option value="HKG">Hongkong</option>
+                                      <option value="IND">Indien</option>
+                                      <option value="IDN">Indonesien</option>
+                                      <option value="IRQ">Irak</option>
+                                      <option value="IRL">Irland</option>
+                                      <option value="ISL">Island</option>
+                                      <option value="ISR">Israel</option>
+                                      <option value="ITA">Italien</option>
+                                      <option value="JAM">Jamaika</option>
+                                      <option value="JPN">Japan</option>
+                                      <option value="JOR">Jordanien</option>
+                                      <option value="CYM">Kaimaninseln</option>
+                                      <option value="KHM">Kambodscha</option>
+                                      <option value="CMR">Kamerun</option>
+                                      <option value="CAN">Kanada</option>
+                                      <option value="KAZ">Kasachstan</option>
+                                      <option value="QAT">Katar</option>
+                                      <option value="KEN">Kenia</option>
+                                      <option value="KGZ">Kirgistan</option>
+                                      <option value="KIR">Kiribati</option>
+                                      <option value="COL">Kolumbien</option>
+                                      <option value="COM">Komoren</option>
+                                      <option value="COG">Kongo</option>
+                                      <option value="HRV">Kroatien</option>
+                                      <option value="KWT">Kuwait</option>
+                                      <option value="LAO">Laos</option>
+                                      <option value="LSO">Lesotho</option>
+                                      <option value="LVA">Lettland</option>
+                                      <option value="LBN">Libanon</option>
+                                      <option value="LBR">Liberia</option>
+                                      <option value="LBY">Libyen</option>
+                                      <option value="LIE">Liechtenstein</option>
+                                      <option value="LTU">Litauen</option>
+                                      <option value="LUX">Luxemburg</option>
+                                      <option value="MAC">Macau</option>
+                                      <option value="MDG">Madagaskar</option>
+                                      <option value="MWI">Malawi</option>
+                                      <option value="MYS">Malaysia</option>
+                                      <option value="MDV">Malediven</option>
+                                      <option value="MLI">Mali</option>
+                                      <option value="MLT">Malta</option>
+                                      <option value="MAR">Marokko</option>
+                                      <option value="MHL">Marshall-Inseln</option>
+                                      <option value="MTQ">Martinique</option>
+                                      <option value="MRT">Mauretanien</option>
+                                      <option value="MUS">Mauritius</option>
+                                      <option value="MYT">Mayotte</option>
+                                      <option value="MKD">Mazedonien</option>
+                                      <option value="MEX">Mexiko</option>
+                                      <option value="FSM">Mikronesien</option>
+                                      <option value="MDA">Moldawien</option>
+                                      <option value="MCO">Monaco</option>
+                                      <option value="MNG">Mongolei</option>
+                                      <option value="MNE">Montenegro</option>
+                                      <option value="MSR">Montserrat</option>
+                                      <option value="MOZ">Mozambique</option>
+                                      <option value="NAM">Namibia</option>
+                                      <option value="NRU">Nauru</option>
+                                      <option value="NPL">Nepal</option>
+                                      <option value="NCL">Neu-Kaledonien</option>
+                                      <option value="NZL">Neuseeland</option>
+                                      <option value="NIC">Nicaragua</option>
+                                      <option value="NLD">Niederlande</option>
+                                      <option value="NER">Niger</option>
+                                      <option value="NGA">Nigeria</option>
+                                      <option value="NIU">Niue</option>
+                                      <option value="MNP">Nördliche Marianen</option>
+                                      <option value="NFK">Norfolkinsel</option>
+                                      <option value="NOR">Norwegen</option>
+                                      <option value="OMN">Oman</option>
+                                      <option value="AUT">Österreich</option>
+                                      <option value="PAK">Pakistan</option>
+                                      <option value="PLW">Palau</option>
+                                      <option value="PAN">Panama</option>
+                                      <option value="PNG">Papua-Neu-Guinea</option>
+                                      <option value="PRY">Paraguay</option>
+                                      <option value="PER">Peru</option>
+                                      <option value="PHL">Philippinen</option>
+                                      <option value="PCN">Pitcairn</option>
+                                      <option value="POL">Polen</option>
+                                      <option value="PRT">Portugal</option>
+                                      <option value="PRI">Puerto Rico</option>
+                                      <option value="CAF">Republik Zentralafrika</option>
+                                      <option value="REU">Réunion</option>
+                                      <option value="RWA">Ruanda</option>
+                                      <option value="ROM">Rumänien</option>
+                                      <option value="RUS">Russische Föderation</option>
+                                      <option value="LCA">Saint Lucia</option>
+                                      <option value="VCT">Saint Vincent und Grenadines</option>
+                                      <option value="ZMB">Sambia</option>
+                                      <option value="WSM">Samoa</option>
+                                      <option value="SMR">San Marino</option>
+                                      <option value="STP">Sao Tome und Principe</option>
+                                      <option value="SAU">Saudi-Arabien</option>
+                                      <option value="SWE">Schweden</option>
+                                      <option value="CHE">Schweiz</option>
+                                      <option value="SEN">Senegal</option>
+                                      <option value="SRB">Serbien</option>
+                                      <option value="SYC">Seychellen</option>
+                                      <option value="SLE">Sierra Leone</option>
+                                      <option value="ZWE">Simbabwe</option>
+                                      <option value="SGP">Singapur</option>
+                                      <option value="SVK">Slowakei</option>
+                                      <option value="SVN">Slowenien</option>
+                                      <option value="SLB">Solomoninseln</option>
+                                      <option value="SOM">Somalia</option>
+                                      <option value="ESP">Spanien</option>
+                                      <option value="LKA">Sri Lanka</option>
+                                      <option value="SHN">St. Helena</option>
+                                      <option value="KNA">St. Kitts und Nevis</option>
+                                      <option value="SPM">St. Pierre und Miquelon</option>
+                                      <option value="ZAF">Südafrika</option>
+                                      <option value="SGS">Südgeorgien und Süd-Sandwichinseln</option>
+                                      <option value="KOR">Südkorea</option>
+                                      <option value="SUR">Surinam</option>
+                                      <option value="SJM">Svalbard und Jan Mayen-Inseln</option>
+                                      <option value="SWZ">Swaziland</option>
+                                      <option value="TJK">Tadschikistan</option>
+                                      <option value="TWN">Taiwan</option>
+                                      <option value="TZA">Tansania</option>
+                                      <option value="THA">Thailand</option>
+                                      <option value="TGO">Togo</option>
+                                      <option value="TKL">Tokelau</option>
+                                      <option value="TON">Tonga</option>
+                                      <option value="TTO">Trinidad und Tobago</option>
+                                      <option value="TCD">Tschad</option>
+                                      <option value="CZE">Tschechien</option>
+                                      <option value="TUN">Tunesien</option>
+                                      <option value="TUR">Türkei</option>
+                                      <option value="TKM">Turkmenistan</option>
+                                      <option value="TCA">Turks und Caicosinseln</option>
+                                      <option value="TUV">Tuvalu</option>
+                                      <option value="UMI">Überseeterritorien der USA</option>
+                                      <option value="UGA">Uganda</option>
+                                      <option value="UKR">Ukraine</option>
+                                      <option value="HUN">Ungarn</option>
+                                      <option value="URY">Uruguay</option>
+                                      <option value="USA">USA</option>
+                                      <option value="UZB">Usbekistan</option>
+                                      <option value="VUT">Vanuatu</option>
+                                      <option value="VAT">Vatikanstadt</option>
+                                      <option value="VEN">Venezuela</option>
+                                      <option value="ARE">Vereinigte arabische Emirate</option>
+                                      <option value="GBR">Vereinigtes Königreich</option>
+                                      <option value="VNM">Vietnam</option>
+                                      <option value="VIR">Virgin-Inseln, USA</option>
+                                      <option value="WLF">Wallis und Futuna</option>
+                                      <option value="CXR">Weihnachtsinsel</option>
+                                      <option value="ESH">Westsahara</option>
+                                      <option value="YEM">Yemen</option>
+                                      <option value="CYP">Zypern</option>
+                                  </select>
+                <button type="submit" id="country-submit" name="countrysubmit" value="Submit" style="display: none;">Submit</button>
+              </div>
+            </div>
+
+                          <div id="province-form-group" class="form-group" style="display:none;">
+                <label class="required" for="province-select" id="province-label">Bundesland:</label>
+              </div>
+            
+            <div class="form-group">
+              <div class="col-sm-2">
+                <label class="required" for="zipcode">Postleitzahl:</label>
+                <input class="form-control" type="text" id="zipcode" name="zipcode" maxlength="15" value="" aria-required="true" data-fathom="zip" style="" data-moz-autofill-type="postal-code">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-2">
+                <label class="required" for="phone">Telefonnummer:</label>
+                <input class="form-control" type="text" id="phone" name="phone" maxlength="25" value="" aria-required="true" style="" data-moz-autofill-type="tel">
+              </div>
+            </div>
+
+            <div class="checkbox">
+              <div class="col-sm-7">
+                <label>
+                  <input id="preferred-shipping-address" type="checkbox" name="preferredshippingaddress"> Als bevorzugte Lieferanschrift speichern
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="row m-lg-tb">
+            <div class="col-xs-12">
+                              <button class="btn-abebooks btn-xs-block" type="submit" id="save-submit" name="savesubmit" value="savesubmit">Änderungen speichern</button>
+              
+              
+                          </div>
+          </div>
+
+          <div class="modal fade" id="confirm-delete-modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title">Zahlungsdetails löschen</h4>
+                </div>
+                <div class="modal-body">
+                  <p>
+                                          <b>Kartennummer:</b> 
+                                      </p>
+                  <p>Wenn Sie nicht möchten, dass diese Zahlungsdetails in Ihrer Liste der Zahlungsoptionen angezeigt werden, klicken Sie bitte auf ?Löschen bestätigen?.</p>
+                  <p>Das Löschen dieser Zahlungsdetails führt nicht zur Stornierung von unbearbeiteten Bestellungen, die mit diesen Zahlungsdetails aufgegeben wurden.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                  <button type="submit" class="btn phx-btn-primary" id="confirm-delete-submit" name="deletesubmit" value="deletesubmit">Löschen bestätigen</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+      
+      <div id="mobileBanner" style="display:none">
+      <b id="mobile-view">Mobile Ansicht:</b>
+      <a id="mv-on" class="r-toggle" href="https://www.zvab.com/"> Verfügbar</a>
+      <span id="mv-none">nicht verfügbar</span>
+      <button id="dismiss-toggle" type="button" class="close right" aria-hidden="true">×</button>
+    </div>
+    <div id="sslv3-banner" class="alert alert-danger" data-language="de" style="display:none"></div>
+
+</div></div>
+<footer>
+  <div id="footer-container">
+    <div>
+      <a class="to-top" href="#top">Zurück nach oben</a>
+    </div>
+
+            
+    <div id="site-links" class="cf">
+       <div id="footer-col1" class="footer-col nst-component nst-manual-init nst-global">
+         <h4 id="footer-shop-header" class="nst-toggle">Kaufen</h4>
+         <div class="nst-content">
+           <ul id="footer-shop-list" class="list-unstyled s-toggle">
+             <li><a href="https://www.zvab.com/servlet/SearchEntry?cm_sp=Ftr-_-servlet-_-shop1">Detailsuche</a></li>
+             <li><a href="https://www.zvab.com/sammlungen/?cm_sp=Ftr-_-servlet-_-Collections">Sammlungen</a></li>
+             <li><a href="https://www.zvab.com/buecher-finden/?cm_sp=Ftr-_-servlet-_-Browse">Zur klassischen Stöbern-Seite</a></li>
+             <li><a href="https://www.zvab.com/unternehmen/so-funktioniert-das-ZVAB.shtml?cm_sp=Ftr-_-servlet-_-shop2">So funktioniert das ZVAB</a></li>
+             <li><a href="https://www.zvab.com/servlet/MembersMainMenu?cm_sp=Ftr-_-servlet-_-shop3">Nutzerkonto</a></li>
+             <li><a href="https://www.zvab.com/mein-nutzerkonto/bestellungen/?cm_sp=Ftr-_-servlet-_-shop4">Meine Bestellungen</a></li>
+             <li><a href="https://www.zvab.com/servlet/ShopBasketPL?cm_sp=Ftr-_-servlet-_-shop5">Warenkorb</a></li>
+           </ul>
+         </div>
+       </div>
+
+       <div id="footer-col2" class="footer-col nst-component nst-manual-init nst-global">
+         <h4 id="footer-sell-header" class="nst-toggle">Anbieten</h4>
+         <div class="nst-content">
+           <ul id="footer-sell-list" class="list-unstyled s-toggle">
+             <li><a href="https://www.zvab.com/buecher-verkaufen.shtml?cm_sp=Ftr-_-servlet-_-sell1">Verkäufer werden</a></li>
+             <li><a href="https://www.zvab.com/partnerprogramm/?cm_sp=Ftr-_-servlet-_-sell2">Partnerprogramm</a></li>
+                        </ul>
+         </div>
+       </div>
+
+       <div id="footer-col3" class="footer-col nst-component nst-manual-init nst-global">
+         <h4 id="footer-about-header" class="nst-toggle">Über uns</h4>
+         <div class="nst-content">
+           <ul id="footer-about-list" class="list-unstyled s-toggle">
+             <li><a href="https://www.zvab.com/unternehmen/?cm_sp=Ftr-_-servlet-_-about1">Das ZVAB</a></li>
+             <li><a href="https://www.zvab.com/unternehmen/presse.shtml?cm_sp=Ftr-_-servlet-_-about2">Presse</a></li>
+                            <li><a href="https://www.zvab.com/unternehmen/impressum.shtml?cm_sp=Ftr-_-servlet-_-about3">Impressum</a></li>
+                          <li><a href="https://www.zvab.com/unternehmen/datenschutzerklaerung.shtml?cm_sp=Ftr-_-servlet-_-about4">Datenschutzerklärung</a></li>
+             <li><a href="https://www.zvab.com/unternehmen/datenschutzerklaerung.shtml?cm_sp=Ftr-_-servlet-_-about5#cookies">Cookies &amp; Internetwerbung</a></li>
+           </ul>
+         </div>
+       </div>
+
+       <div id="footer-col4" class="footer-col nst-component nst-manual-init nst-global">
+         <h4 id="footer-help-header" class="nst-toggle">Hilfe</h4>
+         <div class="nst-content">
+           <ul id="footer-help-list" class="list-unstyled s-toggle">
+             <li><a href="https://www.zvab.com/kundenservice/selbsthilfe/?cm_sp=Ftr-_-servlet-_-help1">Selbsthilfe</a></li>
+             <li><a href="https://www.zvab.com/kundenservice/?cm_sp=Ftr-_-servlet-_-help2">Kontakt</a></li>
+           </ul>
+         </div>
+       </div>
+
+      <div id="mobile-footer-companies" class="footer-col nst-component nst-manual-init nst-global">
+        <h4 id="mobile-footer-companies-header" class="nst-toggle">Weitere AbeBooks Unternehmen</h4>
+        <div class="nst-content">
+          <ul id="mobile-footer-companies-list" class="list-unstyled s-toggle">
+            <li><a href="https://www.abebooks.com/?cm_sp=Ftr-_-servlet-_-site1">AbeBooks.com</a></li>            <li><a href="https://www.abebooks.co.uk/?cm_sp=Ftr-_-servlet-_-site2">AbeBooks.co.uk</a></li>            <li><a href="https://www.abebooks.de/?cm_sp=Ftr-_-servlet-_-site3">AbeBooks.de</a></li>            <li><a href="https://www.abebooks.fr/?cm_sp=Ftr-_-servlet-_-site4">AbeBooks.fr</a></li>            <li><a href="https://www.abebooks.it/?cm_sp=Ftr-_-servlet-_-site5">AbeBooks.it</a></li>            <li><a href="https://www.abebooks.com/docs/ANZ/?cm_sp=Ftr-_-servlet-_-site6" title="AbeBooks.com: Australia &amp; New Zealand Books">AbeBooks Aus/NZ</a></li>
+            <li><a href="https://www.abebooks.com/Canada/?cm_sp=Ftr-_-servlet-_-site7">AbeBooks.ca</a></li>
+            <li><a href="https://www.iberlibro.com/?cm_sp=Ftr-_-servlet-_-site8">IberLibro.com</a></li>                        <li><a href="http://www.justbooks.de/?cm_sp=Ftr-_-servlet-_-companies1">Justbooks.de <span class="desc-block">Finde jedes Buch zum besten Preis</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="footer-col5" class="footer-col nst-component nst-manual-init nst-global">
+      <h4 id="footer-social-header" class="last nst-toggle">Dem ZVAB folgen</h4>
+        <div class="nst-content">
+          <ul id="footer-social-list" class="list-unstyled s-toggle">
+            <li><a href="https://www.facebook.com/abebooks" title="Fan werden bei Facebook">Facebook</a></li>
+            <li><a href="https://twitter.com/abebooks" title="Folgen bei Twitter">Twitter</a></li>
+                                                          </ul>
+        </div>
+      </div>
+    </div><!-- End Site Links -->
+
+
+
+            
+      <div class="text-center">
+        <img class="footer-logo" alt="" src="resources/DE_B378b/4.gif" data-original-src="https://static.prod.abebookscdn.com/cdn/zvab/images/header/footer-logo-zvab.gif" width="90">
+      </div>
+
+
+      <div class="footer-site-toggle">
+                  <a class="btn btn-sm btn-default" href="https://www.zvab.com/servlet/CCManagementPL?nomobile=true">Klassische Webseite</a>
+              </div>
+
+      <div id="footer-companies">
+        <ul id="footer-companies-list" class="list-unstyled list-inline">
+          <li><a href="https://www.abebooks.com/?cm_sp=Ftr-_-servlet-_-sites1">AbeBooks.com</a></li>          <li><a href="https://www.abebooks.co.uk/?cm_sp=Ftr-_-servlet-_-sites2">AbeBooks.co.uk</a></li>          <li><a href="https://www.abebooks.de/?cm_sp=Ftr-_-servlet-_-sites3">AbeBooks.de</a></li>          <li><a href="https://www.abebooks.fr/?cm_sp=Ftr-_-servlet-_-sites4">AbeBooks.fr</a></li>          <li><a href="https://www.abebooks.it/?cm_sp=Ftr-_-servlet-_-sites5">AbeBooks.it</a></li>          <li><a href="https://www.abebooks.com/docs/ANZ/?cm_sp=Ftr-_-servlet-_-sites6" title="AbeBooks.com: Australia &amp; New Zealand Books">AbeBooks Aus/NZ</a></li>
+          <li><a href="https://www.abebooks.com/Canada/?cm_sp=Ftr-_-servlet-_-sites7">AbeBooks.ca</a></li>
+          <li><a href="https://www.iberlibro.com/?cm_sp=Ftr-_-servlet-_-sites8">IberLibro.com</a></li>                  </ul>
+      </div>
+
+
+
+      <div id="footer-abebooks-subs">
+        <ul class="list-unstyled list-inline">
+          <li><a href="http://www.justbooks.de/?cm_sp=Ftr-_-servlet-_-companies1">Justbooks.de <span class="desc-block">Finde jedes Buch zum besten Preis</span></a></li>
+        </ul>
+      </div>
+
+
+
+
+  <div id="footer-legal" class="legal">
+     <small>
+       Die Nutzung dieser Seite ist durch Allgemeine Geschäftsbedingungen geregelt, welche Sie <a href="https://www.zvab.com/unternehmen/agb.shtml" title="hier">hier</a>&nbsp;einsehen können.
+       <br><br>
+       © 1996 - 2020 AbeBooks Inc. &amp; AbeBooks Europe GmbH, alle Rechte vorbehalten.
+           </small>
+  </div>
+
+</div>
+</footer>
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+<!-- SERVLET_SPECIFIC_JAVASCRIPT -->
+
+
+
+<!-- JS LIST -->
+
+
+
+
+
+
+
+
+    
+  
+<iframe src="resources/DE_B378b/5.html" name="notifications" data-original-src="https://www.zvab.com/notifications/" width="1px" height="1px"></iframe>
+
+  
+
+          
+              
+              
+      
+  <iframe src="resources/DE_B378b/6.html" name="pixels" style="width: 0px; height: 0px; border: 0px none;" data-original-src="javascript:false;ts=1591709363286"></iframe>
+
+
+
+
+
+
+
+
+    
+  
+
+    
+  
+
+
+
+
+<div id="notifications"><div id="this2" class="not-container level-info"><div class="msg-body"><p>Die Lieferzeiten für einige Artikel können länger als üblich sein. <a href="http://kaeuferhilfe.abebooks.de/2020/04/haufig-gestellte-fragen-zu-covid-19.html">Erfahren Sie mehr</a></p><p><a class="dismiss">Diesen Hinweis nicht mehr anzeigen.</a></p></div></div></div></body></html>

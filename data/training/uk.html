@@ -1,0 +1,2153 @@
+<html><head>
+<meta charset="utf-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 100px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!--pre id="outputArea" style="background: #FFFFEE; border 1px solid black; padding: 15px;"></pre-->
+
+<script>
+//addEventListener("focus", evt => { dump("FOCUS: " + evt.target.id + "\n"); }, true);
+</script>
+
+<!--
+<form id="meat" novalidate="novalidate">
+  <p><span>Pigs</span>Oink</p>
+  <div><div><p>
+    <label for="areaCode">Country Code</label>
+    <label for="areaCode2">Country Code2</label>
+    <p><span>Cows</span>Moo</p>
+  </p></div></div>
+  <div><input id="dog" type="hidden"></div>
+  <div><input id="horse"></div>
+</form-->
+
+<!--form id="meat2" novalidate="novalidate">
+  <div>
+    <div>
+      <h4>
+                              Contact Information
+                            </h4>
+      <div>
+        <label for="email">Email Address</label>
+        <input required="required" id="email" type="email">
+      </div>
+    </div>
+    <h4>Shipping Address</h4>
+    <div>
+      <label for="fullName">Full Name</label>
+      <input maxlength="30" required="required" id="fullName" type="text">
+    </div>
+    <div>
+      <div>
+        <label for="areaCode">Country Code</label>
+        <div>
+          <div>🇨🇦+1</div>
+          <input required="required" id="areaCode" readonly="readonly" type="text" aria-readonly="false" autocomplete="off">
+        </div>
+        <input type="hidden" value="[object Object]">
+      </div>
+      <div>
+        <label for="formPhone">Phone</label>
+        <input required="required" id="formPhone" type="tel">
+      </div>
+    </div>
+    <div>
+      <div>
+        <label for="streetAddress">Address Line 1 (House No., Building, Street)</label>
+        <input required="required" id="streetAddress" type="text">
+      </div>
+      <div>
+        <label for="landmarkAddress">Address Line 2</label>
+        <input id="landmarkAddress" type="text">
+      </div>
+      <div>
+        <label for="country">Country</label>
+        <div>
+          <div>Canada</div>
+          <input required="required" id="country" readonly="readonly" type="text" aria-readonly="false" autocomplete="off">
+        </div>
+        <input type="hidden" value="[object Object]">
+      </div>
+    </div>
+    <div>
+      <label for="pincode">PostalCode</label>
+      <input required="required" id="pincode" type="text">
+    </div>
+    <div>
+      <label for="town">City</label>
+      <input required="required" id="town" type="text">
+    </div>
+    <div>
+      <label for="stateProvince">State/Province</label>
+      <div>
+        <div>Newfoundland and Labrador</div>
+        <input required="required" id="stateProvince" readonly="readonly" type="text" aria-readonly="false" autocomplete="off">
+      </div>
+      <input type="hidden" value="[object Object]">
+    </div>
+  </div>
+</form-->
+
+<fieldset>
+<h3>asos.co.uk</h3>
+
+<form>
+  <p><span><span>First Name: </span></span><input id="fname-a" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name"></p>
+  <p>Last Name: <input id="lname-a" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name"></p>
+  <p>Email: <input id="email-a" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="email"></p>
+  <p>Street Lookup: <input id="street-Lookup" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-lookup"></p>
+  <button onclick="this.nextElementSibling.style.display = 'block'; event.preventDefault();">Enter Manually</button>
+  <div id="manual" style="display: none;">
+    <p>Street: <input id="street-b" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line1"></p>
+    <p>City: <input id="city-a" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2"><span></span></p>
+    <p>Postal Code: <input id="postalcode-a" autocomplete="postal-code" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code"></p>
+    <p>Unit: <input id="unit-a" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line2"></p>
+  </div>
+
+<button onclick="simplifyForm(this.parentNode)">Simplify</button>
+
+</form>
+</fieldset>
+
+<fieldset>
+<h3>currys.co.uk</h3>
+
+<div style="display: flex;">
+<form>
+  <p>First Name: <input id="fname-b" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name"></p>
+  <p>Last Name: <input id="lname-b" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name"></p>
+  <p>Address: <input id="address-b" autocomplete="shipping address-line1" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line1"></p>
+  <p>Organization: <input id="organization-b" autocomplete="shipping address-line1" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="organization"></p>
+  <p>City: <input id="city-b" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2"><span></span></p>
+  <p>Postal Code: <input id="postalcode-b" autocomplete="postal-code" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code"></p>
+</form>
+
+<pre>  &lt;p&gt;Address: &lt;input id="address-b" autocomplete="shipping address-line1"&gt;&lt;/p&gt;
+  &lt;p&gt;Organization: &lt;input id="organization-b" autocomplete="shipping address-line1"&gt;&lt;/p&gt;
+  &lt;p&gt;City: &lt;input id="city-b" autocomplete="shipping address-level2"&gt;&lt;/p&gt;
+</pre>
+
+</div>
+
+</fieldset>
+
+<fieldset>
+<h3>chichiclothing.com</h3>
+
+<div style="display: flex;">
+
+<form>
+  <p>First Name: <input id="fname-d" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name"></p>
+  <p>Last Name: <input id="lname-d" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name"></p>
+  <p>Address: <input id="address" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="street-address"></p>
+  <p>Country: <input id="country-d" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="country-name"></p>
+  <p style="position: absolute; left: -9999px;">Country: <input id="country-d2" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="country-name"><span></span></p>
+  <p>Postal Code: <input id="postalcode" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code"></p>
+</form>
+
+<pre>  &lt;p&gt;Country: &lt;input id="country"&gt;&lt;/p&gt;
+  &lt;p style="position: absolute; left: -9999px;"&gt;Country Code: &lt;input id="country-code"&gt;&lt;/p&gt;
+  &lt;p&gt;Postal Code: &lt;input id="postalcode"&gt;&lt;/p&gt;
+</pre>
+
+</div>
+
+</fieldset>
+
+<fieldset>
+<h3>argos.co.uk</h3>
+
+<div style="display: flex;">
+<form>
+  <p>First Name: <input id="fname-c" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name"></p>
+  <p>Last Name: <input id="lname-c" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name"></p>
+  <p><label for="c-address1">Street: </label><input id="c-address1" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-streetname"></p>
+  <p><label for="c-address2">House Number: </label><input id="c-address2" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-housenumber"></p>
+  <p>City: <input id="city-c" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2"><span></span></p>
+  <p>Postal Code: <input id="postalcode-c" autocomplete="postal-code" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code"></p>
+</form>
+
+<pre>  &lt;p&lt;label for="address1"&gt;Street: &lt;label&gt;&lt;input id="address1"&gt;&lt;/p&gt;
+  &lt;p&lt;label for="address2"&gt;House Number: &lt;label&gt;&lt;input id="address2"&gt;&lt;/p&gt;
+</pre>
+
+</div>
+
+</fieldset>
+
+<!--fieldset>
+
+<h3>argos.co.uk (version 2)</h3>
+
+<form>
+  <div>
+    <label id="email-email-label" for="email">Email address</label>
+    <input type="email" id="email" name="email" aria-describedby="email-email-label">
+  </div>
+  <div>
+    <label id="first-name-firstName-label" for="firstName">First name</label>
+    <input type="text" id="firstName" name="firstName" aria-describedby="first-name-firstName-label">
+  </div>
+  <div>
+    <label id="last-name-lastName-label" for="lastName">Last name</label>
+    <input type="text" id="lastName" name="lastName" aria-describedby="last-name-lastName-label">
+  </div>
+  <div>
+    <label id="phone-number-mobilePhone-label" for="mobilePhone">Mobile number</label>
+    <input type="tel" id="mobilePhone" name="mobilePhone" aria-describedby="mobilePhone-error-message">
+  </div>
+  <div>
+    <label id="address1-address1-label" for="address1">House number / name</label>
+    <input id="address1" name="address1" aria-describedby="address1-address1-label">
+  </div>
+  <div>
+    <label id="address2-address2-label" for="address2">Street / road</label>
+    <input id="address2" name="address2" aria-describedby="address2-address2-label">
+  </div>
+  <div>
+    <label id="city-city-label" for="city">Town / city</label>
+    <input id="city" name="city" aria-describedby="city-city-label">
+  </div>
+  <div>
+    <label id="county-county-label" for="county">County</label>
+    <input id="county" name="county" placeholder="Optional" aria-describedby="county-county-label">
+  </div>
+  <div>
+    <label id="postcode-postcode-label" for="postcode">Postcode</label>
+    <input id="postcode" name="postcode" aria-describedby="postcode-error-message">
+  </div>
+</form>
+</fieldset-->
+
+<!--form>
+        
+  <div id="checkout-contact-info-form">
+  
+    <div>
+    
+      <div>Contact</div>
+      
+      <div>
+        
+        <span>Already have an account?</span>
+        
+        <button type="button" id="trade:login:button" trade-btn-event-name="trade:login">
+          Log in
+        </button>
+      
+      </div>
+
+  
+    </div>
+
+    
+    <div id="trade_userInfo_form">
+        
+      <div>
+        <div>
+          <select>
+            <option value="93">Afghanistan (‫افغانستان‬‎) (+93)</option>
+            <option value="355">Albania (Shqipëri) (+355)</option>
+            <option value="213">Algeria (‫الجزائر‬‎) (+213)</option>
+            <option value="1">American Samoa (+1)</option>
+            <option value="376">Andorra (+376)</option>
+            <option value="244">Angola (+244)</option>
+            <option value="1">Anguilla (+1)</option>
+            <option value="1">Antigua and Barbuda (+1)</option>
+            <option value="54">Argentina (+54)</option>
+            <option value="374">Armenia (Հայաստան) (+374)</option>
+            <option value="297">Aruba (+297)</option>
+            <option value="61">Australia (+61)</option>
+            <option value="43">Austria (Österreich) (+43)</option>
+            <option value="994">Azerbaijan (Azərbaycan) (+994)</option>
+            <option value="1">Bahamas (+1)</option>
+            <option value="973">Bahrain (‫البحرين‬‎) (+973)</option>
+            <option value="880">Bangladesh (বাংলাদেশ) (+880)</option>
+            <option value="1">Barbados (+1)</option>
+            <option value="375">Belarus (Беларусь) (+375)</option>
+            <option value="32">Belgium (België) (+32)</option>
+            <option value="501">Belize (+501)</option>
+            <option value="229">Benin (Bénin) (+229)</option>
+            <option value="1">Bermuda (+1)</option>
+            <option value="975">Bhutan (འབྲུག) (+975)</option>
+            <option value="591">Bolivia (+591)</option>
+            <option value="387">Bosnia and Herzegovina (Босна и Херцеговина) (+387)</option>
+            <option value="267">Botswana (+267)</option>
+            <option value="55">Brazil (Brasil) (+55)</option>
+            <option value="246">British Indian Ocean Territory (+246)</option>
+            <option value="1">British Virgin Islands (+1)</option>
+            <option value="673">Brunei (+673)</option>
+            <option value="359">Bulgaria (България) (+359)</option>
+            <option value="226">Burkina Faso (+226)</option>
+            <option value="257">Burundi (Uburundi) (+257)</option>
+            <option value="855">Cambodia (កម្ពុជា) (+855)</option>
+            <option value="237">Cameroon (Cameroun) (+237)</option>
+            <option value="1">Canada (+1)</option>
+            <option value="238">Cape Verde (Kabu Verdi) (+238)</option>
+            <option value="599">Caribbean Netherlands (+599)</option>
+            <option value="1">Cayman Islands (+1)</option>
+            <option value="236">Central African Republic (République centrafricaine) (+236)</option>
+            <option value="235">Chad (Tchad) (+235)</option>
+            <option value="56">Chile (+56)</option>
+            <option value="86">China (中国) (+86)</option>
+            <option value="61">Christmas Island (+61)</option>
+            <option value="61">Cocos (Keeling) Islands (+61)</option>
+            <option value="57">Colombia (+57)</option>
+            <option value="269">Comoros (‫جزر القمر‬‎) (+269)</option>
+            <option value="243">Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo) (+243)</option>
+            <option value="242">Congo (Republic) (Congo-Brazzaville) (+242)</option>
+            <option value="682">Cook Islands (+682)</option>
+            <option value="506">Costa Rica (+506)</option>
+            <option value="225">Côte d’Ivoire (+225)</option>
+            <option value="385">Croatia (Hrvatska) (+385)</option>
+            <option value="53">Cuba (+53)</option>
+            <option value="599">Curaçao (+599)</option>
+            <option value="357">Cyprus (Κύπρος) (+357)</option>
+            <option value="420">Czech Republic (Česká republika) (+420)</option>
+            <option value="45">Denmark (Danmark) (+45)</option>
+            <option value="253">Djibouti (+253)</option>
+            <option value="1">Dominica (+1)</option>
+            <option value="1">Dominican Republic (República Dominicana) (+1)</option>
+            <option value="593">Ecuador (+593)</option>
+            <option value="20">Egypt (‫مصر‬‎) (+20)</option>
+            <option value="503">El Salvador (+503)</option>
+            <option value="240">Equatorial Guinea (Guinea Ecuatorial) (+240)</option>
+            <option value="291">Eritrea (+291)</option>
+            <option value="372">Estonia (Eesti) (+372)</option>
+            <option value="251">Ethiopia (+251)</option>
+            <option value="500">Falkland Islands (Islas Malvinas) (+500)</option>
+            <option value="298">Faroe Islands (Føroyar) (+298)</option>
+            <option value="679">Fiji (+679)</option>
+            <option value="358">Finland (Suomi) (+358)</option>
+            <option value="33">France (+33)</option>
+            <option value="594">French Guiana (Guyane française) (+594)</option>
+            <option value="689">French Polynesia (Polynésie française) (+689)</option>
+            <option value="241">Gabon (+241)</option>
+            <option value="220">Gambia (+220)</option>
+            <option value="995">Georgia (საქართველო) (+995)</option>
+            <option value="49">Germany (Deutschland) (+49)</option>
+            <option value="233">Ghana (Gaana) (+233)</option>
+            <option value="350">Gibraltar (+350)</option>
+            <option value="30">Greece (Ελλάδα) (+30)</option>
+            <option value="299">Greenland (Kalaallit Nunaat) (+299)</option>
+            <option value="1">Grenada (+1)</option>
+            <option value="590">Guadeloupe (+590)</option>
+            <option value="1">Guam (+1)</option>
+            <option value="502">Guatemala (+502)</option>
+            <option value="44">Guernsey (+44)</option>
+            <option value="224">Guinea (Guinée) (+224)</option>
+            <option value="245">Guinea-Bissau (Guiné Bissau) (+245)</option>
+            <option value="592">Guyana (+592)</option>
+            <option value="509">Haiti (+509)</option>
+            <option value="504">Honduras (+504)</option>
+            <option value="852">Hong Kong (香港) (+852)</option>
+            <option value="36">Hungary (Magyarország) (+36)</option>
+            <option value="354">Iceland (Ísland) (+354)</option>
+            <option value="91">India (भारत) (+91)</option>
+            <option value="62">Indonesia (+62)</option>
+            <option value="98">Iran (‫ایران‬‎) (+98)</option>
+            <option value="964">Iraq (‫العراق‬‎) (+964)</option>
+            <option value="353">Ireland (+353)</option>
+            <option value="44">Isle of Man (+44)</option>
+            <option value="972">Israel (‫ישראל‬‎) (+972)</option>
+            <option value="39">Italy (Italia) (+39)</option>
+            <option value="1">Jamaica (+1)</option>
+            <option value="81">Japan (日本) (+81)</option>
+            <option value="44">Jersey (+44)</option>
+            <option value="962">Jordan (‫الأردن‬‎) (+962)</option>
+            <option value="7">Kazakhstan (Казахстан) (+7)</option>
+            <option value="254">Kenya (+254)</option>
+            <option value="686">Kiribati (+686)</option>
+            <option value="383">Kosovo (+383)</option>
+            <option value="965">Kuwait (‫الكويت‬‎) (+965)</option>
+            <option value="996">Kyrgyzstan (Кыргызстан) (+996)</option>
+            <option value="856">Laos (ລາວ) (+856)</option>
+            <option value="371">Latvia (Latvija) (+371)</option>
+            <option value="961">Lebanon (‫لبنان‬‎) (+961)</option>
+            <option value="266">Lesotho (+266)</option>
+            <option value="231">Liberia (+231)</option>
+            <option value="218">Libya (‫ليبيا‬‎) (+218)</option>
+            <option value="423">Liechtenstein (+423)</option>
+            <option value="370">Lithuania (Lietuva) (+370)</option>
+            <option value="352">Luxembourg (+352)</option>
+            <option value="853">Macau (澳門) (+853)</option>
+            <option value="389">Macedonia (FYROM) (Македонија) (+389)</option>
+            <option value="261">Madagascar (Madagasikara) (+261)</option>
+            <option value="265">Malawi (+265)</option>
+            <option value="60">Malaysia (+60)</option>
+            <option value="960">Maldives (+960)</option>
+            <option value="223">Mali (+223)</option>
+            <option value="356">Malta (+356)</option>
+            <option value="692">Marshall Islands (+692)</option>
+            <option value="596">Martinique (+596)</option>
+            <option value="222">Mauritania (‫موريتانيا‬‎) (+222)</option>
+            <option value="230">Mauritius (Moris) (+230)</option>
+            <option value="262">Mayotte (+262)</option>
+            <option value="52">Mexico (México) (+52)</option>
+            <option value="691">Micronesia (+691)</option>
+            <option value="373">Moldova (Republica Moldova) (+373)</option>
+            <option value="377">Monaco (+377)</option>
+            <option value="976">Mongolia (Монгол) (+976)</option>
+            <option value="382">Montenegro (Crna Gora) (+382)</option>
+            <option value="1">Montserrat (+1)</option>
+            <option value="212">Morocco (‫المغرب‬‎) (+212)</option>
+            <option value="258">Mozambique (Moçambique) (+258)</option>
+            <option value="95">Myanmar (Burma) (မြန်မာ) (+95)</option>
+            <option value="264">Namibia (Namibië) (+264)</option>
+            <option value="674">Nauru (+674)</option>
+            <option value="977">Nepal (नेपाल) (+977)</option>
+            <option value="31">Netherlands (Nederland) (+31)</option>
+            <option value="687">New Caledonia (Nouvelle-Calédonie) (+687)</option>
+            <option value="64">New Zealand (+64)</option>
+            <option value="505">Nicaragua (+505)</option>
+            <option value="227">Niger (Nijar) (+227)</option>
+            <option value="234">Nigeria (+234)</option>
+            <option value="683">Niue (+683)</option>
+            <option value="672">Norfolk Island (+672)</option>
+            <option value="850">North Korea (조선 민주주의 인민 공화국) (+850)</option>
+            <option value="1">Northern Mariana Islands (+1)</option>
+            <option value="47">Norway (Norge) (+47)</option>
+            <option value="968">Oman (‫عُمان‬‎) (+968)</option>
+            <option value="92">Pakistan (‫پاکستان‬‎) (+92)</option>
+            <option value="680">Palau (+680)</option>
+            <option value="970">Palestine (‫فلسطين‬‎) (+970)</option>
+            <option value="507">Panama (Panamá) (+507)</option>
+            <option value="675">Papua New Guinea (+675)</option>
+            <option value="595">Paraguay (+595)</option>
+            <option value="51">Peru (Perú) (+51)</option>
+            <option value="63">Philippines (+63)</option>
+            <option value="48">Poland (Polska) (+48)</option>
+            <option value="351">Portugal (+351)</option>
+            <option value="1">Puerto Rico (+1)</option>
+            <option value="974">Qatar (‫قطر‬‎) (+974)</option>
+            <option value="262">Réunion (La Réunion) (+262)</option>
+            <option value="40">Romania (România) (+40)</option>
+            <option value="7">Russia (Россия) (+7)</option>
+            <option value="250">Rwanda (+250)</option>
+            <option value="590">Saint Barthélemy (+590)</option>
+            <option value="290">Saint Helena (+290)</option>
+            <option value="1">Saint Kitts and Nevis (+1)</option>
+            <option value="1">Saint Lucia (+1)</option>
+            <option value="590">Saint Martin (Saint-Martin (partie française)) (+590)</option>
+            <option value="508">Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon) (+508)</option>
+            <option value="1">Saint Vincent and the Grenadines (+1)</option>
+            <option value="685">Samoa (+685)</option>
+            <option value="378">San Marino (+378)</option>
+            <option value="239">São Tomé and Príncipe (São Tomé e Príncipe) (+239)</option>
+            <option value="966">Saudi Arabia (‫المملكة العربية السعودية‬‎) (+966)</option>
+            <option value="221">Senegal (Sénégal) (+221)</option>
+            <option value="381">Serbia (Србија) (+381)</option>
+            <option value="248">Seychelles (+248)</option>
+            <option value="232">Sierra Leone (+232)</option>
+            <option value="65">Singapore (+65)</option>
+            <option value="1">Sint Maarten (+1)</option>
+            <option value="421">Slovakia (Slovensko) (+421)</option>
+            <option value="386">Slovenia (Slovenija) (+386)</option>
+            <option value="677">Solomon Islands (+677)</option>
+            <option value="252">Somalia (Soomaaliya) (+252)</option>
+            <option value="27">South Africa (+27)</option>
+            <option value="82">South Korea (대한민국) (+82)</option>
+            <option value="211">South Sudan (‫جنوب السودان‬‎) (+211)</option>
+            <option value="34">Spain (España) (+34)</option>
+            <option value="94">Sri Lanka (ශ්‍රී ලංකාව) (+94)</option>
+            <option value="249">Sudan (‫السودان‬‎) (+249)</option>
+            <option value="597">Suriname (+597)</option>
+            <option value="47">Svalbard and Jan Mayen (+47)</option>
+            <option value="268">Swaziland (+268)</option>
+            <option value="46">Sweden (Sverige) (+46)</option>
+            <option value="41">Switzerland (Schweiz) (+41)</option>
+            <option value="963">Syria (‫سوريا‬‎) (+963)</option>
+            <option value="886">Taiwan (台灣) (+886)</option>
+            <option value="992">Tajikistan (+992)</option>
+            <option value="255">Tanzania (+255)</option>
+            <option value="66">Thailand (ไทย) (+66)</option>
+            <option value="670">Timor-Leste (+670)</option>
+            <option value="228">Togo (+228)</option>
+            <option value="690">Tokelau (+690)</option>
+            <option value="676">Tonga (+676)</option>
+            <option value="1">Trinidad and Tobago (+1)</option>
+            <option value="216">Tunisia (‫تونس‬‎) (+216)</option>
+            <option value="90">Turkey (Türkiye) (+90)</option>
+            <option value="993">Turkmenistan (+993)</option>
+            <option value="1">Turks and Caicos Islands (+1)</option>
+            <option value="688">Tuvalu (+688)</option>
+            <option value="1">U.S. Virgin Islands (+1)</option>
+            <option value="256">Uganda (+256)</option>
+            <option value="380">Ukraine (Україна) (+380)</option>
+            <option value="971">United Arab Emirates (‫الإمارات العربية المتحدة‬‎) (+971)</option>
+            <option value="44">United Kingdom (+44)</option>
+            <option value="1">United States (+1)</option>
+            <option value="598">Uruguay (+598)</option>
+            <option value="998">Uzbekistan (Oʻzbekiston) (+998)</option>
+            <option value="678">Vanuatu (+678)</option>
+            <option value="39">Vatican City (Città del Vaticano) (+39)</option>
+            <option value="58">Venezuela (+58)</option>
+            <option value="84">Vietnam (Việt Nam) (+84)</option>
+            <option value="681">Wallis and Futuna (Wallis-et-Futuna) (+681)</option>
+            <option value="212">Western Sahara (‫الصحراء الغربية‬‎) (+212)</option>
+            <option value="967">Yemen (‫اليمن‬‎) (+967)</option>
+            <option value="260">Zambia (+260)</option>
+            <option value="263">Zimbabwe (+263)</option>
+            <option value="358">Åland Islands (+358)</option>
+          </select>
+          <span>+1</span>
+        </div>
+        <div>
+          <input placeholder=" " type="text" id="userInfo_input" name="email" autocomplete="email" maxlength="64">
+          <span email-phone-i18n="input.email.placeholder">Email</span>
+        </div>
+      </div>
+        
+
+        
+      <div>
+
+    
+        <input type="checkbox" id="trade_checkout_subscription_checkbox" checked="true">
+    
+        <span>
+        Receive exclusive offers and marketing updates
+    </span>
+
+      </div>
+  
+    </div>
+
+
+  </div>
+        
+
+        
+        
+  <div>
+          
+    <span>Delivery</span>
+          
+    <div>
+            
+      <div>
+              
+        <input type="radio" name="checkout[deliveryMethod][handle]" value="shipping" id="form-border-box-radio-item-ship" checked="">
+              
+        <label for="form-border-box-radio-item-ship">Ship</label>
+              
+        <g id="delivery_method_ship">
+                    
+                    
+                    
+                </g>
+            
+      </div>
+            
+      <div>
+              
+        <input type="radio" name="checkout[deliveryMethod][handle]" value="eMap" id="form-border-box-radio-item-pick-up">
+              
+        <label for="form-border-box-radio-item-pick-up">Pickup in convenience store</label>
+              
+        <g id="delivery_method_store">
+                  
+                  
+                </g>
+            
+      </div>
+            
+      <div>
+              
+        <input type="radio" name="checkout[deliveryMethod][handle]" value="pickup" id="form-border-box-radio-item-store-pick-up">
+              
+        <label for="form-border-box-radio-item-store-pick-up">Pickup</label>
+              
+        <g id="delivery_method_store">
+                  
+                  
+                </g>
+            
+      </div>
+          
+    </div>
+        
+  </div>
+
+        
+        
+  <div id="checkout_receiverInfo">
+
+  
+    <span>Delivery</span>
+
+  
+    <div>
+    
+    
+      <div id="trade__checkout__receiverInfo__form">
+        <div>
+          <select name="countryCode" value="CA" placeholder="Country/region" autocomplete="country">
+            <option value="--no-value--" disabled="">&nbsp;</option>
+            <option value="GB">United Kingdom</option>
+            <option value="US">United States</option>
+            <option value="IE">Ireland</option>
+            <option value="CA">Canada</option>
+            <option disabled="" value="--no-value--_divider">---</option>
+            <option value="AF">Afghanistan</option>
+            <option value="AX">Aland lslands</option>
+            <option value="AL">Albania</option>
+            <option value="DZ">Algeria</option>
+            <option value="AS">American Samoa</option>
+            <option value="AD">Andorra</option>
+            <option value="AO">Angola</option>
+            <option value="AI">Anguilla</option>
+            <option value="AQ">Antarctica</option>
+            <option value="AG">Antigua and Barbuda</option>
+            <option value="AR">Argentina</option>
+            <option value="AM">Armenia</option>
+            <option value="AW">Aruba</option>
+            <option value="AC">Ascension Island</option>
+            <option value="AU">Australia</option>
+            <option value="AT">Austria</option>
+            <option value="AZ">Azerbaijan</option>
+            <option value="BS">Bahamas</option>
+            <option value="BH">Bahrain</option>
+            <option value="BD">Bangladesh</option>
+            <option value="BB">Barbados</option>
+            <option value="BY">Belarus</option>
+            <option value="BE">Belgium</option>
+            <option value="BZ">Belize</option>
+            <option value="BJ">Benin</option>
+            <option value="BM">Bermuda</option>
+            <option value="BT">Bhutan</option>
+            <option value="BO">Bolivia</option>
+            <option value="BA">Bosnia and Herzegovina</option>
+            <option value="BW">Botswana</option>
+            <option value="BV">Bouvet Island</option>
+            <option value="BR">Brazil</option>
+            <option value="IO">British Indian Ocean Territory</option>
+            <option value="BN">Brunei</option>
+            <option value="BG">Bulgaria</option>
+            <option value="BF">Burkina Faso</option>
+            <option value="BI">Burundi</option>
+            <option value="KH">Cambodia</option>
+            <option value="CM">Cameroon</option>
+            <option value="CA">Canada</option>
+            <option value="CV">Cape Verde</option>
+            <option value="KY">Cayman Islands</option>
+            <option value="CF">Central African Republic</option>
+            <option value="TD">Chad</option>
+            <option value="CL">Chile</option>
+            <option value="CN">China</option>
+            <option value="CX">Christmas Island</option>
+            <option value="CC">Cocos(Keeling)Islands</option>
+            <option value="CO">Colombia</option>
+            <option value="KM">Comoros</option>
+            <option value="CG">Congo</option>
+            <option value="CD">Congo(DRC)</option>
+            <option value="CK">Cook Islands</option>
+            <option value="CR">Costa Rica</option>
+            <option value="CI">Cote d'Ivoire</option>
+            <option value="HR">Croatia</option>
+            <option value="CU">Cuba</option>
+            <option value="CY">Cyprus</option>
+            <option value="CZ">Czech Republic</option>
+            <option value="DK">Denmark</option>
+            <option value="DJ">Djibouti</option>
+            <option value="DM">Dominica</option>
+            <option value="DO">Dominican Republic</option>
+            <option value="EC">Ecuador</option>
+            <option value="EG">Egypt</option>
+            <option value="SV">El Salvador</option>
+            <option value="GQ">Equatorial Guinea</option>
+            <option value="ER">Eritrea</option>
+            <option value="EE">Estonia</option>
+            <option value="ET">Ethiopia</option>
+            <option value="FK">Falkland Islands</option>
+            <option value="FO">Faroe Islands</option>
+            <option value="FJ">Fiji Islands</option>
+            <option value="FI">Finland</option>
+            <option value="FR">France</option>
+            <option value="GF">French Guiana</option>
+            <option value="PF">French Polynesia</option>
+            <option value="TF">French Southern and Antarctic Lands</option>
+            <option value="GA">Gabon</option>
+            <option value="GM">Gambia</option>
+            <option value="GE">Georgia</option>
+            <option value="DE">Germany</option>
+            <option value="GH">Ghana</option>
+            <option value="GI">Gibraltar</option>
+            <option value="GR">Greece</option>
+            <option value="GL">Greenland</option>
+            <option value="GD">Grenada</option>
+            <option value="GP">Guadeloupe</option>
+            <option value="GU">Guam</option>
+            <option value="GT">Guatemala</option>
+            <option value="GG">Guernsey</option>
+            <option value="GN">Guinea</option>
+            <option value="GW">Guinea-Bissau</option>
+            <option value="GY">Guyana</option>
+            <option value="HT">Haiti</option>
+            <option value="HM">Heard Island and McDonald Islands</option>
+            <option value="HN">Honduras</option>
+            <option value="HK">Hong Kong SAR</option>
+            <option value="HU">Hungary</option>
+            <option value="IS">Iceland</option>
+            <option value="IN">India</option>
+            <option value="ID">Indonesia</option>
+            <option value="IR">Iran</option>
+            <option value="IQ">Iraq</option>
+            <option value="IE">Ireland</option>
+            <option value="IM">Isle of Man</option>
+            <option value="IL">Israel</option>
+            <option value="IT">Italy</option>
+            <option value="JM">Jamaica</option>
+            <option value="JP">Japan</option>
+            <option value="JE">Jersey</option>
+            <option value="JO">Jordan</option>
+            <option value="KZ">Kazakhstan</option>
+            <option value="KE">Kenya</option>
+            <option value="KI">Kiribati</option>
+            <option value="KR">Korea</option>
+            <option value="KW">Kuwait</option>
+            <option value="KG">Kyrgyzstan</option>
+            <option value="LA">Laos</option>
+            <option value="LV">Latvia</option>
+            <option value="LB">Lebanon</option>
+            <option value="LS">Lesotho</option>
+            <option value="LR">Liberia</option>
+            <option value="LY">Libya</option>
+            <option value="LI">Liechtenstein</option>
+            <option value="LT">Lithuania</option>
+            <option value="LU">Luxembourg</option>
+            <option value="MO">Macao SAR</option>
+            <option value="MK">Macedonia,Former Yugoslav Republic of</option>
+            <option value="MG">Madagascar</option>
+            <option value="MW">Malawi</option>
+            <option value="MY">Malaysia</option>
+            <option value="MV">Maldives</option>
+            <option value="ML">Mali</option>
+            <option value="MT">Malta</option>
+            <option value="MH">Marshall Islands</option>
+            <option value="MQ">Martinique</option>
+            <option value="MR">Mauritania</option>
+            <option value="MU">Mauritius</option>
+            <option value="YT">Mayotte</option>
+            <option value="MX">Mexico</option>
+            <option value="FM">Micronesia</option>
+            <option value="MD">Moldova</option>
+            <option value="MC">Monaco</option>
+            <option value="MN">Mongolia</option>
+            <option value="ME">Montenegro</option>
+            <option value="MS">Montserrat</option>
+            <option value="MA">Morocco</option>
+            <option value="MZ">Mozambique</option>
+            <option value="MM">Myanmar</option>
+            <option value="NA">Namibia</option>
+            <option value="NR">Nauru</option>
+            <option value="NP">Nepal</option>
+            <option value="NL">Netherlands</option>
+            <option value="AN">Netherlands Antilles</option>
+            <option value="NC">New Caledonia</option>
+            <option value="NZ">New Zealand</option>
+            <option value="NI">Nicaragua</option>
+            <option value="NE">Niger</option>
+            <option value="NG">Nigeria</option>
+            <option value="NU">Niue</option>
+            <option value="NF">Norfolk Island</option>
+            <option value="KP">North Korea</option>
+            <option value="MP">Northern Mariana Islands</option>
+            <option value="NO">Norway</option>
+            <option value="OM">Oman</option>
+            <option value="PK">Pakistan</option>
+            <option value="PW">Palau</option>
+            <option value="PS">Palestinian Authority</option>
+            <option value="PA">Panama</option>
+            <option value="PG">Papua New Guinea</option>
+            <option value="PY">Paraguay</option>
+            <option value="PE">Peru</option>
+            <option value="PH">Philippines</option>
+            <option value="PN">Pitcairn Islands</option>
+            <option value="PL">Poland</option>
+            <option value="PT">Portugal</option>
+            <option value="PR">Puerto Rico</option>
+            <option value="QA">Qatar</option>
+            <option value="RE">Reunion</option>
+            <option value="RO">Romania</option>
+            <option value="RU">Russia</option>
+            <option value="RW">Rwanda</option>
+            <option value="WS">Samoa</option>
+            <option value="SM">San Marino</option>
+            <option value="ST">Sao Tome and Principe</option>
+            <option value="SA">Saudi Arabia</option>
+            <option value="SN">Senegal</option>
+            <option value="RS">Serbia</option>
+            <option value="SC">Seychelles</option>
+            <option value="SL">Sierra Leone</option>
+            <option value="SG">Singapore</option>
+            <option value="SK">Slovakia</option>
+            <option value="SI">Slovenia</option>
+            <option value="SB">Solomon Islands</option>
+            <option value="SO">Somalia</option>
+            <option value="ZA">South Africa</option>
+            <option value="GS">South Georgia and South Sandwich Islands</option>
+            <option value="ES">Spain</option>
+            <option value="LK">Sri Lanka</option>
+            <option value="MF">St. Martin (French part)</option>
+            <option value="SH">St.Helena</option>
+            <option value="KN">St.Kitts and Nevis</option>
+            <option value="LC">St.Lucia</option>
+            <option value="PM">St.Pierre and Miquelon</option>
+            <option value="VC">St.Vincent and the Grenadines</option>
+            <option value="SD">Sudan</option>
+            <option value="SR">Suriname</option>
+            <option value="SJ">Svalbard and Jan Mayen</option>
+            <option value="SZ">Swaziland</option>
+            <option value="SE">Sweden</option>
+            <option value="CH">Switzerland</option>
+            <option value="SY">Syria</option>
+            <option value="TW">Taiwan</option>
+            <option value="TJ">Tajikistan</option>
+            <option value="TZ">Tanzania</option>
+            <option value="TH">Thailand</option>
+            <option value="TL">Timor-Leste</option>
+            <option value="TG">Togo</option>
+            <option value="TK">Tokelau</option>
+            <option value="TO">Tonga</option>
+            <option value="TT">Trinidad and Tobago</option>
+            <option value="TA">Tristan da Cunha</option>
+            <option value="TN">Tunisia</option>
+            <option value="TR">Turkey</option>
+            <option value="TM">Turkmenistan</option>
+            <option value="TC">Turks and Caicos Islands</option>
+            <option value="TV">Tuvalu</option>
+            <option value="UG">Uganda</option>
+            <option value="UA">Ukraine</option>
+            <option value="AE">United Arab Emirates</option>
+            <option value="GB">United Kingdom</option>
+            <option value="US">United States</option>
+            <option value="UM">United States Minor Outlying Islands</option>
+            <option value="UY">Uruguay</option>
+            <option value="UZ">Uzbekistan</option>
+            <option value="VU">Vanuatu</option>
+            <option value="VA">Vatican City</option>
+            <option value="VE">Venezuela</option>
+            <option value="VN">Vietnam</option>
+            <option value="VI">Virgin Islands</option>
+            <option value="VG">Virgin Islands,British</option>
+            <option value="WF">Wallis and Futuna</option>
+            <option value="EH">Western Sahara</option>
+            <option value="YE">Yemen</option>
+            <option value="ZM">Zambia</option>
+            <option value="ZW">Zimbabwe</option>
+          </select>
+          <span>Country/region</span>
+          <input type="text" name="country" value="Canada" placeholder="" tabindex="-1" autocomplete="none">
+        </div>
+        <div>
+          <input type="text" name="firstName" placeholder="First name" autocomplete="given-name">
+          <span>First name</span>
+        </div>
+        <div>
+          <input type="text" name="lastName" placeholder="Last name" autocomplete="family-name">
+          <span>Last name</span>
+        </div>
+        <div>
+          <input type="text" name="address" placeholder="Address" autocomplete="street-address">
+          <span>Address</span>
+        </div>
+        <div>
+          <input type="text" name="address2" value="" placeholder="Add apartment, suite, etc. (Optional)" autocomplete="address-line2">
+          <span>Add apartment, suite, etc. (Optional)</span>
+        </div>
+        <div>
+          <input type="text" name="city" placeholder="City" autocomplete="address-level2">
+          <span>City</span>
+        </div>
+        <div>
+          <select name="provinceCode" placeholder="Province" autocomplete="none">
+            <option value="--no-value--" disabled="">&nbsp;</option>
+            <option value="1700001">Alberta</option>
+            <option value="1700002">British Columbia</option>
+            <option value="1700003">Manitoba</option>
+            <option value="1700004">New Brunswick</option>
+            <option value="1700005">Newfoundland and Labrador</option>
+            <option value="1700006">Northwest Territories</option>
+            <option value="1700007">Nova Scotia</option>
+            <option value="1700008">Nunavut</option>
+            <option value="1700009">Ontario</option>
+            <option value="1700010">Prince Edward Island</option>
+            <option value="1700011">Quebec</option>
+            <option value="1700012">Saskatchewan</option>
+            <option value="1700013">Yukon</option>
+          </select>
+          <span>Province</span>
+          <input type="text" name="province" placeholder="" tabindex="-1" autocomplete="address-level1">
+        </div>
+        <div>
+          <input type="text" name="postcode" placeholder="Postal code" autocomplete="postal-code">
+          <span>Postal code</span>
+        </div>
+        <div>
+          <input type="tel" name="mobile" placeholder="Phone" autocomplete="tel">
+          <span>Phone</span>
+        </div>
+        <div>
+          <input type="text" name="company" value="" placeholder="Company (Optional)" autocomplete="organization">
+          <span>Company (Optional)</span>
+        </div>
+        <div>
+          <input type="text" name="district" value="" placeholder="District" autocomplete="address-level3">
+          <span>District</span>
+        </div>
+        <div>
+          <input type="text" name="name" placeholder="Full name (Optional)" autocomplete="name">
+          <span>Full name (Optional)</span>
+        </div>
+      
+
+
+
+
+
+
+      
+
+
+
+
+
+
+      
+
+
+
+
+
+
+      
+
+
+
+
+
+
+      
+
+
+
+
+      
+
+
+      
+
+
+
+
+
+
+      
+
+
+
+
+
+
+      
+
+
+
+
+
+
+      
+
+
+
+
+
+
+      
+
+
+
+
+
+
+      
+
+
+
+
+
+
+      
+
+
+
+
+
+
+      
+        <div>
+    
+    
+  </div>
+    
+      </div>
+
+    
+    
+      <div id="trade__checkout__receiverInfo__selector__collapse">
+  
+        <div aria-expanded="false">
+    
+          <div>Ship to</div>
+    
+          <div>
+          
+</div>
+  
+        </div>
+  
+        <div>
+           
+</div>
+
+      </div>
+
+    
+    
+      <div id="B2BShippingInfo__default">
+        
+  
+        <div>
+    
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="none">
+        
+        
+      </svg>
+    
+          <div>
+        
+            <div>The following shipping address info is missing or invalid.</div>
+        
+            <ul>
+        </ul>
+        
+            <a href="mailto:customerinfo@chichiclothing.com">&nbsp;email&nbsp;</a>
+      
+          </div>
+  
+        </div>
+
+      
+        <div>
+          
+          <input type="radio" checked="">
+          
+          <div>
+            
+            
+          </div>
+        
+        </div>
+    
+      </div>
+
+    
+    
+      <div>
+            
+  
+        <div>
+    
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="none">
+        
+        
+      </svg>
+    
+          <div>
+        
+            <div>The following shipping address info is missing or invalid.</div>
+        
+            <ul>
+        </ul>
+        
+            <a href="mailto:customerinfo@chichiclothing.com">&nbsp;email&nbsp;</a>
+      
+          </div>
+  
+        </div>
+
+          
+        <div>
+            
+            
+          <div>
+                  
+            <input type="radio" value="LOCATION_SHIPPING_INFO" checked="">
+                  
+            <label>
+                    Business shipping address
+                  </label>
+                
+          </div>
+            
+            
+          <div>
+              
+            <div>
+                
+              <div>
+                  
+                <input type="radio" value="USE_DIFFERENT">
+                  
+                <label>
+                    Ship to a different address
+                  </label>
+                
+              </div>
+                
+              <div>Use a one-time address for this order</div>
+              
+            </div>
+              
+            <div id="trade__checkout__b2b__receiverInfo__form">
+                      
+
+
+
+
+
+
+              <div>
+            
+                <select name="countryCode" value="CA" placeholder="Country/region">
+              
+                  <option value="--no-value--" disabled="">&nbsp;</option>
+                
+                  <option value="CA">Canada</option>
+            
+                </select>
+            
+              
+                <input type="hidden" name="country" placeholder="Country/region">
+        
+                <span>
+            Country/region
+          
+        </span>
+      
+              </div>
+                      
+
+
+
+
+
+
+              <div>
+              
+                <input type="text" name="firstName" placeholder="First name">
+        
+                <span>
+            First name
+          
+        </span>
+      
+              </div>
+                      
+
+
+
+
+
+
+              <div>
+              
+                <input type="text" name="lastName" placeholder="Last name">
+        
+                <span>
+            Last name
+          
+        </span>
+      
+              </div>
+                      
+
+
+
+
+
+
+              <div>
+              
+                <input type="text" name="address1" placeholder="Address">
+        
+                <span>
+            Address
+          
+        </span>
+      
+              </div>
+                      
+
+
+
+
+      
+
+
+              <div>
+              
+                <input type="text" name="address2" value="" placeholder="Apartment, suite, etc.">
+        
+                <span>
+            Add apartment, suite, etc.
+           (Optional)
+        </span>
+      
+              </div>
+                      
+
+
+
+
+
+
+              <div>
+              
+                <input type="text" name="city" placeholder="City">
+        
+                <span>
+            City
+          
+        </span>
+      
+              </div>
+                      
+
+
+
+
+
+
+              <div>
+            
+                <select name="provinceCode" placeholder="Province">
+              
+                  <option value="--no-value--" disabled="">&nbsp;</option>
+                
+                  <option value="1700006">Northwest Territories</option>
+            
+                </select>
+            
+              
+                <input type="hidden" name="province" placeholder="Province">
+        
+                <span>
+            Province
+          
+        </span>
+      
+              </div>
+                      
+
+
+
+
+
+
+              <div>
+              
+                <input type="text" name="postcode" placeholder="Postal code">
+        
+                <span>
+            Postal code
+          
+        </span>
+      
+              </div>
+                      
+
+
+
+
+
+
+              <div>
+              
+                <input type="text" name="mobile" placeholder="Phone">
+        
+                <span>
+            Phone
+          
+        </span>
+      
+              </div>
+                      
+
+
+
+
+
+
+              <div>
+              
+                <input type="text" name="company" value="" placeholder="Company">
+        
+                <span>
+            Company
+           (Optional)
+        </span>
+      
+              </div>
+                      
+
+
+
+
+
+
+              <div>
+            
+                <select name="districtCode" value="" placeholder="District">
+              
+                  <option value="--no-value--" disabled="">&nbsp;</option>
+                
+                  <option value=""></option>
+            
+                </select>
+            
+              
+                <input type="hidden" name="district" value="" placeholder="District">
+        
+                <span>
+            District
+          
+        </span>
+      
+              </div>
+                      
+
+
+
+
+
+
+              <div>
+              
+                <input type="text" name="name" placeholder="Full name">
+        
+                <span>
+            Full name
+           (Optional)
+        </span>
+      
+              </div>
+                
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+  
+    </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script id="checkout-subscribe-form-block-template" type="x-tmpl-mustache">
+    <div >
+        
+<div sl-form-item-name="subscriptionMsg" style="" >
+          
+<div >
+
+    <span id="trade_checkout_checkbox"  >
+        <input type="checkbox" id=""     >
+        <span >
+            <svg  width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.0253 5.81401C14.3905 6.17927 14.3905 6.77146 14.0253 7.13672L8.41351 12.7485C8.04826 13.1137 7.45606 13.1137 7.09081 12.7485L3.97316 9.63084C3.6079 9.26558 3.6079 8.67339 3.97316 8.30813C4.33842 7.94287 4.93061 7.94287 5.29587 8.30813L7.75216 10.7644L12.7026 5.81401C13.0678 5.44876 13.66 5.44876 14.0253 5.81401Z" fill="currentColor"/>
+            </svg>
+        </span>
+    </span>
+    <span >
+        Text me with news and offers
+    </span>
+</div>
+
+      </div>
+        <div >
+<div sl-form-item-name="subscribePhone" style=";margin-bottom:16px;" >
+                        <div >
+  <div >
+    <input type="text" placeholder="Mobile phone number"
+      
+      value="" name=subscribePhone  maxlength="64"   />
+    <span >
+      Mobile phone number
+    </span>
+  </div>
+  <div >
+    <div sl-form-item-name='subscribeAreaCode' class='trade_countries_selector'><div class='tc_value' style='display:flex;'><span class='no_rtl'>+1</span><i class='trade_select_icon'><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.96967 0.96967C1.26256 0.676777 1.73744 0.676777 2.03033 0.96967L5 3.93934L7.96967 0.96967C8.26256 0.676777 8.73744 0.676777 9.03033 0.96967C9.32322 1.26256 9.32322 1.73744 9.03033 2.03033L5.53033 5.53033C5.23744 5.82322 4.76256 5.82322 4.46967 5.53033L0.96967 2.03033C0.676777 1.73744 0.676777 1.26256 0.96967 0.96967Z"  fill="currentColor"/>
+</svg>
+  </i></div><select data-testid='checkout-xt2sci'></select></div>
+  </div>
+</div>
+
+      </div>        </div>
+        <div >
+            <div >
+    By signing up via text, you agree to receive recurring automated marketing messages, including cart reminders, at the phone number provided. Consent is not a condition of purchase. Reply STOP to unsubscribe. Reply HELP for help. Message frequency varies. Msg &amp; data rates may apply.
+</div>
+        </div>
+    </div>
+</script>
+
+  </div>
+
+        
+        
+  <div>
+        
+    <span> Billing address</span>
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script id="checkout-subscribe-form-block-template" type="x-tmpl-mustache">
+    <div >
+        
+<div sl-form-item-name="subscriptionMsg" style="" >
+          
+<div >
+
+    <span id="trade_checkout_checkbox"  >
+        <input type="checkbox" id=""     >
+        <span >
+            <svg  width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.0253 5.81401C14.3905 6.17927 14.3905 6.77146 14.0253 7.13672L8.41351 12.7485C8.04826 13.1137 7.45606 13.1137 7.09081 12.7485L3.97316 9.63084C3.6079 9.26558 3.6079 8.67339 3.97316 8.30813C4.33842 7.94287 4.93061 7.94287 5.29587 8.30813L7.75216 10.7644L12.7026 5.81401C13.0678 5.44876 13.66 5.44876 14.0253 5.81401Z" fill="currentColor"/>
+            </svg>
+        </span>
+    </span>
+    <span >
+        Text me with news and offers
+    </span>
+</div>
+
+      </div>
+        <div >
+<div sl-form-item-name="subscribePhone" style=";margin-bottom:16px;" >
+                        <div >
+  <div >
+    <input type="text" placeholder="Mobile phone number"
+      
+      value="" name=subscribePhone  maxlength="64"   />
+    <span >
+      Mobile phone number
+    </span>
+  </div>
+  <div >
+    <div sl-form-item-name='subscribeAreaCode' class='trade_countries_selector'><div class='tc_value' style='display:flex;'><span class='no_rtl'>+1</span><i class='trade_select_icon'><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.96967 0.96967C1.26256 0.676777 1.73744 0.676777 2.03033 0.96967L5 3.93934L7.96967 0.96967C8.26256 0.676777 8.73744 0.676777 9.03033 0.96967C9.32322 1.26256 9.32322 1.73744 9.03033 2.03033L5.53033 5.53033C5.23744 5.82322 4.76256 5.82322 4.46967 5.53033L0.96967 2.03033C0.676777 1.73744 0.676777 1.26256 0.96967 0.96967Z"  fill="currentColor"/>
+</svg>
+  </i></div><select data-testid='checkout-xt2sci'></select></div>
+  </div>
+</div>
+
+      </div>        </div>
+        <div >
+            <div >
+    By signing up via text, you agree to receive recurring automated marketing messages, including cart reminders, at the phone number provided. Consent is not a condition of purchase. Reply STOP to unsubscribe. Reply HELP for help. Message frequency varies. Msg &amp; data rates may apply.
+</div>
+        </div>
+    </div>
+</script>
+    
+  </div>
+      
+</form-->
+
+<!--form autocomplete="on" novalidate="" action="/checkout-shippingservices" name="dwfrm_shipping" id="dwfrm_shipping">
+        
+
+        
+  <input name="originalShipmentUUID" type="hidden" value="7bdb831dbb13703fbb58084535">
+        
+  <input name="shipmentUUID" type="hidden" value="7bdb831dbb13703fbb58084535">
+
+        
+  <div>
+            
+    <div>
+    
+      <label for="shipmentSelector-default">
+        Shipping To
+    </label>
+
+    
+      <option value="new">
+    New Address
+</option>
+
+    
+    
+      <div>
+        
+        <button type="button">Update Address</button>
+        
+        <button type="button">Add New</button>
+    
+      </div>
+
+    </div>
+
+            
+    <fieldset>
+      <span>
+                    There's one or more errors below. Please check and try again.
+                </span>
+    
+      <div>
+        
+        <input type="text" value="enndeakintest@gmail.com" name="dwfrm_shipping_shippingAddress_addressFields_email" required="" aria-required="true" maxlength="100" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" readonly="">
+        
+        <span>Edit</span>
+    
+      </div>
+
+
+
+      <label for="deliveryShipping">
+    Delivery details</label>
+      <div>
+        <div>
+                
+          <span>
+                        Choose another address
+                    </span>
+            
+        </div>
+    
+        <div>
+                
+          <div>
+                    
+            <h3>Choose delivery address</h3>
+                    
+            <i>close icon</i>
+                
+          </div>
+                
+          <div>
+                    
+            <h4>Your address book</h4>
+                    
+            <span>Add new address
+                        </span>
+                    
+                    
+            <div>
+                        
+                    </div>
+                    
+            <span>
+                            Use this address</span>
+                
+          </div>
+            
+        </div>
+
+      </div>
+
+
+
+      <div>
+    
+        <div>
+                
+          <select name="dwfrm_shipping_shippingAddress_addressFields_title" required="" aria-required="true" autocomplete="shipping title" tabindex="-1" aria-hidden="true">
+                        
+            <option></option>
+                        
+                            
+                                
+            <option value="">Select</option>
+                            
+                        
+                            
+                                
+            <option value="Mr.">Mr</option>
+                            
+                        
+                            
+                                
+            <option value="Mrs.">Mrs</option>
+                            
+                        
+                            
+                                
+            <option value="Miss.">Miss</option>
+                            
+                        
+                            
+                                
+            <option value="Ms.">Ms</option>
+                            
+                        
+                            
+                                
+            <option value="Dr.">Dr</option>
+                            
+                        
+                
+          </select>
+                
+          <label>Title</label>
+                
+            
+        </div>
+    
+        <div>
+        
+          <div>
+                
+            <input type="text" id="shippingFirstNamedefault" aria-describedby="defaultFirstName" value="" name="dwfrm_shipping_shippingAddress_addressFields_firstName" required="" aria-required="true" maxlength="50" pattern="^[a-zA-Z\.\-\'\_\?\@\(' ')\!\+\=\[\]\#\,\~[\x22][\x26]]*$" autocomplete="shipping given-name">
+                
+            <label>First name</label>
+                
+            
+          </div>
+        
+          <div>
+                
+            <input type="text" id="shippingLastNamedefault" aria-describedby="defaultLastName" value="" name="dwfrm_shipping_shippingAddress_addressFields_lastName" required="" aria-required="true" maxlength="50" pattern="^[a-zA-Z\.\-\'\_\?\@\(' ')\!\+\(\)\=\[\]\#\,\~[\x22][\x26]]*$" autocomplete="shipping family-name">
+                
+            <label>Last name</label>
+                
+            
+          </div>
+
+        
+
+        
+          <div>
+                
+            <input type="tel" id="shippingPhoneNumberdefault" aria-describedby="defaultTelephoneNumber" value="" name="dwfrm_shipping_shippingAddress_addressFields_phone" required="" aria-required="true" maxlength="20" minlength="10" pattern="(^((\(?0\d{4}\)?\s?\d{3}\s?\d{3})|(\(?0\d{3}\)?\s?\d{3}\s?\d{4})|(\(?0\d{2}\)?\s?\d{4}\s?\d{4}))(\s?#(\d{4}|\d{3}))?$)" autocomplete="shipping tel">
+                
+            <span>
+                                Add your MOBILE for SMS delivery updates
+                    </span>
+                
+            
+          </div>
+    
+        </div>
+
+    
+        <div>
+        
+          <div autocomplete="off">
+                
+            <input type="text" id="shippingZipCodedefault" value="" name="dwfrm_shipping_shippingAddress_addressFields_postalCode" required="" aria-required="true" maxlength="8" minlength="5" pattern="^([A-Za-z][A-Ha-hJ-Yj-y]?[0-9][A-Za-z0-9]? ?[0-9][A-Za-z]{2}|[Gg][Ii][Rr] ?0[Aa]{2})$" autocomplete="shipping postal-code" aria-describedby="defaultPostalCode" placeholder="">
+                
+            <label>Postcode</label>
+                
+            
+          </div>
+        
+          <span>Find address</span>
+    
+        </div>
+
+    
+        <div>
+                
+          <input type="text" id="shippingBusinessdefault" aria-describedby="defaultBusiness" value="" name="dwfrm_shipping_shippingAddress_addressFields_business" maxlength="50" minlength="2" pattern="^[a-zA-Z\.\-\'\_\?\@\!\+\(\)\=\[\]\#\,\~[0-9][\x22][\x26] ]*$" autocomplete="shipping address-line1">
+                    
+          <label>Company or business name (optional)</label>
+                
+            
+        </div>
+
+    
+    
+        <input type="hidden" id="experianConfigs">
+    
+        <div>
+                
+          <option id="GB" value="GB" selected="">United Kingdom</option>
+                
+          <input type="text" id="country" value="United Kingdom" disabled="">
+                
+            
+        </div>
+    
+        <option id="gbr" value="gbr" selected=""></option>
+    
+        <div>
+        
+          <div>
+                
+            <input type="text" id="shippingAddressOnedefault" aria-describedby="defaultAddressLine1" value="" name="dwfrm_shipping_shippingAddress_addressFields_address1" required="" aria-required="true" maxlength="50" pattern="^[a-zA-Z\.\-\'\_\?\@\!\+\(\)\=\[\]\#\,\~\/[0-9][\x22][\x26] ]*$" autocomplete="shipping address-line1">
+                    
+            <label>Address 1</label>
+                
+            
+          </div>
+        
+          <div>
+                
+            <input type="text" id="shippingAddressTwodefault" aria-describedby="defaultAddressLine2" value="" name="dwfrm_shipping_shippingAddress_addressFields_address2" maxlength="50" pattern="^[a-zA-Z\.\-\'\_\?\@\!\+\(\)\=\[\]\#\,\~\/[0-9][\x22][\x26] ]*$" autocomplete="shipping address-line2">
+                    
+            <label>Address 2 (optional)</label>
+                
+            
+          </div>
+    
+        </div>
+
+    
+    
+        <div>
+                
+          <label for="shippingCountrydefault">
+                    Country
+                </label>
+                
+          <option id="GB" value="GB" selected="">United Kingdom</option>
+                
+            
+        </div>
+
+    
+        <div>
+        
+          <div>
+                
+            <input type="text" id="shippingAddressCitydefault" value="" name="dwfrm_shipping_shippingAddress_addressFields_town" required="" aria-required="true" maxlength="40" minlength="2" pattern="^[a-zA-Z\.\-\'\_\?\@\!\+\(\)\=\[\]\#\,\~[\x22][\x26] ]*$" autocomplete="shipping address-level2" aria-describedby="defaultCity">
+                
+            <label>Town / City</label>
+                
+            
+          </div>
+        
+          <div>
+                
+            <input type="text" id="shippingStatedefault" name="dwfrm_shipping_shippingAddress_addressFields_county" value="" maxlength="50" autocomplete="shipping address-level1" aria-describedby="defaultcounty">
+                
+                
+            <label>County (optional)</label>
+                
+            
+          </div>
+    
+        </div>
+
+      </div>
+
+
+      <div>
+                
+        <input type="checkbox" id="shippingAddressUseAsBillingAddressdefault" value="true" name="dwfrm_shipping_shippingAddress_shippingAddressUseAsBillingAddress" checked="">
+                
+        <label for="shippingAddressUseAsBillingAddressdefault">
+                    Use my delivery details as my billing details.
+                </label>
+            
+      </div>
+
+
+      <option id="GB" value="GB" selected="">United Kingdom</option>
+
+
+            
+    </fieldset>
+
+            
+        
+  </div>
+
+        
+  <div>
+    
+    <button>
+        Enter Address
+    </button>
+
+      </div>
+    
+</form-->
+
+<!--form  autocomplete="on" novalidate="" action="/checkout-shippingservices"  name="dwfrm_shipping" id="dwfrm_shipping">
+  <fieldset >
+    <div >
+    <label  for="shipmentSelector-default">
+        Shipping To
+    </label>
+
+    <select id="shipmentSelector-default" name="shipmentSelector"  >
+        <option value="new"         >
+    New Address
+      </option>
+    </select>
+  </div>
+            </fieldset>
+
+            <fieldset >
+    <div >
+        <input type="text"  value="enndeakintest@gmail.com" name="dwfrm_shipping_shippingAddress_addressFields_email" required="" aria-required="true" maxlength="100" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" readonly="">
+    </div>
+<div >
+    <div >
+        <select   name="dwfrm_shipping_shippingAddress_addressFields_title" required="" aria-required="true" autocomplete="shipping title"  tabindex="-1" aria-hidden="true">
+          <option ></option>
+          <option value="">Select</option>
+          <option value="Mr.">Mr</option>
+          <option value="Mrs.">Mrs</option>
+          <option value="Miss.">Miss</option>
+          <option value="Ms.">Ms</option>
+          <option value="Dr.">Dr</option>
+        </select>
+        <label >Title</label>
+    </div>
+    <div >
+        <div >
+          <input type="text"    id="shippingFirstNamedefault" aria-describedby="defaultFirstName" value="" name="dwfrm_shipping_shippingAddress_addressFields_firstName" required="" aria-required="true" maxlength="50" pattern="^[a-zA-Z\.\-\'\_\?\@\(' ')\!\+\=\[\]\#\,\~[\x22][\x26]]*$" autocomplete="shipping given-name">
+          <label >First name</label>
+        </div>
+        <div >
+          <input type="text"    id="shippingLastNamedefault" aria-describedby="defaultLastName" value="" name="dwfrm_shipping_shippingAddress_addressFields_lastName" required="" aria-required="true" maxlength="50" pattern="^[a-zA-Z\.\-\'\_\?\@\(' ')\!\+\(\)\=\[\]\#\,\~[\x22][\x26]]*$" autocomplete="shipping family-name">
+          <label >Last name</label>
+        </div>
+        <div >
+          <input type="tel"    id="shippingPhoneNumberdefault" aria-describedby="defaultTelephoneNumber" value="" name="dwfrm_shipping_shippingAddress_addressFields_phone" required="" aria-required="true" maxlength="20" minlength="10" pattern="(^((\(?0\d{4}\)?\s?\d{3}\s?\d{3})|(\(?0\d{3}\)?\s?\d{3}\s?\d{4})|(\(?0\d{2}\)?\s?\d{4}\s?\d{4}))(\s?#(\d{4}|\d{3}))?$)" autocomplete="shipping tel">
+          <label >Phone number
+          </label>
+        </div>
+    </div>
+
+    <div >
+      <input type="text"    id="shippingZipCodedefault" value="" name="dwfrm_shipping_shippingAddress_addressFields_postalCode" required="" aria-required="true" maxlength="8" minlength="5" pattern="^([A-Za-z][A-Ha-hJ-Yj-y]?[0-9][A-Za-z0-9]? ?[0-9][A-Za-z]{2}|[Gg][Ii][Rr] ?0[Aa]{2})$" autocomplete="shipping postal-code" aria-describedby="defaultPostalCode" placeholder="">
+      <label >Postcode</label>
+    </div>
+    <div >
+      <input type="text"  id="shippingBusinessdefault" aria-describedby="defaultBusiness" value="" name="dwfrm_shipping_shippingAddress_addressFields_business" maxlength="50" minlength="2" pattern="^[a-zA-Z\.\-\'\_\?\@\!\+\(\)\=\[\]\#\,\~[0-9][\x22][\x26] ]*$" autocomplete="shipping address-line1">
+          <label >Company or business name (optional)</label>
+    </div>
+    <div >
+        <select  id="checkout-country" name="dwfrm_shipping_shippingAddress_addressFields_country" autocomplete="title" style="display: none;">
+            <option id="GB" value="GB" selected="">United Kingdom</option>
+        </select>
+        <input type="text"  id="country" value="United Kingdom" disabled="">
+        <div ></div>
+    </div>
+    <select  id="country-gb" autocomplete="title" style="display: none;">
+        <option id="gbr" value="gbr" selected=""></option>
+    </select>
+    <div>
+        <input type="text"   id="shippingAddressOnedefault" aria-describedby="defaultAddressLine1" value="" name="dwfrm_shipping_shippingAddress_addressFields_address1" required="" aria-required="true" maxlength="50" pattern="^[a-zA-Z\.\-\'\_\?\@\!\+\(\)\=\[\]\#\,\~\/[0-9][\x22][\x26] ]*$" autocomplete="shipping address-line1">
+            <label >Address 1</label>
+    </div>
+    <div>
+        <input type="text"  id="shippingAddressTwodefault" aria-describedby="defaultAddressLine2" value="" name="dwfrm_shipping_shippingAddress_addressFields_address2" maxlength="50" pattern="^[a-zA-Z\.\-\'\_\?\@\!\+\(\)\=\[\]\#\,\~\/[0-9][\x22][\x26] ]*$" autocomplete="shipping address-line2">
+            <label >Address 2 (optional)</label>
+    </div>
+    <div>
+      <label  for="shippingCountrydefault">
+          Country
+      </label>
+      <select  id="shippingCountrydefault" name="dwfrm_shipping_shippingAddress_addressFields_country" autocomplete="shipping country" aria-describedby="defaultCountry">
+              
+                  <option id="GB" value="GB" selected="">United Kingdom</option>
+              
+      </select>
+    </div>
+    <div >
+      <input type="text"    id="shippingAddressCitydefault" value="" name="dwfrm_shipping_shippingAddress_addressFields_town" required="" aria-required="true" maxlength="40" minlength="2" pattern="^[a-zA-Z\.\-\'\_\?\@\!\+\(\)\=\[\]\#\,\~[\x22][\x26] ]*$" autocomplete="shipping address-level2" aria-describedby="defaultCity">
+      <label >Town / City</label>
+    </div>
+    <div >
+      <input type="text"  id="shippingStatedefault" name="dwfrm_shipping_shippingAddress_addressFields_county" value="" maxlength="50" autocomplete="shipping address-level1" aria-describedby="defaultcounty">
+      <label >County (optional)</label>
+    </div>
+  </fieldset>
+</form-->
+
+    <script>
+  function simplifyForm(form) {
+//    const focusedElement = Services.focus.focusedElement;
+//    const form = focusedElement.form || focusedElement.closest("form") ||
+//                 document.documentElement;
+
+    const formTags = [
+      "input", "textarea", "button", "label", "select", "option", "optgroup"
+    ];
+
+    function removeExcessLabels(node, last) {
+      function removeNode(node) {
+        let parent = node.parentNode;
+        parent.removeChild(last);
+        if (!parent.childNodes.length) {
+          parent.parentNode.removeChild(parent);
+        }
+      }
+
+      for (let child = node.firstChild; child; child = child.nextSibling) {
+dump("----" + child.localName);
+        if (child.nodeType == Node.TEXT_NODE) {
+          if (last) {
+            removeNode(last);
+            last = child;
+dump(" TEXT LAST\n");
+          }
+else dump(" TEXT NO LAST\n");
+          
+          last = child;
+        } else if (child.localName == "label") {
+          if (last) {
+dump(" LABEL LAST\n");
+            removeNode(last);
+            last = null;
+          }
+else dump(" LABEL NO LAST\n");
+          continue;
+        }
+        else if (formTags.includes(node.localName)) {
+          continue;
+        }
+else dump(" NONE\n");
+
+        last = removeExcessLabels(child, last);
+      }
+
+      return last;
+    }
+
+    function format(node, level = 1) {
+      for (let child of node?.children) {
+        let textNode = node.ownerDocument.createTextNode("\n" + "  ".repeat(level));
+        node.insertBefore(textNode, child);
+
+        format(child, level + 1);
+
+        if (node.lastElementChild == child) {
+          textNode = node.ownerDocument.createTextNode("\n" + "  ".repeat(level - 1));
+          node.appendChild(textNode);
+        }
+      }
+
+      return node;
+    }
+
+    function copyNode(node) {
+      if (node.nodeType == Node.TEXT_NODE) {
+        return node.ownerDocument.createTextNode(node.textContent);
+      }
+
+      if (node.nodeType != Node.ELEMENT_NODE) {
+        return null;
+      }
+
+      let newNode = node.ownerDocument.createElement(node.nodeName);
+      for (let attr of node.attributes) {
+        if (attr.name != "class" &&
+            attr.name != "style" &&
+            !attr.name.startsWith("data") &&
+            !attr.name.startsWith("on") &&
+            attr.namespaceURI == null) {
+          newNode.setAttribute(attr.name, attr.value);
+        }
+      }
+
+      for (let child of node.childNodes) {
+        child = copyNode(child);
+        if (child) {
+          newNode.appendChild(child);
+        }
+      }
+
+      return newNode;
+    }
+
+    function handleForm(form) {
+      let newForm = form.ownerDocument.createElement("form");
+      handleNode(form, newForm);
+      return newForm;
+    }
+
+/*
+<form id="meat" novalidate="novalidate">
+  <div>
+    <label for="areaCode">Country Code</label>
+    <p>Cows</p>
+  </div>
+</form>*/
+
+    function handleNode(node, newForm, indent = "") {
+dump(indent + node + "," + node.localName);
+      if (node.nodeType == Node.TEXT_NODE) {
+dump(" [text: " + node.textContent.replace("\n", " ") + "]\n");
+        let text = node.textContent;
+        text = text.replace(/\p{Cf}/gu, "");
+        if (text.match(/^\s+$/)) {
+          text = "";
+        }
+
+        if (text.length) {
+          return [node.ownerDocument.createTextNode(" " + node.textContent)];
+        }
+
+        return [];
+      }
+
+      if (node.nodeType != Node.ELEMENT_NODE) {
+dump(" [other]\n");
+        return [];
+      }
+
+      if (formTags.includes(node.localName) &&
+          !(node.localName == "input" && node.type == "hidden")) {
+        let childNodes = copyNode(node);
+dump(" [field]\n");
+        return childNodes ? [childNodes] : [];
+      }
+
+      let isBlock = window.getComputedStyle(node).display.indexOf("inline") == -1;
+dump(" [block " + isBlock + "]\n");
+
+      let parent;
+      let elements = [];
+      for (let child of node.childNodes) {
+        let childContent = handleNode(child, newForm, indent + "  ");
+        if (childContent.length) {
+          if (isBlock) {
+            if (!parent) {
+              parent = node.ownerDocument.createElement("div");
+            }
+            for (let element of childContent) {
+              parent.appendChild(element);
+            }
+            newForm.appendChild(parent);
+          } else {
+            elements.push(...childContent);
+          }
+        }
+      }
+
+dump(indent + "**" + parent?.outerHTML + "\n");
+
+      return elements;
+    }
+
+    let output = handleForm(document.getElementById("meat"));
+    output.normalize();
+    removeExcessLabels(output);
+    dump(format(output).outerHTML);
+  }
+</script>
+<!--
+<form>
+<input id="name"/>             -> Section A
+<input id="address-line1" autocomplete="address-line1"/>    -> Section B
+<input id="address-line1" autocomplete="address-line1"/>    -> Section A
+<input id="organization"/>     -> Section A
+<input id="name"/>             -> Section B or Section C?
+<input id="address-line1" autocomplete="address-line1"/></form>
+
+<form id="meat2">
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <label for="id11">
+
+
+                  <span>Straße und Hausnummer</span>
+
+
+
+                </label>
+                <div>
+                  <select name="r:r:1:m:r:5:r:cr:1:c:pr:1:container:fs:inputAndLabel:c:i:input" id="id11">
+
+                    <option selected="selected" value="">Bitte wählen</option>
+
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</form>
+-->
+
+
+
+
+</body></html>

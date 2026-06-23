@@ -1,0 +1,312 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 200px;
+}
+
+input {
+  margin: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<fieldset>
+<h3>jysk.pl</h3>
+<p><i>Support house number (Nr domu/Nr lokalu) in Polish, support id number (NIP)</i></p>
+
+<form>
+  <div>
+    <label for="edit-companyname">
+                    NIP</label>
+    <input validate="inline" autocomplete="nope" type="text" id="edit-companyname" name="companyName" value="" size="60" maxlength="40" placeholder="NIP" _flx1_12_1="1" _flx1_13_1="1" aria-invalid="false" style="" data-moz-autofill-type="id-number">
+  </div>
+  <div>
+    <label for="edit-firstname">
+                    Imię/Nazwa firmy
+      <span title="This field is required.">*</span>
+    </label>
+    <input tooltip="Maria" validate="inline" type="text" id="edit-firstname" name="firstname" value="" size="60" maxlength="128" required="required" aria-required="true" placeholder="Imię/Nazwa firmy *" _flx1_12_1="1" _flx1_13_1="1" _flx1_14_1="1" aria-invalid="true" aria-describedby="edit-firstname-error" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="edit-lastname">
+                    Nazwisko/Nazwa firmy
+      <span title="This field is required.">*</span>
+    </label>
+    <input tooltip="Kowalska" validate="inline" type="text" id="edit-lastname" name="lastname" value="" size="60" maxlength="128" required="required" aria-required="true" placeholder="Nazwisko/Nazwa firmy *" _flx1_12_1="1" aria-invalid="true" _flx1_14_1="1" aria-describedby="edit-lastname-error" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="edit-street">
+                    Ulica
+      <span title="This field is required.">*</span>
+    </label>
+    <input tooltip="Szeroka 1" autocorrect="off" validate="inline" type="text" id="edit-street" name="street" value="" size="60" maxlength="128" required="required" aria-required="true" placeholder="Ulica *" _flx1_12_1="1" aria-invalid="true" _flx1_14_1="1" aria-describedby="edit-street-error" style="" data-moz-autofill-type="address-streetname">
+  </div>
+  <div>
+    <label for="edit-number">
+                    Nr domu/Nr lokalu
+      <span title="This field is required.">*</span>
+    </label>
+    <input tooltip="80-299" validate="inline" type="text" id="edit-number" name="number" value="" size="60" maxlength="128" required="required" aria-required="true" placeholder="Nr domu/Nr lokalu *" _flx1_12_1="1" _flx1_13_1="1" aria-describedby="edit-number-error" aria-invalid="true" _flx1_14_1="1" style="" data-moz-autofill-type="address-housenumber">
+  </div>
+  <div>
+    <label for="edit-zipcode">
+                    Kod pocztowy
+      <span title="This field is required.">*</span>
+    </label>
+    <input tooltip="695316456" validate="inline" type="tel" id="edit-zipcode" name="zipCode" value="" size="60" maxlength="128" required="required" aria-required="true" placeholder="Kod pocztowy *" _flx1_12_1="1" aria-invalid="true" _flx1_14_1="1" aria-describedby="edit-zipcode-error" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="edit-city">
+                    Miasto
+      <span title="This field is required.">*</span>
+    </label>
+    <input tooltip="Gdańsk" validate="inline" type="text" id="edit-city" name="city" value="" size="60" maxlength="128" required="required" aria-required="true" placeholder="Miasto *" _flx1_12_1="1" aria-invalid="true" _flx1_14_1="1" aria-describedby="edit-city-error" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="edit-email">
+                    E-mail
+      <span title="This field is required.">*</span>
+    </label>
+    <input tooltip="twoja@poczta.pl" validate="inline" autocapitalize="none" autocorrect="off" type="email" id="edit-email" name="email" value="" size="60" maxlength="254" required="required" aria-required="true" placeholder="E-mail *" _flx1_12_1="1" aria-invalid="true" _flx1_14_1="1" aria-describedby="edit-email-error" style="" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="edit-mobile">
+                    Nr telefonu komórkowego
+      <span title="This field is required.">*</span>
+    </label>
+    <input tooltip="695316456" validate="inline" autocomplete="tel" type="tel" id="edit-mobile" name="mobile" value="" size="60" maxlength="30" required="required" aria-required="true" placeholder="Nr telefonu komórkowego *" _flx1_12_1="1" _flx1_14_1="1" aria-describedby="edit-mobile-error" aria-invalid="true" style="" data-moz-autofill-type="tel">
+  </div>
+</form>
+</fieldset>
+
+<fieldset>
+<h3>ceneo.pl</h3>
+<p><i>ids are very generic and labels don't match</i></p>
+
+<form>
+  <div>
+    <label id="ceneo-form-field__label-2" for="remarks" aria-owns="remarks" required="false">
+      <ceneo-label _ngcontent-exh-c161=""> Dodaj notatkę dla sklepu </ceneo-label>
+    </label>
+  </div>
+  <div>
+    <textarea _ngcontent-exh-c161="" id="remarks" formcontrolname="remarks" ceneoinput="" maxlength="300" placeholder="np. proszę o kontakt telefoniczny przed dostarczeniem" ceneoexpandabletextarea="" rows="1" aria-invalid="false" aria-required="false" style=""></textarea>
+  </div>
+  <div>
+    <label id="ceneo-form-field__label-3" for="mat-input-5" aria-owns="mat-input-5" required="false">
+      <ceneo-label _ngcontent-exh-c171=""> Wprowadź kod kuponu lub karty podarunkowej </ceneo-label>
+    </label>
+  </div>
+  <div>
+    <input _ngcontent-exh-c171="" ceneoinput="" type="text" formcontrolname="code" id="mat-input-5" aria-invalid="false" aria-required="false" style="">
+  </div>
+  <div>
+    <label id="ceneo-form-field__label-4" for="email" aria-owns="email" required="true">
+      <ceneo-label _ngcontent-exh-c146=""> Adres email </ceneo-label>
+    </label>
+  </div>
+  <div>
+    <input _ngcontent-exh-c146="" id="email" ceneoinput="" type="email" placeholder="np. jan.kowalski@gmail.com" formcontrolname="email" aria-invalid="true" aria-required="false" style="" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label id="ceneo-form-field__label-5" for="mat-input-7" aria-owns="mat-input-7" required="true">
+      <ceneo-label _ngcontent-exh-c132=""> Imię </ceneo-label>
+    </label>
+  </div>
+  <div>
+    <input _ngcontent-exh-c132="" ceneoinput="" type="text" placeholder="np. Jan" formcontrolname="firstName" id="mat-input-7" aria-invalid="true" aria-required="false" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label id="ceneo-form-field__label-6" for="mat-input-8" aria-owns="mat-input-8" required="true">
+      <ceneo-label _ngcontent-exh-c132=""> Nazwisko </ceneo-label>
+    </label>
+  </div>
+  <div>
+    <input _ngcontent-exh-c132="" ceneoinput="" type="text" placeholder="np. Kowalski" formcontrolname="lastName" id="mat-input-8" aria-invalid="true" aria-required="false" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label id="ceneo-form-field__label-7" for="mat-input-9" aria-owns="mat-input-9" required="true">
+      <ceneo-label _ngcontent-exh-c132=""> Ulica i numer </ceneo-label>
+    </label>
+  </div>
+  <div>
+    <input _ngcontent-exh-c132="" ceneoinput="" type="text" placeholder="np. Legnicka 48" formcontrolname="streetAndNumber" id="mat-input-9" aria-invalid="true" aria-required="false" style="" data-moz-autofill-type="street-address">
+  </div>
+  <div>
+    <label id="ceneo-form-field__label-8" for="mat-input-10" aria-owns="mat-input-10" required="true">
+      <ceneo-label _ngcontent-exh-c132=""> Kod pocztowy </ceneo-label>
+    </label>
+  </div>
+  <div>
+    <input _ngcontent-exh-c132="" ceneoinput="" type="tel" placeholder="np. 12-345" mask="99-999" formcontrolname="postalCode" id="mat-input-10" aria-invalid="true" aria-required="false" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label id="ceneo-form-field__label-9" for="mat-input-11" aria-owns="mat-input-11" required="true">
+      <ceneo-label _ngcontent-exh-c132=""> Miejscowość </ceneo-label>
+    </label>
+  </div>
+  <div>
+    <input _ngcontent-exh-c132="" ceneoinput="" type="text" placeholder="np. Wrocław" formcontrolname="city" id="mat-input-11" aria-invalid="true" aria-required="false" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label id="ceneo-form-field__label-10" for="mat-input-12" aria-owns="mat-input-12" required="true">
+      <ceneo-label _ngcontent-exh-c132=""> Kraj </ceneo-label>
+    </label>
+  </div>
+  <div>
+    <input _ngcontent-exh-c132="" ceneoinput="" readonly="true" type="text" placeholder="np. Polska" formcontrolname="country" id="mat-input-12" aria-invalid="false" aria-required="false" style="" data-moz-autofill-type="country-name">
+  </div>
+  <div>
+    <label id="ceneo-form-field__label-11" for="mat-input-13" aria-owns="mat-input-13" required="true">
+      <ceneo-label _ngcontent-exh-c132=""> Numer telefonu </ceneo-label>
+    </label>
+  </div>
+  <div>
+    <input _ngcontent-exh-c132="" ceneoinput="" type="tel" placeholder="np. 123456789" formcontrolname="phoneNumber" id="mat-input-13" aria-invalid="false" aria-required="false" style="" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label _ngcontent-exh-c50="">
+      <input _ngcontent-exh-c50="" type="checkbox" id="remember-me" aria-checked="false">
+      <span _ngcontent-exh-c50=""> Zapamiętaj moje dane
+</span>
+    </label>
+  </div>
+</form>
+</fieldset>
+
+<fieldset>
+<h3>duka.com</h3>
+<p><i>email is in a separate form, some fields get updated on changes</i></p>
+
+<form>
+  <div>
+    <label for="RAJB0OI">
+      <span>Imię</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="firstname" aria-required="true" aria-invalid="true" id="RAJB0OI" aria-describedby="error-RAJB0OI" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="KRSF9XK">
+      <span>Nazwisko</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="lastname" aria-required="true" aria-invalid="true" id="KRSF9XK" aria-describedby="error-KRSF9XK" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="L0F4QEI">
+      <span>NIP</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="vat_id" aria-invalid="false" id="L0F4QEI" style="" data-moz-autofill-type="id-number">
+  </div>
+  <div>
+    <label for="HTVY6O7">
+      <span>Miasto/Miejscowość</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="city" aria-required="true" aria-invalid="true" id="HTVY6O7" aria-describedby="error-HTVY6O7" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="SJR1FSI">
+      <span>Województwo</span>
+    </label>
+  </div>
+  <div>
+    <select name="region_id" id="SJR1FSI" aria-invalid="false" aria-required="true" style="" data-moz-autofill-type="address-level1">
+      <option value="">Wybierz województwo lub region.</option>
+    </select>
+  </div>
+  <div>
+    <label for="TI5GOMF">
+      <span>Województwo</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="region" aria-invalid="false" id="TI5GOMF" aria-required="true" style="" data-moz-autofill-type="address-level1">
+  </div>
+  <div>
+    <label for="TUG8YL1">
+      <span>Ulica</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="street[0]" aria-required="true" aria-invalid="true" id="TUG8YL1" aria-describedby="error-TUG8YL1" style="" data-moz-autofill-type="address-streetname">
+  </div>
+  <div>
+    <label for="CUDV9CP">
+      <span>Nr budynku</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="street[1]" aria-required="true" aria-invalid="true" id="CUDV9CP" aria-describedby="error-CUDV9CP" style="" data-moz-autofill-type="address-housenumber">
+  </div>
+  <div>
+    <label for="RF29H8J">
+      <span>Nr lokalu</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="street[2]" aria-invalid="false" id="RF29H8J" style="" data-moz-autofill-type="apartment">
+  </div>
+  <div>
+    <label for="FMRABFB">
+      <span>Kod pocztowy</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="postcode" aria-required="true" aria-invalid="true" id="FMRABFB" inputmode="text" aria-describedby="error-FMRABFB" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="J621LKY">
+      <span>Kraj</span>
+    </label>
+  </div>
+  <div>
+    <select name="country_id" id="J621LKY" aria-required="true" aria-invalid="true" aria-describedby="error-J621LKY" style="" data-moz-autofill-type="country">
+      <option value=""> </option>
+      <option value="PE">Peru</option>
+      <option value="PN">Pitcairn</option>
+      <option value="PF">Polinezja Francuska</option>
+      <option value="PL">Polska</option>
+      <option value="PT">Portugalia</option>
+      <option value="ZA">Republika Południowej Afryki</option>
+      <option value="CF">Republika Środkowoafrykańska</option>
+      <option value="CV">Republika Zielonego Przylądka</option>
+    </select>
+  </div>
+  <div>
+    <label for="TQMBWTJ">
+      <span>Nr telefonu</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="telephone" aria-required="true" aria-invalid="true" id="TQMBWTJ" aria-describedby="error-TQMBWTJ" style="" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label for="LF5YPSF">
+      <span>Nazwa firmy</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="company" aria-invalid="false" id="LF5YPSF" style="" data-moz-autofill-type="organization">
+  </div>
+</form>
+</fieldset>
+
+
+
+
+</body></html>

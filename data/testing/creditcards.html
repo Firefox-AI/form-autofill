@@ -1,0 +1,139 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 200px;
+}
+
+input {
+  margin: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<fieldset>
+<!-- before: name, cc-number, cc-exp -->
+<!-- after: name, street-address -->
+<form>
+  <p>Name: <input id="a1" name="name" style="" data-moz-autofill-type="cc-name"></p>
+  <p>Number: <input id="a2" name="number" style="" data-moz-autofill-type="cc-number"></p>
+  <p>Expiry: <input id="a3" name="expiry" style="" data-moz-autofill-type="cc-exp"></p>
+</form>
+</fieldset>
+
+<fieldset>
+<!-- before: cc-number, cc-name, cc-exp -->
+<form>
+  <p>Number: <input id="b1" name="number" style="" data-moz-autofill-type="cc-number"></p>
+  <p>Name: <input id="b2" name="name" style="" data-moz-autofill-type="cc-name"></p>
+  <p>Expiry: <input id="b3" name="expiry" style="" data-moz-autofill-type="cc-exp"></p>
+</form>
+</fieldset>
+
+<fieldset>
+<!-- before: name, street-address, cc-number -->
+<!-- before: name, address-housenumber, street-address ** SHOWS ADDRESS DROPDOWN -->
+<form>
+  <p>Name: <input id="c1" name="name" style="" data-moz-autofill-type="name"></p>
+  <p>Number: <input id="c2" name="number" style="" data-moz-autofill-type="address-housenumber"></p>
+  <p>Street: <input id="c3" name="street" style="" data-moz-autofill-type="address-streetname"></p>
+</form>
+</fieldset>
+
+<fieldset>
+<!-- before: name, street-address, cc-number -->
+<!-- before: name, street-address, address-housenumber ** SHOWS ADDRESS DROPDOWN -->
+<form>
+  <p>Name: <input id="d1" name="name" style="" data-moz-autofill-type="name"></p>
+  <p>Street: <input id="d2" name="street" style="" data-moz-autofill-type="address-streetname"></p>
+  <p>Number: <input id="d3" name="number" style="" data-moz-autofill-type="address-housenumber"></p>
+</form>
+</fieldset>
+
+<fieldset>
+<!-- before: cc-name, cc-number, cc-exp ** SHOWS CREDIT CARD DROPDOWN -->
+<form>
+  <p>Credit Card Name: <input id="e1" name="cc-name" style="" data-moz-autofill-type="cc-name"></p>
+  <p>Number: <input id="e2" name="number" style="" data-moz-autofill-type="cc-number"></p>
+  <p>Expiry: <input id="e3" name="expiry" style="" data-moz-autofill-type="cc-exp"></p>
+</form>
+</fieldset>
+
+<fieldset>
+<!-- before: cc-name, cc-exp, cc-number,  ** SHOWS CREDIT CARD DROPDOWN -->
+<form>
+  <p>Credit Card Name: <input id="f1" name="cc-name" style="" data-moz-autofill-type="cc-name"></p>
+  <p>Expiry: <input id="f2" name="expiry" style="" data-moz-autofill-type="cc-exp"></p>
+  <p>Number: <input id="f3" name="number" style="" data-moz-autofill-type="cc-number"></p>
+</form>
+</fieldset>
+
+<fieldset>
+<!-- before: cc-number, cc-name, cc-exp ** SHOWS CREDIT CARD DROPDOWN -->
+<form>
+  <p>Number: <input id="g1" name="number" style="" data-moz-autofill-type="cc-number"></p>
+  <p>Credit Card Name: <input id="g2" name="cc-name" style="" data-moz-autofill-type="cc-name"></p>
+  <p>Expiry: <input id="g3" name="expiry" style="" data-moz-autofill-type="cc-exp"></p>
+</form>
+</fieldset>
+
+<fieldset>
+<!-- before: name, postal-code, cc-number -->
+<!-- after: name, street-address, postal-code ** SHOWS ADDRESS DROPDOWN -->
+<form>
+  <p>Name: <input id="h1" name="name" style="" data-moz-autofill-type="name"></p>
+  <p>Number: <input id="h2" name="number" style="" data-moz-autofill-type="cc-number"></p>
+  <p>Postal Code: <input id="h3" name="postcode" style="" data-moz-autofill-type="postal-code"></p>
+</form>
+</fieldset>
+
+<fieldset>
+<!-- before: name, street-address -->
+<form>
+  <p>Name: <input id="i1" name="name" style="" data-moz-autofill-type="name"></p>
+  <p>House Number: <input id="i2" name="housenumber" style="" data-moz-autofill-type="address-housenumber"></p>
+  <p>Expiry: <input id="i3" name="expiry" style="" data-moz-autofill-type="cc-exp"></p>
+</form>
+</fieldset>
+
+<fieldset>
+<!-- before: street-address, name -->
+<form>
+  <p>House Number: <input id="j1" name="housenumber" style="" data-moz-autofill-type="address-housenumber"></p>
+  <p>Name: <input id="j2" name="name" style="" data-moz-autofill-type="name"></p>
+  <p>Expiry: <input id="j3" name="expiry" style="" data-moz-autofill-type="cc-exp"></p>
+</form>
+</fieldset>
+
+<fieldset>
+<!-- before: given-name, family-name, cc-number, cc-exp -->
+<!-- after: given-name, family-name, street-address ** SHOWS ADDRESS DROPDOWN -->
+<form>
+  <p>First Name: <input id="k1" name="firstname" style="" data-moz-autofill-type="given-name"></p>
+  <p>Last Name: <input id="k2" name="lastname" style="" data-moz-autofill-type="family-name"></p>
+  <p>Number: <input id="k3" name="number" style="" data-moz-autofill-type="cc-number"></p>
+  <p>Expiry: <input id="k4" name="expiry" style="" data-moz-autofill-type="cc-exp"></p>
+</form>
+</fieldset>
+
+<fieldset>
+<!-- before: cc-number, cc-given-name, cc-family-name, cc-exp -->
+<form>
+  <p>Number: <input id="l3" name="number" style="" data-moz-autofill-type="cc-number"></p>
+  <p>First Name: <input id="l1" name="firstname" style="" data-moz-autofill-type="given-name"></p>
+  <p>Last Name: <input id="l2" name="lastname" style="" data-moz-autofill-type="family-name"></p>
+  <p>Expiry: <input id="l4" name="expiry" style="" data-moz-autofill-type="cc-exp"></p>
+</form>
+</fieldset>
+
+
+
+
+</body></html>

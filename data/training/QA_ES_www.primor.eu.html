@@ -1,0 +1,2324 @@
+<html lang="es"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; media-src data:; style-src data: 'unsafe-inline'; font-src data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Thu, 26 Feb 2026 09:22:49 GMT"><link rel="original" href="https://www.primor.eu/es_es/checkout/index/index/step/shipping/">
+    
+<meta name="title" content="Realizar pedido">
+<meta name="robots" content="INDEX,FOLLOW">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Realizar pedido</title>
+        <link rel="stylesheet" type="text/css" media="all" href="https://cdn.primor.eu/static/version1771952730/frontend/Redegal/hyva/es_ES/css/styles.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+<link rel="icon" type="image/x-icon" href="https://cdn2.primor.eu/media/favicon/default/favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.primor.eu/media/favicon/default/favicon.png">
+<link rel="canonical" href="https://www.primor.eu/es_es/checkout">
+<style>
+a.swatch-more {
+    display: none;
+}
+
+.slick-initialized .universes__item.slick-slide {
+   display: flex !important;
+}
+
+.slick-initialized .slider__item.slick-slide {
+    display: flex;
+    height: initial;
+ }
+.slider__slides .slick-track {
+    display: flex;
+}
+.catalog-product-view:not(.page-product-configurable) .product-view__buttons > .product-view__outofstock:first-child {
+    display: block;
+}
+
+/* Ajustes sticky desktop */
+.sticky-addtocart .sticky-addtocart__image .ratio-container .ratio-image {height:100%; object-fit:contain}
+.sticky-addtocart .sticky-addtocart__price .price__label, .sticky-addtocart .product-view__rating, .sticky-addtocart .addto-wishlist {display:none}
+/* Fin Ajustes sticky desktop */
+
+[hidden] {
+    display: none;
+}
+
+.category-slider {
+overflow: hidden;
+}
+
+.category-cms,
+.ambanner-slider {
+max-width: 100% !important;
+}
+
+.swiper-wrapper {
+height: auto !important;
+}
+
+.filters-container.menu-mobile {
+        display: block !important;
+        --decorate-size: none;
+        --tw-shadow: noen;
+        --tw-shadow-colored: none;
+        box-shadow: none;
+    }
+
+</style>
+
+    
+<link rel="preload" href="https://cdn.primor.eu/static/version1771952730/frontend/Redegal/hyva/es_ES/fonts/Mulish/Mulish-latin-ext.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="https://cdn.primor.eu/static/version1771952730/frontend/Redegal/hyva/es_ES/fonts/Mulish/Mulish-latin.woff2" as="font" type="font/woff2" crossorigin="">
+
+<style>
+    /* latin-ext */
+    @font-face {
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 200 1000;
+        font-display: swap;
+        src: url("https://cdn.primor.eu/static/version1771952730/frontend/Redegal/hyva/es_ES/fonts/Mulish/Mulish-latin-ext.woff2") format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 200 1000;
+        font-display: swap;
+        src: url("https://cdn.primor.eu/static/version1771952730/frontend/Redegal/hyva/es_ES/fonts/Mulish/Mulish-latin.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+</style>
+
+
+    
+    <!-- Google Tag Manager -->
+
+<!-- End Google Tag Manager -->
+        
+
+<!--Custom Style-->
+    
+<style>
+    :root {
+        --header-bg: #000000;
+        --header-color: #FFF;
+        --header-border: #707070;
+        --featured-header-color: #E21A1F;
+        --decorate-menu:  #FF2121;
+        --universes-color: #000000;
+        --menu-mobile-color: #FFFFFF;
+        --menu-mobile-active-color: #E21A1F;
+
+        --menu-search-color: #000;
+        --menu-search-placeholder-color: rgb(118 118 118);
+
+        --topnav-bg: #E21A1F;
+        --topnav-color: #FFF;
+        --topnav-arrow-color: #FFF;
+        --topnav-height: 60px;
+        --topnav-height-mobile: 52px;
+    }
+</style>
+
+
+
+
+
+
+
+<style>
+    @view-transition {
+        navigation: auto;
+    }
+</style>
+
+
+<!-- @oreales objeto en window para poder exponer valores que necesito en los javascripts desde la BBDD -->
+
+
+<link rel="preconnect" href="https://reviews-api.primor.eu">
+<link rel="stylesheet" href="https://cdn.primor.eu/static/version1771952730/frontend/Redegal/hyva/es_ES/Hyva_RedegalMagedelightErpStoreId/css/leaflet.min.css"><style>:has(> .x-base-teleport--onlychild) > *:not(.x-base-teleport) { display: none; }</style><style id="cn_style" type="text/css">@keyframes cn_fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes cn_fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes cn_fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes cn_fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes cn_fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes cn_zoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes cn_bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(0.97, 0.97, 0.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes cn_fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes cn_fadeOutLeft {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes cn_fadeOutDown {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+@keyframes cn_fadeOutRight {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+@keyframes cn_fadeOutUp {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+}
+
+@keyframes cn_zoomOut {
+    from {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes cn_bounceOut {
+    20% {
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+    50%,
+    55% {
+        opacity: 1;
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    to {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+}
+
+.cn__slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.cn__frame {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+ul.cn__slides.js_slides {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+li.cn__li {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 14px;
+    vertical-align: top;
+}
+
+.cn__prev,
+.cn__next {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    display: block;
+    cursor: pointer;
+}
+
+.cn__next {
+    right: 0;
+}
+
+.cn__prev {
+    left: 0;
+}
+
+.cn__next svg,
+.cn__prev svg {
+    width: 25px;
+}
+
+[data-cn-required-message-for]:not(.visible) {
+    display: none;
+}
+
+.cn_product {
+    float: left;
+}
+
+.cn_rating {
+    --star-size: 20px;
+    --star-color: #fc0;
+    --star-background: #ccc;
+    --percent: calc(var(--rating) / 5 * 100%);
+    font-size: var(--star-size);
+    font-family: Times;
+    line-height: 1;
+}
+
+.cn_rating::before {
+    content: '★★★★★';
+    letter-spacing: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--star-color) var(--percent),
+        var(--star-background) var(--percent)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cn_countdown {
+    line-height: 3em;
+}
+
+.cn_countdown .cn_numbers {
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.cn_countdown .cn_time-labels {
+    font-weight: bold;
+    text-align: center;
+}
+</style><style id="cn_style_251daf80-4034-44a9-a0ae-26d3a2a31690" type="text/css">.cn_content.id-251daf80-4034-44a9-a0ae-26d3a2a31690 .cn_button_link p{margin: 0; line-height: 1em;}</style><style id="cn_style_80ff125c-02fd-49e3-9efd-6840e9f0670a" type="text/css">.cn_content.id-80ff125c-02fd-49e3-9efd-6840e9f0670a .cn_button_link p{margin: 0; line-height: 1em;}</style><style type="text/css" id="desktop-minimal-widget-styles">#livechat-wrapper { box-shadow: 2px 2px 10px #333; text-align:center; border-radius: 100px; line-height:61px; height:60px; width:60px; position:fixed; cursor:pointer; z-index:2147483646 !important; background-color:#000000;color:rgb(246, 246, 246);bottom:10px; right:20px}</style></head>
+<body class="checkout-default hyva_checkout-index-index page-layout-1column webp" id="html-body">
+<!-- Google Tag Manager (noscript) -->
+
+<!-- End Google Tag Manager (noscript) -->
+<input name="form_key" type="hidden" value="x8hPTRSOy1bTG6MQ" data-moz-autofill-inspect-id="1e2b035e-eb95-4b69-900f-2f64b3132982">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="page-wrapper page-all-content checkout-cart"><header class="page-header">
+<a class="action skip sr-only focus:not-sr-only focus:absolute focus:z-40 focus:bg-white contentarea" href="#contentarea">
+    Ir al contenido</a>
+
+
+
+<div id="header" class="bg-[--header-bg] text-[--header-color]" x-data="initHeader" @private-content-loaded.window="getData">
+    <div class="header-content container grid gap-4 py-4">
+        <!-- Logo -->
+        
+<a class="flex items-center justify-center prerender" href="https://www.primor.eu/es_es/" aria-label="Go to Home page">
+    <picture><source type="image/webp" srcset="https://cdn2.primor.eu/media/logo/stores/1/blogo.webp"><img src="https://cdn2.primor.eu/media/logo/stores/1/blogo.png" alt="Perfumerías Primor" width="128" height="40" loading="eager"></picture>
+    </a>
+
+        <!-- Search -->
+        
+<form class="form minisearch w-full relative text-primary xl:pl-12 flex items-center" action="https://www.primor.eu/es_es/catalogsearch/result/" method="get" role="search">
+    <label class="hidden" for="search" data-role="minisearch-label">
+        Buscar productos    </label>
+    <input id="search" type="search" autocomplete="off" name="q" value="" placeholder="Buscar productos" maxlength="128" class="w-full h-8 xs:h-10 px-2 sm:px-4 rounded-[30px] placeholder-[--menu-search-placeholder-color] focus:outline-none focus:border-[--menu-search-color] border border-[--menu-search-color] text-[--menu-search-color]" data-moz-autofill-inspect-id="e7e83612-0b56-4bf3-890b-272b4b3806e4" style="">
+    <button type="button" title="Buscar productos" class="action search px-2 sm:px-4 absolute top-0 right-0 bottom-0 text-[--menu-search-color]" aria-label="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19.001 19" stroke="currentColor" width="18" height="18" aria-hidden="true">
+    <path d="M14.973 14.975L18.5 18.5zM2.98 14.956a8.465 8.465 0 115.986 2.48 8.47 8.47 0 01-5.986-2.48z"></path>
+</svg>
+    </button>
+<div class="x-base-teleport x-base-teleport--onlychild"><section class="x-relative"><div data-v-a2c1c8c1="" class="x-custom-searchbox x-input-group x-input-group-lead x-rounded-full" style="--custom-search-color: #000000; --outline-search-color: #000000; border-color: rgb(0, 0, 0);"><input data-v-ae31d02d="" data-v-a2c1c8c1="" maxlength="64" autocomplete="off" class="x-search-input x-input desktop:x-pl-24" enterkeyhint="search" inputmode="search" type="search" data-test="search-input" aria-label="type your query here" placeholder="¿Qué estás buscando?" value="" data-moz-autofill-inspect-id="f922f870-746a-49d4-88bf-85a4775be03a" style=""><!--v-if--><button data-v-a2c1c8c1="" class="x-search-button x-button x-search-button--has-empty-query x-input-group-button-primary x-mr-6 x-border-neutral-0 x-bg-neutral-0" data-test="search-button"><svg data-v-a2c1c8c1="" class="x-icon x-icon-sm" xmlns="http://www.w3.org/2000/svg" width="15.207" height="15.207" viewBox="0 0 15.207 15.207"><g transform="translate(0.5 0.5)"><path d="M15.62,10.06A5.56,5.56,0,1,1,10.06,4.5a5.56,5.56,0,0,1,5.56,5.56Z" transform="translate(-4.5 -4.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path><path d="M29.065,29.065l-4.09-4.09" transform="translate(-15.065 -15.065)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path></g></svg></button></div><!--v-if--></section></div></form>
+
+
+        <!-- Promotions -->
+        
+        <div class="header-icons flex items-center">
+            <!-- Additional Header Elements -->
+            
+<button type="button" class="header-icon" @click="
+        document.querySelector('.minisearch').classList.add('active');
+        document.querySelector('.minisearch .x-search-input')?.click();
+        document.querySelector('.minisearch .x-search-input')?.focus();
+    " aria-label="Buscar productos" title="Buscar productos">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19" fill="none" width="27" height="25" aria-hidden="true">
+    <path d="M14.4787 7.61436C14.4787 8.97201 14.0761 10.2992 13.3219 11.428C12.5676 12.5568 11.4955 13.4367 10.2412 13.9562C8.98695 14.4758 7.60675 14.6117 6.2752 14.3468C4.94364 14.082 3.72053 13.4282 2.76053 12.4682C1.80053 11.5082 1.14676 10.2851 0.8819 8.95353C0.617037 7.62198 0.752974 6.24178 1.27252 4.98749C1.79207 3.73319 2.67189 2.66112 3.80073 1.90685C4.92957 1.15259 6.25672 0.75 7.61437 0.75C9.43491 0.75 11.1809 1.47321 12.4682 2.76053C13.7555 4.04784 14.4787 5.79382 14.4787 7.61436Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M18.0359 18.0354L12.9858 12.9854" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+
+            <!-- Blog -->
+            
+            <!-- Storelocator -->
+            
+            <!-- Customer Icon & Dropdown -->
+            
+            <!-- Whislist -->
+            
+<a href="https://www.primor.eu/es_es/wishlist/" class="header-icon" :aria-label="wishlistAriaLabel" title="Mis favoritos" aria-label="Mis favoritos, Wish List is empty">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.125 18.621" stroke="currentColor" fill="none" width="27" height="25" aria-hidden="true">
+    <path d="M16.255,3.938h-.042a4.821,4.821,0,0,0-4.025,2.2,4.821,4.821,0,0,0-4.025-2.2H8.12A4.79,4.79,0,0,0,3.375,8.725,10.313,10.313,0,0,0,5.4,14.347a35.49,35.49,0,0,0,6.787,6.537,35.49,35.49,0,0,0,6.787-6.537A10.313,10.313,0,0,0,21,8.725,4.79,4.79,0,0,0,16.255,3.938Z" transform="translate(-2.625 -3.188)" stroke-width="1"></path>
+</svg>
+    <span x-text="wishlistCount" x-show="wishlistCount" class="counter" aria-hidden="true" style="display: none;">0</span>
+</a>
+
+            <!-- Cart -->
+            
+<div class="relative inline-block" @keydown.escape="closeCart" @mouseover.outside="closeCart">
+    <!-- Cart Icon -->
+    <a class="header-icon" x-ref="cartButton" :aria-label="cartAriaLabel" @keydown.space.prevent="openCart" @mouseover="openCart" @toggle-cart.window="toggleCart" :aria-expanded="isCartExpanded" aria-haspopup="true" href="https://www.primor.eu/es_es/checkout/cart/index/" title="Ver carrito" aria-label="Toggle minicart, 2 artítulos" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.5 26.3" stroke="currentColor" width="27" height="25" aria-hidden="true">
+    <path d="M22.8,23.5c0,1.2-1,2.2-2.2,2.2c0,0,0,0,0,0H2.9c-1.2,0-2.2-1-2.2-2.2c0,0,0,0,0,0L1.6,7.5c0-1.2,1-2.2,2.2-2.2c0,0,0,0,0,0h16c1.2,0,2.2,1,2.2,2.2c0,0,0,0,0,0L22.8,23.5z" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M8.6,7.5V4c0-1.7,1.4-3.1,3.1-3.1s3.1,1.4,3.1,3.1v3.5" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+        <span x-text="summaryCount" x-show="summaryCount" class="counter" aria-hidden="true">2</span>
+    </a>
+
+    <!-- Minicart -->
+    <template x-if="isInitialize">
+        <div>
+                    </div>
+    </template><div>
+                    </div>
+</div>
+        </div>
+    </div>
+</div>
+
+</header><div class="page-subwrapper"><div class="page messages">
+
+<section id="messages" class="messages" x-data="initMessages" x-bind="eventListeners" role="alert">
+    <template x-for="(message, index) in messages" :key="index">
+        <template x-if="hasMessage">
+            <div class="message-container transition-all" x-init="initializeMessage" :class="getMessageClass" :ui-id="getMessageUiId" @click="removeMessage">
+                <div class="message" :class="message.type">
+                    <span x-html="message.text"></span>
+                </div>
+            </div>
+        </template>
+    </template>
+</section>
+</div>
+
+<main id="maincontent" class="page-main"><div id="contentarea" tabindex="-1"></div>
+
+    <div class="container flex flex-col md:flex-row flex-wrap font-bold mb-4 sr-only">
+        <h1 class="page-title">
+            <span class="base" data-ui-id="page-title-wrapper">Realizar pedido</span>        </h1>
+            </div>
+<div class="columns container"><div class="column main"> <div wire:id="hyva-checkout-main" id="hyva-checkout-main" class="step-shipping step-layout-1column">
+    
+
+        <div id="hyva-checkout-container">
+        
+<div class="area-main mx-auto max-w-4xl">
+    
+<div wire:id="checkout.total" class="sticky top-fullheader z-10 -mt-4 md:-mt-8 bg-white py-3 border-b border-container mb-6 md:mb-10" :class="{ 'mb-6 md:mb-10': step !== 'summary' }" x-data="{ step: null }" x-init="
+        window.addEventListener('checkout:step:loaded',  e =&gt; step = e.detail.route);
+        window.addEventListener('checkout:navigation:success', e =&gt; step = e.detail.route)
+    ">
+    <div class="flex items-center justify-between gap-4 text-sm md:text-lg">
+        <span class="font-bold" x-html="step === 'summary' ? 'Total a pagar' : 'Cesta'">Cesta</span>
+        <a href="https://www.primor.eu/es_es/checkout/cart/" class="font-bold text-link">
+            <span class="price">19,69&nbsp;€</span>        </a>
+    </div>
+</div>
+<!-- Magewire Component wire-end:checkout.total --><fieldset id="storepickup-details"><template x-data="initComponentMessenger" data-message-listener="shipping:storepickup:error" data-options="{&quot;onEmptyMessageText&quot;:&quot;Something went wrong.&quot;,&quot;messagesSuccessListener&quot;:&quot;shipping:storepickup:success&quot;}" x-init="initialize" x-for="message in getMessages" x-bind:key="message.id">
+    <div class="component-messenger message mb-4 relative" x-data="initComponentMessengerMessage" x-bind="wrapper">
+        <span role="alert" x-text="message.text">
+            <!-- Message Placeholder -->
+        </span>
+
+        <div class="absolute -left-2 -top-2" x-show="isDispatchedLargerThan2" x-bind="bindDot">
+            <span class="flex h-4 w-4">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" x-bind="bindDotColor"></span>
+                <span class="relative inline-flex rounded-full h-4 w-4 border-2 border-white shadow-xl" x-bind="bindDotColor"></span>
+            </span>
+        </div>
+    </div>
+</template>
+<div wire:id="checkout.storepickup">
+            <div class="storepickup" x-data="storePickup">
+            
+    <div class="section-title w-full mb-5 md:mb-10 text-center text-pretty ">
+        <h2 class="text-xl md:text-2xl font-bold">
+            ¿Cómo quieres recibir tu pedido?        </h2>
+    </div>
+
+            <div class="max-w-96 mx-auto mb-10 pb-10 border-b border-container">
+                <div class="flex gap-4 justify-center text-center text-sm md:text-base">
+                    <button type="button" class="flex-1 rounded-md p-6 active border-2 border-link font-bold" wire:click="selectMethodNoStorePickup">
+                        Quiero que me lo envíen                    </button>
+                    <button type="button" class="flex-1 rounded-md p-6 cursor-pointer border border-black inactive" wire:click="selectMethodStorePickup">
+                        Lo recogeré en tienda                    </button>
+                </div>
+
+                            </div>
+
+                    </div>
+    </div>
+<!-- Magewire Component wire-end:checkout.storepickup --></fieldset><fieldset id="shipping-section">
+    <legend class="section-title subtitle w-full mb-4 text-pretty text-center md:text-left">
+        <h3 class="text-base md:text-lg font-bold">
+            Métodos de envío        </h3>
+    </legend>
+<template x-data="initComponentMessenger" data-message-listener="shipping:method:error" data-options="{&quot;onEmptyMessageText&quot;:&quot;Something went wrong.&quot;,&quot;messagesSuccessListener&quot;:&quot;shipping:method:success&quot;}" x-init="initialize" x-for="message in getMessages" x-bind:key="message.id">
+    <div class="component-messenger message mb-4 relative" x-data="initComponentMessengerMessage" x-bind="wrapper">
+        <span role="alert" x-text="message.text">
+            <!-- Message Placeholder -->
+        </span>
+
+        <div class="absolute -left-2 -top-2" x-show="isDispatchedLargerThan2" x-bind="bindDot">
+            <span class="flex h-4 w-4">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" x-bind="bindDotColor"></span>
+                <span class="relative inline-flex rounded-full h-4 w-4 border-2 border-white shadow-xl" x-bind="bindDotColor"></span>
+            </span>
+        </div>
+    </div>
+</template>
+
+<div wire:id="checkout.shipping.methods" id="shipping-methods">
+            <div class="grid md:grid-cols-[2fr_1fr] gap-4 md:gap-12 ">
+            <div id="shipping-method-list" class="grid gap-4">
+                                                                                                                                                                                                            
+                        <div class="hidden">
+                            <label id="shipping-method-option-storepickup" class="shipping-method h-20 flex items-center rounded-md px-8 m-0 cursor-pointer border border-black inactive" wire:key="storepickup" data-disabled="false" x-data="hyvaCheckoutShippingMethodOption">
+                                <div class="w-full flex items-center justify-between gap-4">
+                                    <input type="radio" class="form-radio hidden" id="shipping-method-storepickup" name="shipping-method-option" value="storepickup_storepickup" wire:model="method" x-bind:disabled="disabled" data-moz-autofill-inspect-id="c24063a6-469c-4a97-8f0d-6c8eb536d2e8">
+
+                                    <span class="flex items-center gap-2">
+                                        
+                                        <span class="flex flex-col">
+                                            <span class="font-bold text-base">
+                                                Recogida en tienda                                            </span>
+                                                                                            <span class="text-xs">
+                                                    Recoge tu pedido en una de nuestras tiendas                                                </span>
+                                                                                    </span>
+                                    </span>
+
+                                    <div class="product-price">
+                                                                                    <span class="price-including-tax" data-label="Impuestos incluidos">
+                                                <span class="text-free uppercase">Gratis</span>                                            </span>
+                                        
+                                                                            </div>
+                                </div>
+                            </label>
+
+                            
+                                                    </div>
+                                                                                                                                                                                                                                
+                        <div class="">
+                            <label id="shipping-method-option-matrixrate_961" class="shipping-method h-20 flex items-center rounded-md px-8 m-0 active border-2 border-link" wire:key="matrixrate_961" data-disabled="false" x-data="hyvaCheckoutShippingMethodOption">
+                                <div class="w-full flex items-center justify-between gap-4">
+                                    <input type="radio" class="form-radio hidden" id="shipping-method-matrixrate_961" name="shipping-method-option" value="matrixrate_matrixrate_961" wire:model="method" x-bind:disabled="disabled" data-moz-autofill-inspect-id="bce11f40-6a4b-4cb0-9b06-34c7c244c7fe">
+
+                                    <span class="flex items-center gap-2">
+                                        
+                                        <span class="flex flex-col">
+                                            <span class="font-bold text-base">
+                                                Envío a domicilio &lt; 25 €                                            </span>
+                                                                                            <span class="text-xs">
+                                                    Envío GRATIS desde 25€                                                </span>
+                                                                                    </span>
+                                    </span>
+
+                                    <div class="product-price">
+                                                                                    <span class="price-including-tax" data-label="Impuestos incluidos">
+                                                2,95&nbsp;€                                            </span>
+                                        
+                                                                            </div>
+                                </div>
+                            </label>
+
+                            
+                                                                                                                </div>
+                                                </div>
+            <div class="text-xs">
+                Los costes de envío pueden variar según ubicación de entrega            </div>
+        </div>
+            </div>
+<!-- Magewire Component wire-end:checkout.shipping.methods --><div class="mt-4 flex">
+    <a href="https://www.primor.eu/es_es/envio-del-producto/" class="text-link link-text text-xs inline-flex items-center gap-1" x-data="modalLink">
+        Política de envío        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" width="12" height="12" aria-hidden="true">
+    <circle cx="5.65479" cy="6.48828" r="5" stroke="currentColor"></circle>
+    <line x1="2.69336" y1="6.41113" x2="8.61644" y2="6.41113" stroke="currentColor"></line>
+    <line x1="5.73169" y1="3.52637" x2="5.73169" y2="9.44944" stroke="currentColor"></line>
+</svg>
+    </a>
+</div>
+<fieldset id="redegal-ga4-acsms">    
+</fieldset></fieldset><fieldset id="guest-details"><template x-data="initComponentMessenger" data-message-listener="guest:details:error" data-options="{&quot;onEmptyMessageText&quot;:&quot;Something went wrong.&quot;,&quot;messagesSuccessListener&quot;:&quot;guest:details:success&quot;}" x-init="initialize" x-for="message in getMessages" x-bind:key="message.id">
+    <div class="component-messenger message mb-4 relative" x-data="initComponentMessengerMessage" x-bind="wrapper">
+        <span role="alert" x-text="message.text">
+            <!-- Message Placeholder -->
+        </span>
+
+        <div class="absolute -left-2 -top-2" x-show="isDispatchedLargerThan2" x-bind="bindDot">
+            <span class="flex h-4 w-4">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" x-bind="bindDotColor"></span>
+                <span class="relative inline-flex rounded-full h-4 w-4 border-2 border-white shadow-xl" x-bind="bindDotColor"></span>
+            </span>
+        </div>
+    </div>
+</template>
+
+    <legend class="section-title w-full mb-5 md:mb-10 text-center text-pretty ">
+        <h2 class="text-xl md:text-2xl font-bold">
+            Información de contacto        </h2>
+    </legend>
+<form wire:id="checkout.guest-details" id="guest_details" x-data="initMagewireForm" novalidate="">
+        
+    <div class="checkout-form-elements grid grid-cols-12 gap-x-3">
+                        
+                                                                            <div class="col-span-12 field-wrapper field-type-email field field-reserved field-email_address">
+                
+                
+<div class="field required field-wrapper-inner">
+    <label for="guest_details-email_address" class="label label-email_address sr-only">
+    <span>
+        Dirección de correo electrónico    </span>
+</label>
+        
+    
+    <div class="group input-group flex gap-4">
+        
+        <input class="form-input w-full grow email" wire:model.defer="data.email_address" wire:auto-save="guest_details" type="email" data-form="guest_details" data-attribute="email_address" data-order="999" data-level="0" required="" id="guest_details-email_address" name="email_address" placeholder="Dirección de correo electrónico *" data-moz-autofill-inspect-id="8d884bc4-b2bf-444b-888e-c87aee5665c0" data-moz-autofill-type="email" style="">
+
+            </div>
+
+    
+    
+    
+        </div>
+
+
+
+                                    
+                    </div>
+                                    
+                            </div>
+
+        
+    </form>
+<!-- Magewire Component wire-end:checkout.guest-details --></fieldset><fieldset id="shipping-details">
+    <legend class="section-title w-full mb-5 md:mb-10 text-center text-pretty ">
+        <h2 class="text-xl md:text-2xl font-bold">
+            ¿Dónde enviamos tu pedido?        </h2>
+    </legend>
+<div class="address-subtitle">
+    
+    <div class="section-title subtitle w-full mb-4 text-pretty ">
+        <h3 class="text-base md:text-lg font-bold">
+            Introduce nombre y dirección        </h3>
+    </div>
+</div>
+<template x-data="initComponentMessenger" data-message-listener="shipping:details:error" data-options="{&quot;onEmptyMessageText&quot;:&quot;Something went wrong.&quot;,&quot;messagesSuccessListener&quot;:&quot;shipping:details:success&quot;}" x-init="initialize" x-for="message in getMessages" x-bind:key="message.id">
+    <div class="component-messenger message mb-4 relative" x-data="initComponentMessengerMessage" x-bind="wrapper">
+        <span role="alert" x-text="message.text">
+            <!-- Message Placeholder -->
+        </span>
+
+        <div class="absolute -left-2 -top-2" x-show="isDispatchedLargerThan2" x-bind="bindDot">
+            <span class="flex h-4 w-4">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" x-bind="bindDotColor"></span>
+                <span class="relative inline-flex rounded-full h-4 w-4 border-2 border-white shadow-xl" x-bind="bindDotColor"></span>
+            </span>
+        </div>
+    </div>
+</template>
+<div wire:id="checkout.shipping-details">
+    
+<div wire:id="checkout.shipping-details.address-form" class="address-form grid md:grid-cols-[2fr_1fr] gap-4 md:gap-12">
+    <form id="shipping" class="address-form" x-data="initAddressForm" x-init="initialize" novalidate="">
+        <div class="grid grid-cols-12 gap-x-4">
+            
+                                                                                                <div class="col-span-12 field-wrapper field-type-hidden field field-reserved field-id" wire:key="field-wrapper-shipping-address-id">
+                            <input type="hidden" data-form="shipping" data-attribute="id" data-order="0" data-level="0" id="shipping-id" name="id" data-magewire-is-valid="1" data-validate="{&quot;magewire&quot;:true}" wire:loading.class="loading" wire:loading.attr="disabled" wire:target="id" wire:auto-save="shipping" wire:model.defer="address.id" value="" data-moz-autofill-inspect-id="319a63a5-32bc-4562-bc35-492c02085651">
+
+                                                    </div>
+                                                                                                        <div class="col-span-12 field-wrapper field-type-text field field-reserved field-firstname md:col-span-12" wire:key="field-wrapper-shipping-address-firstname">
+                            
+<div class="field required field-wrapper-inner">
+    <label for="shipping-firstname" class="label label-firstname sr-only">
+    <span>
+        Nombre    </span>
+</label>
+        
+    
+    <div class="group input-group flex gap-4">
+        
+        <input class="form-input w-full grow text firstname address-attribute" type="text" data-form="shipping" data-attribute="firstname" data-order="3" data-level="0" required="" id="shipping-firstname" name="firstname" autocomplete="given-name" data-attribute-address="true" data-magewire-is-valid="1" data-validate="{&quot;magewire&quot;:true}" wire:loading.class="loading" wire:loading.attr="disabled" wire:target="firstname" wire:auto-save="shipping" wire:model.defer="address.firstname" placeholder="Nombre *" data-moz-autofill-inspect-id="d17465f8-5fc8-462f-b308-e0a0f736ca2a" data-moz-autofill-type="given-name" style="">
+
+            </div>
+
+    
+    
+    
+        </div>
+
+
+
+                                                    </div>
+                                                                                                        <div class="col-span-12 field-wrapper field-type-text field field-reserved field-lastname md:col-span-12" wire:key="field-wrapper-shipping-address-lastname">
+                            
+<div class="field required field-wrapper-inner">
+    <label for="shipping-lastname" class="label label-lastname sr-only">
+    <span>
+        Apellidos    </span>
+</label>
+        
+    
+    <div class="group input-group flex gap-4">
+        
+        <input class="form-input w-full grow text lastname address-attribute" type="text" data-form="shipping" data-attribute="lastname" data-order="5" data-level="0" required="" id="shipping-lastname" name="lastname" autocomplete="family-name" data-attribute-address="true" data-magewire-is-valid="1" data-validate="{&quot;magewire&quot;:true}" wire:loading.class="loading" wire:loading.attr="disabled" wire:target="lastname" wire:auto-save="shipping" wire:model.defer="address.lastname" placeholder="Apellidos *" data-moz-autofill-inspect-id="eb9ffd23-7f4c-4b41-ac8f-ca18f26755ee" data-moz-autofill-type="family-name" style="">
+
+            </div>
+
+    
+    
+    
+        </div>
+
+
+
+                                                    </div>
+                                                                                                        <div class="col-span-12 field-wrapper field-type-select field field-reserved field-address_gender" wire:key="field-wrapper-shipping-address-address_gender">
+                            
+<div class="field required field-wrapper-inner">
+    <label for="shipping-address_gender" class="label label-address_gender sr-only">
+    <span>
+        Género    </span>
+</label>
+        
+    
+    <div class="group input-group flex gap-4">
+        
+        <select class="block w-full form-select select address-attribute" data-form="shipping" data-attribute="address_gender" data-order="6" data-level="0" required="" id="shipping-address_gender" name="address_gender" data-magewire-is-valid="1" data-validate="{&quot;magewire&quot;:true}" wire:loading.class="loading" wire:loading.attr="disabled" wire:target="address_gender" wire:auto-save="shipping" wire:model.defer="address.address_gender" data-moz-autofill-inspect-id="01f050bf-57eb-4171-b6d1-ecd62c3b7a71" style="" data-moz-autofill-type="sex">
+                                                <option value="">
+                                                -- Por favor, seleccione -- *                    </option>
+                                                                <option value="1">
+                                                Masculino                    </option>
+                                                                <option value="2">
+                                                Femenino                    </option>
+                                                                <option value="0">
+                                                Not specified *                    </option>
+                                    </select>
+
+            </div>
+
+    
+    
+    
+        </div>
+
+
+
+                                                    </div>
+                                                                                                        <div class="col-span-12 field-wrapper field-type-text field field-reserved field-company md:col-span-12" wire:key="field-wrapper-shipping-address-company">
+                            
+<div class="field field-wrapper-inner">
+    <label for="shipping-company" class="label label-company sr-only">
+    <span>
+        Empresa    </span>
+</label>
+        
+    
+    <div class="group input-group flex gap-4">
+        
+        <input class="form-input w-full grow text company address-attribute" type="text" data-form="shipping" data-attribute="company" data-order="7" data-level="0" id="shipping-company" name="company" autocomplete="organization" data-attribute-address="true" data-magewire-is-valid="1" data-validate="{&quot;magewire&quot;:true}" wire:loading.class="loading" wire:loading.attr="disabled" wire:target="company" wire:auto-save="shipping" wire:model.defer="address.company" placeholder="Empresa" data-moz-autofill-inspect-id="bc18ad60-a344-4c17-8c63-40599c6a68f5" data-moz-autofill-type="organization" style="">
+
+            </div>
+
+    
+    
+    
+        </div>
+
+
+
+                                                    </div>
+                                                                                                        <div class="col-span-12 field-wrapper field-type-text field field-reserved field-alias-street field-street md:col-span-12" wire:key="field-wrapper-shipping-address-street">
+                            
+<div class="field required field-wrapper-inner">
+    <label for="shipping-street" class="label label-street sr-only">
+    <span>
+        Dirección    </span>
+</label>
+        
+    
+    <div class="group input-group flex gap-4">
+        
+        <input class="form-input w-full grow text street address-attribute" maxlength="50" data-validate="{&quot;maxlength&quot;:50,&quot;magewire&quot;:true}" data-msg-required="&quot;Street Address&quot; es un campo obligatorio." type="text" data-form="shipping" data-attribute="street" data-order="8" data-level="0" required="" id="shipping-street" name="street" autocomplete="address-line1" data-attribute-address="true" data-magewire-is-valid="1" wire:loading.class="loading" wire:loading.attr="disabled" wire:target="street" wire:auto-save="shipping" wire:model.defer="address.street" placeholder="Dirección *" data-moz-autofill-inspect-id="9d8bd65d-867f-4d24-a4e8-2bc424fc0579" data-moz-autofill-type="address-line1" style="">
+
+            </div>
+
+    
+    
+    
+        </div>
+
+
+
+                                                    </div>
+                                                                                                        <div class="col-span-12 field-wrapper field-type-select field field-reserved field-country_id md:col-span-12" wire:key="field-wrapper-shipping-address-country_id">
+                            
+<div class="field required field-wrapper-inner">
+    <label for="shipping-country_id" class="label label-country_id sr-only">
+    <span>
+        País    </span>
+</label>
+        
+    
+    <div class="group input-group flex gap-4">
+        
+        <select class="block w-full form-select select country_id address-attribute" data-form="shipping" data-attribute="country_id" data-order="12" data-level="0" required="" id="shipping-country_id" name="country_id" autocomplete="country" data-attribute-address="true" data-magewire-is-valid="1" data-validate="{&quot;magewire&quot;:true}" wire:loading.class="loading" wire:loading.attr="disabled" wire:target="country_id" wire:auto-save="shipping" wire:model.defer="address.country_id" wire:select.debounce.blur="" data-moz-autofill-inspect-id="1f74d8fa-6cef-4a2f-ad69-8778adfe9660" data-moz-autofill-type="country" style="">
+                                                <option value="">
+                                                Por favor seleccione un país - zona geográfica. *                    </option>
+                                                                <option value="">
+                                                Por favor seleccione un país - zona geográfica. *                    </option>
+                                                                <option value="AD">
+                                                Andorra                    </option>
+                                                                <option value="IC">
+                                                España - Islas Canarias                    </option>
+                                                                <option value="EA">
+                                                Ceuta y Melilla                    </option>
+                                                                <option value="ES">
+                                                España - Península e Islas Baleares                    </option>
+                                                                <option value="PT">
+                                                Portugal                    </option>
+                                    </select>
+
+            </div>
+
+    
+    
+    
+        </div>
+
+
+
+                                                    </div>
+                                                                                                        <div class="col-span-12 field-wrapper field-type-select field field-reserved field-region md:col-span-12" wire:key="field-wrapper-shipping-address-region">
+                            
+<div class="field required field-wrapper-inner">
+    <label for="shipping-region" class="label label-region sr-only">
+    <span>
+        Provincia    </span>
+</label>
+        
+    
+    <div class="group input-group flex gap-4">
+        
+        <select class="block w-full form-select select region address-attribute" data-form="shipping" data-attribute="region" data-order="13" data-level="0" required="" id="shipping-region" name="region" autocomplete="address-level1" data-attribute-address="true" data-magewire-is-valid="1" data-validate="{&quot;magewire&quot;:true}" wire:loading.class="loading" wire:loading.attr="disabled" wire:target="region" wire:auto-save="shipping" wire:model.defer="address.region" data-moz-autofill-inspect-id="e2dcdc46-1fe6-42b2-8b87-17b945a3aefe" data-moz-autofill-type="address-level1" style="">
+                                                <option value="">
+                                                Por favor seleccione región, estado o provincia. *                    </option>
+                                                                <option value="130">
+                                                A Coruña                    </option>
+                                                                <option value="131">
+                                                Alava                    </option>
+                                                                <option value="132">
+                                                Albacete                    </option>
+                                                                <option value="133">
+                                                Alicante                    </option>
+                                                                <option value="134">
+                                                Almeria                    </option>
+                                                                <option value="135">
+                                                Asturias                    </option>
+                                                                <option value="136">
+                                                Avila                    </option>
+                                                                <option value="137">
+                                                Badajoz                    </option>
+                                                                <option value="138">
+                                                Baleares                    </option>
+                                                                <option value="139">
+                                                Barcelona                    </option>
+                                                                <option value="140">
+                                                Burgos                    </option>
+                                                                <option value="141">
+                                                Caceres                    </option>
+                                                                <option value="142">
+                                                Cadiz                    </option>
+                                                                <option value="143">
+                                                Cantabria                    </option>
+                                                                <option value="144">
+                                                Castellon                    </option>
+                                                                <option value="146">
+                                                Ciudad Real                    </option>
+                                                                <option value="147">
+                                                Cordoba                    </option>
+                                                                <option value="148">
+                                                Cuenca                    </option>
+                                                                <option value="149">
+                                                Girona                    </option>
+                                                                <option value="150">
+                                                Granada                    </option>
+                                                                <option value="151">
+                                                Guadalajara                    </option>
+                                                                <option value="152">
+                                                Guipuzcoa                    </option>
+                                                                <option value="153">
+                                                Huelva                    </option>
+                                                                <option value="154">
+                                                Huesca                    </option>
+                                                                <option value="155">
+                                                Jaen                    </option>
+                                                                <option value="156">
+                                                La Rioja                    </option>
+                                                                <option value="158">
+                                                Leon                    </option>
+                                                                <option value="159">
+                                                Lleida                    </option>
+                                                                <option value="160">
+                                                Lugo                    </option>
+                                                                <option value="161">
+                                                Madrid                    </option>
+                                                                <option value="162">
+                                                Malaga                    </option>
+                                                                <option value="164">
+                                                Murcia                    </option>
+                                                                <option value="165">
+                                                Navarra                    </option>
+                                                                <option value="166">
+                                                Ourense                    </option>
+                                                                <option value="167">
+                                                Palencia                    </option>
+                                                                <option value="168">
+                                                Pontevedra                    </option>
+                                                                <option value="169">
+                                                Salamanca                    </option>
+                                                                <option value="171">
+                                                Segovia                    </option>
+                                                                <option value="172">
+                                                Sevilla                    </option>
+                                                                <option value="173">
+                                                Soria                    </option>
+                                                                <option value="174">
+                                                Tarragona                    </option>
+                                                                <option value="175">
+                                                Teruel                    </option>
+                                                                <option value="176">
+                                                Toledo                    </option>
+                                                                <option value="177">
+                                                Valencia                    </option>
+                                                                <option value="178">
+                                                Valladolid                    </option>
+                                                                <option value="179">
+                                                Vizcaya                    </option>
+                                                                <option value="180">
+                                                Zamora                    </option>
+                                                                <option value="181">
+                                                Zaragoza                    </option>
+                                    </select>
+
+            </div>
+
+    
+    
+    
+        </div>
+
+
+
+                                                    </div>
+                                                                                                        <div class="col-span-12 field-wrapper field-type-text field field-reserved field-city md:col-span-12" wire:key="field-wrapper-shipping-address-city">
+                            
+<div class="field required field-wrapper-inner">
+    <label for="shipping-city" class="label label-city sr-only">
+    <span>
+        Población    </span>
+</label>
+        
+    
+    <div class="group input-group flex gap-4">
+        
+        <input class="form-input w-full grow text city address-attribute" type="text" data-form="shipping" data-attribute="city" data-order="14" data-level="0" required="" id="shipping-city" name="city" autocomplete="address-level2" data-attribute-address="true" data-magewire-is-valid="1" data-validate="{&quot;magewire&quot;:true}" wire:loading.class="loading" wire:loading.attr="disabled" wire:target="city" wire:auto-save="shipping" wire:model.defer="address.city" placeholder="Población *" data-moz-autofill-inspect-id="b911fc92-e9f3-45ac-b15c-835dbce95c3a" data-moz-autofill-type="address-level2" style="">
+
+            </div>
+
+    
+    
+    
+        </div>
+
+
+
+                                                    </div>
+                                                                                                        <div class="col-span-12 field-wrapper field-type-text field field-reserved field-postcode md:col-span-12" wire:key="field-wrapper-shipping-address-postcode">
+                            
+<div class="field required field-wrapper-inner">
+    <label for="shipping-postcode" class="label label-postcode sr-only">
+    <span>
+        Código Postal    </span>
+</label>
+        
+    
+    <div class="group input-group flex gap-4">
+        
+        <input class="form-input w-full grow text postcode address-attribute" data-validate="{&quot;postcode&quot;:true,&quot;magewire&quot;:true}" type="text" data-form="shipping" data-attribute="postcode" data-order="15" data-level="0" required="" id="shipping-postcode" name="postcode" autocomplete="postal-code" data-attribute-address="true" data-magewire-is-valid="1" wire:loading.class="loading" wire:loading.attr="disabled" wire:target="postcode" wire:auto-save="shipping" wire:model.defer="address.postcode" placeholder="Código Postal *" data-moz-autofill-inspect-id="a1071032-f081-430d-9d06-c1ef4cdfbcf0" data-moz-autofill-type="postal-code" style="">
+
+            </div>
+
+    
+    
+    
+        </div>
+
+
+
+                                                    </div>
+                                                                                                        <div class="col-span-12 field-wrapper field-type-tel field field-reserved field-telephone md:col-span-12" wire:key="field-wrapper-shipping-address-telephone">
+                            
+<div class="field required field-wrapper-inner">
+    <label for="shipping-telephone" class="label label-telephone sr-only">
+    <span>
+        Número de Teléfono    </span>
+</label>
+        
+    
+    <div class="group input-group flex gap-4">
+        
+        <input class="form-input w-full grow tel telephone address-attribute" type="tel" data-form="shipping" data-attribute="telephone" data-order="16" data-level="0" required="" id="shipping-telephone" name="telephone" autocomplete="tel" data-validate="{&quot;telephone&quot;:true,&quot;magewire&quot;:true}" data-attribute-address="true" data-magewire-is-valid="1" wire:loading.class="loading" wire:loading.attr="disabled" wire:target="telephone" wire:auto-save="shipping" wire:model.defer="address.telephone" placeholder="Número de Teléfono *" data-moz-autofill-inspect-id="2e0c38df-8d99-4adf-8566-fd9a5d500b84" data-moz-autofill-type="tel" style="">
+
+            </div>
+
+    
+    
+    
+        </div>
+
+
+
+                                                    </div>
+                                                                                                        <div class="col-span-12 field-wrapper field-type-textarea field field-reserved field-observation" wire:key="field-wrapper-shipping-address-observation">
+                            
+<div class="field field-wrapper-inner">
+    <label for="shipping-observation" class="label label-observation sr-only">
+    <span>
+        Observaciones de envío    </span>
+</label>
+        
+    
+    <div class="group input-group flex gap-4">
+        
+        <textarea class="form-input w-full grow textarea address-attribute" type="textarea" data-form="shipping" data-attribute="observation" data-order="200" data-level="0" id="shipping-observation" name="observation" data-magewire-is-valid="1" data-validate="{&quot;magewire&quot;:true}" wire:loading.class="loading" wire:loading.attr="disabled" wire:target="observation" wire:auto-save="shipping" wire:model.defer="address.observation" placeholder="Observaciones de envío" style=""></textarea>
+
+            </div>
+
+    
+    
+    
+        </div>
+
+
+
+                                                    </div>
+                                                
+                    </div>
+    </form>
+    <div class="extra-info hidden md:block text-xs">
+        Los campos marcados con un asterisco (*) son obligatorios.    </div>
+</div>
+<!-- Magewire Component wire-end:checkout.shipping-details.address-form --></div>
+<!-- Magewire Component wire-end:checkout.shipping-details --></fieldset><fieldset id="billing-details">
+    <legend class="section-title subtitle w-full mb-4 text-pretty address-subtitle">
+        <h4 class="text-sm md:text-base font-bold">
+            ¿Necesitas factura?        </h4>
+    </legend>
+<template x-data="initComponentMessenger" data-message-listener="billing:details:error" data-options="{&quot;onEmptyMessageText&quot;:&quot;Something went wrong.&quot;,&quot;messagesSuccessListener&quot;:&quot;billing:details:success&quot;}" x-init="initialize" x-for="message in getMessages" x-bind:key="message.id">
+    <div class="component-messenger message mb-4 relative" x-data="initComponentMessengerMessage" x-bind="wrapper">
+        <span role="alert" x-text="message.text">
+            <!-- Message Placeholder -->
+        </span>
+
+        <div class="absolute -left-2 -top-2" x-show="isDispatchedLargerThan2" x-bind="bindDot">
+            <span class="flex h-4 w-4">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" x-bind="bindDotColor"></span>
+                <span class="relative inline-flex rounded-full h-4 w-4 border-2 border-white shadow-xl" x-bind="bindDotColor"></span>
+            </span>
+        </div>
+    </div>
+</template>
+
+<div wire:id="checkout.billing-details" class="billing-details">
+            <div wire:target="billingAsShipping" class="field choice billing-as-shipping">
+            <input id="billing-as-shipping" name="billing-as-shipping" type="checkbox" class="form-checkbox" wire:model="billingAsShipping" wire:loading.attr="disabled" data-moz-autofill-inspect-id="125dc7db-885e-4bc2-b9d1-5047a4a894fc">
+            <label class="label" for="billing-as-shipping">
+                Mi dirección de facturación y de envío son las mismas            </label>
+        </div>
+    
+    <div class="address-subtitle">
+    
+    <div class="section-title subtitle w-full mb-4 text-pretty ">
+        <h3 class="text-base md:text-lg font-bold">
+            Introduce nombre y dirección de facturación        </h3>
+    </div>
+</div>
+    <div>
+            <!-- Billing address placeholder -->
+    </div>
+</div>
+<!-- Magewire Component wire-end:checkout.billing-details --></fieldset><fieldset id="invoice-details" class="mt-0"><form wire:id="checkout.invoice" wire:submit.prevent="submit" x-data="initMagewireFormForInvoice" id="invoice" novalidate="">
+        
+    <div class="checkout-form-elements grid grid-cols-12 gap-x-3">
+                        
+                                                                            <div class="col-span-12 field-wrapper field-type-checkbox field field-reserved field-want_invoice">
+                
+                
+<div class="field choice">
+        
+    <div class="flex gap-4 items-center">
+        
+
+        <label class="label label-want_invoice flex items-center gap-1">
+            <input class="form-checkbox checkbox" wire:model.defer="data.want_invoice" @keydown.enter.prevent="" @change="changeVatNumber" type="checkbox" data-form="invoice" data-attribute="want_invoice" data-order="999" data-level="0" id="invoice-want_invoice" name="want_invoice" data-moz-autofill-inspect-id="b9d9063e-13c4-4765-a556-60739ef6b12e">
+            Quiero factura        </label>
+
+            </div>
+        
+    
+        </div>
+
+                                    
+                    </div>
+                                                                                                        <div class="col-span-12 field-wrapper field-type-text field field-reserved field-vat_number" x-show="showVatNumber" style="display: none;">
+                
+                    <div class="grid md:grid-cols-[2fr_1fr] gap-2 md:gap-12">
+
+<div class="field required field-wrapper-inner">
+    <label for="invoice-vat_number" class="label label-vat_number sr-only">
+    <span>
+        Número de DNI    </span>
+</label>
+        
+    
+    <div class="group input-group flex gap-4">
+        
+        <input class="form-input w-full grow text" wire:model.defer="data.vat_number" @keydown.enter.prevent="" data-validate="{&quot;vatnumber&quot;:true}" type="text" data-form="invoice" data-attribute="vat_number" data-order="999" data-level="0" required="" id="invoice-vat_number" name="vat_number" placeholder="Número de DNI *" data-moz-autofill-inspect-id="456e698c-2891-4311-866a-cfee97112c19" data-moz-autofill-type="id-number" style="">
+
+            </div>
+
+    
+    
+    
+        </div>
+
+    <p class="extra-info text-xs ">
+        Indica tu NIF o CIF de 11 dígitos para recibir la factura. Te llegará en un plazo de 7 días como máximo.    </p>
+
+    </div>
+
+                                    
+                    </div>
+                                    
+                            </div>
+
+        
+    </form>
+<!-- Magewire Component wire-end:checkout.invoice --></fieldset>    
+<nav class="checkout-nav mt-10" aria-label="Checkout Main" x-data="initNavigation">
+    <div class="checkout-nav-main" x-init="initialize" data-fragment="checkout-navigation">
+                
+    
+    
+            <button type="button" rel="next" class="group btn btn-new w-full md:w-96 relative btn-next disabled" data-route="payment" x-bind="buttonNext" data-step="{&quot;route&quot;:&quot;payment&quot;,&quot;validate&quot;:true}">
+            <span class="group-disabled:invisible">
+                Ir al pago            </span>
+
+            <span class="hidden group-disabled:flex absolute inset-0 justify-center items-center p-2">
+                <svg viewBox="0 -10 40 28" class="max-w-full max-h-full" width="57" height="57" role="img">
+    <style>
+        @keyframes swing {
+            0% {
+                transform: rotate(0deg);
+                animation-timing-function: ease-out;
+            }
+
+            25% {
+                transform: rotate(50deg);
+                animation-timing-function: ease-in;
+            }
+
+            50% {
+                transform: rotate(0deg);
+                animation-timing-function: linear;
+            }
+        }
+
+        @keyframes swing2 {
+            0% {
+                transform: rotate(0deg);
+                animation-timing-function: linear;
+            }
+
+            50% {
+                transform: rotate(0deg);
+                animation-timing-function: ease-out;
+            }
+
+            75% {
+                transform: rotate(-50deg);
+                animation-timing-function: ease-in;
+            }
+        }
+
+        .first {
+            animation: swing 1.2s linear infinite;
+            transform-origin: center top;
+        }
+
+        .second {
+            animation: swing2 1.2s linear infinite;
+            transform-origin: center top;
+        }
+    </style>
+    <circle cx="8" cy="12" r="3" class="first"></circle>
+    <circle cx="16" cy="12" r="3"></circle>
+    <circle cx="24" cy="12" r="3"></circle>
+    <circle cx="32" cy="12" r="3" class="second"></circle>
+<title>loader</title></svg>
+            </span>
+        </button>
+        </div>
+</nav>
+</div>
+    </div>
+
+        </div>
+<!-- Magewire Component wire-end:hyva-checkout-main -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div x-data="initEvaluationRedirectDialog" x-init="initialize" x-bind="overlay" class="fixed inset-0 flex items-center justify-center text-left bg-black bg-opacity-50 p-4" style="display: none;">
+    <div x-ref="dialog" role="dialog" aria-labelledby="evaluation-redirect-dialog" class="inline-block max-w-2xl max-h-screen overflow-auto bg-white shadow-xl rounded-lg p-6 text-gray-700">
+        <template x-if="title">
+            <div class="border-b border-gray-400 pb-1 mb-6">
+                <h2 x-text="title" class="flex items-center text-slate-800 text-xl font-medium">
+                    <!-- Title placeholder -->
+                </h2>
+            </div>
+        </template>
+
+        
+        <div class="text-center space-y-4">
+            <p x-text="message" class="px-4 py-2 md:text-xl"></p>
+
+            <template x-if="url">
+                <p x-text="url" class="text-sm text-gray-700 font-bold px-4 py-2 bg-gray-100 rounded-md">
+                    <!-- URL placeholder -->
+                </p>
+            </template>
+        </div>
+
+        
+        <template x-if="isInSecure">
+            <p class="message error">
+                                Attention: The website you are attempting to access is not secure, and your connection may not be private. Continuing is at your own risk, and we are not responsible for any issues that may arise.            </p>
+        </template><p class="message error">
+                                Attention: The website you are attempting to access is not secure, and your connection may not be private. Continuing is at your own risk, and we are not responsible for any issues that may arise.            </p>
+
+        <template x-if="actions.length">
+            <div class="flex flex-col-reverse justify-between md:flex-row
+                        gap-y-2 md:gap-x-2 mt-6
+                        w-full
+                        md:items-center">
+                <template x-if="actions.decline">
+                    <div class="flex flex-col-reverse gap-4 sm:flex-row sm:justify-end">
+                        <button type="button" x-bind="buttonDecline" class="btn btn-secondary">
+                            Rechazar                        </button>
+                    </div>
+                </template>
+
+                <template x-if="actions.confirm">
+                    <div class="flex flex-col-reverse gap-4 sm:flex-row sm:justify-end">
+                        <button type="button" x-focus-first="" x-bind="buttonRedirect" class="btn btn-primary">
+                            Confirmar                        </button>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>
+</div>
+<div x-data="hyvaCheckoutMagewirePluginError" x-on:checkout:navigation:out-of-sync.window="reloadPage">
+    <div x-bind="overlay" class="fixed inset-0 flex items-center justify-center text-left bg-black bg-opacity-50" style="display: none;">
+        <div x-ref="dialog" role="dialog" aria-labelledby="checkout-navigation-out-of-sync-dialog-label" class="inline-block max-w-2xl mx-4 max-h-screen overflow-auto bg-white shadow-xl rounded-lg p-6 text-gray-700">
+            <div class="border-b border-gray-400 pb-1 mb-6">
+                <h2 class="flex items-center text-gray-800 text-xl font-medium">
+                    Information has been updated                </h2>
+            </div>
+
+            <div class="text-center space-y-4">
+                <p class="px-4 py-2 md:text-xl">
+                    Your checkout information has been updated in the background. Please refresh the page to continue the checkout process in this window.                </p>
+            </div>
+
+            <div class="flex flex-col-reverse justify-between md:flex-row
+                        gap-y-2 md:gap-x-2 mt-6
+                        w-full
+                        md:items-center">
+                <button type="button" x-on:click="cancel" class="btn">
+                    Cerrar                </button>
+
+                <button type="button" x-on:click="ok" class="btn btn-primary" x-focus-first="">
+                    Refresh page                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<dialog x-data="initMessageDialog" x-init="initialize" x-bind="messageDialog" aria-labelledby="message-dialog" class="max-w-full max-h-full bg-transparent p-0 backdrop:backdrop outline-none overflow-visible">
+    <div class="relative w-full max-w-2xl max-h-screen overflow-y-auto shadow-xl rounded-lg p-6 bg-white text-gray-700 md:w-[50vw]" x-ref="messageDialogContent" x-show="hasMessages" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-12" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-12" style="display: none;">
+        
+        <div class="grid grid-cols-1
+                    md:grid-cols-2 md:gap-4 md:items-center">
+            <template x-for="({ actions, message, cancelable }, index) in messages" x-bind:key="index">
+                <div x-show="isActiveMessage" class="contents">
+                    <div class="col-span-full flex flex-col items-center mb-6
+                                md:flex-row-reverse md:gap-4 md:justify-between">
+                        <div class="mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-red-600" width="64" height="64" x-show="canShowTypeIcon" aria-hidden="true" data-message-type="error">
+  <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+</svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-green-600" width="64" height="64" x-show="canShowTypeIcon" aria-hidden="true" data-message-type="success">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-yellow-600" width="64" height="64" x-show="canShowTypeIcon" aria-hidden="true" data-message-type="warning">
+  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+</svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-blue-600" width="64" height="64" x-show="canShowTypeIcon" aria-hidden="true" data-message-type="info">
+  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+</svg>
+                        </div>
+
+                        <div class="text-center md:text-start min-w-0">
+                            <h2 x-show="message.title" x-text="message.title" class="mb-2 text-gray-800 text-2xl font-bold md:text-xl">
+                                <!-- Title placeholder -->
+                            </h2>
+
+                            <p x-text="message.text" class="text-lg md:text-base break-words hyphens-auto">
+                                <!-- Message placeholder -->
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="order-last flex flex-col justify-end gap-4 mt-8
+                                md:flex-row md:items-center md:justify-self-end md:mt-0">
+                        <button type="button" class="btn btn-secondary justify-center" title="Cancelar" aria-label="Cancelar" x-bind="navButtonCancelMessage" x-show="cancelable">
+                            Cancelar                        </button>
+
+                        <button type="button" class="btn btn-primary justify-center" title="Confirmar" aria-label="Confirmar" x-bind="navButtonConfirmMessage">
+                            Aceptar                        </button>
+                    </div>
+                </div>
+            </template>
+
+            <div class="justify-self-center md:justify-self-start">
+                <template x-if="needsNavigation">
+                    <nav class="inline-flex justify-between items-center gap-1 select-none" aria-label="Checkout Message navigation">
+                        <button type="button" class="p-2 text-gray-500 disabled:opacity-60" title="Previous Message" aria-label="Previous Message" x-bind="navButtonPreviousMessage">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="20" height="20" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+</svg>
+                        </button>
+
+                        <span x-text="getPaginationText">
+                            <!-- Pagination placeholder -->
+                        </span>
+
+                        <button type="button" class="p-2 text-gray-500 disabled:opacity-60" title="Next Message" aria-label="Next Message" x-bind="navButtonNextMessage">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="20" height="20" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+</svg>
+                        </button>
+                    </nav>
+                </template>
+            </div>
+        </div>
+
+            </div>
+</dialog>
+
+
+
+
+
+
+<div id="klarna-payments-container" style="display: none;"></div>
+
+
+
+</div></div></main></div><footer class="page-footer"><div class="footer content mb-8"><div class="cart-help mt-6 md:mt-[38px] py-10 border-y border-container mx-4 md:mx-0"><div class="container px-0 md:px-4 text-center text-sm md:text-base">
+            ¿Necesitas ayuda? Contacta con <a class="text-link link-text" href="https://ayuda.primor.eu/portal/es/kb/atencion-al-cliente">Atención al cliente</a>
+        </div></div>
+
+<div x-data="hyvaCheckoutQuestions">
+    <template x-if="step === 'shipping'">
+        <div>
+            
+
+        </div>
+    </template><div>
+            
+
+        </div>
+    <template x-if="step === 'billing'">
+        <div>
+            
+
+        </div>
+    </template>
+    <template x-if="step === 'pickupinfo'">
+        <div>
+            
+
+        </div>
+    </template>
+    <template x-if="step === 'payment'">
+        <div>
+            
+
+        </div>
+    </template>
+    <template x-if="step === 'summary'">
+        <div>
+            
+
+        </div>
+    </template>
+</div>
+    
+    
+    <div x-data="initSwitcher" x-defer="intersect" class="container text-center flex justify-center items-center gap-1 mt-8">
+        <label class="" for="switcher-options">
+            Ubicación:
+        </label>
+        <div class="relative">
+            <div class="absolute bottom-full left-0 right-0 flex flex-col bg-white border border-container" x-show="open" style="display: none;">
+                                                        
+                    <button class="flex items-center gap-2 p-2 text-left hover:bg-blue-500 hover:text-white" data-url="https://www.primor.eu/pt_pt/" @click="changeWebsite">
+                        Portugal                                            </button>
+                                    
+                    <button class="flex items-center gap-2 p-2 text-left hover:bg-blue-500 hover:text-white" data-url="https://www.primor.eu/es_it/" @click="changeWebsite">
+                        Italia                                                     (traducido)                                            </button>
+                                    
+                    <button class="flex items-center gap-2 p-2 text-left hover:bg-blue-500 hover:text-white" data-url="https://www.primor.eu/fr_fr/" @click="changeWebsite">
+                        Francia                                            </button>
+                                    
+                    <button class="flex items-center gap-2 p-2 text-left hover:bg-blue-500 hover:text-white" data-url="https://www.primor.eu/es_ea/" @click="changeWebsite">
+                        Ceuta y Melilla                                            </button>
+                                    
+                    <button class="flex items-center gap-2 p-2 text-left hover:bg-blue-500 hover:text-white" data-url="https://www.primor.eu/es_ic/" @click="changeWebsite">
+                        Islas Canarias                                            </button>
+                            </div>
+            <button type="button" class="text-link link-text" @click.prevent="toggle" @click.outside="close" @keydown.window.escape="close" aria-haspopup="true" :aria-expanded="open" aria-expanded="false">
+                Península y Baleares                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="inline-block" width="16" height="16" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+</svg>
+            </button>
+        </div>
+    </div>
+</div><div class="cn_content cn_content_type_inline id-251daf80-4034-44a9-a0ae-26d3a2a31690" style="display: flex; background-color: rgb(255, 255, 255); border-width: 0px; border-style: solid; border-color: transparent; backdrop-filter: blur(0px) saturate(1) brightness(1) contrast(1);"><style type="text/css">@media (max-width: 768px) {.id-251daf80-4034-44a9-a0ae-26d3a2a31690 .cn_cell { width:100% !important; max-width:100% !important; }.id-251daf80-4034-44a9-a0ae-26d3a2a31690 .cn_block { display: block !important; }}</style><div class="cn_section id-5972469d-ff3f-4c40-8fe7-d1f1ee9a58e9" style="width: 100%;"><div class="cn_block id-777d0dd9-ecd7-4544-869d-4b1314d2947f" style="display: flex;"><div class="cn_cell id-150bd8ae-a606-45b7-85ea-79919fdce0f6" style="width: 100%;"><div class="cn_element cn_html id-bbf7673a-db2d-47b7-99c7-180984985a71" style="padding-top: 20px;padding-right: 10px;padding-bottom: 20px;padding-left: 10px;">  </div></div></div></div></div><div class="cn_content cn_content_type_inline id-251daf80-4034-44a9-a0ae-26d3a2a31690" style="display: flex; background-color: rgb(255, 255, 255); border-width: 0px; border-style: solid; border-color: transparent; backdrop-filter: blur(0px) saturate(1) brightness(1) contrast(1);"><style type="text/css">@media (max-width: 768px) {.id-251daf80-4034-44a9-a0ae-26d3a2a31690 .cn_cell { width:100% !important; max-width:100% !important; }.id-251daf80-4034-44a9-a0ae-26d3a2a31690 .cn_block { display: block !important; }}</style><div class="cn_section id-5972469d-ff3f-4c40-8fe7-d1f1ee9a58e9" style="width: 100%;"><div class="cn_block id-777d0dd9-ecd7-4544-869d-4b1314d2947f" style="display: flex;"><div class="cn_cell id-150bd8ae-a606-45b7-85ea-79919fdce0f6" style="width: 100%;"><div class="cn_element cn_html id-bbf7673a-db2d-47b7-99c7-180984985a71" style="padding-top: 20px;padding-right: 10px;padding-bottom: 20px;padding-left: 10px;">  </div></div></div></div></div><div class="cn_content cn_content_type_inline id-251daf80-4034-44a9-a0ae-26d3a2a31690" style="display: flex; background-color: rgb(255, 255, 255); border-width: 0px; border-style: solid; border-color: transparent; backdrop-filter: blur(0px) saturate(1) brightness(1) contrast(1);"><style type="text/css">@media (max-width: 768px) {.id-251daf80-4034-44a9-a0ae-26d3a2a31690 .cn_cell { width:100% !important; max-width:100% !important; }.id-251daf80-4034-44a9-a0ae-26d3a2a31690 .cn_block { display: block !important; }}</style><div class="cn_section id-5972469d-ff3f-4c40-8fe7-d1f1ee9a58e9" style="width: 100%;"><div class="cn_block id-777d0dd9-ecd7-4544-869d-4b1314d2947f" style="display: flex;"><div class="cn_cell id-150bd8ae-a606-45b7-85ea-79919fdce0f6" style="width: 100%;"><div class="cn_element cn_html id-bbf7673a-db2d-47b7-99c7-180984985a71" style="padding-top: 20px;padding-right: 10px;padding-bottom: 20px;padding-left: 10px;">  </div></div></div></div></div></footer>
+<div x-data="{ isLoading: false, ...hyva.modal() }" x-defer="interact" @modal-link-show.window="show('modal-link')" @modal-link-show-loading.window="isLoading = true" @modal-link-hide-loading.window="isLoading = false">
+    <div class="backdrop" x-bind="overlay('modal-link')" x-spread="overlay('modal-link')" style="display: none;">
+        <div class="modal">
+            <div x-ref="modal-link" role="dialog" aria-modal="true" class="dialog max-w-[1000px]">
+                <button type="button" @click="hide" aria-label="Cerrar" class="close">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" width="24" height="24" role="img">
+    <path d="M7.719 6.281L6.28 7.72 23.563 25 6.28 42.281 7.72 43.72 25 26.437 42.281 43.72l1.438-1.438L26.437 25 43.72 7.719 42.28 6.28 25 23.563z"></path>
+<title>Cerrar</title></svg>
+                </button>
+                <div id="modal-link-content"></div>
+            </div>
+        </div>
+    </div>
+    
+<div class="flex flex-row justify-center items-center w-full h-full fixed select-none z-50" style="left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); background: rgba(255, 255, 255, 0.7); display: none;" x-show="isLoading" x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+    <svg viewBox="0 -10 40 28" width="57" height="57" role="img">
+    <style>
+        @keyframes swing {
+            0% {
+                transform: rotate(0deg);
+                animation-timing-function: ease-out;
+            }
+
+            25% {
+                transform: rotate(50deg);
+                animation-timing-function: ease-in;
+            }
+
+            50% {
+                transform: rotate(0deg);
+                animation-timing-function: linear;
+            }
+        }
+
+        @keyframes swing2 {
+            0% {
+                transform: rotate(0deg);
+                animation-timing-function: linear;
+            }
+
+            50% {
+                transform: rotate(0deg);
+                animation-timing-function: ease-out;
+            }
+
+            75% {
+                transform: rotate(-50deg);
+                animation-timing-function: ease-in;
+            }
+        }
+
+        .first {
+            animation: swing 1.2s linear infinite;
+            transform-origin: center top;
+        }
+
+        .second {
+            animation: swing2 1.2s linear infinite;
+            transform-origin: center top;
+        }
+    </style>
+    <circle cx="8" cy="12" r="3" class="first"></circle>
+    <circle cx="16" cy="12" r="3"></circle>
+    <circle cx="24" cy="12" r="3"></circle>
+    <circle cx="32" cy="12" r="3" class="second"></circle>
+<title>loader</title></svg>
+</div>
+</div>
+</div>
+<div x-data="initAmGdprPolicyPopup" x-bind="eventListeners">
+    <div x-bind="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50" style="display: none;">
+        <div class="fixed flex justify-center items-center text-left z-40 px-8 py-8 md:py-16 inset-0">
+            <div x-ref="amgdpr-policy-popup" role="dialog" aria-labelledby="amgdpr-policy-content" class="bg-white shadow rounded max-h-full overflow-auto overscroll-y-contain scrollbar-mini relative max-w-[1200px] w-full p-4 md:p-8 flex flex-col">
+                <div tabindex="0" @focusin="focusAcceptButton"></div>
+                <button @click="hidePopup" x-ref="amgdpr-close-policy" aria-label="Cerrar" class="absolute top-2 right-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" width="24" height="24" role="img">
+    <path d="M7.719 6.281L6.28 7.72 23.563 25 6.28 42.281 7.72 43.72 25 26.437 42.281 43.72l1.438-1.438L26.437 25 43.72 7.719 42.28 6.28 25 23.563z"></path>
+<title>Cerrar</title></svg>
+                </button>
+                <p class="text-2xl font-bold mb-4" x-text="title"></p>
+                <p class="text-sm mb-4 p-2 bg-yellow-100 w-full" x-show="isNotificationTextVisible" x-text="notificationText" style="display: none;">We would like to inform you that our Privacy Policy has been amended.Please, read and accept the new terms.</p>
+                <div id="amgdpr-policy-content" class="overflow-auto scrollbar-mini prose max-w-none pr-2" tabindex="0" x-html="policyText"></div>
+                <div class="mt-4 flex justify-center">
+                    <button x-focus-first="" @click="triggerAcceptPolicy" x-ref="amgdpr-accept-policy" type="button" class="btn uppercase" aria-label="He leído y acepto">
+                        He leído y acepto                    </button>
+                </div>
+                <div tabindex="0" @focusin="focusCloseButton"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+    
+    
+
+
+    
+
+        
+
+
+<div x-data="hyvaCheckoutMagewirePluginError" x-on:magewire:error:four-zero-four.window="reloadPage">
+    <div x-bind="overlay" class="fixed inset-0 flex items-center justify-center text-left bg-black bg-opacity-50" style="display: none;">
+        <div x-ref="dialog" role="dialog" aria-labelledby="magewire-error-four-zero-four-dialog-label" class="inline-block max-w-2xl mx-4 max-h-screen overflow-auto bg-white shadow-xl rounded-lg p-6 text-gray-700">
+            <div class="items-center border-b border-gray-400 pb-1 mb-6">
+                <h2 class="flex items-center text-slate-800 text-xl font-medium">
+                    Algo salió mal                </h2>
+            </div>
+
+            <div class="text-center space-y-4">
+                <p class="px-4 py-2 md:text-xl">
+                    Apologies, but an error occurred while updating the checkout, please refresh the current page to resolve the issue.                </p>
+            </div>
+
+            <div class="flex flex-col-reverse justify-between md:flex-row
+                        gap-y-2 md:gap-x-2 mt-6
+                        w-full
+                        md:items-center">
+                <button type="button" x-on:click="cancel" class="btn">
+                    Cerrar                </button>
+
+                <button type="button" x-on:click="ok" class="btn btn-primary" x-focus-first="">
+                    Refresh page                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+
+    
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section x-data="initAmGdprLoader" @amgdpr-loading-start.window="showLoader" @amgdpr-loading-stop.window="hideLoader">
+    
+<div class="flex flex-row justify-center items-center w-full h-full fixed select-none z-50" style="left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); background: rgba(255, 255, 255, 0.7); display: none;" x-show="isLoading" x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+    <svg viewBox="0 -10 40 28" width="57" height="57" role="img">
+    <style>
+        @keyframes swing {
+            0% {
+                transform: rotate(0deg);
+                animation-timing-function: ease-out;
+            }
+
+            25% {
+                transform: rotate(50deg);
+                animation-timing-function: ease-in;
+            }
+
+            50% {
+                transform: rotate(0deg);
+                animation-timing-function: linear;
+            }
+        }
+
+        @keyframes swing2 {
+            0% {
+                transform: rotate(0deg);
+                animation-timing-function: linear;
+            }
+
+            50% {
+                transform: rotate(0deg);
+                animation-timing-function: ease-out;
+            }
+
+            75% {
+                transform: rotate(-50deg);
+                animation-timing-function: ease-in;
+            }
+        }
+
+        .first {
+            animation: swing 1.2s linear infinite;
+            transform-origin: center top;
+        }
+
+        .second {
+            animation: swing2 1.2s linear infinite;
+            transform-origin: center top;
+        }
+    </style>
+    <circle cx="8" cy="12" r="3" class="first"></circle>
+    <circle cx="16" cy="12" r="3"></circle>
+    <circle cx="24" cy="12" r="3"></circle>
+    <circle cx="32" cy="12" r="3" class="second"></circle>
+<title>loader</title></svg>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    :root {
+        /* Bar Color Settings */
+        --ambar-background: #fff;
+        --ambar-links-color: #326ed1;
+        --ambar-policy-text: #374151;
+        --ambar-toggle-active-color: #2563eb;
+        --ambar-toggle-inactive-color: #fff;
+
+        /* Buttons Color Settings */
+        --ambar-button-accept-color: #000000;
+        --ambar-button-accept-hover-color: #FFFFFF;
+        --ambar-button-accept-text: #FFFFFF;
+        --ambar-button-accept-hover-text: #000000;
+
+        --ambar-button-allow-color: #000000;
+        --ambar-button-allow-hover-color: #FFFFFF;
+        --ambar-button-allow-text: #FFFFFF;
+        --ambar-button-allow-hover-text: #000000;
+
+        --ambar-button-decline-color: #000000;
+        --ambar-button-decline-hover-color: #FFFFFF;
+        --ambar-button-decline-text: #FFFFFF;
+        --ambar-button-decline-hover-text: #000000;
+
+        --ambar-button-settings-color: #000000;
+        --ambar-button-settings-hover-color: #FFFFFF;
+        --ambar-button-settings-text: #FFFFFF;
+        --ambar-button-settings-hover-text: #000000;
+
+        /* Buttons Order Settings */
+        --ambar-button-accept-order: 1;
+        --ambar-button-allow-order: 3;
+        --ambar-button-settings-order: 3;
+        --ambar-button-decline-order: 2;
+
+        /* Cookie Information Bar Color Settings */
+        --ambar-information-background: #fff;
+        --ambar-information-title: #374151;
+        --ambar-information-description: #374151;
+        --ambar-information-table-header: #374151;
+        --ambar-information-table-content: #374151;
+
+        /* Cookie Information Bar Done Button Settings */
+        --ambar-information-button-color: #1d4ed8;
+        --ambar-information-button-hover-color: #1d4ed8;
+        --ambar-information-button-text: #fff;
+        --ambar-information-button-hover-text: #fff;
+
+        /* Settings Bar Done Button Settings */
+        --ambar-setting-button-color: #1d4ed8;
+        --ambar-setting-button-hover-color: #1d4ed8;
+        --ambar-setting-button-text: #fff;
+        --ambar-setting-button-hover-text: #fff;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+    <div id="magewire-loader" x-data="magewireLoader" x-spread="loader" x-bind="loader" role="status" aria-live="polite" class="">
+        <div class="magewire-loader-overlay fixed top-0 left-0 right-0 bottom-0 w-full h-screen overflow-hidden bg-white bg-opacity-90" x-spread="overlay" x-bind="overlay" x-transition:enter="transition duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" style="display: none;">
+    <div class="flex flex-col justify-center items-center h-screen w-full space-y-6" x-ref="overlay">
+        <div class="w-16 h-16">
+            <svg viewBox="0 -10 40 28" class="max-w-full max-h-full" width="57" height="57" role="img">
+    <style>
+        @keyframes swing {
+            0% {
+                transform: rotate(0deg);
+                animation-timing-function: ease-out;
+            }
+
+            25% {
+                transform: rotate(50deg);
+                animation-timing-function: ease-in;
+            }
+
+            50% {
+                transform: rotate(0deg);
+                animation-timing-function: linear;
+            }
+        }
+
+        @keyframes swing2 {
+            0% {
+                transform: rotate(0deg);
+                animation-timing-function: linear;
+            }
+
+            50% {
+                transform: rotate(0deg);
+                animation-timing-function: ease-out;
+            }
+
+            75% {
+                transform: rotate(-50deg);
+                animation-timing-function: ease-in;
+            }
+        }
+
+        .first {
+            animation: swing 1.2s linear infinite;
+            transform-origin: center top;
+        }
+
+        .second {
+            animation: swing2 1.2s linear infinite;
+            transform-origin: center top;
+        }
+    </style>
+    <circle cx="8" cy="12" r="3" class="first"></circle>
+    <circle cx="16" cy="12" r="3"></circle>
+    <circle cx="24" cy="12" r="3"></circle>
+    <circle cx="32" cy="12" r="3" class="second"></circle>
+<title>loader</title></svg>
+        </div>
+    </div>
+</div>
+            </div>
+
+        
+
+
+<section id="authentication-popup" x-data="initAuthentication" @private-content-loaded.window="onPrivateContentLoaded" @toggle-authentication.window="redirectIfAuthenticated" @keydown.window.escape="close" class="backdrop" x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" style="display: none;">
+    <template x-if="isInitialize">
+        <div class="modal">
+            <div role="dialog" aria-modal="true" @click.outside="close" class="dialog max-w-[500px]" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-75">
+                <button type="button" @click="close" aria-label="Cerrar" class="absolute top-2 right-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" width="24" height="24" aria-hidden="true">
+    <path d="M7.719 6.281L6.28 7.72 23.563 25 6.28 42.281 7.72 43.72 25 26.437 42.281 43.72l1.438-1.438L26.437 25 43.72 7.719 42.28 6.28 25 23.563z"></path>
+</svg>
+                </button>
+
+                <div class="flex flex-col gap-2 text-center mb-6">
+                    <p class="text-2xl font-bold">Entrar</p>
+                    <p>Si ya tienes una cuenta, inicia sesión con tu dirección de email</p>
+                </div>
+
+                <div class="text-base font-bold text-brand mb-3" x-text="errorMessage" x-show="errors"></div>
+
+                <form class="form form-login" method="post" @submit.prevent="submitForm" id="login-form">
+                                        <div class="fieldset login">
+                        <div class="field email required">
+                            <label class="label" for="form-login-username" form="login-form">
+                                <span>Dirección de correo electrónico</span>
+                            </label>
+                            <div class="control">
+                                <input name="username" id="form-login-username" x-ref="customer-email" @change="resetErrors" type="email" required="" autocomplete="off" class="form-input input-text">
+                            </div>
+                        </div>
+                        <div class="field password required">
+                            <label for="form-login-password" class="label" form="login-form">
+                                <span>Contraseña</span>
+                            </label>
+                            <div class="control">
+                                <input name="password" id="form-login-password" type="password" class="form-input input-text" required="" x-ref="customer-password" autocomplete="off" @change="resetErrors">
+                            </div>
+                        </div>
+
+                        <input name="context" type="hidden" value="checkout">
+                        <div class="flex flex-col items-center gap-4">
+                            <button type="submit" class="btn btn-full">
+                                Iniciar sesión                            </button>
+                            <a href="https://www.primor.eu/es_es/customer/account/forgotpassword/" class="text-sm link-text text-link">
+                                ¿Has olvidado la contraseña?                            </a>
+                        </div>
+                    </div>
+                </form>
+
+                                <p class="mt-6 text-sm text-center">
+                    ¿Todavía no eres miembro?                    <a href="https://www.primor.eu/es_es/customer/account/create/" class="link-text text-link">
+                        Crear una Cuenta                    </a>
+                </p>
+
+                                <script>
+    const AmAuthPopupReloadContent = function () {
+        const customerMenuSelector = '\u0023customer\u002Dmenu\u0020\u007E\u0020nav';
+
+        return {
+            contentUpdaters: [],
+
+            initContentUpdaters() {
+                window.addEventListener('amsl-register-content-updater', (event) => {
+                    event.stopPropagation();
+                    if (typeof event.detail === 'function') {
+                        this.registerContentUpdater(event.detail);
+                    }
+                }, true)
+            },
+
+            reloadContent() {
+                return Promise.all([
+                    this.reloadHeader(),
+                    ...this.contentUpdaters.map(updater => updater())
+                ]).then(this.updateFormKey);
+            },
+
+            registerContentUpdater(updater) {
+                this.contentUpdaters.push(updater);
+            },
+
+            async reloadHeader() {
+                const response = await fetch(
+                    `${BASE_URL}amsociallogin_hyva\u002Fheader\u002Fupdate?isAjax=1`,
+                    {
+                        method: 'GET',
+                        headers: {
+                            'Content-type': 'application/json'
+                        }
+                    }
+                );
+
+                const result = await response.json();
+                const {customer_menu_html: customerMenuHtml} = result;
+                const container = document.createElement('div');
+                container.innerHTML = customerMenuHtml;
+                const currentMenu = document.querySelector(customerMenuSelector);
+                const newMenu = container.querySelector(customerMenuSelector);
+
+                if (currentMenu && newMenu) {
+                    currentMenu.replaceWith(newMenu);
+                }
+            },
+
+            updateFormKey() {
+                const formKeyInputs = document.querySelectorAll('input[name="form_key"]');
+                formKeyInputs.forEach(input => input.value = hyva.getFormKey());
+            }
+        }
+    }
+</script>
+<script>
+        const AmAuthPopupRedirect = function () {
+        const redirectTimeout = 2000;
+        const redirectUrl = 'https://www.primor.eu/es_es/customer/account/';
+
+        return {
+            processRedirect(forceRedirectUrl) {
+                if (forceRedirectUrl) {
+                    setTimeout(() => {
+                        this.resetSessionCookie();
+                        window.location.assign(forceRedirectUrl);
+                    }, redirectTimeout);
+                    return;
+                }
+                                                    this.reloadPage();
+                                            },
+
+            reloadCustomerData() {
+                this.resetSessionCookie();
+                window.dispatchEvent(new CustomEvent("reload-customer-section-data"));
+            },
+
+            resetSessionCookie() {
+                hyva.setCookie('mage-cache-sessid', '', -1, true);
+            },
+
+            reloadPage() {
+                                setTimeout(() => {
+                    this.resetSessionCookie();
+                    window.location.reload(true)
+                }, redirectTimeout)
+            },
+
+            reloadViaAjax() {
+                window.addEventListener('private-content-loaded', () => {
+                    this.reloadContent().then(() => {
+                                                window.dispatchEvent(
+                            new CustomEvent('amsl-content-updated')
+                        );
+                    }).catch(
+                        (error) => {
+                            console.error(error);
+                            this.reloadPage();
+                        }
+                    );
+                }, {once: true});
+                this.reloadCustomerData();
+                                window.dispatchEvent(
+                    new CustomEvent('amsl-popup-ajax-login-success')
+                );
+            }
+        }
+    }
+</script>
+<script>
+    const AmAuthPopupNotification = function () {
+        const modalName = 'amsl\u002Dpopup\u002Dnotification';
+
+        return {
+            ...AmAuthPopupModal(modalName),
+            notification: '',
+
+            initialize() {
+                this.initModalSettings();
+            },
+
+            showNotification(messages) {
+                if (!messages) {
+                    return;
+                }
+
+                this.notification = Array.isArray(messages) ? messages.join('<br>') : messages;
+
+                window.dispatchEvent(
+                    new CustomEvent('amsl-hide-popup')
+                );
+
+                this.show(modalName);
+            }
+        }
+    }
+</script>
+<script>
+        const AmAuthPopupModal = function (modalName) {
+        const canCloseByOverlayClick = true;
+
+        return {
+            ...hyva.modal(),
+            animationDuration: 500,
+            
+            initModalSettings() {
+                if (!canCloseByOverlayClick) {
+                    this.restrictOverlayClick();
+                }
+            },
+
+            restrictOverlayClick() {
+                document.addEventListener('click', (event) => {
+                    const modal = this.$refs[modalName];
+                    const isVisible = this.opened[modalName];
+                    if (isVisible && !modal.contains(event.target) && !modal.hasAttribute('x-no-overlay')) {
+                        event.stopPropagation();
+                    }
+                }, {capture: true});
+            }
+        }
+    }
+</script>
+            </div>
+        </div>
+    </template><div class="modal">
+            <div role="dialog" aria-modal="true" @click.outside="close" class="dialog max-w-[500px]" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-75">
+                <button type="button" @click="close" aria-label="Cerrar" class="absolute top-2 right-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" width="24" height="24" aria-hidden="true">
+    <path d="M7.719 6.281L6.28 7.72 23.563 25 6.28 42.281 7.72 43.72 25 26.437 42.281 43.72l1.438-1.438L26.437 25 43.72 7.719 42.28 6.28 25 23.563z"></path>
+</svg>
+                </button>
+
+                <div class="flex flex-col gap-2 text-center mb-6">
+                    <p class="text-2xl font-bold">Entrar</p>
+                    <p>Si ya tienes una cuenta, inicia sesión con tu dirección de email</p>
+                </div>
+
+                <div class="text-base font-bold text-brand mb-3" x-text="errorMessage" x-show="errors" style="display: none;"></div>
+
+                <form class="form form-login" method="post" @submit.prevent="submitForm" id="login-form">
+                                        <div class="fieldset login">
+                        <div class="field email required">
+                            <label class="label" for="form-login-username" form="login-form">
+                                <span>Dirección de correo electrónico</span>
+                            </label>
+                            <div class="control">
+                                <input name="username" id="form-login-username" x-ref="customer-email" @change="resetErrors" type="email" required="" autocomplete="off" class="form-input input-text" data-moz-autofill-inspect-id="a073c285-0ae2-4940-ada4-df52a470577b" data-moz-autofill-type="email" style="">
+                            </div>
+                        </div>
+                        <div class="field password required">
+                            <label for="form-login-password" class="label" form="login-form">
+                                <span>Contraseña</span>
+                            </label>
+                            <div class="control">
+                                <input name="password" id="form-login-password" type="password" class="form-input input-text" required="" x-ref="customer-password" autocomplete="off" @change="resetErrors" data-moz-autofill-inspect-id="b08aaeed-b836-4df7-95e8-71a6c1883312">
+                            </div>
+                        </div>
+
+                        <input name="context" type="hidden" value="checkout" data-moz-autofill-inspect-id="594c1f8f-1bdc-4458-992d-4ed92b7dc292">
+                        <div class="flex flex-col items-center gap-4">
+                            <button type="submit" class="btn btn-full">
+                                Iniciar sesión                            </button>
+                            <a href="https://www.primor.eu/es_es/customer/account/forgotpassword/" class="text-sm link-text text-link">
+                                ¿Has olvidado la contraseña?                            </a>
+                        </div>
+                    </div>
+                </form>
+
+                                <p class="mt-6 text-sm text-center">
+                    ¿Todavía no eres miembro?                    <a href="https://www.primor.eu/es_es/customer/account/create/" class="link-text text-link">
+                        Crear una Cuenta                    </a>
+                </p>
+
+                                
+
+
+
+            </div>
+        </div>
+</section>
+
+<div x-data="initAmastyCookieBar" x-bind="eventListeners" id="am-cookie-bar" class=" w-full">
+    <template x-if="isInitialize">
+        <div x-cloak="" data-dialog-ref-name="am-cookie-bar" x-bind="overlay" class="backdrop">
+    <div class=" h-full flex items-end inset-0">
+        <div x-ref="am-cookie-bar" role="dialog" aria-modal="true" aria-label="Cookie Bar" class="bg-ambar-background relative w-full py-8 bottom-0">
+            
+<div class="container">
+            <button @click="closeCookieBarHandler" aria-label="Cerrar" class="absolute right-2 top-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" width="24" height="24" role="img">
+    <path d="M7.719 6.281L6.28 7.72 23.563 25 6.28 42.281 7.72 43.72 25 26.437 42.281 43.72l1.438-1.438L26.437 25 43.72 7.719 42.28 6.28 25 23.563z"></path>
+<title>Cerrar</title></svg>
+        </button>
+    
+            <p class="text-sm mb-8 text-center text-ambar-policy-text">
+            PRIMOR utiliza cookies propias y de terceros con fines analíticos, de personalización y para mostrarte publicidad personalizada basada en un perfil elaborado a partir de tus hábitos de navegación (por ejemplo, páginas visitadas). Puedes aceptar o rechazar todas las cookies opcionales (excluyendo las esenciales) pulsando los botones “Aceptar todas las cookies” o “Rechazar todo”. También puedes configurar su uso en el botón “Personalizar”. Si deseas obtener más información, consulta nuestra <a href="https://www.primor.eu/es_es/politica-de-cookies">Política de cookies</a>.        </p>
+    
+    <div class="flex flex-col md:flex-row justify-center gap-2">
+        
+            
+<button type="button" x-data="initAmCookieActionDispatcherBtn" data-dispatch-action="cookiebar-action-allow" @click.prevent="actiondispatchHandler" class="ambar-btn-accept flex-1">
+    Aceptar todas las cookies</button>
+                
+<button type="button" x-data="initAmCookieActionDispatcherBtn" data-dispatch-action="cookiebar-action-accept" @click.prevent="actiondispatchHandler" class="ambar-btn-decline flex-1">
+    Rechazar todo</button>
+                
+<button type="button" x-data="initAmCookieActionDispatcherBtn" data-dispatch-action="cookiebar-action-settings" @click.prevent="actiondispatchHandler" class="ambar-btn-settings flex-1">
+    Personalizar</button>
+        </div>
+</div>
+        </div>
+    </div>
+    </div>
+    </template><div data-dialog-ref-name="am-cookie-bar" x-bind="overlay" class="backdrop" style="display: none;">
+    <div class=" h-full flex items-end inset-0">
+        <div x-ref="am-cookie-bar" role="dialog" aria-modal="true" aria-label="Cookie Bar" class="bg-ambar-background relative w-full py-8 bottom-0">
+            
+<div class="container">
+            <button @click="closeCookieBarHandler" aria-label="Cerrar" class="absolute right-2 top-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="currentColor" width="24" height="24" role="img">
+    <path d="M7.719 6.281L6.28 7.72 23.563 25 6.28 42.281 7.72 43.72 25 26.437 42.281 43.72l1.438-1.438L26.437 25 43.72 7.719 42.28 6.28 25 23.563z"></path>
+<title>Cerrar</title></svg>
+        </button>
+    
+            <p class="text-sm mb-8 text-center text-ambar-policy-text">
+            PRIMOR utiliza cookies propias y de terceros con fines analíticos, de personalización y para mostrarte publicidad personalizada basada en un perfil elaborado a partir de tus hábitos de navegación (por ejemplo, páginas visitadas). Puedes aceptar o rechazar todas las cookies opcionales (excluyendo las esenciales) pulsando los botones “Aceptar todas las cookies” o “Rechazar todo”. También puedes configurar su uso en el botón “Personalizar”. Si deseas obtener más información, consulta nuestra <a href="https://www.primor.eu/es_es/politica-de-cookies">Política de cookies</a>.        </p>
+    
+    <div class="flex flex-col md:flex-row justify-center gap-2">
+        
+            
+<button type="button" x-data="initAmCookieActionDispatcherBtn" data-dispatch-action="cookiebar-action-allow" @click.prevent="actiondispatchHandler" class="ambar-btn-accept flex-1">
+    Aceptar todas las cookies</button>
+                
+<button type="button" x-data="initAmCookieActionDispatcherBtn" data-dispatch-action="cookiebar-action-accept" @click.prevent="actiondispatchHandler" class="ambar-btn-decline flex-1">
+    Rechazar todo</button>
+                
+<button type="button" x-data="initAmCookieActionDispatcherBtn" data-dispatch-action="cookiebar-action-settings" @click.prevent="actiondispatchHandler" class="ambar-btn-settings flex-1">
+    Personalizar</button>
+        </div>
+</div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<!-- PRIMOR-3444: Added the Connectif tags -->
+    <div class="cn_client_info" style="display:none"></div>
+    
+
+
+<qon-odpdxetbhtcj></qon-odpdxetbhtcj><div class="x-root-container" data-v-app=""><div data-v-7a7a37b1="" class="x" data-test="x" dir="ltr"><!----><!----><!----><div data-v-7a7a37b1=""><!--v-if--><div class="x-z-20"><div data-v-61b0d59b="" class="x-modal x-z-50" data-test="modal" style="display: none; top: 0px; bottom: 0px; height: auto;"><!--v-if--><!----></div><div data-v-61b0d59b="" class="x-modal x-my-history-confirm-disable-modal x-z-10" data-test="modal" style="display: none; top: 0px; bottom: 0px; height: auto;"><!--v-if--><!----></div></div></div><!--v-if--></div></div><iframe src="https://tracker.connectif.cloud/iframe/index.html" style="display: none;" width="0" height="0" data-moz-autofill-inspect-id="cce77f66-db0b-4152-ae32-6e3076a8fd45"></iframe><iframe src="https://tracker.connectif.cloud/iframe/index.html" style="display: none;" width="0" height="0" data-moz-autofill-inspect-id="c462fec9-8529-40f0-bde1-4e13a28ba6dc"></iframe><chat-oct8ne id="livechat-wrapper" role="button" aria-label="Pulsa en el widget para abrir el chat de Oct8ne" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="-5 -7 60 60"><defs><style>.oct8-iw {fill: transparent;stroke:rgb(246, 246, 246);}</style></defs><path class="oct8-iw" d="M21.3,26.2c1.1.3,2.4.5,3.7.5,1.5,0,3-.2,4.4-.7l4,2.4v-4.7c2.1-1.8,3.3-4.3,3.3-7,0-5.5-5.2-10-11.7-10s-11.4,4.3-11.7,9.6v.4"></path><path class="oct8-iw" d="M12.5,16.7c-5.1,0-9.2,3.4-9.2,7.5s1.3,4.4,3.3,5.8v3.4l3.3-2c.8.2,1.7.3,2.6.3,5.1,0,9.2-3.4,9.2-7.5s-4.1-7.5-9.2-7.5Z"></path></svg></chat-oct8ne><style></style><iframe src="https://tracker.connectif.cloud/iframe/index.html" style="display: none;" width="0" height="0" data-moz-autofill-inspect-id="74fc407a-93b5-4cb4-8ca3-bd08e58b071a"></iframe></body></html>

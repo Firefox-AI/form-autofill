@@ -1,0 +1,584 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 200px;
+}
+
+input {
+  margin: 2px;
+}
+
+.invisible {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<fieldset>
+
+<h3>www.harveynorman.co.nz</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <label for="firstname">Name</label>
+  </div>
+  <div>
+    <input type="text" id="firstname" name="user_data[firstname]" value="" placeholder="First Name" style="" data-moz-autofill-type="given-name">
+    <input type="text" id="lastname" name="user_data[lastname]" value="" placeholder="Last Name" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="text" id="email" name="user_data[email]" value="" placeholder="Email" style="" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="user_data[phone]" value="" placeholder="Phone Number" style="" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label for="b_address">
+							Billing Address
+					</label>
+    <input type="text" id="b_address" value="" name="user_data[b_addressfull]" placeholder="Start typing your address..." autocomplete="do-not-autocomplete" role="textbox" aria-autocomplete="list" aria-haspopup="true" style="" data-moz-autofill-type="address-lookup">
+  </div>
+  <div>
+    <label for="b_address_street">
+						Address
+	
+		</label>
+    <input type="text" id="b_address_street" name="user_data[b_address]" value="" style="" data-moz-autofill-type="street-address">
+  </div>
+  <div>
+    <label for="b_address_street_2">
+							Company
+	
+			</label>
+    <input type="text" id="b_address_street_2" name="user_data[b_address_2]" value="" style="" data-moz-autofill-type="organization">
+  </div>
+  <div>
+    <label for="b_address_city">
+						Suburb/Town
+	
+		</label>
+    <input type="text" id="b_address_city" name="user_data[b_city]" value="" style="" data-moz-autofill-type="address-level3">
+  </div>
+  <div>
+    <label for="b_address_state">
+							City/Region
+	
+			</label>
+    <input type="text" id="b_address_state" name="user_data[b_state]" value="" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="b_address_postcode">
+						Post Code
+	
+		</label>
+    <input type="text" id="b_address_postcode" name="user_data[b_zipcode]" value="" maxlength="10" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="b_address_country">
+							Country
+	
+			</label>
+    <select name="user_data[b_country]" id="b_address_country" style="" data-moz-autofill-type="country">
+					
+      <option value="AR">Argentina</option>
+
+      <option value="AP">Asia-Pacific</option>
+
+      <option value="AU">Australia</option>
+
+      <option value="BD">Bangladesh</option>
+
+      <option value="BE">Belgium</option>
+
+      <option value="BM">Bermuda</option>
+
+      <option value="CA">Canada</option>
+
+      <option value="CN">China</option>
+
+      <option value="CK">Cook Islands</option>
+
+      <option value="CW">Curaçao</option>
+
+      <option value="EU">Europe</option>
+
+      <option value="FJ">Fiji</option>
+
+      <option value="FI">Finland</option>
+
+      <option value="FR">France</option>
+
+      <option value="PF">French Polynesia</option>
+
+      <option value="DE">Germany</option>
+
+      <option value="GR">Greece</option>
+
+      <option value="HK">Hong Kong</option>
+
+      <option value="HU">Hungary</option>
+
+      <option value="IS">Iceland</option>
+
+      <option value="IN">India</option>
+
+      <option value="ID">Indonesia</option>
+
+      <option value="IE">Ireland</option>
+
+      <option value="IL">Israel</option>
+
+      <option value="IT">Italy</option>
+
+      <option value="JP">Japan</option>
+
+      <option value="KP">Korea</option>
+
+      <option value="KR">Korea, Republic of</option>
+
+      <option value="LU">Luxembourg</option>
+
+      <option value="MY">Malaysia</option>
+
+      <option value="MX">Mexico</option>
+
+      <option value="FM">Micronesia</option>
+
+      <option value="NL">Netherlands</option>
+
+      <option value="NC">New Caledonia</option>
+
+      <option value="NZ" selected="selected">New Zealand</option>
+
+      <option value="NU">Niue</option>
+
+      <option value="NF">Norfolk Island</option>
+
+      <option value="NO">Norway</option>
+
+      <option value="PK">Pakistan</option>
+
+      <option value="PG">Papua New Guinea</option>
+
+      <option value="PH">Philippines</option>
+
+      <option value="PL">Poland</option>
+
+      <option value="PT">Portugal</option>
+
+      <option value="WS">Samoa</option>
+
+      <option value="SG">Singapore</option>
+
+      <option value="SX">Sint Maarten</option>
+
+      <option value="SB">Solomon Islands</option>
+
+      <option value="ZA">South Africa</option>
+
+      <option value="ES">Spain</option>
+
+      <option value="LK">Sri Lanka</option>
+
+      <option value="SE">Sweden</option>
+
+      <option value="CH">Switzerland</option>
+
+      <option value="TW">Taiwan</option>
+
+      <option value="TH">Thailand</option>
+
+      <option value="TK">Tokelau</option>
+
+      <option value="TO">Tonga</option>
+
+      <option value="AE">United Arab Emirates</option>
+
+      <option value="GB">United Kingdom (Great Britain)</option>
+
+      <option value="US">United States</option>
+
+      <option value="VU">Vanuatu</option>
+
+				
+    </select>
+  </div>
+  <div>
+    <label for="s_address">
+							Delivery Address
+					</label>
+    <input type="text" id="s_address" value="" name="user_data[s_addressfull]" placeholder="Start typing your address..." autocomplete="do-not-autocomplete" role="textbox" aria-autocomplete="list" aria-haspopup="true" style="" data-moz-autofill-type="address-line1">
+  </div>
+  <div class="invisible">
+    <label for="s_address_street">
+						Address
+	
+		</label>
+  </div>
+  <div>
+    <label id="receiver_name" for="n_firstname">
+      <span>
+					Name of Person Collecting the Order
+				</span>
+				
+      <span>
+					Name of Person Receiving the Order
+				</span>
+			
+    </label>
+  </div>
+  <div>
+    <input type="text" id="n_firstname" name="user_data[n_firstname]" value="" placeholder="First Name" style="" data-moz-autofill-type="given-name">
+    <input type="text" id="n_lastname" name="user_data[n_lastname]" value="" placeholder="Last Name" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="s_phone">
+				Phone number of person Receiving the Order
+			</label>
+    <input type="text" id="n_phone" name="user_data[s_phone_1]" value="" style="" data-moz-autofill-type="tel">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.spotlightstores.com</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <input spellcheck="false" srginputstatus="" autocomplete="" min="undefined" placeholder="First name:" step="" type="text" maxlength="40" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div> First name:</div>
+  <div>
+    <input spellcheck="false" srginputstatus="" autocomplete="" min="undefined" placeholder="Last name:" step="" type="text" maxlength="40" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div class="invisible"> Last name:</div>
+  <div>
+    <input _ngcontent-qqk-c95="" srginputstatus="" srgnumericonly="" spellcheck="false" type="tel" placeholder="Mobile:" step="" min="undefined" maxlength="13" style="" data-moz-autofill-type="tel">
+  </div>
+  <div class="invisible"> Mobile:</div>
+  <div> e.g. +61 412XXXXXX</div>
+  <div>
+    <label>Building / Floor / Apartment / Unit: </label>
+    <input spellcheck="false" srginputstatus="" autocomplete="" min="undefined" placeholder="Building / Floor / Apartment / Unit:" step="" type="text" maxlength="40" style="" data-moz-autofill-type="address-line2">
+  </div>
+  <div class="invisible"> Building / Floor / Apartment / Unit:</div>
+  <div>
+    <label>House Number: </label>
+    <input spellcheck="false" srginputstatus="" autocomplete="" min="undefined" placeholder="House Number:" step="" type="text" maxlength="10" style="" data-moz-autofill-type="address-housenumber">
+  </div>
+  <div class="invisible"> House Number:</div>
+  <div>
+    <label>Street Name / PO Box: </label>
+    <input spellcheck="false" srginputstatus="" autocomplete="" min="undefined" placeholder="Street Name / PO Box:" step="" type="text" style="" data-moz-autofill-type="address-streetname">
+  </div>
+  <div class="invisible"> Street Name / PO Box:</div>
+  <div>
+    <label>Town / Suburb: </label>
+    <input spellcheck="false" srginputstatus="" autocomplete="" min="undefined" placeholder="Town / Suburb:" step="" type="text" style="" data-moz-autofill-type="address-level3">
+  </div>
+  <div class="invisible"> Town / Suburb:</div>
+  <div>
+    <input readonly="" srginputstatus="" placeholder="State:" style="" data-moz-autofill-type="address-level1">
+  </div>
+  <div>
+    <label>Post Code: </label>
+    <input spellcheck="false" srginputstatus="" autocomplete="" min="undefined" placeholder="Post Code:" step="" type="text" style="" data-moz-autofill-type="postal-code">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.farmers.co.nz</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <label for="billing_FirstName">First Name
+      <span>*</span>
+
+    </label>
+  </div>
+  <div>
+    <input type="text" name="billing_FirstName" id="billing_FirstName" value="" required="true" maxlength="30" forbiddensymbols="" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div> Please provide a First Name</div>
+  <div>
+    <label for="billing_LastName">Last Name
+      <span>*</span>
+
+    </label>
+  </div>
+  <div>
+    <input type="text" name="billing_LastName" id="billing_LastName" value="" required="true" maxlength="30" forbiddensymbols="" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div> Please provide a Last Name</div>
+  <div>
+    <label for="billing_Login">Email
+      <span>*</span>
+
+    </label>
+  </div>
+  <div>
+    <input autocomplete="off" required="" name="billing_Login" value="" pattern="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" maxlength="255" type="text" inputmode="email" style="" data-moz-autofill-type="email">
+  </div>
+  <div> Please provide Email Address</div>
+  <div>
+    <label for="billing_Mobile">Phone Number
+      <span>*</span>
+
+    </label>
+  </div>
+  <div>
+    <input type="tel" name="billing_Mobile" id="billing_Mobile" value="" placeholder="Example: 0211123456" required="true" maxlength="16" pattern="^[\d ()+]{8,16}$" style="" data-moz-autofill-type="tel">
+  </div>
+  <div> Please provide a phone number</div>
+  <div>
+    <label for="billing_Address1">Address
+      <span>*</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="billing_Address1" id="billing_Address1" value="" placeholder="Start typing your address" required="true" maxlength="40" style="" data-moz-autofill-type="street-address">
+  </div>
+  <div>
+    <label for="billing_Address2">Suburb</label>
+  </div>
+  <div>
+    <input type="text" name="billing_Address2" id="billing_Address2" value="" maxlength="250" style="" data-moz-autofill-type="address-level3">
+  </div>
+  <div> If your city is Auckland, Christchurch or Wellington please complete the suburb and city fields.</div>
+  <div>
+    <label for="billing_City">City
+      <span>*</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="billing_City" id="billing_City" value="" required="true" maxlength="255" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="billing_PostalCode">Postcode
+
+      <span>*</span>
+    </label>
+  </div>
+  <div>
+    <input type="text" name="billing_PostalCode" required="true" id="billing_PostalCode" pattern="^[0-9]{4}$" style="" data-moz-autofill-type="postal-code">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.ezibuy.com</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <label for="shipping-title">
+                Title
+            </label>
+    <select id="shipping-title" name="dwfrm_shipping_shippingAddress_addressFields_title" autocomplete="address-level1" style="" data-moz-autofill-type="honorific-prefix">
+                
+                    
+      <option id="" value="" null="">Please select</option>
+                
+                    
+      <option id="Mr" value="Mr" null="">Mr</option>
+                
+                    
+      <option id="Mrs" value="Mrs" null="">Mrs</option>
+                
+                    
+      <option id="Ms" value="Ms" null="">Ms</option>
+                
+                    
+      <option id="Other" value="Other" null="">Other</option>
+                
+            
+    </select>
+  </div>
+  <div>
+    <label for="shippingFirstNamedefault">
+                First Name
+            </label>
+    <input autofocus="" type="text" id="shippingFirstNamedefault" aria-describedby="defaultFirstName" value="" name="dwfrm_shipping_shippingAddress_addressFields_firstName" required="" aria-required="true" maxlength="40" autocomplete="shipping given-name" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="shippingLastNamedefault">
+                Last Name
+            </label>
+    <input type="text" id="shippingLastNamedefault" aria-describedby="defaultLastName" value="" name="dwfrm_shipping_shippingAddress_addressFields_lastName" required="" aria-required="true" maxlength="40" autocomplete="shipping family-name" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="companyNamedefault">
+                Business Name
+            </label>
+    <input type="text" id="companyNamedefault" aria-describedby="default" value="" name="dwfrm_shipping_shippingAddress_addressFields_companyName" maxlength="40" autocomplete="shipping company name" style="" data-moz-autofill-type="organization">
+  </div>
+  <div class="invisible">
+    <label for="default-single-line-shipping-address">
+                Address
+            </label>
+    <input type="text" id="default-single-line-shipping-address" name="single-line-shipping-fullAddress" value="" autocomplete="off" style="" data-moz-autofill-type="street-address">
+  </div>
+  <div class="invisible"> Can't find your address?  Try full form</div>
+  <div>
+    <label for="shippingAddressOnedefault">
+                Address 1
+            </label>
+    <input type="text" id="shippingAddressOnedefault" aria-describedby="defaultAddressLine1" value="" name="dwfrm_shipping_shippingAddress_addressFields_address1" required="" aria-required="true" maxlength="100" autocomplete="shipping address-line1" style="" data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <label for="shippingAddressTwodefault">
+                Address 2
+            </label>
+    <input type="text" id="shippingAddressTwodefault" aria-describedby="defaultAddressLine2" value="" name="dwfrm_shipping_shippingAddress_addressFields_address2" maxlength="100" autocomplete="shipping address-line2" style="" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <label for="shippingAddressCitydefault">
+                Suburb
+            </label>
+    <input type="text" id="shippingAddressCitydefault" aria-describedby="defaultCity" value="" name="dwfrm_shipping_shippingAddress_addressFields_city" maxlength="30" minlength="2" autocomplete="shipping address-level2" style="" data-moz-autofill-type="address-level3">
+  </div>
+  <div>
+    <label for="shippingPostcodedefault">
+                Postcode
+            </label>
+    <input type="text" id="shippingPostcodedefault" aria-describedby="defaultPostcode" value="" name="dwfrm_shipping_shippingAddress_addressFields_postalCode" maxlength="2147483647" autocomplete="shipping postal-code" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="shippingStateInputdefault">Town / City</label>
+    <select id="shippingStateSelectdefault" name="dwfrm_shipping_shippingAddress_addressFields_states_stateCodeSelect" value="" maxlength="2147483647" style="" data-moz-autofill-type="address-level1">
+                
+            </select>
+    <input type="text" id="shippingStateInputdefault" value="" name="dwfrm_shipping_shippingAddress_addressFields_states_stateCodeInput" maxlength="50" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="shippingPhoneNumberdefault">
+                Phone Number
+            </label>
+    <input type="tel" id="shippingPhoneNumberdefault" aria-describedby="defaultTelephoneNumber" value="" name="dwfrm_shipping_shippingAddress_addressFields_phone" required="" aria-required="true" maxlength="14" minlength="7" autocomplete="shipping tel" style="" data-moz-autofill-type="tel">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.briscoes.co.nz</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <label for="firstNameDelivery">
+                            
+      <div>First name:</div>
+                            
+      <div>*Required</div>
+                        
+    </label>
+    <input name="firstNameDelivery" type="text" id="firstNameDelivery" maxlength="50" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="lastNameDelivery">
+                            
+      <div>Last name:</div>
+                            
+      <div>*Required</div>
+                        
+    </label>
+    <input name="lastNameDelivery" type="text" id="lastNameDelivery" maxlength="50" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="companyDelivery">
+                            
+      <div>Company:</div>
+                        
+    </label>
+    <input name="companyDelivery" type="text" id="companyDelivery" maxlength="50" autocomplete="no" style="" data-moz-autofill-type="organization">
+  </div>
+  <div>
+    <label for="addressDelivery">
+                                    
+      <div>Address:</div>
+                                    
+      <div>*Required</div>
+                                
+    </label>
+    <input name="addressDelivery" type="text" id="addressDelivery" placeholder="Start typing..." maxlength="50" autocomplete="no" style="" data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <label for="cityDelivery">
+                                    
+      <div>City:</div>
+                                    
+      <div>*Required</div>
+                                
+    </label>
+    <input name="cityDelivery" type="text" id="cityDelivery" maxlength="50" autocomplete="no" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="stateProvinceDelivery">
+                                    
+      <div>State / Province:</div>
+                                    
+      <div>*Required</div>
+                                
+    </label>
+    <input name="stateProvinceDelivery" type="text" id="stateProvinceDelivery" maxlength="50" autocomplete="no" style="" data-moz-autofill-type="address-level1">
+  </div>
+  <div>
+    <label for="postcodeDelivery">
+                                    
+      <div>Postcode:</div>
+                                    
+      <div>*Required</div>
+                                
+    </label>
+    <input name="postcodeDelivery" type="text" id="postcodeDelivery" pattern="[0-9]{4}" maxlength="4" autocomplete="no" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="suburbDelivery">
+                                    
+      <div>Suburb:</div>
+                                    
+      <div>*Required</div>
+                                
+    </label>
+    <input name="suburbDelivery" type="text" id="suburbDelivery" maxlength="50" autocomplete="no" style="" data-moz-autofill-type="address-level3">
+  </div>
+  <div>
+    <label for="countryDelivery">
+                                    
+      <div>Country:</div>
+                                
+    </label>
+    <input name="countryDeliveryName" type="text" id="countryDeliveryName" value="New Zealand" init-value="New Zealand" readonly="" style="" data-moz-autofill-type="country-name">
+  </div>
+  <div>
+    <button type="submit" value="show-shipping">SHOW ME SHIPPING OPTIONS</button>
+  </div>
+</form>
+
+</fieldset>
+
+
+
+
+</body></html>

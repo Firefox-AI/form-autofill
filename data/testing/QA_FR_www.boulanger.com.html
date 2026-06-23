@@ -1,0 +1,1154 @@
+<html lang="en" class="no-overflow with-opened-popin"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; media-src data:; style-src data: 'unsafe-inline'; font-src data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Thu, 26 Feb 2026 15:33:02 GMT"><link rel="original" href="https://www.boulanger.com/checkout/delivery">
+
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    
+    
+    
+    
+    
+	
+	
+	
+	
+	
+
+    
+
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	
+	<style>
+  :root {
+    --vertical-card-height: 330px;
+    --horizontal-card-height: 168px;
+    --vertical-skeleton-card-height: 308px;
+    --horizontal-skeleton-card-height: 168px;
+    --title-height: 19px;
+    --sustainability-height: 56px;
+    --advantage-height: 58px;
+    --inner-paddings: 16px;
+    --total-vertical-card-height: calc(var(--vertical-card-height) + calc(var(--inner-paddings) * 2));
+    --total-horizontal-card-height: calc(var(--horizontal-card-height) + calc(var(--inner-paddings) * 2));
+  }
+
+  .product-push__wrapper {
+    --additional-height: 24px;
+    position: relative;
+    width: 100%;
+    height: calc(var(--total-vertical-card-height) + var(--additional-height));
+  }
+
+  /* Vertical card combinations */
+  .product-push__wrapper--with-title {
+    --additional-height: var(--title-height);
+  }
+
+  .product-push__wrapper--with-sustainability {
+    --additional-height: var(--sustainability-height);
+  }
+
+  .product-push__wrapper--with-advantage {
+    --additional-height: var(--advantage-height);
+  }
+
+  .product-push__wrapper--with-title.product-push__wrapper--with-sustainability {
+    --additional-height: calc(var(--title-height) + var(--sustainability-height));
+  }
+
+  .product-push__wrapper--with-title.product-push__wrapper--with-advantage {
+    --additional-height: calc(var(--title-height) + var(--advantage-height));
+  }
+
+  .product-push__wrapper--with-sustainability.product-push__wrapper--with-advantage {
+    --additional-height: calc(var(--sustainability-height) + var(--advantage-height));
+  }
+
+  .product-push__wrapper--with-title.product-push__wrapper--with-sustainability.product-push__wrapper--with-advantage {
+    --additional-height: calc(var(--title-height) + var(--sustainability-height) + var(--advantage-height));
+  }
+
+  /* Complementary card */
+  .product-push__wrapper--complementary {
+    height: 387px;
+    flex: 1 0 auto;
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: 736px) {
+    .product-push__wrapper--complementary {
+      flex-basis: 430px;
+      width: 430px;
+      margin-bottom: 0;
+    }
+  }
+
+  /* Horizontal card combinations */
+  .product-push__wrapper--horizontal {
+    height: var(--total-horizontal-card-height);
+  }
+
+  .product-push__wrapper--horizontal.product-push__wrapper--with-title {
+    height: calc(var(--total-horizontal-card-height) + var(--title-height));
+  }
+
+  .product-push__wrapper--horizontal.product-push__wrapper--with-advantage {
+    height: calc(var(--total-horizontal-card-height) + var(--advantage-height));
+  }
+
+  .product-push__wrapper--horizontal.product-push__wrapper--with-advantage.product-push__wrapper--with-title {
+    height: calc(var(--total-horizontal-card-height) + var(--advantage-height) + var(--title-height));
+  }
+
+  /* Skeleton */
+  bl-carousel[data-skeleton="true"],
+  swiper-container[data-skeleton="true"] {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+  }
+
+  /* Carousel skeleton */
+  .carousel-skeleton,
+  .carousel-skeleton-recommendation {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    opacity: 1;
+    transition: all 0.3s linear;
+    background-color: #ffffff;
+  }
+
+  .carousel-skeleton-recommendation {
+    background-color: #f6f6f6;
+    transition: all 3s linear;
+  }
+
+  /* Shimmer effect */
+  @keyframes shimmer-fade {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .shimmer {
+    position: relative;
+    background-color: #f6f6f6;
+    height: 9px;
+    border-radius: 10px;
+  }
+
+  .shimmer::after {
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #dbdbdb;
+    animation: shimmer-fade 2s infinite;
+    content: '';
+  }
+
+  /* Title skeleton */
+  .title-skeleton {
+    width: 320px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .title-skeleton:nth-child(2) {
+    margin-top: 10px;
+  }
+
+  /* Card wrapper skeleton */
+  .card-wrapper-skeleton {
+    display: flex;
+    flex-direction: row;
+    width: 1300px;
+    padding-top: 38px;
+    padding-bottom: 16px;
+  }
+
+  .card-wrapper-skeleton--horizontal {
+    padding-top: 16px;
+  }
+
+  .product-push__wrapper--complementary .card-wrapper-skeleton {
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+
+  /* Card skeleton */
+  .card-skeleton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 196px;
+    min-width: 196px;
+    height: var(--vertical-skeleton-card-height);
+    border: 2px solid #dbdbdb;
+    border-radius: 10px;
+    margin-right: 16px;
+    padding: 16px 8px;
+    background-color: #fff;
+  }
+
+  .product-push__wrapper--with-sustainability .card-skeleton {
+    height: calc(var(--vertical-skeleton-card-height) + var(--sustainability-height));
+  }
+
+  .card-skeleton--horizontal {
+    display: block;
+    width: 288px;
+    min-width: 288px;
+    height: var(--horizontal-skeleton-card-height);
+    padding: 16px;
+  }
+
+  .product-push__wrapper--with-advantage .card-skeleton {
+    margin-bottom: var(--advantage-height);
+  }
+
+  .product-push__wrapper--complementary .card-skeleton {
+    height: 333px;
+    margin-right: 38px;
+    padding-top: 40px;
+  }
+
+  /* Card inner skeleton */
+  .card-inner-skeleton {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 18px;
+  }
+
+  /* Card sticker skeleton */
+  .card-sticker-skeleton {
+    width: 90%;
+  }
+
+  .card-skeleton--horizontal .card-sticker-skeleton {
+    margin: 0 auto;
+  }
+
+  .card-sticker-skeleton div:first-child {
+    margin-bottom: 10px;
+  }
+
+  .card-skeleton--horizontal .card-sticker-skeleton div:first-child {
+    margin-bottom: 8px;
+  }
+
+  /* Card image skeleton */
+  .card-image-skeleton {
+    width: 100px;
+    height: 100px;
+    margin-top: 8px;
+  }
+
+  .card-image-skeleton--sustainability {
+    width: 61px;
+    height: 48px;
+  }
+
+  .card-skeleton--horizontal .card-image-skeleton {
+    align-self: center;
+    margin-top: 0;
+    margin-right: 8px;
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Card right skeleton */
+  .card-right-skeleton {
+    flex-grow: 1;
+    align-self: flex-end;
+  }
+
+  /* Card rating skeleton */
+  .card-rating-skeleton {
+    width: 70px;
+    margin-top: 18px;
+  }
+
+  .card-skeleton--horizontal .card-rating-skeleton {
+    width: 98px;
+    margin-top: 21px;
+  }
+
+  /* Card label skeleton */
+  .card-label-skeleton {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .card-skeleton--horizontal .card-label-skeleton {
+    margin-top: 0;
+  }
+
+  .card-label-skeleton div:first-child {
+    margin-bottom: 8px;
+  }
+
+  .card-skeleton--horizontal .card-label-skeleton div:last-child {
+    width: 70px;
+  }
+
+  /* Card bottom skeleton */
+  .card-bottom-skeleton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 31px;
+  }
+
+  .card-skeleton--horizontal .card-bottom-skeleton {
+    margin-top: 10px;
+  }
+
+  /* Card price skeleton */
+  .card-price-skeleton--1 {
+    width: 90px;
+    margin-bottom: 8px;
+  }
+
+  .card-price-skeleton--2 {
+    width: 108px;
+  }
+
+  .card-skeleton--horizontal .card-price-skeleton {
+    margin-left: 0;
+  }
+
+  /* Card button skeleton */
+  .card-button-skeleton {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 31px;
+  }
+
+  .card-skeleton--horizontal .card-button-skeleton {
+    margin-left: 0;
+  }
+
+  .card-button-skeleton.shimmer::after {
+    border-radius: 50%;
+  }
+
+  .carousel-skeleton-empty-container {
+    width: 100%;
+    overflow: hidden;
+    opacity: 1;
+    transition: all 3s linear;
+    background-color: #ffffff;
+  }
+
+  .billboard-image-skeleton {
+    width: 100%;
+    height: 260px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+.trends__panel {
+  position: relative;
+}
+
+.trends__panel[data-skeleton="true"] .trends__list,
+.trends__panel[data-skeleton="true"] .trends__list {
+  opacity: 0;
+  transition: opacity .3s linear;
+}
+
+.trends-skeleton {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity .3s linear;
+  pointer-events: none;
+}
+
+.trends-skeleton__list {
+  display: flex;
+  gap: 24px;
+  padding: 0 0 16px 0;
+}
+
+.trends-skeleton__card {
+  width: 226px;
+  min-width: 226px;
+  height: 314px;
+  border: 2px solid #dbdbdb;
+  border-radius: 24px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: #fff;
+}
+
+.trends-skeleton__media {
+  height: 130px;
+  width: 130px;
+  align-self: center;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.trends-skeleton__brand   { height: 17px; width: 40%; margin-top: 12px }
+.trends-skeleton__label-1 { height: 12px; width: 95%; margin: 6px 0 0; }
+.trends-skeleton__label-2 { height: 12px; width: 75%; margin: 8px 0 0; }
+
+.trends-skeleton__rating  { height: 12px; width: 110px; margin: 12px 0 0; }
+
+.trends-skeleton__strike  { display:flex; align-items:center; gap:8px; margin: 10px 0 0; }
+.trends-skeleton__strike > .chip  { height: 12px; width: 34px; }
+.trends-skeleton__strike > .old   { height: 12px; width: 70px; }
+.trends-skeleton__strike > .badge { height: 18px; width: 38px; border-radius: 6px; }
+
+.trends-skeleton__price   { height: 18px; width: 60%; margin: 12px 0 12px; border-radius: 6px; }
+
+.trends-skeleton .shimmer { border-radius: 8px; }
+.trends-skeleton__price.shimmer::after { border-radius: 6px; }
+.trends__panel[data-skeleton="false"] .trends-skeleton {
+  opacity: 0;
+  visibility: hidden;
+}
+</style>
+
+	
+    <link rel="preconnect" as="script" href="https://sdk.privacy-center.org/"><link rel="dns-prefetch" as="script" href="https://sdk.privacy-center.org/"></head><body class="spaPage page basicpage checkout"><iframe src="data:text/html;base64,PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+" title="" role="presentation" style="width: 0px; height: 0px; border: 0px; display: none;" data-moz-autofill-inspect-id="28634209-05ba-4b94-9666-bb553e405b09" data-original-src="javascript:void(0)"></iframe>
+    <link rel="preconnect" href="https://boulanger.scene7.com">
+
+	
+    
+        
+        
+            
+                          
+              
+              
+    
+    <link rel="preconnect" href="https://consent.valiuz.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    
+        
+
+        
+
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        
+
+        
+
+        
+
+        
+
+        
+            
+  
+
+        
+    
+
+    
+        
+    
+
+    
+     
+    
+
+
+	<style>
+    /* 
+    -----------------------------------------------------------------------------
+    This file contains all typography style
+    -----------------------------------------------------------------------------
+    */
+
+    /***********/
+    /* POPPINS */
+    /***********/
+
+    /* fallback font */
+    @font-face {
+        font-family: "Poppins-fallback";
+        ascent-override: 105%;
+        descent-override: 35%;
+        line-gap-override: 10%;
+        size-adjust: 112.50%;
+        src: local("Arial");
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("https://fonts.gstatic.com/s/poppins/v21/pxiEyp8kv8JHgFVrJJnecmNE.woff2") format("woff2");
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("https://fonts.gstatic.com/s/poppins/v21/pxiEyp8kv8JHgFVrJJfecg.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url("https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLGT9Z1JlFc-K.woff2") format("woff2");
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url("https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url("https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2") format("woff2");
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url("https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url("https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLCz7Z1JlFc-K.woff2") format("woff2");
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url("https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /*************/
+    /* WORK SANS */
+    /*************/
+
+    @font-face {
+        font-family: "Work-Sans-fallback";
+        font-size: 18px;
+        line-height: 1.4;
+        letter-spacing: -0.35px;
+        word-spacing: 2px;
+        src: local("Georgia");
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/worksans/v23/QGYsz_wNahGAdqQ43Rh_cqDptfpA4cD3.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/worksans/v23/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/worksans/v23/QGYsz_wNahGAdqQ43Rh_cqDptfpA4cD3.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/worksans/v23/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* vietnamese */
+    @font-face {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/worksans/v23/QGYsz_wNahGAdqQ43Rh_c6DptfpA4cD3.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/worksans/v23/QGYsz_wNahGAdqQ43Rh_cqDptfpA4cD3.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/worksans/v23/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* latin-ext */
+    @font-face {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/worksans/v23/QGYsz_wNahGAdqQ43Rh_cqDptfpA4cD3.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/worksans/v23/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+</style>
+	<link rel="apple-touch-icon" sizes="180x180" href="https://www.boulanger.com/content/dam/boulanger-site/favicon-package/apple-touch-icon.png?v=10082022">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.boulanger.com/content/dam/boulanger-site/favicon-package/favicon-32x32.png?v=10082022">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.boulanger.com/content/dam/boulanger-site/favicon-package/favicon-16x16.png?v=10082022">
+<link rel="manifest" href="https://www.boulanger.com/content/dam/boulanger-site/favicon-package/site.webmanifest?v=10082022">
+<link rel="mask-icon" href="https://www.boulanger.com/content/dam/boulanger-site/favicon-package/safari-pinned-tab.svg?v=10082022" color="#d14600">
+<link rel="shortcut icon" href="https://www.boulanger.com/content/dam/boulanger-site/favicon-package/favicon.ico?v=10082022">
+<meta name="apple-mobile-web-app-title" content="Boulanger">
+<meta name="application-name" content="Boulanger">
+<meta name="msapplication-TileColor" content="#d14600">
+<meta name="msapplication-config" content="/content/dam/boulanger-site/favicon-package/browserconfig.xml?v=10082022">
+<meta name="theme-color" content="#434748">
+	
+  
+
+	
+  
+  
+
+	
+    
+<link rel="stylesheet" href="https://www.boulanger.com/etc.clientlibs/boulanger-site/clientlibs/wpk.app/blg.spa-page.08b2abbc3ace48f44304.css" type="text/css">
+
+
+	
+    
+
+
+
+
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+                              <link rel="stylesheet" type="text/css" href="https://www.boulanger.com/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/blg.common-async.92b2.css"><link rel="stylesheet" type="text/css" href="https://www.boulanger.com/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/339.7110.css"><link rel="stylesheet" type="text/css" href="https://www.boulanger.com/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/1429.9a27.css"><link rel="stylesheet" type="text/css" href="https://www.boulanger.com/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/4437.9086.css"><link rel="stylesheet" type="text/css" href="https://www.boulanger.com/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/blg.spa.route.delivery.ce47.css"><style>
+  .idz-desktop-lave-linge-ask-button .idz-desktop-lave-linge-sparkle-icon > * {
+    fill: #3B3E3F!important;
+  }
+  .idz-desktop-television-ask-button .idz-desktop-television-sparkle-icon > * {
+    fill: #3B3E3F!important;
+  }
+</style><title>Select a delivery method - Baker</title><link href="https://cdn.caast.tv/caast/5.260/" rel="preconnect"><link href="https://api-k8s.caast.tv" rel="preconnect"><link href="https://apicache-k8s.caast.tv" rel="preconnect"><link href="wss://ws-k8s.caast.tv" rel="preconnect"><link charset="utf-8" rel="preload" as="script" href="https://try.abtasty.com/shared/me.9cc1e665fc667ca6dfeb.js"><link rel="stylesheet" type="text/css" href="https://www.boulanger.com/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/blg.spa.act.billing-address-edit.bb72.css"><link rel="stylesheet" type="text/css" href="https://www.boulanger.com/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/blg.spa.act.delivery-address-list.1231.css">
+    <div id="didomi-host" class="didomi-host" data-nosnippet="true" aria-hidden="true" lang="fr" data-lang-dir="ltr"></div><iframe style="display: none;" name="__tcfapiLocator" title="__tcfapiLocator" data-moz-autofill-inspect-id="f1ebd8cf-e4ab-4836-982f-c28dc7f6193e"></iframe>
+        
+        
+            
+
+
+
+            
+  
+
+
+  
+    
+  
+
+
+
+
+	     
+	  
+	     
+	
+	
+	
+
+
+<ul id="toaster-container"></ul>
+
+<main id="main">
+	<section class="root customresponsivegrid responsivegrid">
+
+
+    
+    <div class="customresponsivegrid responsivegrid">
+
+
+    
+    <div class="orderitems"><div id="checkout-app">
+
+
+
+
+<header id="header" class="header header--checkout">
+  <div class="header__container container-xl">
+    <div class="header__content grid">
+      
+  
+  
+
+  
+
+  
+    
+
+    
+      <a data-tabindex="1" href="https://www.boulanger.com/" class="g-col-4 g-col-lg-3 header__logo analytic-clic_standard" data-analytics-click="clic_header" data-analytics-click_chapter1="logo_boulanger" aria-label="Return to the reception of Boulanger" id="header__logo">
+        
+<svg xmlns="http://www.w3.org/2000/svg" class="header__logo-icon" height="40.61" width="295.11" viewBox="0 0 295.11 40.61" style="fill: rgb(241, 101, 10);" aria-hidden="true" aria-label="Logo Boulanger">
+    <path class="header__logo-capital" d="M36.86,0H19.77a19.53,19.53,0,0,0-.48,39.06H36.86A19.53,19.53,0,1,0,37.34,0h-.48M33.15,33.58H25.8A12.73,12.73,0,0,1,13,20.93V11.15h0A12.64,12.64,0,0,1,19.75,0V8.27h13.4a12.65,12.65,0,0,1,0,25.3h0"></path>
+    <path class="header__logo-capital" d="M33,14.92H19.81v6a6,6,0,0,0,6,6H33a6,6,0,0,0,0-12h0"></path>
+    <path d="M64.16,23.62v-18h5.91v6.94h9.19a10.55,10.55,0,1,1,0,21.1H74.66a10.25,10.25,0,0,1-10.49-10m5.9-.54A4.69,4.69,0,0,0,74.53,28h4.31a5,5,0,0,0,5-4.92,5.08,5.08,0,0,0-5-5H70.07Zm33.44,10.52a10.55,10.55,0,1,1,0-21.1h6a10.55,10.55,0,0,1,0,21.1h-6Zm10.6-10.52a5.08,5.08,0,0,0-5-5h-5.14a5,5,0,0,0-.18,10h5.32a5,5,0,0,0,5-5m9.68,0V12.52h5.91V23.09a5,5,0,0,0,5,5h8.38V12.51H149v21.1h-14.5c-6.44,0-10.71-4.16-10.71-10.52m36.46,10.52h-5.9v-28h5.9ZM218.1,23V33.61h-5.91V23a5,5,0,0,0-5-5h-8.4V33.61h-5.9V12.51h14.49A10.63,10.63,0,0,1,218.07,23M221.64,22c0-5.83,4.81-9.46,10.71-9.46h14.88V33.4c0,4.64-2.87,7.21-8.12,7.21H228V35.27h11.36a1.83,1.83,0,0,0,2-1.7V31.48h-9c-5.9,0-10.71-3.63-10.71-9.51m19.69,4V18.07h-8.27c-2.76,0-5,1.18-5,3.9s2.27,4,5,4Zm33.38,7.69H261.62c-6.44,0-10.93-4.16-10.93-10.52a10.27,10.27,0,0,1,10-10.57h4.15c5.79,0,10,3.57,10,9.29v3.48h-18c.65,1.81,2.32,2.88,5,2.88h12.87Zm-17.9-13.08H269c0-1.6-1.25-2.94-4.17-2.94H261.3a4.36,4.36,0,0,0-4.49,2.94m38.3-8v5.55h-5.63a5,5,0,0,0-5,5V33.61h-5.9V23c0-6.36,4.28-10.52,10.71-10.52Z"></path>
+    <path d="M175.67,12.31a10.68,10.68,0,1,0,0,21.35h14.1V12.31ZM183.88,28H176.1a5,5,0,0,1-5-5,5.1,5.1,0,0,1,5-5.08h7.77Z"></path>
+  </svg>
+
+      </a>
+    
+  
+
+      <div class="header__secure-payment g-col-3 g-start-6 g-col-sm-4 g-start-sm-9" id="header__secure-payment">
+          <svg class="header__secure-payment-icon" aria-hidden="true">
+              <use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-ico_paiement-securise">
+              </use>    
+            </svg>          
+        <div class="header__secure-payment-text"><span>Secure</span> payment<span></span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+	
+<div class="app-container"><div class=""><section class="popin--container" id="popin--container"><bl-popin-side arialabelledby="" ariadescribedby="" arialabelbtnclose="Fermer la popin" arialabelbtnback="Retour" popintitle="Modifier ou ajouter une adresse de livraison" zindex="1004" hascustompadding="false" isnotclosable="false" isopen="true" witharrowback="false" isfullpage="false" isbigpopin="false" hascustomtitle="false" withfooter="false"><bl-popin-side-body slot="body"><div class="delivery-address-form" id="form"><form class="add-address-form" novalidate=""><div class="field__container field__container--row"><fieldset class="field__fieldset field__gender"><div class="radio__container "><bl-radio label="Civilité" size="small" color="" id="gender" radios="[{&quot;value&quot;:&quot;female&quot;,&quot;label&quot;:&quot;Madame&quot;,&quot;selected&quot;:true,&quot;disabled&quot;:false},{&quot;value&quot;:&quot;male&quot;,&quot;label&quot;:&quot;Monsieur&quot;,&quot;selected&quot;:false,&quot;disabled&quot;:false}]" inline="false" required="true" isonerror="false"></bl-radio></div></fieldset></div><div class="field__container" id="addressFamilyNameContainer"><bl-input type="text" id="addressFamilyName" name="addressFamilyName" placeholder=" " required="true" isonerror="false" aria-invalid="false" label="Nom" value="" isvalid="false" aria-describedby="" disabled="false" maxlength="40"></bl-input></div><div class="field__container" id="addressGivenNameContainer"><bl-input type="text" id="addressGivenName" name="addressGivenName" placeholder=" " required="true" isonerror="false" aria-invalid="false" label="Prénom" value="" isvalid="false" aria-describedby="" disabled="false" maxlength="40"></bl-input></div><div class="field__container "><span class="field__select__container"><select name="country" id="country" required="" class="field__select" data-moz-autofill-inspect-id="486a43dd-280d-4f0e-9326-93cd82e01dcc" data-moz-autofill-type="country" style=""><option disabled="" value="">Pays</option><option data-id="AF" data-code="AFG" value="AFG">AFGHANISTAN</option><option data-id="ZA" data-code="ZAF" value="ZAF">AFRIQUE DU SUD</option><option data-id="DZ" data-code="DZA" value="DZA">ALGÉRIE</option><option data-id="DE" data-code="DEU" value="DEU">ALLEMAGNE</option><option data-id="AD" data-code="AND" value="AND">ANDORRE</option><option data-id="AO" data-code="AGO" value="AGO">ANGOLA</option><option data-id="SA" data-code="SAU" value="SAU">ARABIE SAOUDITE</option><option data-id="AR" data-code="ARG" value="ARG">ARGENTINE</option><option data-id="AM" data-code="ARM" value="ARM">ARMÉNIE</option><option data-id="AU" data-code="AUS" value="AUS">AUSTRALIE</option><option data-id="AT" data-code="AUT" value="AUT">AUTRICHE</option><option data-id="BS" data-code="BHS" value="BHS">BAHAMAS</option><option data-id="BD" data-code="BGD" value="BGD">BANGLADESH</option><option data-id="BB" data-code="BRB" value="BRB">BARBADE</option><option data-id="BE" data-code="BEL" value="BEL">BELGIQUE</option><option data-id="BM" data-code="BMU" value="BMU">BERMUDES</option><option data-id="MM" data-code="MMR" value="MMR">BIRMANIE (MYAN)</option><option data-id="BO" data-code="BOL" value="BOL">BOLIVIE</option><option data-id="BA" data-code="BIH" value="BIH">BOSNIE-HERZ.</option><option data-id="BW" data-code="BWA" value="BWA">BOTSWANA</option><option data-id="BN" data-code="BRN" value="BRN">BRUNÉI</option><option data-id="BR" data-code="BRA" value="BRA">BRÉSIL</option><option data-id="BG" data-code="BGR" value="BGR">BULGARIE</option><option data-id="BF" data-code="BFA" value="BFA">BURKINA FASO</option><option data-id="BI" data-code="BDI" value="BDI">BURUNDI</option><option data-id="BJ" data-code="BEN" value="BEN">BÉNIN</option><option data-id="KH" data-code="KHM" value="KHM">CAMBODGE</option><option data-id="CM" data-code="CMR" value="CMR">CAMEROUN</option><option data-id="CA" data-code="CAN" value="CAN">CANADA</option><option data-id="CV" data-code="CPV" value="CPV">CAP-VERT</option><option data-id="CF" data-code="CAF" value="CAF">CENTRAFR. (RÉP)</option><option data-id="CL" data-code="CHL" value="CHL">CHILI</option><option data-id="CN" data-code="CHN" value="CHN">CHINE</option><option data-id="CY" data-code="CYP" value="CYP">CHYPRE</option><option data-id="CO" data-code="COL" value="COL">COLOMBIE</option><option data-id="KM" data-code="COM" value="COM">COMORES</option><option data-id="CG" data-code="COG" value="COG">CONGO</option><option data-id="KP" data-code="PRK" value="PRK">CORÉE DU NORD</option><option data-id="KR" data-code="KOR" value="KOR">CORÉE DU SUD</option><option data-id="CR" data-code="CRI" value="CRI">COSTA RICA</option><option data-id="HR" data-code="HRV" value="HRV">CROATIE</option><option data-id="CU" data-code="CUB" value="CUB">CUBA</option><option data-id="CI" data-code="CIV" value="CIV">CÔTE D'IVOIRE</option><option data-id="DK" data-code="DNK" value="DNK">DANEMARK</option><option data-id="DJ" data-code="DJI" value="DJI">DJIBOUTI</option><option data-id="DM" data-code="DMA" value="DMA">DOMINIQUE</option><option data-id="EG" data-code="EGY" value="EGY">EGYPTE</option><option data-id="AE" data-code="ARE" value="ARE">EMIRATS ARABES</option><option data-id="EC" data-code="ECU" value="ECU">EQUATEUR</option><option data-id="ES" data-code="ESP" value="ESP">ESPAGNE</option><option data-id="EE" data-code="EST" value="EST">ESTONIE</option><option data-id="US" data-code="USA" value="USA">ETATS-UNIS</option><option data-id="ET" data-code="ETH" value="ETH">ETHIOPIE</option><option data-id="FJ" data-code="FJI" value="FJI">FIDJI</option><option data-id="FI" data-code="FIN" value="FIN">FINLANDE</option><option data-id="FR" data-code="FRA" value="FRA">FRANCE</option><option data-id="GA" data-code="GAB" value="GAB">GABON</option><option data-id="GM" data-code="GMB" value="GMB">GAMBIE</option><option data-id="GH" data-code="GHA" value="GHA">GHANA</option><option data-id="GI" data-code="GIB" value="GIB">GIBRALTAR</option><option data-id="GD" data-code="GRD" value="GRD">GRENADE</option><option data-id="GL" data-code="GRL" value="GRL">GROENLAND</option><option data-id="GR" data-code="GRC" value="GRC">GRÈCE</option><option data-id="GP" data-code="GLP" value="GLP">GUADELOUPE</option><option data-id="GT" data-code="GTM" value="GTM">GUATEMALA</option><option data-id="GN" data-code="GIN" value="GIN">GUINÉE</option><option data-id="GQ" data-code="GNQ" value="GNQ">GUINÉE ÉQUATOR.</option><option data-id="GW" data-code="GNB" value="GNB">GUINÉE-BISSAU</option><option data-id="GY" data-code="GUY" value="GUY">GUYANE</option><option data-id="GF" data-code="GUF" value="GUF">GUYANE FRANÇ.</option><option data-id="GE" data-code="GEO" value="GEO">GÉORGIE</option><option data-id="HT" data-code="HTI" value="HTI">HAÏTI</option><option data-id="HN" data-code="HND" value="HND">HONDURAS</option><option data-id="HK" data-code="HKG" value="HKG">HONG KONG</option><option data-id="HU" data-code="HUN" value="HUN">HONGRIE</option><option data-id="NF" data-code="NFK" value="NFK">ILE NORFOLK</option><option data-id="KY" data-code="CYM" value="CYM">ILES CAÏMANS</option><option data-id="CK" data-code="COK" value="COK">ILES COOK</option><option data-id="MP" data-code="MNP" value="MNP">ILES MARIANNES</option><option data-id="IN" data-code="IND" value="IND">INDE</option><option data-id="ID" data-code="IDN" value="IDN">INDONÉSIE</option><option data-id="IR" data-code="IRN" value="IRN">IRAN</option><option data-id="IQ" data-code="IRQ" value="IRQ">IRAQ</option><option data-id="IE" data-code="IRL" value="IRL">IRLANDE</option><option data-id="IS" data-code="ISL" value="ISL">ISLANDE</option><option data-id="IL" data-code="ISR" value="ISR">ISRAËL</option><option data-id="IT" data-code="ITA" value="ITA">ITALIE</option><option data-id="JM" data-code="JAM" value="JAM">JAMAÏQUE</option><option data-id="JP" data-code="JPN" value="JPN">JAPON</option><option data-id="JO" data-code="JOR" value="JOR">JORDANIE</option><option data-id="KE" data-code="KEN" value="KEN">KENYA</option><option data-id="KW" data-code="KWT" value="KWT">KOWEIT</option><option data-id="LA" data-code="LAO" value="LAO">LAOS</option><option data-id="LS" data-code="LSO" value="LSO">LESOTHO</option><option data-id="LV" data-code="LVA" value="LVA">LETTONIE</option><option data-id="LB" data-code="LBN" value="LBN">LIBAN</option><option data-id="LR" data-code="LBR" value="LBR">LIBERIA</option><option data-id="LI" data-code="LIE" value="LIE">LIECHTENSTEIN</option><option data-id="LT" data-code="LTU" value="LTU">LITHUANIE</option><option data-id="LU" data-code="LUX" value="LUX">LUXEMBOURG</option><option data-id="LY" data-code="LBY" value="LBY">LYBIE</option><option data-id="MO" data-code="MAC" value="MAC">MACAO</option><option data-id="MK" data-code="MKD" value="MKD">MACÉDOINE</option><option data-id="MG" data-code="MDG" value="MDG">MADAGASCAR</option><option data-id="MY" data-code="MYS" value="MYS">MALAISIE</option><option data-id="MV" data-code="MDV" value="MDV">MALDIVES</option><option data-id="ML" data-code="MLI" value="MLI">MALI</option><option data-id="MT" data-code="MLT" value="MLT">MALTE</option><option data-id="MA" data-code="MAR" value="MAR">MAROC</option><option data-id="MQ" data-code="MTQ" value="MTQ">MARTINIQUE</option><option data-id="MU" data-code="MUS" value="MUS">MAURICE (ILE)</option><option data-id="MR" data-code="MRT" value="MRT">MAURITANIE</option><option data-id="YT" data-code="MYT" value="MYT">MAYOTTE</option><option data-id="MX" data-code="MEX" value="MEX">MEXIQUE</option><option data-id="MC" data-code="MCO" value="MCO">MONACO</option><option data-id="MN" data-code="MNG" value="MNG">MONGOLIE</option><option data-id="MZ" data-code="MOZ" value="MOZ">MOZAMBIQUE</option><option data-id="NA" data-code="NAM" value="NAM">NAMIBIE</option><option data-id="NC" data-code="NCL" value="NCL">NELLE CALÉDONIE</option><option data-id="NI" data-code="NIC" value="NIC">NICARAGUA</option><option data-id="NE" data-code="NER" value="NER">NIGER</option><option data-id="NG" data-code="NGA" value="NGA">NIGERIA</option><option data-id="NO" data-code="NOR" value="NOR">NORVÈGE</option><option data-id="NZ" data-code="NZL" value="NZL">NVELLE ZÉLANDE</option><option data-id="NP" data-code="NPL" value="NPL">NÉPAL</option><option data-id="OM" data-code="OMN" value="OMN">OMAN</option><option data-id="UG" data-code="UGA" value="UGA">OUGANDA</option><option data-id="UZ" data-code="UZB" value="UZB">OUZBÉKISTAN</option><option data-id="PK" data-code="PAK" value="PAK">PAKISTAN</option><option data-id="PA" data-code="PAN" value="PAN">PANAMA</option><option data-id="PG" data-code="PNG" value="PNG">PAP.NOUV.GUINÉE</option><option data-id="PY" data-code="PRY" value="PRY">PARAGUAY</option><option data-id="NL" data-code="NLD" value="NLD">PAYS-BAS</option><option data-id="PH" data-code="PHL" value="PHL">PHILIPPINES</option><option data-id="PL" data-code="POL" value="POL">POLOGNE</option><option data-id="PF" data-code="PYF" value="PYF">POLYNÉSIE FRAN.</option><option data-id="PR" data-code="PRI" value="PRI">PORTO RICO</option><option data-id="PT" data-code="PRT" value="PRT">PORTUGAL</option><option data-id="PE" data-code="PER" value="PER">PÉROU</option><option data-id="QA" data-code="QAT" value="QAT">QATAR</option><option data-id="CZ" data-code="CZE" value="CZE">REPUBL. TCHEQUE</option><option data-id="RO" data-code="ROM" value="ROM">ROUMANIE</option><option data-id="GB" data-code="GBR" value="GBR">ROYAUME UNI</option><option data-id="RU" data-code="RUS" value="RUS">RUSSIE (FÉD.)</option><option data-id="RW" data-code="RWA" value="RWA">RWANDA</option><option data-id="DO" data-code="DOM" value="DOM">RÉP.DOMINICAINE</option><option data-id="RE" data-code="REU" value="REU">RÉUNION</option><option data-id="SM" data-code="SMR" value="SMR">SAINT-MARIN</option><option data-id="SH" data-code="SHN" value="SHN">SAINTE-HÉLÈNE</option><option data-id="SB" data-code="SLB" value="SLB">SALOMON (ILES)</option><option data-id="WS" data-code="WSM" value="WSM">SAMOA</option><option data-id="SC" data-code="SYC" value="SYC">SEYCHELLES</option><option data-id="SL" data-code="SLE" value="SLE">SIERRA LEONE</option><option data-id="SG" data-code="SGP" value="SGP">SINGAPOUR</option><option data-id="SK" data-code="SVK" value="SVK">SLOVAQUIE</option><option data-id="SI" data-code="SVN" value="SVN">SLOVÉNIE</option><option data-id="SO" data-code="SOM" value="SOM">SOMALIE</option><option data-id="SD" data-code="SDN" value="SDN">SOUDAN</option><option data-id="LK" data-code="LKA" value="LKA">SRI LANKA</option><option data-id="PM" data-code="SPM" value="SPM">ST PIERRE MIQ.</option><option data-id="CH" data-code="CHE" value="CHE">SUISSE</option><option data-id="SR" data-code="SUR" value="SUR">SURINAME</option><option data-id="SE" data-code="SWE" value="SWE">SUÈDE</option><option data-id="SZ" data-code="SWZ" value="SWZ">SWAZILAND</option><option data-id="SY" data-code="SYR" value="SYR">SYRIE</option><option data-id="SN" data-code="SEN" value="SEN">SÉNÉGAL</option><option data-id="TJ" data-code="TJK" value="TJK">TADJIKISTAN</option><option data-id="TZ" data-code="TZA" value="TZA">TANZANIE</option><option data-id="TW" data-code="TWN" value="TWN">TAÏWAN</option><option data-id="TD" data-code="TCD" value="TCD">TCHAD</option><option data-id="TH" data-code="THA" value="THA">THAÏLANDE</option><option data-id="TG" data-code="TGO" value="TGO">TOGO</option><option data-id="TT" data-code="TTO" value="TTO">TRINITAD TOBAGO</option><option data-id="TN" data-code="TUN" value="TUN">TUNISIE</option><option data-id="TM" data-code="TKM" value="TKM">TURKMÉNISTAN</option><option data-id="TC" data-code="TCA" value="TCA">TURKS CAIQUES</option><option data-id="TR" data-code="TUR" value="TUR">TURQUIE</option><option data-id="UA" data-code="UKR" value="UKR">UKRAINE</option><option data-id="UY" data-code="URY" value="URY">URUGUAY</option><option data-id="VU" data-code="VUT" value="VUT">VANUATU</option><option data-id="VA" data-code="VAT" value="VAT">VATICAN</option><option data-id="VE" data-code="VEN" value="VEN">VENEZUELA</option><option data-id="VN" data-code="VNM" value="VNM">VIÊT NAM</option><option data-id="WF" data-code="WLF" value="WLF">WALLIS FUTUNA</option><option data-id="YU" data-code="YUG" value="YUG">YOUGOSLAVIE</option><option data-id="YE" data-code="YEM" value="YEM">YÉMEN</option><option data-id="ZM" data-code="ZMB" value="ZMB">ZAMBIE</option><option data-id="ZR" data-code="ZAR" value="ZAR">ZAÏRE</option><option data-id="ZW" data-code="ZWE" value="ZWE">ZIMBABWE</option></select><svg class="field__select__ico" aria-hidden="true"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-arrow"></use></svg><label for="country" class="field__label field__label"><span class="field__label_txt" data-testid="label-span">Country <span data-testid="label-span-required">*</span></span></label></span></div><div class="field__container" id="addressContainer"><bl-input type="text" id="address" name="address" placeholder=" " required="true" isonerror="false" aria-invalid="false" label="Numéro et rue" value="" isvalid="false" aria-describedby="" disabled="false" maxlength="200"></bl-input><div class="toggle-arrow"><small class="field__tips field__tips--right"><bl-button class="is--pointer button" full="false" primary="false" secondary="false" tertiary="false" variants="" outline="false" link="true" icon="false" outlineprimary="false" disabled="false" size="extraSmall" arialabel="Moins">Less<svg class="toggle-arrow__chevron  is--rotated-r90" aria-hidden="true"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-arrow"></use></svg></bl-button></small></div></div><div class="field__container" id="addressFirstSubFieldContainer"><bl-input type="text" id="addressFirstSubField" name="addressFirstSubField" placeholder=" " required="false" isonerror="false" aria-invalid="false" label="Entrée, immeuble…" value="" isvalid="false" aria-describedby="" disabled="false" maxlength="200"></bl-input></div><div class="field__container" id="addressSecondSubFieldContainer"><bl-input type="text" id="addressSecondSubField" name="addressSecondSubField" placeholder=" " required="false" isonerror="false" aria-invalid="false" label="Lieu dit, boîte postale…" value="" isvalid="false" aria-describedby="" disabled="false" maxlength="200"></bl-input></div><div class="field__container" id="deliveryAddressContainer"><bl-input type="text" id="deliveryAddress" name="deliveryAddress" placeholder=" " required="false" isonerror="false" aria-invalid="false" label="N° appartement, étage…" value="" isvalid="false" aria-describedby="" disabled="false" maxlength="200"></bl-input></div><div class="field__container" id="postalCodeContainer"><bl-input type="number" id="postalCode" name="postalCode" placeholder=" " required="true" isonerror="false" aria-invalid="false" label="Code postal" isvalid="false" aria-describedby="" disabled="false"></bl-input></div><div class="field__container " id=""><span class="field__select__container"><select id="city" name="city" required="" aria-label="City" class="field__select" data-moz-autofill-inspect-id="720917b1-048d-41c8-88be-19659120b2d5" data-moz-autofill-type="address-level2" style=""><option disabled="" value="">Ville*</option></select><svg class="field__select__ico" aria-hidden="true"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-arrow"></use></svg><label for="city" class="field__label field__label"><span class="field__label_txt" data-testid="label-span">City <span data-testid="label-span-required">*</span></span></label></span><small class="field__tips">First enter your postal code.</small></div><input type="hidden" name="region" value="" data-moz-autofill-inspect-id="9d96df96-39a8-44ea-908c-2198623a42e0"><div class="field__container field__phonenumber"><span class="is--relative"><select name="phoneNumberIndicator" class="field__selector" title="Country" aria-label="Country code of phone number" data-moz-autofill-inspect-id="c17ef411-4217-4d95-9a8c-0ebedb105c86" data-moz-autofill-type="tel-country-code" style=""><option data-id="AF" value="AF">AF</option><option data-id="ZA" value="ZA">ZA</option><option data-id="DZ" value="DZ">DZ</option><option data-id="DE" value="DE">DE</option><option data-id="AD" value="AD">AD</option><option data-id="AO" value="AO">AO</option><option data-id="SA" value="SA">SA</option><option data-id="AR" value="AR">AR</option><option data-id="AM" value="AM">AM</option><option data-id="AU" value="AU">AU</option><option data-id="AT" value="AT">AT</option><option data-id="BS" value="BS">BS</option><option data-id="BD" value="BD">BD</option><option data-id="BB" value="BB">BB</option><option data-id="BE" value="BE">BE</option><option data-id="BM" value="BM">BM</option><option data-id="MM" value="MM">MM</option><option data-id="BO" value="BO">BO</option><option data-id="BA" value="BA">BA</option><option data-id="BW" value="BW">BW</option><option data-id="BN" value="BN">BN</option><option data-id="BR" value="BR">BR</option><option data-id="BG" value="BG">BG</option><option data-id="BF" value="BF">BF</option><option data-id="BI" value="BI">BI</option><option data-id="BJ" value="BJ">BJ</option><option data-id="KH" value="KH">KH</option><option data-id="CM" value="CM">CM</option><option data-id="CA" value="CA">CA</option><option data-id="CV" value="CV">CV</option><option data-id="CF" value="CF">CF</option><option data-id="CL" value="CL">CL</option><option data-id="CN" value="CN">CN</option><option data-id="CY" value="CY">CY</option><option data-id="CO" value="CO">CO</option><option data-id="KM" value="KM">KM</option><option data-id="CG" value="CG">CG</option><option data-id="KP" value="KP">KP</option><option data-id="KR" value="KR">KR</option><option data-id="CR" value="CR">CR</option><option data-id="HR" value="HR">HR</option><option data-id="CU" value="CU">CU</option><option data-id="CI" value="CI">CI</option><option data-id="DK" value="DK">DK</option><option data-id="DJ" value="DJ">DJ</option><option data-id="DM" value="DM">DM</option><option data-id="EG" value="EG">EG</option><option data-id="AE" value="AE">AE</option><option data-id="EC" value="EC">EC</option><option data-id="ES" value="ES">ES</option><option data-id="EE" value="EE">EE</option><option data-id="US" value="US">US</option><option data-id="ET" value="ET">ET</option><option data-id="FJ" value="FJ">FJ</option><option data-id="FI" value="FI">FI</option><option data-id="FR" value="FR">FR</option><option data-id="GA" value="GA">GA</option><option data-id="GM" value="GM">GM</option><option data-id="GH" value="GH">GH</option><option data-id="GI" value="GI">GI</option><option data-id="GD" value="GD">GD</option><option data-id="GL" value="GL">GL</option><option data-id="GR" value="GR">GR</option><option data-id="GP" value="GP">GP</option><option data-id="GT" value="GT">GT</option><option data-id="GN" value="GN">GN</option><option data-id="GQ" value="GQ">GQ</option><option data-id="GW" value="GW">GW</option><option data-id="GY" value="GY">GY</option><option data-id="GF" value="GF">GF</option><option data-id="GE" value="GE">GE</option><option data-id="HT" value="HT">HT</option><option data-id="HN" value="HN">HN</option><option data-id="HK" value="HK">HK</option><option data-id="HU" value="HU">HU</option><option data-id="NF" value="NF">NF</option><option data-id="KY" value="KY">KY</option><option data-id="CK" value="CK">CK</option><option data-id="MP" value="MP">MP</option><option data-id="IN" value="IN">IN</option><option data-id="ID" value="ID">ID</option><option data-id="IR" value="IR">IR</option><option data-id="IQ" value="IQ">IQ</option><option data-id="IE" value="IE">IE</option><option data-id="IS" value="IS">IS</option><option data-id="IL" value="IL">IL</option><option data-id="IT" value="IT">IT</option><option data-id="JM" value="JM">JM</option><option data-id="JP" value="JP">JP</option><option data-id="JO" value="JO">JO</option><option data-id="KE" value="KE">KE</option><option data-id="KW" value="KW">KW</option><option data-id="LA" value="LA">LA</option><option data-id="LS" value="LS">LS</option><option data-id="LV" value="LV">LV</option><option data-id="LB" value="LB">LB</option><option data-id="LR" value="LR">LR</option><option data-id="LI" value="LI">LI</option><option data-id="LT" value="LT">LT</option><option data-id="LU" value="LU">LU</option><option data-id="LY" value="LY">LY</option><option data-id="MO" value="MO">MO</option><option data-id="MK" value="MK">MK</option><option data-id="MG" value="MG">MG</option><option data-id="MY" value="MY">MY</option><option data-id="MV" value="MV">MV</option><option data-id="ML" value="ML">ML</option><option data-id="MT" value="MT">MT</option><option data-id="MA" value="MA">MA</option><option data-id="MQ" value="MQ">MQ</option><option data-id="MU" value="MU">MU</option><option data-id="MR" value="MR">MR</option><option data-id="YT" value="YT">YT</option><option data-id="MX" value="MX">MX</option><option data-id="MC" value="MC">MC</option><option data-id="MN" value="MN">MN</option><option data-id="MZ" value="MZ">MZ</option><option data-id="NA" value="NA">NA</option><option data-id="NC" value="NC">NC</option><option data-id="NI" value="NI">NI</option><option data-id="NE" value="NE">NE</option><option data-id="NG" value="NG">NG</option><option data-id="NO" value="NO">NO</option><option data-id="NZ" value="NZ">NZ</option><option data-id="NP" value="NP">NP</option><option data-id="OM" value="OM">OM</option><option data-id="UG" value="UG">UG</option><option data-id="UZ" value="UZ">UZ</option><option data-id="PK" value="PK">PK</option><option data-id="PA" value="PA">PA</option><option data-id="PG" value="PG">PG</option><option data-id="PY" value="PY">PY</option><option data-id="NL" value="NL">NL</option><option data-id="PH" value="PH">PH</option><option data-id="PL" value="PL">PL</option><option data-id="PF" value="PF">PF</option><option data-id="PR" value="PR">PR</option><option data-id="PT" value="PT">PT</option><option data-id="PE" value="PE">PE</option><option data-id="QA" value="QA">QA</option><option data-id="CZ" value="CZ">CZ</option><option data-id="RO" value="RO">RO</option><option data-id="GB" value="GB">GB</option><option data-id="RU" value="RU">RU</option><option data-id="RW" value="RW">RW</option><option data-id="DO" value="DO">DO</option><option data-id="RE" value="RE">RE</option><option data-id="SM" value="SM">SM</option><option data-id="SH" value="SH">SH</option><option data-id="SB" value="SB">SB</option><option data-id="WS" value="WS">WS</option><option data-id="SC" value="SC">SC</option><option data-id="SL" value="SL">SL</option><option data-id="SG" value="SG">SG</option><option data-id="SK" value="SK">SK</option><option data-id="SI" value="SI">SI</option><option data-id="SO" value="SO">SO</option><option data-id="SD" value="SD">SD</option><option data-id="LK" value="LK">LK</option><option data-id="PM" value="PM">PM</option><option data-id="CH" value="CH">CH</option><option data-id="SR" value="SR">SR</option><option data-id="SE" value="SE">SE</option><option data-id="SZ" value="SZ">SZ</option><option data-id="SY" value="SY">SY</option><option data-id="SN" value="SN">SN</option><option data-id="TJ" value="TJ">TJ</option><option data-id="TZ" value="TZ">TZ</option><option data-id="TW" value="TW">TW</option><option data-id="TD" value="TD">TD</option><option data-id="TH" value="TH">TH</option><option data-id="TG" value="TG">TG</option><option data-id="TT" value="TT">TT</option><option data-id="TN" value="TN">TN</option><option data-id="TM" value="TM">TM</option><option data-id="TC" value="TC">TC</option><option data-id="TR" value="TR">TR</option><option data-id="UA" value="UA">UA</option><option data-id="UY" value="UY">UY</option><option data-id="VU" value="VU">VU</option><option data-id="VA" value="VA">VA</option><option data-id="VE" value="VE">VE</option><option data-id="VN" value="VN">VN</option><option data-id="WF" value="WF">WF</option><option data-id="YU" value="YU">YU</option><option data-id="YE" value="YE">YE</option><option data-id="ZM" value="ZM">ZM</option><option data-id="ZR" value="ZR">ZR</option><option data-id="ZW" value="ZW">ZW</option></select><svg class="field__selector__ico" aria-hidden="true"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-arrow"></use></svg><input id="phoneNumberDigits" name="phoneNumberDigits" type="tel" class="field__input field__phonenumber_input" placeholder="" required="" control="[object Object]" value="" data-moz-autofill-inspect-id="105ba192-74db-4d0d-9e05-2e980815f2ea" data-moz-autofill-type="tel-national" style=""><label for="phoneNumberDigits" class="field__label field__label--phoneNumber"><span class="field__label_txt" data-testid="label-span">Mobile phone number <span data-testid="label-span-required">*</span></span></label><svg class="field__success-ico" aria-hidden="true"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-check"></use></svg></span><small class="field__tips">In order to receive the shipping confirmation SMS.</small></div><div class="field__container field__submit"><bl-button class="submit-section__button" full="true" primary="true" secondary="false" tertiary="false" variants="primary" outline="false" link="false" icon="false" outlineprimary="false" disabled="false" size="small" arialabel="" type="submit" name="submit">Validate</bl-button></div><div class="field__mandatory"><small>*Required fields</small></div></form></div></bl-popin-side-body></bl-popin-side></section><div class="checkout-steps-wrapper"><ul class="checkout-steps-content container-xl"><li class="step step-icon step--completed" id="step-cart"><a href="https://www.boulanger.com/checkout/cart" title="map" class="step-icon-link"><svg class="step-icon-svg" aria-hidden="true"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-shopping-cart"></use></svg><span class="text-variant--paragraph3 text-font-weight--regular step-icon-text step-icon-text-link">Basket</span></a></li><li class="step step-separator step--completed"></li><li class="step step-icon step--active" id="step-delivery"><svg class="step-icon-svg" aria-hidden="true"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-delivery"></use></svg><span class="text-variant--paragraph3 text-font-weight--regular step-icon-text">Delivery</span></li><li class="step step-separator"></li><li class="step step-icon" id="step-payment"><svg class="step-icon-svg" aria-hidden="true"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-ico_paiement"></use></svg><span class="text-variant--paragraph3 text-font-weight--regular step-icon-text">Payment</span></li></ul></div><div class="checkout-template container-xl "><header></header><div class="checkout-template__pre-body"><section class="EMS-checkout-delivery" id="EMS-checkout-delivery">
+<div class="container-xl">
+    <div class="root customresponsivegrid responsivegrid">
+
+
+    
+    <div class="image">
+
+
+
+
+    
+</div>
+
+    
+</div>
+
+</div>
+
+
+</section><div class="collapse hide-on-desktop"><div class="collapse__header"><div><span class="text-variant--paragraph1 text-font-weight--bold is--capitalize">produit</span><span class="text-variant--paragraph1 text-font-weight--regular"> (1)</span></div><bl-button class="collapse__button" full="true" primary="false" secondary="true" tertiary="false" variants="secondary" outline="false" link="false" icon="false" outlineprimary="false" disabled="false" size="extraSmall" arialabel="Afficher le détail du panier" id="collapse__button" aria-expanded="false" aria-controls="collapsePannel"><span aria-hidden="true">Détails</span></bl-button></div></div><h1 class="text-variant--subtitle1 text-font-weight--bold delivery-title">Your delivery method :</h1></div><div class="checkout-template__body"><div class="checkout-template__left"><section class="shipping-methods"><article class="card-style" id="card-style-"><section class="shipping-method-header" id="shipping-method-header-STORE"><div class="shipping-method-header-content"><div class="shipping-method-header-content-title"><svg class="shipping-method-header__picto-delivery-method" aria-hidden="true" alt=""><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-store"></use></svg><span class="text-variant--subtitle2 text-font-weight--bold">Withdrawal in store</span><img src="https://www.boulanger.com/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/svg/emission_a.svg" class="eco-leaf"></div><div class="shipping-method-header-content-right"><span class="text-variant--paragraph2 text-font-weight--regular">From Thursday 26 February - <span class="text-variant--paragraph2 text-font-weight--bold">Offered</span></span></div></div><svg class="shipping-method-header__arrow " aria-hidden="true" id="shipping-method-header__arrow-" alt=""><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-plus-thin"></use></svg></section></article><article class="card-style" id="card-style-"><section class="shipping-method-header" id="shipping-method-header-PICKUPPOINT"><div class="shipping-method-header-content"><div class="shipping-method-header-content-title"><svg class="shipping-method-header__picto-delivery-method" aria-hidden="true" alt=""><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-Picto_retrait_relai"></use></svg><span class="text-variant--subtitle2 text-font-weight--bold">Delivery at the point of withdrawal</span><button class="button tooltip-button" type="button" id="tooltip-button"><svg class="icon tooltip-icon" role="img" aria-label="informations supplémentaires" aria-hidden="false"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-info-in-circle"></use></svg></button><img src="https://www.boulanger.com/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/svg/emission_b.svg" class="eco-leaf"></div><div class="shipping-method-header-content-right"><span class="text-variant--paragraph2 text-font-weight--regular">From Tuesday 03 March - <span class="text-variant--paragraph2 text-font-weight--bold">Offered</span></span></div></div><svg class="shipping-method-header__arrow " aria-hidden="true" id="shipping-method-header__arrow-" alt=""><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-plus-thin"></use></svg></section></article><article class="card-style" id="card-style-"><section class="shipping-method-header shipping-method-header--open" id="shipping-method-header-HOME"><div class="shipping-method-header-content"><div class="shipping-method-header-content-title"><svg class="shipping-method-header__picto-delivery-method" aria-hidden="true" alt=""><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-delivery"></use></svg><span class="text-variant--subtitle2 text-font-weight--bold">Delivery at home</span></div><div class="shipping-method-header-content-right"></div></div><svg class="shipping-method-header__arrow rotating" aria-hidden="true" id="shipping-method-header__arrow-rotating" alt=""><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-minus-thin"></use></svg></section><div class="shipping-method-content"><section class="option-section option-section__HOME option-section_active" id="option-section__HOME-0"><div class="option-container"><div class="field__radio__container"><input class="field__radio" id="deliveryMethod_STD_F905_8000800_0" type="radio" checked="" data-moz-autofill-inspect-id="529a3185-f204-44fe-adba-9749a098d7a7"><label for="deliveryMethod_STD_F905_8000800_0" class="field__radio__label"><span class="field__radio-fake" id="field__radio-fake"></span><div class="option-container_content-wrapper"><div class="option-container_main-info"><h3 class="text-variant--paragraph1 text-font-weight--bold option-container_main-info_title">Standard <img src="https://www.boulanger.com/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/svg/emission_b.svg" class="eco-leaf" data-moz-translations-id="0"></h3><p class="text-variant--paragraph2 text-font-weight--regular option-container_main-info_subtitle">Handship with secure code</p><p class="text-variant--paragraph2 text-font-weight--regular option_delivery-availability option_delivery-availability--active">from Tuesday 03 March <button type="button" aria-disabled="false" aria-hidden="false" class="button button--link option_delivery-availability__national-release"><svg class="icon" aria-hidden="true"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-info-in-circle"></use></svg></button></p></div><div class="option-container_right"><span class="text-variant--paragraph2 text-font-weight--bold delivery-method-price">offered</span></div></div></label></div></div></section><section class="option-section option-section__HOME" id="option-section__HOME-1"><div class="option-container"><div class="field__radio__container"><input class="field__radio" id="deliveryMethod_EXP_F905_18001800_1" type="radio" data-moz-autofill-inspect-id="482d16df-3cc4-48c8-9fd0-04cbc990b104"><label for="deliveryMethod_EXP_F905_18001800_1" class="field__radio__label"><span class="field__radio-fake" id="field__radio-fake"></span><div class="option-container_content-wrapper"><div class="option-container_main-info"><h3 class="text-variant--paragraph1 text-font-weight--bold option-container_main-info_title">Express <img src="https://www.boulanger.com/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/svg/emission_c.svg" class="eco-leaf" data-moz-translations-id="0"></h3><p class="text-variant--paragraph2 text-font-weight--regular option-container_main-info_subtitle">Handship with secure code</p><p class="text-variant--paragraph2 text-font-weight--regular option_delivery-availability">from Friday 27 February <button type="button" aria-disabled="false" aria-hidden="false" class="button button--link option_delivery-availability__national-release"><svg class="icon" aria-hidden="true"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-info-in-circle"></use></svg></button></p></div><div class="option-container_right"><div class="delivery-method-club"><span class="text-variant--paragraph2 text-font-weight--bold delivery-method-price">€7.99,undefined9</span><div class="delivery-method-club__offered"><div class="text-variant--paragraph2 text-font-weight--semi-bold delivery-method-club__offered--text">offered with </div><button aria-label="I want to join the Club Plus to benefit from the free delivery" type="button" class="delivery-method-club--plus">The Club+</button></div></div></div></div></label></div></div></section><section class="option-section option-section__HOME" id="option-section__HOME-2"><div class="option-container"><div class="field__radio__container"><input class="field__radio" id="deliveryMethod_EXP_F905_18001800_2" type="radio" data-moz-autofill-inspect-id="5337293d-7c59-4ed0-b1d9-629f842a4c41"><label for="deliveryMethod_EXP_F905_18001800_2" class="field__radio__label"><span class="field__radio-fake" id="field__radio-fake"></span><div class="option-container_content-wrapper"><div class="option-container_main-info"><h3 class="text-variant--paragraph1 text-font-weight--bold option-container_main-info_title">The day of your choice <img src="https://www.boulanger.com/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/svg/emission_c.svg" class="eco-leaf"></h3><p class="text-variant--paragraph2 text-font-weight--regular option-container_main-info_subtitle">Handship with secure code</p><p class="text-variant--paragraph2 text-font-weight--regular option_delivery-availability">from Friday 27 February <button type="button" aria-disabled="false" aria-hidden="false" class="button button--link option_delivery-availability__national-release"><svg class="icon" aria-hidden="true"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-info-in-circle"></use></svg></button></p></div><div class="option-container_right"><div class="delivery-method-club"><span class="text-variant--paragraph2 text-font-weight--bold delivery-method-price">€7.99,undefined9</span><div class="delivery-method-club__offered"><div class="text-variant--paragraph2 text-font-weight--semi-bold delivery-method-club__offered--text">offered with </div><button aria-label="I want to join the Club Plus to benefit from the free delivery" type="button" class="delivery-method-club--plus">The Club+</button></div></div></div></div></label></div></div></section></div></article></section></div><div class="checkout-template__right"><section class="hide-on-mobile" id="hide-on-mobile"><bl-button class="shipping-method__validate-button" full="true" primary="true" secondary="false" tertiary="false" variants="primary" outline="false" link="false" icon="false" outlineprimary="false" disabled="false" size="small" arialabel="" id="shipping-method__validate-button">Validate my delivery</bl-button></section><section class="hide-on-mobile" id="hide-on-mobile"><div class="collapse"><div class="collapse__header"><div><span class="text-variant--paragraph1 text-font-weight--bold is--capitalize">product</span> <span class="text-variant--paragraph1 text-font-weight--regular">(1)</span></div><bl-button class="collapse__button" full="true" primary="false" secondary="true" tertiary="false" variants="secondary" outline="false" link="false" icon="false" outlineprimary="false" disabled="false" size="extraSmall" arialabel="Afficher le détail du panier" id="collapse__button" aria-expanded="false" aria-controls="collapsePannel"><span aria-hidden="true">Details</span></bl-button></div></div><div class="separator-top-simple delivery-separator"></div></section><section><span class="text-variant--subtitle1 text-font-weight--bold delivery-section-title">Summary</span><ul class="grand-total checkout-card-container" role="list" id="grand-total-checkout-card-container"><li class="grand-total__items" role="listitem"><span class="text-variant--paragraph1 text-font-weight--regular">Delivery costs :</span><span class="text-variant--paragraph1 text-font-weight--bold grand-total__items-flm">offered</span></li><li class="grand-total__items grand-total-line" role="listitem"><span class="text-variant--title3 text-font-weight--bold">Total :</span><span class="text-variant--title3 text-font-weight--bold">249.99€</span></li></ul></section><section><span class="text-variant--subtitle1 text-font-weight--bold delivery-section-title">Details of my home delivery</span><div class="delivery-cart-summary"><section class="sub-cart-info-card" id="sub-cart-info-card-SubCartAddress"><div class="sub-cart-info-card__body"><div class="sub-cart-info-card__content"><span class="text-variant--paragraph1 text-font-weight--bold">Delivery address :</span><div><p class="address__fields cart-summary-bottom-padding-small" data-cs-encrypt="true"><span class="address__field full-name__field ">Mr. fghfgh ghfgh</span><span class="address__field ">57 Rue du General Leclerc</span><span class="address__field city__field">92130 is the mills</span><span class="address__field ">FR</span></p></div></div><div class="sub-cart-info-card__content-button" id="sub-cart-info-card__content-button"><bl-button class="" full="false" primary="false" secondary="false" tertiary="true" variants="tertiary" outline="false" link="false" icon="true" outlineprimary="false" disabled="false" size="small" arialabel="Modifier l'adresse de livraison" type="button" title="Change delivery address"><span class="visually-hidden">Change delivery address</span><svg class="sub-cart-info-card__content-edit-icon is--pointer" aria-hidden="true"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-edit"></use></svg></bl-button></div></div></section><div class="separator-top-simple separator-top-simple--thin"></div><section class="sub-cart-info-card" id="sub-cart-info-card-SubCartAddress"><div class="sub-cart-info-card__body"><div class="sub-cart-info-card__content"><span class="text-variant--paragraph1 text-font-weight--bold">Billing address :</span><div><p class="address__fields cart-summary-bottom-padding-small" data-cs-encrypt="true"><span class="address__field full-name__field ">M. FGHFGH GHFGH</span><span class="address__field ">57 RUE DU GENERAL LECLERC</span><span class="address__field city__field">92130 is the mills</span><span class="address__field ">FR</span></p></div></div><div class="sub-cart-info-card__content-button" id="sub-cart-info-card__content-button"><bl-button class="" full="false" primary="false" secondary="false" tertiary="true" variants="tertiary" outline="false" link="false" icon="true" outlineprimary="false" disabled="false" size="small" arialabel="Modifier l'adresse de facturation" type="button" title="Change the billing address"><span class="visually-hidden">Change the billing address</span><svg class="sub-cart-info-card__content-edit-icon is--pointer" aria-hidden="true"><use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-edit"></use></svg></bl-button></div></div></section></div></section></div></div><div class="checkout-template__bottom-sticky-mobile " id="checkout-template__bottom-sticky-mobile"><section class="validate-bottom-sticky container-xl is--hidden"><div class="validate-bottom-sticky__amount"><span class="text-variant--subtitle2 text-font-weight--bold">Total :</span><span class="text-variant--subtitle1 text-font-weight--bold">249,99€</span></div><div class="validate-bottom-sticky__component" id="validate-bottom-sticky__component"><bl-button class="shipping-method__validate-button" full="true" primary="true" secondary="false" tertiary="false" variants="primary" outline="false" link="false" icon="false" outlineprimary="false" disabled="false" size="small" arialabel="" id="shipping-method__validate-button">Valider ma livraison</bl-button></div></section></div><div class="checkout-template__body--with-sticky" id="checkout-template__body--with-sticky"></div></div></div></div><footer id="footer-full" class="footer">
+
+
+    
+    <div class="spacer">
+    
+
+
+<div class="spacer spacer--ht-30" aria-hidden="true">
+	
+</div>
+</div>
+<div class="emsService">
+
+<div style="background: rgb(219, 219, 249); border-radius: 1rem;" class="container-xl">
+    <section class="emsService__container container">
+        
+            
+            <div class="emsService__item js-open-popin" id="emsService__item-0" aria-controls="ems-popin-0" data-new-popin-name="emsPopin" aria-haspopup="dialog" data-listener-attached="true">
+                <div class="emsService__icon">
+                    
+    <img src="https://www.boulanger.com/content/dam/footer-tc-icons-v2/1h.svg?fmt=png-alpha" alt="1h withdrawal in store" aria-hidden="true">
+
+                </div>
+                <div class="emsService__content">
+                    
+                    <div class="emsService__title">
+                        1h withdrawal in store
+                    </div>
+                </div>
+                
+                    <div class="is--hidden">
+                        <div id="ems-popin-0-title">Retrait 1h en magasin</div>
+                        <div id="ems-popin-0-header"> </div>
+                        <div id="ems-popin-0-body"><p>Envie de profiter de votre appareil le plus vite possible ? Choississez le retrait en 1h.</p>
+<p>&nbsp;</p>
+<h5><b>Les avantages du retrait 1h :</b></h5>
+<ul>
+<li>Retrait dans votre magasin Boulanger le plus proche.</li>
+<li>Disponible 1h après votre commande.&nbsp;</li>
+<li>A retirer dans les 30 jours.&nbsp;</li>
+<li>L’article doit être disponible dans le magasin sélectionné.</li>
+<li>Service gratuit.</li>
+</ul>
+</div>
+                    </div>
+                
+            </div>
+        
+            
+            <div class="emsService__item js-open-popin" id="emsService__item-1" aria-controls="ems-popin-1" data-new-popin-name="emsPopin" aria-haspopup="dialog" data-listener-attached="true">
+                <div class="emsService__icon">
+                    
+    <img src="https://www.boulanger.com/content/dam/footer-tc-icons-v2/livraison.svg?fmt=png-alpha" alt="Free delivery tomorrow" aria-hidden="true">
+
+                </div>
+                <div class="emsService__content">
+                    
+                    <div class="emsService__title">
+                        Free delivery tomorrow
+                    </div>
+                </div>
+                
+                    <div class="is--hidden">
+                        <div id="ems-popin-1-title">Livraison offerte dès demain</div>
+                        <div id="ems-popin-1-header"> </div>
+                        <div id="ems-popin-1-body"><p>Commandez jusqu’à 22h, la livraison dès le lendemain vous est offerte !</p>
+<p>&nbsp;</p>
+<h5><b>Nos experts s’occupent de tout :</b></h5>
+<ul>
+<li>Livraison à l’adresse de votre choix dès le lendemain.</li>
+<li>Dépose de votre produit dans la pièce que vous souhaitez.</li>
+<li>Reprise des emballages.</li>
+<li>Reprise de l’ancien appareil et des petits appareils électroménagers en fin de vie ou consommables usagés qui vous encombrent.</li>
+</ul>
+</div>
+                    </div>
+                
+            </div>
+        
+            
+            <div class="emsService__item js-open-popin" id="emsService__item-2" aria-controls="ems-popin-2" data-new-popin-name="emsPopin" aria-haspopup="dialog" data-listener-attached="true">
+                <div class="emsService__icon">
+                    
+    <img src="https://www.boulanger.com/content/dam/footer_tunnel/picto-satisfait-rembourse-blue.svg?fmt=png-alpha" alt="15 days to change your mind" aria-hidden="true">
+
+                </div>
+                <div class="emsService__content">
+                    
+                    <div class="emsService__title">
+                        15 days to change your mind
+                    </div>
+                </div>
+                
+                    <div class="is--hidden">
+                        <div id="ems-popin-2-title">15 jours pour changer d'avis</div>
+                        <div id="ems-popin-2-header"> </div>
+                        <div id="ems-popin-2-body"><p>en magasin ou sur boulanger.com.</p>
+<p>&nbsp;</p>
+<h5><b>Chez Boulanger, vous avez le droit de changer d'avis !</b></h5>
+<p>Nous nous engageons à vous rembourser tout produit non déballé, ou à vous échanger tout produit ouvert et retourné complet dans son emballage d'origine &nbsp;dans les 15 jours suivant votre achat.</p>
+</div>
+                    </div>
+                
+            </div>
+        
+            
+            <div class="emsService__item js-open-popin" id="emsService__item-3" aria-controls="ems-popin-3" data-new-popin-name="emsPopin" aria-haspopup="dialog" data-listener-attached="true">
+                <div class="emsService__icon">
+                    
+    <img src="https://www.boulanger.com/content/dam/footer-tc-icons-v2/help.svg?fmt=png-alpha" alt="Need help? Contact us" aria-hidden="true">
+
+                </div>
+                <div class="emsService__content">
+                    
+                    <div class="emsService__title">
+                        Need help? Contact us
+                    </div>
+                </div>
+                
+                    <div class="is--hidden">
+                        <div id="ems-popin-3-title">Besoin d'aide ? Contactez-nous</div>
+                        <div id="ems-popin-3-header"> </div>
+                        <div id="ems-popin-3-body"><p><b>Par téléphone au 3011</b><br>
+Disponible 7j/7, de 8h à 22h (sauf le 1er janvier, 1er mai et 25 décembre).</p>
+</div>
+                    </div>
+                
+            </div>
+        
+    </section>
+</div>
+
+    <div class="footerTC__payment" id="footerTC__payment">
+        <ul>
+            <li>
+                
+    <img src="https://www.boulanger.com/content/dam/footer-tc-icons-v2/paiement/visa.svg?fmt=png-alpha" alt="Visa">
+
+            </li>
+        
+            <li>
+                
+    <img src="https://www.boulanger.com/content/dam/footer-tc-icons-v2/paiement/CB.svg?fmt=png-alpha" alt="cb">
+
+            </li>
+        
+            <li>
+                
+    <img src="https://www.boulanger.com/content/dam/footer-tc-icons-v2/paiement/mastercard.svg?fmt=png-alpha" alt="mastercard">
+
+            </li>
+        
+            <li>
+                
+    <img src="https://www.boulanger.com/content/dam/footer-tc-icons-v2/paiement/amex.svg?fmt=png-alpha" alt="American Express">
+
+            </li>
+        
+            <li>
+                
+    <img src="https://www.boulanger.com/content/dam/footer-tc-icons-v2/paiement/applepay.svg?fmt=png-alpha" alt="Apple Pay">
+
+            </li>
+        
+            <li>
+                
+    <img src="https://www.boulanger.com/content/dam/footer-tc-icons-v2/paiement/paypal.svg?fmt=png-alpha" alt="paypal">
+
+            </li>
+        
+            <li>
+                
+    <img src="https://www.boulanger.com/content/dam/footer-tc-icons-v2/paiement/cartecadeau.svg?fmt=png-alpha" alt="Gift Card">
+
+            </li>
+        
+            <li>
+                
+    <img src="https://www.boulanger.com/content/dam/footer-tc-icons-v2/paiement/illicado.svg?fmt=png-alpha" alt="illicado">
+
+            </li>
+        
+            <li>
+                
+    <img src="https://www.boulanger.com/content/dam/footer-tc-icons-v2/paiement/bplus.svg?fmt=png-alpha" alt="B+ Card">
+
+            </li>
+        
+            <li>
+                
+    <img src="https://www.boulanger.com/content/dam/footer-tc-icons-v2/paiement/oney.svg?fmt=png-alpha" alt="Oney">
+
+            </li>
+        
+            <li>
+                
+    <img src="https://www.boulanger.com/content/dam/footer-desk/payments/Bancontact.svg?fmt=png-alpha" alt="Bancontact">
+
+            </li>
+        </ul>
+    </div>
+
+
+    
+</div>
+<div class="spacer">
+    
+
+
+<div class="spacer spacer--ht-15" aria-hidden="true">
+	
+</div>
+</div>
+<div class="text-marketing"><div class="container">
+    <p style="text-align: center;"><a href="https://www.boulanger.com/evenement/infos-legales" style="color: rgb(67, 71, 72); font-size: 12px;"><u>Legal notices</u></a></p>
+
+</div>
+
+    
+
+</div>
+<div class="spacer">
+    
+
+
+<div class="spacer spacer--ht-120" aria-hidden="true">
+	
+</div>
+</div>
+
+    
+</footer></div></div>
+
+    
+</div>
+
+    
+</section>
+
+</main>
+
+<div id="chatbot-bubble" class="chatbot-bubble" style="display: none;">
+  <button type="button" id="chatbot-bubble__button" class="button chatbot-bubble__button" aria-haspopup="true" aria-expanded="false" aria-label="Bulle de discussion avec le chatbot">
+    
+  <svg width="24" height="24" viewBox="0 0 24 24" class="chatbot-bubble__logo-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12.9686 0.0309912C4.47997 -0.561478 -2.00859 7.43911 0.573617 15.6077C2.01644 20.1712 6.35841 23.657 11.1841 23.9315C15.0274 24.1498 19.0742 23.7613 22.9392 23.9315C23.7737 23.8813 24.1612 23.0196 23.9058 22.2876C23.1322 21.2864 22.0747 20.4974 21.2778 19.5232C23.1908 17.1084 24.1559 14.2585 23.9794 11.1552C23.6497 5.37072 18.7519 0.434471 12.9686 0.0309912Z" fill="#1B1D29"></path>
+    <path d="M9 12C9 12.5523 8.55229 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11C8.55229 11 9 11.4477 9 12Z" fill="#FFFFFF"></path>
+    <path d="M13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12Z" fill="#FFFFFF"></path>
+    <path d="M17 12C17 12.5523 16.5523 13 16 13C15.4477 13 15 12.5523 15 12C15 11.4477 15.4477 11 16 11C16.5523 11 17 11.4477 17 12Z" fill="#FFFFFF"></path>
+  </svg>
+
+  </button>
+
+  <button type="button" id="js-chatbot-bubble__close-button" class="button chatbot-bubble__close-button" aria-label="Fermer le chatbot">
+    <svg width="5" height="5" viewBox="0 0 20 20" aria-hidden="true">
+      <use xlink:href="/etc.clientlibs/boulanger-site/clientlibs/wpk.app/resources/assets/sprite.svg#sprite-ico_croix" fill="#FFF"></use>
+    </svg>
+  </button>  
+</div>
+
+
+            
+    
+    
+
+
+
+    
+
+
+
+
+    
+
+    
+
+
+            
+
+        
+    
+
+
+
+
+
+
+
+ 
+  
+
+  
+
+
+<iframe src="data:text/html;base64,PGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjwvYm9keT48L2h0bWw+" style="display: none;" height="0" width="0" tabindex="-1" title="empty" class="hidden" data-moz-autofill-inspect-id="47c4fddf-7053-44ec-9dc3-912997ccc97d" data-original-src="about:blank"></iframe><cs-native-frame-holder hidden=""></cs-native-frame-holder><iframe id="snap8632278" src="https://tr.snapchat.com/cm/i?pid=66b1963f-f6d0-4586-9e4b-d9a58f1979cf&amp;u_scsid=a2854147-295f-4498-bcb5-effa07c55995&amp;u_sclid=b4dc0a3c-d741-48b4-91f9-0322ed14fa48" aria-hidden="true" role="presentation" tab-index="-1" style="display: none !important; height: 1px !important; overflow: hidden !important; position: absolute !important; width: 1px !important;" data-moz-autofill-inspect-id="36fcc4c8-6a03-4e8c-8341-9bb31cb8236d"></iframe><iframe height="0" width="0" style="display: none; visibility: hidden;" data-moz-autofill-inspect-id="bb6f59bb-dded-4082-b86f-1af12d5e763b" srcdoc="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;iframe height=&amp;quot;0&amp;quot; width=&amp;quot;0&amp;quot; style=&amp;quot;display: none; visibility: hidden;&amp;quot; src=&amp;quot;https://s2s.boulanger.com/_/service_worker/6240/sw_iframe.html?origin=https%3A%2F%2Fwww.boulanger.com&amp;amp;1p=1&amp;quot; data-moz-autofill-inspect-id=&amp;quot;13b14e69-240b-4748-9c68-790341eb3e34&amp;quot;&gt;&lt;/iframe&gt;&lt;/body&gt;&lt;/html&gt;"></iframe><img src="https://sync.taboola.com/sg/rtbhouse-network/1/rtb-h?taboola_hm=X8ibVl8T6uYleKkOSaLmGyySOKOmYnGDsMOUCKaN-gY" width="1" height="1" scrolling="no" frameborder="0" style="display:none"><iframe id="universal_pixel" height="0" width="0" style="display:none;" src="https://insight.adsrvr.org/track/cei?advertiser_id=6wiayzw&amp;cookie_sync=0&amp;upv=3.0.0&amp;gdpr=0&amp;ref=https://www.boulanger.com/checkout/delivery" title="TTD Universal Pixel" data-moz-autofill-inspect-id="4ce812f4-b51f-429f-8885-25c77f79ca58"></iframe>
+</body></html>

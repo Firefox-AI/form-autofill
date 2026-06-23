@@ -1,0 +1,882 @@
+<html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Fri, 05 Jun 2020 15:55:10 GMT"><link rel="original" href="https://www.exoticindia.com/securepay.php3">
+<title>Secure Payment Gateway</title>
+<link rel="stylesheet" type="text/css" href="resources/EN_B368a/1.css" data-original-href="https://www.exoticindia.com/css/styles-min.css?000160">
+<!--<link rel="stylesheet" type="text/css" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="/css/jquery-ui.structure.min.css">
+<link rel="stylesheet" type="text/css" href="/css/jquery-ui.theme.min.css">-->
+<!--<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script> -->
+
+ 
+
+<!--<script type="text/javascript" src="/js/jquery-ui.min.js"></script> -->
+	
+</head>
+<body>
+<div id="cartCheckoutLoader"><img src="resources/EN_B368a/2.png" data-original-src="https://www.exoticindia.com/siteimages/trans_white.png"></div>
+<div id="pageHeadWrapper">
+	<div id="pageHead" style="padding-left: 5%;">
+		<div class="logo"><a href="https://www.exoticindia.com/"><img src="resources/EN_B368a/3.gif" data-original-src="https://cdn.exoticindia.com/siteimages/spacer.gif" width="1" height="1" border="0"></a></div>
+	</div>
+</div>
+<div class="checkoutStep"></div>
+<div id="pageMainContentOuter" style="padding-top: 0px">
+	<div id="pageMainContent" class="norightside">
+	<div class="registerPageWrapper checkout withleft">
+			 <form name="paypalcheckout" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_xclick">
+				<input type="hidden" name="notify_url" value="https://www.exoticindia.com/postsales.php">
+				<input type="hidden" name="custom" value="paypal_guest1591372213val972465385">
+				<input type="hidden" name="return" value="https://www.exoticindiaart.com/thank_you.php3">
+				<input type="hidden" name="currency_code" value="USD">
+				<input type="hidden" name="business" value="paypal@exoticindia.co.in">
+				<input type="hidden" name="no_shipping" value="0">
+				<input type="hidden" name="no_note" value="1">
+				
+				<input type="hidden" name="cancel_return" value="https://www.exoticindiaart.com/shoppingcart.php3">
+				
+				<input type="hidden" name="item_name" value="Exotic India">
+				<input type="hidden" name="amount" value="80.00">
+				
+				
+             </form>
+	<div class="pageBoxHeader">Secure Checkout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total: US $<span id="paymentFormTotal">80.00</span>
+		<div class="checkoutPageSmallInfo">This page is hosted on a secured server to protect your credit card information.</div>
+	</div>
+<form id="paymentForm" method="post" action="https://www.exoticindia.com/postsales.php" class="paymentForm">
+<div class="checkoutPageLeft withleft" data-fathom="form">
+    <input type="hidden" name="buynow" value="">
+    <input type="hidden" name="salesdomaintitle" value="Exotic India">
+    <input type="hidden" name="fakecountry" value="US">
+    <input type="hidden" name="salesdomain" value="www.exoticindiaart.com">
+	<input type="hidden" name="chargetotal" value="80.00">
+	<input type="hidden" name="gettype" value="">
+	<input type="hidden" name="paymentprocess" value="1">
+<!--	<input type="hidden" name="paymentprocess" value="2"> -->
+	<input type="hidden" name="pagesent" value="https://www.exoticindia.com/securepay.php3">
+	
+	<input type="hidden" name="userid" value="guest1591372213val972465385">
+
+	<input type="hidden" name="notax" value="guest1591372213val972465385%3EUS%3E%24%3E0%3E1.00">
+	<input type="hidden" name="sitedata" value="s%3A1496%3A%22%24totalitems%3D%271%27%3B%0A%24discountvalue%3D%27%27%3B%0A%24discountlogin%3D%27%27%3B%0A%24discountthreshold%3D%27%27%3B%0A%24shipcost%3D%270%27%3B%0A%24shiptype%3D%27u%27%3B%0A%24Total%3D%2780.00%27%3B%0A%24fxTotal%3D%2780.00%27%3B%0A%24affcode%3D%27%27%3B%0A%24fxversion%3D%27US%27%3B%0A%24fxcurrency%3D%27%24%27%3B%0A%24fxdecimal%3D%270%27%3B%0A%24fxrate%3D%271%27%3B%0A%24greetingcards_details%3D%27%27%3B%0A%24backorder_percent%3D%270.2%27%3B%0A%24backorder_timelag%3D%273+to+4+weeks%27%3B%0A%24guestid%3D%27guest1591372213val972465385%27%3B%0A%24remote_addr%3D%27104.140.54.59%27%3B%0A%24forwaded_for%3D%27104.140.54.59%27%3B%0A%24exoticcountry%3D%27US%27%3B%0A%24useragent%3D%27Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%3B+rv%3A79.0%29+Gecko%2F20100101+Firefox%2F79.0%27%3B%0A%24giftvoucherid%3D%27-1%27%3B%0A%24discountcredit%3D%27-1%27%3B%0A%24discountcoupondetails%3D%27%27%3B%0A%24couponreduction%3D%270.00%27%3B%0A%24reduction%3D%270%27%3B%0A%24salesdomain%3D%27www.exoticindiaart.com%27%3B%0A%24salesdomaintitle%3D%27Exotic+India%27%3B%0A%24domainname%3D%27exoticindiaart%27%3B%0A%24gettype%3D%27%27%3B%0A%24fba%3D%27fba_us%27%3B%0A%24cartref%5B0%5D%3D%274419082%27%3B%0A%24code%5B0%5D%3D%27LBF87%27%3B%0A%24itemtable%5B0%5D%3D%27jewelry%27%3B%0A%24imageurl%5B0%5D%3D%27https%3A%2F%2Fwww.exoticindia.com%2Fjewelry-2020%2Flbf87.jpg%27%3B%0A%24name%5B0%5D%3D%27Nepalese+Om+Mani+Padme+Hum+Cuff+Bracelet%27%3B%0A%24quantity%5B0%5D%3D%271%27%3B%0A%24framevalue%5B0%5D%3D%270.00000%27%3B%0A%24variation%5B0%5D%3D%27%27%3B%0A%24sareesize%5B0%5D%3D%27%27%3B%0A%24sareeweight%5B0%5D%3D%27%27%3B%0A%24sareeheight%5B0%5D%3D%270%27%3B%0A%24size_comments%5B0%5D%3D%27%27%3B%0A%24neckline_spec%5B0%5D%3D%270%27%3B%0A%24salwaar_spec%5B0%5D%3D%270%27%3B%0A%24fba_us%5B0%5D%3D%27-1%27%3B%0A%24fba_eu%5B0%5D%3D%27-1%27%3B%0A%24original_availability%5B0%5D%3D%271.00%27%3B%0A%24internal_leadtime%5B0%5D%3D%27%27%3B%0A%24flex%5B0%5D%3D%270%27%3B%0A%24vendor_us%5B0%5D%3D%270%27%3B%0A%24original_price%5B0%5D%3D%2780%27%3B%0A%24price%5B0%5D%3D%2780%27%3B%0A%24gst%5B0%5D%3D%270%27%3B%0A%24gstamount%5B0%5D%3D%270%27%3B%0A%24subcategory%5B0%5D%3D%2714%2C24%27%3B%0A%24availability%5B0%5D%3D%271%27%3B%0A%24weight%5B0%5D%3D%270%27%3B%0A%24weight_unit%5B0%5D%3D%27%27%3B%0A%24weight_to_show%5B0%5D%3D%27%27%3B%0A%24material%5B0%5D%3D%27Sterling+Silver%27%3B%0A%24sourcingfee%5B0%5D%3D%270%27%3B%0A%22%3B">
+	<div class="checkoutPageWhiteBox" style="padding-bottom: 0px;">
+		<div class="checkoutPageWhiteBoxTitle">Payment Details</div>
+		<div class="pageLineClear" style="margin-top: 5px; margin-bottom: 5px; border-bottom: 1px solid #CCCCCC"></div>
+		<table cellspacing="0" cellpadding="0" border="0">
+			<tbody><tr>
+				<td style="width: 180px; padding: 15px 20px; vertical-align: top">
+					<div class="checkoutPagePaymentLeftTitleTop">Card Details</div>
+					<div style="float: left; position: relative; top:12px; padding-left: 20px"><img src="resources/EN_B368a/4.png" data-original-src="https://www.exoticindia.com/siteimages/checkout-carddetails-arrow.png" width="9" height="12" border="0"></div>
+					<div class="pageLineClear"></div>
+				</td>
+				<td rowspan="2" style="padding: 15px 0px 15px 50px">
+					<div class="securepayElement"><input type="text" id="cardnumber" name="cardnumber" class="textfield required valid" placeholder="Card Number" data-fathom="cc-number" style="" data-moz-autofill-type="cc-number"></div>
+					<div class="securepayElement">
+						<select id="cardexpmonth" name="cardexpmonth" class="ccStyle required" data-fathom="cc-exp-month" style="" data-moz-autofill-type="cc-exp-month">
+							<option value="" selected="">Month</option>
+							<option value="01">01</option>
+							<option value="02">02</option>
+							<option value="03">03</option>
+							<option value="04">04</option>
+							<option value="05">05</option>
+							<option value="06">06</option>
+							<option value="07">07</option>
+							<option value="08">08</option>
+							<option value="09">09</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+						</select>
+ / 						<select id="cardexpyear" name="cardexpyear" class="ccStyle required" data-fathom="cc-exp-year" style="" data-moz-autofill-type="cc-exp-year">
+							<option value="" selected="">Year</option>
+<option value="20">2020</option>
+<option value="21">2021</option>
+<option value="22">2022</option>
+<option value="23">2023</option>
+<option value="24">2024</option>
+<option value="25">2025</option>
+<option value="26">2026</option>
+<option value="27">2027</option>
+<option value="28">2028</option>
+<option value="29">2029</option>
+<option value="30">2030</option>
+<option value="31">2031</option>
+<option value="32">2032</option>
+<option value="33">2033</option>
+<option value="34">2034</option>
+<option value="35">2035</option>
+<option value="36">2036</option>
+<option value="37">2037</option>
+<option value="38">2038</option>
+<option value="39">2039</option>
+<option value="40">2040</option>
+						</select>
+						<div class="expiryDate">Expiry Date</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding: 15px 20px; border-top: 1px solid #CCCCCC; border-right: 1px solid #CCCCCC"><div class="checkoutPagePaymentLeftTitleBottom paypalbutton">PayPal</div></td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div class="checkoutPageSmallInfo">Amount payable below is in U.S. dollars. If you use a non U.S. credit card, your bank will automatically convert to your home currency based on the prevailing exchange rate, along with incidental bank charges, if any.</div>
+	
+	<div class="checkoutPageWhiteBox" style="padding-bottom: 0px;">
+		<div class="checkoutPageWhiteBoxTitle">Billing Address <span class="checkoutPageSmallInfo">(the address associated with your credit card)</span></div>
+		<table cellspacing="0" cellpadding="0" border="0">
+			<tbody><tr>
+				<td style="padding: 15px 20px"><div class="securepayElement"><input type="text" id="first_name" name="first_name" value="" class="textfield required" placeholder="First Name" style="" data-moz-autofill-type="given-name"></div></td>
+				<td style="padding: 15px 20px"><div class="securepayElement"><input type="text" id="last_name" name="last_name" value="" class="textfield" placeholder="Last Name (optional)" style="" data-moz-autofill-type="family-name"></div></td>
+			</tr>
+			<tr>
+				<td style="padding: 15px 20px"><div class="securepayElement"><input type="text" id="address1" name="address1" value="" class="textfield required" placeholder="Address Line 1" style="" data-moz-autofill-type="address-line1"></div></td>
+				<td style="padding: 15px 20px"><div class="securepayElement"><input type="text" id="address1" name="address2" value="" class="textfield" placeholder="Address Line 2 (optional)" style="" data-moz-autofill-type="address-line2"></div></td>
+			</tr>
+			<tr>
+				<td style="padding: 15px 20px"><div class="securepayElement"><input type="text" id="city" name="city" value="" class="textfield" placeholder="City (optional)" style="" data-moz-autofill-type="address-level2"></div></td>
+				<td style="padding: 15px 20px"><div class="securepayElement">
+					<input type="text" id="state" name="state" value="" class="textfield required" placeholder="State" style="" data-moz-autofill-type="address-level1">
+				</div></td>
+			</tr>
+			<tr>
+				<td style="padding: 15px 20px"><div class="securepayElement"><input type="text" id="zip" name="zip" value="" class="textfield required" placeholder="Zip" data-fathom="zip" style="" data-moz-autofill-type="postal-code"></div></td>
+				<td style="padding: 15px 20px">
+					<div class="securepayElement">
+						<select id="country" name="country" class="textfield required" style="" data-moz-autofill-type="country"><option value="">Select a Country</option><option value="AF">Afghanistan</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua And Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia, Plurinational State Of</option>
+<option value="BQ">Bonaire, Sint Eustatius And Saba</option>
+<option value="BA">Bosnia And Herzegowina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="BN">Brunei Darussalam</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="CV">Cape Verde</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo, The Democratic Republic Of The</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">Cote D'ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czech Republic</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands (malvinas)</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard And Mc Donald Islands</option>
+<option value="VA">Holy See</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran (islamic Republic Of)</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle Of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KP">Korea, Democratic People's Republic Of</option>
+<option value="KR">Korea, Republic Of</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Lao People's Democratic Republic</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao</option>
+<option value="MK">Macedonia, The Former Yugoslav Republic Of</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia, Federated States Of</option>
+<option value="MD">Moldova, Republic Of</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestine, State Of</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">Reunion</option>
+<option value="RO">Romania</option>
+<option value="RU">Russian Federation</option>
+<option value="RW">Rwanda</option>
+<option value="SH">Saint Helena, Ascension And Tristan Da Cunha</option>
+<option value="KN">Saint Kitts And Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="PM">Saint Pierre And Miquelon</option>
+<option value="VC">Saint Vincent And The Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome And Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten (dutch Part)</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia And The South Sandwich Islands</option>
+<option value="SS">South Sudan</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard And Jan Mayen Islands</option>
+<option value="SZ">Swaziland</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syrian Arab Republic</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania, United Republic Of</option>
+<option value="TH">Thailand</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad And Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks And Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="US" selected="">United States Of America</option>
+<option value="UM">United States Minor Outlying Islands</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela, Bolivarian Republic Of</option>
+<option value="VN">Viet Nam</option>
+<option value="VG">Virgin Islands (british)</option>
+<option value="WF">Wallis And Futuna Islands</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+</select>
+					</div></td>
+			</tr>
+			<tr>
+				<td style="padding: 15px 20px; vertical-align: top">
+					<div class="securepayElement"><input type="text" id="phone" name="phone" value="" class="textfield required" placeholder="Phone" style="" data-moz-autofill-type="tel"></div>
+				</td>
+				<td style="padding: 15px 20px; vertical-align: top"><div class="securepayElement"><input type="text" id="email" name="email" value="" class="textfield required email" placeholder="Email" style="" data-moz-autofill-type="email"></div></td>
+			</tr>
+		</tbody></table>
+	</div>
+	<div class="checkoutPageWhiteBox" style="padding-bottom: 0px;">
+		<div class="checkoutPageWhiteBoxTitle">Shipping Address</div>
+		<div class="checkoutPageSameAsBilling"><input type="checkbox" id="sameAsBilling" checked=""><label for="sameAsBilling">Same as Billing Address</label></div>
+		<table cellspacing="0" cellpadding="0" border="0">
+			<tbody><tr>
+				<td style="padding: 15px 20px"><div class="securepayElement"><input type="text" id="sname" name="sname" value="" class="textfield shippingfield" placeholder="Full Name" style="" data-moz-autofill-type="name"></div></td>
+				<td style="padding: 15px 20px"></td>
+			</tr>
+			<tr>
+				<td style="padding: 15px 20px"><div class="securepayElement"><input type="text" id="saddress1" name="saddress1" value="" class="textfield shippingfield" placeholder="Address Line 1" style="" data-moz-autofill-type="address-line1"></div></td>
+				<td style="padding: 15px 20px"><div class="securepayElement"><input type="text" id="saddress2" name="saddress2" value="" class="textfield shippingfield" placeholder="Address Line 2 (optional)" style="" data-moz-autofill-type="address-line2"></div></td>
+			</tr>
+			<tr>
+				<td style="padding: 15px 20px"><div class="securepayElement"><input type="text" id="scity" name="scity" value="" class="textfield shippingfield" placeholder="City" style="" data-moz-autofill-type="address-level2"></div></td>
+				<td style="padding: 15px 20px"><div class="securepayElement"><input type="text" id="sstate" name="sstate" value="" class="textfield shippingfield" placeholder="State" must="1" style="" data-moz-autofill-type="address-level1"></div></td>
+			</tr>
+			<tr>
+				<td style="padding: 15px 20px"><div class="securepayElement"><input type="text" id="szip" name="szip" value="" class="textfield shippingfield" placeholder="Zip" must="1" style="" data-moz-autofill-type="postal-code"></div></td>
+				<td style="padding: 15px 20px">
+					<div class="securepayElement">
+						<select id="scountry" name="scountry" class="textfield shippingfield" style="" data-moz-autofill-type="country"><option value="" selected="">Select a Country</option><option value="AF">Afghanistan</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua And Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia, Plurinational State Of</option>
+<option value="BQ">Bonaire, Sint Eustatius And Saba</option>
+<option value="BA">Bosnia And Herzegowina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="BN">Brunei Darussalam</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="CV">Cape Verde</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo, The Democratic Republic Of The</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">Cote D'ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czech Republic</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands (malvinas)</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard And Mc Donald Islands</option>
+<option value="VA">Holy See</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran (islamic Republic Of)</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle Of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KP">Korea, Democratic People's Republic Of</option>
+<option value="KR">Korea, Republic Of</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Lao People's Democratic Republic</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao</option>
+<option value="MK">Macedonia, The Former Yugoslav Republic Of</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia, Federated States Of</option>
+<option value="MD">Moldova, Republic Of</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestine, State Of</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">Reunion</option>
+<option value="RO">Romania</option>
+<option value="RU">Russian Federation</option>
+<option value="RW">Rwanda</option>
+<option value="SH">Saint Helena, Ascension And Tristan Da Cunha</option>
+<option value="KN">Saint Kitts And Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="PM">Saint Pierre And Miquelon</option>
+<option value="VC">Saint Vincent And The Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome And Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten (dutch Part)</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia And The South Sandwich Islands</option>
+<option value="SS">South Sudan</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard And Jan Mayen Islands</option>
+<option value="SZ">Swaziland</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syrian Arab Republic</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania, United Republic Of</option>
+<option value="TH">Thailand</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad And Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks And Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="US">United States Of America</option>
+<option value="UM">United States Minor Outlying Islands</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela, Bolivarian Republic Of</option>
+<option value="VN">Viet Nam</option>
+<option value="VG">Virgin Islands (british)</option>
+<option value="WF">Wallis And Futuna Islands</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+</select>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding: 15px 20px"><div class="securepayElement"><input type="text" id="sphone" name="sphone" value="" class="textfield shippingfield" placeholder="Phone" style="" data-moz-autofill-type="tel"></div></td>
+				<td style="padding: 15px 20px">
+					<div class="securepayElement"><input type="text" id="semail" name="semail" value="" class="textfield email shippingfield" placeholder="Email" style="" data-moz-autofill-type="email"></div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+</div>
+<div class="checkoutPageRight">
+	<div class="checkoutPageWhiteBox">
+		<div class="checkoutPageWhiteBoxTitle">Shopping Cart</div>
+		<div class="pageLineClear" style="margin-top: 5px; margin-bottom: 5px; border-bottom: 1px solid #CCCCCC;"></div>
+		
+<table id="shopCartPageTable" cellspacing="1" cellpadding="0" border="0" align="center">
+<!-- row-cartheaders -->
+ <tbody><tr class="shopCartPageTableHeader">
+  <td style="width:320px;">Item</td>
+  <td style="width:90px;">Quantity</td>
+  <td style="width:90px;">Price</td>
+ </tr>
+
+ <tr class="shopCartPageTableRow">
+ <!-- cell-item -->
+  <td>
+	<table class="shopCartRowProductDetailsTable" width="100%" border="0">
+		<tbody><tr>
+			<td width="85">
+				<a href="https://www.exoticindiaart.com/product/LBF87/"><img src="resources/EN_B368a/5.jpg" style="width: 85px; height: 85px;" title="Nepalese Om Mani Padme Hum Cuff Bracelet" data-original-src="https://www.exoticindia.com/cart/jewelry-2020/lbf87.jpg"></a>
+			</td>
+			<td class="shopCartRowProductDetails">
+<a href="https://www.exoticindiaart.com/product/LBF87/">Jewelry - Nepalese Om Mani Padme Hum Cuff Bracelet</a>
+			</td>
+		</tr>
+	</tbody></table>
+  </td>
+
+<!-- cell-quantity -->
+  <td>
+1
+  </td>
+
+<!-- cell-totalprice -->
+  <td>
+$80.00
+  </td>
+
+<!-- row-shippingoptions -->
+ </tr><tr class="shopCartPageTableRow shipping">
+  <td colspan="2" style="padding-right: 10px;">Shipping by UPS (4 to 7 days)
+  </td>
+  <td>$0.00</td>
+ </tr>
+
+<!-- row-carttotal -->
+ <tr class="shopCartPageTableRow shopCartPageTableFinalTotalRow">
+  <td><a href="https://www.exoticindiaart.com/shoppingcart.php3"><img src="resources/EN_B368a/6.png" style="border: 0px; position: relative; top: 10px;" data-original-src="https://www.exoticindia.com/siteimages/checkout-editcart.png" width="89" height="20" border="0"></a></td>
+  <td style="text-align: right;">Total:</td>
+  <td style="text-align: left;">$80.00</td>
+ </tr>
+
+</tbody></table>
+	</div>
+</div>
+<div class="pageLineClear"></div>
+	<div class="checkoutPageSubmit">
+		<input type="submit" name="submit" value="Final Order and Pay" class="checkoutButton button">
+		<div class="checkoutPageSmallInfo">Exotic India takes your privacy very seriously. The information you provide 
+above will not be shared with anybody. [ <a href="https://www.exoticindia.com/privacy_policy.php3">Privacy 
+Policy</a> ]</div>
+	</div>
+</form>
+<div class="footerAddressWrapper" style="width: 1120px;">
+	<div class="footerAddress">
+	<b>Our office in the USA:</b>
+	<br>
+	Vasudev Enterprises Inc.
+	<br>
+	2573 Hamline Avenue N Suite A
+	<br>
+	Roseville, MN 55113
+	<br>
+	USA
+	<br>
+	<br>
+	Email: <a href="mailto: order@exoticindia.com">order@exoticindia.com</a>
+	<br>
+	Tel : +1 347 468 7193<br>Tel: +91 11 42473015<br>Tel: +91 11 42860227	<br>
+	Fax : +91-11-66173788; 23620744
+	</div>
+	<div class="footerAddress" style="width: 180px">
+	Exotic India Pvt Ltd
+	<br>
+	A-16/1&nbsp;Wazirpur Industrial Estate
+	<br>
+	Delhi 110052
+	<br>
+	India
+	</div>
+	<div class="footerAddress" style="width: 530px; float: right; padding-right: 0px">
+		<div class="checkoutSeals" style="top: 28px"><img id="trustwaveSealImage" src="resources/EN_B368a/7.png" style="cursor:pointer;" alt="This site is protected by Trustwave's Trusted Commerce program" title="This site is protected by Trustwave's Trusted Commerce program" data-original-src="https://sealserver.trustwave.com/seal_image.php?customerId=6919183d70aa422d8cc72611cc7d8a0c&amp;size=105x54&amp;style=" border="0"></div>
+		<div class="checkoutSeals" style="padding-right: 0px;"><img src="resources/EN_B368a/8.gif" alt="PayPal Verified" title="PayPal Verified" data-original-src="https://cdn.exoticindia.com//siteimages/verification_seal.gif" width="100" height="100" border="0"></div>
+		<div class="pageLineClear"></div>
+	</div>
+	<div class="pageLineClear"></div>
+</div>
+	</div>
+</div>
+<div class="pageLineClear"></div>
+<div id="pageFootWrapper">
+<div id="pageFootLogos">
+    <table class="cardLogos" border="0">
+      <tbody><tr>
+		<td>
+<img id="trustwaveSealImage" src="resources/EN_B368a/7.png" style="cursor:pointer;" alt="This site is protected by Trustwave's Trusted Commerce program" title="This site is protected by Trustwave's Trusted Commerce program" data-original-src="https://sealserver.trustwave.com/seal_image.php?customerId=6919183d70aa422d8cc72611cc7d8a0c&amp;size=105x54&amp;style=" border="0">
+		</td>
+        <td><a href="https://www.fedex.com/" target="_blank"><img src="resources/EN_B368a/9.png" data-original-src="https://cdn.exoticindia.com/siteimages/footer-fedex.png"></a></td>
+        <td><a href="https://www.paypal.com/" target="_blank"><img src="resources/EN_B368a/10.png" data-original-src="https://cdn.exoticindia.com/siteimages/footer-paypal.png"></a></td>
+        <td><img src="resources/EN_B368a/11.png" data-original-src="https://cdn.exoticindia.com/siteimages/footer-visa.png"></td>
+        <td><img src="resources/EN_B368a/12.png" data-original-src="https://cdn.exoticindia.com/siteimages/footer-mastercard.png"></td>
+        <td><img src="resources/EN_B368a/13.png" data-original-src="https://cdn.exoticindia.com/siteimages/footer-discover.png"></td>
+        <td><img src="resources/EN_B368a/14.png" data-original-src="https://cdn.exoticindia.com/siteimages/footer-amex.png"></td>
+      </tr>
+    </tbody></table>
+    <div class="socialFollowLogos">
+		<table class="socialFollowLogos" style="width:100px">
+			<tbody><tr>
+
+<!--			<td>
+				<g:page href="https://plus.google.com/115776264134781512088" layout="landscape" showcoverphoto="false" showtagline="false" width="273" theme="dark"></g:page>
+			</td> -->
+			</tr>
+		</tbody></table>
+		<table class="socialFollowLogos" style="width: 197px;">
+			<tbody><tr>
+				<td><a href="https://www.facebook.com/Exotic-India-111428205548544/timeline/" target="_blank"><img src="resources/EN_B368a/15.png" data-original-src="https://cdn.exoticindia.com/siteimages/footer-facebook.png"></a></td>
+				<td><a href="https://twitter.com/exoticindiaart" target="_blank"><img src="resources/EN_B368a/16.png" data-original-src="https://cdn.exoticindia.com/siteimages/footer-twitter.png"></a></td>
+				<td><a href="https://in.pinterest.com/exotic_india_art/" target="_blank"><img src="resources/EN_B368a/17.png" data-original-src="https://cdn.exoticindia.com/siteimages/footer-pinterest.png"></a></td>
+				<td><a href="https://www.instagram.com/exoticindiaart/" target="_blank"><img src="resources/EN_B368a/18.png" data-original-src="https://cdn.exoticindia.com/siteimages/footer-instagram.png"></a></td>
+				<td><a href="https://www.linkedin.com/company/exoticindiaart/" target="_blank"><img src="resources/EN_B368a/19.png" data-original-src="https://cdn.exoticindia.com/siteimages/footer-linkedin.png"></a></td>
+			</tr>
+		</tbody></table>
+		<div class="pageLineClear"></div>
+    </div>
+	<div class="pageLineClear"></div>
+</div>
+<div id="pageFootSiteLinksWrapper">
+		<div class="pageFootSiteLinksTitle">Popular search terms</div>
+		<div class="pageFootSiteLinksSet">
+			<span class="pageFootSiteLinksSubTitle">
+Hinduism:</span><a href="https://www.exoticindia.com/ct/hinduism/goddess-parvati">Goddess Parvati</a>&nbsp;&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;&nbsp;<a href="https://www.exoticindia.com/ct/hinduism/lord-shiva">Lord Shiva – The Destroyer</a>&nbsp;&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;&nbsp;<a href="https://www.exoticindia.com/ct/hinduism/lord-vishnu">Lord Vishnu the Preserver</a>&nbsp;&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;&nbsp;<a href="https://www.exoticindia.com/ct/hinduism/lord-ganesha">Lord Ganesha – The Charming God Venerated By All</a>&nbsp;&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;&nbsp;<a href="https://www.exoticindia.com/ct/hinduism/saraswati">Saraswati – The Shakti behind Creation</a>&nbsp;&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;&nbsp;<a href="https://www.exoticindia.com/ct/hinduism/hanuman">Bhakta Hanuman</a>&nbsp;&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;&nbsp;<a href="https://www.exoticindia.com/ct/hinduism/goddess-lakshmi">Goddess Lakshmi - Bestower of Prosperity</a>&nbsp;&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;&nbsp;<a href="https://www.exoticindia.com/ct/hinduism/goddess-durga">Goddess Durga</a>			
+		</div>
+		<div class="pageFootSiteLinksSet">
+			<span class="pageFootSiteLinksSubTitle">
+Buddhism:</span><a href="https://www.exoticindia.com/ct/buddhism/green-tara">Green Tara – The Emerald Hued Deity</a>&nbsp;&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;&nbsp;<a href="https://www.exoticindia.com/ct/buddhism/gautam-buddha">Gautam Buddha</a>&nbsp;&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;&nbsp;<a href="https://www.exoticindia.com/ct/buddhism/mandalas">Mandalas – The Zenith of Spiritual Art</a>			
+		</div>
+</div>
+<div id="pageFootLinksWrapper">
+	<ul>
+		<li><a href="https://www.exoticindia.com/aboutus.php3">About Us</a></li>
+		<li><a href="https://www.exoticindia.com/faqs.php3">FAQ</a></li>
+		<li><a href="https://www.exoticindia.com/article/">Newsletter Archive</a></li>
+		<li><a href="https://www.exoticindia.com/testimonials.php3">Testimonials</a></li>
+		<li><a href="https://www.exoticindia.com/blog/">Daily Blog</a></li>
+	</ul>
+	
+	<ul>
+		<li><a href="https://www.exoticindia.com/disclaimer.php3">Disclaimer</a></li>
+		<li><a href="https://www.exoticindia.com/return_policy.php3">Return Policy</a></li>
+		<li><a href="https://www.exoticindia.com/privacy_policy.php3">Privacy Policy</a></li>
+		<li><a href="https://www.exoticindia.com/shipping_policy.php3">Shipping Policy</a></li>
+		<li><a href="https://www.exoticindia.com/terms.php3">Terms of Use</a></li>
+	</ul>
+	
+	<ul>
+<!--		<li><a href="https://www.exoticindia.com/archives/">Sold Items</a></li> -->
+		<li><a href="https://www.exoticindia.com/affiliate_program.php3">Affiliates Program</a></li>		<li><a href="https://www.exoticindia.com/track.php">Track Your Order</a></li>
+		<li><a href="https://www.exoticindia.com/giftservices.php3">Send a Gift</a></li>
+		<li><a href="https://www.exoticindia.com/sitemap/">Site Map</a></li>
+	</ul>
+	<div class="newfooteradd">
+		<span>Vasudev Enterprises Inc. (doing business as Exotic India)</span>
+		<div>
+			<span style="display: block">2573 Hamline Avenue N Suite A</span>
+			<span>Roseville, MN</span> - 
+			<span></span>
+			<span>55113</span>
+			<div>United States of America</div>
+		</div> 
+		Phone: <span>+1 347 468 7193</span>
+	</div>
+
+	<ul class="footerButtons">
+		<li><a href="https://www.exoticindia.com/track.php">Track Your Order</a></li>
+		<li style="margin-bottom: 0px;"><a href="https://www.exoticindia.com/contactus.php3">Contact Us</a></li>
+	</ul>
+	
+	<div class="pageLineClear"></div>
+</div>
+
+	<div id="pageFooterUFX">
+		<div id="pageFootLinksRight">All rights reserved. Copyright 2020 © <a href="https://www.exoticindia.com/">Exotic India</a><!--&nbsp;&nbsp;&nbsp;<b>&middot;</b>&nbsp;&nbsp;&nbsp;Site Powered by <a href="https://www.unlimitedfx.com">www.unlimitedfx.com</a>--></div>
+		<!-- CACHEDELETE -->
+		<div class="pageLineClear"></div>
+	</div>
+<!-- GOOGLE DYNAMIC REMARKETING -->
+<!--<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+	<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1072401158/?value=0&amp;guid=ON&amp;script=0"/>
+	</div>
+</noscript>-->
+<!-- END GOOGLE DYNAMIC REMARKETING -->
+<!-- LOAD TIME: 2.10351800919198.178.127.83 -->
+</div>
+
+
+
+</div><div id="ajaxLoader" style="display: none; margin: 0px; padding: 0px; position: absolute; z-index: 10000;"><img src="resources/EN_B368a/20.gif" data-original-src="https://www.exoticindia.com/siteimages/ajax-loading-blue.gif"></div></body></html>

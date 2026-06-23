@@ -1,0 +1,183 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 200px;
+}
+
+input {
+  margin: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<fieldset>
+<h3>shopee.com.mx</h3>
+<p><i>Fields should be: name, phone number, postal code, state/city, neighbourhood (colonia), street, street number, extra address. State/city is combined into a single field, and neighbourhood, street number, and extra address are not recognized.</i></p>
+
+<form>
+  <div>
+    <input type="text" placeholder="Nombre Completo" autocomplete="name" maxlength="50" aria-describedby="input-error-message_169f44a1-fc74-4609-9cb0-7b39ec3ea4bf" value="" style="" data-moz-autofill-type="name">
+  </div>
+  <div>
+    <input type="text" placeholder="Número de Teléfono" autocomplete="user-address-phone" aria-describedby="phone-error-message_fb8e5482-5302-4366-9fc1-516116177d56" value="" style="" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <input type="text" placeholder="Código Postal" autocomplete="postal-code" maxlength="5" aria-describedby="input-error-message_b3a25f01-747a-43ff-ba4d-4838e40fe6ae" value="" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <input readonly="" type="text" placeholder="Estado - Municipio" aria-describedby="input-error-message_42c9c5ed-8632-4295-94ac-8348cec51016" value="" style="" data-moz-autofill-type="address-level1">
+  </div>
+  <div>
+    <input type="text" placeholder="Colonia" autocomplete="user-colonia" aria-describedby="input-error-message_3dfd4938-8309-4703-b013-8456b7469907" value="" style="" data-moz-autofill-type="address-level3">
+  </div>
+  <div>
+    <input type="text" placeholder="Nombre de la calle" autocomplete="address-line1" maxlength="50" aria-describedby="input-error-message_cb9cb847-497e-4d8f-af95-786bb6b28345" value="" style="" data-moz-autofill-type="address-streetname">
+  </div>
+  <div>
+    <input type="text" placeholder="Nº. Exterior" maxlength="20" aria-describedby="input-error-message_a051c614-f128-4e2c-ad26-279e0a644eea" value="" style="" data-moz-autofill-type="address-housenumber">
+  </div>
+  <div>
+    <input type="text" placeholder="Entre calles. Referencias." maxlength="64" aria-describedby="input-error-message_61ffbecd-e010-4719-a4dd-f05e5fa06508" value="" style="" data-moz-autofill-type="reference-point">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+<h3>miniso.com.mx</h3>
+<p><i>Street is recognized correctly, but house number and apartment number are recognized as cc-number, other fields not recognized. Fields here are: postal code, street, house number, apartment number, address-line3, name/address-line4</i></p>
+
+<form>
+  <div>
+    <label for="ship-postalCode">Código postal</label>
+    <input autocomplete="nope" id="ship-postalCode" type="text" name="postalCode" maxlength="50" value="" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="ship-street">Calle</label>
+    <input autocomplete="on" id="ship-street" type="text" name="street" value="" style="" data-moz-autofill-type="address-streetname">
+  </div>
+  <div>
+    <label for="ship-number">Número exterior</label>
+    <input autocomplete="nope" id="ship-number" type="text" name="number" maxlength="750" value="" style="" data-moz-autofill-type="address-housenumber">
+  </div>
+  <div>
+    <label for="ship-complement">Número interior</label>
+    <input autocomplete="on" id="ship-complement" type="text" name="complement" maxlength="750" placeholder="Opcional" value="" style="" data-moz-autofill-type="apartment">
+  </div>
+  <div>
+    <label for="ship-reference">Punto de referencia</label>
+    <input autocomplete="on" id="ship-reference" type="text" name="reference" maxlength="750" value="" style="" data-moz-autofill-type="reference-point">
+  </div>
+  <div>
+    <label for="ship-receiverName">Destinatario</label>
+    <input autocomplete="on" id="ship-receiverName" type="text" name="receiver" maxlength="750" value="" style="">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+<h3>elpalaciodehierro.com</h3>
+<p><i>Exterior and interior number not handled, postal code is a type="number" field, reference should be treated as address-line3</i></p>
+
+<form>
+  <div>
+    <input id="dwfrm_shipping_shippingAddress_addressFields_postalCode" type="number" placeholder=" " aria-describedby="dwfrm_shipping_shippingAddress_addressFields_postalCode-error" name="dwfrm_shipping_shippingAddress_addressFields_postalCode" required="" aria-required="true" maxlength="5" style="" data-moz-autofill-type="postal-code">
+    <label for="dwfrm_shipping_shippingAddress_addressFields_postalCode">Código Postal</label>
+  </div>
+  <div>
+    <label for="dwfrm_shipping_shippingAddress_addressFields_states_stateCode">Colonia</label>
+  </div>
+  <div>
+    <input id="dwfrm_shipping_shippingAddress_addressFields_municipality" type="text" placeholder=" " aria-describedby="dwfrm_shipping_shippingAddress_addressFields_municipality-error" name="dwfrm_shipping_shippingAddress_addressFields_municipality" required="" aria-required="true" maxlength="50" minlength="2" readonly="" style="" data-moz-autofill-type="address-level1">
+    <label for="dwfrm_shipping_shippingAddress_addressFields_municipality">Municipio o Delegación</label>
+  </div>
+  <div>
+    <label for="dwfrm_shipping_shippingAddress_addressFields_city">Estado o Ciudad</label>
+    <input id="dwfrm_shipping_shippingAddress_addressFields_city" type="input" placeholder=" " aria-describedby="dwfrm_shipping_shippingAddress_addressFields_city-error" name="dwfrm_shipping_shippingAddress_addressFields_city" required="" aria-required="true" maxlength="50" minlength="2" readonly="" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <input id="dwfrm_shipping_shippingAddress_addressFields_address1" type="text" placeholder=" " aria-describedby="dwfrm_shipping_shippingAddress_addressFields_address1-error" name="dwfrm_shipping_shippingAddress_addressFields_address1" required="" aria-required="true" maxlength="50" minlength="2" style="" data-moz-autofill-type="address-streetname">
+    <label for="dwfrm_shipping_shippingAddress_addressFields_address1">Calle</label>
+  </div>
+  <div>
+    <input id="dwfrm_shipping_shippingAddress_addressFields_outerNumber" type="text" placeholder=" " aria-describedby="dwfrm_shipping_shippingAddress_addressFields_outerNumber-error" name="dwfrm_shipping_shippingAddress_addressFields_outerNumber" required="" aria-required="true" maxlength="10" minlength="1" style="" data-moz-autofill-type="address-housenumber">
+    <label for="dwfrm_shipping_shippingAddress_addressFields_outerNumber">No. Exterior</label>
+  </div>
+  <div>
+    <input id="dwfrm_shipping_shippingAddress_addressFields_innerNumber" type="text" placeholder=" " aria-describedby="dwfrm_shipping_shippingAddress_addressFields_innerNumber-error" name="dwfrm_shipping_shippingAddress_addressFields_innerNumber" maxlength="10" minlength="1" style="" data-moz-autofill-type="apartment">
+    <label for="dwfrm_shipping_shippingAddress_addressFields_innerNumber">No. Interior</label>
+  </div>
+  <div>
+    <input id="dwfrm_shipping_shippingAddress_addressFields_landmark" type="text" placeholder=" " aria-describedby="dwfrm_shipping_shippingAddress_addressFields_landmark-error" name="dwfrm_shipping_shippingAddress_addressFields_landmark" maxlength="100" style="" data-moz-autofill-type="reference-point">
+    <label for="dwfrm_shipping_shippingAddress_addressFields_landmark">Referencias (Ej. Color de la casa, Entre qué calles, Pórton...)</label>
+  </div>
+  <div>
+    <input id="dwfrm_shipping_shippingAddress_addressFields_UUID" type="text" placeholder=" " aria-describedby="dwfrm_shipping_shippingAddress_addressFields_UUID-error" aria-label="" name="dwfrm_shipping_shippingAddress_addressFields_UUID" maxlength="2147483647" style="" data-moz-autofill-type="id-number">
+  </div>
+  <div>
+    <input id="dwfrm_shipping_shippingAddress_addressFields_firstName" type="text" placeholder=" " aria-describedby="dwfrm_shipping_shippingAddress_addressFields_firstName-error" name="dwfrm_shipping_shippingAddress_addressFields_firstName" required="" aria-required="true" maxlength="50" minlength="2" style="" data-moz-autofill-type="given-name">
+    <label for="dwfrm_shipping_shippingAddress_addressFields_firstName">Primer nombre</label>
+  </div>
+  <div>
+    <input id="dwfrm_shipping_shippingAddress_addressFields_firstName2" type="text" placeholder=" " aria-describedby="dwfrm_shipping_shippingAddress_addressFields_firstName2-error" name="dwfrm_shipping_shippingAddress_addressFields_firstName2" maxlength="50" minlength="2" style="" data-moz-autofill-type="additional-name">
+    <label for="dwfrm_shipping_shippingAddress_addressFields_firstName2">Segundo nombre</label>
+  </div>
+  <div>
+    <input id="dwfrm_shipping_shippingAddress_addressFields_lastName" type="text" placeholder=" " aria-describedby="dwfrm_shipping_shippingAddress_addressFields_lastName-error" name="dwfrm_shipping_shippingAddress_addressFields_lastName" required="" aria-required="true" maxlength="50" minlength="2" style="" data-moz-autofill-type="family-name">
+    <label for="dwfrm_shipping_shippingAddress_addressFields_lastName">Primer apellido</label>
+  </div>
+  <div>
+    <input id="dwfrm_shipping_shippingAddress_addressFields_lastName2" type="text" placeholder=" " aria-describedby="dwfrm_shipping_shippingAddress_addressFields_lastName2-error" name="dwfrm_shipping_shippingAddress_addressFields_lastName2" maxlength="50" minlength="2" style="">
+    <label for="dwfrm_shipping_shippingAddress_addressFields_lastName2">Segundo apellido</label>
+  </div>
+  <div>
+    <input id="dwfrm_shipping_shippingAddress_addressFields_phone" type="tel" placeholder=" " aria-describedby="dwfrm_shipping_shippingAddress_addressFields_phone-error" name="dwfrm_shipping_shippingAddress_addressFields_phone" required="" aria-required="true" maxlength="2147483647" style="" data-moz-autofill-type="tel">
+    <label for="dwfrm_shipping_shippingAddress_addressFields_phone">Teléfono celular</label>
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+<h3>elektra.com.mx</h3>
+<p><i>Exterior and interior number not handled, reference should be treated as address-line3</i></p>
+
+<form>
+  <div>
+    <input id="postalCode-display" name="postalCode" error="" autocomplete="" value="" mask="" style="" data-moz-autofill-type="postal-code">
+    <label>Código postal *</label>
+  </div>
+  <div>
+    <input id="street-display" name="street" error="" autocomplete="" value="" mask="" placeholder="" style="" data-moz-autofill-type="address-streetname">
+    <label>Calle *</label>
+  </div>
+  <div>
+    <input id="number-display" name="number" error="" mask="" autocomplete="" value="" placeholder="" style="" data-moz-autofill-type="address-housenumber">
+    <label>No. exterior *</label>
+  </div>
+  <div>
+    <input id="complement-display" name="complement" error="" mask="" autocomplete="" value="" placeholder="" style="" data-moz-autofill-type="apartment">
+    <label>No. interior (Opcional)</label>
+  </div>
+  <div>
+    <input id="reference-display" name="reference" error="" mask="" autocomplete="" value="" placeholder="" style="" data-moz-autofill-type="reference-point">
+    <label>Referencia de envío* (Ejemplos: Torre B, fachada azul, entre calles...)*</label>
+  </div>
+  <div>
+    <input id="receiverName-display" name="receiverName" error="Este campo es obligatorio" autocomplete="" value="" placeholder="" style="" data-moz-autofill-type="name">
+    <label>Nombre de la persona que va a recibir*</label>
+  </div>
+</form>
+
+</fieldset>
+
+</body></html>

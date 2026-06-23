@@ -1,0 +1,228 @@
+<html><head>
+<meta charset="utf-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 100px;
+}
+
+</style>
+</head>
+
+<body>
+
+<fieldset>
+<h3>ekatvacollections.com</h3>
+<p><i>Landmark is not recognized as address-line2.</i></p>
+
+<form>
+      <h4>
+         Contact Information
+      </h4>
+      <div><label for="email">Email Address</label>
+         <input required="required" id="email" type="email" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="email">
+      </div>
+   
+   <h4>Shipping Address</h4>
+     <div><label for="fullName">Full Name</label>
+        <input maxlength="30" required="required" id="fullName" type="text" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="name">
+     </div>
+   <div>
+       <label for="areaCode">Country Code</label>
+        <input required="required" id="areaCode" readonly="readonly" type="text" aria-readonly="false" autocomplete="off" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel-country-code">
+   </div>
+     <div><label for="formPhone">Phone</label>
+        <input required="required" id="formPhone" type="tel" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel-national">
+   </div>
+   <div><label for="streetAddress">Address Line 1 (House No., Building, Street)</label>
+      <input required="required" id="streetAddress" type="text" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="street-address">
+   </div>
+    <div><label for="landmarkAddress">Landmark</label>
+       <input id="landmarkAddress" type="text" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line2">
+    </div>
+    <label for="country">Country</label>
+     <input required="required" id="country" readonly="readonly" type="text" aria-readonly="false" autocomplete="off" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="country-name">
+   <section>
+       <label for="pincode">PostalCode</label>
+          <input required="required" id="pincode" type="text" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code">
+   </section>
+   <section>
+     <label for="town">City</label>
+     <input required="required" id="town" type="text" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2">
+   </section>
+   <section>
+    <label for="stateProvince">State/Province</label>
+    <div>
+       <input required="required" id="stateProvince" readonly="readonly" type="text" aria-readonly="false" autocomplete="off" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level1">
+    </div>
+   </section>
+</form>
+
+<fieldset>
+<h3>houseofindya.com</h3>
+<p><i>Address field uses a multiline textarea.</i></p>
+
+<form action="/Shop/shipping" id="add-addnew" method="post" novalidate="novalidate">
+  <div>
+    <div>
+      <label>Email*</label>
+      <input id="txtGuestEmail" maxlength="99" name="GuestEmail" placeholder="Email Address" type="text" value="" aria-invalid="false" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="email">
+    </div>
+    <div>
+      <i>Phone (Do not prefix "0" or "+")</i>
+      <input id="add-phone" maxlength="12" minlength="0" name="GuestPhone" placeholder="Mobile Number" required="Required" type="text" value="" aria-invalid="false" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel">
+    </div>
+    <div>
+      <label>Full name*</label>
+      <input id="FirstName" maxlength="99" name="FirstName" placeholder="Full Name" required="Required" type="text" value="" aria-invalid="false" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="name">
+    </div>
+
+        
+    <div>
+      <div>
+        <label>Country*</label>
+        <select id="Country" name="Country" required="Required" aria-invalid="false" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="country-name">
+          <option value=""> Select Country </option>
+          <option value="2">United States</option>
+          <option value="80">United Kingdom</option>
+          <option value="3">Canada</option>
+          <option value="7">Australia</option>
+          <option value="1">India</option>
+        </select>
+      </div>
+            
+      <div>
+        <label>Pin Code*</label>
+        <input id="add-pincode" maxlength="10" name="PinCode" placeholder="Pin Code" required="Required" type="text" value="" aria-invalid="false" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code">
+      </div>
+    </div>
+        
+    <div>
+      <label>Address*</label>
+      <textarea rows="3" cols="40" id="addaddress" name="Address" placeholder="Address" required="Required" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="street-address"></textarea>
+    </div>
+        
+    <input id="addlandmark" maxlength="200" name="Landmark" placeholder="Landmark" type="text" value="" aria-invalid="false" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line2">
+        
+    <div id="citystate">
+      <div>
+        <label>City*</label>
+        <input id="add-city" name="City" required="Required" type="text" value="" aria-invalid="false" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2">
+      </div>
+      <div id="stattxt">
+        <label>State*</label>
+        <input id="State" name="StateName" required="Required" type="text" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level1">
+      </div>
+
+            
+      <div id="statedrop">
+                
+        <label>State*</label>
+                
+        <select id="StateDDL" aria-invalid="false" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level1">
+          <option value="0">--Select States--</option>
+          <option value="450">Alberta</option>
+          <option value="451">British Columbia</option>
+          <option value="452">Manitoba</option>
+          <option value="453">New Brunswick</option>
+          <option value="454">Newfoundland and Labrador</option>
+          <option value="455">Northwest Territories</option>
+          <option value="456">Nova Scotia</option>
+          <option value="457">Nunavut</option>
+          <option value="458">Ontario</option>
+          <option value="459">Prince Edward Island</option>
+          <option value="460">Quebec</option>
+          <option value="461">Saskatchewan</option>
+          <option value="462">Yukon</option>
+        </select>
+      </div>
+    </div>
+
+</div></form></fieldset>
+
+<fieldset>
+<h3>lenskart.com</h3>
+<p><i>Many form fields all have the same id.</i></p>
+
+<form>
+   <div>
+      <div>
+         <label id="label1" for="input-desktop">First Name*</label>
+         <div id="container-First Name*">
+            <input id="input-desktop" placeholder="" type="text" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code">
+         </div>
+      </div>
+      <div>
+         <label id="label1" for="input-desktop">Last Name</label>
+         <div id="container-Last Name">
+            <input id="input-desktop" placeholder="" type="text" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name">
+         </div>
+      </div>
+   </div>
+   <div>
+      <div>
+         <div id="container-Phone Number*">
+           <select id="selectDropDown" name="countryCodes" width="68px" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel-country-code">
+              <option value="+1">+1</option>
+           </select>
+           <input id="input-desktop" placeholder="Phone Number*" type="text" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel-national">
+         </div>
+      </div>
+      <div>
+         <div id="container-Email Address*">
+            <input id="input-desktop" placeholder="Email Address*" type="text" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="email">
+         </div>
+      </div>
+   </div>
+   <div>
+      <div>
+         <label id="label1" for="input-desktop">Address*</label>
+         <div id="container-Address*">
+            <input id="input-desktop" placeholder="" type="text" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="street-address">
+         </div>
+      </div>
+   </div>
+   <div>
+      <div>
+         <label id="label1" for="input-desktop">Zip/Postal Code*</label>
+         <div id="container-Zip/Postal Code*">
+            <input id="input-desktop" maxlength="6" placeholder="" type="text" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code">
+         </div>
+         <div>Please enter a postal code(10710)</div>
+      </div>
+      <div>
+         <label id="label1" for="input-desktop">City/District*</label>
+         <div id="container-City/District*">
+            <input id="input-desktop" placeholder="" type="text" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2">
+         </div>
+      </div>
+   </div>
+   <div>
+      <label id="label1" for="input-desktop">Select state*</label>
+      <div id="container-Select state*">
+         <input id="input-desktop" placeholder="" type="text" value="" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level1">
+      </div>
+       <div aria-disabled="false" contenteditable="true" tabindex="0" id="country-options">
+          <div>
+              <label>Country*</label>
+          </div>
+          <div>
+             <input aria-hidden="true" tabindex="-1" value="us" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="country-name">
+          </div>
+       </div>
+   </div>
+   <div>
+      <div>
+         <label id="label1" for="input-desktop">Apartment on side of lift</label>
+         <div id="container-Apartment on side of lift"><textarea placeholder=""></textarea></div>
+      </div>
+   </div>
+</form>
+</fieldset>
+
+
+
+</fieldset></body></html>

@@ -1,0 +1,1565 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 200px;
+}
+
+input {
+  margin: 2px;
+}
+
+.invisible {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<fieldset>
+
+<h3>www.whistles.com</h3>
+<p><i></i></p>
+
+<form>
+  <button onclick="document.getElementById('outer').style.display = 'none'; return false;">Hide</button>
+  <button onclick="document.getElementById('outer').style.display = ''; return false;">Show</button>
+  <div id="outer" style="position: relative;">
+    <label for="CheckoutData_BillingFirstName">
+                                First Name
+                            </label>
+    <input autocomplete="given-name" id="CheckoutData_BillingFirstName" maxlength="40" name="CheckoutData.BillingFirstName" placeholder="First Name" required="true" type="text" value="" aria-required="true" aria-invalid="true" aria-describedby="CheckoutData_BillingFirstName-error-message" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="CheckoutData_BillingLastName">Last Name</label>
+    <input autocomplete="family-name" id="CheckoutData_BillingLastName" maxlength="40" name="CheckoutData.BillingLastName" placeholder="Last Name" required="true" type="text" value="" aria-required="true" aria-invalid="true" aria-describedby="CheckoutData_BillingLastName-error-message" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="CheckoutData_Email">Email</label>
+    <input autocomplete="email" id="CheckoutData_Email" name="CheckoutData.Email" placeholder="Email" type="email" value="" aria-required="true" aria-invalid="true" aria-describedby="CheckoutData_Email-error-message" style="" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="BillingCountryID">Country</label>
+    <select aria-label="Country" autocomplete="off" autocorrect="off" id="BillingCountryID" name="CheckoutData.BillingCountryID" readonly="readonly" aria-required="true" style="" data-moz-autofill-type="country">
+      <option value="4">Afghanistan</option>
+      <option value="7">Albania</option>
+      <option value="60">Algeria</option>
+      <option value="12">American Samoa</option>
+      <option value="2">Andorra</option>
+      <option value="10">Angola</option>
+      <option value="6">Anguilla</option>
+      <option value="5">Antigua and Barbuda</option>
+      <option value="11">Argentina</option>
+      <option value="8">Armenia</option>
+      <option value="15">Aruba</option>
+      <option value="14">Australia</option>
+      <option value="13">Austria</option>
+      <option value="17">Azerbaijan</option>
+      <option value="31">Bahamas</option>
+      <option value="24">Bahrain</option>
+      <option value="20">Bangladesh</option>
+      <option value="19">Barbados</option>
+      <option value="35">Belarus</option>
+      <option value="21">Belgium</option>
+      <option value="36">Belize</option>
+      <option value="26">Benin</option>
+      <option value="27">Bermuda</option>
+      <option value="32">Bhutan</option>
+      <option value="29">Bolivia</option>
+      <option value="259">Bonaire, Saint Eustatius and Saba</option>
+      <option value="18">Bosnia and Herzegovina</option>
+      <option value="34">Botswana</option>
+      <option value="30">Brazil</option>
+      <option value="236">British Virgin Islands</option>
+      <option value="28">Brunei Darussalam</option>
+      <option value="23">Bulgaria</option>
+      <option value="22">Burkina Faso</option>
+      <option value="25">Burundi</option>
+      <option value="116">Cambodia</option>
+      <option value="46">Cameroon</option>
+      <option selected="selected" value="37">Canada</option>
+      <option value="51">Cape Verde</option>
+      <option value="123">Cayman Islands</option>
+      <option value="254">Chad</option>
+      <option value="45">Chile</option>
+      <option value="47">China</option>
+      <option value="48">Colombia</option>
+      <option value="118">Comoros</option>
+      <option value="41">Congo</option>
+      <option value="39">Congo, Democratic Republic</option>
+      <option value="44">Cook Islands</option>
+      <option value="49">Costa Rica</option>
+      <option value="43">Cote D'Ivoire (Ivory Coast)</option>
+      <option value="97">Croatia</option>
+      <option value="260">Curacao</option>
+      <option value="53">Cyprus</option>
+      <option value="54">Czech Republic</option>
+      <option value="57">Denmark</option>
+      <option value="56">Djibouti</option>
+      <option value="58">Dominica</option>
+      <option value="59">Dominican Republic</option>
+      <option value="220">East Timor</option>
+      <option value="61">Ecuador</option>
+      <option value="63">Egypt</option>
+      <option value="207">El Salvador</option>
+      <option value="87">Equatorial Guinea</option>
+      <option value="62">Estonia</option>
+      <option value="67">Ethiopia</option>
+      <option value="71">Falkland Islands</option>
+      <option value="73">Faroe Islands</option>
+      <option value="70">Fiji</option>
+      <option value="247">Finland</option>
+      <option value="74">France</option>
+      <option value="79">French Guiana</option>
+      <option value="173">French Polynesia</option>
+      <option value="76">Gabon</option>
+      <option value="84">Gambia</option>
+      <option value="78">Georgia</option>
+      <option value="69">Germany</option>
+      <option value="81">Ghana</option>
+      <option value="82">Gibraltar</option>
+      <option value="88">Greece</option>
+      <option value="83">Greenland</option>
+      <option value="77">Grenada</option>
+      <option value="86">Guadeloupe</option>
+      <option value="249">Guam</option>
+      <option value="248">Guatemala</option>
+      <option value="80">Guernsey</option>
+      <option value="85">Guinea</option>
+      <option value="92">Guinea-Bissau</option>
+      <option value="93">Guyana</option>
+      <option value="98">Haiti</option>
+      <option value="96">Honduras</option>
+      <option value="94">Hong Kong</option>
+      <option value="99">Hungary</option>
+      <option value="108">Iceland</option>
+      <option value="104">India</option>
+      <option value="100">Indonesia</option>
+      <option value="101">Ireland (Republic of)</option>
+      <option value="103">Isle of Man</option>
+      <option value="90">Israel</option>
+      <option value="91">Italy</option>
+      <option value="111">Jamaica</option>
+      <option value="113">Japan</option>
+      <option value="110">Jersey</option>
+      <option value="112">Jordan</option>
+      <option value="124">Kazakhstan</option>
+      <option value="114">Kenya</option>
+      <option value="117">Kiribati</option>
+      <option value="121">Korea (South)</option>
+      <option value="122">Kuwait</option>
+      <option value="115">Kyrgyzstan</option>
+      <option value="125">Laos</option>
+      <option value="134">Latvia</option>
+      <option value="126">Lebanon</option>
+      <option value="131">Lesotho</option>
+      <option value="130">Liberia</option>
+      <option value="128">Liechtenstein</option>
+      <option value="132">Lithuania</option>
+      <option value="133">Luxembourg</option>
+      <option value="146">Macau</option>
+      <option value="140">Madagascar</option>
+      <option value="154">Malawi</option>
+      <option value="156">Malaysia</option>
+      <option value="153">Maldives</option>
+      <option value="143">Mali</option>
+      <option value="151">Malta</option>
+      <option value="141">Marshall Islands</option>
+      <option value="148">Martinique</option>
+      <option value="149">Mauritania</option>
+      <option value="152">Mauritius</option>
+      <option value="243">Mayotte</option>
+      <option value="155">Mexico</option>
+      <option value="72">Micronesia</option>
+      <option value="138">Moldova</option>
+      <option value="137">Monaco</option>
+      <option value="145">Mongolia</option>
+      <option value="139">Montenegro</option>
+      <option value="150">Montserrat</option>
+      <option value="136">Morocco</option>
+      <option value="250">Mozambique</option>
+      <option value="144">Myanmar</option>
+      <option value="158">Namibia</option>
+      <option value="167">Nauru</option>
+      <option value="166">Nepal</option>
+      <option value="164">Netherlands</option>
+      <option value="9">Netherlands Antilles</option>
+      <option value="251">New Caledonia</option>
+      <option value="169">New Zealand</option>
+      <option value="163">Nicaragua</option>
+      <option value="160">Niger</option>
+      <option value="162">Nigeria</option>
+      <option value="168">Niue</option>
+      <option value="142">North Macedonia</option>
+      <option value="147">Northern Mariana Islands</option>
+      <option value="165">Norway</option>
+      <option value="170">Oman</option>
+      <option value="176">Pakistan</option>
+      <option value="183">Palau</option>
+      <option value="171">Panama</option>
+      <option value="174">Papua New Guinea</option>
+      <option value="184">Paraguay</option>
+      <option value="172">Peru</option>
+      <option value="252">Philippines</option>
+      <option value="177">Poland</option>
+      <option value="182">Portugal</option>
+      <option value="180">Puerto Rico</option>
+      <option value="185">Qatar</option>
+      <option value="186">Reunion</option>
+      <option value="157">Romania</option>
+      <option value="159">Russia</option>
+      <option value="253">Rwanda</option>
+      <option value="119">Saint Kitts and Nevis</option>
+      <option value="127">Saint Lucia</option>
+      <option value="234">Saint Vincent &amp; the Grenadines</option>
+      <option value="241">Samoa</option>
+      <option value="202">San Marino</option>
+      <option value="206">Sao Tome and Principe</option>
+      <option value="191">Saudi Arabia</option>
+      <option value="203">Senegal</option>
+      <option value="188">Serbia</option>
+      <option value="193">Seychelles</option>
+      <option value="201">Sierra Leone</option>
+      <option value="196">Singapore</option>
+      <option value="258">Sint Maarten</option>
+      <option value="200">Slovak Republic</option>
+      <option value="198">Slovenia</option>
+      <option value="192">Solomon Islands</option>
+      <option value="204">Somalia</option>
+      <option value="244">South Africa</option>
+      <option value="66">Spain</option>
+      <option value="175">Sri Lanka</option>
+      <option value="257">St Barthelemy</option>
+      <option value="256">St Martin</option>
+      <option value="197">St. Helena</option>
+      <option value="194">Sudan</option>
+      <option value="205">Suriname</option>
+      <option value="209">Swaziland</option>
+      <option value="195">Sweden</option>
+      <option value="190">Switzerland</option>
+      <option value="224">Taiwan</option>
+      <option value="225">Tanzania</option>
+      <option value="214">Thailand</option>
+      <option value="213">Togo</option>
+      <option value="219">Tonga</option>
+      <option value="222">Trinidad and Tobago</option>
+      <option value="218">Tunisia</option>
+      <option value="221">Turkey</option>
+      <option value="217">Turkmenistan</option>
+      <option value="210">Turks and Caicos Islands</option>
+      <option value="223">Tuvalu</option>
+      <option value="227">Uganda</option>
+      <option value="226">Ukraine</option>
+      <option value="3">United Arab Emirates</option>
+      <option value="211">United Kingdom</option>
+      <option value="230">United States</option>
+      <option value="231">Uruguay</option>
+      <option value="232">Uzbekistan</option>
+      <option value="239">Vanuatu</option>
+      <option value="233">Vatican City State (Holy See)</option>
+      <option value="235">Venezuela</option>
+      <option value="238">Vietnam</option>
+      <option value="237">Virgin Islands (U.S.)</option>
+      <option value="240">Wallis and Futuna Islands</option>
+      <option value="245">Zambia</option>
+      <option value="246">Zimbabwe</option>
+    </select>
+  </div>
+  <div>
+    <label for="CheckoutData_BillingAddress1">Address Line 1</label>
+    <input autocomplete="no" id="CheckoutData_BillingAddress1" maxlength="35" name="CheckoutData.BillingAddress1" placeholder="Start typing street address and house number" required="true" type="text" value="" aria-required="true" aria-invalid="true" aria-describedby="CheckoutData_BillingAddress1-error-message" style="" data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <label for="CheckoutData_BillingAddress2">Address Line 2</label>
+    <input autocomplete="address-line2" id="CheckoutData_BillingAddress2" maxlength="35" name="CheckoutData.BillingAddress2" placeholder="Address Line 2" type="text" value="" style="" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <label for="BillingCity">City / Suburb</label>
+    <input id="BillingCity" maxlength="35" name="CheckoutData.BillingCity" placeholder="City / Suburb" type="text" value="" aria-required="true" aria-invalid="true" aria-describedby="BillingCity-error-message" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="BillingZIP">Zip / Postcode</label>
+    <input aria-label="Zip / Postcode" autocomplete="postal-code" id="BillingZIP" maxlength="10" name="CheckoutData.BillingZIP" placeholder="6 digits in the format A1A 1A1" type="text" value="" aria-required="true" aria-invalid="true" aria-describedby="BillingZIP-error-message" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="BillingStateID">State / Province</label>
+    <select aria-label="State / Province" autocomplete="address-level1" id="BillingStateID" name="CheckoutData.BillingStateID" aria-required="true" aria-invalid="true" aria-describedby="BillingStateID-error-message" style="" data-moz-autofill-type="address-level1">
+      <option value="">Please select</option>
+      <option value="12940">Alberta</option>
+      <option value="12938">British Columbia</option>
+      <option value="12941">Manitoba</option>
+      <option value="12937">New Brunswick</option>
+      <option value="12942">Newfoundland and Labrador</option>
+      <option selected="selected" value="12939">Northwest Territories</option>
+      <option value="12943">Nova Scotia</option>
+      <option value="12944">Nunavut</option>
+      <option value="12948">Ontario</option>
+      <option value="12945">Prince Edward Island</option>
+      <option value="12946">Quebec</option>
+      <option value="12936">Saskatchewan</option>
+      <option value="12947">Yukon Territory</option>
+    </select>
+  </div>
+  <div>
+    <label for="CheckoutData_BillingPhone">Mobile Phone</label>
+    <select id="BillingPhonePrefix" name="CheckoutData.BillingPhonePrefix" aria-label="Mobile Phone" autocomplete="tel-country-code" style="" data-moz-autofill-type="tel-country-code">
+                        
+      <option value="+93">‎+93</option>
+                        
+      <option value="+355">‎+355</option>
+                        
+      <option value="+213">‎+213</option>
+                        
+      <option value="+1684">‎+1684</option>
+                        
+      <option value="+376">‎+376</option>
+                        
+      <option value="+244">‎+244</option>
+                        
+      <option value="+1264">‎+1264</option>
+                        
+      <option value="+1268">‎+1268</option>
+                        
+      <option value="+54">‎+54</option>
+                        
+      <option value="+374">‎+374</option>
+                        
+      <option value="+297">‎+297</option>
+                        
+      <option value="+61">‎+61</option>
+                        
+      <option value="+43">‎+43</option>
+                        
+      <option value="+994">‎+994</option>
+                        
+      <option value="+1242">‎+1242</option>
+                        
+      <option value="+973">‎+973</option>
+                        
+      <option value="+880">‎+880</option>
+                        
+      <option value="+1246">‎+1246</option>
+                        
+      <option value="+375">‎+375</option>
+                        
+      <option value="+32">‎+32</option>
+                        
+      <option value="+501">‎+501</option>
+                        
+      <option value="+229">‎+229</option>
+                        
+      <option value="+1441">‎+1441</option>
+                        
+      <option value="+975">‎+975</option>
+                        
+      <option value="+591">‎+591</option>
+                        
+      <option value="+5997">‎+5997</option>
+                        
+      <option value="+387">‎+387</option>
+                        
+      <option value="+267">‎+267</option>
+                        
+      <option value="+55">‎+55</option>
+                        
+      <option value="+1284">‎+1284</option>
+                        
+      <option value="+673">‎+673</option>
+                        
+      <option value="+359">‎+359</option>
+                        
+      <option value="+226">‎+226</option>
+                        
+      <option value="+257">‎+257</option>
+                        
+      <option value="+855">‎+855</option>
+                        
+      <option value="+237">‎+237</option>
+                        
+      <option value="+1" selected="">‎+1</option>
+    </select>
+    <input autocomplete="tel-national" id="CheckoutData_BillingPhone" maxlength="16" name="CheckoutData.BillingPhone" placeholder="Mobile Phone" required="true" type="tel" value="" aria-required="true" aria-invalid="true" aria-describedby="CheckoutData_BillingPhone-error-message" style="" data-moz-autofill-type="tel-national">
+  </div>
+  <div> Mobile Phone is required</div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.whittard.co.uk</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <label for="dwfrm_singleshipping_shippingAddress_addressFields_firstName">
+      <span> * </span>
+      <span>First name</span>
+    </label>
+    <input type="text" id="dwfrm_singleshipping_shippingAddress_addressFields_firstName" name="dwfrm_singleshipping_shippingAddress_addressFields_firstName" value="" minlength="0" maxlength="32" placeholder="Enter your first name" aria-required="true" aria-invalid="false" aria-describedby="dwfrm_singleshipping_shippingAddress_addressFields_firstName-error" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="dwfrm_singleshipping_shippingAddress_addressFields_lastName">
+      <span> * </span>
+      <span>Last name</span>
+    </label>
+    <input type="text" id="dwfrm_singleshipping_shippingAddress_addressFields_lastName" name="dwfrm_singleshipping_shippingAddress_addressFields_lastName" value="" minlength="0" maxlength="32" placeholder="Enter your last name" aria-required="true" aria-invalid="false" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="dwfrm_singleshipping_shippingAddress_addressFields_email">
+            
+      <span>Email</span>
+        
+    </label>
+    <input type="email" id="dwfrm_singleshipping_shippingAddress_addressFields_email" name="dwfrm_singleshipping_shippingAddress_addressFields_email" minlength="0" maxlength="50" placeholder="Enter your email address" aria-required="true" aria-invalid="false" style="" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="dwfrm_singleshipping_shippingAddress_addressFields_phone">
+            
+      <span>Phone number</span>
+        
+    </label>
+    <input type="tel" id="dwfrm_singleshipping_shippingAddress_addressFields_phone" name="dwfrm_singleshipping_shippingAddress_addressFields_phone" minlength="0" maxlength="20" value="" placeholder="Enter your phone number" aria-invalid="false" style="" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label for="dwfrm_singleshipping_shippingAddress_addressFields_address">
+      <span>Address lookup</span>
+    </label>
+    <input type="text" id="dwfrm_singleshipping_shippingAddress_addressFields_address" name="dwfrm_singleshipping_shippingAddress_addressFields_address" value="" placeholder="Type your address or postcode" autocomplete="off" aria-invalid="false" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="dwfrm_singleshipping_shippingAddress_addressFields_companyName">
+                
+      <span>Company (optional)</span>
+            
+    </label>
+    <input type="text" id="dwfrm_singleshipping_shippingAddress_addressFields_companyName" name="dwfrm_singleshipping_shippingAddress_addressFields_companyName" minlength="2" maxlength="32" value="" placeholder="Enter your company name" style="" data-moz-autofill-type="organization">
+  </div>
+  <div>
+    <label for="dwfrm_singleshipping_shippingAddress_addressFields_address1">
+      <span> * </span>
+      <span>Address line 1</span>
+    </label>
+    <input type="text" id="dwfrm_singleshipping_shippingAddress_addressFields_address1" name="dwfrm_singleshipping_shippingAddress_addressFields_address1" value="" maxlength="32" placeholder="Enter your address 1" aria-required="true" aria-invalid="false" style="" data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <label for="dwfrm_singleshipping_shippingAddress_addressFields_address2">
+      <span>Address line 2</span>
+    </label>
+    <input type="text" id="dwfrm_singleshipping_shippingAddress_addressFields_address2" name="dwfrm_singleshipping_shippingAddress_addressFields_address2" value="" maxlength="32" placeholder="Enter your address 2" aria-invalid="false" style="" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <label for="dwfrm_singleshipping_shippingAddress_addressFields_city">
+      <span> * </span>
+      <span>Town/City</span>
+    </label>
+    <input type="text" id="dwfrm_singleshipping_shippingAddress_addressFields_city" name="dwfrm_singleshipping_shippingAddress_addressFields_city" value="" minlength="2" maxlength="40" placeholder="Enter your city/town" aria-required="true" aria-invalid="false" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="dwfrm_singleshipping_shippingAddress_addressFields_postal">
+      <span> * </span>
+      <span>Postcode</span>
+    </label>
+    <input type="text" id="dwfrm_singleshipping_shippingAddress_addressFields_postal" name="dwfrm_singleshipping_shippingAddress_addressFields_postal" value="" minlength="3" maxlength="10" placeholder="Enter your postcode" aria-required="true" style="" data-moz-autofill-type="postal-code">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.houseoffraser.co.uk</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <label for="firstName">First name</label> *
+    <input id="firstName" name="firstName" type="text" aria-required="true" placeholder="Enter first name" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="lastName">Last name</label> *
+    <input id="lastName" name="lastName" type="text" aria-required="true" placeholder="Enter last name" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="contactNumber">Contact number</label> *
+    <input id="contactNumber" name="contactNumber" type="tel" aria-required="true" placeholder="Enter contact number" style="" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label for="line1">Address line 1</label> *
+    <input id="line1" name="line1" type="text" placeholder="Start typing address or postcode" autocomplete="off" style="" data-moz-autofill-type="address-line1"> Enter address manually
+  </div>
+  <div>
+    <label for="line2">Address line 2</label>
+    <input id="line2" name="line2" type="text" autocomplete="off" style="" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <label for="towncity">Town/City</label> *
+    <input id="towncity" name="towncity" type="text" autocomplete="off" placeholder="Enter town or city" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="country">County/State</label>
+    <input id="county" name="county" type="text" placeholder="County/State" style="" data-moz-autofill-type="address-level1">
+  </div>
+  <div>
+    <label for="postcode">Postcode/Zip</label> *
+    <input id="postcode" name="postcode" type="text" autocomplete="off" placeholder="Enter postcode/ZIP" style="" data-moz-autofill-type="postal-code">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.tesco.com</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <label for="email">Email address</label>
+    <input type="email" name="email" id="email" required="" value="" aria-describedby="email-error" style="" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="password">Set password</label>
+    <input aria-describedby="ddsweb-password-creation-hint-text" autocomplete="current-password" id="password" name="password" required="" type="password" aria-invalid="false" value="" data-moz-autofill-type="password">
+  </div>
+  <div>
+    <label for="first-name">First name</label>
+    <input type="text" name="first-name" placeholder="" id="first-name" value="" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="last-name">Last name</label>
+    <input type="text" name="last-name" placeholder="" id="last-name" value="" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="phone-number">Phone number</label>
+  </div>
+  <div>
+    <input type="tel" name="phone-number" placeholder="" maxlength="20" id="phone-number" value="" style="" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label for="search-input-1">Address</label>
+    <input type="search" aria-autocomplete="list" aria-busy="false" aria-controls="search-input-1-listbox" aria-expanded="false" aria-owns="search-input-1-listbox" id="search-input-1" role="combobox" name="search-input" placeholder="Start typing and select your address" autocomplete="off" required="" value="" style="" data-moz-autofill-type="address-lookup">
+  </div>
+  <div>
+    <label for="address-line1">Address Line 1</label>
+    <input type="text" name="address-line1" placeholder="" id="address-line1" value="" style="" data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <label for="address-line2">Address Line 2 
+      <span>(optional)</span>
+    </label>
+    <input type="text" name="address-line2" placeholder="" id="address-line2" value="" style="" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <label for="address-line3">Address Line 3 
+      <span>(optional)</span>
+    </label>
+    <input type="text" name="address-line3" placeholder="" id="address-line3" value="" style="" data-moz-autofill-type="address-line3">
+  </div>
+  <div>
+    <label for="town">Town or city</label>
+    <input type="text" name="town" placeholder="" id="town" value="" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="postcode">Postcode</label>
+    <input type="text" name="postcode" placeholder="e.g EC1R 2NT" id="postcode" value="" style="" data-moz-autofill-type="postal-code">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.amazon.co.uk (Germany selected as country)</h3>
+<p><i></i></p>
+
+<form>
+  <div></div>
+  <div>
+    <label for="address-ui-widgets-countryCode-dropdown-nativeId">
+      <span>Country/Region</span>
+    </label>
+  </div>
+  <div> Germany</div>
+  <div>
+    <select name="address-ui-widgets-countryCode" autocomplete="off" role="combobox" id="address-ui-widgets-countryCode-dropdown-nativeId" aria-required="true" style="" data-moz-autofill-type="country">
+      <option value="AX">Aland Islands</option>
+      <option value="AL">Albania</option>
+      <option value="DZ">Algeria</option>
+      <option value="AS">American Samoa</option>
+      <option value="AD">Andorra</option>
+      <option value="AO">Angola</option>
+      <option value="AI">Anguilla</option>
+      <option value="AQ">Antarctica</option>
+      <option value="AG">Antigua and Barbuda</option>
+      <option value="AR">Argentina</option>
+      <option value="AM">Armenia</option>
+      <option value="AW">Aruba</option>
+      <option value="AU">Australia</option>
+      <option value="AT">Austria</option>
+      <option value="AZ">Azerbaijan</option>
+      <option value="BS">Bahamas, The</option>
+      <option value="BH">Bahrain</option>
+      <option value="BD">Bangladesh</option>
+      <option value="BB">Barbados</option>
+      <option value="BY">Belarus</option>
+      <option value="BE">Belgium</option>
+      <option value="BZ">Belize</option>
+      <option value="BJ">Benin</option>
+      <option value="BM">Bermuda</option>
+      <option value="BT">Bhutan</option>
+      <option value="BO">Bolivia</option>
+      <option value="BQ">Bonaire, Saint Eustatius and Saba</option>
+      <option value="BA">Bosnia and Herzegovina</option>
+      <option value="BW">Botswana</option>
+      <option value="BV">Bouvet Island</option>
+      <option value="BR">Brazil</option>
+      <option value="IO">British Indian Ocean Territory</option>
+      <option value="BN">Brunei Darussalam</option>
+      <option value="BG">Bulgaria</option>
+      <option value="BF">Burkina Faso</option>
+      <option value="BI">Burundi</option>
+      <option value="KH">Cambodia</option>
+      <option value="CM">Cameroon</option>
+      <option value="CA">Canada</option>
+      <option value="IC">Canary Islands</option>
+      <option value="CV">Cape Verde</option>
+      <option value="KY">Cayman Islands</option>
+      <option value="CF">Central African Republic</option>
+      <option value="TD">Chad</option>
+      <option value="CL">Chile</option>
+      <option value="CN">China</option>
+      <option value="CX">Christmas Island</option>
+      <option value="CC">Cocos (Keeling) Islands</option>
+      <option value="CO">Colombia</option>
+      <option value="KM">Comoros</option>
+      <option value="CG">Congo</option>
+      <option value="CD">Congo, Democratic Republic of</option>
+      <option value="CK">Cook Islands</option>
+      <option value="CR">Costa Rica</option>
+      <option value="HR">Croatia</option>
+      <option value="CW">Curaçao</option>
+      <option value="CY">Cyprus</option>
+      <option value="CZ">Czech Republic</option>
+      <option value="DK">Denmark</option>
+      <option value="DJ">Djibouti</option>
+      <option value="DM">Dominica, Commonwealth of</option>
+      <option value="DO">Dominican Republic</option>
+      <option value="TL">East Timor</option>
+      <option value="EC">Ecuador</option>
+      <option value="EG">Egypt</option>
+      <option value="SV">El Salvador</option>
+      <option value="GQ">Equatorial Guinea</option>
+      <option value="ER">Eritrea</option>
+      <option value="EE">Estonia</option>
+      <option value="ET">Ethiopia</option>
+      <option value="FK">Falkland Islands</option>
+      <option value="FO">Faroe Islands</option>
+      <option value="FJ">Fiji</option>
+      <option value="FI">Finland</option>
+      <option value="FR">France</option>
+      <option value="GF">French Guiana</option>
+      <option value="PF">French Polynesia</option>
+      <option value="TF">French Southern Territories</option>
+      <option value="GA">Gabon</option>
+      <option value="GM">Gambia, The</option>
+      <option value="GE">Georgia</option>
+      <option value="DE" selected="">Germany</option>
+      <option value="GH">Ghana</option>
+      <option value="GI">Gibraltar</option>
+      <option value="GR">Greece</option>
+      <option value="GL">Greenland</option>
+      <option value="GD">Grenada</option>
+      <option value="GP">Guadeloupe</option>
+      <option value="GU">Guam</option>
+      <option value="GT">Guatemala</option>
+      <option value="GG">Guernsey</option>
+      <option value="GN">Guinea</option>
+      <option value="GW">Guinea-Bissau</option>
+      <option value="GY">Guyana</option>
+      <option value="HT">Haiti</option>
+      <option value="HM">Heard Island and the McDonald Islands</option>
+      <option value="VA">Holy See</option>
+      <option value="HN">Honduras</option>
+      <option value="HK">Hong Kong</option>
+      <option value="HU">Hungary</option>
+      <option value="IS">Iceland</option>
+      <option value="IN">India</option>
+      <option value="ID">Indonesia</option>
+      <option value="IE">Ireland, Republic of</option>
+      <option value="IM">Isle of Man</option>
+      <option value="IL">Israel</option>
+      <option value="IT">Italy</option>
+      <option value="CI">Ivory Coast (Côte D'ivoire)</option>
+      <option value="JM">Jamaica</option>
+      <option value="JP">Japan</option>
+      <option value="JE">Jersey</option>
+      <option value="JO">Jordan</option>
+      <option value="KZ">Kazakhstan</option>
+      <option value="KE">Kenya</option>
+      <option value="KI">Kiribati</option>
+      <option value="KR">Korea, Republic of</option>
+      <option value="XK">Kosovo</option>
+      <option value="KW">Kuwait</option>
+      <option value="KG">Kyrgyzstan</option>
+      <option value="LA">Lao, People's Democratic Republic</option>
+      <option value="LV">Latvia</option>
+      <option value="LB">Lebanon</option>
+      <option value="LS">Lesotho</option>
+      <option value="LR">Liberia</option>
+      <option value="LY">Libya</option>
+      <option value="LI">Liechtenstein</option>
+      <option value="LT">Lithuania</option>
+      <option value="LU">Luxembourg</option>
+      <option value="MO">Macao</option>
+      <option value="MK">Macedonia, The Former Yugoslav Republic of</option>
+      <option value="MG">Madagascar</option>
+      <option value="MW">Malawi</option>
+      <option value="MY">Malaysia</option>
+      <option value="MV">Maldives</option>
+      <option value="ML">Mali</option>
+      <option value="MT">Malta</option>
+      <option value="MH">Marshall Islands</option>
+      <option value="MQ">Martinique</option>
+      <option value="MR">Mauritania</option>
+      <option value="MU">Mauritius</option>
+      <option value="YT">Mayotte</option>
+      <option value="MX">Mexico</option>
+      <option value="FM">Micronesia, Federated States of</option>
+      <option value="MD">Moldova, Republic of</option>
+      <option value="MC">Monaco</option>
+      <option value="MN">Mongolia</option>
+      <option value="ME">Montenegro</option>
+      <option value="MS">Montserrat</option>
+      <option value="MA">Morocco</option>
+      <option value="MZ">Mozambique</option>
+      <option value="MM">Myanmar</option>
+      <option value="NA">Namibia</option>
+      <option value="NR">Nauru</option>
+      <option value="NP">Nepal</option>
+      <option value="NL">Netherlands</option>
+      <option value="AN">Netherlands Antilles</option>
+      <option value="NC">New Caledonia</option>
+      <option value="NZ">New Zealand</option>
+      <option value="NI">Nicaragua</option>
+      <option value="NE">Niger</option>
+      <option value="NG">Nigeria</option>
+      <option value="NU">Niue</option>
+      <option value="NF">Norfolk Island</option>
+      <option value="MP">Northern Mariana Islands</option>
+      <option value="NO">Norway</option>
+      <option value="OM">Oman</option>
+      <option value="PK">Pakistan</option>
+      <option value="PW">Palau</option>
+      <option value="PS">Palestinian Territories</option>
+      <option value="PA">Panama</option>
+      <option value="PG">Papua New Guinea</option>
+      <option value="PY">Paraguay</option>
+      <option value="PE">Peru</option>
+      <option value="PH">Philippines</option>
+      <option value="PN">Pitcairn</option>
+      <option value="PL">Poland</option>
+      <option value="PT">Portugal</option>
+      <option value="PR">Puerto Rico</option>
+      <option value="QA">Qatar</option>
+      <option value="RE">Reunion</option>
+      <option value="RO">Romania</option>
+      <option value="RU">Russian Federation</option>
+      <option value="RW">Rwanda</option>
+      <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+      <option value="KN">Saint Kitts and Nevis</option>
+      <option value="LC">Saint Lucia</option>
+      <option value="PM">Saint Pierre and Miquelon</option>
+      <option value="VC">Saint Vincent and the Grenadines</option>
+      <option value="WS">Samoa</option>
+      <option value="SM">San Marino</option>
+      <option value="ST">Sao Tome and Principe</option>
+      <option value="SA">Saudi Arabia</option>
+      <option value="SN">Senegal</option>
+      <option value="RS">Serbia</option>
+      <option value="SC">Seychelles</option>
+      <option value="SL">Sierra Leone</option>
+      <option value="SG">Singapore</option>
+      <option value="SX">Sint Maarten</option>
+      <option value="SK">Slovakia</option>
+      <option value="SI">Slovenia</option>
+      <option value="SB">Solomon Islands</option>
+      <option value="SO">Somalia</option>
+      <option value="ZA">South Africa</option>
+      <option value="GS">South Georgia and the South Sandwich Islands</option>
+      <option value="ES">Spain</option>
+      <option value="LK">Sri Lanka</option>
+      <option value="SR">Suriname</option>
+      <option value="SJ">Svalbard and Jan Mayen</option>
+      <option value="SZ">Swaziland</option>
+      <option value="SE">Sweden</option>
+      <option value="CH">Switzerland</option>
+      <option value="TW">Taiwan</option>
+      <option value="TJ">Tajikistan</option>
+      <option value="TZ">Tanzania, United Republic of</option>
+      <option value="TH">Thailand</option>
+      <option value="TG">Togo</option>
+      <option value="TK">Tokelau</option>
+      <option value="TO">Tonga</option>
+      <option value="TT">Trinidad and Tobago</option>
+      <option value="TN">Tunisia</option>
+      <option value="TR">Turkey</option>
+      <option value="TM">Turkmenistan</option>
+      <option value="TC">Turks and Caicos Islands</option>
+      <option value="TV">Tuvalu</option>
+      <option value="UG">Uganda</option>
+      <option value="UA">Ukraine</option>
+      <option value="AE">United Arab Emirates</option>
+      <option value="GB">United Kingdom</option>
+      <option value="US">United States</option>
+      <option value="UM">United States Minor Outlying Islands</option>
+      <option value="UY">Uruguay</option>
+      <option value="UZ">Uzbekistan</option>
+      <option value="VU">Vanuatu</option>
+      <option value="VE">Venezuela</option>
+      <option value="VN">Vietnam</option>
+      <option value="VG">Virgin Islands, British</option>
+      <option value="VI">Virgin Islands, US</option>
+      <option value="WF">Wallis and Futuna</option>
+      <option value="EH">Western Sahara</option>
+      <option value="YE">Yemen</option>
+      <option value="ZM">Zambia</option>
+      <option value="ZW">Zimbabwe</option>
+    </select>
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressFullName">
+      <span>Full name (first name and surname)</span>
+    </label>
+    <input type="text" maxlength="50" id="address-ui-widgets-enterAddressFullName" autocomplete="name" name="address-ui-widgets-enterAddressFullName" spellcheck="false" aria-label="Full name (first name and surname)" aria-required="true" style="" data-moz-autofill-type="name">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressPhoneNumber">
+      <span>Phone number</span>
+    </label>
+    <input type="text" maxlength="20" id="address-ui-widgets-enterAddressPhoneNumber" autocomplete="tel" name="address-ui-widgets-enterAddressPhoneNumber" spellcheck="false" aria-describedby="address-ui-widgets-enterAddressPhoneNumber-help-text" aria-label="Phone number" aria-required="true" style="" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressLine2">
+      <span>Street address</span>
+    </label>
+    <input type="text" maxlength="60" id="address-ui-widgets-enterAddressLine2" autocomplete="address-line2" name="address-ui-widgets-enterAddressLine2" spellcheck="false" aria-label="Street address" style="" data-moz-autofill-type="street-address">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressLine1">
+      <span>Company name</span>
+    </label>
+    <input type="text" maxlength="60" id="address-ui-widgets-enterAddressLine1" autocomplete="address-line1" name="address-ui-widgets-enterAddressLine1" spellcheck="false" aria-describedby="address-ui-widgets-enterAddressLine1-help-text" aria-label="Company name" aria-required="true" style="" data-moz-autofill-type="organization">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressPostalCode">
+      <span>Postcode</span>
+    </label>
+    <input type="text" maxlength="20" id="address-ui-widgets-enterAddressPostalCode" autocomplete="postal-code" name="address-ui-widgets-enterAddressPostalCode" spellcheck="false" aria-label="Postcode" aria-required="true" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressCity">
+      <span>Town/City</span>
+    </label>
+    <input type="text" maxlength="50" id="address-ui-widgets-enterAddressCity" autocomplete="address-level2" name="address-ui-widgets-enterAddressCity" spellcheck="false" aria-label="Town/City" aria-required="true" style="" data-moz-autofill-type="address-level2">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+
+<h3>www.amazon.co.uk (UK selected as country)</h3>
+<p><i></i></p>
+
+<form>
+  <div></div>
+  <div>
+    <label for="address-ui-widgets-countryCode-dropdown-nativeId">
+      <span>Country/Region</span>
+    </label>
+  </div>
+  <div> United Kingdom</div>
+  <div>
+    <select name="address-ui-widgets-countryCode" autocomplete="off" role="combobox" id="address-ui-widgets-countryCode-dropdown-nativeId" aria-required="true" aria-expanded="false" style="" data-moz-autofill-type="country">
+      <option value="AX">Aland Islands</option>
+      <option value="AL">Albania</option>
+      <option value="DZ">Algeria</option>
+      <option value="AS">American Samoa</option>
+      <option value="AD">Andorra</option>
+      <option value="AO">Angola</option>
+      <option value="AI">Anguilla</option>
+      <option value="AQ">Antarctica</option>
+      <option value="AG">Antigua and Barbuda</option>
+      <option value="AR">Argentina</option>
+      <option value="AM">Armenia</option>
+      <option value="AW">Aruba</option>
+      <option value="AU">Australia</option>
+      <option value="AT">Austria</option>
+      <option value="AZ">Azerbaijan</option>
+      <option value="BS">Bahamas, The</option>
+      <option value="BH">Bahrain</option>
+      <option value="BD">Bangladesh</option>
+      <option value="BB">Barbados</option>
+      <option value="BY">Belarus</option>
+      <option value="BE">Belgium</option>
+      <option value="BZ">Belize</option>
+      <option value="BJ">Benin</option>
+      <option value="BM">Bermuda</option>
+      <option value="BT">Bhutan</option>
+      <option value="BO">Bolivia</option>
+      <option value="BQ">Bonaire, Saint Eustatius and Saba</option>
+      <option value="BA">Bosnia and Herzegovina</option>
+      <option value="BW">Botswana</option>
+      <option value="BV">Bouvet Island</option>
+      <option value="BR">Brazil</option>
+      <option value="IO">British Indian Ocean Territory</option>
+      <option value="BN">Brunei Darussalam</option>
+      <option value="BG">Bulgaria</option>
+      <option value="BF">Burkina Faso</option>
+      <option value="BI">Burundi</option>
+      <option value="KH">Cambodia</option>
+      <option value="CM">Cameroon</option>
+      <option value="CA">Canada</option>
+      <option value="IC">Canary Islands</option>
+      <option value="CV">Cape Verde</option>
+      <option value="KY">Cayman Islands</option>
+      <option value="CF">Central African Republic</option>
+      <option value="TD">Chad</option>
+      <option value="CL">Chile</option>
+      <option value="CN">China</option>
+      <option value="CX">Christmas Island</option>
+      <option value="CC">Cocos (Keeling) Islands</option>
+      <option value="CO">Colombia</option>
+      <option value="KM">Comoros</option>
+      <option value="CG">Congo</option>
+      <option value="CD">Congo, Democratic Republic of</option>
+      <option value="CK">Cook Islands</option>
+      <option value="CR">Costa Rica</option>
+      <option value="HR">Croatia</option>
+      <option value="CW">Curaçao</option>
+      <option value="CY">Cyprus</option>
+      <option value="CZ">Czech Republic</option>
+      <option value="DK">Denmark</option>
+      <option value="DJ">Djibouti</option>
+      <option value="DM">Dominica, Commonwealth of</option>
+      <option value="DO">Dominican Republic</option>
+      <option value="TL">East Timor</option>
+      <option value="EC">Ecuador</option>
+      <option value="EG">Egypt</option>
+      <option value="SV">El Salvador</option>
+      <option value="GQ">Equatorial Guinea</option>
+      <option value="ER">Eritrea</option>
+      <option value="EE">Estonia</option>
+      <option value="ET">Ethiopia</option>
+      <option value="FK">Falkland Islands</option>
+      <option value="FO">Faroe Islands</option>
+      <option value="FJ">Fiji</option>
+      <option value="FI">Finland</option>
+      <option value="FR">France</option>
+      <option value="GF">French Guiana</option>
+      <option value="PF">French Polynesia</option>
+      <option value="TF">French Southern Territories</option>
+      <option value="GA">Gabon</option>
+      <option value="GM">Gambia, The</option>
+      <option value="GE">Georgia</option>
+      <option value="DE">Germany</option>
+      <option value="GH">Ghana</option>
+      <option value="GI">Gibraltar</option>
+      <option value="GR">Greece</option>
+      <option value="GL">Greenland</option>
+      <option value="GD">Grenada</option>
+      <option value="GP">Guadeloupe</option>
+      <option value="GU">Guam</option>
+      <option value="GT">Guatemala</option>
+      <option value="GG">Guernsey</option>
+      <option value="GN">Guinea</option>
+      <option value="GW">Guinea-Bissau</option>
+      <option value="GY">Guyana</option>
+      <option value="HT">Haiti</option>
+      <option value="HM">Heard Island and the McDonald Islands</option>
+      <option value="VA">Holy See</option>
+      <option value="HN">Honduras</option>
+      <option value="HK">Hong Kong</option>
+      <option value="HU">Hungary</option>
+      <option value="IS">Iceland</option>
+      <option value="IN">India</option>
+      <option value="ID">Indonesia</option>
+      <option value="IE">Ireland, Republic of</option>
+      <option value="IM">Isle of Man</option>
+      <option value="IL">Israel</option>
+      <option value="IT">Italy</option>
+      <option value="CI">Ivory Coast (Côte D'ivoire)</option>
+      <option value="JM">Jamaica</option>
+      <option value="JP">Japan</option>
+      <option value="JE">Jersey</option>
+      <option value="JO">Jordan</option>
+      <option value="KZ">Kazakhstan</option>
+      <option value="KE">Kenya</option>
+      <option value="KI">Kiribati</option>
+      <option value="KR">Korea, Republic of</option>
+      <option value="XK">Kosovo</option>
+      <option value="KW">Kuwait</option>
+      <option value="KG">Kyrgyzstan</option>
+      <option value="LA">Lao, People's Democratic Republic</option>
+      <option value="LV">Latvia</option>
+      <option value="LB">Lebanon</option>
+      <option value="LS">Lesotho</option>
+      <option value="LR">Liberia</option>
+      <option value="LY">Libya</option>
+      <option value="LI">Liechtenstein</option>
+      <option value="LT">Lithuania</option>
+      <option value="LU">Luxembourg</option>
+      <option value="MO">Macao</option>
+      <option value="MK">Macedonia, The Former Yugoslav Republic of</option>
+      <option value="MG">Madagascar</option>
+      <option value="MW">Malawi</option>
+      <option value="MY">Malaysia</option>
+      <option value="MV">Maldives</option>
+      <option value="ML">Mali</option>
+      <option value="MT">Malta</option>
+      <option value="MH">Marshall Islands</option>
+      <option value="MQ">Martinique</option>
+      <option value="MR">Mauritania</option>
+      <option value="MU">Mauritius</option>
+      <option value="YT">Mayotte</option>
+      <option value="MX">Mexico</option>
+      <option value="FM">Micronesia, Federated States of</option>
+      <option value="MD">Moldova, Republic of</option>
+      <option value="MC">Monaco</option>
+      <option value="MN">Mongolia</option>
+      <option value="ME">Montenegro</option>
+      <option value="MS">Montserrat</option>
+      <option value="MA">Morocco</option>
+      <option value="MZ">Mozambique</option>
+      <option value="MM">Myanmar</option>
+      <option value="NA">Namibia</option>
+      <option value="NR">Nauru</option>
+      <option value="NP">Nepal</option>
+      <option value="NL">Netherlands</option>
+      <option value="AN">Netherlands Antilles</option>
+      <option value="NC">New Caledonia</option>
+      <option value="NZ">New Zealand</option>
+      <option value="NI">Nicaragua</option>
+      <option value="NE">Niger</option>
+      <option value="NG">Nigeria</option>
+      <option value="NU">Niue</option>
+      <option value="NF">Norfolk Island</option>
+      <option value="MP">Northern Mariana Islands</option>
+      <option value="NO">Norway</option>
+      <option value="OM">Oman</option>
+      <option value="PK">Pakistan</option>
+      <option value="PW">Palau</option>
+      <option value="PS">Palestinian Territories</option>
+      <option value="PA">Panama</option>
+      <option value="PG">Papua New Guinea</option>
+      <option value="PY">Paraguay</option>
+      <option value="PE">Peru</option>
+      <option value="PH">Philippines</option>
+      <option value="PN">Pitcairn</option>
+      <option value="PL">Poland</option>
+      <option value="PT">Portugal</option>
+      <option value="PR">Puerto Rico</option>
+      <option value="QA">Qatar</option>
+      <option value="RE">Reunion</option>
+      <option value="RO">Romania</option>
+      <option value="RU">Russian Federation</option>
+      <option value="RW">Rwanda</option>
+      <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+      <option value="KN">Saint Kitts and Nevis</option>
+      <option value="LC">Saint Lucia</option>
+      <option value="PM">Saint Pierre and Miquelon</option>
+      <option value="VC">Saint Vincent and the Grenadines</option>
+      <option value="WS">Samoa</option>
+      <option value="SM">San Marino</option>
+      <option value="ST">Sao Tome and Principe</option>
+      <option value="SA">Saudi Arabia</option>
+      <option value="SN">Senegal</option>
+      <option value="RS">Serbia</option>
+      <option value="SC">Seychelles</option>
+      <option value="SL">Sierra Leone</option>
+      <option value="SG">Singapore</option>
+      <option value="SX">Sint Maarten</option>
+      <option value="SK">Slovakia</option>
+      <option value="SI">Slovenia</option>
+      <option value="SB">Solomon Islands</option>
+      <option value="SO">Somalia</option>
+      <option value="ZA">South Africa</option>
+      <option value="GS">South Georgia and the South Sandwich Islands</option>
+      <option value="ES">Spain</option>
+      <option value="LK">Sri Lanka</option>
+      <option value="SR">Suriname</option>
+      <option value="SJ">Svalbard and Jan Mayen</option>
+      <option value="SZ">Swaziland</option>
+      <option value="SE">Sweden</option>
+      <option value="CH">Switzerland</option>
+      <option value="TW">Taiwan</option>
+      <option value="TJ">Tajikistan</option>
+      <option value="TZ">Tanzania, United Republic of</option>
+      <option value="TH">Thailand</option>
+      <option value="TG">Togo</option>
+      <option value="TK">Tokelau</option>
+      <option value="TO">Tonga</option>
+      <option value="TT">Trinidad and Tobago</option>
+      <option value="TN">Tunisia</option>
+      <option value="TR">Turkey</option>
+      <option value="TM">Turkmenistan</option>
+      <option value="TC">Turks and Caicos Islands</option>
+      <option value="TV">Tuvalu</option>
+      <option value="UG">Uganda</option>
+      <option value="UA">Ukraine</option>
+      <option value="AE">United Arab Emirates</option>
+      <option value="GB" selected="">United Kingdom</option>
+      <option value="US">United States</option>
+      <option value="UM">United States Minor Outlying Islands</option>
+      <option value="UY">Uruguay</option>
+      <option value="UZ">Uzbekistan</option>
+      <option value="VU">Vanuatu</option>
+      <option value="VE">Venezuela</option>
+      <option value="VN">Vietnam</option>
+      <option value="VG">Virgin Islands, British</option>
+      <option value="VI">Virgin Islands, US</option>
+      <option value="WF">Wallis and Futuna</option>
+      <option value="EH">Western Sahara</option>
+      <option value="YE">Yemen</option>
+      <option value="ZM">Zambia</option>
+      <option value="ZW">Zimbabwe</option>
+    </select>
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressFullName">
+      <span>Full name (first name and surname)</span>
+    </label>
+    <input type="text" maxlength="50" value="Neil" id="address-ui-widgets-enterAddressFullName" autocomplete="name" name="address-ui-widgets-enterAddressFullName" spellcheck="false" aria-label="Full name (first name and surname)" aria-required="true" style="" data-moz-autofill-type="name">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressPhoneNumber">
+      <span>Phone number</span>
+    </label>
+    <input type="text" maxlength="20" value="+16475019516" id="address-ui-widgets-enterAddressPhoneNumber" autocomplete="tel" placeholder="Your 10 or 9 digit phone number" name="address-ui-widgets-enterAddressPhoneNumber" spellcheck="false" aria-describedby="address-ui-widgets-enterAddressPhoneNumber-help-text" aria-label="Phone number" aria-required="true" style="" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressPostalCode">
+      <span>Postcode</span>
+    </label>
+    <input type="text" maxlength="20" id="address-ui-widgets-enterAddressPostalCode" placeholder="Enter your area postcode" name="address-ui-widgets-enterAddressPostalCode" spellcheck="false" aria-label="Postcode" aria-required="true" autocomplete="off" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressLine1">
+      <span>Address Line 1 (or Company Name)</span>
+    </label>
+    <input type="text" maxlength="60" id="address-ui-widgets-enterAddressLine1" placeholder="Start typing your address to get suggestions" name="address-ui-widgets-enterAddressLine1" spellcheck="false" aria-label="Address Line 1 (or Company Name)" aria-required="true" autocomplete="address-ui-widgets-enterAddressLine1" style="" data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressLine2">
+      <span>Address line 2 (optional)</span>
+    </label>
+    <input type="text" maxlength="60" id="address-ui-widgets-enterAddressLine2" name="address-ui-widgets-enterAddressLine2" spellcheck="false" aria-label="Address line 2 (optional)" autocomplete="address-ui-widgets-enterAddressLine2" style="" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressCity">
+      <span>Town/City</span>
+    </label>
+    <input type="text" maxlength="50" id="address-ui-widgets-enterAddressCity" name="address-ui-widgets-enterAddressCity" spellcheck="false" aria-label="Town/City" aria-required="true" autocomplete="address-ui-widgets-enterAddressCity" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressDistrictOrCounty">
+      <span>County (if applicable)</span>
+    </label>
+    <input type="text" maxlength="20" id="address-ui-widgets-enterAddressDistrictOrCounty" name="address-ui-widgets-enterAddressDistrictOrCounty" spellcheck="false" aria-label="County (if applicable)" style="" data-moz-autofill-type="address-level1">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.amazon.co.uk  (Argentina selected as country)</h3>
+<p><i>Form for Argentina, state is not filled in correctly</i></p>
+
+<form>
+  <div></div>
+  <div>
+    <label for="address-ui-widgets-countryCode-dropdown-nativeId">
+      <span>Country/Region</span>
+    </label>
+  </div>
+  <div> Argentina</div>
+  <div>
+    <select name="address-ui-widgets-countryCode" autocomplete="off" role="combobox" id="address-ui-widgets-countryCode-dropdown-nativeId" aria-required="true" style="" data-moz-autofill-type="country">
+      <option value="AX">Aland Islands</option>
+      <option value="AL">Albania</option>
+      <option value="DZ">Algeria</option>
+      <option value="AS">American Samoa</option>
+      <option value="AD">Andorra</option>
+      <option value="AO">Angola</option>
+      <option value="AI">Anguilla</option>
+      <option value="AQ">Antarctica</option>
+      <option value="AG">Antigua and Barbuda</option>
+      <option value="AR" selected="">Argentina</option>
+      <option value="AM">Armenia</option>
+      <option value="AW">Aruba</option>
+      <option value="AU">Australia</option>
+      <option value="AT">Austria</option>
+      <option value="AZ">Azerbaijan</option>
+      <option value="BS">Bahamas, The</option>
+      <option value="BH">Bahrain</option>
+      <option value="BD">Bangladesh</option>
+      <option value="BB">Barbados</option>
+      <option value="BY">Belarus</option>
+      <option value="BE">Belgium</option>
+      <option value="BZ">Belize</option>
+      <option value="BJ">Benin</option>
+      <option value="BM">Bermuda</option>
+      <option value="BT">Bhutan</option>
+      <option value="BO">Bolivia</option>
+      <option value="BQ">Bonaire, Saint Eustatius and Saba</option>
+      <option value="BA">Bosnia and Herzegovina</option>
+      <option value="BW">Botswana</option>
+      <option value="BV">Bouvet Island</option>
+      <option value="BR">Brazil</option>
+      <option value="IO">British Indian Ocean Territory</option>
+      <option value="BN">Brunei Darussalam</option>
+      <option value="BG">Bulgaria</option>
+      <option value="BF">Burkina Faso</option>
+      <option value="BI">Burundi</option>
+      <option value="KH">Cambodia</option>
+      <option value="CM">Cameroon</option>
+      <option value="CA">Canada</option>
+      <option value="IC">Canary Islands</option>
+      <option value="CV">Cape Verde</option>
+      <option value="KY">Cayman Islands</option>
+      <option value="CF">Central African Republic</option>
+      <option value="TD">Chad</option>
+      <option value="CL">Chile</option>
+      <option value="CN">China</option>
+      <option value="CX">Christmas Island</option>
+      <option value="CC">Cocos (Keeling) Islands</option>
+      <option value="CO">Colombia</option>
+      <option value="KM">Comoros</option>
+      <option value="CG">Congo</option>
+      <option value="CD">Congo, Democratic Republic of</option>
+      <option value="CK">Cook Islands</option>
+      <option value="CR">Costa Rica</option>
+      <option value="HR">Croatia</option>
+      <option value="CW">Curaçao</option>
+      <option value="CY">Cyprus</option>
+      <option value="CZ">Czech Republic</option>
+      <option value="DK">Denmark</option>
+      <option value="DJ">Djibouti</option>
+      <option value="DM">Dominica, Commonwealth of</option>
+      <option value="DO">Dominican Republic</option>
+      <option value="TL">East Timor</option>
+      <option value="EC">Ecuador</option>
+      <option value="EG">Egypt</option>
+      <option value="SV">El Salvador</option>
+      <option value="GQ">Equatorial Guinea</option>
+      <option value="ER">Eritrea</option>
+      <option value="EE">Estonia</option>
+      <option value="ET">Ethiopia</option>
+      <option value="FK">Falkland Islands</option>
+      <option value="FO">Faroe Islands</option>
+      <option value="FJ">Fiji</option>
+      <option value="FI">Finland</option>
+      <option value="FR">France</option>
+      <option value="GF">French Guiana</option>
+      <option value="PF">French Polynesia</option>
+      <option value="TF">French Southern Territories</option>
+      <option value="GA">Gabon</option>
+      <option value="GM">Gambia, The</option>
+      <option value="GE">Georgia</option>
+      <option value="DE">Germany</option>
+      <option value="GH">Ghana</option>
+      <option value="GI">Gibraltar</option>
+      <option value="GR">Greece</option>
+      <option value="GL">Greenland</option>
+      <option value="GD">Grenada</option>
+      <option value="GP">Guadeloupe</option>
+      <option value="GU">Guam</option>
+      <option value="GT">Guatemala</option>
+      <option value="GG">Guernsey</option>
+      <option value="GN">Guinea</option>
+      <option value="GW">Guinea-Bissau</option>
+      <option value="GY">Guyana</option>
+      <option value="HT">Haiti</option>
+      <option value="HM">Heard Island and the McDonald Islands</option>
+      <option value="VA">Holy See</option>
+      <option value="HN">Honduras</option>
+      <option value="HK">Hong Kong</option>
+      <option value="HU">Hungary</option>
+      <option value="IS">Iceland</option>
+      <option value="IN">India</option>
+      <option value="ID">Indonesia</option>
+      <option value="IE">Ireland, Republic of</option>
+      <option value="IM">Isle of Man</option>
+      <option value="IL">Israel</option>
+      <option value="IT">Italy</option>
+      <option value="CI">Ivory Coast (Côte D'ivoire)</option>
+      <option value="JM">Jamaica</option>
+      <option value="JP">Japan</option>
+      <option value="JE">Jersey</option>
+      <option value="JO">Jordan</option>
+      <option value="KZ">Kazakhstan</option>
+      <option value="KE">Kenya</option>
+      <option value="KI">Kiribati</option>
+      <option value="KR">Korea, Republic of</option>
+      <option value="XK">Kosovo</option>
+      <option value="KW">Kuwait</option>
+      <option value="KG">Kyrgyzstan</option>
+      <option value="LA">Lao, People's Democratic Republic</option>
+      <option value="LV">Latvia</option>
+      <option value="LB">Lebanon</option>
+      <option value="LS">Lesotho</option>
+      <option value="LR">Liberia</option>
+      <option value="LY">Libya</option>
+      <option value="LI">Liechtenstein</option>
+      <option value="LT">Lithuania</option>
+      <option value="LU">Luxembourg</option>
+      <option value="MO">Macao</option>
+      <option value="MK">Macedonia, The Former Yugoslav Republic of</option>
+      <option value="MG">Madagascar</option>
+      <option value="MW">Malawi</option>
+      <option value="MY">Malaysia</option>
+      <option value="MV">Maldives</option>
+      <option value="ML">Mali</option>
+      <option value="MT">Malta</option>
+      <option value="MH">Marshall Islands</option>
+      <option value="MQ">Martinique</option>
+      <option value="MR">Mauritania</option>
+      <option value="MU">Mauritius</option>
+      <option value="YT">Mayotte</option>
+      <option value="MX">Mexico</option>
+      <option value="FM">Micronesia, Federated States of</option>
+      <option value="MD">Moldova, Republic of</option>
+      <option value="MC">Monaco</option>
+      <option value="MN">Mongolia</option>
+      <option value="ME">Montenegro</option>
+      <option value="MS">Montserrat</option>
+      <option value="MA">Morocco</option>
+      <option value="MZ">Mozambique</option>
+      <option value="MM">Myanmar</option>
+      <option value="NA">Namibia</option>
+      <option value="NR">Nauru</option>
+      <option value="NP">Nepal</option>
+      <option value="NL">Netherlands</option>
+      <option value="AN">Netherlands Antilles</option>
+      <option value="NC">New Caledonia</option>
+      <option value="NZ">New Zealand</option>
+      <option value="NI">Nicaragua</option>
+      <option value="NE">Niger</option>
+      <option value="NG">Nigeria</option>
+      <option value="NU">Niue</option>
+      <option value="NF">Norfolk Island</option>
+      <option value="MP">Northern Mariana Islands</option>
+      <option value="NO">Norway</option>
+      <option value="OM">Oman</option>
+      <option value="PK">Pakistan</option>
+      <option value="PW">Palau</option>
+      <option value="PS">Palestinian Territories</option>
+      <option value="PA">Panama</option>
+      <option value="PG">Papua New Guinea</option>
+      <option value="PY">Paraguay</option>
+      <option value="PE">Peru</option>
+      <option value="PH">Philippines</option>
+      <option value="PN">Pitcairn</option>
+      <option value="PL">Poland</option>
+      <option value="PT">Portugal</option>
+      <option value="PR">Puerto Rico</option>
+      <option value="QA">Qatar</option>
+      <option value="RE">Reunion</option>
+      <option value="RO">Romania</option>
+      <option value="RU">Russian Federation</option>
+      <option value="RW">Rwanda</option>
+      <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+      <option value="KN">Saint Kitts and Nevis</option>
+      <option value="LC">Saint Lucia</option>
+      <option value="PM">Saint Pierre and Miquelon</option>
+      <option value="VC">Saint Vincent and the Grenadines</option>
+      <option value="WS">Samoa</option>
+      <option value="SM">San Marino</option>
+      <option value="ST">Sao Tome and Principe</option>
+      <option value="SA">Saudi Arabia</option>
+      <option value="SN">Senegal</option>
+      <option value="RS">Serbia</option>
+      <option value="SC">Seychelles</option>
+      <option value="SL">Sierra Leone</option>
+      <option value="SG">Singapore</option>
+      <option value="SX">Sint Maarten</option>
+      <option value="SK">Slovakia</option>
+      <option value="SI">Slovenia</option>
+      <option value="SB">Solomon Islands</option>
+      <option value="SO">Somalia</option>
+      <option value="ZA">South Africa</option>
+      <option value="GS">South Georgia and the South Sandwich Islands</option>
+      <option value="ES">Spain</option>
+      <option value="LK">Sri Lanka</option>
+      <option value="SR">Suriname</option>
+      <option value="SJ">Svalbard and Jan Mayen</option>
+      <option value="SZ">Swaziland</option>
+      <option value="SE">Sweden</option>
+      <option value="CH">Switzerland</option>
+      <option value="TW">Taiwan</option>
+      <option value="TJ">Tajikistan</option>
+      <option value="TZ">Tanzania, United Republic of</option>
+      <option value="TH">Thailand</option>
+      <option value="TG">Togo</option>
+      <option value="TK">Tokelau</option>
+      <option value="TO">Tonga</option>
+      <option value="TT">Trinidad and Tobago</option>
+      <option value="TN">Tunisia</option>
+      <option value="TR">Turkey</option>
+      <option value="TM">Turkmenistan</option>
+      <option value="TC">Turks and Caicos Islands</option>
+      <option value="TV">Tuvalu</option>
+      <option value="UG">Uganda</option>
+      <option value="UA">Ukraine</option>
+      <option value="AE">United Arab Emirates</option>
+      <option value="GB">United Kingdom</option>
+      <option value="US">United States</option>
+      <option value="UM">United States Minor Outlying Islands</option>
+      <option value="UY">Uruguay</option>
+      <option value="UZ">Uzbekistan</option>
+      <option value="VU">Vanuatu</option>
+      <option value="VE">Venezuela</option>
+      <option value="VN">Vietnam</option>
+      <option value="VG">Virgin Islands, British</option>
+      <option value="VI">Virgin Islands, US</option>
+      <option value="WF">Wallis and Futuna</option>
+      <option value="EH">Western Sahara</option>
+      <option value="YE">Yemen</option>
+      <option value="ZM">Zambia</option>
+      <option value="ZW">Zimbabwe</option>
+    </select>
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressFullName">
+      <span>Full name (first name and surname)</span>
+    </label>
+    <input type="text" maxlength="50" id="address-ui-widgets-enterAddressFullName" autocomplete="name" name="address-ui-widgets-enterAddressFullName" spellcheck="false" aria-label="Full name (first name and surname)" aria-required="true" style="" data-moz-autofill-type="name">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressLine1">
+      <span>Street address</span>
+    </label>
+    <input type="text" maxlength="60" id="address-ui-widgets-enterAddressLine1" placeholder="Street address, P.O. box, company name, c/o" name="address-ui-widgets-enterAddressLine1" spellcheck="false" aria-label="Street address" aria-required="true" style="" data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <input type="text" maxlength="60" id="address-ui-widgets-enterAddressLine2" placeholder="Flat, suite, unit, building, floor, etc." name="address-ui-widgets-enterAddressLine2" spellcheck="false" style="" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressCity">
+      <span>City</span>
+    </label>
+    <input type="text" maxlength="50" id="address-ui-widgets-enterAddressCity" name="address-ui-widgets-enterAddressCity" spellcheck="false" aria-label="City" aria-required="true" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressStateOrRegion">
+      <span>State/Province/Region</span>
+    </label>
+    <input type="text" maxlength="50" id="address-ui-widgets-enterAddressStateOrRegion" name="address-ui-widgets-enterAddressStateOrRegion" spellcheck="false" aria-label="State/Province/Region" aria-required="true" style="" data-moz-autofill-type="address-level1">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressPostalCode">
+      <span>Postcode</span>
+    </label>
+    <input type="text" maxlength="20" id="address-ui-widgets-enterAddressPostalCode" name="address-ui-widgets-enterAddressPostalCode" spellcheck="false" aria-label="Postcode" aria-required="true" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="address-ui-widgets-enterAddressPhoneNumber">
+      <span>Phone number</span>
+    </label>
+    <input type="text" maxlength="20" id="address-ui-widgets-enterAddressPhoneNumber" autocomplete="tel" name="address-ui-widgets-enterAddressPhoneNumber" spellcheck="false" aria-describedby="address-ui-widgets-enterAddressPhoneNumber-help-text" aria-label="Phone number" aria-required="true" style="" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label for="address-ui-widgets-use-as-my-default">
+      <input id="address-ui-widgets-use-as-my-default" type="checkbox" name="address-ui-widgets-use-as-my-default" value="true">
+      <i></i>
+      <span>
+        <span>Use as my default address.</span>
+      </span>
+    </label>
+  </div>
+</form>
+
+</fieldset>
+
+<!--fieldset>
+
+<h3>www.houseoffraser.co.uk</h3>
+<p><i>Newer version with different placeholder text for address-line1</i></p>
+
+<form id="frmAddress"><h2 class="delopeningText">Your Delivery Details</h2><div class="formWrap"><div class="form-group"><div class="labelGroup formIncomplete"><div><label for="firstName" class="control-label control-label-required">First name</label><span class="mandatoryIndicator">*</span></div><p class="errorMessage">First name required</p></div><div class="inputTickGroup"><input id="firstName" name="firstName" type="text" class="form-control" aria-required="true" placeholder="Enter first name"></div></div><div class="form-group"><div class="labelGroup formComplete"><div><label for="lastName" class="control-label control-label-required">Last name</label><span class="mandatoryIndicator">*</span></div><p class="errorMessage">Last name required</p></div><div class="inputTickGroup"><input id="lastName" name="lastName" type="text" class="form-control" aria-required="true" placeholder="Enter last name"></div></div><div class="form-group"><div class="labelGroup formIncomplete"><div><label for="contactNumber" class="control-label control-label-required">Contact number</label><span class="mandatoryIndicator">*</span></div><p class="errorMessage">Valid phone number required</p></div><div class="inputTickGroup"><input id="contactNumber" name="contactNumber" type="tel" class="form-control" aria-required="true" placeholder="Enter contact number"></div><p class="contactnumberInfo">*We'll only use this for delivery updates</p></div>
+
+<div class="form-group">
+  <div class="labelGroup flex flexJustBet formIncomplete">
+    <span class="addressLabelWrap">
+      <label for="line1" class="control-label control-label-required">Address line 1</label>
+      <span class="mandatoryIndicator">*</span>
+    </span>
+    <p class="errorMessage">Address required</p>
+  </div>
+  <div class="inputTickGroup">
+    <input id="line1" name="line1" type="text" class="form-control" placeholder="Enter first line of address" autocomplete="off">
+    <a href="#" class="changeLink">Find address using postcode</a>
+  </div>
+</div>
+  
+  <div class="form-group "><div class="labelGroup formComplete"><label for="line2" class="control-label control-label-required">Address line 2</label><p class="errorMessage"></p></div><div class="inputTickGroup"><input id="line2" name="line2" type="text" class="form-control" autocomplete="off"></div></div><div class="form-group "><div class="labelGroup formComplete"><div><label for="towncity" class="control-label control-label-required">Town/City</label><span class="mandatoryIndicator">*</span></div><p class="errorMessage">Town/City required</p></div><div class="inputTickGroup"><input id="towncity" name="towncity" type="text" class="form-control" autocomplete="off" placeholder="Enter town or city"></div></div><div class="form-group "><div class="labelGroup formComplete"><div><label for="country" class="control-label control-label-required">County/State</label><span class="mandatoryIndicator">*</span></div><p class="errorMessage"></p></div><div class="inputTickGroup"><select id="county" name="county" class="form-control"><option value="AB">Alberta</option><option value="BC">British Columbia</option><option value="MB">Manitoba</option><option value="NB">New Brunswick</option><option value="NF">Newfoundland and Labrador</option><option value="NT">Northwest Territories</option><option value="NS">Nova Scotia</option><option value="NU">Nunavut</option><option value="ON">Ontario</option><option value="PE">Prince Edward Island</option><option value="QC">Quebec</option><option value="SK">Saskatchewan</option><option value="YT">Yukon Territory</option></select></div></div><div class="form-group "><div class="labelGroup formComplete"><div><label for="postcode" class="control-label control-label-required">Postcode/Zip</label><span class="mandatoryIndicator">*</span></div><p class="errorMessage">Postcode/Zip required</p></div><div class="inputTickGroup"><input id="postcode" name="postcode" type="text" class="form-control" autocomplete="off" placeholder="Enter postcode/ZIP"></div></div><p class="requiredFields">*Required fields</p></div><div class="formCompleteCTA inactiveSubmit"><button type="submit">Continue</button></div>
+  </form>
+
+</fieldset-->
+
+<!--form id="frmAddress"><h2 class="delopeningText">Your Delivery Details</h2><div class="formWrap"><div class="form-group"><div class="labelGroup formIncomplete"><div><label for="firstName" class="control-label control-label-required">First name</label><span class="mandatoryIndicator">*</span></div><p class="errorMessage">First name required</p></div><div class="inputTickGroup"><input id="firstName" name="firstName" type="text" class="form-control" aria-required="true" placeholder="Enter first name"></div></div><div class="form-group"><div class="labelGroup formComplete"><div><label for="lastName" class="control-label control-label-required">Last name</label><span class="mandatoryIndicator">*</span></div><p class="errorMessage">Last name required</p></div><div class="inputTickGroup"><input id="lastName" name="lastName" type="text" class="form-control" aria-required="true" placeholder="Enter last name"></div></div><div class="form-group"><div class="labelGroup formComplete"><div><label for="contactNumber" class="control-label control-label-required">Contact number</label><span class="mandatoryIndicator">*</span></div><p class="errorMessage">Valid phone number required</p></div><div class="inputTickGroup"><input id="contactNumber" name="contactNumber" type="tel" class="form-control" aria-required="true" placeholder="Enter contact number"></div><p class="contactnumberInfo">*We'll only use this for delivery updates</p></div><div class="form-group"><div class="labelGroup flex flexJustBet formComplete"><span class="addressLabelWrap"><label for="line1" class="control-label control-label-required">Address line 1</label><span class="mandatoryIndicator">*</span></span><p class="errorMessage">Address required</p></div><div class="inputTickGroup"><input id="line1" name="line1" type="text" class="form-control" placeholder="Start typing address or postcode" autocomplete="off"><a href="#" class="changeLink">Enter address manually</a></div></div><div class="form-group "><div class="labelGroup formComplete"><label for="line2" class="control-label control-label-required">Address line 2</label><p class="errorMessage"></p></div><div class="inputTickGroup"><input id="line2" name="line2" type="text" class="form-control" autocomplete="off"></div></div><div class="form-group "><div class="labelGroup formComplete"><div><label for="towncity" class="control-label control-label-required">Town/City</label><span class="mandatoryIndicator">*</span></div><p class="errorMessage">Town/City required</p></div><div class="inputTickGroup"><input id="towncity" name="towncity" type="text" class="form-control" autocomplete="off" placeholder="Enter town or city"></div></div><div class="form-group "><div class="labelGroup formComplete"><div><label for="country" class="control-label control-label-required">County/State</label><span class="mandatoryIndicator">*</span></div><p class="errorMessage"></p></div><div class="inputTickGroup"><select id="county" name="county" class="form-control"><option value="AB">Alberta</option><option value="BC">British Columbia</option><option value="MB">Manitoba</option><option value="NB">New Brunswick</option><option value="NF">Newfoundland and Labrador</option><option value="NT">Northwest Territories</option><option value="NS">Nova Scotia</option><option value="NU">Nunavut</option><option value="ON">Ontario</option><option value="PE">Prince Edward Island</option><option value="QC">Quebec</option><option value="SK">Saskatchewan</option><option value="YT">Yukon Territory</option></select></div></div><div class="form-group "><div class="labelGroup formComplete"><div><label for="postcode" class="control-label control-label-required">Postcode/Zip</label><span class="mandatoryIndicator">*</span></div><p class="errorMessage">Postcode/Zip required</p></div><div class="inputTickGroup"><input id="postcode" name="postcode" type="text" class="form-control" autocomplete="off" placeholder="Enter postcode/ZIP"></div></div><p class="requiredFields">*Required fields</p></div><div class="formCompleteCTA inactiveSubmit"><button type="submit">Continue</button></div></form-->
+
+<fieldset>
+
+<h3>www.onbuy.com</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <button type="submit"></button>
+  </div>
+  <div>
+    <label for="login_email_address_registration">Email Address</label>
+    <input type="email" name="login_email_address_registration" id="login_email_address_registration" autocomplete="off" style="" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="account_first_name">First Name</label>
+    <input type="text" name="account_first_name" id="account_first_name" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="account_last_name">Last Name</label>
+    <input type="text" name="account_last_name" id="account_last_name" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="phone">Phone Number</label>
+    <input type="tel" name="phone" id="phone" autocomplete="off" placeholder="07400 123456" style="" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label for="delivery_country_code">Country</label>
+    <select name="delivery_country_code" id="delivery_country_code" style="" data-moz-autofill-type="country">
+      <option value="GB">United Kingdom</option>
+    </select>
+  </div>
+  <div>
+    <label for="delivery_post_code">Postcode</label>
+    <input type="text" name="delivery_post_code" id="delivery_post_code" autocomplete="postal-code" placeholder="" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <button id="address-lookup" disabled="">
+                                Find Address                            </button>
+  </div>
+</form>
+
+</fieldset>
+
+
+
+</body></html>
