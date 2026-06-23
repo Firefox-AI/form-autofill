@@ -1,0 +1,313 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 200px;
+}
+
+input {
+  margin: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<fieldset>
+<h3>www.euronics.it</h3>
+<p><i>Every field has autocomplete="new-password" assigned.</i></p>
+
+<form autocomplete="on" action="/on/demandware.store/Sites-euronics-Site/it_IT/CheckoutShippingServices-SubmitShipping" name="dwfrm_shipping" id="dwfrm_shipping">
+    <div>
+      <label for="shippingFirstNamedefault">
+          Nome
+      </label>
+      <input type="text" id="shippingFirstNamedefault" aria-describedby="defaultFirstName" value="" name="dwfrm_shipping_shippingAddress_addressFields_firstName" required="" aria-required="true" maxlength="50" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\-\s\'\’]*" autocomplete="new-password" style="" data-moz-autofill-type="given-name">
+    </div>
+    <div>
+      <label for="shippingLastNamedefault">
+          Cognome
+      </label>
+      <input type="text" id="shippingLastNamedefault" aria-describedby="defaultLastName" value="" name="dwfrm_shipping_shippingAddress_addressFields_lastName" required="" aria-required="true" maxlength="50" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\-\s\'\’]*" autocomplete="new-password" style="" data-moz-autofill-type="family-name">
+    </div>
+    <div>
+      <label for="shippingEmaildefault">
+          Email
+      </label>
+      <input type="email" id="shippingEmaildefault" aria-describedby="defaultEmail" value="" name="dwfrm_shipping_shippingAddress_addressFields_email" required="" aria-required="true" maxlength="50" pattern="^[\w.%+_-]+@[\w_-]+\.[\w]{2,6}$" autocomplete="new-password" style="" data-moz-autofill-type="email">
+    </div>
+</form>
+</fieldset>
+
+<fieldset>
+<h3>www.decathlon.it</h3>
+<p><i>Postal code has type="number", doesn't handle address-line2</i></p>
+
+<form name="handleShippingAddressAction" method="POST" action="?/handleShippingAddressAction">
+<div>
+  <div id="form-control-ls3537u5" disabled="true" required="true">
+    <label id="form-label-ls3537u5" for="countryCode">Paese
+      <span>*</span>
+    </label>
+    <div>
+      <option disabled="" value="ITA">ITALY</option>
+      <input type="hidden" name="countryCode" id="countryCode" value="ITA">
+    </div>
+    <p id="form-helper-ls3537u5">Questo campo non può essere modificato </p>
+  </div>
+  <div id="form-control-input-shipping-street" required="true">
+    <label id="form-label-input-shipping-street" for="input-street">Indirizzo e numero civico
+      <span>*</span>
+    </label>
+    <input id="input-shipping-street" type="text" name="street" required="" placeholder="" aria-required="" aria-labelledby="form-label-input-shipping-street" style="" data-moz-autofill-type="address-line1">
+  </div>
+  <div id="form-control-input-shipping-complement">
+    <label id="form-label-input-shipping-complement" for="input-complement">Informazioni aggiuntive</label>
+    <input id="input-shipping-complement" type="text" name="complement" placeholder="" aria-labelledby="form-label-input-shipping-complement" style="" data-moz-autofill-type="address-line2">
+  </div>
+  <div id="form-control-input-shipping-postalCode" required="true">
+    <label id="form-label-input-shipping-postalCode" for="input-postalCode">CAP
+      <span>*</span>
+    </label>
+    <input id="input-shipping-postalCode" type="number" name="postalCode" required="" placeholder="" aria-required="" aria-labelledby="form-label-input-shipping-postalCode" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div id="form-control-pdlu31f9" required="true">
+    <label id="form-label-pdlu31f9" for="locality">Città
+      <span>*</span>
+    </label>
+    <div>
+      <option disabled="" value=""></option>
+      <input type="hidden" name="locality" id="locality" value="selectanoption">
+    </div>
+  </div>
+  <div id="form-control-input-shipping-lastname" required="true">
+    <label id="form-label-input-shipping-lastname" for="input-lastname">Cognome
+      <span>*</span>
+    </label>
+    <input id="input-shipping-lastname" type="text" name="lastname" required="" placeholder="" aria-required="" aria-labelledby="form-label-input-shipping-lastname" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div id="form-control-input-shipping-firstname" required="true">
+    <label id="form-label-input-shipping-firstname" for="input-firstname">Nome
+      <span>*</span>
+    </label>
+    <input id="input-shipping-firstname" type="text" name="firstname" required="" placeholder="" aria-required="" aria-labelledby="form-label-input-shipping-firstname" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div id="form-control-input-shipping-phone_number" required="true">
+    <label id="form-label-input-shipping-phone_number" for="input-phone_number">Numero di telefono
+      <span>*</span>
+    </label>
+    <input hidden="" name="phoneNumber" style="" data-moz-autofill-type="tel">
+    <div>
+      <details>
+        <span>+39</span>
+        <div>
+          <input type="radio" name="phoneNumberCountry" id="selectCountryBE">
+          <label for="selectCountryBE">
+            <svg width="32" height="24" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" name="flag-be">
+              <path d="M0 8.88109e-06C9.33333 -8.36891e-05 18.6667 -6.54347e-05 28 6.94394e-06V20C18.6667 20 9.33333 20 0 20V8.88109e-06Z" fill="white"></path>
+              <path d="M18.6667 0L28 6.94394e-06V20H18.6667V0Z" fill="#FF4453"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 20H9.33333V0L0 8.88109e-06V20Z" fill="#262626"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.33333 20H18.6667V0L9.33333 0V20Z" fill="#FFCF3C"></path>
+            </svg>
+            <span>+32</span>
+            <span>Belgio</span>
+          </label>
+          <input type="radio" name="phoneNumberCountry" id="selectCountryFR">
+          <label for="selectCountryFR">
+            <svg width="32" height="24" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" name="flag-fr">
+              <path d="M2.72989e-05 0C9.33335 0 18.6667 -6.54346e-05 28 6.94394e-06V20C18.6667 20 9.33333 20 0 20C0 13.3333 -0.000196272 6.66667 2.72989e-05 0Z" fill="white"></path>
+              <path d="M18.6667 0L28 6.94394e-06V20H18.6667V0Z" fill="#F44653"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 20H9.33333V0H2.72989e-05L0 20Z" fill="#1035BB"></path>
+            </svg>
+            <span>+33</span>
+            <span>Francia</span>
+          </label>
+          <input type="radio" name="phoneNumberCountry" id="selectCountryDE">
+          <label for="selectCountryDE">
+            <svg width="32" height="24" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" name="flag-de">
+              <path d="M0 6.02934e-05C9.33333 -7.70088e-05 18.6667 5.27623e-06 28 5.15613e-05V20C18.6667 20 9.33333 20.0005 0 20V6.02934e-05Z" fill="white"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 6.66671H28V5.15613e-05L0 6.02934e-05V6.66671Z" fill="#262626"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 13.3334H28V6.66671H0V13.3334Z" fill="#F01515"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 20L28 20V13.3334H0V20Z" fill="#FFD521"></path>
+            </svg>
+            <span>+49</span>
+            <span>Germania</span>
+          </label>
+          <input type="radio" name="phoneNumberCountry" id="selectCountryIE">
+          <label for="selectCountryIE">
+            <svg width="32" height="24" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" name="flag-ie">
+              <path d="M-7.62939e-06 0H28C28 6.66667 28 13.3333 28 20C18.6667 20 9.33333 20 2.08616e-06 20C2.08616e-06 13.3333 6.47049e-05 6.66667 -7.62939e-06 0Z" fill="white"></path>
+              <path d="M18.6667 0H28V20H18.6667V0Z" fill="#FF8515"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.08616e-06 20H9.33333V0H-7.62939e-06L2.08616e-06 20Z" fill="#07BB59"></path>
+            </svg>
+            <span>+353</span>
+            <span>Irlanda</span>
+          </label>
+          <input type="radio" name="phoneNumberCountry" id="selectCountryIT">
+          <label for="selectCountryIT">
+            <svg width="32" height="24" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" name="flag-it">
+              <path d="M-3.05176e-05 0H27.9998C28.0011 6.66667 28 13.3333 28 20C18.6667 20 9.33333 20 -6.94394e-06 20C-6.94394e-06 13.3333 0.000144993 6.66667 -3.05176e-05 0Z" fill="white"></path>
+              <path d="M18.6665 0H27.9998L28 20H18.6665V0Z" fill="#E43D4C"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M-6.94394e-06 20H9.33333V0H-3.05176e-05L-6.94394e-06 20Z" fill="#1BB65D"></path>
+            </svg>
+            <span>+39</span>
+            <span>Italia</span>
+          </label>
+          <input type="radio" name="phoneNumberCountry" id="selectCountryLU">
+          <label for="selectCountryLU">
+            <svg width="32" height="24" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" name="flag-lu">
+              <path d="M3.63588e-05 0H28C28 6.66667 28 13.3333 28 20C18.6667 20 9.33333 20 0 20C0 13.3333 -0.00023434 6.66667 3.63588e-05 0Z" fill="white"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 6.66667H28V0H3.63588e-05L0 6.66667Z" fill="#F14455"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 20H28V13.3333H0V20Z" fill="#29B4EE"></path>
+            </svg>
+            <span>+352</span>
+            <span>Lussemburgo</span>
+          </label>
+          <input type="radio" name="phoneNumberCountry" id="selectCountryNL">
+          <label for="selectCountryNL">
+            <svg width="32" height="24" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" name="flag-nl">
+              <path d="M0 3.54648e-06C9.33335 -1.73412e-06 18.6667 1.09123e-06 28 0C28 6.66667 28 13.3333 28 20C18.6667 20 9.33338 20 4.46718e-05 20L0 3.54648e-06Z" fill="white"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.46737e-05 6.66667H28V0L0 3.54648e-06L4.46737e-05 6.66667Z" fill="#CA2B39"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.46718e-05 20H28V13.3333H4.46737e-05L4.46718e-05 20Z" fill="#2C56A2"></path>
+            </svg>
+            <span>+31</span>
+            <span>Paesi Bassi</span>
+          </label>
+          <input type="radio" name="phoneNumberCountry" id="selectCountryGB">
+          <label for="selectCountryGB">
+            <svg width="32" height="24" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" name="flag-gb">
+              <rect width="28" height="20" fill="#001C5B"></rect>
+              <path d="M25.9 20L0 3.25V0H2.1L28 16.5V20H25.9Z" fill="white"></path>
+              <path d="M2.1 20L28 3.25V0H25.9L0 16.5V20H2.1Z" fill="white"></path>
+              <path d="M6.63158 7.00006L0 2.56528V1.00006L9 7.00006H6.63158Z" fill="#CA0028"></path>
+              <path d="M21.3684 13L28 17.4348V19L19 13H21.3684Z" fill="#CA0028"></path>
+              <path d="M19.3404 7L28 1.03704V0H27.0638L17 7H19.3404Z" fill="#CA0028"></path>
+              <path d="M8.65958 13L0 18.963V20H0.936168L11 13H8.65958Z" fill="#CA0028"></path>
+              <rect x="11" width="6" height="20" fill="white"></rect>
+              <rect y="13" width="6" height="28" transform="rotate(-90 0 13)" fill="white"></rect>
+              <rect x="12" width="4" height="20" fill="#CA0028"></rect>
+              <rect y="12" width="4" height="28" transform="rotate(-90 0 12)" fill="#CA0028"></rect>
+            </svg>
+            <span>+44</span>
+            <span>Regno Unito</span>
+          </label>
+          <input type="radio" name="phoneNumberCountry" id="selectCountryES">
+          <label for="selectCountryES">
+            <svg width="32" height="24" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" name="flag-es">
+              <path d="M6.22869e-06 0H28C28 6.66667 28 13.3333 28 20C18.6667 20 9.33333 20 0 20C0 13.3333 -4.01451e-05 6.66667 6.22869e-06 0Z" fill="white"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 5.33333H28V0H6.22869e-06L0 5.33333Z" fill="#DD172C"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 20H28V14.6667H0V20Z" fill="#DD172C"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 14.6667H28V5.33333H0V14.6667Z" fill="#FFD133"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.33333 9.33333H8.66667V10H7.33333V9.33333Z" fill="#FFEDB1"></path>
+              <path d="M6 7.73333C6 7.14423 6.47756 6.66667 7.06667 6.66667H7.6C8.1891 6.66667 8.66667 7.14423 8.66667 7.73333C8.66667 7.88061 8.54728 8 8.4 8H6.26667C6.11939 8 6 7.88061 6 7.73333Z" fill="#A41517"></path>
+              <path d="M4 8.66667C4 8.29848 4.29848 8 4.66667 8C5.03486 8 5.33333 8.29848 5.33333 8.66667V12C5.33333 12.3682 5.03486 12.6667 4.66667 12.6667C4.29848 12.6667 4 12.3682 4 12V8.66667Z" fill="#A41517"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.72684 9.38869C5.69445 9.00001 6.00117 8.66666 6.3912 8.66666H8.27547C8.6655 8.66666 8.97222 9.00001 8.93983 9.38869L8.76855 11.444C8.71096 12.1351 8.13328 12.6667 7.43982 12.6667H7.22684C6.53339 12.6667 5.9557 12.1351 5.89812 11.4441L5.72684 9.38869ZM6.44676 10L6.3912 9.33332H8.27547L8.21991 10H6.44676ZM6.50231 10.6667L6.56248 11.3887C6.59127 11.7342 6.88012 12 7.22684 12H7.33333L6.66667 10.6667H6.50231ZM8 10.6667L7.33333 12H7.43982C7.78655 12 8.07539 11.7342 8.10419 11.3887L8.16436 10.6667H8Z" fill="#A41517"></path>
+              <path d="M10 8C9.63185 8 9.33337 8.29848 9.33337 8.66667V12C9.33337 12.3682 9.63185 12.6667 10 12.6667C10.3682 12.6667 10.6667 12.3682 10.6667 12V8.66667C10.6667 8.29848 10.3682 8 10 8Z" fill="#A41517"></path>
+            </svg>
+            <span>+34</span>
+            <span>Spagna</span>
+          </label>
+          <input type="radio" name="phoneNumberCountry" id="selectCountryCH">
+          <label for="selectCountryCH">
+            <svg width="32" height="24" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" name="flag-ch">
+              <path d="M2.72989e-05 0H28C28 6.66667 28 13.3333 28 20C18.6667 20 9.33333 20 0 20C0 13.3333 -0.000175947 6.66667 2.72989e-05 0Z" fill="white"></path>
+              <path d="M2.72989e-05 0H28V20H0L2.72989e-05 0Z" fill="#FF0000"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 12H8.33333C8.14924 12 8 11.8508 8 11.6667V8.33333C8 8.14924 8.14924 8 8.33333 8H12V4.33333C12 4.14924 12.1492 4 12.3333 4H15.6667C15.8508 4 16 4.14924 16 4.33333V8H19.6667C19.8508 8 20 8.14924 20 8.33333V11.6667C20 11.8508 19.8508 12 19.6667 12H16V15.6667C16 15.8508 15.8508 16 15.6667 16H12.3333C12.1492 16 12 15.8508 12 15.6667V12Z" fill="white"></path>
+            </svg>
+            <span>+41</span>
+            <span>Svizzera</span>
+          </label>
+        </div>
+      </details>
+      <input id="input-shipping-phone_number" type="tel" name="phoneNumberNumber" required="" placeholder="" aria-required="" aria-labelledby="form-label-input-shipping-phone_number" style="" data-moz-autofill-type="tel">
+    </div>
+  </div>
+  <label id="is_favorite" disabled="false" required="false" checked="false">
+    <div id="checkbox-controls-is_favorite" aria-hidden="true" slot="controlSlot"></div>
+    <input id="checkbox-is_favorite" type="checkbox" aria-labelledby="checkbox-label-is_favorite" slot="inputSlot" name="isFavorite" role="checkbox" aria-checked="false">
+    <span id="checkbox-label-is_favorite" slot="labelSlot">Questo è il mio indirizzo preferito</span>
+  </label>
+  <label id="setShippingAddressAsBilling" disabled="false" required="false" checked="true">
+    <path d="M19.8 7L9.79995 17L4.19995 11.4" stroke="currentColor"></path>
+    <input id="checkbox-setShippingAddressAsBilling" type="checkbox" aria-labelledby="checkbox-label-setShippingAddressAsBilling" aria-checked="true" slot="inputSlot" name="additionalData[setAsBilling]" value="true">
+    <span id="checkbox-label-setShippingAddressAsBilling" slot="labelSlot">Imposta come indirizzo di fatturazione</span>
+  </label>
+</div>
+</form>
+</fieldset>
+
+<fieldset>
+<h3>www.thenorthface.it</h3>
+<p><i>City not recognized</i></p>
+
+<form>
+  <div>
+    <label>
+      <span>Nome
+        <span aria-hidden="true"> *</span>
+      </span>
+      <input type="text" required="" invalid="true" style="" data-moz-autofill-type="given-name">
+    </label>
+  </div>
+  <div>
+    <label>
+      <span>Cognome
+        <span aria-hidden="true"> *</span>
+      </span>
+      <input type="text" required="" invalid="true" style="" data-moz-autofill-type="family-name">
+    </label>
+  </div>
+  <div>
+    <label>
+      <span>Inserire un indirizzo con numero civico
+        <span aria-hidden="true"> *</span>
+      </span>
+      <input placeholder="" required="" autocomplete="off" invalid="true" style="" data-moz-autofill-type="address-line1">
+    </label>
+  </div>
+  <label>
+    <span>Indirizzo riga 2</span>
+    <input type="text" style="" data-moz-autofill-type="address-line2">
+  </label>
+  <label>
+    <span>Città
+      <span aria-hidden="true"> *</span>
+    </span>
+    <input type="text" required="" style="" data-moz-autofill-type="address-level2">
+  </label>
+  <div>
+    <label>
+      <span>codice postale
+        <span aria-hidden="true"> *</span>
+      </span>
+      <input type="text" required="" invalid="true" style="" data-moz-autofill-type="postal-code">
+    </label>
+  </div>
+  <div>
+    <label>
+      <span>Telefono
+        <span aria-hidden="true"> *</span>
+      </span>
+      <input required="" type="tel" style="" data-moz-autofill-type="tel">
+    </label>
+  </div>
+  <div>
+    <label>
+      <span>Indirizzo e-mail
+        <span aria-hidden="true"> *</span>
+      </span>
+      <input type="email" required="" invalid="true" style="" data-moz-autofill-type="email">
+    </label>
+  </div>
+</form>
+</fieldset>
+
+
+
+
+</body></html>

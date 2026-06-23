@@ -1,0 +1,535 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 200px;
+}
+
+input {
+  margin: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<fieldset>
+<h3>sallve.com.br</h3>
+<p><i>Need to support address-level3 for neighbourhood.</i></p>
+
+<form>
+  <div>
+    <label id="email-label" for="email">
+      <span>
+        <span>E-mail</span>
+      </span>
+    </label>
+  </div>
+  <div>
+    <input id="email" name="email" placeholder="E-mail" required="" type="email" aria-required="true" aria-labelledby="email-label" value="" autocomplete="shipping email" style="" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="marketing_opt_in">Enviar novidades e ofertas para mim por e-mail</label>
+  </div>
+  <div>
+    <label id="TextField8-label" for="TextField8a">
+      <span>
+        <span>Data de nascimento</span>
+      </span>
+    </label>
+  </div>
+  <div>
+    <input id="TextField8a" maxlength="10" placeholder="Data de nascimento" type="text" aria-labelledby="TextField8-label" style="" data-moz-autofill-type="bday">
+  </div>
+  <div>
+    <label for="Select2">
+      <span>
+        <span>País/Região</span>
+      </span>
+    </label>
+    <select name="countryCode" id="Select2" required="" autocomplete="shipping country" style="" data-moz-autofill-type="country">
+      <option selected="" value="BR">Brasil</option>
+    </select>
+  </div>
+  <div>
+    <label id="TextField6-label" for="TextField6">
+      <span>
+        <span>Nome</span>
+      </span>
+    </label>
+  </div>
+  <div>
+    <input id="TextField6" name="firstName" placeholder="Nome" required="" type="text" aria-required="true" aria-labelledby="TextField6-label" value="" autocomplete="shipping given-name" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label id="TextField7-label" for="TextField7">
+      <span>
+        <span>Sobrenome</span>
+      </span>
+    </label>
+  </div>
+  <div>
+    <input id="TextField7" name="lastName" placeholder="Sobrenome" required="" type="text" aria-required="true" aria-labelledby="TextField7-label" value="" autocomplete="shipping family-name" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label id="postalCode-label" for="postalCode">
+      <span>
+        <span>CEP</span>
+      </span>
+    </label>
+  </div>
+  <div>
+    <input id="postalCode" name="postalCode" placeholder="CEP" required="" type="text" aria-autocomplete="list" aria-controls="postalCode-options" aria-owns="postalCode-options" aria-expanded="false" aria-required="true" aria-labelledby="postalCode-label" aria-haspopup="listbox" role="combobox" value="" autocomplete="shipping postal-code" autocorrect="off" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label id="TextField10-label" for="TextField10">
+      <span>
+        <span>Endereço</span>
+      </span>
+    </label>
+  </div>
+  <div>
+    <input id="TextField10" name="streetName" placeholder="Endereço" required="" type="text" aria-required="true" aria-labelledby="TextField10-label" value="" autocomplete="off" aria-describedby="error-for-TextField4" aria-invalid="true" style="" data-moz-autofill-type="address-streetname">
+  </div>
+  <div>
+    <label id="TextField11-label" for="TextField11">
+      <span>
+        <span>Número</span>
+      </span>
+    </label>
+  </div>
+  <div>
+    <input id="TextField11" name="streetNumber" placeholder="Número" required="" type="text" aria-required="true" aria-labelledby="TextField11-label" value="" autocomplete="off" aria-describedby="error-for-TextField5" aria-invalid="true" style="" data-moz-autofill-type="address-housenumber">
+  </div>
+  <div>
+    <label id="TextField12-label" for="TextField12">
+      <span>
+        <span>Apto, bloco etc. (opcional)</span>
+      </span>
+    </label>
+  </div>
+  <div>
+    <input id="TextField12" name="line2" placeholder="Apto, bloco etc. (opcional)" type="text" aria-required="false" aria-labelledby="TextField12-label" value="" autocomplete="shipping address-line2" style="" data-moz-autofill-type="apartment">
+  </div>
+  <div>
+    <label id="TextField13-label" for="TextField13">
+      <span>
+        <span>Bairro</span>
+      </span>
+    </label>
+  </div>
+  <div>
+    <input id="TextField13" name="neighborhood" placeholder="Bairro" required="" type="text" aria-required="true" aria-labelledby="TextField13-label" value="" autocomplete="shipping address-level3" style="" data-moz-autofill-type="address-level3">
+  </div>
+  <div>
+    <label id="TextField8-label" for="TextField8">
+      <span>
+        <span>Cidade</span>
+      </span>
+    </label>
+  </div>
+  <div>
+    <input id="TextField8" name="city" placeholder="Cidade" required="" type="text" aria-required="true" aria-labelledby="TextField8-label" value="" autocomplete="shipping address-level2" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="Select3">
+      <span>
+        <span>Estado</span>
+      </span>
+    </label>
+    <select name="zone" id="Select3" required="" autocomplete="shipping address-level1" style="" data-moz-autofill-type="address-level1">
+      <option selected="" value="" hidden="" disabled="">&nbsp;</option>
+      <option value="AC">Acre</option>
+      <option value="AL">Alagoas</option>
+      <option value="AP">Amapá</option>
+      <option value="AM">Amazonas</option>
+      <option value="BA">Bahia</option>
+      <option value="CE">Ceará</option>
+      <option value="DF">Distrito Federal</option>
+      <option value="ES">Espírito Santo</option>
+      <option value="GO">Goiás</option>
+      <option value="MA">Maranhão</option>
+      <option value="MT">Mato Grosso</option>
+      <option value="MS">Mato Grosso do Sul</option>
+      <option value="MG">Minas Gerais</option>
+      <option value="PA">Pará</option>
+      <option value="PB">Paraíba</option>
+      <option value="PR">Paraná</option>
+      <option value="PE">Pernambuco</option>
+      <option value="PI">Piauí</option>
+      <option value="RJ">Rio de Janeiro</option>
+      <option value="RN">Rio Grande do Norte</option>
+      <option value="RS">Rio Grande do Sul</option>
+      <option value="RO">Rondônia</option>
+      <option value="RR">Roraima</option>
+      <option value="SC">Santa Catarina</option>
+      <option value="SP">São Paulo</option>
+      <option value="SE">Sergipe</option>
+      <option value="TO">Tocantins</option>
+    </select>
+  </div>
+  <div>
+    <label id="TextField9-label" for="TextField9">
+      <span>
+        <span>Telefone</span>
+      </span>
+    </label>
+  </div>
+  <div>
+    <input id="TextField9" name="phone" placeholder="Telefone" required="" type="tel" aria-required="true" aria-labelledby="TextField9-label" value="" autocomplete="shipping tel" style="" data-moz-autofill-type="tel">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+<h3>buscape.com.br</h3>
+<p><i>Most fields are disabled (this is OK, they are filled in when the postal code is entered).
+   Need to handle street number, and Complementary field.</i></p>
+
+<div style="display: flex;">
+
+<form>
+  <div>
+    <label for="cep">
+      <span>CEP</span>
+    </label>
+    <input name="cep" id="input-cep" placeholder="Digite CEP" area-required="true" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="address">
+      <span>Address</span>
+    </label>
+    <input name="address" id="input-endereco" placeholder="Digitar endereço" area-required="true" style="" data-moz-autofill-type="address-streetname">
+  </div>
+  <div>
+    <label for="addressNumber">
+      <span>Number</span>
+    </label>
+    <input name="addressNumber" id="input-numero" placeholder="Nº" area-required="true" style="" data-moz-autofill-type="address-housenumber">
+  </div>
+  <div>
+    <label for="neighborhood">
+      <span>Neighborhood</span>
+    </label>
+    <input name="neighborhood" id="DeliveryEdit_inputNeighborhood__8Ix_N" placeholder="Digitar bairro" area-required="true" style="" data-moz-autofill-type="address-level3">
+  </div>
+  <div>
+    <label for="complement">
+      <span>Complementary</span>
+    </label>
+    <input name="complement" id="DeliveryEdit_inputComplement__wQs_l" placeholder="Digitar complemento" area-required="true" style="" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <label for="city">
+      <span>City</span>
+    </label>
+    <input name="city" id="DeliveryEdit_inputCity__StyEb" placeholder="Digitar cidade" area-required="true" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <select id="SelectWrapper_inputStateUFSelection__LlF13" style="" data-moz-autofill-type="address-level1">
+      <option value="">UF .</option>
+      <option value="Acre">AC</option>
+      <option value="Alagoas">AL</option>
+      <option value="Amapá">AP</option>
+      <option value="Amazonas">AM</option>
+      <option value="Bahia">BA</option>
+      <option value="Ceará">The EC</option>
+      <option value="Distrito Federal">DF DF</option>
+      <option value="Espírito Santo">ES</option>
+      <option value="Goiás"></option>
+      <option value="Maranhão">MA</option>
+      <option value="Mato Grosso">MT</option>
+      <option value="Mato Grosso do Sul">MS</option>
+      <option value="Minas Gerais">MG</option>
+      <option value="Pará">The PA, PA</option>
+      <option value="Paraíba">the PB, PB</option>
+      <option value="Paraná">PR</option>
+      <option value="Pernambuco">PE</option>
+      <option value="Piauí">PI</option>
+      <option value="Rio de Janeiro">RJ</option>
+      <option value="Rio Grande do Norte">RN</option>
+      <option value="Rio Grande do Sul">RS</option>
+      <option value="Rondônia">RO</option>
+      <option value="Roraima">RR</option>
+      <option value="Santa Catarina">SC</option>
+      <option value="São Paulo">SP</option>
+      <option value="Sergipe">SE</option>
+      <option value="Tocantins">TO ? </option>
+    </select>
+  </div>
+  <!--div>
+    <label for="referencePoint">
+      <span>Reference point</span>
+    </label>
+  </div>
+  <div>
+    <input name="referencePoint" id="DeliveryEdit_inputReferencePoint__WxtzI" placeholder="Digitar ponto de referência" area-required="true">
+  </div-->
+  <div>
+    <label for="receiverName">
+      <span>Name of the recipient</span>
+    </label>
+  </div>
+  <div>
+    <input name="receiverName" id="DeliveryEdit_inputReceiverName__4awcD" placeholder="Digitar nome do destinatário" area-required="true" style="" data-moz-autofill-type="name">
+  </div>
+  <!--div>
+    <input name="descriptionOtherAddressType" id="input-descricao-outro-tipo-de-endereco" placeholder="Outro">
+  </div-->
+</form>
+
+<form>
+      <div><label>CEP <input id="field5" style="" data-moz-autofill-type="postal-code"></label></div>
+      <div><label>Endereço <input id="field2" style="" data-moz-autofill-type="address-streetname"></label></div>
+      <div><label>Número<input id="field3" style="" data-moz-autofill-type="address-housenumber"></label></div>
+      <div><label>Bairro <input id="field8" style="" data-moz-autofill-type="address-level3"></label></div>
+      <div><label>Apartamento<input id="field4" style="" data-moz-autofill-type="address-line2"></label></div>
+      <div><label>Estado
+    <select style="" data-moz-autofill-type="address-level1">
+      <option value="">UF .</option>
+      <option value="Acre">AC</option>
+      <option value="Alagoas">AL</option>
+      <option value="Amapá">AP</option>
+      <option value="Amazonas">AM</option>
+      <option value="Bahia">BA</option>
+      <option value="Ceará">The EC</option>
+      <option value="Distrito Federal">DF DF</option>
+      <option value="Espírito Santo">ES</option>
+      <option value="Goiás"></option>
+      <option value="Maranhão">MA</option>
+      <option value="Mato Grosso">MT</option>
+      <option value="Mato Grosso do Sul">MS</option>
+      <option value="Minas Gerais">MG</option>
+      <option value="Pará">The PA, PA</option>
+      <option value="Paraíba">the PB, PB</option>
+      <option value="Paraná">PR</option>
+      <option value="Pernambuco">PE</option>
+      <option value="Piauí">PI</option>
+      <option value="Rio de Janeiro">RJ</option>
+      <option value="Rio Grande do Norte">RN</option>
+      <option value="Rio Grande do Sul">RS</option>
+      <option value="Rondônia">RO</option>
+      <option value="Roraima">RR</option>
+      <option value="Santa Catarina">SC</option>
+      <option value="São Paulo">SP</option>
+      <option value="Sergipe">SE</option>
+      <option value="Tocantins">TO ? </option>
+    </select>
+</label></div>
+      <div><label>Cidade <input id="field7" style="" data-moz-autofill-type="address-level2"></label></div>
+      <div><label>Nome <input id="field1" style="" data-moz-autofill-type="name"></label></div>
+    </form>
+
+</div>
+
+</fieldset>
+
+<!--fieldset>
+<h3>mobly.com</h3>
+<p><i>Email is read as password, similar to Austria issue 1919571.</i></p>
+
+<form>
+  <div>
+    <input id="email_pf" type="text" placeholder="Email" autocomplete="username" required="required">
+    <label for="email_pf">
+        Email*
+      </label>
+  </div>
+  <div>
+    <input id="user_fullname" type="text" placeholder="Nome Completo" required="required">
+    <label for="user_fullname">Nome Completo*</label>
+  </div>
+  <div>
+    <input id="cpf" type="text" placeholder="CPF" required="required">
+    <label for="cpf">CPF*</label>
+  </div>
+  <div>
+    <input id="birthdate" type="text" placeholder="Data de Nascimento" required="required">
+    <label for="birthdate">Data de Nascimento*</label>
+  </div>
+  <div>
+    <input title="Very Weak Password" id="password" type="password" placeholder="Senha (mínimo de 6 caracteres)*" enable-strength="" autocomplete="new-password">
+  </div>
+  <div>
+    <input id="confirm_password" type="password" placeholder="Confirmar Senha*" autocomplete="new-password">
+  </div>
+</form>
+
+</fieldset-->
+
+
+<fieldset>
+
+<h3>checkout.mobly.com.br</h3>
+<p><i>Form has a 'Name of Address' field</i></p>
+
+<!--form>
+
+            <label for="address_label">Nome deste endereço</label>
+            <input id="address_label"/>
+    <input id="zipcode" type="text" placeholder="CEP" required="required">
+    <label for="zipcode">CEP*</label>
+    <input id="address_name" type="text" placeholder=" " required="required">
+    <label for="address_name">Endereço*</label>
+            <label for="house_number">House Number</label>
+            <input id="house_number"/>
+            <label for="city">City</label>
+            <input id="city"/>
+            <label for="postcode">Postal Code</label>
+            <input id="postcode"/>
+</form-->
+
+<form>
+  <div>
+    <input id="address_label" type="text" placeholder="(ex: Minha casa )" style="">
+    <label for="address_label">Nome deste endereço (ex. Minha casa)</label>
+  </div>
+  <div>
+    <input id="phone_number" type="text" placeholder="Ex: (00) 00000-0000" required="required" style="" data-moz-autofill-type="tel">
+    <label for="phone_number">Celular*</label>
+  </div>
+  <div>
+    <input id="zipcode" type="text" placeholder="CEP" required="required" style="" data-moz-autofill-type="postal-code">
+    <label for="zipcode">CEP*</label>
+  </div>
+  <div>
+    <input id="address_name" type="text" placeholder=" " required="required" style="" data-moz-autofill-type="address-streetname">
+    <label for="address_name">Endereço*</label>
+  </div>
+  <div>
+    <input id="street_number" type="text" placeholder=" " required="required" style="" data-moz-autofill-type="address-housenumber">
+    <label for="street_number">Número*</label>
+  </div>
+  <div>
+    <input id="address_complement" type="text" placeholder=" " style="" data-moz-autofill-type="address-line2">
+    <label for="address_complement">Complemento</label>
+  </div>
+  <div>
+    <input id="neightborhood" type="text" placeholder=" " required="required" style="" data-moz-autofill-type="address-level3">
+    <label for="neightborhood">Bairro*</label>
+  </div>
+  <div>
+    <input id="city" type="text" placeholder=" " style="" data-moz-autofill-type="address-level2">
+    <label for="city">Cidade*</label>
+  </div>
+  <div>
+    <input id="landmark" type="text" placeholder=" " style="" data-moz-autofill-type="address-line3">
+    <label for="landmark">Ponto de referência</label>
+  </div>
+  <div>
+          Opcional
+        </div>
+  <div>
+    <select value="41" style="">
+      <option>
+    São Paulo
+  </option>
+    </select>
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.ricardoeletro.com.br (Page 1)</h3>
+<p><i>CPF not filled in.</i></p>
+
+<form>
+  <div>
+    <label for="client-email">E-mail</label>
+    <input type="email" id="client-email" name="email" style="" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="client-first-name">Primeiro nome</label>
+    <input type="text" id="client-first-name" autocomplete="given-name" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="client-last-name">Último nome</label>
+    <input type="text" id="client-last-name" autocomplete="last-name" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="client-document">CPF</label>
+    <input type="tel" id="client-document" placeholder="999.999.999-99" style="" data-moz-autofill-type="id-number">
+  </div>
+  <div>
+    <label for="client-phone">Telefone</label>
+    <input type="tel" id="client-phone" placeholder="11 99999-9999" style="" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label>                
+      <input type="checkbox" id="opt-in-newsletter">                
+      <span>Quero receber e-mails com promoções.</span>              
+    </label>
+  </div>
+  <div>
+    <button type="submit" id="go-to-payment">Ir para o Pagamento</button>
+  </div>
+</form>
+
+</fieldset>
+<fieldset>
+<h3>ricardoeletro.com.br (Page 2)</h3>
+<p><i>Numero is filled in with address-line1, Destinatário is not filled in (should be name)</i></p>
+
+<form>
+  <div>
+    <label for="ship-postalCode">CEP</label>
+    <input autocomplete="nope" id="ship-postalCode" type="text" name="postalCode" maxlength="50" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div style="margin: 10px;">
+    <span style="border: 1px solid grey; padding: 7px; background-color: #EEEEEE;">Endereço: Rua Cássio de Campos Nogueira</span> <a href="about:blank">Alterar</a>
+  </div>
+  <div>
+    <label for="ship-number">Número</label>
+    <input autocomplete="nope" id="ship-number" type="text" name="number" maxlength="750" value="" style="" data-moz-autofill-type="address-housenumber">
+  </div>
+  <div>
+    <label for="ship-complement">Complemento e referência</label>
+    <input autocomplete="on" id="ship-complement" type="text" name="complement" maxlength="750" placeholder="Complemento" value="" style="" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <label for="ship-receiverName">Destinatário</label>
+    <input autocomplete="on" id="ship-receiverName" type="text" name="receiver" maxlength="750" value="" style="" data-moz-autofill-type="name">
+  </div>
+</form>
+
+</fieldset>
+
+<!--fieldset>
+
+<h3>www.americanas.com.br</h3>
+<p><i></i></p>
+
+<form>
+  <div></div>
+  <div>
+    <label for="ship-postalCode-b">CEP</label>
+    <input autocomplete="nope" id="ship-postalCode-b" type="text" name="postalCode" maxlength="50">
+  </div>
+  <div>
+    <label for="ship-number-b">Número</label>
+    <input autocomplete="nope" id="ship-number-b" type="text" name="number" maxlength="750" value="">
+  </div>
+  <div>
+    <label for="ship-complement-b">Complemento e referência</label>
+    <input autocomplete="on" id="ship-complement-b" type="text" name="complement" maxlength="750" placeholder="Opcional" value="">
+  </div>
+  <div>
+    <label for="ship-receiverName-b">Destinatário</label>
+    <input autocomplete="on" id="ship-receiverName-b" type="text" name="receiver" maxlength="750">
+  </div>
+</form>
+
+</fieldset-->
+
+
+
+
+</body></html>

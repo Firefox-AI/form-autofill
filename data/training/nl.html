@@ -1,0 +1,459 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 200px;
+}
+
+input {
+  margin: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<fieldset>
+<h3>wehkamp.nl</h3>
+<p><i>Given name, initial and family name not filled in correctly.</i></p>
+
+<form method="post">
+  <div>
+    <label for="firstName">Voornaam</label>
+    <input id="firstName" name="firstName" placeholder="" type="text" autocomplete="given-name" value=""  data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="initials">Voorletters</label>
+    <input id="initials" name="initials" placeholder="" type="text" autocomplete="initials" value=""  data-moz-autofill-type="additional-name">
+  </div>
+  <div>
+    <label for="lastName">Achternaam</label>
+      <input id="lastName" name="lastName" placeholder="" type="text" autocomplete="family-name" value=""  data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="dateOfBirth">Geboortedatum</label>
+    <input id="dateOfBirth" name="dateOfBirth" placeholder="dd-mm-jjjj" type="text" value=""  data-moz-autofill-type="bday">
+  </div>
+  <div>
+    <label for="phoneNumber">Telefoonnummer</label>
+    <input id="phoneNumber" name="phoneNumber" placeholder="" type="tel" maxlength="13" autocomplete="tel" value=""  data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <div>
+      <label for="country">Land</label>
+      <label for=""></label>
+      <select id="" name="country" type="select"  data-moz-autofill-type="country">
+        <option value="nl">Nederland </option>
+        <option value="be">België </option>
+      </select>
+    </div>
+    <div>
+      <label for="postalCode">Postcode</label>
+      <input id="postalCode" name="postalCode" placeholder="1024AB" type="text" maxlength="6" autocomplete="shipping postal-code" value=""  data-moz-autofill-type="postal-code">
+    </div>
+    <div>
+      <span>
+        <label for="houseNumber">Huisnummer</label>
+        <input id="houseNumber" name="houseNumber" placeholder="" type="text" value=""  data-moz-autofill-type="address-housenumber">
+      </span>
+      <span>
+        <label for="houseNumberSuffix">Toevoeging</label>
+        <input id="houseNumberSuffix" name="houseNumberSuffix" placeholder="Optioneel" type="text" maxlength="10" autocomplete="off" value=""  data-moz-autofill-type="address-extra-housesuffix">
+      </span>
+    </div>
+  </div>
+  <div>
+    <label for="email">E-mailadres</label>
+    <input id="email" name="email" placeholder="" type="email" autocomplete="email" value=""  data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="password">Wachtwoord</label>
+    <input id="password" name="password" placeholder="" type="password" maxlength="20" autocomplete="new-password" value="">
+  </div>
+</form>
+
+<!--form method="post">
+  <div>
+    <div>
+      <label for="firstName">Voornaam</label>
+      <div>
+        <input id="firstName" name="firstName" placeholder="" type="text" autocomplete="given-name" value="">
+        <button type="button" aria-label="verwijder inhoud" contenteditable="true" tabindex="-1"></button>
+      </div>
+    </div>
+    <div>
+      <label for="initials">Voorletters</label>
+      <div>
+        <input id="initials" name="initials" placeholder="" type="text" autocomplete="initials" value="">
+        <button type="button" aria-label="verwijder inhoud" contenteditable="true" tabindex="-1"></button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="lastName">Achternaam</label>
+    <div>
+      <input id="lastName" name="lastName" placeholder="" type="text" autocomplete="family-name" value="">
+      <button type="button" aria-label="verwijder inhoud" contenteditable="true" tabindex="-1"></button>
+    </div>
+  </div>
+  <div>
+    <label for="gender">Aanhef</label>
+    <div role="group">
+      <input id="V" name="gender" type="radio" value="V">
+      <label for="V">
+        <span></span>
+        <span>Mevrouw</span>
+      </label>
+    </div>
+    <div role="group">
+      <input id="M" name="gender" type="radio" value="M">
+      <label for="M">
+        <span></span>
+        <span>Meneer</span>
+      </label>
+    </div>
+    <div role="group">
+      <input id="O" name="gender" type="radio" value="O">
+      <label for="O">
+        <span></span>
+        <span>Anders</span>
+      </label>
+    </div>
+  </div>
+  <div>
+    <label for="dateOfBirth">Geboortedatum</label>
+    <input id="dateOfBirth" name="dateOfBirth" placeholder="dd-mm-jjjj" type="text" value="">
+  </div>
+  <div>
+    <label for="phoneNumber">Telefoonnummer</label>
+    <div>
+      <input id="phoneNumber" name="phoneNumber" placeholder="" type="tel" maxlength="13" autocomplete="tel" value="">
+      <button type="button" aria-label="verwijder inhoud" contenteditable="true" tabindex="-1"></button>
+    </div>
+  </div>
+  <div>
+    <div>
+      <label for="country">Land</label>
+      <div>
+        <label for=""></label>
+        <select id="" name="country" type="select">
+          <option value="nl">Nederland </option>
+          <option value="be">België </option>
+        </select>
+        <div for="">Nederland</div>
+      </div>
+    </div>
+    <div>
+      <label for="postalCode">Postcode</label>
+      <div>
+        <input id="postalCode" name="postalCode" placeholder="1024AB" type="text" maxlength="6" autocomplete="shipping postal-code" value="">
+        <button type="button" aria-label="verwijder inhoud" contenteditable="true" tabindex="-1"></button>
+      </div>
+    </div>
+    <div>
+      <div>
+        <label for="houseNumber">Huisnummer</label>
+        <div>
+          <input id="houseNumber" name="houseNumber" placeholder="" type="text" value="">
+          <button type="button" aria-label="verwijder inhoud" contenteditable="true" tabindex="-1"></button>
+        </div>
+      </div>
+      <div>
+        <label for="houseNumberSuffix">Toevoeging</label>
+        <div>
+          <input id="houseNumberSuffix" name="houseNumberSuffix" placeholder="Optioneel" type="text" maxlength="10" autocomplete="off" value="">
+          <button type="button" aria-label="verwijder inhoud" contenteditable="true" tabindex="-1"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <label for="email">E-mailadres</label>
+      <div>
+        <input id="email" name="email" placeholder="" type="email" autocomplete="email" value="enndeakintest@gmail.com">
+        <button type="button" aria-label="verwijder inhoud" contenteditable="true" tabindex="-1"></button>
+      </div>
+    </div>
+    <div>
+      <label for="password">Wachtwoord</label>
+      <div>
+        <input id="password" name="password" placeholder="" type="password" maxlength="20" autocomplete="new-password" value="">
+        <button type="button">toon</button>
+      </div>
+    </div>
+    <div>Gebruik minimaal 8 tekens</div>
+  </div>
+  <div>
+    <button type="submit">Maak account</button>
+    <button>Annuleren</button>
+  </div>
+</form-->
+</fieldset>
+
+<fieldset>
+<h3>kruidvat.nl</h3>
+<p><i>Has a house number and extra house number field.</i></p>
+
+<form>
+        <label>
+          <label tabindex="0">
+            <div>
+              <span>Kies je aanhef</span>
+            </div>
+          </label>
+        </label>
+
+        <div>
+          <label>
+            <input name="firstName" type="TEXT" placeholder="Voornaam"  data-moz-autofill-type="given-name">
+            <div>
+              <span>Voornaam</span>
+            </div>
+              </label>
+          <span>Je voornaam is een verplicht veld</span>
+        </div>
+
+        <label>
+          <input name="middleName" type="TEXT" placeholder="Tussenvoegsel"  data-moz-autofill-type="additional-name">
+          <div>
+            <span>Tussenvoegsel</span>
+          </div>
+        </label>
+
+        <div>
+          <label>
+            <input name="lastName" type="TEXT" placeholder="Achternaam"  data-moz-autofill-type="family-name">
+            <div>
+              <span>Achternaam</span>
+            </div>
+              </label>
+          <span>Je achternaam is een verplicht veld</span>
+        </div>
+
+        <v-slot-assigned-content>
+    
+          <div>
+            <h3>Geboortedatum</h3>
+          </div>
+        
+          <div>
+            <input type="number" inputmode="decimal" autocomplete="off" placeholder="DD" min="1" max="31"  data-moz-autofill-type="bday-day">
+            <input type="number" inputmode="decimal" autocomplete="off" placeholder="MM" min="1" max="12"  data-moz-autofill-type="bday-month">
+            <input type="number" inputmode="decimal" autocomplete="off" placeholder="JJJJ" min="1900" max="2024"  data-moz-autofill-type="bday-year">
+          </div>
+        </v-slot-assigned-content>
+
+
+        <div>
+          <label>
+            <input name="email" type="TEXT" placeholder="E-mailadres"  data-moz-autofill-type="email">
+            <div>
+              <span>E-mailadres</span>
+            </div>
+            </label>
+          <span>Vul een e-mailadres in</span>
+        </div>
+
+        <div>
+          <label>
+            <input name="postalCode" type="TEXT" placeholder="Postcode"  data-moz-autofill-type="postal-code">
+            <div>
+              <span>Postcode</span>
+            </div>
+            </label>
+        </div>
+
+        <label>
+          <input name="line2" type="TEXT" placeholder="Huisnummer"  data-moz-autofill-type="address-housenumber">
+          <div>
+            <span>Huisnummer</span>
+          </div>
+          <i></i>
+        </label>
+
+        <label>
+          <input name="pobox" type="TEXT" placeholder="Huisnummer toevoeging"  data-moz-autofill-type="address-extra-housesuffix">
+          <div>
+            <span>Huisnummer toevoeging</span>
+          </div>
+          <i></i>
+        </label>
+
+        <label>
+          <input name="line1" type="TEXT" placeholder="Straat"  data-moz-autofill-type="street-address">
+          <div>
+            <span>Straat</span>
+          </div>
+        </label>
+
+        <div>
+          <label>
+            <input name="town" type="TEXT" placeholder="Woonplaats"  data-moz-autofill-type="address-level2">
+            <div>
+              <span>Woonplaats</span>
+              <span>
+                (Optioneel)
+            </span>
+            </div>
+              </label>
+        </div>
+</form>
+</fieldset>
+
+
+<fieldset>
+<h3>mantel.com</h3>
+
+<form method="post">
+  <div>
+    <div>
+      <label for="first_name">Naam</label>
+      <input type="text" id="first_name" name="first_name" placeholder="Voornaam" value="" minlength="2" autocomplete="given-name" required=""  data-moz-autofill-type="given-name">
+    </div>
+    <input type="text" id="last_name" name="last_name" placeholder="Achternaam" value="" minlength="2" autocomplete="family-name" required=""  data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <div>
+      <label for="oa_zipcode">Postcode</label>
+      <input type="text" id="oa_zipcode" name="oa_zipcode" required="" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}\s?" value="" autocomplete="postal-code"  data-moz-autofill-type="postal-code"
+        oninput="setTimeout(() => { document.getElementById('oa_street').readOnly = false; document.getElementById('oa_city').readOnly = false; }, 0);">
+    </div>
+    <div>
+      <div>
+        <label for="oa_house_number">Huisnummer</label>
+        <input type="text" id="oa_house_number" name="oa_house_number" value="" pattern="[0-9]*" autocomplete="off" required=""  data-moz-autofill-type="address-housenumber">
+      </div>
+      <div>
+        <label for="oa_house_number_add">
+									Toev. (optioneel)
+								</label>
+        <input type="text" id="oa_house_number_add" name="oa_house_number_add" autocomplete="off" value=""  data-moz-autofill-type="address-extra-housesuffix">
+      </div>
+    </div>
+    <span>Combinatie van postcode en huisnummer kan niet gevonden worden.</span>
+    <div>
+      <label for="oa_street">Straat</label>
+      <input type="text" id="oa_street" name="oa_street" value="" autocomplete="street-address" required="" readonly=""  data-moz-autofill-type="address-streetname">
+    </div>
+    <div>
+      <label for="oa_city">Plaatsnaam</label>
+      <input type="text" id="oa_city" name="oa_city" value="" required="" autocomplete="address-level2" readonly=""  data-moz-autofill-type="address-level2">
+    </div>
+  </div>
+  <div>
+    <label>Bezorgadres</label>
+    <div>
+      <input id="da-checkbox" type="checkbox" name="da_isset" value="1">
+      <label for="da-checkbox">
+									Alternatief bezorgadres opgeven								</label>
+    </div>
+  </div>
+  <!--div id="delivery-address">
+    <div>
+      <label for="da_address_name">Ter attentie van</label>
+      <input type="text" id="da_address_name" name="da_address_name" value="" placeholder="Bijv. bedrijf of afdeling" autocomplete="name">
+    </div>
+    <div>
+      <label for="da_zipcode">Postcode</label>
+      <input type="text" id="da_zipcode" name="da_zipcode" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}\s?" value="" autocomplete="postal-code">
+    </div>
+    <div>
+      <div>
+        <label for="da_house_number">Huisnummer</label>
+        <input type="text" id="da_house_number" name="da_house_number" value="" pattern="[0-9]*" autocomplete="off">
+      </div>
+      <div>
+        <label for="da_house_number_add">Toev. (optioneel)</label>
+        <input type="text" id="da_house_number_add" name="da_house_number_add" autocomplete="off" value="">
+      </div>
+    </div>
+    <span>Combinatie van postcode en huisnummer kan niet gevonden worden.</span>
+    <div>
+      <label for="da_street">Straat</label>
+      <input type="text" id="da_street" name="da_street" value="" autocomplete="street-address" readonly="">
+    </div>
+    <div>
+      <label for="da_city">Plaatsnaam</label>
+      <input type="text" id="da_city" name="da_city" value="" autocomplete="address-level2" readonly="">
+    </div>
+  </div-->
+  <div>
+    <div>
+      <label for="email">E-mailadres</label>
+      <input type="email" id="email" name="email" value="" pattern="[A-z0-9._%+\-]+@[A-z0-9.\-]+\.[A-z]{2,}" autocomplete="email" required=""  data-moz-autofill-type="email">
+    </div>
+    <div>
+      <input id="newsletter-checkbox" type="checkbox" name="newsletter_subscribe" value="1">
+      <label for="newsletter-checkbox">
+									Ja, ik ontvang graag de gepersonaliseerde nieuwsbrief							</label>
+    </div>
+  </div>
+  <input type="tel" id="phone" name="phone" value="" autocomplete="tel" pattern=".{10,}" required=""  data-moz-autofill-type="tel">
+</form>
+
+<fieldset>
+
+<h3>www.coolblue.nl</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <input type="radio" name="business_order" value="N" id="business_order-N" checked="" required="">
+    <label for="business_order-N">
+                                                        Particulier
+                                                </label>
+  </div>
+  <div>
+    <input type="radio" name="business_order" value="Y" id="business_order-Y" required="">
+    <label for="business_order-Y">
+                                                        Zakelijk
+                                                </label>
+  </div>
+  <div>
+    <label for="shipment_address_first_name">Voornaam</label>
+    <input type="text" name="shipment_address_first_name" id="shipment_address_first_name" required="" placeholder="Voornaam" minlength="1" maxlength="20" autocomplete="shipping given-name"  data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="shipment_address_last_name">Achternaam</label>
+    <input type="text" name="shipment_address_last_name" id="shipment_address_last_name" required="" placeholder="Achternaam" minlength="1" maxlength="40" autocomplete="shipping family-name"  data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="shipment_address_post_code">Postcode</label>
+    <input type="text" name="shipment_address_post_code" id="shipment_address_post_code" required="" placeholder="Bijv. 1111AA" maxlength="7" pattern="^\d{4}[\s-]?[a-zA-Z]{2}$" autocapitalize="characters" autocomplete="shipping postal-code"  data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="shipment_address_house_number">Huisnummer</label>
+    <input type="tel" name="shipment_address_house_number" id="shipment_address_house_number" required="" placeholder="Bijv. 123" maxlength="6" pattern="^\d+$" autocomplete="off" inputmode="numeric"  data-moz-autofill-type="address-housenumber">
+  </div>
+  <div>
+    <label for="shipment_address_house_number_addition">Toevoeging</label>
+    <input type="text" name="shipment_address_house_number_addition" id="shipment_address_house_number_addition" placeholder="Bijv. A" maxlength="6" autocomplete="none"  data-moz-autofill-type="address-extra-housesuffix">
+  </div>
+  <div>
+    <input id="has_alternate_address" type="checkbox" name="has_alternate_address" value="N" checked="">
+    <label for="has_alternate_address">
+                    
+      <span>
+                    Hetzelfde als bezorgadres
+            </span>
+            
+    </label>
+  </div>
+  <div>
+    <label for="phone_number">Telefoonnummer</label>
+  </div>
+  <div>
+    <input type="tel" name="phone_number" id="phone_number" required="" placeholder="Bijv. 0612345678" minlength="10" maxlength="20" pattern="^[\d+()-]*$" autocomplete="billing tel" inputmode="numeric"  data-moz-autofill-type="tel">
+  </div>
+  
+</form>
+
+</fieldset>
+
+</body></html>

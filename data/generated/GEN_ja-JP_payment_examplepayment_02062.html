@@ -1,0 +1,72 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>example-payment.com</h3>
+<p><i>Synthetic sample (LLM-augmented).</i></p>
+
+<form method="post">
+  <div>
+    <input type="text" name="ccName" id="ccName" placeholder="カードに記載されたお名前" aria-label="カード名義人" data-moz-autofill-type="cc-name">
+  </div>
+  <div>
+    <input type="number" name="ccNumber" id="ccNumber" placeholder="1234 5678 9101 1121" data-moz-autofill-type="cc-number">
+  </div>
+  <div>
+    <select name="ccExpMonth" id="ccExpMonth" aria-label="有効期限（月）" data-moz-autofill-type="cc-exp-month">
+  <option value=""></option>
+  <option>1月</option>
+  <option>2月</option>
+  <option>3月</option>
+  <option>4月</option>
+  <option>5月</option>
+  <option>6月</option>
+  <option>7月</option>
+  <option>8月</option>
+  <option>9月</option>
+  <option>10月</option>
+  <option>11月</option>
+  <option>12月</option>
+</select>
+  </div>
+  <div>
+    <select name="ccExpYear" id="ccExpYear" aria-label="有効期限（年）" data-moz-autofill-type="cc-exp-year">
+  <option value=""></option>
+  <option>2023</option>
+  <option>2024</option>
+  <option>2025</option>
+  <option>2026</option>
+  <option>2027</option>
+  <option>2028</option>
+  <option>2029</option>
+  <option>2030</option>
+</select>
+  </div>
+  <div>
+    <label for="ccCsc">セキュリティコード</label>
+    <input type="number" name="ccCsc" id="ccCsc" placeholder="3桁または4桁の数字" data-moz-autofill-type="cc-csc">
+  </div>
+  <div>
+    <label for="ccType">カードタイプ</label>
+    <select name="ccType" id="ccType" data-moz-autofill-type="cc-type">
+  <option value=""></option>
+  <option>Visa</option>
+  <option>MasterCard</option>
+  <option>JCB</option>
+  <option>American Express</option>
+  <option>Diners Club</option>
+</select>
+  </div>
+  <div>
+    <label for="addressLine1">住所</label>
+    <input type="text" name="addressLine1" id="addressLine1" placeholder="番地、町名など" data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <button name="field" id="field" type="submit">送信</button>
+  </div>
+</form>
+
+</fieldset></body></html>

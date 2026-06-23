@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<div class="form-group required"> <input class="form-control" data-account--suggest-nick-target="source" data-action="change-&gt;account--suggest-nick#suggest" data-nette-rules='[{"op":":filled","msg":": tato položka je povinná"},{"op":":maxLength","msg":"Please enter no more than 120 characters.","arg":120}]' id="frm-register-form-name" maxlength="120" name="name" placeholder="Name*" required="" type="text"/> </div> <div class="form-group required"> <input class="form-control" data-account--sign-up-validator-target="email" data-account--suggest-nick-target="source" data-action="change-&gt;account--suggest-nick#suggest" data-moz-autofill-type="email" data-nette-rules='[{"op":":filled","msg":": tato položka je povinná"},{"op":":email","msg":"Please enter a valid email address."},{"op":":maxLength","msg":"Please enter no more than 120 characters.","arg":120}]' id="frm-register-form-id" maxlength="120" name="id" placeholder="Email*" required="" type="text"/> <div><div class="invalid-feedback" data-account--sign-up-validator-target="emailError"></div></div> </div> <div class="form-group"> <input class="form-control" data-spam="57" id="frm-register-form-email" name="email" placeholder="Fill with 57 or enable javascript" type="email"/> </div> <div class="form-group required"> <input class="form-control" data-account--sign-up-validator-target="nick" data-account--suggest-nick-target="filler" data-moz-autofill-type="loginname" data-nette-rules='[{"op":":filled","msg":": tato položka je povinná"},{"op":":maxLength","msg":"Please enter no more than 60 characters.","arg":60},{"op":":pattern","msg":"Must contains only a-z, 0-9 and _","arg":"^[a-z0-9_]+$"}]' id="frm-register-form-nick" maxlength="60" name="nick" pattern="^[a-z0-9_]+$" placeholder="Username*" required="" type="text"/> <div class="form-text"> You can use lowercase letters, numbers, and underscores </div> <div><div data-account--suggest-nick-target="results"></div><div class="invalid-feedback" data-account--sign-up-validator-target="nickError"></div></div> </div> <div class="form-group required" data-controller="form--reveal-input"> <input class="form-control" data-form--reveal-input-target="input" data-nette-rules='[{"op":":filled","msg":": tato položka je povinná"},{"op":":minLength","msg":"Please enter at least 3 characters.","arg":3}]' id="frm-register-form-password" name="password" placeholder="Password*" required="" type="password"/> </div> <input class="w-full form-control-submit ajax" name="send" type="submit" value="Sign up"/> <input name="_do" type="hidden" value="register-form-submit"/>
+</form>
+
+</fieldset></body></html>

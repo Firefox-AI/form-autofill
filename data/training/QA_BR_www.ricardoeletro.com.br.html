@@ -1,0 +1,878 @@
+<html lang="en" class="js opacity csstransforms csstransitions js-focus-visible" data-js-focus-visible=""><head><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; media-src data:; style-src data: 'unsafe-inline'; font-src data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Mon, 02 Mar 2026 10:16:02 GMT"><link rel="original" href="https://www.ricardoeletro.com.br/checkout/#/profile">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+    <title data-i18n="title">Finalize purchase</title>
+    <link rel="shortcut icon" href="https://www.ricardoeletro.com.br/arquivos/ricardoeletroo-favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.ricardoeletro.com.br/arquivos/ricardoeletroo-apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="/arquivos/ricardoeletroo-windows-tile.png">
+    <link rel="stylesheet" href="https://io2.vtex.com/front-libs/bootstrap/2.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://io2.vtex.com/front-libs/bootstrap/2.3.2/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="https://io2.vtex.com/front-libs/onda/1.0.0/onda.min.css">
+    <link rel="stylesheet" href="https://io2.vtex.com/front-libs/font-awesome/3.2.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://io2.vtex.com/checkout-ui/v6.140.0/lib/front-messages-ui/vtex-message.min.css">
+    <link rel="stylesheet" href="https://io2.vtex.com/checkout-ui/v6.140.0/style/style.css">
+    <link href="https://www.ricardoeletro.com.br/arquivos/checkout-custom.css?v=9b61ae74" rel="stylesheet" type="text/css">
+    <link href="https://www.ricardoeletro.com.br/files/checkout6-custom.css?v=d011101c" rel="stylesheet" type="text/css" id="checkout-custom-css">
+    
+    
+    
+    
+    
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.1.0/es5-shim.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.1.0/es5-sham.min.js"></script>
+    <![endif]-->
+    
+    <!--[if IE]>
+    <script type="text/javascript" src="//io2.vtex.com/checkout-ui/v6.140.0/lib/ie-responsive/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <script type="text/javascript" src="//io2.vtex.com/checkout-ui/v6.140.0/lib/ie-responsive/IE7.js"></script>
+    <link href="//io2.vtex.com/front-libs/font-awesome/3.2.1/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <!--[if IE 8]>
+    <script type="text/javascript" src="//io2.vtex.com/checkout-ui/v6.140.0/lib/ie-responsive/IE8.js"></script>
+    <![endif]-->
+    <!--[if IE 9]>
+    <script type="text/javascript" src="//io2.vtex.com/checkout-ui/v6.140.0/lib/ie-responsive/IE9.js"></script>
+    <![endif]-->
+
+        
+        
+    
+    
+
+    
+
+    
+
+    <link rel="stylesheet" type="text/css" href="https://io2.vtex.com/front.cart/v1.7.3/style/style.css"><link href="https://master--ricardoeletroo.myvtex.com/_v/public/assets/v1/npm/animate.css@3.7.0/animate.min.css" type="text/css" rel="stylesheet"><link href="https://master--ricardoeletroo.myvtex.com/_v/public/assets/v1/published/vtex.pix-payment@0.13.2/public/react/index.min.css" type="text/css" rel="stylesheet"><link href="https://master--ricardoeletroo.myvtex.com/_v/public/assets/v1/published/vtex.google-pay@1.2.11/public/react/App.min.css" type="text/css" rel="stylesheet"><link href="https://master--ricardoeletroo.myvtex.com/_v/public/assets/v1/published/vtex.cartman@0.4.0/public/react/index.min.css" type="text/css" rel="stylesheet"><link href="https://master--ricardoeletroo.myvtex.com/_v/public/assets/v1/published/vtex.checkout@0.6.0/public/react/CheckoutContainer.min.css" type="text/css" rel="stylesheet"><link href="https://master--ricardoeletroo.myvtex.com/_v/public/assets/v1/published/vtex.address-form@3.42.0/public/react/common.min.css" type="text/css" rel="stylesheet"><link href="https://master--ricardoeletroo.myvtex.com/_v/public/assets/v1/published/vtex.pickup-points-modal@3.8.3/public/react/common.min.css" type="text/css" rel="stylesheet"><link href="https://master--ricardoeletroo.myvtex.com/_v/public/assets/v1/published/vtex.omnishipping@1.21.5/public/react/index.min.css" type="text/css" rel="stylesheet"><link href="https://master--ricardoeletroo.myvtex.com/_v/public/assets/v1/published/vtex.shipping-preview@0.14.3/public/react/index.min.css" type="text/css" rel="stylesheet"><style type="text/css">@keyframes progress {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.react-loading-skeleton {
+    /* animation: progress 1.2s ease-in-out infinite; */
+    background-color: #eee;
+    background-image: linear-gradient(90deg, #eee, #f5f5f5, #eee);
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 1;
+    width: 100%;
+}</style><style type="text/css">@keyframes progress {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.react-loading-skeleton {
+    /* animation: progress 1.2s ease-in-out infinite; */
+    background-color: #eee;
+    background-image: linear-gradient(90deg, #eee, #f5f5f5, #eee);
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 1;
+    width: 100%;
+}</style><style type="text/css">.__react_component_tooltip {
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 13px;
+  left: -999em;
+  opacity: 0;
+  padding: 8px 21px;
+  position: fixed;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+  top: -999em;
+  visibility: hidden;
+  z-index: 999;
+}
+.__react_component_tooltip.allow_hover, .__react_component_tooltip.allow_click {
+  pointer-events: auto;
+}
+.__react_component_tooltip:before, .__react_component_tooltip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.__react_component_tooltip.show {
+  opacity: 0.9;
+  margin-top: 0px;
+  margin-left: 0px;
+  visibility: visible;
+}
+.__react_component_tooltip.type-dark {
+  color: #fff;
+  background-color: #222;
+}
+.__react_component_tooltip.type-dark.place-top:after {
+  border-top-color: #222;
+  border-top-style: solid;
+  border-top-width: 6px;
+}
+.__react_component_tooltip.type-dark.place-bottom:after {
+  border-bottom-color: #222;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+.__react_component_tooltip.type-dark.place-left:after {
+  border-left-color: #222;
+  border-left-style: solid;
+  border-left-width: 6px;
+}
+.__react_component_tooltip.type-dark.place-right:after {
+  border-right-color: #222;
+  border-right-style: solid;
+  border-right-width: 6px;
+}
+.__react_component_tooltip.type-dark.border {
+  border: 1px solid #fff;
+}
+.__react_component_tooltip.type-dark.border.place-top:before {
+  border-top: 8px solid #fff;
+}
+.__react_component_tooltip.type-dark.border.place-bottom:before {
+  border-bottom: 8px solid #fff;
+}
+.__react_component_tooltip.type-dark.border.place-left:before {
+  border-left: 8px solid #fff;
+}
+.__react_component_tooltip.type-dark.border.place-right:before {
+  border-right: 8px solid #fff;
+}
+.__react_component_tooltip.type-success {
+  color: #fff;
+  background-color: #8DC572;
+}
+.__react_component_tooltip.type-success.place-top:after {
+  border-top-color: #8DC572;
+  border-top-style: solid;
+  border-top-width: 6px;
+}
+.__react_component_tooltip.type-success.place-bottom:after {
+  border-bottom-color: #8DC572;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+.__react_component_tooltip.type-success.place-left:after {
+  border-left-color: #8DC572;
+  border-left-style: solid;
+  border-left-width: 6px;
+}
+.__react_component_tooltip.type-success.place-right:after {
+  border-right-color: #8DC572;
+  border-right-style: solid;
+  border-right-width: 6px;
+}
+.__react_component_tooltip.type-success.border {
+  border: 1px solid #fff;
+}
+.__react_component_tooltip.type-success.border.place-top:before {
+  border-top: 8px solid #fff;
+}
+.__react_component_tooltip.type-success.border.place-bottom:before {
+  border-bottom: 8px solid #fff;
+}
+.__react_component_tooltip.type-success.border.place-left:before {
+  border-left: 8px solid #fff;
+}
+.__react_component_tooltip.type-success.border.place-right:before {
+  border-right: 8px solid #fff;
+}
+.__react_component_tooltip.type-warning {
+  color: #fff;
+  background-color: #F0AD4E;
+}
+.__react_component_tooltip.type-warning.place-top:after {
+  border-top-color: #F0AD4E;
+  border-top-style: solid;
+  border-top-width: 6px;
+}
+.__react_component_tooltip.type-warning.place-bottom:after {
+  border-bottom-color: #F0AD4E;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+.__react_component_tooltip.type-warning.place-left:after {
+  border-left-color: #F0AD4E;
+  border-left-style: solid;
+  border-left-width: 6px;
+}
+.__react_component_tooltip.type-warning.place-right:after {
+  border-right-color: #F0AD4E;
+  border-right-style: solid;
+  border-right-width: 6px;
+}
+.__react_component_tooltip.type-warning.border {
+  border: 1px solid #fff;
+}
+.__react_component_tooltip.type-warning.border.place-top:before {
+  border-top: 8px solid #fff;
+}
+.__react_component_tooltip.type-warning.border.place-bottom:before {
+  border-bottom: 8px solid #fff;
+}
+.__react_component_tooltip.type-warning.border.place-left:before {
+  border-left: 8px solid #fff;
+}
+.__react_component_tooltip.type-warning.border.place-right:before {
+  border-right: 8px solid #fff;
+}
+.__react_component_tooltip.type-error {
+  color: #fff;
+  background-color: #BE6464;
+}
+.__react_component_tooltip.type-error.place-top:after {
+  border-top-color: #BE6464;
+  border-top-style: solid;
+  border-top-width: 6px;
+}
+.__react_component_tooltip.type-error.place-bottom:after {
+  border-bottom-color: #BE6464;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+.__react_component_tooltip.type-error.place-left:after {
+  border-left-color: #BE6464;
+  border-left-style: solid;
+  border-left-width: 6px;
+}
+.__react_component_tooltip.type-error.place-right:after {
+  border-right-color: #BE6464;
+  border-right-style: solid;
+  border-right-width: 6px;
+}
+.__react_component_tooltip.type-error.border {
+  border: 1px solid #fff;
+}
+.__react_component_tooltip.type-error.border.place-top:before {
+  border-top: 8px solid #fff;
+}
+.__react_component_tooltip.type-error.border.place-bottom:before {
+  border-bottom: 8px solid #fff;
+}
+.__react_component_tooltip.type-error.border.place-left:before {
+  border-left: 8px solid #fff;
+}
+.__react_component_tooltip.type-error.border.place-right:before {
+  border-right: 8px solid #fff;
+}
+.__react_component_tooltip.type-info {
+  color: #fff;
+  background-color: #337AB7;
+}
+.__react_component_tooltip.type-info.place-top:after {
+  border-top-color: #337AB7;
+  border-top-style: solid;
+  border-top-width: 6px;
+}
+.__react_component_tooltip.type-info.place-bottom:after {
+  border-bottom-color: #337AB7;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+.__react_component_tooltip.type-info.place-left:after {
+  border-left-color: #337AB7;
+  border-left-style: solid;
+  border-left-width: 6px;
+}
+.__react_component_tooltip.type-info.place-right:after {
+  border-right-color: #337AB7;
+  border-right-style: solid;
+  border-right-width: 6px;
+}
+.__react_component_tooltip.type-info.border {
+  border: 1px solid #fff;
+}
+.__react_component_tooltip.type-info.border.place-top:before {
+  border-top: 8px solid #fff;
+}
+.__react_component_tooltip.type-info.border.place-bottom:before {
+  border-bottom: 8px solid #fff;
+}
+.__react_component_tooltip.type-info.border.place-left:before {
+  border-left: 8px solid #fff;
+}
+.__react_component_tooltip.type-info.border.place-right:before {
+  border-right: 8px solid #fff;
+}
+.__react_component_tooltip.type-light {
+  color: #222;
+  background-color: #fff;
+}
+.__react_component_tooltip.type-light.place-top:after {
+  border-top-color: #fff;
+  border-top-style: solid;
+  border-top-width: 6px;
+}
+.__react_component_tooltip.type-light.place-bottom:after {
+  border-bottom-color: #fff;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+.__react_component_tooltip.type-light.place-left:after {
+  border-left-color: #fff;
+  border-left-style: solid;
+  border-left-width: 6px;
+}
+.__react_component_tooltip.type-light.place-right:after {
+  border-right-color: #fff;
+  border-right-style: solid;
+  border-right-width: 6px;
+}
+.__react_component_tooltip.type-light.border {
+  border: 1px solid #222;
+}
+.__react_component_tooltip.type-light.border.place-top:before {
+  border-top: 8px solid #222;
+}
+.__react_component_tooltip.type-light.border.place-bottom:before {
+  border-bottom: 8px solid #222;
+}
+.__react_component_tooltip.type-light.border.place-left:before {
+  border-left: 8px solid #222;
+}
+.__react_component_tooltip.type-light.border.place-right:before {
+  border-right: 8px solid #222;
+}
+.__react_component_tooltip.place-top {
+  margin-top: -10px;
+}
+.__react_component_tooltip.place-top:before {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -10px;
+}
+.__react_component_tooltip.place-top:after {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  bottom: -6px;
+  left: 50%;
+  margin-left: -8px;
+}
+.__react_component_tooltip.place-bottom {
+  margin-top: 10px;
+}
+.__react_component_tooltip.place-bottom:before {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: -8px;
+  left: 50%;
+  margin-left: -10px;
+}
+.__react_component_tooltip.place-bottom:after {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  top: -6px;
+  left: 50%;
+  margin-left: -8px;
+}
+.__react_component_tooltip.place-left {
+  margin-left: -10px;
+}
+.__react_component_tooltip.place-left:before {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  right: -8px;
+  top: 50%;
+  margin-top: -5px;
+}
+.__react_component_tooltip.place-left:after {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  right: -6px;
+  top: 50%;
+  margin-top: -4px;
+}
+.__react_component_tooltip.place-right {
+  margin-left: 10px;
+}
+.__react_component_tooltip.place-right:before {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  left: -8px;
+  top: 50%;
+  margin-top: -5px;
+}
+.__react_component_tooltip.place-right:after {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  left: -6px;
+  top: 50%;
+  margin-top: -4px;
+}
+.__react_component_tooltip .multi-line {
+  display: block;
+  padding: 2px 0px;
+  text-align: center;
+}</style><link rel="stylesheet" type="text/css" href="https://io.vtex.com.br/social-selling/assets/style/vtex-social-selling.min.css?v=0.8.0"><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"><style type="text/css">.shipping-reset, .shipping-calculate, .totalizers-list > .Shipping { display: none; }</style><style>.swal2-popup.swal2-toast{flex-direction:row;align-items:center;width:auto;padding:.625em;overflow-y:hidden;background:#fff;box-shadow:0 0 .625em #d9d9d9}.swal2-popup.swal2-toast .swal2-header{flex-direction:row}.swal2-popup.swal2-toast .swal2-title{flex-grow:1;justify-content:flex-start;margin:0 .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{position:static;width:.8em;height:.8em;line-height:.8}.swal2-popup.swal2-toast .swal2-content{justify-content:flex-start;font-size:1em}.swal2-popup.swal2-toast .swal2-icon{width:2em;min-width:2em;height:2em;margin:0}.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:700}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{font-size:.25em}}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{flex-basis:auto!important;width:auto;height:auto;margin:0 .3125em}.swal2-popup.swal2-toast .swal2-styled{margin:0 .3125em;padding:.3125em .625em;font-size:1em}.swal2-popup.swal2-toast .swal2-styled:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(50,100,150,.4)}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.8em;left:-.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-toast-animate-success-line-tip .75s;animation:swal2-toast-animate-success-line-tip .75s}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-toast-animate-success-line-long .75s;animation:swal2-toast-animate-success-line-long .75s}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:swal2-toast-show .5s;animation:swal2-toast-show .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:swal2-toast-hide .1s forwards;animation:swal2-toast-hide .1s forwards}.swal2-container{display:flex;position:fixed;z-index:1060;top:0;right:0;bottom:0;left:0;flex-direction:row;align-items:center;justify-content:center;padding:.625em;overflow-x:hidden;transition:background-color .1s;-webkit-overflow-scrolling:touch}.swal2-container.swal2-backdrop-show,.swal2-container.swal2-noanimation{background:rgba(0,0,0,.4)}.swal2-container.swal2-backdrop-hide{background:0 0!important}.swal2-container.swal2-top{align-items:flex-start}.swal2-container.swal2-top-left,.swal2-container.swal2-top-start{align-items:flex-start;justify-content:flex-start}.swal2-container.swal2-top-end,.swal2-container.swal2-top-right{align-items:flex-start;justify-content:flex-end}.swal2-container.swal2-center{align-items:center}.swal2-container.swal2-center-left,.swal2-container.swal2-center-start{align-items:center;justify-content:flex-start}.swal2-container.swal2-center-end,.swal2-container.swal2-center-right{align-items:center;justify-content:flex-end}.swal2-container.swal2-bottom{align-items:flex-end}.swal2-container.swal2-bottom-left,.swal2-container.swal2-bottom-start{align-items:flex-end;justify-content:flex-start}.swal2-container.swal2-bottom-end,.swal2-container.swal2-bottom-right{align-items:flex-end;justify-content:flex-end}.swal2-container.swal2-bottom-end>:first-child,.swal2-container.swal2-bottom-left>:first-child,.swal2-container.swal2-bottom-right>:first-child,.swal2-container.swal2-bottom-start>:first-child,.swal2-container.swal2-bottom>:first-child{margin-top:auto}.swal2-container.swal2-grow-fullscreen>.swal2-modal{display:flex!important;flex:1;align-self:stretch;justify-content:center}.swal2-container.swal2-grow-row>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-grow-column{flex:1;flex-direction:column}.swal2-container.swal2-grow-column.swal2-bottom,.swal2-container.swal2-grow-column.swal2-center,.swal2-container.swal2-grow-column.swal2-top{align-items:center}.swal2-container.swal2-grow-column.swal2-bottom-left,.swal2-container.swal2-grow-column.swal2-bottom-start,.swal2-container.swal2-grow-column.swal2-center-left,.swal2-container.swal2-grow-column.swal2-center-start,.swal2-container.swal2-grow-column.swal2-top-left,.swal2-container.swal2-grow-column.swal2-top-start{align-items:flex-start}.swal2-container.swal2-grow-column.swal2-bottom-end,.swal2-container.swal2-grow-column.swal2-bottom-right,.swal2-container.swal2-grow-column.swal2-center-end,.swal2-container.swal2-grow-column.swal2-center-right,.swal2-container.swal2-grow-column.swal2-top-end,.swal2-container.swal2-grow-column.swal2-top-right{align-items:flex-end}.swal2-container.swal2-grow-column>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-no-transition{transition:none!important}.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal{margin:auto}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-container .swal2-modal{margin:0!important}}.swal2-popup{display:none;position:relative;box-sizing:border-box;flex-direction:column;justify-content:center;width:32em;max-width:100%;padding:1.25em;border:none;border-radius:.3125em;background:#fff;font-family:inherit;font-size:1rem}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-header{display:flex;flex-direction:column;align-items:center}.swal2-title{position:relative;max-width:100%;margin:0 0 .4em;padding:0;color:#595959;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-actions{display:flex;z-index:1;flex-wrap:wrap;align-items:center;justify-content:center;width:100%;margin:1.25em auto 0}.swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-actions.swal2-loading .swal2-styled.swal2-confirm{box-sizing:border-box;width:2.5em;height:2.5em;margin:.46875em;padding:0;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border:.25em solid transparent;border-radius:100%;border-color:transparent;background-color:transparent!important;color:transparent;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-actions.swal2-loading .swal2-styled.swal2-cancel{margin-right:30px;margin-left:30px}.swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after{content:"";display:inline-block;width:15px;height:15px;margin-left:5px;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border:3px solid #999;border-radius:50%;border-right-color:transparent;box-shadow:1px 1px 1px #fff}.swal2-styled{margin:.3125em;padding:.625em 2em;box-shadow:none;font-weight:500}.swal2-styled:not([disabled]){cursor:pointer}.swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#3085d6;color:#fff;font-size:1.0625em}.swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#aaa;color:#fff;font-size:1.0625em}.swal2-styled:focus{outline:0;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(50,100,150,.4)}.swal2-styled::-moz-focus-inner{border:0}.swal2-footer{justify-content:center;margin:1.25em 0 0;padding:1em 0 0;border-top:1px solid #eee;color:#545454;font-size:1em}.swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;height:.25em;overflow:hidden;border-bottom-right-radius:.3125em;border-bottom-left-radius:.3125em}.swal2-timer-progress-bar{width:100%;height:.25em;background:rgba(0,0,0,.2)}.swal2-image{max-width:100%;margin:1.25em auto}.swal2-close{position:absolute;z-index:2;top:0;right:0;align-items:center;justify-content:center;width:1.2em;height:1.2em;padding:0;overflow:hidden;transition:color .1s ease-out;border:none;border-radius:0;background:0 0;color:#ccc;font-family:serif;font-size:2.5em;line-height:1.2;cursor:pointer}.swal2-close:hover{transform:none;background:0 0;color:#f27474}.swal2-close::-moz-focus-inner{border:0}.swal2-content{z-index:1;justify-content:center;margin:0;padding:0;color:#545454;font-size:1.125em;font-weight:400;line-height:normal;text-align:center;word-wrap:break-word}.swal2-checkbox,.swal2-file,.swal2-input,.swal2-radio,.swal2-select,.swal2-textarea{margin:1em auto}.swal2-file,.swal2-input,.swal2-textarea{box-sizing:border-box;width:100%;transition:border-color .3s,box-shadow .3s;border:1px solid #d9d9d9;border-radius:.1875em;background:inherit;box-shadow:inset 0 1px 1px rgba(0,0,0,.06);color:inherit;font-size:1.125em}.swal2-file.swal2-inputerror,.swal2-input.swal2-inputerror,.swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-file:focus,.swal2-input:focus,.swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:0 0 3px #c4e6f5}.swal2-file::-webkit-input-placeholder,.swal2-input::-webkit-input-placeholder,.swal2-textarea::-webkit-input-placeholder{color:#ccc}.swal2-file::-moz-placeholder,.swal2-input::-moz-placeholder,.swal2-textarea::-moz-placeholder{color:#ccc}.swal2-file:-ms-input-placeholder,.swal2-input:-ms-input-placeholder,.swal2-textarea:-ms-input-placeholder{color:#ccc}.swal2-file::-ms-input-placeholder,.swal2-input::-ms-input-placeholder,.swal2-textarea::-ms-input-placeholder{color:#ccc}.swal2-file::placeholder,.swal2-input::placeholder,.swal2-textarea::placeholder{color:#ccc}.swal2-range{margin:1em auto;background:#fff}.swal2-range input{width:80%}.swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}.swal2-range input,.swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}.swal2-input{height:2.625em;padding:0 .75em}.swal2-input[type=number]{max-width:10em}.swal2-file{background:inherit;font-size:1.125em}.swal2-textarea{height:6.75em;padding:.75em}.swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:inherit;color:inherit;font-size:1.125em}.swal2-checkbox,.swal2-radio{align-items:center;justify-content:center;background:#fff;color:inherit}.swal2-checkbox label,.swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-checkbox input,.swal2-radio input{margin:0 .4em}.swal2-validation-message{display:none;align-items:center;justify-content:center;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}.swal2-validation-message::before{content:"!";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}.swal2-icon{position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:1.25em auto 1.875em;border:.25em solid transparent;border-radius:50%;font-family:inherit;line-height:5em;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474;color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}.swal2-icon.swal2-error.swal2-icon-show{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-success{border-color:#a5dc86;color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-.25em;left:-.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-progress-steps{align-items:center;margin:0 0 1.25em;padding:0;background:inherit;font-weight:600}.swal2-progress-steps li{display:inline-block;position:relative}.swal2-progress-steps .swal2-progress-step{z-index:20;width:2em;height:2em;border-radius:2em;background:#3085d6;color:#fff;line-height:2em;text-align:center}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#3085d6}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}.swal2-progress-steps .swal2-progress-step-line{z-index:10;width:2.5em;height:.4em;margin:0 -1px;background:#3085d6}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{right:auto;left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}@supports (-ms-accelerator:true){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@-moz-document url-prefix(){.swal2-close:focus{outline:2px solid rgba(50,100,150,.4)}}@-webkit-keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@-webkit-keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@-webkit-keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@-webkit-keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@-webkit-keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-container{top:auto;right:auto;bottom:auto;left:auto;max-width:calc(100% - .625em * 2);background-color:transparent!important}body.swal2-no-backdrop .swal2-container>.swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}body.swal2-no-backdrop .swal2-container.swal2-top{top:0;left:50%;transform:translateX(-50%)}body.swal2-no-backdrop .swal2-container.swal2-top-left,body.swal2-no-backdrop .swal2-container.swal2-top-start{top:0;left:0}body.swal2-no-backdrop .swal2-container.swal2-top-end,body.swal2-no-backdrop .swal2-container.swal2-top-right{top:0;right:0}body.swal2-no-backdrop .swal2-container.swal2-center{top:50%;left:50%;transform:translate(-50%,-50%)}body.swal2-no-backdrop .swal2-container.swal2-center-left,body.swal2-no-backdrop .swal2-container.swal2-center-start{top:50%;left:0;transform:translateY(-50%)}body.swal2-no-backdrop .swal2-container.swal2-center-end,body.swal2-no-backdrop .swal2-container.swal2-center-right{top:50%;right:0;transform:translateY(-50%)}body.swal2-no-backdrop .swal2-container.swal2-bottom{bottom:0;left:50%;transform:translateX(-50%)}body.swal2-no-backdrop .swal2-container.swal2-bottom-left,body.swal2-no-backdrop .swal2-container.swal2-bottom-start{bottom:0;left:0}body.swal2-no-backdrop .swal2-container.swal2-bottom-end,body.swal2-no-backdrop .swal2-container.swal2-bottom-right{right:0;bottom:0}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:static!important}}body.swal2-toast-shown .swal2-container{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}body.swal2-toast-column .swal2-toast{flex-direction:column;align-items:stretch}body.swal2-toast-column .swal2-toast .swal2-actions{flex:1;align-self:stretch;height:2.2em;margin-top:.3125em}body.swal2-toast-column .swal2-toast .swal2-loading{justify-content:center}body.swal2-toast-column .swal2-toast .swal2-input{height:2em;margin:.3125em auto;font-size:1em}body.swal2-toast-column .swal2-toast .swal2-validation-message{font-size:1em}</style></head><body id="checkoutMainContainer" class="ricardoeletroo-vtexcommercestable-com-br v-custom-loaded body-cart-vertical v-custom-paymentBuilder-accordion body-order-form v-custom-step-profile"><div style="display: none">    <div class="modal hide fade default-modal guest-login-modal">        <div class="modal-body default-modal-body guest-login-modal-body">            <div class="default-modal-security guest-login-security">                <i class="icon-lock"></i>            </div>            <p class="guest-login-title" data-i18n="modal.guestLoginTitle">Precisamos dos seus dados</p>            <p class="guest-login-message" data-i18n="modal.guestLoginMessage">Para continuar sem autenticação, é necessário que você preencha novamente seus dados de cadastro.</p>            <div class="guest-login-actions pull-right">                <a href="javsacript:void(0);" id="btn-guest-login-cancel-button" data-dismiss="modal" data-i18n="global.back_">Voltar</a>&nbsp; <span data-i18n="global.or">ou</span>&nbsp;                <button id="btn-guest-login-button" class="btn btn-large guest-login-button" autofocus="" data-dismiss="modal" data-i18n="modal.guestLoginMessageContinue">Continuar sem autenticação</button>            </div>        </div>    </div>    <div class="modal hide fade default-modal identified-user-modal modal-email-template">        <div class="modal-body default-modal-body identified-user-modal-body">            <div class="default-modal-security identified-user-security">                <i class="icon-lock"></i>            </div>            <p class="identified-user-hello" data-i18n="clientProfileData.hi">Olá!</p>            <p class="identified-user-message" data-i18n="clientProfileData.autoFill">Identificamos seus dados a partir de compras anteriores. Facilitaremos sua compra preenchendo alguns dados de forma segura.</p>            <button id="btn-identified-user-button" class="btn btn-large identified-user-button" autofocus="" data-dismiss="modal" data-i18n="clientProfileData.autoFillContinue">Continuar com a compra</button>        </div>    </div>    <div class="modal hide fade default-modal payment-confirmation-modal modal-payment-template" data-backdrop="static">        <div class="modal-body default-modal-body payment-confirmation-modal-body">            <div class="default-modal-security payment-confirmation-security">                <i class="icon-lock"></i>            </div>            <p class="payment-confirmation-content">                <i class="payment-confirmation-loading loading-img icon-spinner icon-spin">                    <span data-i18n="global.loading">Carregando...</span>                </i>                <span class="payment-confirmation-thanks" data-i18n="global.thanks">Aguarde...</span>            </p>            <div id="payment-confirmation-message-container">                <p class="payment-confirmation-message" data-bind="visible: sac.isActive()" data-i18n="paymentData.finishingChanges" style="display: none;">Estamos salvando suas alterações.</p>                <p class="payment-confirmation-message" data-bind="visible: !sac.isActive()" data-i18n="paymentData.finishing">Estamos finalizando sua compra.</p>            </div>        </div>    </div>    <div class="modal hide fade default-modal masked-info-modal modal-masked-info-template">        <div class="modal-body default-modal-body masked-info-modal-body">            <div class="default-modal-security masked-info-security">                <i class="icon-lock"></i>            </div>            <p class="masked-info-hello" data-i18n="modal.maskedInfoHello">Por que meus dados aparecem com asteriscos?</p>            <div class="masked-info-message">                <p class="masked-info-message1" data-i18n="modal.maskedInfoMessage1">Como você não está autenticado, protegemos seus dados, mascarando-os com os asteriscos.</p>                <p class="masked-info-message2" data-i18n="modal.maskedInfoMessage2">Se você reconhece que estes são seus dados pessoais e seu endereço, pode seguir em frente!</p>                <p class="masked-info-message3" data-i18n="modal.maskedInfoMessage3">Caso queira vê-los ou alterá-los, basta clicar no ícone de alteração de Dados Pessoais ou de Entrega.</p>            </div>            <button class="btn btn-large masked-info-button" data-dismiss="modal" data-i18n="global.close">Fechar</button>        </div>    </div>    <div class="modal hide fade confirmation-modal unavailable-modal" data-backdrop="static">        <div class="modal-body confirmation-modal-body unavailable-modal-body">            <div class="unavailable-message">                <p data-i18n="modal.unavailableHello" data-bind="visible: unavailableItems().length == 1" style="display: none;">O seguinte item não está disponível para entrega no momento:</p>                <p data-i18n="modal.unavailableHelloPlural" data-bind="visible: unavailableItems().length &gt; 1" style="display: none;">Os seguintes itens não estão disponíveis para entrega no momento:</p>            </div>            <ul class="unavailable-items unstyled clearfix" data-bind="foreach: unavailableItems"></ul>            <div class="unavailable-actions">                <!-- ko if: unavailableItemsCannotBeDelivered -->                <button class="btn btn-large btn-block unavailable-button" autofocus="" data-dismiss="modal" data-i18n="modal.editShipping">Modificar dados de entrega</button>                <!-- /ko -->                <!-- ko ifnot: unavailableItemsCannotBeDelivered --><!-- /ko -->                <button data-dismiss="modal" class="btn btn-success btn-large btn-block unavailable-button pull-right" data-bind="click: removeUnavailableProducts">                <span data-i18n="modal.unavailableButFinish" data-dismiss="modal" data-bind="visible: unavailableItems().length == 1" style="display: none;">Finalizar compra sem este item</span>                <span data-i18n="modal.unavailableButFinishPlural" data-dismiss="modal" data-bind="visible: unavailableItems().length &gt; 1" style="display: none;">Finalizar compra sem estes itens</span>                </button>            </div>        </div>    </div>    <div class="modal hide fade default-modal payment-unauthorized-modal modal-payment-unauthorized-template" data-backdrop="static">        <div class="modal-body default-modal-body payment-unauthorized-modal-body">            <div class="default-modal-security payment-unauthorized-security">                <i class="icon-lock"></i>            </div>            <p class="payment-unauthorized-hello" data-i18n="modal.paymentUnauthorizedReviewData">Por favor, revise seus dados de pagamento</p>            <div class="default-modal-message payment-unauthorized-message">                <p class="payment-unauthorized-message1" data-i18n="modal.paymentUnauthorizedMessage1">Sua compra não foi finalizada devido a algum problema na autorização do pagamento.</p>                <p class="payment-unauthorized-message2" data-i18n="modal.paymentUnauthorizedMessage2">Seu pagamento foi recusado devido a alguma informação incorreta ou saldo insuficiente.</p>                <p data-bind="visible: showingTransactionDetails() == false &amp;&amp; tidText() != ''" class="payment-unauthorized-show-details"><small>                    <a href="javascript:" data-bind="click: showTransactionDetails" data-i18n="modal.showDetails">Exibir detalhes</a>                </small></p>                <p class="payment-unauthorized-message3" data-bind="visible: showingTransactionDetails() == true">                    <small data-bind="text: tidText"></small>                </p>            </div>            <button class="btn btn-large payment-unauthorized-button" data-dismiss="modal" data-i18n="modal.paymentUnauthorizedChangeData">Revisar dados ou pagar de outra forma</button>        </div>    </div>    <div class="modal hide fade recaptcha-modal modal-recaptcha-template" data-backdrop="static">        <div class="recaptcha-modal-body">            <p class="security-validation-title" data-i18n="modal.securityValidationTitle">Verificação de segurança</p>            <p class="security-validation-description" data-i18n="modal.securityValidationDescription">Por favor, marque o campo abaixo para confirmar sua compra:</p>            <span id="recaptcha"></span>            <span class="error" data-bind="visible: recaptchaExpired" data-i18n="modal.securityValidationErrorMessage" style="display: none;">A verificação expirou. Marque o campo novamente.</span>            <a class="security-validation-link" href="javascript:" data-dismiss="modal" data-i18n="modal.backToPaymentStep">Voltar para o Pagamento</a>        </div>    </div></div>
+
+    
+
+    <!-- Feature flag default values -->
+    
+
+    
+
+    
+
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin="">
+
+
+
+
+
+
+  
+
+
+    <div class="container-fluid pci-alert-topbar" data-bind="style: { display: cookiePCIExists() ? 'block' : 'none' }" style="display: none;">
+        <span data-bind="text: alertPCICookieMessage()">Você está no modo de teste do novo PCI Gateway. Os métodos de pagamentos configurados podem levar até 10 minutos para serem aplicados e só estão visíveis para você.</span>
+        <a href="javascript:" data-bind="click: killCookiePCI, text: alertPCICookieClick()">Clique aqui</a>
+        <span data-bind="text: alertPCICookieClickInfo()">para sair do modo de teste.</span>
+    </div>
+
+    
+
+    <header class="main-header" style="display: none;">
+	<div class="header-link">
+	  <!-- <a href="/checkout/#/cart" title="back to cart" class="back-cart-link link">Back to Cart</a> -->
+	</div>
+	<div class="container logoContainer">
+	  <a href="https://www.ricardoeletro.com.br/" title="Go to homepage" class="logo"><img src="https://www.ricardoeletro.com.br/arquivos/checkout-logo.svg" alt="Logo" class="mz-checkout__header--logo"></a>
+       <div class="header-security">
+         <img src="https://www.ricardoeletro.com.br/arquivos/security-logo.svg">
+         <p class="header-security-text">Compra 100% segura</p>
+       </div>
+	
+      <div class="checkout-steps">
+        <div class="checkout-steps-wrap">
+          <span class="checkout-steps_bar">
+            <span class="checkout-steps_bar_inner"></span>
+            <span class="checkout-steps_bar_inner-active"></span>
+          </span>
+          <div class="checkout-steps_items">
+            <span class="checkout-steps_item checkout-steps_item_cart js-checkout-steps-item" data-url="/checkout/#/cart">
+              <span class="text">Carrinho</span>
+            </span>
+            <span class="checkout-steps_item checkout-steps_item_identification js-checkout-steps-item" data-url="/checkout/#/profile">
+              <span class="text">Identificação</span>
+            </span>
+            <span class="checkout-steps_item checkout-steps_item_shipping js-checkout-steps-item" data-url="/checkout/#/shipping">
+              <span class="text">Entrega</span>
+            </span>
+            <span class="checkout-steps_item checkout-steps_item_payment js-checkout-steps-item" data-url="/checkout/#/payment">
+              <span class="text">Pagamento</span>
+            </span>
+            <span class="checkout-steps_item checkout-steps_item_confirmation js-checkout-steps-item">
+              <span class="text">Confirmação</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="x-checkout-steps">
+  	 <ul>
+        <li class="body-cart">
+          <span></span>
+          <p>Carrinho</p>
+        </li>
+        <li class="cadastro active">
+          <span></span>
+         <p>Identificação</p>
+        </li>
+        <li class="entrega">
+          <span></span>
+         <p>Entrega</p>
+        </li>
+        <li class="pagamento">
+          <span></span>
+          <p>Pagamento</p>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+<header class="header-checkout">
+    <div class="header-checkout_topbar">
+        <p>The entire site with up to <span>50% OFF</span> Enjoy!</p>
+    </div>
+    <div class="header-checkout_content">
+        <a href="https://www.ricardoeletro.com.br/" class="back-to-btn">
+            <span>Keep buying</span>
+        </a>
+        <a href="https://www.ricardoeletro.com.br/" class="logo">
+            <img src="https://ricardoeletroo.vteximg.com.br/arquivos/logo-checkout.png" alt="Ricardo Eletro logo">
+        </a>
+        <span class="security">100% Safe Environment</span>
+    </div>
+</header>
+
+<div class="w-steps">
+    <ul>
+        <li class="w-sacola is--active">
+            <span></span>
+            Email
+        </li>
+            
+        <li class="w-bar w-login is--active"></li>
+            
+        <li class="w-login is--active">
+            <span></span> 
+            Personal Data
+        </li>
+            
+        <li class="w-bar w-entrega"></li>
+        <li class="w-entrega">
+            <span></span>
+            Delivery
+        </li>
+        <li class="w-bar w-pagamento"></li>
+        <li class="w-pagamento">
+            <span></span> 
+            Payment
+        </li>
+    </ul>
+</div>
+
+<h3 id="cart-checkout-title" style="display: none;">Meu carrinho</h3>
+
+    <div class="vtex-front-messages-placeholder"><button type="button" class="vtex-front-messages-close-all close"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" xml:space="preserve" width="22" height="22"><g class="nc-icon-wrapper" fill="#111111"><line fill="none" stroke="#111111" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="11.5" y1="4.5" x2="4.5" y2="11.5"></line> <line fill="none" stroke="#111111" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="4.5" y1="4.5" x2="11.5" y2="11.5"></line></g></svg></button></div>
+
+    <!-- DESATIVA PLUGIN SKYPE -->
+    <span id="skype_highlighting_settings" display="none" autoextractnumbers="0"></span>
+    <!-- END -->
+
+    <div class="container container-main container-order-form">
+
+        <h1 class="hide" id="orderform-title" data-i18n="title" data-bind="fadeVisible: inOrderForm() &amp;&amp; !sac.isActive()" style="display: block;">Finalizar compra</h1>
+        <h1 class="hide" id="orderform-sac-title" data-i18n="sacTitle" data-bind="fadeVisible: sac.isActive()" style="display: none;">Alterar dados do pedido</h1>
+        <h1 class="hide" id="cart-title" data-i18n="shoppingCart" data-bind="fadeVisible: inCart() &amp;&amp; !sac.isActive()" style="display: none;">Meu Carrinho</h1>
+
+        <div id="order-by" class="hide order-by form-inline" data-bind="visible: multipleItems" style="display: none;">
+        <label for="order-by-select" class="order-by-label control-label" data-i18n="orderBy.title">Ordenar por</label>
+        <select id="order-by-select" class="order-by-select" data-bind="options: availableOrdinationOptions,
+                    optionsText: 'text',
+                    value: selectedOrdination" data-moz-autofill-inspect-id="a1eaaa62-fc7b-4f89-b641-c4ecf59ae34e" style=""><option value="">Data de inserção - Crescente</option><option value="">Data de inserção - Decrescente</option><option value="">Nome - Crescente</option><option value="">Nome - Decrescente</option>
+        </select>
+        </div>
+
+        <small class="gift-list-alert alert" style="display:none;" data-bind="visible: isUsingGiftRegistry">
+            <i class="icon-gift icon-large"></i>
+            <span class="gift-list-alert-text" data-i18n="giftListAlert">Você está comprando para a lista</span>
+            <b class="gift-list-alert-name" data-bind="text: giftRegistryDescription"></b>.
+            <a href="javascript:" data-bind="click: removeGiftRegistry" data-i18n="giftListDismiss">Não comprar para esta lista</a>.
+        </small>
+
+        <div class="loading loading-bg" data-bind="visible: loading" style="display: none;">
+            <div class="loading-img">
+                <i class="icon-spinner icon-spin icon-3x">
+                    <span data-i18n="global.loading">Carregando...</span>
+                </i>
+            </div>
+        </div>
+
+        <div class="checkout-container row-fluid orderform-active">
+            <!-- CART -->
+            <div class="cart-template full-cart span12 inactive">
+                <div class="cart-template-holder" id="cartLoadedDiv" data-bind="template: 'cart-template'"><div class="empty-cart-content" data-bind="fadeVisible: !hasItems() &amp;&amp; !loading()" style="display: none;">    <h2 class="empty-cart-title" data-i18n="cart.emptyTitle">Seu carrinho está vazio.</h2>    <div class="empty-cart-message">        <p data-i18n="cart.emptyMessage">Para continuar comprando, navegue pelas categorias do site ou faça uma busca pelo seu produto.</p>    </div>    <div class="clearfix empty-cart-links">        <a href="https://www.ricardoeletro.com.br/" id="cart-choose-products" class="btn btn-large btn-success link-choose-products" data-i18n="cart.chooseProducts">Escolher produtos</a>    </div></div><div class="cart" data-bind="visible: hasItems() &amp;&amp; !loading()" style="">    <div class="v-custom-product-item-wrap"></div><table class="table cart-items v-loaded">        <thead>            <tr>                <th colspan="2" class="product" data-i18n="global.product">Produto</th>                <th class="shipping-date" data-i18n="global.delivery" data-bind="visible: !window.router.sac.isActive()">Entrega</th>                <th class="product-price" data-i18n="global.price">Preço</th>                <th class="quantity" data-i18n="global.quantity">Quantidade</th>                <th class="quantity-price" data-i18n="global.total">Total</th>                <th class="item-remove"></th>            </tr>        </thead>        <tbody>            <!-- ko template: { name: 'cart-item-template', foreach: filteredItems, afterRender: afterCartRender } --><tr class="product-item" data-bind="attr: {'data-sku': id}, availableCSS: available(), css: { 'sac-product' : window.router.sac.isActive() }" rowspan="2" data-sku="12">  <td data-bind="css: { 'product-image': imageUrl, 'sac-loading' : window.cart.loadingItem() }" class="product-image">    <a href="https://www.ricardoeletro.com.br/frigideira-inducao-revestimento-ceramico-mamore-e-tampa-24cm-8/p" data-bind="attr: {'href': ('//' + location.host + detailUrl())}">      <!-- ko if: imageUrl -->      <img height="45" width="45" data-bind="attr: {'src': imageUrl, 'alt': name, 'id': 'product-image-' + id()}" src="https://ricardoeletroo.vteximg.com.br/arquivos/ids/155405-55-55/image-ceed641673b049b39abdce7a799b0039.jpg?v=638284091784000000" alt="Frigideira Indução revestimento ceramico mamore e tampa 24cm" id="product-image-12">      <!-- /ko -->      <!-- ko ifnot: imageUrl --><!-- /ko -->    </a>  </td><td class="product-name" data-bind="css: { 'sac-loading' : window.cart.loadingItem() }">    <!-- ko ifnot: router.sac.isActive() -->    <a href="https://www.ricardoeletro.com.br/frigideira-inducao-revestimento-ceramico-mamore-e-tampa-24cm-8/p" data-bind="text: name, attr: {'href': ('//' + location.host + detailUrl()), 'id': 'product-name' + id() }" id="product-name12">Frigideira Indução revestimento ceramico mamore e tampa 24cm</a>    <!-- /ko -->    <!-- ko if: router.sac.isActive() --><!-- /ko -->    <!-- ko ifnot: hasParentItemIndex() -->    <div class="brand">      <span class="brand-label" data-i18n="cart.seller.brand">Marca</span>      <span class="brand-name" data-bind="text: brand">Utensilios do Chef</span>    </div>    <small class="seller muted" data-bind="if: sellerName">      <span data-i18n="cart.soldBy">Produto fornecido e entregue por</span> <span data-bind="text: sellerName">Utensilios do Chef</span>    </small>    <!-- /ko -->    <a href="javascript:" class="pull-right sku-button sku-selector-button" data-bind="click: openSKUSelector, clickBubble: false, visible: window.router.sac.isActive() &amp;&amp; skuOptions().length" style="display: none;">      <span data-i18n="cart.sku.change">Trocar variação</span>      <i data-bind="visible: !isSKUSelectorOpen()" class="icon icon-caret-down"></i>      <i data-bind="visible: isSKUSelectorOpen()" class="icon icon-caret-up" style="display: none;"></i>    </a>    <div class="sku-selector sku-seletor-12" data-bind="attr: { class: 'sku-selector sku-seletor-' + id() }, fadeVisible: isSKUSelectorOpen" tabindex="-1" style="display: none;">      <!-- ko if: SKUSelectorLoading() -->      <div class="loading-img sku-selector-loading">        <i class="icon-spinner icon-spin icon-3x">          <span data-i18n="global.loading">Carregando...</span>        </i>      </div>      <!-- /ko -->      <!-- ko if: skuOptions().length && !SKUSelectorLoading() --><!-- /ko -->      <!-- ko if: skuOptions().length < 1 -->      <p class="sku-message sku-selector-empty" data-i18n="cart.sku.withoutVariation">Este produto não possui variação</p>      <!-- /ko -->    </div>    <ul class="item-discount-descriptions" data-bind="foreach: priceTags"></ul>    <!-- ko if: router.inCart() == true  && availableOfferings() --><!-- /ko -->  </td><td class="shipping-date empty" data-bind="visible: !hasParentItemIndex(), css: { 'empty': estimateLabel() == 'a calcular', 'pickup-only': pickupOnly }, visible: !window.router.sac.isActive()">    <!-- ko if: available() -->      <span class="shipping-estimate-date" data-bind="visible: !hasParentItemIndex(), text: estimateLabel">a calcular</span>      <span class="shipping-estimate-date shipping-estimate-detail" data-bind="text: estimateDetailLabel"></span>      <div class="sla-info hide">        <div class="sla-price" data-bind="text: shippingPriceLabel"></div>        <div class="sla-name"><small data-bind="text: shippingName"></small></div>      </div>    <!-- /ko -->    <!-- ko ifnot: available() --><!-- /ko -->  </td><td class="product-price">  <!-- ko if: isPriceVisible -->    <span class="list-price" data-bind="css: { 'hide' : !isListPriceVisible() }, visible: manualPrice() == null || (isManualPriceActive() &amp;&amp; manualPrice() == null)">      <span class="old-product-price-label" data-i18n="cart.oldPrice">De</span>      <del class="old-product-price muted" data-bind="text: listPriceLabel">R$ 282,30</del>    </span>    <br data-bind="css: { 'hide' : !isListPriceVisible() }" class="">    <span class="best-price">      <span class="new-product-price-label" data-bind="css: { 'hide' : !isListPriceVisible() }, visible: manualPrice() == null || (isManualPriceActive() &amp;&amp; manualPrice() == null), i18nText: 'cart.newPrice'">Por</span>      <!-- ko ifnot: isManualPriceActive() -->        <span class="new-product-real-price hide" data-bind="text: priceLabel">R$ 259,26</span>        <!-- ko if: $parent.allowManualPrice() --><!-- /ko -->        <!-- ko ifnot: $parent.allowManualPrice() -->          <span class="new-product-price" data-bind="text: sellingPriceLabel">R$ 259,26</span>        <!-- /ko -->        <a class="manualprice-link-remove" href="javascript:" data-bind="click: removeManualPrice, visible: manualPrice() != null" data-i18n="[title]global.remove" style="display: none;" title="remover">          <i class="icon icon-remove item-remove-ico"></i>          <span class="hide manualprice-remove-text" data-i18n="global.remove">remover</span>        </a>      <!-- /ko -->      <!-- ko if: isManualPriceActive() --><!-- /ko -->      <small class="new-product-real-price-per-unit" data-bind="text: priceLabelPerUnit"></small>      <!-- ko if: sellingPriceList().length > 1 || price() > sellingPrice() --><!-- /ko -->    </span>  <!-- /ko -->  </td><td class="quantity" data-bind="css: {'cant-change-qty': !canChangeQty(), 'quantity-large': quantity() &gt; 999},                   attr: { 'disabled': window.cart.loadingItem }">    <!-- ko if: router.inCart --><!-- /ko -->    <!-- ko if: router.inOrderForm -->      <span data-bind="text: quantity">1</span>    <!-- /ko -->        <small class="item-multiplier-label" data-bind="text: multiplierLabel"></small>        <small class="item-unit-label" data-bind="text: unitLabel"></small>  </td><td class="quantity-price">    <span class="total-price hide" data-bind="text: priceValueLabel, if: isPriceVisible">R$ 259,26</span>    <span class="total-selling-price" data-bind="text: valueLabel, if: isPriceVisible">R$ 259,26</span>  </td><td class="item-remove">    <a class="item-link-remove" href="javascript:" data-bind="click: remove, visible: !window.cart.loadingItem(), attr: { 'id': 'item-remove-' + id() }" data-i18n="[title]global.remove" id="item-remove-12" title="remover">      <i class="icon icon-remove item-remove-ico"></i><span class="hide item-remove-text" data-i18n="global.remove">remover</span>    </a>    <i class="loading-text icon-spinner icon-spin" data-bind="visible: window.cart.loadingItem" style="display: none;">      <span data-i18n="cart.wait">Por favor, aguarde...</span>    </i>  </td>            <!-- ko ifnot: router.sac.isActive() || hasParentItemIndex() -->    <!-- /ko --></tr><!-- ko ifnot: available --><!-- /ko --><!-- ko if: itemAttachments() && itemAttachments().length > 0 --><!-- /ko --><!-- ko if: bundleItems() && bundleItems().length > 0 --><!-- /ko --><!-- ko if: components() && components().length > 0 --><!-- /ko -->            <!-- /ko -->            <!-- ko if: gifts().length > 0 --><!-- /ko -->        </tbody>    </table>    <button type="button" data-bind="click: showMore, visible: showShowMoreButton" id="show-more" class="submit btn btn-block btn-link show-more-items-button" data-i18n="cart.showMoreItems" style="display: none;">Mostrar mais itens</button></div><div class="extensions-checkout-buttons-container row-fluid" style="display: none;">
+                    <div class="extensions-checkout-buttons span5 pull-right" style="display: none;">
+                        <div class="render-container" id="render-checkout-buttons"></div>
+                    </div>
+                </div><div class="cart-more-options span7">        <div class="cart-select-gift-placeholder"></div>        <div id="shipping-preview-container" class="srp-container" data-bind="css: { 'component-loading component-loading-bg': !window.checkout.renderLoaded(),}"><div class="srp-content onda-v1"><h2 class="srp-main-title mt0 mb0 f3 black-60 fw4">Entrega</h2><div class="srp-data mt4"><div class="vtex-shipping-preview-0-x-pc srp-postal-code"><form class="srp-postal-code__form dib relative"><div class="vtex-shipping-preview-0-x-postalCodeForgotten"><p class="input ship-postalCode required text"><label for="ship-postalCode">CEP</label><input autocomplete="nope" id="ship-postalCode" type="text" name="postalCode" maxlength="50" class="input-small error focus-visible" data-hj-whitelist="true" value="" data-focus-visible-added="" data-moz-autofill-inspect-id="d6df83e6-9b78-4575-a3fa-d79ec90e1115" data-moz-autofill-type="postal-code" style=""><small><a href="https://buscacepinter.correios.com.br/app/endereco/index.php?t" target="_blank" rel="noreferrer">Não sei meu CEP</a></small></p><button type="submit" id="cart-shipping-calculate" class="srp-pc-input btn ml1">Calcular</button></div></form></div></div></div></div>    </div></div>
+
+                
+
+                <div class="summary-template-holder" data-bind="template: {name: 'summary-template', afterRender: vtex.i18n.translateHtml}"><div class="row-fluid summary" data-bind="fadeVisible: window.cart.hasItems() &amp;&amp; !loading()" style="display: block;">    <div class="forms coupon-column summary-coupon-wrap span7 pull-left" data-bind="visible: !checkout.hasShippingPreview(), css: { 'span7 pull-left': !window.checkout.hasSelectableGifts(), 'span4 pull-right': window.checkout.hasSelectableGifts() }" style="display: none;">        <div class="coupon summary-coupon pull-right" data-bind="with: coupon, visible: hasTotal" style="">            <form class="coupon-form" action="" data-bind="submit: addCoupon">                <fieldset class="coupon-fieldset">                    <div data-bind="fadeVisible: isUsingCoupon()" style="display: none;">                        <p class="coupon-label">                            <label for="cart-coupon" data-i18n="totalizers.couponCapitalize">Cupom de desconto</label>                        </p>                        <p class="coupon-fields">                            <span data-bind="visible: !isCouponTyped()">                                <input type="text" id="cart-coupon" class="coupon-value input-small" data-bind="value: couponCode, valueUpdate:'afterkeydown', disable: loadingCoupon()" placeholder="Código" data-i18n="[placeholder]totalizers.couponCode;" data-moz-autofill-inspect-id="3499fb99-adaa-408b-992a-9096b7ec6421" style="">                                <i class="loading-inline icon-spinner icon-spin loading-coupon" data-bind="fadeInlineVisible: loadingCoupon" style="opacity: 0;">                                    <span data-i18n="cart.wait">Por favor, aguarde...</span>                                </i>                                <button type="submit" id="cart-coupon-add" class="btn" data-bind="disable: loadingCoupon" data-i18n="global.add">Adicionar</button>                            </span>                            <span class="info" data-bind="visible: isCouponTyped" style="display: none;">                                <span data-bind="text: value"></span>                                <small class="delete"><a href="javascript:" id="cart-coupon-remove" data-bind="click: removeCoupon" data-i18n="global.delete">excluir</a></small>                            </span>                        </p>                    </div>                    <p class="coupon-data pull-right" data-bind="fadeVisible: !isUsingCoupon()" style="display: block;">                        <a class="link-coupon-add" href="javascript:" id="cart-link-coupon-add" data-bind="click: isUsingCoupon">                            <span data-i18n="global.add">Adicionar</span> <span data-i18n="totalizers.coupon">cupom de desconto</span>                        </a>                    </p>                </fieldset>            </form>        </div>    </div>    <!-- ko if: checkout.hasShippingPreview() -->        <!-- /ko -->    <div class="span5 totalizers summary-totalizers cart-totalizers pull-right">        <div class="forms coupon-column summary-coupon-wrap text-center" data-bind="visible: checkout.hasShippingPreview()" style="">            <div class="coupon summary-coupon" data-bind="with: coupon, visible: hasTotal" style="">                <form class="coupon-form" action="" data-bind="submit: addCoupon">                    <fieldset class="coupon-fieldset">                        <div data-bind="fadeVisible: isUsingCoupon()" style="display: none;">                            <p class="coupon-label">                                <label for="cart-coupon" data-i18n="totalizers.couponCapitalize">Discount coupon</label>                            </p>                            <p class="coupon-fields">                                <span data-bind="visible: !isCouponTyped()">                                    <input type="text" id="cart-coupon" class="coupon-value input-small" data-bind="value: couponCode, valueUpdate:'afterkeydown', disable: loadingCoupon()" placeholder="Code" data-i18n="[placeholder]totalizers.couponCode;" data-moz-autofill-inspect-id="c6b8441c-6701-475a-b5a6-31286f972152" style="">                                    <i class="loading-inline icon-spinner icon-spin loading-coupon" data-bind="fadeInlineVisible: loadingCoupon" style="opacity: 0;">                                        <span data-i18n="cart.wait">Por favor, aguarde...</span>                                    </i>                                    <button type="submit" id="cart-coupon-add" class="btn" data-bind="disable: loadingCoupon" data-i18n="global.add">Add</button>                                </span>                                <span class="info" data-bind="visible: isCouponTyped" style="display: none;">                                    <span data-bind="text: value"></span>                                    <small class="delete"><a href="javascript:" id="cart-coupon-remove" data-bind="click: removeCoupon" data-i18n="global.delete">excluir</a></small>                                </span>                            </p>                        </div>                        <p class="coupon-data" data-bind="fadeVisible: !isUsingCoupon()" style="display: block;">                            <a class="link-coupon-add" href="javascript:" id="cart-link-coupon-add" data-bind="click: isUsingCoupon">                                <span data-i18n="global.add">Adicionar</span> <span data-i18n="totalizers.coupon">cupom de desconto</span>                            </a>                        </p>                    </fieldset>                </form>            </div>        </div>        <div data-bind="template: { name: 'totalizers-template', afterRender: vtex.i18n.translateHtml }"><div class="accordion-group" data-bind="fadeVisible: window.cart.hasItems() &amp;&amp; !loading()" style="display: block;">    <div class="accordion-heading">        <span class="accordion-toggle collapsed" data-i18n="totalizers.summary">Resumo do pedido</span>    </div>    <div class="accordion-body collapse in">        <div class="accordion-inner">            <div class="summary-discount-descriptions" data-bind="visible: discounts().length" style="display: none;">                <h3 class="summary-discount-title" data-i18n="totalizers.Discounts">Descontos</h3>                <ul class="all-discount-descriptions unstyled" data-bind="foreach: discounts()"></ul>            </div>            <table class="table">                <tbody class="totalizers-list">                    <!-- ko foreach: { data: totalizers } -->                        <!-- ko if: id() == 'Shipping' --><!-- /ko -->                        <!-- ko if: checkout.renderLoaded -->                        <tr data-bind="visible: visible, attr: { 'class': id }" class="Items">                            <!-- ko if: id() == 'Shipping' --><!-- /ko -->                            <!-- ko ifnot: id() == 'Shipping' -->                                <!-- ko if: id() == 'CustomTax' --><!-- /ko -->                                <!-- ko ifnot: id() == 'CustomTax' -->                                    <td class="info" data-bind="{text: label()}">Subtotal</td>                                <!-- /ko -->                                <td class="space"></td>                                <td class="monetary" data-bind="text: valueLabel">R$ 259.26</td>                                <td class="empty"></td>                            <!-- /ko -->                        </tr>                        <!-- /ko -->                    <!-- /ko -->                    <!-- ko if: hasCustomTax --><!-- /ko -->                </tbody>                <tbody class="shipping-reset" data-bind="visible: isShippingKnown()                                            &amp;&amp; window.checkout.isUsingPostalCode()                                            &amp;&amp; window.cart.items().length == window.cart.unavailableItems().length" style="display: none;">                    <tr>                        <td class="info">                            <span class="postal-code-for-sla">                                <span class="shipping-name" data-bind="attr: {'data-i18n': 'totalizers.Shipping'}" data-i18n="totalizers.Shipping">Entrega</span>                                <span class="shipping-name-to" data-i18n="global.to">para</span>                                <span class="postal-code-value" data-bind="html: window.summary.maskedPostalCode"></span>                                <a href="javascript:" class="cart-reset-postal-code" id="cart-reset-postal-code" data-bind="visible : window.checkout.canEditData, click: summary.resetShipping" data-i18n="[title]global.edit" title="alterar"><i class="icon-remove-sign"></i></a>                                <br>                                <a href="javascript:" class="cart-reset-postal-code" id="cart-reset-postal-code" data-bind="visible : window.checkout.canEditData, click: window.summary.resetShipping" data-i18n="cart.resetShipping">Informar outro CEP</a>                            </span>                        </td>                        <td class="space"></td>                        <td class="monetary shipping-unavailable" data-i18n="global.unavailable">indisponível</td>                    </tr>                </tbody>                <tbody class="shipping-calculate" data-bind="visible: !isShippingKnown() &amp;&amp; window.checkout.isUsingPostalCode()">                    <tr>                        <td class="info"><span data-i18n="cart.calculateShipping">Entrega</span></td>                        <td class="space" data-bind="visible: !isUsingPostalCode()"></td>                        <td class="monetary" data-bind="visible: !isUsingPostalCode()"><a id="shipping-calculate-link" class="shipping-calculate-link" href="javascript:" data-bind="click: usePostalCode" data-i18n="cart.calculate">Calcular</a></td>                        <td class="monetary form-postal-code forms" data-bind="visible: isUsingPostalCode() &amp;&amp; !isShippingKnown()" colspan="3" style="display: none;">                            <div class="shipping summary-shipping">                                <form class="shipping-form-inline" action="" data-bind="submit: calculateShipping">                                    <fieldset class="shipping-fieldset">                                        <div class="shipping-fields">                                            <input type="tel" id="summary-postal-code" class="postal-code input-mini" data-bind="value: postalCode, valueUpdate:'afterkeydown',                                                        validate: 'postalCode', disable: loadingPostalCode,                                                        maskOnBlur: window.checkout.postalCodeMask,                                                        attr: {'maxlength': window.checkout.postalCodeMask() ? window.checkout.postalCodeMask().length : 9},                                                        css: {'loading-postal-code': loadingPostalCode}" maxlength="9" data-moz-autofill-inspect-id="dc79ab4f-5c49-4c40-aec1-f8e59749c3d5" data-moz-autofill-type="postal-code" style="">                                            <i class="loading-inline icon-spinner icon-spin" data-bind="fadeInlineVisible: loadingPostalCode" style="opacity: 0;">                                                <span data-i18n="cart.wait">Por favor, aguarde...</span>                                            </i>                                            <button type="submit" id="cart-shipping-calculate" class="btn" data-bind="disable: loadingPostalCode" data-i18n="cart.calculate">Calcular</button>                                        </div>                                        <small class="postal-code-service summary-postal-code-service"><a id="cart-dont-know-postal-code" data-bind="attr: { 'href': window.checkout.postalCodeForgottenURL }" target="_blank" data-i18n="totalizers.dontKnowPostalCode" href="http://www.buscacep.correios.com.br/servicos/dnec/index.do">Não sei meu CEP</a></small>                                    </fieldset>                                </form>                            </div>                        </td>                        <td class="empty" data-bind="visible: !isUsingPostalCode()"></td>                    </tr>                </tbody>                <tfoot>                    <tr data-bind="css: {'muted': !hasTotal()}" class="">                        <td class="info" data-i18n="global.total">Total</td>                        <td class="space"></td>                        <td class="monetary" data-bind="text: totalLabel">R$ 259.26</td>                        <td class="empty"></td>                    </tr>                </tfoot>            </table>        </div>    </div></div></div>    </div></div><div class="clearfix pull-right cart-links cart-links-bottom hide" style="display: none;">
+                    <span class="link-choose-more-products-wrapper">
+                        <a data-bind="attr: {href: (window.__RUNTIME__ &amp;&amp; window.__RUNTIME__.rootPath ? (window.__RUNTIME__.rootPath + (window.__RUNTIME__.workspace != 'master' ? ('?workspace=' + window.__RUNTIME__.workspace) : '')) : '/') }" id="cart-choose-more-products" class="more link-choose-more-products" data-i18n="cart.chooseMoreProducts" href="https://www.ricardoeletro.com.br/">Escolher mais produtos</a>
+                    </span>
+                    <span class="link-print-cart-wrapper hide" data-bind="fadeVisible: userType() == 'callCenterOperator'" style="display: none;">
+                        <a id="cart-print" class="btn btn-large link-print-cart" data-i18n="cart.print">Imprimir</a>
+                    </span>
+                    <span class="btn-place-order-wrapper">
+                        <a href="#/orderform" target="_self" data-event="cartToOrderform" id="cart-to-orderform" class="btn btn-large btn-success pull-left-margin btn-place-order" data-i18n="cart.finalize" data-bind="click: cart.next">Continuar pagamento</a><a href="https://www.ricardoeletro.com.br/" target="_self" id="keep_buy" class="btn btn-large btn-success pull-left-margin btn-place-order">Continuar comprando</a><a href="https://wa.me/?text=https://www.ricardoeletro.com.br/checkout/?orderFormId=74c8de7a10174de89a88a1d77efaae68#/cart" target="_blank" id="share_cart" class="share_cart">Compartilhar meu carrinho</a>
+                    </span>
+                </div></div>
+
+                
+                
+            </div>
+            <!-- /END CART -->
+
+            <!-- ORDERFORM -->
+            <div class="row-fluid orderform-template span12 active">
+                <div class="orderform-template-holder span8">
+                    <div class="row-fluid">
+                        <div id="client-profile-data" class="span6 client-profile-data" data-bind="template: {name: 'orderForm-clientProfileData-template', afterRender: afterRender}"><form class="form-page client-pre-email anim-death anim-current" data-bind="event: { 'submit' : submitFirstEmail }, fadeVisible: showEmailForm() &amp;&amp; !checkout.loading()" autocomplete="on" style="display: none;" data-gtm-form-interact-id="0">  <p class="link link-cart pull-right">    <small><a data-bind="attr: { href: window.checkout.cartURL() }" id="orderform-to-cart" target="_self" data-i18n="global.backToCart" href="#/cart">Voltar para o carrinho</a></small>  </p>  <fieldset class="pre-email row-fluid">    <h3 class="client-pre-email-h">      <label for="client-pre-email"><span data-i18n="clientProfileData.preemail">To complete the purchase, please enter your email.
+      <a id="v-custom-edit-login-data" class="link-box-edit btn btn-small" style="" title="Edit">
+        <i class="icon-edit"></i>
+        <i class="icon-spinner icon-spin icon-3x"></i>
+      </a>
+    </span>        <small data-i18n="clientProfileData.preemail_">Rápido. Fácil. Seguro.</small></label>    </h3>    <div class="client-email input text required span8 offset2">      <input type="email" id="client-pre-email" class="input-block-level success" data-i18n="[placeholder]clientProfileData.placeholderEmail" data-bind="value: firstEmail, valueUpdate:'afterkeydown', css: { 'not-ready': loadingEmail }, validate: 'email', required: true, disable: loading" autocomplete="on" name="email" placeholder="your@email.com" data-gtm-form-interact-field-id="0" data-moz-autofill-inspect-id="6ff8ae70-6f9b-45ef-9ec4-8cf6f3737c78" data-moz-autofill-type="email" style="">      <i class="loading-inline icon-spinner icon-spin" data-bind="visible: loadingEmail" style="display: none;">        <span data-i18n="global.loading">Carregando...</span>      </i>      <button id="btn-client-pre-email" class="btn btn-success" type="submit">        <span data-i18n="global.continue_">Continuar</span>      </button>    </div>  </fieldset>  <div class="emailInfo">    <h3 data-i18n="clientProfileData.whyPreEmail">Usamos seu e-mail de forma 100% segura para:</h3>    <ul class="unstyled">      <li>        <i class="icon-ok"></i>        <span data-i18n="clientProfileData.bullet1WhyEmail">Identificar seu perfil</span>      </li>      <li>        <i class="icon-ok"></i>        <span data-i18n="clientProfileData.bullet2WhyEmail">Notificar sobre o andamento do seu pedido</span>      </li>      <li>        <i class="icon-ok"></i>        <span data-i18n="clientProfileData.bullet3WhyEmail">Gerenciar seu histórico de compras</span>      </li>      <li>        <i class="icon-ok"></i>        <span data-i18n="clientProfileData.bullet4WhyEmail">Acelerar o preenchimento de suas informações</span>      </li>    </ul>    <i class="icon-lock"></i>  </div></form><div class="step accordion-group client-profile-data active" data-bind="css: {active: active, filled: visitedAndNotActive}">  <div class="accordion-heading">    <span class="accordion-toggle collapsed accordion-toggle-active" data-bind="css: {'accordion-toggle-active': active}">      <i class="icon-user"></i>      <span data-i18n="clientProfileData.identification">Personal data</span>      <!-- ko if: checkout.canEditData() == true -->      <a data-bind="visible: visitedAndNotActive, attr: {href: (window.__RUNTIME__ &amp;&amp; window.__RUNTIME__.rootPath ? (window.__RUNTIME__.rootPath + '/' + 'checkout' + '/' + (window.__RUNTIME__.workspace != 'master' ? ('?workspace=' + window.__RUNTIME__.workspace) : '') + '#/profile') : '#/profile') }" id="edit-profile-data" class="link-box-edit btn btn-small" tabindex="-1" data-i18n="[title]global.edit" style="display: none;" href="#/profile" title="Editar"><i class="icon-edit"></i></a>      <!-- /ko -->      <!-- ko if: checkout.canEditData() == false --><!-- /ko -->    </span>  </div>  <div class="accordion-body collapse in">    <div class="accordion-inner">      <div class="box-step">        <!--<div class="loading loading-bg" data-bind="fadeVisible: loading">                    <div class="loading-img">                        <i class="icon-spinner icon-spin icon-2x">                            <span data-i18n="global.loading"></span>                        </i>                    </div>                </div>-->        <!-- INFORMAÇÕES PARA VISUALIZAÇÃO -->        <div class="form-step box-info" data-bind="fadeVisible: visitedAndNotActive" style="display: none;">          <p class="client-profile-email">            <span class="email" data-bind="text: email">kinnapopescu@gmail.com</span>            <span class="link-logout-container" data-bind="visible: isUsingExistingAccount" style="display: none;">-              <a class="link-logout" id="is-not-me" href="https://www.ricardoeletro.com.br/checkout/changeToAnonymousUser/" data-bind=" attr: { 'href': anonymousURL }" data-i18n="clientProfileData.isNotMe">Não é você? Sair</a></span>          </p>          <p class="client-profile-summary">            <span class="name-label" data-i18n="clientProfileData.name_" data-bind="visible: checkout.loggedIn() || (!checkout.loggedIn() &amp;&amp; !checkout.canEditData())" style="display: none;">Nome:</span>            <span class="name" data-bind="text: firstName() + ' ' + lastName()">undefined undefined</span>            <!-- ko if: !checkout.loggedIn() && !checkout.canEditData() --><!-- /ko -->            <br><span class="tel-label" data-i18n="clientProfileData.phone_" data-bind="visible: checkout.loggedIn() || (!checkout.loggedIn() &amp;&amp; !checkout.canEditData())" style="display: none;">Telefone:</span>            <span class="tel" data-bind="text: cleanPhone"></span>          </p>        </div>        <!-- FIM INFORMAÇÕES PARA VISUALIZAÇÃO -->        <!-- INFORMAÇÕES PARA EDIÇÃO -->        <form action="" class="form-step box-edit" data-bind="fadeVisible: active, submit: next" style="display: block;">          <div class="box-client-info">            <div class="row-fluid">              <!-- INFORMAÇÕES PARA PESSOA FÍSICA -->              <fieldset class="box-client-info-pf">                <p class="client-notice notice" data-i18n="clientProfileData.notice">We only request the essential information for making the purchase.</p>                <!-- ko if: templateOptions.toggleCorporate --><!-- /ko -->                <!-- ko if: checkout.loggedIn() == false -->                <p class="client-email input text required">                  <label for="client-email" data-i18n="clientProfileData.email">E-mail</label>                  <input type="email" id="client-email" class="input-xlarge success" data-bind="value: email, valueUpdate:'afterkeydown', event: { 'blur' : blurEmail }, validate: 'email', required: true, disable: loading" name="email" data-moz-autofill-inspect-id="18685649-5591-42e9-9619-f081c5a68aa1" data-moz-autofill-type="email" style="">                </p>                <p data-bind="fadeVisible: emailSuggestionDomain, click: acceptSuggestion" style="display: none;">                  <span data-i18n="global.didYouMean">Você quis dizer:</span><span> </span>                  <a href="#" id="email-suggestion-address">                    <span data-bind="text: emailSuggestionAddress"></span><strong data-bind="text: emailSuggestionDomain"></strong>                  </a>                </p>                <!-- /ko -->                <!-- ko if: checkout.loggedIn() && email() --><!-- /ko -->                <p class="client-first-name input pull-left text required">                  <label for="client-first-name" data-i18n="clientProfileData.firstName">First name</label>                  <input type="text" id="client-first-name" autocomplete="given-name" class="input-small" data-bind="value: firstName, validate: 'alphaNumericPunctuation', valueUpdate:'afterkeydown', required: true, disable: loading" data-moz-autofill-inspect-id="3c654d3b-f4d4-447b-a5dc-d0628fecab5a" data-moz-autofill-type="given-name" style="">                </p>                <p class="client-last-name input pull-left text required">                  <label for="client-last-name" data-i18n="clientProfileData.lastName">Last name</label>                  <input type="text" id="client-last-name" autocomplete="last-name" class="input-small" data-bind="value: lastName, validate: 'alphaNumericPunctuation', valueUpdate:'afterkeydown', required: true, disable: loading" data-moz-autofill-inspect-id="ae96104a-a36b-4d68-aeb1-4bb9e48e6068" data-moz-autofill-type="family-name" style="">                </p>                <!-- ko ifnot: showDocumentInCorporate -->                <p class="client-document input pull-left text required mask" data-bind="visible: !hasDifferentDocument(), css: {'hide': !showDocument()}">                  <label for="client-document" data-bind="text: documentLabel">CPF</label>                  <input type="tel" id="client-document" class="input-small" data-bind="hasfocus: documentFocus, value: document, valueUpdate:'afterkeydown', validate: validateDocument, required: isDocumentRequired, disable: loading, maskOnBlur: checkout.documentMask(), attr: documentAttributeBindings" placeholder="999.999.999-99" data-moz-autofill-inspect-id="3fb2ad68-8d6c-4dd5-801d-188ba9c226bb" style="" data-moz-autofill-type="id-number">                </p>                <p class="client-document input pull-left text required mask" data-bind="visible: hasDifferentDocument()" style="display: none;">                  <label for="client-document2" data-bind="text: documentLabel">CPF</label>                  <input type="text" id="client-document2" class="input-small" data-moz-autofill-inspect-id="bc56d899-e13d-4d82-860a-29858b936779" style="">                </p>                <!-- /ko -->                <div data-bind="template: {name: phoneTemplate(), afterRender: window.vtex.i18n.translateHtml }"><p class="client-phone input pull-left text required mask" data-bind="visible: !hasDifferentPhone()">    <label for="client-phone" data-i18n="clientProfileData.phone">Phone</label>    <!-- ko ifnot: hasDifferentPhone -->    <input type="tel" id="client-phone" class="input-small" data-bind="hasfocus: phoneFocus, value: phone, valueUpdate:'afterkeydown', validate: validatePhone, required: true, disable: loading, maskOnBlur: checkout.phoneMask, attr: {'placeholder': phonePlaceholder}" placeholder="11 99999-9999" data-moz-autofill-inspect-id="8978f390-a2bd-439b-9edd-b18b5cebf45a" data-moz-autofill-type="tel" style="">    <!-- /ko --></p><p class="client-phone input pull-left text required mask" data-bind="if: hasDifferentPhone()"></p></div>                <div class="document-box hide document-is-required" data-bind="css: { 'document-is-required': requirementDocument }">                  <h5 class="document-box-title" data-bind="css: { 'visible': hasDifferentDocument }" data-i18n="clientProfileData.document">Documento</h5>                  <ul class="links-other-document links unstyled">                    <li class="link-use-other-document link" data-bind="visible: !hasDifferentDocument()">                      <a href="#" id="no-document-key" tabindex="16" data-bind="click: toggleDifferentDocument,                                                           text: noDocumentLabel">I don't have CPF</a>                    </li>                    <li class="link-use-country-document link" data-bind="visible: hasDifferentDocument()" style="display: none;">                      <a href="#" id="has-document-key" data-bind="click: toggleDifferentDocument,                                                           text: hasDocumentLabel">Tenho CPF</a>                    </li>                  </ul>                  <div class="other-document" data-bind="fadeVisible: hasDifferentDocument" style="display: none;">                    <p class="                        client-document-type                        input                        pull-left                        text                        required                        mask                      ">                      <label for="client-document-type" data-i18n="clientProfileData.documentType">Nome do documento</label>                      <input type="text" id="client-document-type" class="input-small" autocomplete="no-complete" data-bind="value: alternateDocumentType, valueUpdate:'afterkeydown',                                                    required: isDocumentRequired, disable: loading" data-moz-autofill-inspect-id="b68c7440-8a0f-4687-b435-398e2936dd54" style="">                    </p>                    <p class="                        client-new-document                        input                        pull-left                        text                        required                        mask                      ">                      <label for="client-new-document" data-i18n="clientProfileData.document">Documento</label>                      <input type="text" id="client-new-document" class="input-small" autocomplete="no-complete" data-bind="value: alternateDocument, valueUpdate:'afterkeydown',                                                    required: isDocumentRequired, disable: loading" data-moz-autofill-inspect-id="f203d8f5-6ff5-46c8-a586-fe06b85eb32a" style="">                    </p>                  </div>                </div>                <div class="phone-box" data-bind="css: {'visible': hasDifferentPhone()}">                  <ul class="links-other-phone links unstyled">                    <li class="link-use-other-phone link" data-bind="visible: !hasDifferentPhone()">                      <a href="#" id="no-phone-key" tabindex="16" data-bind="click: toggleDifferentPhone,                                                           text: noPhoneLabel">I don't have a phone number in the country (Brazil)</a>                    </li>                    <li class="link-use-country-phone link" data-bind="visible: hasDifferentPhone()" style="display: none;">                      <a href="#" id="has-phone-key" data-bind="click: toggleDifferentPhone,                                                           text: hasPhoneLabel">Tenho telefone do país (Brasil)</a>                    </li>                  </ul>                  <div class="other-phone" data-bind="fadeVisible: hasDifferentPhone" style="display: none;">                    <p class="                        client-new-phone                        input                        pull-left                        text                        required                        mask                      ">                      <label for="client-new-phone" data-i18n="clientProfileData.phoneInternational">Telefone Internacional</label>                      <input type="text" id="client-new-phone" class="input-small" data-bind="value: alternatePhone, valueUpdate:'afterkeydown', required: isNotCorporate, disable: loading" placeholder="+9 999 999 9999" data-moz-autofill-inspect-id="ef76da52-cb6c-457e-b502-4b74ecd7d944" data-moz-autofill-type="tel" style="">                    </p>                  </div>                </div>              </fieldset>              <!-- FIM INFORMAÇÕES PARA PESSOA FÍSICA -->              <!-- INFORMAÇÕES PARA PESSOA JURÍDICA -->              <fieldset class="box-client-info-pj">                <h5 class="corporate-title" data-bind="css: { 'visible': isCorporate }" data-i18n="clientProfileData.corporateTitle">Dados da pessoa jurídica</h5>                <ul class="links unstyled">                  <li class="link pf-pj corporate-hide-link">                    <a href="#" id="is-corporate-client" data-bind="visible: !isCorporate(), click: toggleCorporate" tabindex="17" data-i18n="clientProfileData.includeCo">Include data of legal entity</a>                    <a href="#" id="not-corporate-client" data-bind="visible: isCorporate, click: toggleCorporate" data-i18n="clientProfileData.excludeCo" style="display: none;">Descartar</a>                  </li>                </ul>                <div class="corporate-info-box" data-bind="fadeVisible: isCorporate" style="display: none;">                  <p class="client-company-name input text required">                    <label for="client-company-name" data-i18n="clientProfileData.companyName">Razão Social</label>                    <input type="text" id="client-company-name" class="input-xlarge" data-bind="value: corporateName, valueUpdate:'afterkeydown', required: isCorporateNameRequired, disable: loading" data-moz-autofill-inspect-id="28eb13b6-0f3d-4bd6-96f2-bceb20744c55" data-moz-autofill-type="organization" style="">                  </p>                  <!-- ko if: showCorporateTradeName -->                  <p class="client-company-nickname input text required">                    <label for="client-company-nickname" data-i18n="clientProfileData.tradingName">Nome Fantasia</label>                    <input type="text" id="client-company-nickname" class="input-xlarge" data-bind="value: tradeName, valueUpdate:'afterkeydown', required: requirementTradeName, disable: loading" data-moz-autofill-inspect-id="34e21a5f-d354-4c0f-a8af-98a4b98fbccb" style="">                  </p>                  <!-- /ko -->                  <!-- ko if: showCorporateStateInscription -->                  <!-- ko if: !exempt() -->                  <p class="client-company-ie input text required">                    <label for="client-company-ie" data-bind="text: stateInscriptionLabel">Inscrição Estadual</label>                    <input type="text" id="client-company-ie" autocomplete="no-complete" class="input-small" data-bind="value: stateInscription, validate: 'numericPunctuation', valueUpdate:'afterkeydown', required: requirementStateInscription" data-moz-autofill-inspect-id="cdaabab0-cb71-430f-8cdb-38258f7c6388" style="">                  </p>                  <!-- /ko -->                  <!-- ko if: exempt() --><!-- /ko -->                  <!-- /ko -->                  <!-- ko if: showCorporateDocument -->                  <p class="client-company-document input text required mask" data-bind="visible: !hasDifferentCorporateDocument()">                    <label for="client-company-document" data-bind="text: coDocumentLabel">CNPJ</label>                    <input type="text" id="client-company-document" class="input-small" data-bind="value: corporateDocument, valueUpdate:'afterkeydown',                                                        validate: validateCorporateDocument, required: isCorporateDocumentRequired, disable: loading,                                                        maskOnBlur: checkout.corporateDocumentMask, attr: {'placeholder': companyDocumentPlaceholder}" placeholder="99.999.999/9999-99" data-moz-autofill-inspect-id="d104a83e-8dee-43c7-941c-31998b7cba2c" style="">                  </p>                  <p class="                      client-company-document                      input                      pull-left                      text                      required                      mask                    " data-bind="visible: hasDifferentCorporateDocument()" style="display: none;">                    <label for="client-company-document2" data-bind="text: coDocumentLabel" data-i18n="document-BRA">CNPJ</label>                    <input type="text" id="client-company-document2" class="input-small" data-moz-autofill-inspect-id="a59a9bde-d78f-4e9a-8734-c0adc4189973" style="">                  </p>                  <!-- /ko -->                  <!-- ko if: showDocumentInCorporate --><!-- /ko -->                  <div class="clearfix"></div>                  <div class="state-inscription-box" data-bind="visible: showCorporateExempt()">                    <label class="checkbox exempt-si-label">                      <input type="checkbox" id="state-inscription" data-bind="checked: exempt" data-moz-autofill-inspect-id="5a851d73-d9cf-4ee5-b19a-c884193f9436">                      <span class="exempt-si-text" data-bind="text: noStateInscriptionLabel">Isento de Inscrição Estadual</span>                    </label>                  </div>                  <div class="company-document-box hide company-document-is-required" data-bind="css: { 'company-document-is-required': showCorporateDocument }">                    <ul class="links-other-company-document links unstyled">                      <li class="link-use-other-company-document link" data-bind="visible: !hasDifferentCorporateDocument()">                        <a href="#" id="no-company-document-key" data-bind="click: toggleDifferentCorporateDocument,                                                               text: noCorporateDocumentLabel">A empresa não é do país (Brasil)</a>                      </li>                      <li class="link-use-country-company-document link" data-bind="visible: hasDifferentCorporateDocument()" style="display: none;">                        <a href="#" id="has-company-document-key" data-bind="click: toggleDifferentCorporateDocument,                                                               text: hasCorporateDocumentLabel">A empresa é do país (Brasil)</a>                      </li>                    </ul>                    <div class="other-company-document" data-bind="fadeVisible: hasDifferentCorporateDocument" style="display: none;">                      <p class="                          client-new-company-document                          input                          pull-left                          text                          required                          mask                        ">                        <label for="client-new-company-document" data-i18n="clientProfileData.corporateDocument">Documento da Empresa</label>                        <input type="text" id="client-new-company-document" class="input-small" data-bind="value: alternateCorporateDocument,                                                                  valueUpdate: 'afterkeydown',                                                                  disable: loading" data-moz-autofill-inspect-id="687e69c1-1012-424b-8d6f-0d782a94dd45" style="">                      </p>                    </div>                  </div>                </div>              </fieldset>              <!-- FIM DE INFORMAÇÕES PARA PESSOA JURÍDICA -->            </div>            <p class="save-data hide" data-bind="css: { hide: !checkout.saveUserDataOptInEnabled() }">              <label class="checkbox save-data-label" data-bind="fadeVisible: checkout.canEditData">                <input type="checkbox" id="opt-in-save-data" data-bind="checked: checkout.saveData" data-moz-autofill-inspect-id="ef9653ff-1a6c-4895-bdcc-f478503ac36b">                <span class="save-data-text" data-i18n="global.saveData">Salvar minhas informações para próximas compras.</span>              </label>            </p>            <p class="newsletter" data-bind="visible: checkout.saveData" style="">              <label class="checkbox newsletter-label" data-bind="fadeVisible: checkout.canEditData">                <input type="checkbox" id="opt-in-newsletter" data-bind="checked: checkout.optinNewsLetter, enable: checkout.saveData" data-moz-autofill-inspect-id="8da16a05-af87-4030-84e4-da7a300b9779">                <span class="newsletter-text" data-i18n="global.optinNewsLetter">I want to receive emails with promotions.</span>              </label>            </p>          </div>          <p class="submit btn-submit-wrapper">            <button type="submit" id="go-to-shipping" class="submit btn btn-large btn-success" data-bind="visible: !router.view.shippingDataValid(), disable: loadingEmail" data-i18n="global.goToShipping">Go to Delivery</button>            <button type="submit" id="go-to-payment" class="submit btn btn-large btn-success" data-bind="visible: router.view.shippingDataValid(), disable: loadingEmail" data-i18n="global.goToPayment" style="display: none;">Ir para o Pagamento</button>          </p>        </form>        <!-- FIM INFORMAÇÕES PARA EDIÇÃO -->      </div>    </div>  </div></div></div>
+                        <div id="shipping-data" class="span6 pull-right shipping-data" data-bind="css: { 'step accordion-group box-info': !showShipping() }"><div class="step accordion-group shipping-data"><div class="accordion-heading"><span class="accordion-toggle collapsed"> <i class="icon-home"></i>Delivery</span></div><div class="accordion-inner"><div class="box-step box-info shipping-summary-placeholder"><div class="shipping-summary-info">Waiting for the data to be filled in</div></div></div></div></div>
+                        <div id="payment-data" class="span6 pull-right payment-data" data-bind="template: {name: 'orderForm-paymentData-template', afterRender: afterRender}, css: { 'span6': !active(), 'span12': active }"><div data-bind="attr: { class: 'step accordion-group store-country-' + checkout.countryCode() }, css: {active: active, filled: visitedAndNotActive}" class="step accordion-group store-country-BRA filled">  <div class="accordion-heading" id="payments-title">    <span class="accordion-toggle collapsed" data-bind="css: {'accordion-toggle-active': active}">      <i class="icon-credit-card"></i>      <span data-i18n="paymentData.payment" data-bind="visible: !isCombiningPaymentMethods()">Payment </span>      <span data-i18n="paymentData.payments" data-bind="visible: isCombiningPaymentMethods()" style="display: none;">Pagamentos </span>      <span id="payments-quantity" data-bind="visible: isCombiningPaymentMethods(), text: '(' + selectedPaymentGroupIds().length + ')'" style="display: none;">(1)</span>      <span class="payment-edit-link" style="display: none;">        <a data-bind="visible: visitedAndNotActive, attr: {href: (window.__RUNTIME__ &amp;&amp; window.__RUNTIME__.rootPath ? (window.__RUNTIME__.rootPath + '/' + 'checkout' + '/' + (window.__RUNTIME__.workspace != 'master' ? ('?workspace=' + window.__RUNTIME__.workspace) : '') + '#/payment') : '#/payment') }" class="link-box-edit btn btn-small" tabindex="-1" data-i18n="[title]global.edit" style="" href="#/payment" title="Editar"><i class="icon-edit"></i></a>      </span>    </span>  </div>  <div class="accordion-body collapse in payment-body">    <div class="accordion-inner">      <p class="notification" data-bind="visible: !active()" data-i18n="global.waiting">Aguardando o preenchimento dos dados</p>      <!-- ko if: isArgentina --><!-- /ko -->      <div class="box-step">        <p data-bind="visible: active() &amp;&amp; totalIsFree()" data-i18n="paymentData.totalIsFree" style="display: none;">O total da sua compra é grátis. Finalize a compra e obrigado!</p>        <div data-bind="fadeVisible: active() &amp;&amp; validationError()" class="alert alert-block payment-alert-error fade in" style="display: none;">          <button type="button" class="close" data-bind="click: clearValidationError">            ×          </button>          <p data-i18n="global.validationErrorInThisForm">Encontramos um problema no preenchimento. Por favor, verifique os campos em destaque e tente novamente.</p>        </div>        <div data-bind="fadeVisible: active() &amp;&amp; giftCardMessages().length &gt; 0" class="alert alert-block gift-card-message-container fade in" style="display: none;">          <!-- ko foreach: giftCardMessages --><!-- /ko -->        </div>        <div class="loading loading-bg" data-bind="fadeVisible: loading" style="display: none;">          <div class="loading-img">            <i class="icon-spinner icon-spin icon-2x">              <span data-i18n="global.loading">Carregando...</span>            </i>          </div>        </div>        <div class="box-step-content" data-bind="fadeVisible: active() || visited()" style="display: block;">          <form action="" data-event="finishPayment" class="form-step box-new row-fluid" data-bind="fadeVisible: active(), submit: submit" style="display: none;">            <!-- ko if: hasGiftCard()                                && paymentGroups.giftCardPaymentGroup.specialGiftCards().length > 0                                && !totalIsFree() --><!-- /ko -->            <!-- ko ifnot: isCombiningEnabled() -->            <!-- ko if: hasGiftCard() --><!-- /ko -->            <!-- ko if: hasGiftCard() && showGiftCard() --><!-- /ko -->            <!-- /ko -->            <fieldset class="payment-group" data-bind="visible: showPaymentOptions" style="display: none;">              <h3 class="hide" data-i18n="paymentData.paymentMethod">Forma de pagamento</h3>              <p class="link show-credits hide">                <a href="javascript:" data-i18n="paymentData.showCredits">Exibir créditos da Lista de casamento e do Programa de Fidelidade</a>              </p>                            <!-- ko ifnot: isCombiningEnabled() -->              <!-- para ser usado COM radio button -->              <div class="payment-group-list required button-list inline-list hide" data-bind="foreach: paymentGroupArray">                <!-- ko if: showAsTab -->                <p class="radio first checked" data-bind="click: $parent.selectPaymentGroup,                            css: {first: $parent.paymentGroupArray()[0] === $data,                                  last: $parent.paymentGroupArray()[$parent.paymentGroupArray().length - 1] === $data,                                  checked: _.contains($parent.selectedPaymentGroupIds(), id)}">                    <input type="radio" data-bind="value: id, attr:{id:'paymentGroup' + id}, checked: _.contains($parent.selectedPaymentGroupIds(), id)" name="paymentGroup" value="-1772446502000ikc24h4e3l" id="paymentGroup-1772446502000ikc24h4e3l" data-moz-autofill-inspect-id="7d95aa3f-60a1-4757-806c-fa0ddd429db2">                    <label class="btn" data-bind="text: localizedLabel, attr:{'for':'paymentGroup' + id, htmlFor:'paymentGroup' + id}" for="paymentGroup-1772446502000ikc24h4e3l" htmlfor="paymentGroup-1772446502000ikc24h4e3l">Cartão de crédito</label>                </p>                <!-- /ko -->                              <!-- ko if: showAsTab -->                <p class="radio" data-bind="click: $parent.selectPaymentGroup,                            css: {first: $parent.paymentGroupArray()[0] === $data,                                  last: $parent.paymentGroupArray()[$parent.paymentGroupArray().length - 1] === $data,                                  checked: _.contains($parent.selectedPaymentGroupIds(), id)}">                    <input type="radio" data-bind="value: id, attr:{id:'paymentGroup' + id}, checked: _.contains($parent.selectedPaymentGroupIds(), id)" name="paymentGroup" value="-1772446502000zsjts3djtnc" id="paymentGroup-1772446502000zsjts3djtnc" data-moz-autofill-inspect-id="ea62cd5d-d7fd-4764-bc7c-83932cf364d9">                    <label class="btn" data-bind="text: localizedLabel, attr:{'for':'paymentGroup' + id, htmlFor:'paymentGroup' + id}" for="paymentGroup-1772446502000zsjts3djtnc" htmlfor="paymentGroup-1772446502000zsjts3djtnc">Pix</label>                </p>                <!-- /ko -->                              <!-- ko if: showAsTab -->                <p class="radio last" data-bind="click: $parent.selectPaymentGroup,                            css: {first: $parent.paymentGroupArray()[0] === $data,                                  last: $parent.paymentGroupArray()[$parent.paymentGroupArray().length - 1] === $data,                                  checked: _.contains($parent.selectedPaymentGroupIds(), id)}">                    <input type="radio" data-bind="value: id, attr:{id:'paymentGroup' + id}, checked: _.contains($parent.selectedPaymentGroupIds(), id)" name="paymentGroup" value="-1772446502000hb97sdxfwq7" id="paymentGroup-1772446502000hb97sdxfwq7" data-moz-autofill-inspect-id="b5e1a462-8f3e-49f7-aa18-6e5623ae3fa6">                    <label class="btn" data-bind="text: localizedLabel, attr:{'for':'paymentGroup' + id, htmlFor:'paymentGroup' + id}" for="paymentGroup-1772446502000hb97sdxfwq7" htmlfor="paymentGroup-1772446502000hb97sdxfwq7">Boleto bancário</label>                </p>                <!-- /ko -->              </div>              <!-- /para ser usado COM radio button -->              <!-- para ser usado SEM radio button -->              <div class="required payment-group-list-btn" data-bind="foreach: paymentGroupArray">              <!-- ko if: showAsTab() && !hasAdvancedTab() -->              <div class="v-custom-payment-item-wrap active"><a href="javascript:" data-bind="click: $parent.selectPaymentGroup,                          attr:{ 'data-name': name, 'id':'payment-group-' + groupName(), 'class': className + ' payment-group-item' },                          css: { active: _.contains($parent.selectedPaymentGroupIds(), id) }" data-name="Visa" id="payment-group-creditCardPaymentGroup" class="payment-group-item active">                <span data-bind="i18n: localizedLabel, css: customStyle, 'class': 'payment-group-item-text ' + checkout.countryCode()" class="payment-group-item-text BRA">Cartão de crédito</span>              <span class="payment-group-item-cards"><span class="card-flag Visa">Visa</span><span class="card-flag American Express">American Express</span><span class="card-flag Mastercard">Mastercard</span><span class="card-flag Elo">Elo</span><span class="card-flag Hipercard">Hipercard</span></span></a><div class="payment-method" data-bind="fadeVisible: _.contains($parent.selectedPaymentGroupIds(), id)" style="display: block;">                <!-- ko if: $parent.isCombiningEnabled() --><!-- /ko -->                <div data-bind="template: { name: template(), afterRender: afterRender }"><div data-bind="attr: {id: 'iframe-placeholder-'+getGroupIdentifier(),                       'class': className + ' box-payment-option'},                 css: { 'is-custom': isCustom(), 'active': _.contains($parent.selectedPaymentGroupIds(), id) }" id="iframe-placeholder-creditCardPaymentGroup" class="box-payment-option active"><iframe class="span12" src="io.vtexpayments.com.br/1.html" frameborder="0" style="height: 1029px;" data-moz-autofill-inspect-id="c67d0305-6a07-45e6-ba54-55531e8805de"></iframe></div></div>              </div></div>              <!-- /ko -->              <!-- ko if: showAsTab() && hasAdvancedTab() --><!-- /ko -->                            <!-- ko if: showAsTab() && !hasAdvancedTab() -->              <div class="v-custom-payment-item-wrap "><a href="javascript:" data-bind="click: $parent.selectPaymentGroup,                          attr:{ 'data-name': name, 'id':'payment-group-' + groupName(), 'class': className + ' payment-group-item' },                          css: { active: _.contains($parent.selectedPaymentGroupIds(), id) }" data-name="Pix" id="payment-group-instantPaymentPaymentGroup" class="payment-group-item">                <span data-bind="i18n: localizedLabel, css: customStyle, 'class': 'payment-group-item-text ' + checkout.countryCode()" class="payment-group-item-text BRA">Pix</span>              </a><div class="payment-method" data-bind="fadeVisible: _.contains($parent.selectedPaymentGroupIds(), id)" style="display: none;">                <!-- ko if: $parent.isCombiningEnabled() --><!-- /ko -->                <div data-bind="template: { name: template(), afterRender: afterRender }"><fieldset class="box-payment-group2 box-payment-option box-payment-pix">  <h3 class="payment-pix-title">PIX</h3>  <div class="payment-pix-description">    <div class="payment-pix-header-image payment-pix-header-image-main"></div>  </div>    <div class="payment-pix-mobile payment-pix-flow unstyled">    <div class="payment-pix-info">      Para pagar, finalize sua compra abaixo    </div>  </div>    <div class="payment-pix-pc payment-pix-flow unstyled">    <div class="payment-pix-step">      <div class="payment-pix-step-number">1</div>      <div class="payment-pix-step-arrow"></div>      <div class="payment-pix-step-text payment-pix-step1-text">Aperte em Finalizar compra para gerar o código QR</div>    </div>    <div class="payment-pix-step">      <div class="payment-pix-step-number">2</div>      <div class="payment-pix-step-text payment-pix-step2-text">Confira os dados e realize o pagamento pelo app do seu banco</div>    </div>  </div></fieldset></div>              </div></div>              <!-- /ko -->              <!-- ko if: showAsTab() && hasAdvancedTab() --><!-- /ko -->                            <!-- ko if: showAsTab() && !hasAdvancedTab() -->              <div class="v-custom-payment-item-wrap "><a href="javascript:" data-bind="click: $parent.selectPaymentGroup,                          attr:{ 'data-name': name, 'id':'payment-group-' + groupName(), 'class': className + ' payment-group-item' },                          css: { active: _.contains($parent.selectedPaymentGroupIds(), id) }" data-name="Boleto Bancário" id="payment-group-bankInvoicePaymentGroup" class="payment-group-item">                <span data-bind="i18n: localizedLabel, css: customStyle, 'class': 'payment-group-item-text ' + checkout.countryCode()" class="payment-group-item-text BRA">Boleto bancário</span>              </a><div class="payment-method" data-bind="fadeVisible: _.contains($parent.selectedPaymentGroupIds(), id)" style="display: none;">                <!-- ko if: $parent.isCombiningEnabled() --><!-- /ko -->                <div data-bind="template: { name: template(), afterRender: afterRender }"><fieldset class="box-payment-group2 box-payment-option bankInvoicePaymentGroup" data-bind="css: groupName()">    <h3 data-bind="text: localizedLabel">Boleto bancário</h3>    <p class="payment-description" data-bind="text: localizedDescription">O Boleto bancário será exibido após a confirmação da compra e poderá ser impresso para pagamento em qualquer agência bancária, ou ter o número anotado para pagamento pelo telefone ou internet.</p>    <p class="sight">        <span class="total" data-i18n="global.totalValue">Valor total</span>:        <span data-bind="text: window.paymentData.totalToPayIncludingGiftsLabel">R$ 259,26</span>    </p>    <!-- ko if: paymentSystems().length > 1 --><!-- /ko --></fieldset></div>              </div></div>              <!-- /ko -->              <!-- ko if: showAsTab() && hasAdvancedTab() --><!-- /ko -->              </div>              <!-- /para ser usado SEM radio button -->              <!-- /ko -->              <!-- ko if: isCombiningEnabled() --><!-- /ko -->            </fieldset>            <div class="steps-view" data-bind="visible: showPaymentOptions" style="display: none;">              <!-- ko if: isCombiningEnabled() --><!-- /ko -->              <!-- ko foreach: paymentGroupArray -->              <!-- ko if: showAsTab -->                            <!-- /ko -->              <!-- ko if: $data.isIFrame && $parent.selectedPaymentGroupIds().length < $parent.maxPaymentMethodsAllowed -->              <!-- ko if: $parent.isCombiningEnabled() --><!-- /ko -->              <!-- /ko -->                            <!-- ko if: showAsTab -->                            <!-- /ko -->              <!-- ko if: $data.isIFrame && $parent.selectedPaymentGroupIds().length < $parent.maxPaymentMethodsAllowed --><!-- /ko -->                            <!-- ko if: showAsTab -->                            <!-- /ko -->              <!-- ko if: $data.isIFrame && $parent.selectedPaymentGroupIds().length < $parent.maxPaymentMethodsAllowed --><!-- /ko -->              <!-- /ko -->              <!-- /ko -->              <p class="button submit payment-submit-hide">                <button type="submit" class="submit btn btn-success btn-large" data-bind="click: submit, disable: checkout.disablePaymentButton">                  <i class="icon-lock"></i>                  <span data-i18n="paymentData.confirm">Finalizar compra</span>                </button>              </p>            </div>          </form>          <!-- ko if: isCombiningEnabled() --><!-- /ko -->          <form id="sendPayments" data-event="sendPayments" method="post" name="sendPayments" action="">            <input id="paymentsArray" name="paymentsArray" type="hidden" data-moz-autofill-inspect-id="e9627554-1cb0-4886-acec-4481f716fc8b">            <input id="sessionId" name="sessionId" type="hidden" data-moz-autofill-inspect-id="cb186837-7845-41a4-bcfd-1c2b0f2636d4">            <input id="macId" name="macId" type="hidden" data-moz-autofill-inspect-id="07e2e448-ab1a-420c-98f9-2ad6e19bf408">            <input id="sourceApplication" name="sourceApplication" type="hidden" data-moz-autofill-inspect-id="0d867d38-5947-45c2-b0da-7cce6ec9493c">            <input id="callbackURL" name="callbackUrl" type="hidden" data-bind="value: gatewayCallbackURL" value="https://www.ricardoeletro.com.br/checkout/gatewayCallback/{0}/{1}/{2}" data-moz-autofill-inspect-id="04948f5e-6c83-434a-bf2f-b1072785d185">          </form>        </div>      </div>      <div class="clearfix"></div>    </div>    <p class="link back hide">      <a href="#/shipping"><span data-i18n="global.backTo">Voltar para </span>        <span data-i18n="shippingData.shippingAddressTitle">Endereço de entrega</span></a>    </p>  </div></div></div>
+                    </div>
+                </div>
+                <div class="cart-template mini-cart span4">
+                    <div class="cart-fixed cart-fixed-transition affix" style="height: 789.5px;">
+                        <div class="custom-cart-template-wrap"><h2 data-i18n="totalizers.summary">Summary of the request</h2><div class="summary-cart-template-holder" data-bind="fadeVisible: window.router.inOrderForm, template: { name: 'orderForm-summary-cart-template', afterRender: vtex.i18n.translateHtml }" style="display: block; height: auto;"><div class="cart">  <ul class="cart-items unstyled clearfix v-loaded">    <!-- ko foreach: { data: items, afterRender: afterRenderMiniCart } -->    <li class="hproduct item muted" data-bind="attr: {'data-sku': id}" data-sku="12">      <!-- ko ifnot: window.router.sac.isActive() -->      <a href="http://www.ricardoeletro.com.br/frigideira-inducao-revestimento-ceramico-mamore-e-tampa-24cm-8/p" class="url" data-bind="attr: {'href': ('http://' + location.host + detailUrl())}">        <img height="45" width="45" class="photo" data-bind="attr: {'src': imageUrl, 'alt': name, 'id': 'hproduct-item-' + id()}" src="https://ricardoeletroo.vteximg.com.br/arquivos/ids/155405-55-55/image-ceed641673b049b39abdce7a799b0039.jpg?v=638284091784000000" alt="Frying Pan Induction ceramic coating mammore and lid 24cm" id="hproduct-item-12">      </a>      <!-- /ko -->      <!-- ko if: window.router.sac.isActive() --><!-- /ko -->        <!-- ko ifnot: window.router.sac.isActive() -->      <span class="fn product-name" data-bind="text: name, attr: {'title': name, 'href': ('http://' + location.host + detailUrl())}" title="Frying Pan Induction ceramic coating mammore and lid 24cm" href="http://www.ricardoeletro.com.br/frigideira-inducao-revestimento-ceramico-mamore-e-tampa-24cm-8/p">Frying Pan Induction ceramic coating mammore and lid 24cm</span>      <!-- /ko -->      <!-- ko if: window.router.sac.isActive() --><!-- /ko -->      <span class="quantity badge" data-bind="text: quantityLabel">1</span>      <div class="description">        <span class="shipping-date pull-left empty" data-bind="text: estimateLabel, css: { 'empty': estimateLabel() == 'a calcular' }">a calcular</span>        <strong class="item-price pull-right hide" data-bind="text: priceLabel">R$ 259,26</strong>        <strong class="item-price-subtotal pull-right hide" data-bind="text: priceValueLabel">R$ 259,26</strong>        <strong class="price pull-right" data-bind="text: sellingPriceLabel">R$ 259.26</strong>        <strong class="price-subtotal pull-right hide" data-bind="text: valueLabel">R$ 259,26</strong>      </div>      <!-- ko if: bundleItems() && bundleItems().length > 0 --><!-- /ko -->      <!-- ko if: components() && components().length > 0 --><!-- /ko -->      <!-- ko ifnot: available --><!-- /ko -->      <!-- ko foreach: { data: itemAttachments } --><!-- /ko -->    </li>    <!-- /ko -->    <!-- ko if: gifts() && gifts().length > 0 --><!-- /ko -->  </ul></div></div><p id="go-to-cart-button" class="link link-cart pull-right" data-bind="if: !window.router.sac.isActive()">
+                            
+                                <small><a data-bind="attr: { href: window.checkout.cartURL() }" id="orderform-minicart-to-cart" target="_self" data-event="orderformToCart" data-i18n="global.backToCart" href="#/cart">Back to the cart</a></small>
+                            
+                        </p><div class="summary-template-holder" data-bind="template: 'summary-template'"><div class="row-fluid summary" data-bind="fadeVisible: window.cart.hasItems() &amp;&amp; !loading()" style="display: block;">    <div class="forms coupon-column summary-coupon-wrap span7 pull-left" data-bind="visible: !checkout.hasShippingPreview(), css: { 'span7 pull-left': !window.checkout.hasSelectableGifts(), 'span4 pull-right': window.checkout.hasSelectableGifts() }" style="display: none;">        <div class="coupon summary-coupon pull-right" data-bind="with: coupon, visible: hasTotal" style="">            <form class="coupon-form" action="" data-bind="submit: addCoupon">                <fieldset class="coupon-fieldset">                    <div data-bind="fadeVisible: isUsingCoupon()" style="display: none;">                        <p class="coupon-label">                            <label for="cart-coupon" data-i18n="totalizers.couponCapitalize">Discount coupon</label>                        </p>                        <p class="coupon-fields">                            <span data-bind="visible: !isCouponTyped()">                                <input type="text" id="cart-coupon" class="coupon-value input-small" data-bind="value: couponCode, valueUpdate:'afterkeydown', disable: loadingCoupon()" placeholder="Code" data-i18n="[placeholder]totalizers.couponCode;" data-moz-autofill-inspect-id="00de264b-bdcb-45b2-8f48-6d12d81731a2" style="">                                <i class="loading-inline icon-spinner icon-spin loading-coupon" data-bind="fadeInlineVisible: loadingCoupon" style="opacity: 0;">                                    <span data-i18n="cart.wait">Por favor, aguarde...</span>                                </i>                                <button type="submit" id="cart-coupon-add" class="btn" data-bind="disable: loadingCoupon" data-i18n="global.add">Add</button>                            </span>                            <span class="info" data-bind="visible: isCouponTyped" style="display: none;">                                <span data-bind="text: value"></span>                                <small class="delete"><a href="javascript:" id="cart-coupon-remove" data-bind="click: removeCoupon" data-i18n="global.delete">excluir</a></small>                            </span>                        </p>                    </div>                    <p class="coupon-data pull-right" data-bind="fadeVisible: !isUsingCoupon()" style="display: block;">                        <a class="link-coupon-add" href="javascript:" id="cart-link-coupon-add" data-bind="click: isUsingCoupon">                            <span data-i18n="global.add">Adicionar</span> <span data-i18n="totalizers.coupon">cupom de desconto</span>                        </a>                    </p>                </fieldset>            </form>        </div>    </div>    <!-- ko if: checkout.hasShippingPreview() -->    <div class="cart-more-options span7">        <div class="cart-select-gift-placeholder"></div>        <div id="shipping-preview-container" class="srp-container" data-bind="css: { 'component-loading component-loading-bg': !window.checkout.renderLoaded(),}">            <div class="loading-img">                <i class="icon-spinner icon-spin icon-2x">                    <span data-i18n="global.loading">Carregando...</span>                </i>            </div>        </div>    </div>    <!-- /ko -->    <div class="span5 totalizers summary-totalizers cart-totalizers pull-right">        <div class="forms coupon-column summary-coupon-wrap text-center" data-bind="visible: checkout.hasShippingPreview()" style="">            <div class="coupon summary-coupon" data-bind="with: coupon, visible: hasTotal" style="">                <form class="coupon-form" action="" data-bind="submit: addCoupon">                    <fieldset class="coupon-fieldset">                        <div data-bind="fadeVisible: isUsingCoupon()" style="display: none;">                            <p class="coupon-label">                                <label for="cart-coupon" data-i18n="totalizers.couponCapitalize">Cupom de desconto</label>                            </p>                            <p class="coupon-fields">                                <span data-bind="visible: !isCouponTyped()">                                    <input type="text" id="cart-coupon" class="coupon-value input-small" data-bind="value: couponCode, valueUpdate:'afterkeydown', disable: loadingCoupon()" placeholder="Código" data-i18n="[placeholder]totalizers.couponCode;" data-moz-autofill-inspect-id="d2b6be16-8188-4e67-a683-4f2dfb398b98" style="">                                    <i class="loading-inline icon-spinner icon-spin loading-coupon" data-bind="fadeInlineVisible: loadingCoupon" style="opacity: 0;">                                        <span data-i18n="cart.wait">Por favor, aguarde...</span>                                    </i>                                    <button type="submit" id="cart-coupon-add" class="btn" data-bind="disable: loadingCoupon" data-i18n="global.add">Adicionar</button>                                </span>                                <span class="info" data-bind="visible: isCouponTyped" style="display: none;">                                    <span data-bind="text: value"></span>                                    <small class="delete"><a href="javascript:" id="cart-coupon-remove" data-bind="click: removeCoupon" data-i18n="global.delete">excluir</a></small>                                </span>                            </p>                        </div>                        <p class="coupon-data" data-bind="fadeVisible: !isUsingCoupon()" style="display: block;">                            <a class="link-coupon-add" href="javascript:" id="cart-link-coupon-add" data-bind="click: isUsingCoupon">                                <span data-i18n="global.add">Adicionar</span> <span data-i18n="totalizers.coupon">cupom de desconto</span>                            </a>                        </p>                    </fieldset>                </form>            </div>        </div>        <div data-bind="template: { name: 'totalizers-template', afterRender: vtex.i18n.translateHtml }"><div class="accordion-group" data-bind="fadeVisible: window.cart.hasItems() &amp;&amp; !loading()" style="display: block;">    <div class="accordion-heading">        <span class="accordion-toggle collapsed" data-i18n="totalizers.summary">Resumo do pedido</span>    </div>    <div class="accordion-body collapse in">        <div class="accordion-inner">            <div class="summary-discount-descriptions" data-bind="visible: discounts().length" style="display: none;">                <h3 class="summary-discount-title" data-i18n="totalizers.Discounts">Descontos</h3>                <ul class="all-discount-descriptions unstyled" data-bind="foreach: discounts()"></ul>            </div>            <table class="table">                <tbody class="totalizers-list">                    <!-- ko foreach: { data: totalizers } -->                        <!-- ko if: id() == 'Shipping' --><!-- /ko -->                        <!-- ko if: checkout.renderLoaded -->                        <tr data-bind="visible: visible, attr: { 'class': id }" class="Items">                            <!-- ko if: id() == 'Shipping' --><!-- /ko -->                            <!-- ko ifnot: id() == 'Shipping' -->                                <!-- ko if: id() == 'CustomTax' --><!-- /ko -->                                <!-- ko ifnot: id() == 'CustomTax' -->                                    <td class="info" data-bind="{text: label()}">Subtotal</td>                                <!-- /ko -->                                <td class="space"></td>                                <td class="monetary" data-bind="text: valueLabel">R$ 259.26</td>                                <td class="empty"></td>                            <!-- /ko -->                        </tr>                        <!-- /ko -->                    <!-- /ko -->                    <!-- ko if: hasCustomTax --><!-- /ko -->                </tbody>                <tbody class="shipping-reset" data-bind="visible: isShippingKnown()                                            &amp;&amp; window.checkout.isUsingPostalCode()                                            &amp;&amp; window.cart.items().length == window.cart.unavailableItems().length" style="display: none;">                    <tr>                        <td class="info">                            <span class="postal-code-for-sla">                                <span class="shipping-name" data-bind="attr: {'data-i18n': 'totalizers.Shipping'}" data-i18n="totalizers.Shipping">Entrega</span>                                <span class="shipping-name-to" data-i18n="global.to">para</span>                                <span class="postal-code-value" data-bind="html: window.summary.maskedPostalCode"></span>                                <a href="javascript:" class="cart-reset-postal-code" id="cart-reset-postal-code" data-bind="visible : window.checkout.canEditData, click: summary.resetShipping" data-i18n="[title]global.edit" title="alterar"><i class="icon-remove-sign"></i></a>                                <br>                                <a href="javascript:" class="cart-reset-postal-code" id="cart-reset-postal-code" data-bind="visible : window.checkout.canEditData, click: window.summary.resetShipping" data-i18n="cart.resetShipping">Informar outro CEP</a>                            </span>                        </td>                        <td class="space"></td>                        <td class="monetary shipping-unavailable" data-i18n="global.unavailable">indisponível</td>                    </tr>                </tbody>                <tbody class="shipping-calculate" data-bind="visible: !isShippingKnown() &amp;&amp; window.checkout.isUsingPostalCode()">                    <tr>                        <td class="info"><span data-i18n="cart.calculateShipping">Entrega</span></td>                        <td class="space" data-bind="visible: !isUsingPostalCode()"></td>                        <td class="monetary" data-bind="visible: !isUsingPostalCode()"><a id="shipping-calculate-link" class="shipping-calculate-link" href="javascript:" data-bind="click: usePostalCode" data-i18n="cart.calculate">Calcular</a></td>                        <td class="monetary form-postal-code forms" data-bind="visible: isUsingPostalCode() &amp;&amp; !isShippingKnown()" colspan="3" style="display: none;">                            <div class="shipping summary-shipping">                                <form class="shipping-form-inline" action="" data-bind="submit: calculateShipping">                                    <fieldset class="shipping-fieldset">                                        <div class="shipping-fields">                                            <input type="tel" id="summary-postal-code" class="postal-code input-mini" data-bind="value: postalCode, valueUpdate:'afterkeydown',                                                        validate: 'postalCode', disable: loadingPostalCode,                                                        maskOnBlur: window.checkout.postalCodeMask,                                                        attr: {'maxlength': window.checkout.postalCodeMask() ? window.checkout.postalCodeMask().length : 9},                                                        css: {'loading-postal-code': loadingPostalCode}" maxlength="9" data-moz-autofill-inspect-id="d64032f8-4a1e-424c-b203-2fc6513fee38" data-moz-autofill-type="postal-code" style="">                                            <i class="loading-inline icon-spinner icon-spin" data-bind="fadeInlineVisible: loadingPostalCode" style="opacity: 0;">                                                <span data-i18n="cart.wait">Por favor, aguarde...</span>                                            </i>                                            <button type="submit" id="cart-shipping-calculate" class="btn" data-bind="disable: loadingPostalCode" data-i18n="cart.calculate">Calcular</button>                                        </div>                                        <small class="postal-code-service summary-postal-code-service"><a id="cart-dont-know-postal-code" data-bind="attr: { 'href': window.checkout.postalCodeForgottenURL }" target="_blank" data-i18n="totalizers.dontKnowPostalCode" href="http://www.buscacep.correios.com.br/servicos/dnec/index.do">Não sei meu CEP</a></small>                                    </fieldset>                                </form>                            </div>                        </td>                        <td class="empty" data-bind="visible: !isUsingPostalCode()"></td>                    </tr>                </tbody>                <tfoot>                    <tr data-bind="css: {'muted': !hasTotal()}" class="">                        <td class="info" data-i18n="global.total">Total</td>                        <td class="space"></td>                        <td class="monetary" data-bind="text: totalLabel">R$ 259.26</td>                        <td class="empty"></td>                    </tr>                </tfoot>            </table>        </div>    </div></div></div>    </div></div></div><div class="payment-confirmation-wrap" style="">
+                            <div class="note summary-note hide" data-bind="template: 'note-template', css: { hide: !window.cart.allowManualPrice() }"><p class="note-data" data-bind="fadeVisible: !isUsingNote()" style="display: block;">    <a class="link-note-add" href="javascript:" id="cart-link-note-add" data-bind="click: setUsingNote">        <span data-i18n="global.addNote">Adicionar observação</span>    </a></p><div data-bind="fadeVisible: isUsingNote()" style="display: none;">    <p class="note-label">        <label for="cart-note" data-i18n="global.note">Observação</label>    </p>    <textarea id="cart-note" class="note-textarea" row="3" data-bind="value: note, valueUpdate:'blur'" maxlength="1000" style=""></textarea></div></div>
+
+                            <p class="payment-submit-wrap">
+                                <button id="sac-submit" class="btn btn-default btn-large btn-block" data-bind="visible: window.router.sac.isActive(), click: cancel" tabindex="200" style="display: none;">
+                                    <span data-i18n="paymentData.cancel">Cancelar</span>
+                                </button>
+                                <button id="payment-data-submit" class="submit btn btn-success btn-large btn-block" data-bind="fadeVisible: window.router.sac.isActive(), click: submit, disable: window.checkout.disablePaymentButton" tabindex="200" style="display: none;">
+                                    <i class="icon-lock" data-bind="visible: !window.checkout.disablePaymentButton()" style=""></i>
+                                    <i class="icon-spinner icon-spin" data-bind="visible: window.checkout.disablePaymentButton()" style="display: none;"></i>
+                                    <span data-i18n="paymentData.saveChanges">Salvar alterações</span>
+                                </button>
+                                <button id="payment-data-submit" class="submit btn btn-success btn-large btn-block" data-bind="fadeVisible: !window.router.sac.isActive() &amp;&amp; window.paymentData.isPaymentButtonVisible(), click: submit, disable: window.checkout.disablePaymentButton" tabindex="200">
+                                    <i class="icon-lock" data-bind="visible: !window.checkout.disablePaymentButton()" style=""></i>
+                                    <i class="icon-spinner icon-spin" data-bind="visible: window.checkout.disablePaymentButton()" style="display: none;"></i>
+                                    <span data-i18n="paymentData.confirm">Finalizar compra</span>
+                                </button>
+                            </p>
+
+                        </div></div>
+
+                        <!-- TODO remove window.router -->
+                        
+
+                        
+                        
+
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- /END ORDERFORM -->
+        </div>
+        <div class="transactions-container row-fluid">
+            <div class="transactions span5 pull-right">
+                <div class="render-container" id="render-transactions"></div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="render-container" id="render-cartman"></div>
+<div class="render-container" id="universal-extensions"></div>
+
+<footer class="footer-checkout">
+  	<p class="payments-methods">FORMAS DE PAGAMENTO</p>
+    <div class="footer-checkout-payments">
+        <img src="https://ricardoeletroo.vteximg.com.br/arquivos/checkout-payments-1.png" alt="Payment methods">
+        <img src="https://ricardoeletroo.vteximg.com.br/arquivos/checkout-payments-2.png" alt="Payment methods">
+    </div>
+    <div class="footer-checkout-agency">
+        <img src="https://ricardoeletroo.vteximg.com.br/arquivos/checkout-wicomm.png" alt="Logo Wicomm">
+        <img src="https://ricardoeletroo.vteximg.com.br/arquivos/checkout-vtex.png" alt="Soon Vtex">
+    </div>
+    <p>
+        NORTHEAST PARTICIPACOES S.A - CNPJ: 10.331.096/0001-24 Rua Alexandre Dumas, 1711 - 5th floor - Chácara Santo Antônio,São Paulo, ZIP code: 04717-004
+    </p>
+</footer>
+
+
+<div class="mz-checkout__footer" style="display: none;">
+  <div class="mz-checkout__footer--payments">
+    <div class="mz-checkout__container">
+      <div class="mz-checkout__footer--payment">
+        <h4>Formas de Pagamento</h4>
+
+        <ul>
+          <li><img title="MasterCard" alt="MasterCard" src="https://www.ricardoeletro.com.br/arquivos/MasterCard.svg">
+          </li>
+          <li><img title="Visa" alt="Visa" src="https://www.ricardoeletro.com.br/arquivos/Visa.svg">
+          </li>
+          <li><img title="Hipercard" alt="Hipercard" src="https://ricardoeletroo.vtexassets.com/assets/vtex/assets-builder/ricardoeletroo.mz-builder-theme/0.0.1/img/1657651166278-payment-system-hipercard___ef479007b14c8705bf60389849e978ae.png">
+          </li>
+          <li><img title="Hiper" alt="Hiper" src="https://ricardoeletroo.vtexassets.com/assets/vtex/assets-builder/ricardoeletroo.mz-builder-theme/0.0.1/img/1657651166278-payment-system-hiper___8d69160e0cfd8c21bae673ffd606d882.png">
+          </li>
+          <li><img title="Diners Club" alt="Diners Club" src="https://ricardoeletroo.vtexassets.com/assets/vtex/assets-builder/ricardoeletroo.mz-builder-theme/0.0.1/img/1657651166277-payment-system-dinersclub___dd6639c8e672a87736b4c4d7bbb21cd9.png">
+          </li>
+          <li><img title="JCB" alt="JCB" src="https://ricardoeletroo.vtexassets.com/assets/vtex/assets-builder/ricardoeletroo.mz-builder-theme/0.0.1/img/1657651166279-payment-system-jcb___e27e80b896778fb51df3e5644560b174.png">
+          </li>
+          <li><img title="Discover" alt="Discover" src="https://ricardoeletroo.vtexassets.com/assets/vtex/assets-builder/ricardoeletroo.mz-builder-theme/0.0.1/img/1657651166277-payment-system-discover___7b29a3ba9b8fe6c77ec7037275cf841a.png" s=""></li>
+          <li><img title="Elo" alt="Elo" src="https://www.ricardoeletro.com.br/arquivos/Elo.svg">
+          </li>
+          <li><img title="Boleto" alt="Boleto" src="https://www.ricardoeletro.com.br/arquivos/Boleto.svg">
+          </li>
+          <li><img title="Pix" alt="Pix" src="https://www.ricardoeletro.com.br/arquivos/Pix.svg">
+          </li>
+        </ul>
+      </div>
+
+      <div class="mz-checkout__footer--payment security">
+        <h4>Selos de Segurança</h4>
+
+        <ul>
+          <li><img title="PCI" alt="PCI" src="https://ricardoeletroo.vtexassets.com/assets/vtex/assets-builder/ricardoeletroo.mz-builder-theme/0.0.20/img/selo-seguranca-1___28f83d9bd307870d9483a27f4a636ccf.png"></li>
+          <li><img title="Google Safe Browsing" alt="Google Safe Browsing" src="https://ricardoeletroo.vtexassets.com/assets/vtex/assets-builder/ricardoeletroo.mz-builder-theme/0.0.20/img/selo-seguranca-2___ff853338e8a5b3fda006b6d7d582c44d.png"></li>
+        </ul>
+      </div>
+
+      <div class="mz-checkout__footer--payment powered-by desktop">
+        <ul>
+          <li>
+            <p>Powered by</p>
+
+            <a href="https://vtex.com/" rel="nofollow" title="VTEX" target="_blank">
+              <img alt="VTEX" src="https://ricardoeletroo.vtexassets.com/assets/vtex/assets-builder/ricardoeletroo.mz-builder-theme/0.0.1/img/1688411102415-logo-vtex___5f88b93b07d21883fecbf07016af3574.png">
+            </a>
+          </li>
+
+          <li>
+            <p>Developed by</p>
+
+            <a href="https://eazygo.com.br/" rel="nofollow" title="Maeztra" target="_blank">
+              <img alt="Maeztra" src="https://ricardoeletroo.vtexassets.com/assets/vtex/assets-builder/ricardoeletroo.mz-builder-theme/0.0.1/img/1688411102416-Logotipo-Eazy-Go---Tons-Cinza___7b0c2e1fe6149721966e940420ae84b8.png">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mz-checkout__footer--legal">
+    <div class="mz-checkout__container">
+      <p>Todos os direitos reservados.</p>
+    </div>
+  </div>
+
+  <div class="mz-checkout__footer--payment powered-by mobile">
+    <ul>
+      <li>
+        <p>Powered by</p>
+
+        <a href="https://vtex.com/" rel="nofollow" title="VTEX" target="_blank">
+          <img alt="VTEX" src="https://ricardoeletroo.vtexassets.com/assets/vtex/assets-builder/ricardoeletroo.mz-builder-theme/0.0.1/img/1688411102415-logo-vtex___5f88b93b07d21883fecbf07016af3574.png">
+        </a>
+      </li>
+
+      <li>
+        <p>Developed by</p>
+
+        <a href="https://eazygo.com.br/" rel="nofollow" title="Maeztra" target="_blank">
+          <img alt="Maeztra" src="https://ricardoeletroo.vtexassets.com/assets/vtex/assets-builder/ricardoeletroo.mz-builder-theme/0.0.1/img/1688411102416-Logotipo-Eazy-Go---Tons-Cinza___7b0c2e1fe6149721966e940420ae84b8.png">
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="display: none; visibility: hidden;"></div><iframe src="https://us.creativecdn.com/tags?id=pr_Zu6DJ49AtCcE6188Zexr" width="1" height="1" scrolling="no" frameborder="0" style="display: none;" data-moz-autofill-inspect-id="d964d633-5cfb-4572-b2fb-7e8914885b62"></iframe>
+
+  
+
+
+
+
+
+<iframe height="0" width="0" style="display: none; visibility: hidden;" data-moz-autofill-inspect-id="96ed2bd7-b2aa-46a8-9bee-18a53d7e3828" srcdoc="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;iframe height=&amp;quot;0&amp;quot; width=&amp;quot;0&amp;quot; style=&amp;quot;display: none; visibility: hidden;&amp;quot; src=&amp;quot;https://www.googletagmanager.com/static/service_worker/6240/sw_iframe.html?origin=https%3A%2F%2Fwww.ricardoeletro.com.br&amp;quot; data-moz-autofill-inspect-id=&amp;quot;60639f16-8c03-46b1-bf23-e2e9a0ba5dd2&amp;quot;&gt;&lt;/iframe&gt;&lt;/body&gt;&lt;/html&gt;"></iframe><img class="ywa-10000" style="display: none;" src="https://sp.analytics.yahoo.com/sp.pl?a=10000&amp;d=Mon%2C%2002%20Mar%202026%2010%3A14%3A55%20GMT&amp;n=-2&amp;b=Finalizar%20compra&amp;.yp=436872&amp;f=https%3A%2F%2Fwww.ricardoeletro.com.br%2Fcheckout%2F%23%2Fcart&amp;e=https%3A%2F%2Fwww.ricardoeletro.com.br%2F&amp;enc=UTF-8&amp;yv=1.16.6&amp;tagmgr=gtm" alt="dot image pixel"><img src="https://secure.adnxs.com/seg?add=24743108&amp;t=2" width="0" height="0" alt="" style="display:none !important;"><img src="https://secure.adnxs.com/seg?add=24743093&amp;t=2" width="0" height="0" alt="" style="display:none !important;"><img src="https://life.enviou.com.br/?token=20012021023304ZTT&amp;uid=f25f05b7-d66a-f3ee-c9f0-3d93bc0555a1" height="1" width="1" style="display: none; visibility: hidden;"><div class="vtex-social-selling sb-ready">
+              <ul class="sb-bar sb-white-icon sb-white-icon-over sb-white-label-text sb-css-anim" style="left: 0px; top: 169px;">
+                <li class="sb-b-erasecart">
+                  <div class="sb-mask" style="width: 42px;"><a data-share="erasecart">
+                    <div class="sb-icon fas fa-cart-plus"></div>
+                    <div class="sb-label" data-i18n="social-selling.global.newCart" style="left: 42px;">Novo carrinho</div>
+                  </a></div>
+                </li>
+                <li class="sb-b-codigovendedor">
+                          <div class="sb-mask" style="width: 42px;"><a data-share="codigovendedor">
+                            <div class="sb-icon fas fa-user-plus"></div>
+                            <div class="sb-label" data-i18n="social-selling.global.salesAssistantCode" style="left: 42px;">Adicionar código do vendedor</div>
+                          </a></div>
+                        </li>
+                <li class="sb-divider"></li><li>
+                </li><li class="sb-b-whatsapp">
+                        <div class="sb-mask" style="width: 42px;"><a data-share="whatsapp">
+                          <div class="sb-icon fab fa-whatsapp"></div>
+                          <div class="sb-label" data-i18n="social-selling.global.whatsapp" style="left: 42px;">Whatsapp</div>
+                        </a></div>
+                      </li>
+                <li class="sb-b-facebook-messenger">
+                        <div class="sb-mask" style="width: 42px;"><a data-share="facebook-messenger">
+                          <div class="sb-icon fab fa-facebook-messenger"></div>
+                          <div class="sb-label" data-i18n="social-selling.global.facebookMessenger" style="left: 42px;">Facebook Messenger</div>
+                        </a></div>
+                        </li>
+                <li class="sb-b-sms">
+                        <div class="sb-mask" style="width: 42px;"><a data-share="sms">
+                          <div class="sb-icon fas fa-comment"></div>
+                          <div class="sb-label" data-i18n="social-selling.global.sms" style="left: 42px;">SMS</div>
+                        </a></div>
+                      </li>
+                <li class="sb-b-link">
+                        <div class="sb-mask" style="width: 42px;"><a data-share="link">
+                          <div class="sb-icon fas fa-link"></div>
+                          <div class="sb-label" data-i18n="social-selling.global.link" style="left: 42px;">Link</div>
+                        </a></div>
+                      </li>
+                <li class="sb-b-gmail">
+                        <div class="sb-mask" style="width: 42px;"><a data-share="gmail">
+                          <div class="sb-icon far fa-envelope"></div>
+                          <div class="sb-label" data-i18n="social-selling.global.gmail" style="left: 42px;">Gmail</div>
+                        </a></div>
+                      </li>
+                <li class="sb-b-email">
+                  <div class="sb-mask" style="width: 42px;"><a data-share="email">
+                    <div class="sb-icon fas fa-envelope"></div>
+                    <div class="sb-label" data-i18n="social-selling.global.email" style="left: 42px;">Email</div>
+                  </a></div>
+                </li>
+              </ul>
+            </div><img src="https://life.enviou.com.br/?token=20012021023304ZTT&amp;uid=f25f05b7-d66a-f3ee-c9f0-3d93bc0555a1&amp;email=kinnapopescu@gmail.com" height="1" width="1" style="display: none; visibility: hidden;"><img src="https://life.enviou.com.br/?token=20012021023304ZTT&amp;uid=f25f05b7-d66a-f3ee-c9f0-3d93bc0555a1&amp;email=kinnapopescu@gmail.com" height="1" width="1" style="display: none; visibility: hidden;"><img src="https://life.enviou.com.br/?token=20012021023304ZTT&amp;uid=f25f05b7-d66a-f3ee-c9f0-3d93bc0555a1&amp;email=kinnapopescu@gmail.com" height="1" width="1" style="display: none; visibility: hidden;"><img src="https://life.enviou.com.br/?token=20012021023304ZTT&amp;uid=f25f05b7-d66a-f3ee-c9f0-3d93bc0555a1&amp;email=kinnapopescu@gmail.com" height="1" width="1" style="display: none; visibility: hidden;"></body></html>

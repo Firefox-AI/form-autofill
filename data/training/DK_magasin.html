@@ -1,0 +1,2610 @@
+<html class="html" lang="da" data-locale="da_DK"><head>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+    
+
+
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=DC-9031416&amp;cx=c&amp;gtm=4e61l2"></script><script type="text/javascript" async="" src="https://bat.bing.com/bat.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-&amp;cx=c&amp;gtm=4e61l2"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-P81RLYG6J6&amp;cx=c&amp;gtm=4e61l2"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-4JHEQKC4Z4&amp;cx=c&amp;gtm=4e61l2"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=G-4JHEQKC4Z4&amp;cx=c&amp;gtm=4e61l2"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=G-P81RLYG6J6&amp;cx=c&amp;gtm=4e61l2"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-PCXN7DW"></script><script>
+(function() {
+// Boomerang Loader Snippet version 14
+if (window.BOOMR && (window.BOOMR.version || window.BOOMR.snippetExecuted)) {
+return;
+}
+window.BOOMR = window.BOOMR || {};
+window.BOOMR.snippetStart = new Date().getTime();
+window.BOOMR.snippetExecuted = true;
+window.BOOMR.snippetVersion = 14;
+window.BOOMR.url = "https://s.go-mpulse.net/boomerang/" +
+"W55TL-VMH43-MMV7F-JYXQT-RG5QR";
+var // document.currentScript is supported in all browsers other than IE
+where = document.currentScript || document.getElementsByTagName("script")[0],
+// Parent element of the script we inject
+parentNode = where.parentNode,
+// Whether or not Preload method has worked
+promoted = false,
+// How long to wait for Preload to work before falling back to iframe method
+LOADER_TIMEOUT = 3000;
+// Tells the browser to execute the Preloaded script by adding it to the DOM
+function promote() {
+if (promoted) {
+return;
+}
+var script = document.createElement("script");
+script.id = "boomr-scr-as";
+script.src = window.BOOMR.url;
+// Not really needed since dynamic scripts are async by default and the script is already in cache at this point,
+// but some naive parsers will see a missing async attribute and think we're not async
+script.async = true;
+parentNode.appendChild(script);
+promoted = true;
+}
+// Non-blocking iframe loader (fallback for non-Preload scenarios) for all recent browsers.
+// For IE 6/7, falls back to dynamic script node.
+function iframeLoader(wasFallback) {
+promoted = true;
+var dom, doc = document, bootstrap, iframe, iframeStyle, win = window;
+window.BOOMR.snippetMethod = wasFallback ? "if" : "i";
+// Adds Boomerang within the iframe
+bootstrap = function(parent, scriptId) {
+var script = doc.createElement("script");
+script.id = scriptId || "boomr-if-as";
+script.src = window.BOOMR.url;
+BOOMR_lstart = new Date().getTime();
+parent = parent || doc.body;
+parent.appendChild(script);
+};
+// For IE 6/7, we'll just load the script in the current frame, as those browsers don't support 'about:blank'
+// for an iframe src (it triggers warnings on secure sites). This means loading on IE 6/7 may cause SPoF.
+if (!window.addEventListener && window.attachEvent && navigator.userAgent.match(/MSIE [67]\./)) {
+window.BOOMR.snippetMethod = "s";
+bootstrap(parentNode, "boomr-async");
+return;
+}
+// The rest of this function is IE8+ and other browsers that don't support Preload hints but will work with CSP & iframes
+iframe = document.createElement("IFRAME");
+// An empty frame
+iframe.src = "about:blank";
+// We set title and role appropriately to play nicely with screen readers and other assistive technologies
+iframe.title = "";
+iframe.role = "presentation";
+// Ensure we're not loaded lazily
+iframe.loading = "eager";
+// Hide the iframe
+iframeStyle = (iframe.frameElement || iframe).style;
+iframeStyle.width = 0;
+iframeStyle.height = 0;
+iframeStyle.border = 0;
+iframeStyle.display = "none";
+// Append to the end of the current block
+parentNode.appendChild(iframe);
+// Try to get the iframe's document object
+try {
+win = iframe.contentWindow;
+doc = win.document.open();
+}
+catch (e) {
+// document.domain has been changed and we're on an old version of IE, so we got an access denied.
+// Note: the only browsers that have this problem also do not have CSP support.
+// Get document.domain of the parent window
+dom = document.domain;
+// Set the src of the iframe to a JavaScript URL that will immediately set its document.domain to match the parent.
+// This lets us access the iframe document long enough to inject our script.
+// Our script may need to do more domain massaging later.
+iframe.src = "javascript:var d=document.open();d.domain='" + dom + "';void 0;";
+win = iframe.contentWindow;
+doc = win.document.open();
+}
+if (dom) {
+// Unsafe version for IE8 compatibility. If document.domain has changed, we can't use win, but we can use doc.
+doc._boomrl = function() {
+this.domain = dom;
+bootstrap();
+};
+// Run our function at load.
+// Split the string so HTML code injectors don't get confused and add code here.
+doc.write("<bo" + "dy onload='document._boomrl();'>");
+}
+else {
+// document.domain hasn't changed, regular method should be OK
+win._boomrl = function() {
+bootstrap();
+};
+if (win.addEventListener) {
+win.addEventListener("load", win._boomrl, false);
+}
+else if (win.attachEvent) {
+win.attachEvent("onload", win._boomrl);
+}
+}
+// Finish the document
+doc.close();
+}
+// See if Preload is supported or not
+var link = document.createElement("link");
+if (link.relList &&
+typeof link.relList.supports === "function" &&
+link.relList.supports("preload") &&
+("as" in link)) {
+window.BOOMR.snippetMethod = "p";
+// Set attributes to trigger a Preload
+link.href = window.BOOMR.url;
+link.rel = "preload";
+link.as = "script";
+// Add our script tag if successful, fallback to iframe if not
+link.addEventListener("load", promote);
+link.addEventListener("error", function() {
+iframeLoader(true);
+});
+// Have a fallback in case Preload does nothing or is slow
+setTimeout(function() {
+if (!promoted) {
+iframeLoader(true);
+}
+}, LOADER_TIMEOUT);
+// Note the timestamp we started trying to Preload
+BOOMR_lstart = new Date().getTime();
+// Append our link tag
+parentNode.appendChild(link);
+}
+else {
+// No Preload support, use iframe loader
+iframeLoader(false);
+}
+// Save when the onload event happened, in case this is a non-NavigationTiming browser
+function boomerangSaveLoadTime(e) {
+window.BOOMR_onload = (e && e.timeStamp) || new Date().getTime();
+}
+if (window.addEventListener) {
+window.addEventListener("load", boomerangSaveLoadTime, false);
+}
+else if (window.attachEvent) {
+window.attachEvent("onload", boomerangSaveLoadTime);
+}
+})();
+</script><link href="https://s.go-mpulse.net/boomerang/W55TL-VMH43-MMV7F-JYXQT-RG5QR" rel="preload" as="script">
+
+
+
+
+
+<script>
+(function() {
+    var d = document;
+    var c = d.createElement('script');
+    if (!('noModule' in c) && 'onbeforeload' in c) {
+        var s = false;
+        d.addEventListener('beforeload', function(e) {
+            if (e.target === c) {
+                s = true;
+            } else if (!e.target.hasAttribute('nomodule') || !s) {
+                return;
+            }
+            e.preventDefault();
+        }, true);
+
+        c.type = 'module';
+        c.src = '.';
+        d.head.appendChild(c);
+        c.remove();
+    }
+}());
+</script>
+
+
+<link rel="preconnect" href="https://unpkg.com" crossorigin="">
+<link rel="dns-prefetch" href="//unpkg.com">
+<script>this.customElements||document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');</script>
+<script src="https://unpkg.com/@ungap/custom-elements@1.1.1"></script><script id="boomr-scr-as" src="https://s.go-mpulse.net/boomerang/W55TL-VMH43-MMV7F-JYXQT-RG5QR" async=""></script>
+
+
+    <link rel="preconnect" href="https://policy.app.cookieinformation.com" crossorigin="">
+    <link rel="dns-prefetch" href="//policy.app.cookieinformation.com">
+    
+    <script id="CookieConsent" src="https://policy.app.cookieinformation.com/uc.js" data-culture="DA"></script><iframe name="cookie-information-sharinglibrary-iframe" src="https://policy.app.cookieinformation.com/cookiesharingiframe.html" title="Cookie Information cookie sharing library" style="display: none;"></iframe>
+
+
+
+    
+<!-- Start VWO Async SmartCode -->
+<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com">
+<script id="vwoCode">
+window.addEventListener('CookieInformationConsentGiven', function (event) {
+if (window.CookieInformation.getConsentGivenFor('cookie_cat_marketing')) {
+window._vwo_code || (function() {
+var account_id=711098,
+version=2.1,
+settings_tolerance=2000,
+hide_element='body',
+hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
+/* DO NOT EDIT BELOW THIS LINE */
+f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='vwo'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('vwo'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var i=this.getSettings(),n=d.createElement('script'),r=this;t=t||{};if(i){n.textContent=i;d.getElementsByTagName('head')[0].appendChild(n);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('vwo_disable')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var i=this.hide_element(),n=i?i+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=n;else t.appendChild(d.createTextNode(n));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var n=d.createElement('div');n.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;';n.setAttribute('id','_vis_opt_path_hides');n.classList.add('_vis_hide_layer');t.parentNode.insertBefore(n,t.nextSibling)}var o='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:o})}else{this.load(o+'&x=true')}}};w._vwo_code=code;code.init();})();
+}
+});
+</script>
+<!-- End VWO Async SmartCode -->
+
+
+
+    
+    
+
+
+
+
+
+<script>
+window.dataLayer = window.dataLayer || [];
+gtmEvents = [{"page_type":"checkout - Personal information","user_id":"","goodie_profile":"","login_status":"logged out","customer_id":"","omneo_id":"","platform_id":"web","product_category":"other","customer_groups":"Desktop users,Everyone EXCLUDING App users,Everyone_Except_Goodie_App,Goodie_NotLoggedIn,IsNotInEployeeProgram,MobilePay_AB_Test_Netaxept,NOT_GC_ONLY_BASKET,NotAppUser,Shippingprices_030924_CG,basketsize,isNotInEmployeeProgram,unreg + desktop"},{"event":"add_personal_info","ecommerce":{"currency":"DKK","coupon":"","items":[{"item_name":"brax - oversize crewneck","item_id":"BLCZ95","item_brand":"bareen","category_id":"mens.clothing.sweatshirts_pants.sweatshirts","item_variant":"micro chip / l","department_id":"1275","stock_status":"in stock","warehouse":"prime_cargo","gift_wrap":"no","ean":"5740027862858","item_category4":"sweatshirts","item_category3":"sweatshirts_pants","item_category2":"clothing","item_category":"mens","product_badge":"sale 40%","outlet":"false","quantity":1,"price":479.4,"currency":"DKK"}]}}];
+if (gtmEvents) {
+for (var i = 0; i < gtmEvents.length; i++) {
+if (gtmEvents[i].event === 'initial') {
+if ('pageName' in gtmEvents[i]) {
+gtmEvents[i].pageName = window.location.pathname + window.location.search;
+}
+if ('pageCategoryPath' in gtmEvents[i] ) {
+gtmEvents[i].pageCategoryPath = window.location.pathname;
+}
+};
+if (
+gtmEvents[i].event === 'view_item'
+) {
+var productEvent = gtmEvents[i];
+window.addEventListener('CookieInformationConsentGiven', function (event) {
+if (window.CookieInformation.getConsentGivenFor('cookie_cat_statistic')) {
+window.dataLayer.push(productEvent);
+}
+});
+} else if (gtmEvents[i].event === 'view_cart'
+|| gtmEvents[i].event === 'checkout'
+|| gtmEvents[i].event === 'purchase'
+) {
+var cartEvent = gtmEvents[i];
+window.addEventListener('CookieInformationConsentGiven', function (event) {
+setTimeout(function () { window.dataLayer.push(cartEvent); }, 1000);
+});
+} else {
+window.dataLayer.push(gtmEvents[i]);
+}
+}
+}
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PCXN7DW');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+
+
+
+
+    <title>Tjek ud | Fandt du alt? | Tjek ud her nemt og hurtigt | Magasin</title>
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/on/demandware.static/Sites-DK-Site/-/default/dw5a3229bb/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/on/demandware.static/Sites-DK-Site/-/default/dwf1feac1f/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/on/demandware.static/Sites-DK-Site/-/default/dw043b32e3/images/favicon/favicon-16x16.png">
+<link rel="mask-icon" href="/on/demandware.static/Sites-DK-Site/-/default/dw37294868/images/favicon/safari-pinned-tab.svg" color="#32383a">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Magasin">
+<meta name="keywords" content="Magasin">
+
+
+
+
+    <link rel="stylesheet" href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/css/main.css">
+
+
+
+
+
+    <link rel="stylesheet" href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/css/page_checkout.css">
+
+
+
+
+    <meta name="google-site-verification" content="HNStDtJSfQcSWOwSUpqwtonpqam5X5j44vRsaVeTt3Y">
+
+
+
+
+    <meta name="p:domain_verify" content="562d55876bdfe5a1fb89dba0279a38ca">
+
+
+
+
+<script type="text/javascript">//<!--
+/* <![CDATA[ (head-active_data.js) */
+var dw = (window.dw || {});
+dw.ac = {
+    _analytics: null,
+    _events: [],
+    _category: "",
+    _searchData: "",
+    _anact: "",
+    _anact_nohit_tag: "",
+    _analytics_enabled: "true",
+    _timeZone: "Europe/Copenhagen",
+    _capture: function(configs) {
+        if (Object.prototype.toString.call(configs) === "[object Array]") {
+            configs.forEach(captureObject);
+            return;
+        }
+        dw.ac._events.push(configs);
+    },
+	capture: function() { 
+		dw.ac._capture(arguments);
+		// send to CQ as well:
+		if (window.CQuotient) {
+			window.CQuotient.trackEventsFromAC(arguments);
+		}
+	},
+    EV_PRD_SEARCHHIT: "searchhit",
+    EV_PRD_DETAIL: "detail",
+    EV_PRD_RECOMMENDATION: "recommendation",
+    EV_PRD_SETPRODUCT: "setproduct",
+    applyContext: function(context) {
+        if (typeof context === "object" && context.hasOwnProperty("category")) {
+        	dw.ac._category = context.category;
+        }
+        if (typeof context === "object" && context.hasOwnProperty("searchData")) {
+        	dw.ac._searchData = context.searchData;
+        }
+    },
+    setDWAnalytics: function(analytics) {
+        dw.ac._analytics = analytics;
+    },
+    eventsIsEmpty: function() {
+        return 0 == dw.ac._events.length;
+    }
+};
+/* ]]> */
+// -->
+</script>
+<script type="text/javascript">//<!--
+/* <![CDATA[ (head-cquotient.js) */
+var CQuotient = window.CQuotient = {};
+CQuotient.clientId = 'bfcs-DK';
+CQuotient.realm = 'BFCS';
+CQuotient.siteId = 'DK';
+CQuotient.instanceType = 'prd';
+CQuotient.locale = 'da_DK';
+CQuotient.fbPixelId = '__UNKNOWN__';
+CQuotient.activities = [];
+CQuotient.cqcid='';
+CQuotient.cquid='';
+CQuotient.cqeid='';
+CQuotient.cqlid='';
+CQuotient.apiHost='api.cquotient.com';
+/* Turn this on to test against Staging Einstein */
+/* CQuotient.useTest= true; */
+CQuotient.useTest = ('true' === 'false');
+CQuotient.initFromCookies = function () {
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+	  var c = ca[i];
+	  while (c.charAt(0)==' ') c = c.substring(1,c.length);
+	  if (c.indexOf('cqcid=') == 0) {
+		CQuotient.cqcid=c.substring('cqcid='.length,c.length);
+	  } else if (c.indexOf('cquid=') == 0) {
+		  var value = c.substring('cquid='.length,c.length);
+		  if (value) {
+		  	var split_value = value.split("|", 3);
+		  	if (split_value.length > 0) {
+			  CQuotient.cquid=split_value[0];
+		  	}
+		  	if (split_value.length > 1) {
+			  CQuotient.cqeid=split_value[1];
+		  	}
+		  	if (split_value.length > 2) {
+			  CQuotient.cqlid=split_value[2];
+		  	}
+		  }
+	  }
+	}
+}
+CQuotient.getCQCookieId = function () {
+	if(window.CQuotient.cqcid == '')
+		window.CQuotient.initFromCookies();
+	return window.CQuotient.cqcid;
+};
+CQuotient.getCQUserId = function () {
+	if(window.CQuotient.cquid == '')
+		window.CQuotient.initFromCookies();
+	return window.CQuotient.cquid;
+};
+CQuotient.getCQHashedEmail = function () {
+	if(window.CQuotient.cqeid == '')
+		window.CQuotient.initFromCookies();
+	return window.CQuotient.cqeid;
+};
+CQuotient.getCQHashedLogin = function () {
+	if(window.CQuotient.cqlid == '')
+		window.CQuotient.initFromCookies();
+	return window.CQuotient.cqlid;
+};
+CQuotient.trackEventsFromAC = function (/* Object or Array */ events) {
+try {
+	if (Object.prototype.toString.call(events) === "[object Array]") {
+		events.forEach(_trackASingleCQEvent);
+	} else {
+		CQuotient._trackASingleCQEvent(events);
+	}
+} catch(err) {}
+};
+CQuotient._trackASingleCQEvent = function ( /* Object */ event) {
+	if (event && event.id) {
+		if (event.type === dw.ac.EV_PRD_DETAIL) {
+			CQuotient.trackViewProduct( {id:'', alt_id: event.id, type: 'raw_sku'} );
+		} // not handling the other dw.ac.* events currently
+	}
+};
+CQuotient.trackViewProduct = function(/* Object */ cqParamData){
+	var cq_params = {};
+	cq_params.cookieId = CQuotient.getCQCookieId();
+	cq_params.userId = CQuotient.getCQUserId();
+	cq_params.emailId = CQuotient.getCQHashedEmail();
+	cq_params.loginId = CQuotient.getCQHashedLogin();
+	cq_params.product = cqParamData.product;
+	cq_params.realm = cqParamData.realm;
+	cq_params.siteId = cqParamData.siteId;
+	cq_params.instanceType = cqParamData.instanceType;
+	cq_params.locale = CQuotient.locale;
+	
+	if(CQuotient.sendActivity) {
+		CQuotient.sendActivity(CQuotient.clientId, 'viewProduct', cq_params);
+	} else {
+		CQuotient.activities.push({activityType: 'viewProduct', parameters: cq_params});
+	}
+};
+/* ]]> */
+// -->
+</script>
+
+<meta http-equiv="origin-trial" content="A6MWCkFp/4goXtWiSJNfo09g03RCQpXkuDZDGnlApjvSPZL4CIhvZx3xGfg6bCT4TRppCXmFXWDEkxA7DO3nZgQAAACGeyJvcmlnaW4iOiJodHRwczovL2dvLW1wdWxzZS5uZXQ6NDQzIiwiZmVhdHVyZSI6IlNvZnROYXZpZ2F0aW9uSGV1cmlzdGljcyIsImV4cGlyeSI6MTcwOTY4MzE5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A2uWz2bbyoykT6h7LZQlNUdwVAFfb3IL5LU+YR1qxtW5T1dCRKjJ5/h3zur1LmuLWk0B1kyAAwyCxJzDCzNxUAQAAAB6eyJvcmlnaW4iOiJodHRwczovL2FrYW1haS5jb206NDQzIiwiZmVhdHVyZSI6IkJhY2tGb3J3YXJkQ2FjaGVOb3RSZXN0b3JlZFJlYXNvbnMiLCJleHBpcnkiOjE2OTE1MzkxOTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="></head>
+<body id="js-body" class="l-body l-body-checkout page js-page guest" data-action="Checkout-Begin" is="js-page-checkout" data-my-vip-start-upcoming="true">
+<div class="l-page l-page-checkout page" data-action="Checkout-Begin" data-querystring="">
+<a href="#maincontent" class="b-skip-link" tabindex="0" type="button">
+    Skip to main content
+</a>
+
+<header class="b-header js-header -checkout magasin">
+    
+    
+    <div class="b-header__inner header">
+        <div class="b-header__row container h-flex-jc-space-between">
+            <div class="b-header__part b-header__part-backarrow goodie-app-hidden">
+                
+                    <a href="https://www.magasin.dk/kurv/" class="arrow-back">
+                        
+
+
+    <svg class="svg-icon svg-icon-arrow  " aria-label="Icon arrow">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#arrow" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#arrow"></use>
+    </svg>
+
+
+                    </a>
+                
+            </div>
+            <div class="b-header__part b-header__part-logo goodie-app-hidden logo-container">
+                 <a class="b-logo logo-home -checkout" href="https://www.magasin.dk" title="Magasin Hjem">
+    
+
+
+    <svg class="svg-icon svg-icon-logo-m-star logo-m-star  " aria-label="Icon logo-m-star">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#logo-m-star" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#logo-m-star"></use>
+    </svg>
+
+
+    <svg aria-label="Icon logo" class="b-logo__image logo-magasin" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.6484 22.3097C22.9017 22.3097 23.1389 22.1079 23.1831 21.8558C23.2233 21.6307 23.0946 21.4368 22.8775 21.4019C22.6685 21.3708 22.4674 21.3204 22.2704 21.2467C21.3095 20.8471 21.0603 19.9781 21.2412 18.9229L23.4123 6.3069C23.5087 5.74438 23.7138 5.24781 24.1641 4.81331C24.6144 4.37881 25.1772 4.2857 25.728 4.1732C25.917 4.14216 26.0617 3.99474 26.0859 3.81241C26.1221 3.6068 25.9854 3.44386 25.7803 3.44386L20.7306 3.4361C20.4693 3.4361 20.2723 3.4749 20.1516 3.55637C20.031 3.63783 19.9064 3.78525 19.7938 4.0025L12.7982 16.1995C12.754 16.2771 12.6655 16.3275 12.5731 16.3275C12.4484 16.3275 12.3439 16.2422 12.3198 16.1258L9.90346 4.27406C9.77883 3.7387 9.69842 3.44386 9.11545 3.44386H4.02151C3.81245 3.44386 3.61544 3.61068 3.57926 3.82017C3.54709 4.00638 3.65565 4.16156 3.83255 4.1926C4.36727 4.2857 5.00251 4.47968 5.2759 4.96461C5.57743 5.50385 5.54929 6.175 5.42466 6.97804C5.42466 6.98192 3.45462 18.4263 3.45462 18.4263C3.26968 19.4233 2.43744 21.4678 0.358859 21.6463C0.177938 21.6695 0.0372214 21.8014 0.00505764 21.976C-0.0271061 22.1622 0.0975285 22.3097 0.28247 22.3097H6.36545C6.57451 22.3097 6.77151 22.1428 6.8077 21.9333C6.84388 21.7394 6.72327 21.5726 6.53029 21.557C6.1001 21.5221 5.59352 21.4096 5.21961 21.0876C4.71705 20.657 4.51201 19.7802 4.61654 18.9772C4.66479 18.597 4.70499 18.1858 4.77736 17.7552L6.65492 6.83451C6.671 6.7414 6.75543 6.67157 6.85594 6.66769C6.95244 6.66769 7.03687 6.73364 7.05697 6.82287C7.40273 8.45224 10.3136 22.1739 10.3497 22.3368C10.3819 22.4804 10.4905 22.5463 10.6392 22.5463C10.804 22.5463 10.9407 22.461 11.0252 22.3097C11.1056 22.1661 18.9616 8.07205 19.6893 6.7608C19.7215 6.7026 19.7858 6.66381 19.8582 6.66381C19.9627 6.66381 20.0511 6.74528 20.0511 6.85002C20.0511 6.86166 20.0511 6.86942 20.0471 6.88106L17.9766 18.919C17.8278 19.7841 17.2046 20.7346 16.3563 21.1691C16.0106 21.3475 15.3874 21.4523 14.9934 21.5027C14.7803 21.5376 14.6155 21.6967 14.5753 21.8984C14.535 22.1234 14.6838 22.3058 14.909 22.3058L22.6484 22.3097ZM69.4949 7.24185C69.4909 7.99834 68.8516 8.60742 68.0676 8.59966C67.2837 8.59578 66.6524 7.97895 66.6605 7.22245C66.6645 6.46984 67.2997 5.86464 68.0797 5.86464C68.8637 5.86464 69.4989 6.48147 69.4949 7.24185ZM34.5369 3.60292C34.5168 3.50205 34.4243 3.4361 34.3198 3.43998H31.9678C31.8432 3.43998 31.7387 3.33912 31.7387 3.21885L31.7346 0.898938C31.7387 0.798072 31.6663 0.708845 31.5658 0.689447C31.4251 0.666171 31.2884 0.73988 31.2321 0.867902L30.1305 3.26541C30.0822 3.37403 29.9696 3.44386 29.849 3.44386H27.4408C27.3 3.44774 27.1794 3.54085 27.1432 3.67275C27.1111 3.76974 27.1513 3.8706 27.2438 3.92103L28.8962 4.82883C29.0449 4.9103 29.0972 5.09651 29.0128 5.24005C29.0087 5.24393 29.0087 5.24781 29.0047 5.25169L27.5734 7.45134C27.493 7.57548 27.5292 7.69574 27.5976 7.75782C27.686 7.8354 27.8227 7.83153 27.9353 7.75006L30.1063 6.12069C30.235 6.01982 30.424 6.03922 30.5285 6.15948L31.9276 7.73842C32 7.81213 32.1005 7.83928 32.2251 7.78109C32.3297 7.73454 32.4302 7.61428 32.402 7.47462L31.9517 5.23617C31.9236 5.10039 31.996 4.96461 32.1286 4.90642L34.36 3.92879C34.4846 3.86672 34.557 3.73482 34.5369 3.60292Z" fill="currentColor"></path>
+        <path d="M34.6352 10.8207C34.7032 10.5819 34.6912 10.3933 34.5951 10.2585C34.4991 10.1199 34.339 10.0544 34.1229 10.0544H33.6426C33.2584 10.0544 33.0503 10.3856 32.7861 10.6435C32.3699 10.3009 32.0097 10.1006 31.2973 10.1006C29.9366 10.1006 27.7353 11.4521 25.8183 13.8971C24.7697 15.2601 22.1963 19.9345 24.1414 21.6979C25.7422 23.1457 28.2957 20.77 28.916 19.9768C29.2362 19.5687 29.5884 19.0758 29.9086 18.6831C29.9446 18.6408 30.0046 18.6331 30.0486 18.6677C30.0806 18.6947 30.0967 18.737 30.0806 18.7755C29.9686 19.0989 29.8525 19.5879 29.7605 20.0038C29.5964 20.7161 29.4443 22.1561 30.8411 22.1561C31.8736 22.1561 32.7181 21.336 33.3385 20.589C33.9708 19.8267 34.5151 18.9411 34.5151 18.6947C34.5111 18.4713 34.319 18.2981 34.0909 18.2981C33.9508 18.2981 33.8187 18.3674 33.7467 18.4867C33.7467 18.4906 33.4785 18.8872 33.1584 19.3377C32.9222 19.6688 32.506 20.2079 32.2739 20.2079C32.1458 20.2079 32.0617 20.1231 32.0377 19.9499C31.9897 19.6187 32.1098 19.0989 32.2699 18.5676L34.6352 10.8207ZM31.1652 14.8597C29.9366 17.3586 27.9675 19.9345 26.6908 19.9345C25.25 19.9345 26.6788 16.4383 27.8514 14.4939C28.924 12.7112 30.4569 11.0594 31.7256 11.0594C32.9582 11.0594 32.3379 12.4763 31.1652 14.8597ZM54.9064 10.8207C54.9744 10.5819 54.9624 10.3933 54.8664 10.2585C54.7703 10.1199 54.6142 10.0544 54.3941 10.0544H53.9139C53.5296 10.0544 53.3215 10.3856 53.0574 10.6435C52.6411 10.3009 52.2809 10.1006 51.5686 10.1006C50.2078 10.1006 48.0066 11.4521 46.0895 13.8971C45.0409 15.2601 42.4675 19.9345 44.4126 21.6979C46.0135 23.1457 48.5669 20.77 49.1872 19.9768C49.5074 19.5687 49.8596 19.0758 50.1798 18.6831C50.2158 18.6408 50.2798 18.6369 50.3199 18.6677C50.3519 18.6947 50.3639 18.737 50.3519 18.7755C50.2358 19.0989 50.1238 19.5879 50.0317 20.0038C49.8676 20.7161 49.7155 22.1561 51.1123 22.1561C52.1449 22.1561 52.9893 21.336 53.6097 20.589C54.242 19.8267 54.7863 18.9411 54.7863 18.6947C54.7823 18.4713 54.5902 18.2942 54.3621 18.2981C54.222 18.2981 54.0899 18.3674 54.0179 18.4867C54.0179 18.4906 53.7498 18.8872 53.4296 19.3377C53.1935 19.6688 52.7772 20.2079 52.5451 20.2079C52.417 20.2079 52.333 20.1231 52.309 19.9499C52.2609 19.6187 52.381 19.0989 52.5411 18.5676L54.9064 10.8207ZM51.4365 14.8597C50.2078 17.3586 48.2387 19.9383 46.958 19.9383C45.5212 19.9383 46.946 16.4422 48.1186 14.4978C49.1912 12.715 50.7281 11.0632 51.9928 11.0632C53.2295 11.0594 52.6051 12.4763 51.4365 14.8597Z" fill="currentColor"></path>
+        <path d="M47.0511 9.88583C46.9187 9.46617 46.6579 8.8833 45.9598 8.8833C45.7752 8.8833 45.711 8.98433 45.6829 9.13588C45.5305 9.97909 45.1974 10.3249 44.2867 10.3793C43.7531 10.4104 42.9386 10.3172 42.4291 10.2744C40.9646 10.154 39.7449 10.2356 38.762 10.6863C37.2694 11.3702 36.1701 12.3999 35.4921 13.8921C34.3807 16.3401 35.8812 18.3102 37.7308 18.4035C37.8071 18.4074 37.783 18.4928 37.7228 18.5239C37.2895 18.7454 36.3266 19.3205 35.9214 19.9073C35.2032 20.9525 35.1069 21.8346 35.9896 22.8915C37.1571 24.2904 40.7038 24.2283 41.6106 25.3279C42.3568 26.2333 40.9205 28.8329 37.458 28.8329C34.5251 28.8329 32.3706 27.6866 33.2693 25.1492C33.4499 24.644 33.5863 24.4381 33.8952 24.17C34.1119 23.9835 33.9875 23.5288 33.5823 23.5288C31.9493 23.5288 30.6012 24.916 30.7136 26.2994C30.8259 27.6827 32.5351 29.9637 37.3617 29.9637C42.1883 29.9637 45.0209 26.8628 44.1663 24.2283C43.5324 22.2776 40.2785 22.1377 38.1481 21.1274C37.3457 20.7466 37.47 19.9267 38.12 19.3555C38.3968 19.1146 38.8542 18.8814 39.2314 18.7299C41.4661 17.9333 43.0229 16.9502 44.07 14.8324C44.5234 13.9193 44.5314 12.4893 43.6889 11.4052C43.6608 11.3663 43.7009 11.2925 43.7531 11.3003C43.9697 11.3313 45.1453 11.4596 45.6227 11.4596C46.694 11.4557 47.2637 10.5542 47.0511 9.88583ZM41.6186 14.3584C40.8162 16.3945 39.6647 17.5292 38.6576 17.5292C37.7429 17.5292 37.3055 15.9982 38.0398 14.1874C38.79 12.3455 39.9736 11.0865 41.1051 11.1837C41.7711 11.242 42.401 12.365 41.6186 14.3584ZM54.963 20.1093C54.963 20.9564 55.8738 22.4486 58.0845 22.4486C60.4677 22.4486 62.0966 20.7699 61.7877 18.7804C61.4788 16.7676 59.6813 14.6381 58.8789 13.3014C58.5699 12.7846 58.1246 11.378 59.3884 11.1604C60.0183 11.0516 60.3634 11.343 60.9491 12.501C61.4266 13.4491 62.6262 13.146 62.6262 12.0308C62.6262 11.3663 62.0164 10.2511 60.1908 10.2511C59.0193 10.2511 57.2861 10.7329 56.8166 12.4388C56.4796 13.6628 56.8929 14.7314 57.4867 15.8661C58.1045 17.0551 59.6933 19.0174 59.7856 19.8762C59.8699 20.6533 59.4526 21.31 58.7866 21.4227C57.0935 21.7103 57.2459 19.8024 56.5077 19.27C55.946 18.8736 54.963 19.1495 54.963 20.1093Z" fill="currentColor"></path>
+        <path d="M65.4063 19.9017C65.3544 20.0937 65.3744 20.3779 65.6298 20.4586C65.8174 20.5162 66.0369 20.3703 66.1607 20.2589C66.7793 19.725 67.2063 18.811 67.346 18.5268C67.4099 18.3924 67.5536 18.3079 67.7052 18.3079C67.9447 18.3117 68.1363 18.4961 68.1323 18.7265C68.1323 18.7687 68.1243 18.811 68.1123 18.8532C67.7851 19.8211 66.4321 22.1561 64.668 22.1561C63.9216 22.1561 62.6005 21.5724 63.2152 19.5714C63.5465 18.4922 64.66 14.786 65.095 13.3958C65.1709 13.1538 65.6578 11.9786 65.0671 11.9786C64.6001 11.9786 63.9535 12.7928 63.4108 13.7299C63.3389 13.8451 63.2152 13.9219 63.0755 13.9258C62.7362 13.9258 62.5287 13.6031 62.6724 13.3458C63.0915 12.5969 63.6542 11.8288 64.181 11.3218C64.8037 10.7227 65.566 10.0544 66.5238 10.0544C68.0046 10.0544 67.9207 11.8365 67.6254 12.7813C67.1704 14.2791 65.4063 19.9017 65.4063 19.9017ZM77.0286 13.3958C76.5935 14.786 75.4201 18.4922 75.0849 19.5714C74.4702 21.5724 75.7873 22.1561 76.5337 22.1561C78.2977 22.1561 79.6547 19.8211 79.978 18.8532C80.0538 18.6343 79.9261 18.4 79.7026 18.3271C79.6587 18.3155 79.6148 18.3079 79.5709 18.3079C79.4193 18.3079 79.2756 18.3924 79.2117 18.5268C79.072 18.811 78.645 19.725 78.0263 20.2589C77.8986 20.3664 77.6831 20.5162 77.4955 20.4586C77.2401 20.3779 77.2161 20.0937 77.272 19.9017C77.272 19.9017 78.9124 14.8859 79.3793 13.3881C79.6547 12.5086 80.2215 10.0928 77.28 10.0928C75.5718 10.0928 73.4565 12.6852 73.0254 13.5532C73.0055 13.5955 72.9576 13.6147 72.9097 13.6031C72.8578 13.5878 72.8259 13.534 72.8378 13.4802C73.4006 11.5984 73.8835 10.1005 72.3868 10.1005C70.9381 10.1005 69.182 12.7697 68.8547 13.3612C68.7469 13.5609 68.8307 13.8067 69.0343 13.9066C69.0942 13.9373 69.158 13.9526 69.2259 13.9526C69.3735 13.9526 69.5092 13.8758 69.5771 13.7529C70.0161 12.9157 70.9421 11.7904 71.2893 12.0708C71.4968 12.2436 71.3332 13.1308 71.2374 13.5187C70.9181 14.7745 69.4534 20.3395 69.1141 21.6069C69.0742 21.7567 69.17 21.9103 69.3256 21.9449C69.3456 21.9487 69.3695 21.9526 69.3935 21.9526H70.7984C71.0738 21.9526 71.3132 21.7798 71.3891 21.5263C71.6205 20.7582 71.884 19.8441 72.0755 19.2296C72.4507 18.0121 72.6742 17.052 73.0893 15.992C73.4285 15.1279 73.7279 14.5095 74.2547 13.7145C74.6778 13.077 75.8432 11.8211 76.6574 11.8211C77.5873 11.8211 77.2082 12.8197 77.0286 13.3958Z" fill="currentColor"></path>
+    </svg>
+</a>
+
+            </div>
+            <div class="b-header__part b-header__part-usermenu goodie-app-hidden h-order-xl-3 b-usermenu">
+                
+                    <div class="b-usermenu__row">
+                        <div class="header-widget__item user-menu goodie-app-hidden js-header-icon-user">
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a data-url="https://www.magasin.dk/on/demandware.store/Sites-DK-Site/da_DK/Account-LoginModal" href="https://www.magasin.dk/logind/" class="user-menu__icon js-trigger-login js-customer-header" data-is-authenticated="false" role="button" aria-label="Log ind på din konto">
+        <span class="b-icon m-icon-size-sm">
+
+
+    <svg class="svg-icon svg-icon-user  " aria-label="Icon user">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#user" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#user"></use>
+    </svg>
+
+</span>
+        <span class="user-message sr-only">Log ind</span>
+    </a>
+
+
+
+
+
+
+<script>
+    document.body.dataset.myVipStartUpcoming = 'true';
+
+    
+        document.body.classList.add('guest');
+    
+</script>
+    
+</div>
+
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<script>
+    
+        document.body.classList.add('guest');
+    
+</script>
+
+<main id="maincontent" class="l-page__main checkout">
+<div class="container">
+<notification-center class="notifications" location="global"></notification-center>
+</div>
+<div class="container">
+
+<div class="checkout__divider"><span class="sr-only">BORDER</span></div>
+<div class="checkout__topbar">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="checkout-progress">
+    <a class="checkout-progress__item is-active" href="https://www.magasin.dk/kundeinfo/?isEdit=true">
+        <div class="checkout-progress__icon-wrapper">
+            <div class="checkout-progress__icon">
+                
+
+
+    <svg class="svg-icon svg-icon-user  " aria-label="Icon user">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#user" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#user"></use>
+    </svg>
+
+
+            </div>
+        </div>
+        <div class="checkout-progress__title">
+            Kundeinfo
+        </div>
+    </a>
+
+    
+        <a class="checkout-progress__item " href="/levering/">
+    
+        <div class="checkout-progress__icon-wrapper">
+            <div class="checkout-progress__icon">
+                
+
+
+    <svg class="svg-icon svg-icon-package  " aria-label="Icon package">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#package" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#package"></use>
+    </svg>
+
+
+            </div>
+        </div>
+        <div class="checkout-progress__title">
+            Levering
+        </div>
+    
+        </a>
+    
+
+    <a class="checkout-progress__item " href="#">
+        <div class="checkout-progress__icon-wrapper">
+            <div class="checkout-progress__icon">
+                
+
+
+    <svg class="svg-icon svg-icon-reciept  " aria-label="Icon reciept">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#reciept" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#reciept"></use>
+    </svg>
+
+
+            </div>
+        </div>
+        <div class="checkout-progress__title">
+            Oversigt
+        </div>
+    </a>
+
+    <a class="checkout-progress__item " href="#">
+        <div class="checkout-progress__icon-wrapper">
+            <div class="checkout-progress__icon">
+                
+
+
+    <svg class="svg-icon svg-icon-creditcard  " aria-label="Icon creditcard">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#creditcard" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#creditcard"></use>
+    </svg>
+
+
+            </div>
+        </div>
+        <div class="checkout-progress__title">
+            Betaling
+        </div>
+    </a>
+</div>
+
+</div>
+
+
+    <billing-page class="checkout__main">
+        
+            
+    
+
+
+
+        
+        <header class="page-header -checkout">
+            <h1>Dine oplysninger</h1>
+        </header>
+        <form class="customer-info js-validate" action="https://www.magasin.dk/on/demandware.store/Sites-DK-Site/da_DK/CheckoutServices-SubmitBilling" method="POST" name="customer-info-form">
+            
+
+
+
+
+<div class="form__row">
+<div class="form__group">
+<div class="form__field form-control is-required -email">
+
+
+
+
+
+
+<input type="email" id="dwfrm_billing_email" class="form__input" value="" name="dwfrm_billing_email" required="" aria-required="true" maxlength="50" pattern="^[\w.%+\-]+@[\w.\-]+\.((?!con$|comm$|conn$)[\w]{2,6})$" data-missing-error="Obligatorisk felt" placeholder="E-mail" data-range-error="Skal være 50 tegn eller mindre" data-pattern-mismatch="Indtast venligst en gyldig e-mailadresse (email@domain.com)" style="" data-moz-autofill-type="email">
+
+
+
+
+
+<label class="form__label" for="dwfrm_billing_email">
+
+
+E-mail<span class="form__required">*</span>
+
+
+</label>
+
+
+
+
+<div class="invalid-feedback form__notice">
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+            <div class="form__row">
+                <div class="form__group -col2-sm-3070 -col2-md-3070 -col2-lg-3070">
+                    
+
+
+
+
+<div class="form__field form-control is-required form__field -select -flag-select">
+
+
+<select class="form__input placeholder-shown" id="dwfrm_billing_countryCallingCode" name="dwfrm_billing_countryCallingCode" required="" aria-required="true" pattern=".*\w.*" data-pattern-mismatch="" data-missing-error="Obligatorisk felt" placeholder="Landekode" style="" data-moz-autofill-type="tel-country-code">
+    
+        
+        <option class="select-option" label="+45" value="+45">
+            
+                +45
+            
+        </option>
+    
+        
+        <option class="select-option" label="+46" value="+46">
+            
+                +46
+            
+        </option>
+    
+        
+        <option class="select-option" label="+47" value="+47">
+            
+                +47
+            
+        </option>
+    
+</select>
+
+
+
+
+<label class="form__label" for="dwfrm_billing_countryCallingCode">
+
+
+Landekode<span class="form__required">*</span>
+
+
+</label>
+
+
+
+
+<div class="invalid-feedback form__notice">
+
+
+</div>
+</div>
+
+
+
+
+                    
+
+
+
+
+<div class="form__field form-control is-required -phone-input">
+
+
+
+
+
+
+<input type="text" id="dwfrm_billing_phone" class="form__input" inputmode="numeric" value="" name="dwfrm_billing_phone" required="" aria-required="true" maxlength="9" minlength="8" pattern=".*\w.*" data-pattern-mismatch="Indtast venligst et gyldigt telefonnummer" data-missing-error="Obligatorisk felt" placeholder="Mobilnummer" data-range-error="Indtast venligst et gyldigt telefonnummer" style="" data-moz-autofill-type="tel-national">
+
+
+
+
+
+<label class="form__label" for="dwfrm_billing_phone">
+
+
+Mobilnummer<span class="form__required">*</span>
+
+
+</label>
+
+
+
+
+<div class="invalid-feedback form__notice">
+
+
+</div>
+</div>
+
+
+
+
+                </div>
+            </div>
+
+            
+
+
+
+
+<div class="form__row">
+<div class="form__group">
+<div class="form__field form-control is-required -text">
+
+
+
+
+
+
+<input type="text" id="dwfrm_billing_firstName" class="form__input" value="" name="dwfrm_billing_firstName" required="" aria-required="true" maxlength="40" pattern="^([a-zœæøåäöüáàéèíÁÀÉÈA-ZŒÆØÅÄÖÜßÍ]+([.]?[ ]?)|[a-zœæøåäöüáàéèíÁÀÉÈA-ZŒÆØÅÄÖÜßÍ]+([,][ ])|[a-zœæøåäöüáàéèíÁÀÉÈA-ZŒÆØÅÄÖÜßÍ]+['\-]+[a-zœæøåäöüáàéèíÁÀÉÈA-ZŒÆØÅÄÖÜßÍ])+$" data-missing-error="Obligatorisk felt" placeholder="Fornavn" data-range-error="Skal være 50 tegn eller mindre" data-pattern-mismatch="Indtast venligst et gyldigt navn" style="" data-moz-autofill-type="given-name">
+
+
+
+
+
+<label class="form__label" for="dwfrm_billing_firstName">
+
+
+Fornavn<span class="form__required">*</span>
+
+
+</label>
+
+
+
+
+<div class="invalid-feedback form__notice">
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+            
+
+
+
+
+<div class="form__row">
+<div class="form__group">
+<div class="form__field form-control is-required -text">
+
+
+
+
+
+
+<input type="text" id="dwfrm_billing_lastName" class="form__input" value="" name="dwfrm_billing_lastName" required="" aria-required="true" maxlength="40" pattern="^([a-zœæøåäöüáàéèíÁÀÉÈA-ZŒÆØÅÄÖÜßÍ]+([.]?[ ]?)|[a-zœæøåäöüáàéèíÁÀÉÈA-ZŒÆØÅÄÖÜßÍ]+([,][ ])|[a-zœæøåäöüáàéèíÁÀÉÈA-ZŒÆØÅÄÖÜßÍ]+['\-]+[a-zœæøåäöüáàéèíÁÀÉÈA-ZŒÆØÅÄÖÜßÍ])+$" data-missing-error="Obligatorisk felt" placeholder="Efternavn" data-range-error="Skal være 50 tegn eller mindre" data-pattern-mismatch="Indtast venligst et gyldigt efternavn" style="" data-moz-autofill-type="family-name">
+
+
+
+
+
+<label class="form__label" for="dwfrm_billing_lastName">
+
+
+Efternavn<span class="form__required">*</span>
+
+
+</label>
+
+
+
+
+<div class="invalid-feedback form__notice">
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+            
+
+
+
+
+<div class="form__row">
+<div class="form__group">
+<div class="form__field form-control is-required -select -country-select">
+
+
+<select class="form__input placeholder-shown" id="dwfrm_billing_country" name="dwfrm_billing_country" required="" aria-required="true" pattern=".*\w.*" data-pattern-mismatch="" data-missing-error="Obligatorisk felt" placeholder="Land" style="" data-moz-autofill-type="country">
+    
+        
+        <option class="select-option" label="Danmark" value="DK">
+            
+                Danmark
+            
+        </option>
+    
+        
+        <option class="select-option" label="Sverige" value="SE">
+            
+                Sverige
+            
+        </option>
+    
+        
+        <option class="select-option" label="Norge" value="NO">
+            
+                Norge
+            
+        </option>
+    
+</select>
+
+
+
+
+<label class="form__label" for="dwfrm_billing_country">
+
+
+Land<span class="form__required">*</span>
+
+
+</label>
+
+
+
+
+<div class="invalid-feedback form__notice">
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+            
+
+
+
+
+<div class="form__row">
+<div class="form__group">
+<div class="form__field form-control is-required -text">
+
+
+
+
+
+
+<input type="text" id="dwfrm_billing_address1" class="form__input" value="" name="dwfrm_billing_address1" required="" aria-required="true" maxlength="40" pattern="^[a-zœæøåäöüáéíÁÉA-ZŒÆØÅÄÖÜÍ\-0-9\.,# ]+$" data-missing-error="Obligatorisk felt" placeholder="Adresse" data-range-error="Skal være 50 tegn eller mindre" data-pattern-mismatch="Indtast venligst en gyldig adresse" style="" data-moz-autofill-type="street-address">
+
+
+
+
+
+<label class="form__label" for="dwfrm_billing_address1">
+
+
+Adresse<span class="form__required">*</span>
+
+
+</label>
+
+
+
+
+<div class="invalid-feedback form__notice">
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+            <div class="form__row">
+                <div class="form__group -col2-sm-3070 -col2-md-3070 -col2-lg-3070">
+                    
+
+
+
+
+<div class="form__field form-control is-required -text -postcode-input">
+
+
+
+
+
+
+<input type="text" id="dwfrm_billing_postalCode" class="form__input" inputmode="numeric" value="" name="dwfrm_billing_postalCode" required="" aria-required="true" maxlength="5" minlength="4" pattern=".*\d.*" data-missing-error="Obligatorisk felt" placeholder="Postnummer" data-range-error="Indtast venligst et gyldigt postnummer" data-pattern-mismatch="Indtast venligst et gyldigt postnummer" style="" data-moz-autofill-type="postal-code">
+
+
+
+
+
+<label class="form__label" for="dwfrm_billing_postalCode">
+
+
+Postnummer<span class="form__required">*</span>
+
+
+</label>
+
+
+
+
+<div class="invalid-feedback form__notice">
+
+
+</div>
+</div>
+
+
+
+
+                    
+
+
+
+
+<div class="form__field form-control is-required -text">
+
+
+
+
+
+
+<input type="text" id="dwfrm_billing_city" class="form__input" value="" name="dwfrm_billing_city" required="" aria-required="true" maxlength="30" minlength="2" pattern="^[a-zæøåäöüáéíÁÉA-ZÆØÅÄÖÜßÍ\-]+( [a-zæøåäöüáéíÁÉA-ZÆØÅÄÖÜßÍ\-]+)*$" data-missing-error="Obligatorisk felt" placeholder="By" data-range-error="Mellem 2 til 50 tegn kræves" data-pattern-mismatch="Indtast venligst en gyldig by" style="" data-moz-autofill-type="address-level2">
+
+
+
+
+
+<label class="form__label" for="dwfrm_billing_city">
+
+
+By<span class="form__required">*</span>
+
+
+</label>
+
+
+
+
+<div class="invalid-feedback form__notice">
+
+
+</div>
+</div>
+
+
+
+
+                </div>
+            </div>
+
+            
+                
+                <article class="notification -info mb2">
+                    <section class="notification__body rich-text">
+                        <div class="form__row">
+                            <div class="form__group">
+                                <div class="form__field -checkbox signup-checkbox">
+                                    <label class="form__label" for="dwfrm_billing_signupCheckbox">
+                                        <input id="dwfrm_billing_signupCheckbox" name="dwfrm_billing_signupCheckbox" type="checkbox" class="form__checkbox js-signup-checkbox" value="true" data-gtm-event="{&quot;event&quot;:&quot;goodie_sign_up&quot;,&quot;place_of_login&quot;:&quot;checkout flow&quot;}">
+                                        <span class="form__checkbox-visuals"></span>
+                                    </label>
+                                    <label class="form__checkbox-label" for="dwfrm_billing_signupCheckbox">
+                                        <span>
+                                            
+
+<div data-contentassetid="billing-signup-checkbox-label">
+    <p>Bliv Goodie medlem og få fri fragt på ordrer over 499 kr.</p>
+</div>
+
+
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="signup-password-section pt2 is-hidden">
+                                    
+
+
+
+
+<div class="form__field form-control is-required signup-password">
+
+
+
+
+
+
+<input type="password" id="dwfrm_billing_password" class="form__input" disabled="disabled" value="" name="dwfrm_billing_password" maxlength="50" minlength="8" required="" aria-required="true" pattern=".*\w.*" data-pattern-mismatch="" data-missing-error="Obligatorisk felt" placeholder="Adgangskode" data-range-error="Dette felt kræver mellem 8 og 50 karakterer">
+
+
+
+
+
+<label class="form__label" for="dwfrm_billing_password">
+
+
+Adgangskode<span class="form__required">*</span>
+
+
+</label>
+
+
+
+
+<button type="button" class="form__field-inputbtn button-reset js-password-type-toggle" aria-label="Toggle password visibility">
+<span class="h-hide-on-active b-icon m-icon-size-sm">
+
+
+    <svg class="svg-icon svg-icon-eye-visibility-on  " aria-label="Icon eye-visibility-on">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#eye-visibility-on" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#eye-visibility-on"></use>
+    </svg>
+
+</span>
+<span class="h-show-on-active b-icon m-icon-size-sm">
+
+
+    <svg class="svg-icon svg-icon-eye-visibility-off  " aria-label="Icon eye-visibility-off">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#eye-visibility-off" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#eye-visibility-off"></use>
+    </svg>
+
+</span>
+</button>
+
+<div class="invalid-feedback form__notice">
+
+
+</div>
+</div>
+
+
+
+
+                                    
+
+
+
+
+<div class="form__field form-control is-required signup-password-confirm">
+
+
+
+
+
+
+<input type="password" id="dwfrm_billing_passwordConfirm" class="form__input" disabled="disabled" value="" name="dwfrm_billing_passwordConfirm" maxlength="50" minlength="8" required="" aria-required="true" pattern=".*\w.*" data-pattern-mismatch="" data-missing-error="Obligatorisk felt" placeholder="Gentag adgangskode" data-range-error="Dette felt kræver mellem 8 og 50 karakterer">
+
+
+
+
+
+<label class="form__label" for="dwfrm_billing_passwordConfirm">
+
+
+Gentag adgangskode<span class="form__required">*</span>
+
+
+</label>
+
+
+
+
+<button type="button" class="form__field-inputbtn button-reset js-password-type-toggle" aria-label="Toggle password visibility">
+<span class="h-hide-on-active b-icon m-icon-size-sm">
+
+
+    <svg class="svg-icon svg-icon-eye-visibility-on  " aria-label="Icon eye-visibility-on">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#eye-visibility-on" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#eye-visibility-on"></use>
+    </svg>
+
+</span>
+<span class="h-show-on-active b-icon m-icon-size-sm">
+
+
+    <svg class="svg-icon svg-icon-eye-visibility-off  " aria-label="Icon eye-visibility-off">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#eye-visibility-off" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#eye-visibility-off"></use>
+    </svg>
+
+</span>
+</button>
+
+<div class="invalid-feedback form__notice">
+
+
+</div>
+</div>
+
+
+
+
+                                    
+
+
+
+
+<div class="form__field form-control is-required placeholder-shown -select">
+
+
+<select class="form__input placeholder-shown" id="dwfrm_billing_gender" name="dwfrm_billing_gender" required="" aria-required="true" pattern=".*\w.*" data-pattern-mismatch="" data-missing-error="Obligatorisk felt" placeholder="Køn" style="" data-moz-autofill-type="sex">
+    
+        
+        <option class="select-option" label="Køn" value="">
+            
+                Køn
+            
+        </option>
+    
+        
+        <option class="select-option" label="Mand" value="1">
+            
+                Mand
+            
+        </option>
+    
+        
+        <option class="select-option" label="Kvinde" value="2">
+            
+                Kvinde
+            
+        </option>
+    
+</select>
+
+
+
+
+<label class="form__label" for="dwfrm_billing_gender">
+
+
+Køn<span class="form__required">*</span>
+
+
+</label>
+
+
+
+
+<div class="invalid-feedback form__notice">
+
+
+</div>
+</div>
+
+
+
+
+                                    
+
+
+
+
+<div class="form__field form-control is-required">
+
+
+
+
+
+
+<input type="text" id="dwfrm_billing_birthday" class="form__input" value="" name="dwfrm_billing_birthday" required="" aria-required="true" maxlength="10" minlength="8" pattern="^(?:3[01]|[12]\d|0[1-9])\D?(?:1[012]|0[1-9])\D?(?:(?:19|20)\d{2})$" data-missing-error="Obligatorisk felt" placeholder="Fødselsdato" data-range-error="Indtast venligst en fødselsdagsdato i formatet DD MM ÅÅÅÅ år(1923-2005)" data-pattern-mismatch="Indtast venligst en fødselsdagsdato i formatet DD MM ÅÅÅÅ år(1923-2005)" autocomplete="off" style="" data-moz-autofill-type="bday">
+
+
+
+
+
+<label class="form__label" for="dwfrm_billing_birthday">
+
+
+Fødselsdato<span class="form__required">*</span>
+
+
+</label>
+
+
+
+
+<div class="invalid-feedback form__notice">
+
+
+</div>
+</div>
+
+
+
+
+                                    <section class="notification__body rich-text">
+                                        <div class="form__row">
+                                            <div class="form__group">
+                                                <div class="form__field -checkbox form-control is-required">
+                                                    <label class="form__label" for="dwfrm_billing_acceptTerms">
+                                                        <input id="dwfrm_billing_acceptTerms" name="dwfrm_billing_acceptTerms" type="checkbox" data-missing-error="Accepter venligst vores betingelser for at fortsætte." class="form__checkbox" value="true" disabled="&quot;disabled&quot;" required="">
+                                                        <span class="form__checkbox-visuals"></span>
+                                                    </label>
+                                                    <label class="form__checkbox-label" for="dwfrm_billing_acceptTerms">
+                                                        <span>
+                                                            
+
+
+    
+    <div class="content-asset" data-contentassetid="consent"><!-- dwMarker="content" dwContentID="fa9d0840b51dce1c906c0ac4ce" -->
+        <p>Jeg accepterer <a href="https://www.magasin.dk/terms-and-conditions.html">vilkår</a> for Magasin Goodie.</p><p> </p>
+    </div> <!-- End content-asset -->
+
+
+
+                                                        </span>
+                                                    </label>
+                                                    <div class="invalid-feedback form__notice">js-message</div>
+                                                </div>
+                                            </div>
+                                            <div class="form__field -checkbox form-control is-required">
+                                                <label class="form__label" for="dwfrm_billing_acceptMarketing">
+                                                    <input id="dwfrm_billing_acceptMarketing" name="dwfrm_billing_acceptMarketing" type="checkbox" data-missing-error="Accepter venligst vores betingelser for at fortsætte." class="form__checkbox" value="true" disabled="&quot;disabled&quot;" required="">
+                                                    <span class="form__checkbox-visuals"></span>
+                                                </label>
+                                                <label class="form__checkbox-label" for="dwfrm_billing_acceptMarketing">
+                                                    <span>
+                                                        
+
+
+    
+    <div class="content-asset" data-contentassetid="marketingconsent"><!-- dwMarker="content" dwContentID="43776257f13a938d161bbcef02" -->
+        <p>Jeg samtykker til at modtage målrettede henvendelser via e-mail, push-beskeder i tilknyttede apps, og sms fra Magasin du Nord (”Magasin”) med nyheder, tilbud, kampagner og konkurrencer, der vedrører de produkter og services, som Magasin udbyder.</p><p>For at kunne målrette henvendelserne til mig, vil Magasin benytte oplysninger (navn, kontaktdetaljer, køn, fødselsdato, interesser, købshistorik, lokationsdata, brug af fordele og søgeadfærd) tilknyttet mit Goodie medlemskab eller indsamlet via cookies på magasin.dk via særskilt cookiesamtykke. </p><p>Jeg kan i Magasins <a href="https://www.magasin.dk/privacy-policy.html">persondatapolitik</a> læse nærmere om, hvordan Magasin som dataansvarlig behandler mine personoplysninger i forbindelse med mit Goodie medlemskab.</p><p>Jeg kan altid trække mit samtykke til direkte markedsføring tilbage via fx magasin.dk eller Goodie appen.</p>
+    </div> <!-- End content-asset -->
+
+
+
+                                                    </span>
+                                                </label>
+                                                <div class="invalid-feedback form__notice">js-message</div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+
+
+
+
+    <custom-modal class="modal js-modal" data-modal-name="terms-and-conditions-modal" role="dialog">
+        <div class="modal__container js-modal-container">
+            <div class="modal__inner">
+                <header class="modal__header">
+                    <div class="modal__header-title">
+                        
+                        
+                            <span class="js-modal-title modal__header-title-text">
+                                
+                                    Betingelser og vilkår
+                                
+                            </span>
+                        
+                    </div>
+                    <button class="modal__close-button js-close-modal" aria-label="Luk">
+                        
+
+
+    <svg class="svg-icon svg-icon-close  " aria-label="Icon close">
+        
+            <title>Betingelser og vilkår</title>
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close"></use>
+    </svg>
+
+
+                        <span id="modal-close-button-text" hidden="">Luk</span>
+                    </button>
+                </header>
+
+                <div class="modal__content js-modal-content rich-text">
+                    
+                        
+
+<div data-contentassetid="terms-and-conditions">
+    <p><strong>Vilkår &amp; betingelser gyldige fra 26. august 2025 og erstatter alle tidligere udgaver af Magasin Goodie vilkår &amp; betingelser.</strong> &nbsp;</p><p>Vi opfordrer dig til at læse vilkår og betingelser grundigt igennem, inden du tilmelder dig. Så ved du, hvad du siger ja til og du får samtidig det bedste indblik i, hvordan du får mest muligt ud af dit medlemskab.&nbsp;</p><p><strong> </strong>&nbsp;</p><p><strong>1. Introduktion til Magasin Goodie</strong>&nbsp;</p><p>1.1 Magasin Goodie er et fordelsunivers, der giver dig mulighed for at opnå gaver og andre fordele og giver dig adgang til særlige tilbud, når du shopper i Magasins stormagasiner og på magasin.dk. Formålet med Goodie fordelsuniverset er at kunne give fordele til vores bedste kunder. Det gør vi ved at følge din profil og købsadfærd for at kunne målrette fordele, tilbud og markedsføring præcis til dig. Vi behandler dine persondata for at kunne administrere dit medlemskab, læs mere om, hvordan vi behandler dine personoplysninger <a href="https://www.magasin.dk/privacy-policy.html" target="_blank" rel="noopener">her</a><em>.</em>&nbsp;</p><p>1.2 Når du bliver medlem, bliver du forkælet med fordele som fx gaver, invitationer til events og tilbud om produkter, du kan købe i Magasin og på magasin.dk.&nbsp;</p><p>Du kan være medlem på tre niveauer, der bestemmes af, hvor mange point du har optjent. Vi kalder dem ’stjernepoint’.&nbsp;</p><p>Medlemmer starter som 1-stjernet medlem, og allerede efter 1.000 stjernepoint opnås det næste niveau: 2-stjernet medlem. Når du opnår en ny stjerne, får du en Stjernevoucher på 100 kr., og flere nye fordele venter på dig. Det sidste og højeste niveau hedder 3-stjernet medlem, og her får du igen en 100 kr. Stjernevoucher sant adgang til alle de fordele, Magasin Goodie har at byde på.&nbsp;&nbsp;</p><p>1.3<strong> </strong>Som Goodie medlem får du en række faste fordele som invitationer til VIP shopping, fri fragt på Magasin.dk og forskellige rabatter på udvalgte kategorier. Du bliver også løbende forkælet med Goodies udvalgt specielt til dig: Særlige overraskelser som følger din stjernestatus, herunder fx konkurrencer, eksklusive events, gaver og andre lækkerier.&nbsp;</p><p>&nbsp;</p><p><strong>2. Sådan bliver du Goodie medlem</strong>&nbsp;</p><p>2.1 Det koster ikke penge at blive medlem af Magasin Goodie. Du bliver medlem ved at downloade vores Goodie app eller ved at registrere dig på magasin.dk. Her skal du samtidig give dit samtykke til at modtage markedsføring.&nbsp;</p><p>Vil du have adgang til alle fordelene og dine personlige Goodies, er det nødvendigt, at du downloader Goodie appen. Når du har tilmeldt dig, sender vi dig en velkomstmail med et link til din profil på magasin.dk. Her kan du til enhver tid se dit elektroniske medlemskort – ligesom du også altid har det i din Goodie app. Det er ikke muligt at få et fysisk Goodie kort.&nbsp;</p><p>2.2 Du skal selv færdiggøre din profil på magasin.dk eller i appen, før du er endeligt oprettet som Goodie medlem. I forbindelse med, at du færdiggør din profil, skal du give accept til medlemskab af Magasin Goodie, samt give samtykke til modtagelse af direkte markedsføring. Så snart du er tilmeldt, har du adgang til dine fordele og kan bruge dem hos Magasin. Gaver og øvrige fordele kan ikke udbetales i kontanter.&nbsp;</p><p> 2.3 Du skal have et dansk mobilnummer og en e-mailadresse og være mindst 18 år for at blive medlem af Magasin Goodie.&nbsp;</p><p> 2.4 Dit medlemskab samt fordele og Goodies er personlige, og kan ikke overdrages til andre og er omfattet af vores vilkår og betingelser. Magasin har begrænsning på ét Goodie medlemskab pr. person. &nbsp;</p><p> 2.5 Det er medlemmers eget ansvar samt en forudsætning for at være Goodie medlem, at holde e-mailadresse og kontaktoplysninger opdaterede. &nbsp;</p><p> 2.6 Det er Magasin du Nord, CVR. 58191213, Kgs. Nytorv 13, 1095 København K., der står bag Magasin Goodie fordelsunivers.&nbsp;</p><p><strong> </strong>&nbsp;</p><p> <strong>3. Dit samtykke til direkte markedsføring</strong>&nbsp;</p><p> 3.1 Vi beder om dit samtykke til direkte markedsføring for at kunne fremsende relevant markedsføring til dig&nbsp;</p><p> 3.2 Markedsføring til dig om tilbud fra Magasins partnere vil altid komme direkte fra Magasin. Du vil ikke modtage direkte markedsføring fra vores partnere på baggrund af dit Goodie medlemskab. Magasin videregiver ikke oplysninger om dig til vores samarbejdspartnere.&nbsp;</p><p> 3.3 Som led i vores markedsføring til dig vil vi kontakte dig med fordele, inspiration, tilbud, invitationer til events og konkurrencer, kampagner, spørgeskemaer m.m., der passer til dig og din profil. Måden vi kan kommunikere med dig på kan variere inden for rammerne af det samtykke, du har givet os. Er det klassisk markedsføring af varer, sender vi i dag primært besked via e-mail. Ved beskeder om services og bookinger m.v. vil du primært få besked via sms eller push-beskeder i appen.&nbsp;</p><p> 3.4 Når du downloader din Goodie app, har du mulighed for at sige ja til at modtage push-beskeder via appen om nye tilbud og fordele. Du kan altid ændre dine app-indstillinger – blandt andet framelde dig push-beskeder.&nbsp;</p><p> 3.5 Hvis du ikke ønsker at modtage direkte markedsføring, har du altid mulighed for at trække dit samtykke tilbage under dine profiloplysninger på hjemmesiden.&nbsp;</p><p> 3.6 På ”Mit Magasin” kan du desuden rette dine personlige oplysninger og tilpasse de tilladelser, du har givet til Magasin.&nbsp;</p><p> <strong> </strong>&nbsp;</p><p><strong>4. Til dig som medlem</strong>&nbsp;</p><p><strong> </strong>4.1 Som Goodie medlem får du din egen side under ”Mit Magasin” på magasin.dk. Du kan til enhver tid logge ind på din profil via din e-mail og dit valgte kodeord. På din side kan du se dine købskvitteringer, og tjekke hvordan du får endnu flere fordele. Du kan også se, hvilket aktuelt Stjerneniveau du er på, og hvor mange stjernepoint du mangler for at opnå et nyt Stjerneniveau.&nbsp;</p><p> 4.2 Som medlem får du personlige tilbud inden for de typer af produkter, du er mest interesseret i. Dine personlige tilbud finder vi ud fra dit købsmønster og de profiloplysninger, du har givet os. Vi udvikler hele tiden fordelsuniverset, så fordele, tilbud og services passer bedst muligt til dig. Og du får løbende besked, når vi introducerer nye tiltag i Goodie appen.&nbsp;</p><p> 4.3 I Goodie appen får du beskeder fra os med tilbud, invitationer til events og andre aktuelle fordele ved at shoppe i Magasin. I appen kan du bl.a. også se dine købskvitteringer, få information om dine fordele og hente dine Goodies og vouchers. Du har også muligheden for at booke tid til vores services bl.a. til personlig shopper og beauty-behandlinger.&nbsp;</p><p> 4.4 Magasin Goodie er ikke et betalingskort eller kreditkort. Du kan få gaver i form af fx gratis fragtkoder, tilbud eller vouchere i appen, som du kan indløse ved at scanne din app i Magasin eller ved login på magasin.dk.&nbsp;</p><p> &nbsp;</p><p> <strong>5. Sådan opnår du fordele</strong>&nbsp;</p><p>5.1 Du får adgang til fordele og Goodies, når du optjener stjernepoint hos Magasin. &nbsp;<br>Du kan blandt andet optjene stjernepoint ved at handle hos Magasin. Jo højere beløb du køber for i Magasin, jo flere og større fordele og Goddies får du adgang til. Du kan være medlem på tre niveauer ud fra dine køb: Fra 1-stjernet til 2-stjernet og 3-stjernet medlem. Når du opnår en ny stjerne, får du en Stjernevoucher på 100 kr., og flere nye fordele venter på dig. Det er ikke muligt at optjene point ved køb af Magasin Gavekort.&nbsp;</p><p> 5.2 Har du opnået en Stjernevoucher, finder du den under dine Goodies i din app. Du kan også indløse voucheren i alle Magasins forretninger og på Magasin.dk, hvor den gælder i 180 dage. Vær opmærksom på, at du kun kan bruge Stjernevoucheren én gang ved samme køb og den kan benyttes på herre-, dame- og børnetøj, samt lingeri og accessories. Køber du fx en t-shirt for 50 kr. og ikke andet, vil restbeløbet gå tabt. Så brug hele beløbet på voucheren på én gang. Du finder din Stjernevoucher i din Goodie App eller i din mail-indbakke, hvis du har givet samtykke til markedsføring. Du kan højst modtage to Stjernevouchers per år (beregnet på de 12 forudgående måneder).&nbsp;</p><p> 5.3 Du opnår dine faste fordele og Goodies, efterhånden som dine point bliver registreret i appen. For at opnå dine fordele, Goodies og vouchers, skal du huske at scanne din Goodie app i Magasins forretninger eller ved at logge ind på magasin.dk, hver gang du køber noget. Antallet og størrelsen af dine fordele og Goodies er til enhver tid bestemt af det beløb, du samlet har handlet for i løbet af de seneste 12 måneder. Du vil altså opleve, at omfanget af dine fordele og Goodies ændrer sig, i takt med at din samlede købssum for de seneste 12 måneder ændrer sig. Hvert af dine køb bliver regnet med i din samlede købssum. Hvis du fortryder et køb inden for den til enhver tid gældende byttefrist, bliver dit køb ikke regnet med i din samlede købssum. Det gælder også, hvis en eventuel gavemodtager fortryder et køb inden for den gældende frist. Det er ikke muligt at scanne dine køb efterfølgende. Køb, du ikke har scannet, tæller ikke med i den samlede købssum, som bestemmer de fordele, Goodies og vouchers du kan opnå.&nbsp;</p><p> 5.4 Vi vil gerne hjælpe dig med at få flest mulige fordele ud af dit Goodie medlemskab. Derfor får du besked fra os, når du – ud fra dine køb – nærmer dig et lavere eller et højere optjeningsniveau.  &nbsp;</p><p> &nbsp;</p><p><strong>6. Goodie medlem i Danmark</strong>&nbsp;</p><p>6.1 Medlemskabet er et nationalt program og er begrænset til køb i Magasin samt online på magasin.dk. Du kan kun opnå fordele og Goodies ved at shoppe i Danmark.&nbsp;</p><p><strong> </strong>&nbsp;</p><p><strong>7. Ophør af dit medlemskab eller af Magasin Goodie</strong>&nbsp;</p><p>7.1 Magasin forbeholder sig ret til at ændre disse vilkår og betingelser for Magasin Goodie. Hvis du ikke længere ønsker at være medlem, kan du til enhver tid – via Goodie appen eller magasin.dk –lukke dit medlemsskab med øjeblikkelig virkning.&nbsp;</p><p> 7.2 Magasin forbeholder sig også ret til helt at lukke Magasin Goodie – eller lukke dele af Goodie fordelsunivers ned løbende. Hvis Magasin vælger at lukke Goodie fordelsunivers, vil det ske med minimum 1 måneders varsel. I opsigelsesperioden kan du ikke opnå nye fordele, Goodies og vouchers, men du kan godt benytte dig af dem, du allerede har opnået. &nbsp;</p><p> 7.3 Du skal bruge dine opnåede fordele mv., inden dit medlemskab stopper. Det gælder både, hvis du selv melder dig ud, eller hvis Magasin lukker Magasin Goodie ned. Hvis du melder dig ud af Magasin Goodie, vil din adgang til dine opnåede og ubenyttede fordele blive blokeret – så sørg for at bruge dine dem inden.&nbsp;</p><p> 7.4 Hvis Magasin konstaterer misbrug af dit Goodie medlemsskab, forbeholder Magasin sig ret til at lukke dit medlemskab med øjeblikkelig virkning. Det betyder, at vi annullerer dine opnåede fordele, herunder også Goodies og vouchers, der allerede er udleveret i din app. Misbrug kan samtidig føre til permanent ekskludering af Magasin Goodie fordelsunivers. Magasin betragter f.eks. snyd med fordele eller anden uacceptabel opførsel over for Magasins ansatte som misligholdelse.&nbsp;</p><p> &nbsp;</p><p><strong>8. Kontakt os</strong>&nbsp;</p><p>8.1 Har du spørgsmål til Magasin Goodie, kan du kontakte Magasin Kundeservice på <a href="http://www.magasin.dk/" target="_blank" rel="noopener">www.magasin.dk</a>  eller på telefon 33 11 44 33.&nbsp;</p><p>&nbsp;</p>
+</div>
+
+
+                    
+                </div>
+                
+            </div>
+        </div>
+    </custom-modal>
+
+
+                    
+
+
+
+
+    <custom-modal class="modal js-modal" data-modal-name="privacyterms-modal" role="dialog">
+        <div class="modal__container js-modal-container">
+            <div class="modal__inner">
+                <header class="modal__header">
+                    <div class="modal__header-title">
+                        
+                        
+                            <span class="js-modal-title modal__header-title-text">
+                                
+                                    Privatlivspolitik
+                                
+                            </span>
+                        
+                    </div>
+                    <button class="modal__close-button js-close-modal" aria-label="Luk">
+                        
+
+
+    <svg class="svg-icon svg-icon-close  " aria-label="Icon close">
+        
+            <title>Privatlivspolitik</title>
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close"></use>
+    </svg>
+
+
+                        <span id="modal-close-button-text" hidden="">Luk</span>
+                    </button>
+                </header>
+
+                <div class="modal__content js-modal-content rich-text">
+                    
+                        
+
+<div data-contentassetid="privacy-policy">
+    <h1><strong>Privatlivspolitik</strong></h1><p>Denne privatlivspolitik er gældende fra oktober 2025 og erstatter alle tidligere udgaver af Magasins privatlivspolitik.</p><p>Vi er glade for din interesse for Aktieselskabet Th. Wessel &amp; Vett. Magasin du Nord (”Magasin”, ”vi”, ”os”, ”vores”).</p><p>Vi tager beskyttelsen af dine personoplysninger alvorligt. I denne privatlivspolitik kan du læse nærmere om, hvordan vi behandler dine personoplysninger i forbindelse med dit besøg på vores hjemmeside, vores sider på sociale medier og i vores forretninger, når du foretager køb, samt din brug af vores app. Du kan også læse om, hvilke rettigheder du har i den forbindelse.</p><p></p><h1>1 Vi er den dataansvarlige – hvordan kontakter du os?</h1><p>Vi er dataansvarlig for behandlingen af de personoplysninger, som vi behandler om dig. Du finder vores kontaktoplysninger nedenfor:</p><p>Aktieselskabet Th. Wessel &amp; Vett. Magasin du Nord</p><p>Kongens Nytorv 13</p><p>1050 København K</p><p>CVR-nr. 58 19 12 13</p><p>Mailadresse: <a href="mailto:Persondata@magasin.dk" target="_blank" rel="noopener">privacy@magasin.dk</a></p><p></p><h1>2 Hvad er formålene med og retsgrundlaget for behandlingen af dine personoplysninger?</h1><p>Vi behandler dine personoplysninger til følgende formål og på følgende retsgrundlag:</p><p>2.1 Når du besøger vores hjemmeside og app samt interagerer med vores nyhedsbreve og push-beskeder, behandler vi oplysninger om dig med henblik på at gøre vores hjemmeside brugbar ved at aktivere grundlæggende funktioner som navigation på siden (nødvendige cookies), med henblik på at vise den version af vores hjemmeside, der passer til dine præferencer, eksempelvis hvilken region du foretrækker (funktionelle/personaliserede cookies), med henblik på at udføre undersøgelser, statistik og analyser af din brug af vores platforme (statistiske cookies) og med henblik på at personalisere indhold og målrette annoncer på vores og andres hjemmesider til dig (markedsføringscookies).</p><p>Retsgrundlaget for behandlingen af dine personoplysninger i forbindelse med funktionelle/personaliserede cookies, statistiske cookies og markedsføringscookies er dit samtykke, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra a.</p><p>Retsgrundlaget for behandlingen af dine personoplysninger i forbindelse med nødvendige cookies er vores legitime interesse i at aktivere grundlæggende funktioner på vores hjemmeside, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra f.</p><p>I forbindelse med behandlingen af oplysninger om dig til disse formål gør vi brug af cookies og lignende sporingsteknologier for at forstå din adfærd som bruger. Du kan læse mere om vores brug af cookies og lignende teknologier i <a href="https://www.magasin.dk/cookie-policy.html" target="_blank" rel="noopener">vores cookiepolitik</a>.</p><p>2.2 Levering af de varer, du køber, og de services, du benytter, og i relation hertil opfyldelse af vores retlige forpligtelser til at behandle, herunder opbevare, personoplysninger.</p><p>Retsgrundlaget for behandlingen er vores aftale med dig om køb af varer eller levering af andre services, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra b, og vores retlige forpligtelser, herunder til at fortage bogføring i henhold til bogføringsloven, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra c.</p><p>2.3 Statistiske formål, idet Magasin indsamler og aggregerer oplysninger om kunders køb med henblik på at kunne yde størrelsesvejledning.</p><p>Retsgrundlaget for behandlingen er databeskyttelsesforordningens artikel 6, stk. 1, litra f, idet Magasin har en legitim og tungtvejende interesse i at yde den bedste vejledning til vores kunder, således at kunderne kan foretage køb af varer, der passer dem. Det er således i både Magasins og kundens interesse, at oplysninger anvendes til dette formål, ligesom behandlingen ikke kan anses for indgribende for kunderne, idet behandlingen ikke har nogen indvirkning på den enkelte kunde, og de indsamlede data aggregeres, hvorved enkeltpersoner ikke umiddelbart vil kunne identificeres.</p><p>2.4 Verifikation af, om du er over 18 år gammel, når du foretager online køb af alkohol.</p><p>Retsgrundlaget for behandlingen er retlige forpligtelse efter lov om forbud mod salg af tobak og alkohol til personer under 18 år (LOV nr 651 af 11/06/2024), jf. databeskyttelsesforordningens artikel 6, stk. 1, litra c.</p><p>2.5 Kommunikation med dig, når du kontakter os, og når du deltager i vores konkurrencer udenfor de sociale medier.</p><p>Retsgrundlaget for behandlingen er vores legitime interesser i at i) kunne besvare din henvendelse og føre statistikker i den forbindelse og ii) gennemføre konkurrencer, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra f.</p><p>2.6 Markedsføring på sociale medier, herunder at besvare dine henvendelser, at lade dig deltage i vores konkurrencer og kontakte dig, hvis du vinder.</p><p>Retsgrundlaget for behandlingen er vores legitime interesse i at markedsføre Magasin via Magasins tilstedeværelse på sociale medier, som kunderne ofte benytter i forvejen, jf. databeskyttelsesforordningens art 6, stk. 1, litra f.</p><p>Vi har i den forbindelse lagt vægt på, at behandlingen af oplysninger om dig med henblik på markedsføring af Magasin ikke vil føre til udelukkelse eller forskelsbehandling af dig. Dertil kommer, at det ikke er nærliggende, at denne behandling vil fremkalde negative følelser hos dig eller medføre uforholdsmæssige negative konsekvenser, idet markedsføringen vil omfatte begrænsede oplysninger om dig, jf. nærmere nedenfor afsnit 3.4. Desuden har vi lagt vægt på, at de indsamlede oplysninger stammer fra et tidligere eller aktuelt kundeforhold, besøg på vores hjemmeside eller deltagelse i vores konkurrencer, hvilket berettiger behandlingen af oplysninger om dig. Ved at foretage en afvejning mellem disse momenter og din interesse i, at denne behandling ikke forekommer, er vi kommet frem til, at vi har en tilstrækkelig tungtvejende og legitim interesse i at foretage den pågældende behandling, at vi kan basere behandlingen på artikel 6, stk. 1, litra f.</p><p>Hvis du har givet særskilt samtykke i forbindelse med din deltagelse i en af vores konkurrencer, er retsgrundlaget for behandlingen af dine personoplysninger dog dit samtykke, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra a.</p><p>2.7 TV-overvågning i vores forretninger for at forebygge og opklare klager og kriminelle handlinger, herunder butikstyveri, røveri, misbrug af betalingsmidler samt afklare øvrige drifts- og sikkerhedsmæssige forhold, eksempelvis blokerede flugtveje, indbrud, hærværk og lignende.</p><p>Retsgrundlaget for TV-overvågningen er vores adgang hertil ifølge TV-overvågningsloven, idet vi har en legitim interesse i at sørge for, at Magasin er et sikkert og trygt sted at handle, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra f.</p><p>Behandlingen af særlige kategorier af personoplysninger kan endvidere i nogle tilfælde være nødvendig for, at vi kan fastslå, forsvare, eller gøre retskrav gældende, jf. databeskyttelsesforordningens artikel 9, stk. 2, litra f.</p><p>I det omfang der i den forbindelse behandles oplysninger om strafbare forhold, sker det på grundlag af databeskyttelseslovens § 8, stk. 3, 2. pkt., idet Magasins berettigede interesse i at forebygge og opklare kriminelle handlinger klart overstiger hensynet til den registrerede.</p><p>Retsgrundlaget for denne behandling er databeskyttelsesforordningens artikel 6, stk. 1, litra f, idet Magasin som stormagasin har en legitim interesse i at forstå sine besøgende bedre med henblik på at yde den bedste oplevelse for dem. Da behandlingen som beskrevet desuden må anses for at have begrænset indvirkning på de registrerede, er det Magasins vurdering, at vores interesse i behandlingen er mere tungtvejende end de registreredes interesse i ikke at være genstand for behandlingen.</p><p>2.8 Optagelse af telefonsamtaler af sikkerhedshensyn, herunder forebyggelse af chikane og kriminelle handlinger, og med henblik på at kunne dokumentere, hvad der er blevet sagt i forbindelse med din henvendelse.</p><p>Retsgrundlaget for denne behandling er databeskyttelsesforordningens artikel 6, stk. 1, litra f, og databeskyttelseslovens § 8, stk. 3, 2. pkt.</p><p>2.9&nbsp;Lydoptagelse af vagters håndtering af hændelser med gæster, når vagter aktiverer overfaldstryk, af dokumentations- og sikkerhedshensyn.</p><p>Retsgrundlaget for denne behandling er vores legitime interesse i at kunne dokumentere, i) hvad der er sagt og sket under et hændelsesforløb og i forbindelse med tilbageholdelser i Magasin, ii) at kunne fastslå, udøve og forsvare vores rettigheder og iii) at sikre effektiv kommunikation i vores vagtfunktion, hvorved den enkelte vagts sikkerhed styrkes, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra f, og databeskyttelseslovens § 8, stk. 3, 2. pkt. Vi har i vores vurdering lagt vægt på, at denne interesse i at dokumentere hændelser, der nødvendiggør aktivering af overfaldstryk, og interessen i at beskytte vores vagter er så tungtvejende, at den opvejer for den eventuelle gene, som lydoptagelse kan medføre for personer, hvis stemmer indgår i optagelser. I visse tilfælde vil vagtfunktionen blive varetaget af butikspersonalet, hvor den beskrevne vurdering ligeledes er gældende.</p><p>2.10 Fastslå, udøve eller forsvare vores juridiske rettigheder, herunder for at bekæmpe svindel og dokumentere hændelser på vores platforme og i vores forretninger.</p><p>Retsgrundlaget for denne behandling er vores legitime interesse i at varetage vores juridiske rettigheder, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra f, og databeskyttelseslovens § 8, stk. 3, 2. pkt.</p><p>2.11 Lave analyser af og føre statistik over vores kunders køb, præferencer og handlinger med henblik på at opnå en bedre forståelse for disse gruppers behov for hjælp, interesser og mønstre. Derudover fører vi statistik over antallet af besøgende i vores fysiske forretninger.</p><p>Retsgrundlaget for denne behandling er vores legitime interesse i at lære vores kunder og gæster bedre at kende på et overordnet plan, således at vi bedst kan identificere nye grupper af besøgende og indrette vores forretninger, hjemmeside og app på en måde, der interesserer besøgende, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra f. Vi har desuden lagt vægt på, at denne behandling ikke vil have en indvirkning på den enkelte kunde eller besøgende, da oplysningerne aggregeres til analyse og statistiske formål.</p><p>2.12 Lave kundeundersøgelser med henblik på at forbedre kundeoplevelsen ved at forstå kundens behov og præferencer, optimere vores produkter, tjenester og kommunikation samt identificere trends og mønstre i kundeadfærd gennem analyser.</p><p>Retsgrundlaget i denne forbindelse er dit samtykke, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra a.</p><p>2.13. Tilbyde turistrabat til udenlandske turister, når du fremviser dit pas eller andet ID til vores personale ved kasseterminalerne.</p><p>Retsgrundlaget for denne behandling er vores legitime interesse i at tilbyde særlig rabat for udenlandske turister, hvorved de opnår mere fordelagtig pris for det køb, som de foretager, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra f.</p><p>2.14. <em>Er du Goodie-medlem, behandler vi endvidere dine personoplysninger til følgende formål og på følgende retsgrundlag</em>:</p><p>2.14.1 Udsendelse af målrettet markedsføring og profilering, for at vi kan sende tilbud og anden relevant kommunikation til dig samt målrette disse henvendelser til dig. Retsgrundlaget for behandlingen er dit samtykke, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra a.</p><p>Visse personoplysninger, der behandles til dette formål, kan være indsamlet via cookies, hvis du har givet særskilt samtykke hertil. Du kan læse mere om vores brug af cookies på hjemmesiden i vores <a href="https://www.magasin.dk/cookie-policy.html" target="_blank" rel="noopener">cookiepolitik</a>.</p><p>Trækker du dit samtykke tilbage, men forbliver Goodie-medlem, vil dine oplysninger behandles til brug for undersøgelser, statistik og analyser samt for at opdatere din profil, så vi kan målrette markedsføring til dig baseret på dine interesser, hvis du på et senere tidspunkt tilmelder dig vores målrettede markedsføring igen. Retsgrundlaget for denne behandling er vores legitime interesse i at personalisere vores markedsføring til dig, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra f.</p><p>2.14.2 Administration af dit Goodie-medlemskab, herunder kommunikation med dig om dit medlemskab, når du modtager personal shopper ydelser, beauty behandling, duftkonsultation services, besøger vores forretninger, deltager i events som en del af dit medlemskab og levering af medlemsfordele samt andre aftalte ydelser.</p><p>Retsgrundlaget for behandlingen er vores aftale om medlemskab med dig, jf. databeskyttelsesforordningens artikel 6, stk. 1, litra b.</p><p></p><h1>3&nbsp;Hvilke personoplysninger behandler vi om dig?</h1><p>3.1 Til formålene nævnt i afsnit 2.1, 2.2 og 2.5 ovenfor og afhængig af din brug af hjemmesiden behandler vi typisk følgende personoplysninger om dig:</p><ul><li>Navn og adresse</li><li>E-mail og telefonnummer</li><li>Ordreinformationer, købshistorik og sagsnummer</li><li>Oplysninger, du afgiver i forbindelse med din brug af services, f.eks. booking af personal shopper services og beauty behandling services eller deltagelse i liveshopping</li><li>Oplysninger, du afgiver i forbindelse med din kommunikation med os</li><li>Oplysninger om din færden på vores platforme, herunder hvilke sider du besøger, hvilke produkter du klikker på og lægger i kurven, samt hvordan du interagerer med vores kommunikation</li><li>Oplysninger indsamlet via cookies i det omfang, du særskilt har samtykket til vores brug af cookies</li></ul><p>3.2&nbsp;Til formålet nævnt i afsnit 2.3 behandler vi oplysning om ordrenummer, den størrelse af varen, som du har købt, dato for køb, levering og eventuel returnering samt eventuel returårsag.</p><p>3.3 Til formålet nævnt i afsnit 2.4 behandler vi oplysning om, hvorvidt du er over 18 år gammel.</p><p>3.4 Til formålet nævnt i afsnit 2.6 behandler vi følgende almindelige oplysninger om dig:</p><ul><li>Oplysninger, du afgiver i forbindelse med din kommunikation med os, herunder dine reaktioner på, deling af og kommentarer til vores opslag på sociale medier</li><li>Oplysninger, du afgiver i forbindelse med din deltagelse i konkurrencer</li></ul><p>3.5 Til formålet nævnt i afsnit 2.7 ovenfor behandler vi følgende almindelige oplysninger om dig:</p><ul><li>Billede- og videosekvenser uden lyd optaget i Magasins forretninger samt ved indgangene hertil</li></ul><p>3.6&nbsp;Til formålet nævnt i afsnit 2.8 ovenfor behandler vi følgende almindelige oplysninger om dig:</p><ul><li>Telefonsamtaler med Magasins medarbejdere</li><li>Navn og telefonnummer</li><li>Afhængigt af samtalens omdrejningspunkt og udvikling kan vi optage oplysninger om både fortrolige og følsomme forhold, f.eks. oplysninger om beskyttede adresser og helbredsoplysninger</li></ul><p>3.7&nbsp;Til formålene nævnt i afsnit 2.9 ovenfor kan vi behandle følgende almindelige oplysninger om dig:</p><ul><li>Samtaler med eller omkring Magasins vagter</li><li>Dit navn og en beskrivelse af dig</li><li>Afhængigt af hændelsens omdrejningspunkt og udvikling kan vi behandle oplysninger om mulige strafbare forhold, som du har begået.</li></ul><p>3.8&nbsp;Til formålene nævnt i afsnit 2.10-2.12 ovenfor kan vi behandle de oplysninger, som nævnes ovenfor i afsnit 3.1-3.6.</p><p>3.9 Til formålene nævnt i afsnit 2.7-2.10 ovenfor kan vi behandle oplysninger om strafbare forhold.</p><p>3.10&nbsp;Til formålet nævnt i afsnit 2.13 ovenfor behandler vi de oplysninger, der fremgår af dit pas (navn, statsborgerskab og pasnummer).</p><p>3.11 <em>Særligt for vores Goodie-medlemmer:</em></p><p>Til formålene nævnt i afsnit 2.12 ovenfor behandler vi i tillæg til de oplysninger, som nævnes ovenfor i afsnit 3.1 og 3.4, følgende oplysninger om dig, hvis du er Goodie-medlem:</p><ul><li>Fødselsdato</li><li>Køn</li><li>Goodie-medlemsnummer</li><li>Oplysninger om optjening og brug af fordele (herunder stjerner, Goodies, og vouchers)</li><li>Oplysninger, der indsamles i forbindelse med vores kommunikation med dig om dit Goodie -medlemskab</li><li>Oplysninger om, hvor du har handlet, baseret på din købshistorik</li></ul><p></p><h1>4&nbsp;Hvem deler vi dine personoplysninger med?</h1><p>Vi deler oplysninger om dig med vores eksterne samarbejdspartnere, der behandler oplysningerne på vores vegne. De oplysninger, vi har indsamlet om dig, deles kun i det omfang, det er nødvendigt for at udmønte aftalen med den enkelte samarbejdsrelation:</p><ul><li>Udbydere, der bistår med teknisk drift af vores hjemmeside og vores apps, herunder udbydere af hosting-tjenester og løsninger, der understøtter funktionalitet,</li><li>Udbydere, der bistår med markedsføringsaktiviteter og kommunikation med kunder og Goodie-medlemmer,</li><li>Udbydere af analyseværktøjer, der hjælper os med at optimere vores forretning og din oplevelse som kunde og Goodie-medlem,</li><li>Samarbejdspartnere, der bistår med driften af kundeserviceydelser, herunder vedrørende levering af varer fra webshoppen.</li></ul><p>Disse samarbejdspartnere er databehandlere og behandler i henhold til vores instruks personoplysninger, som vi er dataansvarlige for. Databehandlerne må ikke anvende oplysningerne til andet formål end opfyldelse af deres aftale med os og skal behandle oplysningerne fortroligt. Vi har indgået skriftlige databehandleraftaler med alle vores databehandlere.</p><p>Enkelte samarbejdspartnere, som vi videregiver dine personoplysninger til, er selvstændige dataansvarlige. Det indebærer, at de behandler dine data for at kunne levere deres service eller lignende, uden at de kan siges at være underlagt vores instruks. Det kan eksempelvis være vores eksterne lager, som pakker og afsender din ordre.</p><p>Når Magasin indgår reklamesamarbejder med eksempelvis sociale medier, har Magasin mulighed for at videregive visse oplysninger om kunder og besøgende til det enkelte sociale medie, hvis vi formoder, at disse kunder og besøgende tilhører målgrupper hos mediet eller udviser bestemte karakteristika (eksempelvis aldersgruppe, interesse eller geografisk lokation).</p><p>Du kan altid række ud til Magasin, hvis du har spørgsmål til dette, ligesom du kan læse mere om de nedenfor nævnte sociale mediers behandling af personoplysninger til markedsføringsformål i deres privatlivspolitikker, som du finder her:</p><ul><li> Facebook: <a href="https://www.facebook.com/privacy/explanation" target="_blank" rel="noopener">https://www.facebook.com/privacy/explanation</a>.</li><li>Instagram: <a href="https://help.instagram.com/155833707900388" target="_blank" rel="noopener">https://help.instagram.com/155833707900388</a></li><li>Youtube: <a href="https://www.youtube.com/intl/ALL_dk/howyoutubeworks/our-commitments/protecting-user-data/" target="_blank" rel="noopener">https://www.youtube.com/intl/ALL_dk/howyoutubeworks/our-commitments/protecting-user-data/</a></li><li>LinkedIn: <a href="https://dk.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener">https://dk.linkedin.com/legal/privacy-policy</a></li><li>TikTok: <a href="https://www.tiktok.com/legal/page/eea/privacy-policy/da" target="_blank" rel="noopener">https://www.tiktok.com/legal/page/eea/privacy-policy/da</a></li></ul><p>Vi kan også dele personoplysninger med vores eksterne rådgivere, f.eks. revisorer og advokater, samt offentlige myndigheder, såfremt det er påkrævet i henhold til lov.</p><p>Hvis der bliver behov for anmeldelse af et forhold til politiet som følge af f.eks. videoovervågning eller en telefonsamtale, videregiver vi dine oplysninger til politiet og eventuelt eksterne rådgivere.</p><p></p><h1>5 Hvornår overfører vi dine personoplysninger til lande uden for EU/EØS?</h1><p>Vi vil overføre dine personoplysninger til modtagere uden for EU/EØS. Det drejer sig om følgende kategorier af modtagere:</p><ul><li>Udbydere, der bistår med markedsføringsaktiviteter og kommunikation på vores tekniske systemer</li><li>Udbydere af analyseværktøjer, der hjælper os med at optimere vores forretning og din oplevelse ved brug af vores hjemmeside og services</li><li>Udbydere, der bistår med teknisk drift af vores hjemmeside og vores apps, herunder udbydere af hosting-tjenester og løsninger, der understøtter funktionalitet</li></ul><p>Ved overførsler til modtagere uden for EU/EØS sikrer vi, at der er et gyldigt overførselsgrundlag. Det betyder, at hvis modtageren ikke befinder sig i et land uden for EU/EØS, der er vurderet som et ”sikkert tredjeland”, sikrer vi beskyttelsen af dine personoplysninger ved at anvende standardkontrakter godkendt af EU-Kommissionen eller Datatilsynet eller EU – U.S. Data Privacy Framework programmet (DPF). Dette sikrer, at dine rettigheder og beskyttelsesniveauet følger med dine personoplysninger. Ønsker du en kopi af standardkontraktbestemmelserne eller en liste over vores nuværende databehandlere og underdatabehandlere, er du velkommen til at kontakte os via kontaktoplysningerne i afsnit 1 ovenfor.</p><p></p><h1>6 Hvor stammer dine personoplysninger fra?</h1><p>Vi behandler de personoplysninger, du giver os, ligesom vi behandler de personoplysninger om dig, som indsamles automatisk, herunder via din digitale adfærd (bl.a. cookies). Derudover behandler vi de personoplysninger, som vi indsamler via TV-overvågning i vores forretninger, gennem optagelse af telefonsamtaler og ved vagters optagelse af hændelser i vores forretninger, der nødvendiggør aktivering af overfaldstryk.</p><p></p><h1>7 Hvor længe opbevarer vi dine personoplysninger?</h1><p>7.1 Vi gemmer dine oplysninger så længe, det er nødvendigt.</p><p>7.2 Oplysninger om køb og kommunikation med os herom vil som udgangspunkt blive slettet 2 år efter dit køb i henhold til købelovens reklamationsfrist. Oplysninger kan blive gemt i en længere periode, hvis dette følger af lovkrav, herunder bogføringslovens krav om opbevaring af transaktionsoplysninger i løbende år + 5 år, eller hvis vi kan godtgøre et legitimt behov for at gemme oplysningerne i en længere periode, eksempelvis til fastlæggelse af retskrav.</p><p>Oplysninger, som du afgiver i forbindelse med din kommunikation med os via vores hjemmeside eller sociale medier, og som ikke vedrører køb, opbevares så længe, der er et formål hermed og afhænger af henvendelsens karakter.</p><p>Oplysninger, der indsamles til brug for personal shopper og beauty shopper services vil automatisk blive slettet 30 dage efter konsultationen.</p><p>7.3 Oplysninger, der indsamles til brug for undersøgelser, statistik og analyser, slettes efter 2 år.</p><p>7.4&nbsp;Oplysninger, som vi modtager fra dig i forbindelse med din deltagelse i konkurrencer slettes 6 måneder efter konkurrencens afholdelse. Oplysning om gevinster slettes 1 år efter konkurrencens afholdelse, dog først efter løbende år + 5 år i det omfang der indgår transaktioner.</p><p>7.5&nbsp;Oplysninger, du afgiver på Magasins sider på sociale medier forbliver på det pågældende sociale medie, medmindre du selv sletter dem.</p><p>7.6 Oplysninger, der stammer fra TV-overvågning, optagelse af telefonsamtaler og lydoptagelser ved aktivering af overfaldstryk vil automatisk blive slettet senest 30 dage efter optagelsen fandt sted, medmindre oplysningerne indgår som dokumentation i en konkret sag. Oplysninger om dig, som bruges i forbindelse med en verserende sag, tvist eller anden form for sagsbehandling, opbevares indtil sagen er afsluttet og formålet med behandlingen ikke længere er til stede.</p><p>7.7 Om sletning af oplysninger, der stammer fra cookies, henvises til vores <a href="https://www.magasin.dk/cookie-policy.html" target="_blank" rel="noopener">cookiepolitik</a>.</p><p><em>7.8&nbsp;Særligt for vores Goodie-medlemmer:</em></p><p>7.8.1 Vi gemmer dine oplysninger så længe, du er Goodie-medlem. Ved udmelding af Goodie-kundeklubben lukkes dit medlemskab med øjeblikkelig virkning. Du har dog mulighed for at bruge dine opnåede og ubenyttede fordele i op til 14 dage efter din udmelding ved at kontakte kundeservice. Herefter slettes dine opnåede og ubenyttede fordele. Vi stopper samtidig vores kommunikation med dig.</p><p>Hvis du efter at have meldt dig ind i Goodie-kundeklubben udøver din fortrydelsesret, jf. vores Goodie-vilkår og betingelser, stopper vi med at behandle dine personoplysninger til formålet nævnt i afsnit 2.12 ovenfor, og sletter personoplysninger, der er tilvejebragt som følge af en behandling til disse formål, senest 14 dage efter, vi har modtaget meddelelse om, at du ønsker at træde tilbage fra aftalen.</p><p>Alle de personoplysninger, vi behandler om dig under dit Goodie-medlemskab opbevares i 3 måneder efter ophør af dit Goodie-medlemskab.</p><p>Dokumentation for ophør af dit Goodie-medlemskab og dine oplysninger, der behandles til formålet i afsnit 2.12, herunder dine købskvitteringer og samtykker til markedsføring, bliver dog opbevaret i 2 år fra ophør af medlemskabet for at overholde vores retlige forpligtelser efter markedsføringsloven.</p><p>Oplysninger om dig, som bruges i forbindelse med en verserende sag, opbevares, indtil sagen er afsluttet.</p><p>Øvrige oplysninger om dig vil blive slettet eller anonymiseret umiddelbart efter ophøret af dit Goodie-medlemskab.</p><p></p><h1>8 Hvordan kontakter vi dig om ændringer i behandlingen af dine personoplysninger?</h1><p>8.1 Du kan altid følge med i eventuelle ændringer i vores behandling af dine oplysninger via magasin.dk. Vi opfordrer dig til løbende at orientere dig, således at du altid ved, hvordan vi behandler dine personoplysninger.</p><p>8.2 <em>Særligt for vores Goodie-medlemmer</em>:</p><p>8.2.1 Ved ændringer i vores behandling af dine oplysninger modtager du notifikation herom direkte i Goodie-appen, eller når du logger ind som Goodie-medlem via magasin.dk. Har du slået push-beskeder til på Goodie-appen, kan du altid holde dig opdateret. Vi opfordrer dig til løbende at orientere dig, således at du altid ved, hvordan vi behandler dine personoplysninger.</p><p></p><h1>9 Hvilke rettigheder har du?</h1><p>Ifølge databeskyttelsesforordningen har du en række rettigheder i forhold til vores behandling af oplysninger om dig:</p><ul><li>Du har ret til indsigt i de oplysninger, som vi behandler om dig, samt en række yderligere oplysninger</li><li>Du har ret til berigtigelse af dine personoplysninger</li><li>Du har i visse tilfælde ret til at få begrænset behandlingen af dine oplysninger til kun at bestå af opbevaring</li><li>Du har i visse tilfælde ret til at transmittere oplysninger, dvs. at du kan få dine personoplysninger udleveret eller overført til en anden dataansvarlig</li></ul><p>I særlige tilfælde har du ret til at få slettet oplysninger om dig, inden tidspunktet for vores almindelige generelle sletning indtræffer, og du har i visse tilfælde ret til at gøre indsigelse mod vores behandling. Du har altid ret til at trække afgivet samtykke til behandling af personoplysninger tilbage ved at skrive til os på den mail, der er angivet i afsnit 1 ovenfor. Bemærk, at hvis du beder os om at slette dine oplysninger eller trækker dit samtykke til tilmeldte services tilbage, vil det medføre, at visse services ikke kan leveres.</p><p>Hvis du vælger at trække dit samtykke tilbage, påvirker det ikke lovligheden af vores behandling af dine personoplysninger på baggrund af dit tidligere meddelte samtykke og op til tidspunktet for tilbagetrækning. Hvis du tilbagetrækker dit samtykke, har det derfor først virkning fra dette tidspunkt og frem.</p><p>Du kan læse mere om dine rettigheder i Datatilsynets vejledning om de registreredes rettigheder, som du finder på <a href="http://www.datatilsynet.dk" target="_blank" rel="noopener">www.datatilsynet.dk</a>.</p><p>Du er også altid velkommen til at henvende dig til <a href="mailto:privacy@magasin.dk" target="_blank" rel="noopener">privacy@magasin.dk</a> hvis du har spørgsmål til behandlingen af dine persondata.</p><p><em>Særligt for vores Goodie-medlemmer:</em></p><p>Du har ret til berigtigelse af dine personoplysninger. Du kan altid selv rette visse af dine oplysninger via magasin.dk eller Goodie-appen</p><p>Du har altid ret til at gøre indsigelse mod behandling af dine oplysninger til direkte markedsføring, profilering, i det omfang profileringen vedrører direkte markedsføring, og trække dit samtykke tilbage via f.eks. magasin.dk eller Goodie-appen. Bemærk, at hvis du beder os om at slette dine oplysninger, eller hvis du trækker dit samtykke tilbage, vil det medføre, at du bliver meldt ud af Goodie-kundeklubben.</p><p></p><h1>10 Klage til Datatilsynet</h1><p>Du har ret til at indgive en klage til Datatilsynet, hvis du er utilfreds med den måde, vi behandler dine personoplysninger på. Du finder Datatilsynets kontaktoplysninger på <a href="http://www.datatilsynet.dk" target="_blank" rel="noopener">www.datatilsynet.dk</a>.</p>
+</div>
+
+
+                    
+                </div>
+                
+            </div>
+        </div>
+    </custom-modal>
+
+
+                </article>
+            
+            <div>
+                <button type="submit" class="button -primary -fw js-billing-submit" name="null" data-gtm-event="{&quot;event&quot;:&quot;checkout_billing&quot;,&quot;event_description&quot;:&quot;Fortsæt til levering&quot;}">Fortsæt til levering</button>
+            </div>
+            <input type="hidden" name="csrf_token" value="ZDeMVoISxMGS55IYGo7upGQftdiTXRUVgV3eR6SYG6y-GqDJlinj-Yh9shj1lifcXX65LAMsfh8VdPF23oTSqAoiKLApOBbRWzHBxiwlf9rk6Z6A2Qd9-yaTc1PpyS9fnFdDRT4mAFhUQJ9rnPtqhlNjAvwY7TRYv-3xmvH34mX-YFTZEJc=">
+        </form>
+        <div class="divider hidden-from-lg mv4"></div>
+    </billing-page>
+    <div class="checkout__summary">
+        <checkout-summary>
+    <header class="checkout__summary-header mb3 mb4-lg">
+        <h2>Din bestilling</h2>
+        
+            <a href="https://www.magasin.dk/kurv/" class="checkout__summary-link" aria-label="Rediger kurv">
+                
+
+
+    <svg class="svg-icon svg-icon-pencil checkout__summary-icon  " aria-label="Icon pencil">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#pencil" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#pencil"></use>
+    </svg>
+
+
+            </a>
+        
+    </header>
+    <div class="mv3">
+        
+        
+        
+        <table class="price-table">
+    
+    <tbody><tr>
+        <td ref="num-items">1 vare</td>
+        <td ref="sub-total">479,40 kr.</td>
+    </tr>
+    
+    
+        <tr>
+            <td>
+                Levering
+                <span ref="shippingMethodName">(Instabox pakkeboks)</span>
+            </td>
+            <td ref="shipping-costs">
+                
+                    <span>
+                        24,00 kr.
+                    </span>
+                
+            </td>
+        </tr>
+    
+
+    
+    
+        <tr class="js-giftwrapping-discount is-hidden">
+            <td>
+                Gaveindpakning
+            </td>
+            <td>
+                <span ref="order-giftwrapping-total">
+                    0,00 kr.
+                </span>
+            </td>
+        </tr>
+    
+
+</tbody></table>
+
+<table class="coupons-and-promos price-table">
+    
+
+
+
+
+</table>
+
+
+
+    <table class="js-giftcard-discount price-table is-hidden">
+        <tbody><tr>
+            <td>Gavekort</td>
+            <td><span ref="giftcard-discount-total">-0,00 kr.</span></td>
+        </tr>
+    </tbody></table>
+
+
+
+
+    
+    <table class="js-shipping-discount price-table is-hidden">
+        <tbody><tr>
+            <td>Forsendelsesrabat</td>
+            <td><span ref="shipping-discount-total">-0,00 kr.</span></td>
+        </tr>
+    </tbody></table>
+
+
+<table class="price-table">
+    
+    
+        <tbody><tr class="price-table__total">
+            <td class="-bold">Total</td>
+            <td class="-bold"><span ref="grand-total">503,40 kr.</span></td>
+        </tr>
+    
+    
+    
+        <tr>
+            <td>Heraf udgør moms</td>
+            <td><span ref="total-tax">100,68 kr.</span></td>
+        </tr>
+    
+</tbody></table>
+
+    </div>
+    <div class="hidden-until-lg">
+        
+
+
+<div class="mt5 mb2">
+    
+    
+
+    
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+            
+                <div class="dropshipment__title-section --summary">
+                    <div class="dropshipment__deliveryfrom">
+                        
+                    </div>
+                    <div class="dropshipment__workingdays">
+                        1-2
+                        hverdage
+                    </div>
+                </div>
+            
+            <div class="products-list">
+                
+                    
+                        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="product-card ">
+    <div class="inner">
+        <figure class="product-card__image">
+            
+
+
+
+
+
+<figure class="image-holder">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+
+        
+        <img src="https://www.magasin.dk/dw/image/v2/BFCS_PRD/on/demandware.static/-/Sites-mdn-master-catalog/default/dw56282d52/large2/EB/5740027862827_Micro%20Chip_1.jpg?sw=80&amp;sh=96&amp;sm=fit&amp;sfrm=jpg" srcset="https://www.magasin.dk/dw/image/v2/BFCS_PRD/on/demandware.static/-/Sites-mdn-master-catalog/default/dw56282d52/large2/EB/5740027862827_Micro%20Chip_1.jpg?sw=80&amp;sh=96&amp;sm=fit&amp;sfrm=jpg 80w, https://www.magasin.dk/dw/image/v2/BFCS_PRD/on/demandware.static/-/Sites-mdn-master-catalog/default/dw56282d52/large2/EB/5740027862827_Micro%20Chip_1.jpg?sw=80&amp;sh=96&amp;sm=fit&amp;sfrm=jpg 80w, https://www.magasin.dk/dw/image/v2/BFCS_PRD/on/demandware.static/-/Sites-mdn-master-catalog/default/dw56282d52/large2/EB/5740027862827_Micro%20Chip_1.jpg?sw=120&amp;sh=144&amp;sm=fit&amp;sfrm=jpg 120w, https://www.magasin.dk/dw/image/v2/BFCS_PRD/on/demandware.static/-/Sites-mdn-master-catalog/default/dw56282d52/large2/EB/5740027862827_Micro%20Chip_1.jpg?sw=120&amp;sh=144&amp;sm=fit&amp;sfrm=jpg 120w" sizes="(max-width: 767px) 5em, (min-width: 768px) and (max-width: 899px) 5em, (min-width: 900px) and (max-width: 1159px) 7.5em, (min-width: 1160px) 7.5em" alt="BRAX - OVERSIZE CREWNECK" class="image lazy " loading="lazy">
+    
+
+
+</figure>
+
+        </figure>
+        <div class="product-card__description">
+            <span class="card-body">Bareen</span>
+            <span class="product-card__name card-body">BRAX - OVERSIZE CREWNECK</span>
+            <p class="product-number card-body">5740027862858</p>
+            
+                <span>
+                    Micro Chip
+                    
+                        , L
+                    
+                </span>
+            
+            
+            <div class="product-card__price js-product-card__price">
+                <div class="item-total price">
+                    <div class="product_card-item-quantity">1 stk.</div>
+                    
+
+
+
+
+
+
+
+<div class="price  ">
+    <div class="sales-wrapper">
+        
+            <div class="">
+                
+                <div class="sales -list">
+                    <span class="value" content="479,40 kr.">
+                        479,40 kr.
+                    </span>
+                </div>
+            </div>
+        
+        
+        <div class="price-wrapper inactive -list ">
+            
+            <span class="value" content="479,40 kr.">
+                799 kr.
+            </span>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="product-card__info">
+        </div>
+    </div>
+</article>
+
+
+                    
+                
+            </div>
+        
+
+        
+
+        
+
+        
+        
+    
+</div>
+
+    </div>
+</checkout-summary>
+
+    </div>
+
+</div>
+</main>
+<footer id="footercontent" class="footer -checkout">
+    
+
+
+
+
+    <div class="footer-faq container">
+        <h3 class="footer-faq__heading">
+            Spørgsmål og svar
+        </h3>
+        <accordion-controller allow-multiple="false" allow-toggle="true" duration="0.3" class="accordion-controller accordion">
+            
+
+
+    
+    <div class="content-asset" data-contentassetid="checkout-footer-accordion1"><!-- dwMarker="content" dwContentID="f857b61967b121db5b0bbd747d" -->
+        <div class="accordion__header"><button aria-controls="ac1" class="accordion__trigger js-accordion-trigger" data-gtm-event="{&quot;event&quot;:&quot;genericGAEvent&quot;,&quot;eventCategory&quot;:&quot;Customer service&quot;,&quot;eventAction&quot;:&quot;FAQ item in checkout&quot;,&quot;eventLabel&quot;:&quot;Kan jeg returnere et online køb i Jeres forretning?&quot;,&quot;nonInteraction&quot;:true}">Kan jeg returnere et online køb i Jeres forretning?</button><svg class="svg-icon svg-icon-chevron">
+    <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#chevron"></use>
+</svg>
+</div>
+
+<div class="accordion__content" id="ac1">
+<div class="inner">Du kan altid bytte eller returnere din vare i en af Magasins syv fysiske forretninger eller sende varen retur til vores varelager 30 dage efter at du har modtaget varen. Vi glæder os til at tage imod dig. Fødevarer, mundbind og personliggjorte gaver kan ikke returneres. Husk at medbring din kvittering eller byttemærke til varen. Der er byttemærker med til alle ordrer. De findes på følgesedlen som medfølger ordren.</div>
+</div>
+    </div> <!-- End content-asset -->
+
+
+
+            
+
+
+    
+    <div class="content-asset" data-contentassetid="checkout-footer-accordion2"><!-- dwMarker="content" dwContentID="a677bb9e82fa39fe13d7b597ea" -->
+        <div class="accordion__header">
+    <button class="accordion__trigger js-accordion-trigger" aria-controls="ac2" data-gtm-event="{&quot;event&quot;:&quot;genericGAEvent&quot;,&quot;eventCategory&quot;:&quot;Customer service&quot;,&quot;eventAction&quot;:&quot;FAQ item in checkout&quot;,&quot;eventLabel&quot;:&quot;Hvor meget koster levering?&quot;,&quot;nonInteraction&quot;:true}">
+          Hvor meget koster levering?
+    </button>
+    <svg class="svg-icon svg-icon-chevron">
+    <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#chevron"></use>
+</svg>
+
+  </div>
+  <div class="accordion__content" id="ac2">
+    <div class="inner">
+<p>Vi tilbyder alle Goodie medlemmer fri fragt på ordrer over 499 kr. ved mindst én fragtudbyder eller Hent i Magasin (gælder ikke møbler).</p>
+<br>
+<p>Ønsker du ikke at være Goodie medlem tilbyder vi levering fra 29 kr. eller Hent i Magasin til 19 kr. </p>
+<br>
+<p>Møbler leveres til 299 kr. med Post Nord.</p>
+<br>
+<p>Gavekort leveres fra 0 kr.</p>
+<br>
+<p>Der leveres kun til danske adresser fra magasin.dk.</p>
+    </div>
+  </div>
+    </div> <!-- End content-asset -->
+
+
+
+        </accordion-controller>
+    </div>
+
+    <div class="footer-details-wrapper mt4 mt7-lg">
+        <div class="footer-details-divider"></div>
+        <nav aria-label="Footer details navigation" class="footer-details pb2 container">
+            <div class="footer-payment">
+                <div class="inner safe-payment">
+                    
+
+    
+
+
+    <svg class="svg-icon svg-icon-magasin-card  " aria-label="Icon magasin-card">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#magasin-card" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#magasin-card"></use>
+    </svg>
+
+
+
+    
+
+
+    <svg class="svg-icon svg-icon-mobilepay  " aria-label="Icon mobilepay">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#mobilepay" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#mobilepay"></use>
+    </svg>
+
+
+
+    
+
+
+    <svg class="svg-icon svg-icon-dankort  " aria-label="Icon dankort">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#dankort" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#dankort"></use>
+    </svg>
+
+
+
+    
+
+
+    <svg class="svg-icon svg-icon-visa  " aria-label="Icon visa">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#visa" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#visa"></use>
+    </svg>
+
+
+
+    
+
+
+    <svg class="svg-icon svg-icon-mastercard  " aria-label="Icon mastercard">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#mastercard" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#mastercard"></use>
+    </svg>
+
+
+
+    
+
+
+    <svg class="svg-icon svg-icon-maestro  " aria-label="Icon maestro">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#maestro" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#maestro"></use>
+    </svg>
+
+
+
+    
+
+
+    <svg class="svg-icon svg-icon-american-express  " aria-label="Icon american-express">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#american-express" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#american-express"></use>
+    </svg>
+
+
+
+    
+
+
+    <svg class="svg-icon svg-icon-applepay  " aria-label="Icon applepay">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#applepay" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#applepay"></use>
+    </svg>
+
+
+
+
+                </div>
+            </div>
+            <div class="footer-logo">
+    <div class="footer-logo__inner">
+        
+
+
+    <svg class="svg-icon svg-icon-logo-footer  " aria-label="Icon logo-footer">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#logo-footer" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#logo-footer"></use>
+    </svg>
+
+
+    </div>
+</div>
+
+            <div class="footer-copyright">
+                © Magasin du Nord 1868 - 2026
+            </div>
+        </nav>
+    </div>
+</footer>
+
+
+<div aria-busy="true" aria-live="polite" class="loader loader--page" id="js-page-loader">
+    
+
+
+    <svg class="svg-icon svg-icon-spinner magasin-spinner  " aria-label="Icon spinner">
+        
+            <title>Loading...</title>
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#spinner" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#spinner"></use>
+    </svg>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+    <custom-modal class="modal js-modal" data-triggerclass="js-triggerModal" data-modal-name="default-content-modal" role="dialog">
+        <div class="modal__container js-modal-container">
+            <div class="modal__inner">
+                <header class="modal__header">
+                    <div class="modal__header-title">
+                        
+                        
+                    </div>
+                    <button class="modal__close-button js-close-modal" aria-label="Luk">
+                        
+
+
+    <svg class="svg-icon svg-icon-close  " aria-label="Icon close">
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close"></use>
+    </svg>
+
+
+                        <span id="modal-close-button-text" hidden="">Luk</span>
+                    </button>
+                </header>
+
+                <div class="modal__content js-modal-content ">
+                    
+                        
+                    
+                </div>
+                
+            </div>
+        </div>
+    </custom-modal>
+
+
+
+
+
+
+
+
+
+    <custom-modal class="modal js-modal -flyinright" data-modal-name="wishlist-size-select-modal" role="dialog">
+        <div class="modal__container js-modal-container">
+            <div class="modal__inner">
+                <header class="modal__header">
+                    <div class="modal__header-title">
+                        
+                        
+                            <span class="js-modal-title modal__header-title-text">
+                                
+                                    Ordredetaljer
+                                
+                            </span>
+                        
+                    </div>
+                    <button class="modal__close-button js-close-modal" aria-label="Luk">
+                        
+
+
+    <svg class="svg-icon svg-icon-close  " aria-label="Icon close">
+        
+            <title>Ordredetaljer</title>
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close"></use>
+    </svg>
+
+
+                        <span id="modal-close-button-text" hidden="">Luk</span>
+                    </button>
+                </header>
+
+                <div class="modal__content js-modal-content ">
+                    
+                        
+                    
+                </div>
+                
+            </div>
+        </div>
+    </custom-modal>
+
+
+
+
+
+
+
+
+
+    <custom-modal class="modal js-modal wishlist-modal add-variant-wishlist-modal" data-modal-name="wishlist-options-modal" role="dialog">
+        <div class="modal__container js-modal-container">
+            <div class="modal__inner">
+                <header class="modal__header">
+                    <div class="modal__header-title">
+                        
+                        
+                            <span class="js-modal-title modal__header-title-text">
+                                
+                                    TILFØJ NYT ØNSKE
+                                
+                            </span>
+                        
+                    </div>
+                    <button class="modal__close-button js-close-modal" aria-label="Luk">
+                        
+
+
+    <svg class="svg-icon svg-icon-close wishlist-modal add-variant-wishlist-modal  " aria-label="Icon close">
+        
+            <title>TILFØJ NYT ØNSKE</title>
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close"></use>
+    </svg>
+
+
+                        <span id="modal-close-button-text" hidden="">Luk</span>
+                    </button>
+                </header>
+
+                <div class="modal__content js-modal-content ">
+                    
+                        
+                    
+                </div>
+                
+            </div>
+        </div>
+    </custom-modal>
+
+
+
+
+
+
+
+
+
+    <custom-modal class="modal js-modal logInModal-container -drawer logInModal" data-modal-name="login-required-modal" role="dialog">
+        <div class="modal__container js-modal-container">
+            <div class="modal__inner">
+                <header class="modal__header">
+                    <div class="modal__header-title">
+                        
+                        
+                            <span class="js-modal-title modal__header-title-text">
+                                
+                                    Goodie medlem
+                                
+                            </span>
+                        
+                    </div>
+                    <button class="modal__close-button js-close-modal" aria-label="Luk">
+                        
+
+
+    <svg class="svg-icon svg-icon-close logInModal-container -drawer  " aria-label="Icon close">
+        
+            <title>Goodie medlem</title>
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close"></use>
+    </svg>
+
+
+                        <span id="modal-close-button-text" hidden="">Luk</span>
+                    </button>
+                </header>
+
+                <div class="modal__content js-modal-content ">
+                    
+                        
+                    
+                </div>
+                
+            </div>
+        </div>
+    </custom-modal>
+
+
+
+
+
+
+
+
+
+    <custom-modal class="modal js-modal b-notifymemodal -drawer" data-triggerclass="js-notifyme-modal" data-modal-name="notifyme-modal" role="dialog">
+        <div class="modal__container js-modal-container">
+            <div class="modal__inner">
+                <header class="modal__header">
+                    <div class="modal__header-title">
+                        
+                        
+                            <span class="js-modal-title modal__header-title-text">
+                                
+                                    Skriv mig op
+                                
+                            </span>
+                        
+                    </div>
+                    <button class="modal__close-button js-close-modal" aria-label="Luk">
+                        
+
+
+    <svg class="svg-icon svg-icon-close b-notifymemodal  " aria-label="Icon close">
+        
+            <title>Skriv mig op</title>
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close"></use>
+    </svg>
+
+
+                        <span id="modal-close-button-text" hidden="">Luk</span>
+                    </button>
+                </header>
+
+                <div class="modal__content js-modal-content ">
+                    
+                        
+                    
+                </div>
+                
+            </div>
+        </div>
+    </custom-modal>
+
+
+
+
+
+
+
+
+    <custom-modal class="modal js-modal quick-add-basket-modal js-quick-add-modal b-quickaddmodal -drawer" data-triggerclass="js-quick-add-basket-modal" data-modal-name="quick-add-basket-modal" data-close-scoped="true" role="dialog">
+        <div class="modal__container js-modal-container">
+            <div class="modal__inner">
+                <header class="modal__header">
+                    <div class="modal__header-title">
+                        
+                        
+                            <span class="js-modal-title modal__header-title-text">
+                                
+                                    Quick Shop
+                                
+                            </span>
+                        
+                    </div>
+                    <button class="modal__close-button js-close-modal" aria-label="Luk">
+                        
+
+
+    <svg class="svg-icon svg-icon-close quick-add-basket-modal js-quick-add-modal  " aria-label="Icon close">
+        
+            <title>Quick Shop</title>
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close"></use>
+    </svg>
+
+
+                        <span id="modal-close-button-text" hidden="">Luk</span>
+                    </button>
+                </header>
+
+                <div class="modal__content js-modal-content ">
+                    
+                        
+                    
+                </div>
+                
+            </div>
+        </div>
+    </custom-modal>
+
+
+
+
+
+
+
+
+
+    <custom-modal class="modal js-modal -flyinright" data-modal-name="stock-availability-modal" role="dialog">
+        <div class="modal__container js-modal-container">
+            <div class="modal__inner">
+                <header class="modal__header">
+                    <div class="modal__header-title">
+                        
+                        
+                            <span class="js-modal-title modal__header-title-text">
+                                
+                                    Køb og hent i forretning
+                                
+                            </span>
+                        
+                    </div>
+                    <button class="modal__close-button js-close-modal" aria-label="Luk">
+                        
+
+
+    <svg class="svg-icon svg-icon-close  " aria-label="Icon close">
+        
+            <title>BOPISTITLE</title>
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close"></use>
+    </svg>
+
+
+                        <span id="modal-close-button-text" hidden="">Luk</span>
+                    </button>
+                </header>
+
+                <div class="modal__content js-modal-content ">
+                    
+                        
+                    
+                </div>
+                
+            </div>
+        </div>
+    </custom-modal>
+
+
+
+
+
+
+
+
+    <custom-modal class="modal js-modal" data-modal-name="statistical-cookies-required" role="dialog">
+        <div class="modal__container js-modal-container">
+            <div class="modal__inner">
+                <header class="modal__header">
+                    <div class="modal__header-title">
+                        
+                        
+                            <span class="js-modal-title modal__header-title-text">
+                                
+                                    Giv os lov til at vise videoen
+                                
+                            </span>
+                        
+                    </div>
+                    <button class="modal__close-button js-close-modal" aria-label="Luk">
+                        
+
+
+    <svg class="svg-icon svg-icon-close  " aria-label="Icon close">
+        
+            <title>Giv os lov til at vise videoen</title>
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close"></use>
+    </svg>
+
+
+                        <span id="modal-close-button-text" hidden="">Luk</span>
+                    </button>
+                </header>
+
+                <div class="modal__content js-modal-content rich-text">
+                    
+                        
+
+
+    
+    <div class="content-asset" data-contentassetid="statistical-cookies-required"><!-- dwMarker="content" dwContentID="ac45af9d066e7e71b730046f32" -->
+        Øv vi kan desværre ikke vise dig denne video. Tillad statistiske cookies for at kunne se videoen.
+    </div> <!-- End content-asset -->
+
+
+
+                    
+                </div>
+                
+                    <footer class="modal__footer">
+                        <div class="modal__footer-inner">
+                            
+
+    
+    
+        <button class="button js-accept-modal-button loading-modal-button -primary modal__accept-button js-opencookiepopup js-close-modal" is="loading-button" type="submit" ref="accept-button" data-closecause="accept">
+            <span>Ret cookies</span>
+            
+        </button>
+    
+
+                        </div>
+                    </footer>
+                
+            </div>
+        </div>
+    </custom-modal>
+
+
+
+
+
+
+
+
+    <custom-modal class="modal js-modal product-not-found-modal" data-modal-name="product-notfound-modal" role="dialog">
+        <div class="modal__container js-modal-container">
+            <div class="modal__inner">
+                <header class="modal__header">
+                    <div class="modal__header-title">
+                        
+                        
+                            <span class="js-modal-title modal__header-title-text">
+                                
+                                    Produktet kan desværre ikke findes
+                                
+                            </span>
+                        
+                    </div>
+                    <button class="modal__close-button js-close-modal" aria-label="Luk">
+                        
+
+
+    <svg class="svg-icon svg-icon-close product-not-found-modal  " aria-label="Icon close">
+        
+            <title>Produktet kan desværre ikke findes</title>
+        
+        <use href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close" xlink:href="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/images/svg/svg-sprite.svg#close"></use>
+    </svg>
+
+
+                        <span id="modal-close-button-text" hidden="">Luk</span>
+                    </button>
+                </header>
+
+                <div class="modal__content js-modal-content ">
+                    
+                        Det kan være, at produktet er flyttet til en anden side, midlertidigt utilgængeligt eller udgået fra sortimentet.
+
+                    
+                </div>
+                
+                    <footer class="modal__footer">
+                        <div class="modal__footer-inner">
+                            
+
+    
+    
+        <button class="button js-accept-modal-button loading-modal-button -error js-close-modal" is="loading-button" type="submit" ref="accept-button" data-closecause="accept">
+            <span>Luk</span>
+            
+        </button>
+    
+
+                        </div>
+                    </footer>
+                
+            </div>
+        </div>
+    </custom-modal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="error-messaging"></div>
+<div class="modal-background"></div>
+<div class="b-backdrop backdrop js-backdrop" is="backdrop-overlay"></div>
+
+
+
+
+
+
+    
+
+
+
+
+<script src="https://cdn.brevo.com/js/sdk-loader.js" async=""></script>
+<script>
+window.addEventListener('CookieInformationConsentGiven', function (event) {
+if (window.CookieInformation.getConsentGivenFor('cookie_cat_marketing')) {
+window.Brevo = window.Brevo || [];
+window.Brevo.push([
+"init",
+{ client_key: "9v1fcnq6silkslrk3f3oveu6" }
+]);
+// Identify the user
+window.Brevo.push([
+"identify",
+{
+identifiers: {
+email_id: "" /*required*/
+}
+}
+]);
+// Track page view
+window.Brevo.push([
+"track",
+"page_visit", /* event name, mandatory */
+{ email: "" }, /* properties, optional */
+{
+id: `page:mkpw008i-kney`,
+data: null
+} /* event_data, optional */
+]);
+}
+});
+</script>
+
+
+
+
+
+    <script src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async=""></script>
+
+
+<script>window.magasinsfra={"app":{"locale":"da_DK","urlSearchSuggest":"/on/demandware.store/Sites-DK-Site/da_DK/SearchServices-GetSuggestions","messages":{"addToCartError":"En fejl opstod og produktet kunne ikke tilføjes til kurven","buttonClose":"Luk søgning","buttonBack":"Back"},"pageType":"checkout","subPageType":"billing"}};</script>
+
+<script type="module" src="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/js/main.js"></script>
+
+
+
+<!-- Demandware Analytics code 1.0 (body_end-analytics-tracking-asynch.js) -->
+<script type="text/javascript">//<!--
+/* <![CDATA[ */
+function trackPage() {
+    try{
+        var trackingUrl = "https://www.magasin.dk/on/demandware.store/Sites-DK-Site/da_DK/__Analytics-Start";
+        var dwAnalytics = dw.__dwAnalytics.getTracker(trackingUrl);
+        if (typeof dw.ac == "undefined") {
+            dwAnalytics.trackPageView();
+        } else {
+            dw.ac.setDWAnalytics(dwAnalytics);
+        }
+    }catch(err) {};
+}
+/* ]]> */
+// -->
+</script>
+<script type="text/javascript" src="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/internal/jscript/dwanalytics-22.2.js" async="async" onload="trackPage()"></script>
+<!-- Demandware Active Data (body_end-active_data.js) -->
+<script src="/on/demandware.static/Sites-DK-Site/-/da_DK/v1769038165211/internal/jscript/dwac-21.7.js" type="text/javascript" async="async"></script><!-- CQuotient Activity Tracking (body_end-cquotient.js) -->
+<script src="https://cdn.cquotient.com/js/v2/gretel.min.js" type="text/javascript" async="async"></script>
+
+
+
+<script type="text/javascript" async="" id="consent-file" src="https://policy.app.cookieinformation.com/0889fe0//da.js" charset="UTF-8"></script><script type="text/javascript" id="" charset="">window.addEventListener("message",function(a){a.data&&a.data.source==="koral-iframe-ga4"&&(console.log(a.data),a.data.eventType&&Array.isArray(a.data.ga4Payload)&&a.data.ga4Payload.length>0&&dataLayer.push({event:a.data.eventType,ecommerce:{items:a.data.ga4Payload}}))});</script><iframe height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+<div style="width: 0px; height: 0px; display: none; visibility: hidden;" id="batBeacon466591052741"><img style="width: 0px; height: 0px; display: none; visibility: hidden;" id="batBeacon876841319533" width="0" height="0" alt="" src="https://bat.bing.net/action/0?ti=undefined&amp;tm=gtm002&amp;Ver=2&amp;mid=c6db8c37-0884-4c6f-9799-6f4c1f414ff5&amp;bo=3&amp;pi=918639831&amp;lg=en-US&amp;sw=2056&amp;sh=1329&amp;sc=30&amp;tl=Tjek%20ud%20%7C%20Fandt%20du%20alt%3F%20%7C%20Tjek%20ud%20her%20nemt%20og%20hurtigt%20%7C%20Magasin&amp;kw=Magasin&amp;p=file%3A%2F%2F%2FUsers%2Fneil%2Fbuilds%2Ftools%2Ffathom-form-autofill%2Fsamples%2Ftraining%2FDK_magasin.html&amp;r=&amp;lt=545&amp;evt=pageLoad&amp;sv=2&amp;asc=D&amp;cdb=AQ0B&amp;rn=961866"></div></body></html>

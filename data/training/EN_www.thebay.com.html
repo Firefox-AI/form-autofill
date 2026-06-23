@@ -1,0 +1,1924 @@
+<html class="js-focus-visible veiled" lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Wed, 16 Mar 2022 13:09:09 GMT"><link rel="original" href="https://www.thebay.com/checkout/start?stage=payment#payment">
+</head><body style="visibility: visible; overflow-y: auto;"><iframe src="resources/EN_www.thebay.com/1.html" title="" style="width: 0px; height: 0px; border: 0px none; display: none;" data-original-src="javascript:void(0)"></iframe>
+
+<!--[if gt IE 9]><!-->
+
+
+
+
+
+
+
+
+
+
+
+<!--<![endif]-->
+
+<meta name="apple-itunes-app" content="app-id=1455098954">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="resources/EN_www.thebay.com/2.css" as="style" data-original-href="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/css/typography.css">
+
+<link rel="preload stylesheet" href="resources/EN_www.thebay.com/3.css" as="style" data-original-href="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/css/global.css">
+<link rel="stylesheet" href="resources/EN_www.thebay.com/4.css" as="style" data-original-href="https://fonts.googleapis.com/css?family=Dosis&amp;subset=latin-ext&amp;display=swap">
+<link rel="stylesheet" href="resources/EN_www.thebay.com/5.css" data-original-href="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/css/checkout/checkout.css">
+<link rel="stylesheet" href="resources/EN_www.thebay.com/6.css" data-original-href="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/css/mirakl_checkout.css">
+<link rel="stylesheet" href="resources/EN_www.thebay.com/7.css" data-original-href="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/css/klarnaPayments.css">
+<link rel="stylesheet" href="resources/EN_www.thebay.com/8.css" data-original-href="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/css/paypal.css">
+<link rel="stylesheet" href="resources/EN_www.thebay.com/9.css" data-original-href="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/css/loyalty-guest-checkout.css">
+<title>Billing | Checkout</title>
+<meta name="description" content="Commerce Cloud Storefront Reference Architecture">
+<meta name="keywords" content="Commerce Cloud Storefront Reference Architecture">
+<link rel="icon" type="image/png" href="resources/EN_www.thebay.com/10.png" sizes="192x192" data-original-href="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/default/dwe468343a/images/favicons/Bay-favicon-192x192.png">
+<link rel="icon" type="image/png" href="resources/EN_www.thebay.com/11.png" sizes="96x96" data-original-href="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/default/dw8958957b/images/favicons/Bay-favicon-96x96.png">
+<link rel="icon" type="image/png" href="resources/EN_www.thebay.com/12.png" sizes="32x32" data-original-href="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/default/dw92a3f5f1/images/favicons/Bay-favicon-32x32.png">
+<link rel="icon" type="image/png" href="resources/EN_www.thebay.com/13.gif" sizes="16x16" data-original-href="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/default/dw3ea0fc4e/images/favicons/Bay-favicon-16x16.png">
+<link rel="icon" type="image/png" href="resources/EN_www.thebay.com/14.png" sizes="120x120" data-original-href="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/default/dw391a65e7/images/favicons/Bay-favicon-120x120.png">
+
+<meta http-equiv="origin-trial" content="A3v9QjmVUCOO7YqFMKHP/NKbn6kY1G1pa2S1TfeXJZUD/tysMONTy6lV0Jkou3rrCjSKRGbqTrgTaZkm1XJ7pQUAAACKeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ21hbmFnZXIuY29tOjQ0MyIsImZlYXR1cmUiOiJDb252ZXJzaW9uTWVhc3VyZW1lbnQiLCJleHBpcnkiOjE2NDMxNTUxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A3v9QjmVUCOO7YqFMKHP/NKbn6kY1G1pa2S1TfeXJZUD/tysMONTy6lV0Jkou3rrCjSKRGbqTrgTaZkm1XJ7pQUAAACKeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ21hbmFnZXIuY29tOjQ0MyIsImZlYXR1cmUiOiJDb252ZXJzaW9uTWVhc3VyZW1lbnQiLCJleHBpcnkiOjE2NDMxNTUxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A3RXR0VQaEp/AfxPFnBULSgoOVp60FcUKXSswIgHKTXJHt6JnS4juFg8/7tWVoqWOyx77v0ujwGgxRpU8jEgnAAAAABveyJvcmlnaW4iOiJodHRwczovL3MucGluaW1nLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><style type="text/css" id="kampyleStyle">.noOutline{outline: none !important;}.wcagOutline:focus{outline: 1px dashed #595959 !important;outline-offset: 2px !important;transition: none !important;}</style><input type="hidden" name="isAtmEnabled" value="true">
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="resources/EN_www.thebay.com/15.css" data-original-href="https://edqprofservus.blob.core.windows.net/assets/production/global-intuitive-unicorn.css">
+<link rel="stylesheet" type="text/css" href="resources/EN_www.thebay.com/16.css" data-original-href="https://edqprofservus.blob.core.windows.net/assets/production/pro-web.css">
+
+<aside id="cookieTracking" class="d-none">
+
+<link rel="stylesheet" href="resources/EN_www.thebay.com/17.css" data-original-href="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/css/components/cookie-consent.css">
+<div id="assetContainer" data-content="/on/demandware.store/Sites-TheBay-Site/en_CA/ConsentTracking-GetContent?cid=tracking_cookie_hint"></div>
+<button role="button" class="affirm btn btn-primary" data-url="/on/demandware.store/Sites-TheBay-Site/en_CA/ConsentTracking-SetSession?consent=true">
+ACCEPT
+</button>
+<button type="button" class="close-icon" aria-label="search.overlay.close" data-url="/on/demandware.store/Sites-TheBay-Site/en_CA/ConsentTracking-SetSession?consent=false">
+<svg viewBox="0 0 24 24">
+<path class="close-icon__svg-path" d="M24,1.5L22.5,0L12,10.5L1.5,0L0,1.5L10.5,12L0,22.5L1.5,24L12,13.5L22.5,24l1.5-1.5L13.5,12L24,1.5z"></path>
+</svg>
+</button>
+</aside>
+
+
+
+
+
+                              
+
+<div id="signInApplyModal" class="signInModal modal fade" role="dialog" area-modal="false"></div>
+<a href="#maincontent" class="skip" aria-label="Skip to main content">Skip to main content</a>
+<a href="#footercontent" class="skip" aria-label="Skip to footer content">Skip to footer content</a>
+<div class="page checkout">
+<header>
+<nav aria-label="Main">
+<div class="checkout-header header container">
+<div class="row header-row">
+<div class="col-12">
+<div class="navbar-header brand row">
+
+<div class="logo-content desktop hidden-sm-down hidden-md-down">
+<style>
+.brand {
+    text-align: left;
+}
+</style>
+<a class="logo-home" href="https://www.thebay.com/" title="Hudson's Bay Home">
+<svg style="width: 210px;" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 484.29 50.62"><path d="M738.56,474.47l7.92-1.8V427.16H736.26c-6.77,0-12.75,5-14.91,11.59h-.86V425h66.39v13.75H786c-2.16-6.62-8.13-11.59-14.9-11.59H760.74v45.51l7.92,1.8v1.15h-30.1Z" transform="translate(-720.49 -425)"></path><path d="M797.6,474.47l7.92-1.8V428l-7.92-1.87V425h30.1v1.15L819.78,428v19.81H850.6V428l-7.92-1.87V425h30.09v1.15L864.85,428v44.65l7.92,1.8v1.15H842.68v-1.15l7.92-1.8v-22.4H819.78v22.4l7.92,1.8v1.15H797.6Z" transform="translate(-720.49 -425)"></path><path d="M884,474.47l7.92-1.87V428.1l-7.92-2V425h56.81v16.63H940c-1.8-6.26-5.91-14.47-18.43-14.47l-.08-.07v.07H906.18v20.38h8.28c7.85,0,10.44-5.47,11.59-9.43h.87v20.95h-.87c-1.15-3.89-3.67-9.29-11.45-9.36h-8.42V473l4.82.5h12.32c14,0,18.64-9.5,20.8-16.63h1v18.79H884Z" transform="translate(-720.49 -425)"></path><path d="M990.49,474.47l7.92-1.8V428.1l-7.92-2V425h40.82c13.18,0,23.41,4,23.41,11.95,0,7.49-8.5,11.45-18.87,11.52,12.46-.07,23.62,4.47,23.62,13.76,0,6.77-7.71,13.39-23.33,13.39H990.49Zm38.52-27c7.06,0,12.82-1.88,12.82-10.23,0-8-5.62-10.3-15.27-10.3h-13.82v20.53Zm-11.45,26.35H1029c8,0,16.42-2.88,16.42-11.81,0-10.94-7.2-12.17-16.85-12.17h-15.84v23.48Zm45.22.65,6.63-1.8,26.35-42-1.37-2.38-8.78-2.16V425h22.46l27.87,47.24,8.71,2.16v1.15h-31.18l-.36-1.15,7.42-1.8-6.12-10.37h-34.49l-6.48,10.44,5.47,1.8-.36,1.15h-15.77Zm50-14.91L1097.7,434l-16,25.56ZM1132.41,425h31l.28,1.15-7.34,1.87,19.44,22.47L1194.12,428l-5.47-1.87L1189,425h15.77v1.15l-6.63,1.87-20.38,25v19.66l7.93,1.8v1.15h-30.53v-1.15l7.92-1.8v-19l-22-25.35-8.71-2.16Z" transform="translate(-720.49 -425)"></path></svg>
+</a>
+</div>
+<div class="logo-content mobile d-lg-none">
+<style>
+@media (max-width: 1023.98px) {
+.brand {
+    transform: translateX(-40%);
+    text-align: center; 
+}
+}
+</style>
+<a class="logo-home" href="https://www.thebay.com/" title="Hudson's Bay Home">
+<svg style="width: 50%;" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 484.29 50.62"><path d="M738.56,474.47l7.92-1.8V427.16H736.26c-6.77,0-12.75,5-14.91,11.59h-.86V425h66.39v13.75H786c-2.16-6.62-8.13-11.59-14.9-11.59H760.74v45.51l7.92,1.8v1.15h-30.1Z" transform="translate(-720.49 -425)"></path><path d="M797.6,474.47l7.92-1.8V428l-7.92-1.87V425h30.1v1.15L819.78,428v19.81H850.6V428l-7.92-1.87V425h30.09v1.15L864.85,428v44.65l7.92,1.8v1.15H842.68v-1.15l7.92-1.8v-22.4H819.78v22.4l7.92,1.8v1.15H797.6Z" transform="translate(-720.49 -425)"></path><path d="M884,474.47l7.92-1.87V428.1l-7.92-2V425h56.81v16.63H940c-1.8-6.26-5.91-14.47-18.43-14.47l-.08-.07v.07H906.18v20.38h8.28c7.85,0,10.44-5.47,11.59-9.43h.87v20.95h-.87c-1.15-3.89-3.67-9.29-11.45-9.36h-8.42V473l4.82.5h12.32c14,0,18.64-9.5,20.8-16.63h1v18.79H884Z" transform="translate(-720.49 -425)"></path><path d="M990.49,474.47l7.92-1.8V428.1l-7.92-2V425h40.82c13.18,0,23.41,4,23.41,11.95,0,7.49-8.5,11.45-18.87,11.52,12.46-.07,23.62,4.47,23.62,13.76,0,6.77-7.71,13.39-23.33,13.39H990.49Zm38.52-27c7.06,0,12.82-1.88,12.82-10.23,0-8-5.62-10.3-15.27-10.3h-13.82v20.53Zm-11.45,26.35H1029c8,0,16.42-2.88,16.42-11.81,0-10.94-7.2-12.17-16.85-12.17h-15.84v23.48Zm45.22.65,6.63-1.8,26.35-42-1.37-2.38-8.78-2.16V425h22.46l27.87,47.24,8.71,2.16v1.15h-31.18l-.36-1.15,7.42-1.8-6.12-10.37h-34.49l-6.48,10.44,5.47,1.8-.36,1.15h-15.77Zm50-14.91L1097.7,434l-16,25.56ZM1132.41,425h31l.28,1.15-7.34,1.87,19.44,22.47L1194.12,428l-5.47-1.87L1189,425h15.77v1.15l-6.63,1.87-20.38,25v19.66l7.93,1.8v1.15h-30.53v-1.15l7.92-1.8v-19l-22-25.35-8.71-2.16Z" transform="translate(-720.49 -425)"></path></svg>
+</a>
+</div>
+
+<a href="https://www.thebay.com/cart" class="btn-link">
+<span class="icon-holder svg-svg-14-chevron svg-svg-14-chevron-dims" aria-hidden="true"></span>
+<span class="B2Cart-text">Back to Shopping Bag</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<span class="google-recaptcha-key" style="display: none;">6LeMP90UAAAAAJ7On6bZZDXZl6uaDpffAxWMVQ7e</span>
+</header>
+<div role="main" id="maincontent">
+
+<div id="checkout-main" class="checkout-wrapper container data-checkout-stage" data-express-checkout="null" data-customer-type="guest" data-checkout-stage="payment" data-checkout-get-url="https://www.thebay.com/on/demandware.store/Sites-TheBay-Site/en_CA/CheckoutServices-Get">
+
+<div class="row hidden-xs-down d-none">
+<div class="col-12 col-sm-5 offset-sm-7 col-md-5 offset-md-7">
+<div class="text-center">
+<span>Need Help? Call</span>
+<span><a href="tel:1-800-555-0199">1-800-555-0199</a></span>
+</div>
+</div>
+</div>
+<div class="row mobile-display-only productSummary-mobile">
+<div class="col-12 collapsible-xl">
+<div class="col-12">
+<span class="grand-total-label">Shopping Bag (1)</span>
+<span class="divider-edit-cart-holder">
+<i class="border-divider"></i>
+<span class="edit-cart-link">
+<a href="https://www.thebay.com/cart" class="btn-link">
+Edit
+</a>
+</span>
+</span>
+<div class="total-toggle-icon-holder">
+<span class="grand-total-price">$60.00</span>
+<button class="title toggle-btn btn" aria-expanded="false" aria-controls="collapsible-shopping-bag">
+<span class="svg-svg-59-plus-thin-dims svg-svg-59-plus-thin plus fa-pull-right" aria-hidden="true"></span>
+<span class="svg-svg-49-minus-thin-dims svg-svg-49-minus-thin minus fa-pull-right" aria-hidden="true"></span>
+</button>
+</div>
+</div>
+<div class="col-12 value content">
+<div class="card order-product-summary">
+<div class="card-body">
+<div class="row bag-count-cartlink-holder">
+<div class="col-6 start-lines bag-count-holder">
+<span class="order-receipt-label grand-total-label">Shopping Bag (1)</span>
+</div>
+<div class="col-6 edit-cart-link">
+<a href="https://www.thebay.com/cart" class="btn-link">
+Edit
+</a>
+</div>
+</div>
+<div class="product-summary-block"><div class="product-line-item" data-product-line-item="795708125a5f58fc1de6622c8a">
+<div class="product-line-item-details d-flex flex-row">
+<div class="mini-cart-img col-4">
+<div class="item-image">
+<a href="https://www.thebay.com/product/dior-dior-forever-natural-bronze-powder-92448628.html">
+<img class="product-image" src="resources/EN_www.thebay.com/18.webp" srcset="resources/EN_www.thebay.com/19.jpg 2x" alt="Dior Forever Natural Bronze Powder, 004 TAN BRONZE, hi-res" title="Dior Forever Natural Bronze Powder, 004 TAN BRONZE" data-original-src="https://image.s5a.com/is/image/TheBay/3348901550833_main?wid=111&amp;hei=148&amp;qlt=90&amp;resMode=sharp2&amp;op_usm=1,1.0,6,0" data-original-srcset="https://image.s5a.com/is/image/TheBay/3348901550833_main?wid=222&amp;hei=296&amp;qlt=90&amp;resMode=sharp2&amp;op_usm=0.9,1.0,8,0 2x">
+</a>
+</div>
+</div>
+<div class="mini-cart-details col-8">
+<div class="line-item-header">
+<a class="brand-name" href="https://www.thebay.com/product/dior-dior-forever-natural-bronze-powder-92448628.html">
+<span>Dior</span>
+</a>
+<div class="line-item-name">
+<span>Dior Forever Natural Bronze Powder</span>
+</div>
+</div>
+<div class="item-attributes">
+<div class="selected-list">
+<span class="line-item-attributes">004 TAN BRONZE</span>
+<i class="coma-separator">,</i>
+<span class="line-item-attributes">9 g</span>
+</div>
+<div class="item-options">
+</div>
+</div>
+<div class="align-items-start">
+<div class="line-item-total-price">
+<div class="item-total-795708125a5f58fc1de6622c8a">
+<div class="pricing line-item-total-price-amount bold item-total-795708125a5f58fc1de6622c8a ">$60.00 x 1</div>
+<div class="store-pickup-holder">
+</div>
+<div class="total-price checkout_discount-795708125a5f58fc1de6622c8a "> 
+    
+    
+
+
+<div class="cost-calc ">
+	
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="final-sale limited-inventory">
+</div>
+<div class="limited-inventory cond-3 d-none">
+<span class="line-label">Limited Inventory</span>
+</div>
+<div class="sold-by line-item-attributes">
+Sold by
+<span>Hudson's Bay</span>
+</div>
+<div class="shopping-bag-product-is-gift d-none">
+<span class="final-sale-txt-label final-sale-txt">
+<span class="gift-svg svg-svg-gift-box-checkout" aria-hidden="true"></span> <span class="thisIsGiftLabel">This is a Gift</span>
+</span>
+</div>
+</div>
+</div>
+</div><div class="multi-shipping" data-shipment-summary="d9a2d08fe3cabb4a72ff5ed7db">
+<h3 class="shipping-header-text">Shipping To</h3>
+<p>
+<span class="ship-to-message"></span>
+<span class="ship-to-name">alla balla</span>
+<span class="ship-to-address1">4905 Tail Ends Road</span>
+<span class="ship-to-address2" style="display: none;"></span>
+<span class="ship-to-city-st-zip"><span class="ship-to-city">Green Bay</span> <span class="ship-to-st">ON</span> <span class="ship-to-zip">M6A 3A5</span> </span>
+<span class="ship-to-phone">920-548-9937</span>
+</p>
+<h3>Select Shipping Method<span></span></h3>
+<div class="row leading-lines">
+<p class="col-8 start-lines">
+<span class="display-name">Standard</span>
+<span class="text-muted arrival-time">Estimated Delivery On Or Before Sunday Mar. 20, 2022</span>
+</p>
+<p class="col-4 end-lines text-right">
+<span class="price">$0.00</span>
+</p>
+</div>
+<div class="summary-details gift-summary d-none">
+<h3>Gift Message:</h3>
+<div class="gift-message-summary"></div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-8 col-sm-7 checkout-primary-section">
+
+<div class="checkout-progress-indic-mobile">
+<div class="m-auto col-lg-8 text-center">
+<div class="checkout-progress-indic d-flex">
+<div class="shipping-indic completed">
+<span class="indicator-icon d-block m-auto svg-svg-11-check-circle"></span>
+<span class="d-block m-auto custom-w-other-step progress-text">Shipping Address</span>
+</div>
+<div class="shipping-method-indic completed">
+<span class="indicator-icon d-block m-auto svg-svg-11-check-circle"></span>
+<span class="d-block m-auto custom-w-other-step progress-text">Shipping Method</span>
+</div>
+<div class="payment-indic active">
+ <span class="indicator-icon d-block m-auto svg-svg-11-check-circle"></span>
+<span class="d-block m-auto custom-w-other-step progress-text">Payment Method</span>
+</div>
+<div class="placeOrder-indic">
+<span class="indicator-icon d-block m-auto svg-svg-11-check-circle"></span>
+<span class="d-block m-auto custom-w-last-step progress-text">Review Order</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="alert alert-danger error-message hbc-alert-error" role="alert" style="display: none;">
+<span class="error-message-text"></span>
+</div>
+
+<div class="instore-section d-none">
+<div class="card pickupperson-section">
+<div class="single-shipping">
+<div class="card-header">
+<h2 class="card-header-custom"><span class="state-index"><span class="state-info">1</span></span>Enter In-Store PickUp Person</h2>
+</div>
+
+<div class="card-body pickupfield-content">
+<div class="pickupperson-disclaimer">A government issued photo ID, order number, and email confirmation will be required at time of pickup.</div>
+<form class="pickup-form" autocomplete="on" novalidate="" action="https://www.thebay.com/on/demandware.store/Sites-TheBay-Site/en_CA/CheckoutServices-SubmitInstorePickUp">
+<div class="instore-fields">
+<fieldset class="pickup-field-block custom-form-spacing">
+<div class="row">
+<div class="col-12">
+<div class="form-group floating-label
+				            required
+				            dwfrm_instorepickup_fullName">
+<input autofocus="" type="text" class="form-control fullName" data-missing-error="This field is required." id="fullName" name="dwfrm_instorepickup_fullName" required="" aria-required="true" value="" maxlength="50" pattern="(^[^(\\'\\&lt;\\&gt;\\/\)]+$)" data-default-error="Please enter valid information, some special characters and spaces may not be used." style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="name">
+<label class="form-control-label" for="fullName">
+Full Name
+</label>
+<div class="invalid-feedback"></div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-6 col-12">
+<div class="form-group floating-label
+					        required
+					        dwfrm_instorepickup_email">
+<input type="text" class="form-control email" data-missing-error="This field is required." id="email" name="dwfrm_instorepickup_email" required="" aria-required="true" value="" maxlength="50" pattern="^([\w+-]+\.)*[\w+-]+@([\w+-]+\.)*[\w+-]+\.[\w]{2,6}$" data-default-error="Please enter valid information, some special characters and spaces may not be used." style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="email">
+<label class="form-control-label" for="email">Email Address</label>
+<div class="invalid-feedback"></div>
+</div>
+</div>
+<div class="col-sm-6 col-12">
+<div class="form-group floating-label
+				            required
+				            dwfrm_instorepickup_phone">
+<input type="tel" class="form-control phone" id="phone" data-missing-error="This field is required." data-pattern-mismatch="Please enter a valid phone number." name="dwfrm_instorepickup_phone" required="" aria-required="true" value="" maxlength="20" minlength="10" pattern="^\(?([2-9][0-9][0-9])\)?[\-\. ]?([2-9][0-9]{2})[\-\. ]?([0-9]{4})(\s*x[0-9]+)?$" data-default-error="Please enter valid information, some special characters and spaces may not be used." style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel">
+<label class="form-control-label" for="phone">
+ Phone Number
+</label>
+<div class="invalid-feedback"></div>
+</div>
+</div>
+</div>
+</fieldset>
+</div>
+<input type="hidden" name="csrf_token" value="2XVhddnMUV6AAJUNLytFSVbGcXDOthOMzwFxJHrDtnbzobAlXM7mf7CP_LetJAW7oZKmWXU_3LCfEQxkb4cTnn8ECvU1PvUB-kC_Jw7gbEKNfHTn1aqpOz81T5EvcV3TTPczynzJQ6TeFTtd2QrFyFSwAHfvGJAZtWtECEVs3lIdUKsMeBY=">
+</form>
+<div class="row pickup-next-step-button-row">
+<div class="col-12 next-step-button">
+<div>
+<button class="btn btn-primary btn-block submit-pickup" type="submit" name="submit" value="submit-pickup">
+Continue to shipping address
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card pickup-summary">
+<div class="card-header clearfix">
+<h4 class="fa-pull-left"><span class="state-track svg-svg-11-check-circle"></span>
+In-Store PickUp Person
+</h4>
+<span id="editPickUpPerson" class="edit-button fa-pull-right">
+Change</span>
+</div>
+<div class="card-body">
+
+<div id="instorepick-details">
+<div class="person-summary">
+<div class="summary-section first">
+<div class="summary-details">
+<div class="fullname">
+</div>
+<div class="phone">
+</div>
+<div class="email">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="">
+
+<div class="card mirakl-shipping-address-summary show-mirakl-shipping-summary">
+<div class="card-header clearfix">
+<h4 class="fa-pull-left card-header-custom">
+<span class="state-track svg-svg-11-check-circle"></span>
+Shipping Address &amp; Gift Receipt
+</h4>
+<span id="miraklEditShippingAddress" class="edit-button fa-pull-right">Change</span>
+</div>
+<div class="card-body">
+<div class="single-shipping shipping-summary-section" data-shipment-summary="d9a2d08fe3cabb4a72ff5ed7db">
+<div class="summary-section first">
+<div class="summary-details shipping">
+<div class="address-summary">
+<div>
+<span class="firstName">alla</span>
+<span class="lastName">balla</span>
+</div>
+<div class="address1">4905 Tail Ends Road</div>
+<div class="address2"></div>
+<span class="city">Green Bay,</span>
+<span class="stateCode">ON</span>
+<span class="postalCode">M6A 3A5</span>
+</div>
+<div class="shipping-email">alabalaa12@yahoo.com</div>
+<div class="shipping-phone">920-548-9937</div>
+</div>
+</div>
+</div>
+<p class="summary-section-label shipping-addr-label multi-shipping">
+Addresses &amp; shipping methods are listed under your items.
+</p>
+</div>
+<div class="summary-details summary-details--selected-gift-indicator summary-details--bopis d-none">
+<div class="row giftIndicatorInSummary">
+<div class="col-12">
+<div class="gift-form-group">
+<div class="checkout-gift-line-item">
+<span class="gift-svg svg-svg-gift-box-checkout" aria-hidden="true"></span> Gift Receipt
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card ghost shipping">
+<div class="card-header">
+<span class="checkout-card-header">
+<span class="state-index multi">
+<span class="state-info">
+1
+</span>
+</span>
+Shipping Address &amp; Gift Receipt
+</span>
+</div>
+</div>
+<div class="shipping-section">
+<div class="single-shipping">
+<div class="card" data-shipment-uuid="d9a2d08fe3cabb4a72ff5ed7db">
+<div class="card-header">
+<h2 class="card-header-custom shipping-address-header d-none">
+<span class="state-index ">
+<span class="state-info">
+1
+</span>
+</span>
+Shipping Address &amp; Gift Receipt
+</h2>
+<h2 class="card-header-custom shipping-method-header">
+<span class="state-index multi">
+<span class="state-info">
+2
+</span>
+</span>
+Shipping Method
+</h2>
+</div>
+<div class="shipping-error"></div>
+<div class="card-body shipping-content">
+<div class="form-main-label-container d-none">
+<span class="form-main-label">Enter Shipping Address</span>
+<span class="form-sub-label">All Fields Required</span>
+</div>
+<form class="shipping-form" autocomplete="on" novalidate="" action="https://www.thebay.com/on/demandware.store/Sites-TheBay-Site/en_CA/CheckoutShippingServices-SubmitShipping" data-shipment-submit="/on/demandware.store/Sites-TheBay-Site/en_CA/CheckoutShippingServices-SubmitShipping" data-address-submit="/on/demandware.store/Sites-TheBay-Site/en_CA/CheckoutShippingServices-AddAddress" name="dwfrm_shipping" id="dwfrm_shipping">
+<input name="originalShipmentUUID" type="hidden" value="d9a2d08fe3cabb4a72ff5ed7db">
+<input name="shipmentUUID" type="hidden" value="d9a2d08fe3cabb4a72ff5ed7db">
+<div class="shipping-address ">
+<div class="coutry-rest-msg hbc-alert-error d-none">
+Cannot be shipped to selected Country. Please change the address to continue.
+</div>
+<fieldset class="shipment-selector-block custom-form-spacing d-none">
+<div id="customer-addresses" class="customer-addresses row">
+<div class="address-add-registered col-12 col-sm-6 d-none">
+<div class="customer-addresses-section">
+<span class="add-address-section"><span class="svg-svg-59-plus-thin" aria-hidden="true"></span>Add New Address</span>
+</div>
+</div>
+</div>
+</fieldset>
+<fieldset class="shipping-address-block custom-form-spacing d-none" data-poenabled="false" data-restricted-sates="">
+<div id="address-auto-open" data-open-adressentry="false"></div>
+<div class="row">
+<div class="col-6">
+<div class="form-group floating-label
+            required
+            dwfrm_shipping_shippingAddress_addressFields_firstName">
+<input type="text" class="form-control shippingFirstName" id="shippingFirstNamedefault" aria-describedby="defaultFirstName" value="" data-missing-error="This field is required." name="dwfrm_shipping_shippingAddress_addressFields_firstName" required="" aria-required="true" maxlength="15" pattern="(^[^(\\'\\&lt;\\&gt;\\/\)]+$)" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="shipping given-name" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name"><span class="valid"></span>
+<label class="form-control-label input-focus" for="shippingFirstNamedefault">
+First Name
+</label>
+<div class="invalid-feedback" id="defaultFirstName"></div>
+</div>
+</div>
+<div class="col-6">
+<div class="form-group floating-label
+            required
+            dwfrm_shipping_shippingAddress_addressFields_lastName">
+<input type="text" class="form-control shippingLastName" id="shippingLastNamedefault" aria-describedby="defaultLastName" value="" data-missing-error="This field is required." name="dwfrm_shipping_shippingAddress_addressFields_lastName" required="" aria-required="true" maxlength="25" pattern="(^[^(\\'\\&lt;\\&gt;\\/\)]+$)" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="shipping family-name" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name"><span class="valid"></span>
+<label class="form-control-label input-focus" for="shippingLastNamedefault">
+Last Name
+</label>
+<div class="invalid-feedback" id="defaultLastName"></div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-12 col-sm-6">
+<div class="form-group floating-label
+            required
+            dwfrm_shipping_shippingAddress_addressFields_address1">
+<input type="text" class="form-control shippingAddressOne po-validate" id="shippingAddressOnedefault" aria-describedby="defaultAddressLine1" value="" data-missing-error="This field is required." name="dwfrm_shipping_shippingAddress_addressFields_address1" required="" aria-required="true" maxlength="30" pattern="(^[^(\\&lt;\\&gt;\)]+$)" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="off" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line1"><span class="valid"></span>
+<label class="form-control-label input-focus" for="shippingAddressOnedefault">
+Address 1
+</label>
+<div class="invalid-feedback" id="defaultAddressLine1"></div>
+</div>
+</div>
+<div class="col-12 col-sm-6">
+<div class="form-group floating-label
+		         
+		         dwfrm_shipping_shippingAddress_addressFields_address2">
+<input type="text" class="form-control shippingAddressTwo" id="shippingAddressTwodefault" aria-describedby="defaultAddressLine2" value="" name="dwfrm_shipping_shippingAddress_addressFields_address2" maxlength="50" pattern="(^[^(\\&lt;\\&gt;\)]+$)" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="shipping address-line2" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line2">
+<label class="form-control-label" for="shippingAddressTwodefault">
+Address 2 (Optional)
+</label>
+<div class="invalid-feedback" id="defaultAddressLine2"></div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-6 d-none">
+<div class="form-group
+            
+            dwfrm_shipping_shippingAddress_addressFields_country">
+<select class="form-control shippingCountry custom-select" id="shippingCountrydefault" name="dwfrm_shipping_shippingAddress_addressFields_country" autocomplete="country" aria-describedby="defaultCountry" label="united kingdom" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="country">
+<option label=" "></option>
+<option value="US">United States</option>
+<option value="CA" selected="">Canada</option>
+<option value="UK">United Kingdom</option>
+United StatesCanadaUnited Kingdom</select>
+<label class="form-control-label input-focus" for="shippingCountrydefault">
+Country
+</label>
+<div class="invalid-feedback" id="defaultCountry"></div>
+</div>
+</div>
+<div class="col-6">
+<div class="form-group floating-label
+            required
+            dwfrm_shipping_shippingAddress_addressFields_city">
+<input type="text" class="form-control shippingAddressCity" id="shippingAddressCitydefault" aria-describedby="defaultCity" value="" data-missing-error="This field is required." name="dwfrm_shipping_shippingAddress_addressFields_city" required="" aria-required="true" maxlength="25" minlength="2" pattern="(^[^(\\&lt;\\&gt;\)]+$)" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="shipping address-level2" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2"><span class="valid"></span>
+<label class="form-control-label input-focus" for="shippingAddressCitydefault">
+City
+</label>
+<div class="invalid-feedback" id="defaultCity"></div>
+</div>
+</div>
+<div class="col-6 col-sm-3">
+<div class="form-group floating-label select-dropdown
+            required
+            dwfrm_shipping_shippingAddress_addressFields_states_stateCode">
+<select class="form-control shippingState" id="shippingStatedefault" data-missing-error="This field is required." name="dwfrm_shipping_shippingAddress_addressFields_states_stateCode" required="" aria-required="true" autocomplete="shipping address-level1" aria-describedby="defaultState" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level1">
+<option value="" class="d-none"> </option>
+<option value="AB" class="">Alberta</option>
+<option value="BC" class="">British Columbia</option>
+<option value="MB" class="">Manitoba</option>
+<option value="NB" class="">New Brunswick</option>
+<option value="NL" class="">Newfoundland and Labrador</option>
+<option value="NT" class="">Northwest Territories</option>
+<option value="NS" class="">Nova Scotia</option>
+<option value="NU" class="">Nunavut</option>
+<option value="ON" class="">Ontario</option>
+<option value="QC" class="">Quebec</option>
+<option value="PE" class="">Prince Edward Island</option>
+<option value="SK" class="">Saskatchewan</option>
+<option value="YT" class="">Yukon</option>
+</select><span class="valid"></span>
+<label class="form-control-label input-focus" for="shippingStatedefault">
+Province
+</label>
+<div class="invalid-feedback" id="defaultState"></div>
+</div>
+</div>
+<div class="col-6 col-sm-3">
+<div class="form-group floating-label
+            required
+            dwfrm_shipping_shippingAddress_addressFields_postalCode">
+<input type="text" class="form-control shippingZipCode CA-po-Validate" id="shippingZipCodedefault" aria-describedby="defaultZipCode" value="" pattern="^(?!.*[DFIOQUdfioqu])[A-VXYa-vxy][0-9][A-Za-z] ?[0-9][A-Za-z][0-9]$" maxlength="7" data-pattern-mismatch="Please enter a valid postal code." data-missing-error="This field is required." name="dwfrm_shipping_shippingAddress_addressFields_postalCode" required="" aria-required="true" minlength="5" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="shipping postal-code" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code"><span class="valid"></span>
+<label class="form-control-label input-focus" for="shippingZipCodedefault">
+Postal Code
+</label>
+<div class="invalid-feedback" id="defaultZipCode"></div>
+</div>
+</div>
+<div class="col-6">
+<div class="form-group floating-label
+            required
+            dwfrm_shipping_shippingAddress_addressFields_phone">
+<input type="tel" class="form-control shippingPhoneNumber" id="shippingPhoneNumberdefault" aria-describedby="defaultTelephoneNumber" value="" data-missing-error="This field is required." data-pattern-mismatch="Please enter a valid phone number." name="dwfrm_shipping_shippingAddress_addressFields_phone" required="" aria-required="true" maxlength="50" minlength="10" pattern="^\(?([2-9][0-9][0-9])\)?[\-\. ]?([2-9][0-9]{2})[\-\. ]?([0-9]{4})(\s*x[0-9]+)?$" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="shipping tel" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel"><span class="valid"></span>
+<label class="form-control-label input-focus" for="shippingPhoneNumberdefault">
+Phone Number
+</label>
+<div class="invalid-feedback" id="defaultTelephoneNumber"></div>
+</div>
+</div>
+<div class="col-12 col-sm-6">
+<div class="form-group floating-label mb-0
+           required
+           dwfrm_shipping_shippingAddress_email">
+<input type="text" class="form-control email" id="shippingEmail" value="" data-missing-error="This field is required." data-pattern-mismatch="Please enter a valid email address" name="dwfrm_shipping_shippingAddress_email" required="" aria-required="true" maxlength="50" pattern="^([\w+-]+\.)*[\w+-]+@([\w+-]+\.)*[\w+-]+\.[\w]{2,6}$" data-default-error="Please enter valid information, some special characters and spaces may not be used." aria-describedby="emailInvalidMessage" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="email"><span class="valid"></span>
+<label class="form-control-label input-focus" for="shippingEmail">Email Address</label>
+<small id="shippingEmailHelp" class="form-text shipping-email-help-text">Enter email address to receive order confirmation and shipping updates.</small>
+<div class="invalid-feedback" id="emailInvalidMessage"></div>
+</div>
+</div>
+</div>
+<div class="row d-none">
+<div class="form-group custom-control custom-checkbox">
+<input type="checkbox" class="custom-control-input" id="set-as-default" name="dwfrm_shipping_shippingAddress_addressFields_setAsDefault" value="true" data-default-error="Please enter valid information, some special characters and spaces may not be used.">
+<label class="custom-control-label input-focus" for="set-as-default">
+Set as Default Address
+</label>
+</div>
+</div>
+<div class="row shippingAddress-giftReceiptContainer">
+<div class="col-12">
+<div class="gift-form-group">
+<div class="custom-control custom-checkbox">
+<div class="cart-gift-line-item">
+<input class="custom-control-input gift giftReceiptCheckbox" type="checkbox" id="isGift" data-default-state="false" name="dwfrm_shipping_shippingAddress_isGift" value="true" data-default-error="Please enter valid information, some special characters and spaces may not be used.">
+<label for="isGift" class="custom-control-label checkout-checkbox">
+<span class="gift-svg svg-svg-gift-box-checkout" aria-hidden="true"></span> <span class="giftRecieptLabel checkout-gift-line-item">Make This A Gift</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group custom-control custom-checkbox subscription-email-info ">
+<input type="checkbox" class="custom-control-input" id="add-to-email-list" name="dwfrm_shipping_shippingAddress_addtoemaillist" value="true" data-default-error="Please enter valid information, some special characters and spaces may not be used.">
+<label class="custom-control-label input-focus" for="add-to-email-list">
+<div class="content-asset">
+<p>Become an insider and hear about our latest trends, sales and exclusive offers before everyone else simply by checking the box to receive emails from Hudson’s Bay. You can easily cancel at any time by selecting the unsubscribe option within any email.</p>
+<p>Hudson’s Bay Company, 698 Lawrence Ave W., Toronto, ON M6A 3A5, <a href="https://www.thebay.com/">www.thebay.com</a>.</p>
+</div> 
+</label>
+</div>
+<fieldset class="klarnaDefaults">
+<input type="hidden" class="country" value="null">
+</fieldset>
+</fieldset>
+<div class="row shipping-address-next-step-button-row d-none">
+<div class="col-12 shipping-address-next-step-button next-step-button-shipping-address">
+<div>
+<button class="btn btn-primary btn-block" value="submit-shipping" type="submit" name="submit">
+Continue to shipping method
+</button>
+</div>
+</div>
+</div>
+<div class="po-check-message hbc-alert-error d-none">Certain items in your bag are not eligible to ship to a PO Box. Please update your address or remove the items from your bag to continue.</div>
+<div class="no-shipping-method-msg hbc-alert-error d-none" data-has-methods="true">Some items in your shopping bag cannot ship to the address selected. Please remove them from your bag or enter a different address to proceed with your order.</div>
+<div class="restricted-state-message hbc-alert-error d-none">Some items in your bag cannot ship to the state selected. Please update your address or remove the items from your bag to continue.</div>
+<div class="shipping-method-wrapper">
+<fieldset class="shipping-method-block">
+<div class="card ghost shipping">
+<div class="card-header">
+<span class="checkout-card-header"><span class="state-index multi"><span class="state-info">2</span></span>Shipping</span>
+</div>
+</div>
+<div class="hbc-shipping-method-description pb-2">
+This order must be placed by 12 PM ET to arrive for the estimated delivery date.
+</div>
+<div class="shipping-methods-message ">
+</div>
+<div class="dropship-msg d-none" data-shipping-id1="shipping.dropship.msg.id1" data-shipping-id2="shipping.dropship.msg.id2">
+<div class="hbc-alert-info">
+Unfortunately, certain items in your order are not eligible for your chosen shipping method.
+</div>
+</div>
+<div class="hbc-alert-info d-none"></div>
+<div class="operator-shipping-methods ">
+<div class="shop-name seller-title d-flex align-items-center">
+<span class="tooltip-info checkout-icon-bay-image" aria-label="more info" style="background-image: url(resources/EN_www.thebay.com/20.svg)" data-original-style="background-image: url(https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/default/dwf03d2deb/images/seller_bay.svg)"></span>
+<span class="bay-title pl-2">
+<span>Sold by</span>
+<span>Hudson's Bay</span>
+</span>
+</div>
+<div class="d-inline-flex">
+<div class="shipping-product-line-item" data-product-line-item="795708125a5f58fc1de6622c8a">
+<div class="product-line-item-details d-flex flex-row">
+<div class="mini-cart-img pr-1">
+<div class="item-image">
+<a href="https://www.thebay.com/product/dior-dior-forever-natural-bronze-powder-92448628.html">
+<img class="product-image" src="resources/EN_www.thebay.com/18.webp" srcset="resources/EN_www.thebay.com/19.jpg 2x" alt="Dior Forever Natural Bronze Powder, 004 TAN BRONZE, hi-res" title="Dior Forever Natural Bronze Powder, 004 TAN BRONZE" data-original-src="https://image.s5a.com/is/image/TheBay/3348901550833_main?wid=111&amp;hei=148&amp;qlt=90&amp;resMode=sharp2&amp;op_usm=1,1.0,6,0" data-original-srcset="https://image.s5a.com/is/image/TheBay/3348901550833_main?wid=222&amp;hei=296&amp;qlt=90&amp;resMode=sharp2&amp;op_usm=0.9,1.0,8,0 2x">
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row shipping-method-list no-gutters radio-holder pb-2" data-select-shipping-method-url="https://www.thebay.com/on/demandware.store/Sites-TheBay-Site/en_CA/CheckoutShippingServices-SelectShippingMethod" data-action-url="https://www.thebay.com/on/demandware.store/Sites-TheBay-Site/en_CA/CheckoutShippingServices-UpdateShippingMethodsList" data-dropshipdefault-id="null" data-sdd-eligibility="null">
+<div class="form-check col-12">
+<div class="custom-radio">
+<input type="radio" class="form-check-input" id="shippingMethod-GROUND_HOME_DELIVERY-d9a2d08fe3cabb4a72ff5ed7db" name="dwfrm_shipping_shippingAddress_shippingMethodID" value="GROUND_HOME_DELIVERY" checked="checked">
+<label class="form-check-label custom-control-label shipping-method-option" for="shippingMethod-GROUND_HOME_DELIVERY-d9a2d08fe3cabb4a72ff5ed7db">
+<span>
+<span class="display-name">Standard</span>
+<span> - </span>
+<span class="shipping-cost">$0.00</span>
+<div class="arrival-time" style="">Estimated Delivery On Or Before Sunday Mar. 20, 2022</div>
+</span>
+</label>
+</div>
+</div>
+
+<div class="form-check col-12">
+<div class="custom-radio">
+<input type="radio" class="form-check-input" id="shippingMethod-FEDEX_2_DAY-d9a2d08fe3cabb4a72ff5ed7db" name="dwfrm_shipping_shippingAddress_shippingMethodID" value="FEDEX_2_DAY">
+<label class="form-check-label custom-control-label shipping-method-option" for="shippingMethod-FEDEX_2_DAY-d9a2d08fe3cabb4a72ff5ed7db">
+<span>
+<span class="display-name">Express</span>
+<span> - </span>
+<span class="shipping-cost">$15.00</span>
+<div class="arrival-time" style="">Estimated Delivery On Or Before Saturday Mar. 19, 2022</div>
+</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="non-sdd-products d-none">
+<div class="non-sdd-message">
+<div class="pt-1">
+We estimate these items will arrive in 2 - 6 Days
+</div>
+</div>
+<div class="d-inline-flex">
+</div>
+</div>
+<div class="signature-section">
+<div class="signature-required hbc-alert-info d-none verbiage-hidden">
+Signature required on delivery
+<span class="custom-tooltip" data-initialized="true">
+<button class="tooltip-info" type="button" aria-label="more info">i</button><div role="status" style="display: none; position: absolute; inset: 465px auto auto 0px; margin: 0px;" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"><div class="content"></div><div data-popper-arrow="true" style="position: absolute; left: 2px;"></div></div>
+<div class="tooltip-content" data-layout="small">Please note : Shipper may still require signature when box is left unchecked.</div>
+</span>
+</div>
+<fieldset class="signature-checkbox d-none box-hidden">
+<div class="row">
+<div class="col-12">
+<div class="form-group gift-form-group">
+<div class="custom-control custom-checkbox">
+<input class="signature custom-control-input" type="checkbox" id="signatureRequired-null-d9a2d08fe3cabb4a72ff5ed7db" name="dwfrm_shipping_shippingAddress_signatureRequired" value="true" data-default-error="Please enter valid information, some special characters and spaces may not be used.">
+<label for="signatureRequired-null-d9a2d08fe3cabb4a72ff5ed7db" class="custom-control-label checkout-checkbox input-focus">
+Require signature at the time of delivery
+</label>
+</div>
+</div>
+</div>
+</div>
+</fieldset>
+</div>
+<div class="offer-shipping-method-list">
+</div>
+
+<div id="shipping-method-template" class="row shipping-method-template no-gutters" style="display: none;">
+<div class="form-check col-12">
+<div class="custom-radio">
+<input type="radio" class="form-check-input" id="shippingMethodRadioButton">
+<label class="form-check-label custom-control-label shipping-method-option" for="shippingMethodRadioButton">
+<span>
+<span class="display-name"></span>
+<span> - </span>
+<span class="shipping-cost"></span>
+<div class="arrival-time" style="display: none;"></div>
+</span>
+</label>
+</div>
+</div>
+</div>
+</fieldset>
+</div>
+</div>
+<div class="view-address-block d-none">
+<h3>Shipping Method
+<span>
+</span>
+</h3>
+<div class="row leading-lines">
+<p class="col-8 start-lines">
+<span class="display-name">Standard</span>
+<span class="text-muted arrival-time">Estimated Delivery: 3 - 10 Days</span>
+</p>
+<p class="col-4 end-lines text-right">
+<span class="price">
+$8.00
+</span>
+</p>
+</div>
+<div class="summary-details gift-summary d-none">
+<div class="gift-message-summary">
+</div>
+</div>
+</div>
+<input type="hidden" name="csrf_token" value="2XVhddnMUV6AAJUNLytFSVbGcXDOthOMzwFxJHrDtnbzobAlXM7mf7CP_LetJAW7oZKmWXU_3LCfEQxkb4cTnn8ECvU1PvUB-kC_Jw7gbEKNfHTn1aqpOz81T5EvcV3TTPczynzJQ6TeFTtd2QrFyFSwAHfvGJAZtWtECEVs3lIdUKsMeBY=">
+</form>
+<div class="shipping-next-step-button-wrapper">
+<div class="row shipping-next-step-button-row">
+<div class="col-12 next-step-button ">
+<div>
+<button class="btn btn-primary btn-block" value="submit-shipping" type="submit" name="submit">
+Continue to payment method
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="row shipping-save-address-block shipping-address-block d-none">
+<div class="col-6 shipping-next-cancel">
+<button type="submit" name="cancel" class="btn btn-save-cancel btn-block btn-secondary">Cancel</button>
+</div>
+<div class="col-6 shipping-next-step-button-row shipping-save-address">
+<div class="next-step-button">
+<div>
+<button class="btn btn-primary btn-block" type="submit" name="submit">
+Save
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card shipping-summary">
+<div class="card-header clearfix">
+<h4 class="fa-pull-left"><span class="state-track svg-svg-11-check-circle"></span>Shipping Method</h4>
+<span id="editShipping" class="edit-button fa-pull-right">Change</span>
+</div>
+<div class="card-body">
+<div class="single-shipping shipping-summary-section" data-shipment-summary="d9a2d08fe3cabb4a72ff5ed7db">
+<div class="shipping-method-summary-section sdd-shipping">
+<div class="summary-details operator-shipping-summary">
+<div class="shop-name return-details">
+<span>Sold by</span>
+ <span>Hudson's Bay</span>
+(1
+<span class="items-label">Item)</span>
+</div>
+<div class="shipping-method">
+<span class="shipping-method-title">Standard</span>
+<span class="pricing shipping-method-price bfx-price bfx-list-price"> - FREE</span>
+<div class="shipping-method-arrival-time">Estimated Delivery On Or Before Sunday Mar. 20, 2022</div>
+<div class="signature-is-required d-none verbiage-hidden">
+Signature required on delivery
+<span class="custom-tooltip" data-initialized="true">
+<button class="tooltip-info" type="button" aria-label="more info">i</button><div role="status" style="display: none; position: absolute; inset: 465px auto auto 0px; margin: 0px;" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"><div class="content"></div><div data-popper-arrow="true" style="position: absolute; left: 2px;"></div></div>
+<div class="tooltip-content" data-layout="small">Please note : Shipper may still require signature when box is left unchecked.</div>
+</span>
+</div>
+</div>
+</div>
+<div class="summary-details gift-summary d-none">
+<div class="gift-message-summary">
+</div>
+</div>
+</div>
+</div>
+<p class="summary-section-label shipping-addr-label multi-shipping">
+Addresses &amp; shipping methods are listed under your items.
+</p>
+</div>
+</div>
+<div class="card ghost shipping-method d-none">
+<div class="card-header">
+<span class="checkout-card-header">
+<span class="state-index multi">
+<span class="state-info">
+2
+</span>
+</span>
+Shipping Method
+</span>
+</div>
+</div>
+</div>
+
+<div class="card ghost payment">
+<div class="card-header">
+<span class="checkout-card-header">
+<span class="state-index multi">
+<span class="state-info">
+3
+</span>
+</span>
+Payment Method
+</span>
+</div>
+</div>
+<div class="tsys-mode" data-mode="false"></div>
+<div class="is-keanu-enabled" data-mode="true"></div>
+<div class="is-toggle-keanu-cof-winddown" data-mode="true"></div>
+<div class="is-guest-loyalty-enabled" data-mode="true"></div>
+<div class="card payment-form" data-locale="CA">
+<div class="card-header">
+<h2 class="card-header-custom">
+<span class="state-index multi">
+<span class="state-info">
+3
+</span>
+</span>
+Payment Method
+</h2>
+</div>
+<div class="card-body"> 
+<form autocomplete="on" method="POST" class="billing-form" action="https://www.thebay.com/on/demandware.store/Sites-TheBay-Site/en_CA/CheckoutServices-SubmitPayment" data-address-mode="new" name="dwfrm_billing" id="dwfrm_billing" novalidate="" data-fathom="form">
+
+<fieldset>
+<div class="alert alert-danger error-payment-message d-none" role="alert">
+<span class="error-payment-message-text"></span>
+</div>
+
+<div class="form-nav billing-nav payment-information" data-payment-method-id="CREDIT_CARD" data-payment-category-id="" data-is-new-payment="true">
+<ul class="nav nav-tabs nav-fill payment-options" role="tablist">
+
+<li class="nav-item" data-method-id="CREDIT_CARD" data-payment-method="CREDIT_CARD" style="">
+<a class="nav-link credit-card-tab active" data-toggle="tab" href="#credit-card-content" role="tab">
+<div class="custom-radio radio-holder">
+<input type="radio" name="paymentTab" class="form-check-input paymentTabRadio" id="creditCardRadioButton" checked="true" data-fathom="ccPaymentType">
+<label class="form-check-label custom-control-label credit-card-tab" for="creditCardRadioButton">Credit Card</label>
+</div>
+</a>
+</li>
+
+<li class="nav-item paypal  " data-method-id="PayPal" data-payment-method="PayPal" style="">
+<a class="nav-link paypal-tab" data-toggle="tab" href="#paypal-content" role="tab">
+<div class="custom-radio radio-holder">
+<input type="radio" name="paymentTab" class="form-check-input paymentTabRadio" id="payPalRadioButton">
+<label class="form-check-label custom-control-label pay-pal-tab" for="payPalRadioButton">PayPal</label>
+</div>
+</a>
+</li>
+
+
+
+<li class="nav-item klarna-payment-item " data-method-id="klarna_pay_over_time" data-payment-method="KLARNA_PAYMENTS" style="">
+<a class="nav-link klarna-payments-pay_over_time-tab" data-toggle="tab" href="#klarna_payments_pay_over_time" role="tab">
+<div class="custom-radio radio-holder">
+<input type="radio" name="paymentTab" class="form-check-input paymentTabRadio" id="klarnaPaymentspay_over_timeRadioButton">
+<label class="form-check-label custom-control-label credit-card-tab" for="klarnaPaymentspay_over_timeRadioButton">
+PayBright<span class="option-name d-none">Buy Now, Pay Later</span>
+</label>
+</div>
+</a>
+</li>
+<div class="alert alert-danger capone-hbcmc-payment-message d-none" role="alert">
+<div class="error-payment-message-text">
+This credit card is no longer valid. Please update your account payment details with your new Hudson's Bay Mastercard powered by Neo. If you have not applied for your new card yet, please visit
+<a aria-label="thebay.com/neo" target="_blank" href="https://www.thebay.com/neo">https://www.thebay.com/neo</a>
+to continue to earn double points.
+</div>
+</div>
+</ul>
+</div>
+<div class="credit-card-selection-new">
+<div class="tab-content">
+
+<div class="tab-pane active credit-card-content" id="credit-card-content" role="tabpanel">
+<fieldset class="payment-form-fields">
+<input type="hidden" class="form-control" name="dwfrm_billing_paymentMethod" value="CREDIT_CARD">
+<fieldset class="credit-card-form custom-form-spacing ">
+<input type="hidden" class="form-control" id="cardType" name="dwfrm_billing_creditCardFields_cardType" value="">
+
+<div class="row">
+<div class="col-12">
+<div class="form-group floating-label
+		    required">
+<input type="text" class="form-control cardOwner is-invalid" id="cardOwner" data-missing-error="This field is required." name="dwfrm_billing_creditCardFields_cardOwner" required="" aria-required="true" value="" maxlength="50" pattern="(^[^(\\'\\&lt;\\&gt;\\/\)]+$)" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="cc-name" data-fathom="cc-name" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="cc-name"><span class="invalid"></span>
+<label class="form-control-label input-focus is-invalid" for="cardOwner">
+Name on Card
+</label>
+<div class="invalid-feedback">This field is required.</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-12 col-md-6">
+<div class="form-group floating-label card-number-wrapper
+            required
+            dwfrm_billing_creditCardFields_cardNumber" data-type="unknown">
+<input type="tel" class="form-control cardNumber is-invalid" id="cardNumber" data-missing-error="This field is required." data-pattern-mismatch="Please enter a valid credit card number." value="" name="dwfrm_billing_creditCardFields_cardNumber" required="" aria-required="true" maxlength="2147483647" pattern="(^[^(\\'\\&lt;\\&gt;\)]+$)" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="cc-number" aria-describedby="cardNumberInvalidMessage" data-fathom="cc-number" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="cc-number"><span class="invalid"></span>
+<label class="form-control-label input-focus is-invalid" for="cardNumber">
+Credit Card Number</label>
+<div class="invalid-feedback" id="cardNumberInvalidMessage">This field is required.</div>
+</div>
+</div>
+<div class="col-6 col-md-3">
+<div class="form-group floating-label cardExpiryDate
+            
+            dwfrm_billing_creditCardFields_cardExpiration">
+<input type="tel" class="form-control cardExpiration" id="cardExpiration" data-missing-error="This field is required." data-mask="00/00" data-mask-reverse="true" data-mask-selectonfocus="true" data-pattern-mismatch="Please enter valid expiration date." name="dwfrm_billing_creditCardFields_cardExpiration" value="" maxlength="5" pattern="(^[^(\\'\\&lt;\\&gt;\\\\)]+$)" data-default-error="Please enter valid information, some special characters and spaces may not be used." aria-describedby="cardExpirationInvalidMessage" autocomplete="off" data-fathom="cc-exp" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="cc-exp-month">
+<label class="form-control-label" for="cardExpiration">
+Expiry Date</label>
+<div class="invalid-feedback" id="cardExpirationInvalidMessage"></div>
+</div>
+</div>
+<div class="row card-exp d-none">
+<div class="col-6">
+<div class="form-group floating-label select-dropdown cardExpiryMonth
+	            
+	            dwfrm_billing_creditCardFields_expirationMonth">
+<select class="form-control expirationMonth" id="expirationMonth" name="dwfrm_billing_creditCardFields_expirationMonth" autocomplete="cc-exp-month" aria-describedby="expirationMonthInvalidMessage" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="cc-exp-month">
+<option id="" value="">
+month
+</option>
+<option id="01" value="01">
+01
+</option>
+<option id="02" value="02">
+02
+</option>
+<option id="03" value="03">
+03
+</option>
+<option id="04" value="04">
+04
+</option>
+<option id="05" value="05">
+05
+</option>
+<option id="06" value="06">
+06
+</option>
+<option id="07" value="07">
+07
+</option>
+<option id="08" value="08">
+08
+</option>
+<option id="09" value="09">
+09
+</option>
+<option id="10" value="10">
+10
+</option>
+<option id="11" value="11">
+11
+</option>
+<option id="12" value="12">
+12
+</option>
+</select>
+<label class="form-control-label" for="expirationMonth">
+Expiration Month</label>
+<div class="invalid-feedback" id="expirationMonthInvalidMessage"></div>
+</div>
+</div>
+<div class="col-6">
+<div class="form-group floating-label select-dropdown cardExpiryYear
+	            
+	            dwfrm_billing_creditCardFields_expirationYear">
+<select class="form-control expirationYear" id="expirationYear" name="dwfrm_billing_creditCardFields_expirationYear" autocomplete="cc-exp-year" aria-describedby="expirationYearInvalidMessage" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="cc-exp-year">
+<option value="">
+year</option>
+<option id="2022" value="2022">
+2022
+</option>
+<option id="2023" value="2023">
+2023
+</option>
+<option id="2024" value="2024">
+2024
+</option>
+<option id="2025" value="2025">
+2025
+</option>
+<option id="2026" value="2026">
+2026
+</option>
+<option id="2027" value="2027">
+2027
+</option>
+<option id="2028" value="2028">
+2028
+</option>
+<option id="2029" value="2029">
+2029
+</option>
+<option id="2030" value="2030">
+2030
+</option>
+<option id="2031" value="2031">
+2031
+</option>
+</select>
+<label class="form-control-label" for="expirationYear">
+Expiration Year</label>
+<div class="invalid-feedback" id="expirationYearInvalidMessage"></div>
+</div>
+</div>
+</div>
+<div class="col-6 col-md-3">
+<div class="form-group floating-label newCreditCvvHolder
+           
+           dwfrm_billing_creditCardFields_securityCode">
+<input type="number" class="form-control securityCode cvvNumField is-invalid" id="securityCode" data-missing-error="This field is required." name="dwfrm_billing_creditCardFields_securityCode" value="" maxlength="4" pattern="(^[^(\\'\\&lt;\\&gt;\\/\)]+$)" data-default-error="Please enter valid information, some special characters and spaces may not be used." aria-describedby="securityCodeInvalidMessage" data-parsing-error="Please enter a valid CVV." data-fathom="security" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="cc-csc"><span class="invalid"></span>
+<label class="form-control-label" for="securityCode">
+CVV</label>
+<div class="invalid-feedback" id="securityCodeInvalidMessage">This field is required.</div>
+</div>
+</div>
+</div>
+<input type="hidden" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8gGPMwBRPuVyJReZGIkWH/+Bf5pnpDN1bSR2cLYLXVT8CaSnTw74qeboSnktgYCi1D9R3Bj2fYzTIwGGZb8KinLdxwbqZmHwrE9cFhCaHbG/E0PbqQGhXP2vbniZTT4M0i0Cbi7ES3Bw5zqNbIZZnX041QEpxLvIyWPKZCX+fBogNMhWfCF779aclChjHkwZMsufThVWE9xklWGxXiytx5aL4I5JPxq0I7cAkZGGs4aF/GxWwPaq7R3wPikJQ0YHnCMfcURzl2Hnw/inqyMy+JB6djTq2/BdzMAhWTh3cDWq9Xu+gEkb/QCd0n1yYIdKuDISlk/AfHdWe34IvzhVyQIDAQAB" class="tokenExPubKey">
+<input type="hidden" value="true" class="tokenEanbled">
+</fieldset>
+</fieldset>
+</div>
+
+<div class="tab-pane paypal-content js_paypal-content" id="paypal-content" role="tabpanel" data-paypal-is-hide-continue-button="true">
+<div class="row paypal-btn-container">
+<div class="col-12 paypal-label">You will be redirected to the PayPal website.</div>
+<div class="col-12">
+<fieldset class="payment-form-fields">
+<div class="js_paypal_error alert alert-danger"></div>
+<input type="hidden" class="form-control" name="isPaypal" value="true" disabled="disabled">
+<input type="hidden" class="form-control" name="dwfrm_billing_paymentMethod" value="PayPal">
+<div class="row">
+<div class="col-6 paypal-custom-btn" style="display:block">
+<button class="btn btn-primary btn-block paypal-btn-cus" type="submit" name="submit">
+<span><img src="resources/EN_www.thebay.com/21.svg" alt="pp" data-original-src="resources/EN_www.thebay.com/21.svg"> <img src="resources/EN_www.thebay.com/22.svg" alt="paypal" data-original-src="resources/EN_www.thebay.com/22.svg"></span>
+</button>
+<div class="paypal-checkout-button js_paypal_button_on_billing_form" data-paypal-config="{&quot;env&quot;:&quot;production&quot;}"><div id="zoid-paypal-button-861fc38b5f" class="paypal-button paypal-button-context-iframe paypal-button-label-paypal paypal-button-size-responsive paypal-button-layout-vertical" data-paypal-smart-button-version="4.0.334" style="height: 194px;"><style>
+                    #zoid-paypal-button-861fc38b5f {
+                        font-size: 0;
+                        width: 100%;
+                        overflow: hidden;
+                        min-width: 200px;
+                    }
+
+                    #zoid-paypal-button-861fc38b5f.paypal-button-size-responsive {
+                        text-align: center;
+                    }
+
+                    #zoid-paypal-button-861fc38b5f > .zoid-outlet {
+                        display: inline-block;
+                        min-width: 200px;
+                        max-width: 750px;
+                        position: relative;
+                    }
+
+                    #zoid-paypal-button-861fc38b5f.paypal-button-layout-vertical > .zoid-outlet {
+                        min-width: 200px;
+                    }
+
+                    #zoid-paypal-button-861fc38b5f > .zoid-outlet {
+                        width:  150px;
+                        height: 25px;
+                    }
+
+                     #zoid-paypal-button-861fc38b5f.paypal-button-size-responsive > .zoid-outlet {
+                        width: 100%;
+                    }
+
+                    #zoid-paypal-button-861fc38b5f > .zoid-outlet > iframe {
+                        min-width: 100%;
+                        max-width: 100%;
+                        width: 200px;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+
+                    #zoid-paypal-button-861fc38b5f > .zoid-outlet > iframe.zoid-component-frame {
+                        z-index: 100;
+                    }
+
+                    #zoid-paypal-button-861fc38b5f > .zoid-outlet > iframe.zoid-prerender-frame {
+                        transition: opacity .2s linear;
+                        z-index: 200;
+                    }
+
+                    #zoid-paypal-button-861fc38b5f > .zoid-outlet > iframe.zoid-visible {
+                        opacity: 1;
+                    }
+
+                    #zoid-paypal-button-861fc38b5f > .zoid-outlet > iframe.zoid-invisible {
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+                </style><div class="zoid-outlet" style="height: 194px; transition: all 0.5s ease-in-out 0.3s;"><iframe style="background-color: transparent;" class="zoid-component-frame zoid-visible" allowtransparency="true" name="xcomponent__ppbutton__4__pmrhk2leei5cembvmq4dcobyg43giirmej2gczzchirhaylzobqwyllcov2hi33oeiwcey3pnvyg63tfnz2faylsmvxhiir2pmrhezlgei5ce5dpoarh2lbcojsw4zdfojigc4tfnz2ceot3ejzgkzrchirhi33qej6syitqojxxa4zchj5se5dzobsseorcojqxoirmej3gc3dvmurdu6zcnrxwgylmmurduitfnzpvkuzcfqrhg5dznrsseot3ejwgc6lpov2ceorcozsxe5djmnqwyirmejzws6tfei5ce4tfonyg63ttnf3gkirmejzwqylqmurduitqnfwgyirmejrw63dpoirduithn5wgiirmejwgcytfnqrduitqmf4xaylmej6syitgovxgi2lom4rdu6zcmfwgy33xmvsceos3ejrxezlenf2cexjmejsgs43bnrwg653fmqrduwzcozsw43lpejosyitsmvwwk3lcmvzgkzbchjnse4dbpfygc3bcluwce4tfnvsw2ytfoirdu6zcl5pxi6lqmvpv6ir2ejpv6ztvnzrxi2lpnzpv6it5puwce4dbpfwwk3tuei5hwis7l52hs4dfl5pseorcl5pwm5lomn2gs33ol5pse7jmejxw4qlvorug64tjpjsseot3ejpv65dzobsv6xzchirf6x3govxgg5djn5xf6xzcpuwce33oinqw4y3fnqrdu6zcl5pxi6lqmvpv6ir2ejpv6ztvnzrxi2lpnzpv6it5fqrg63sfojzg64rchj5sex27or4xazk7l4rduis7l5thk3tdoruw63s7l4rh2lbcmvxhmir2ejyhe33eovrxi2lpnyrcyiten5wwc2loei5ce53xo4xhi2dfmjqxsltdn5wselbconsxg43jn5xesrbchirhk2lel43dqzlcmrstmzbvmjpw25djgzxhi2zwnvvgkirmejrhk5dun5xfgzltonuw63sjiqrduitvnfsf6zjugeztgndcmi2gkx3norutm3tunm3g26tneiwce4tfnzsgk4tfmrbhk5dun5xhgir2ejygc6lqmfwcyy3smvsgs5bmmnqxezbcfqrhg5dpojqwozkjiqrduitvnfsf6nbrmqztqyrqgfswkx3norutm3tunm3g22tfeiwce3lforqseot3puwcezlomfrgyzkomf2gs5tfinugky3ln52xiir2mzqwy43ffqrgg3djmvxhiir2pn6syittn52xey3fei5ce3lbnz2wc3bcfqrha4tfmzsxiy3ijrxwo2loei5gmylmonssyitvobsgc5dfinwgszloorbw63tgnftxk4tboruw63rchj2he5lffqrgg2dfmnvw65lukvzgsir2nz2wy3bmejqxk5diinxwizjchircelbcmnxw23ljoqrduztbnrzwklbcn5xfezlomrsxeir2pmrf6x3upfygkx27ei5cex27mz2w4y3unfxw4x27ej6syitpnzbwy2ldnmrdu6zcl5pxi6lqmvpv6ir2ejpv6ztvnzrxi2lpnzpv6it5fqrg63ssmvzws6tfei5hwis7l52hs4dfl5pseorcl5pwm5lomn2gs33ol5pse7jmejwg6z2mmv3gk3bchirhoylsnyrcyitbo5qws5cqn5yhk4ccojuwiz3fei5hwis7l52hs4dfl5pseorcl5pwm5lomn2gs33ol5pse7jmejtwk5cqmftwkvlsnqrdu6zcl5pxi6lqmvpv6ir2ejpv6ztvnzrxi2lpnzpv6it5fqrhizltoqrdu6zcmfrxi2lpnyrduitdnbswg23pov2ce7jmej2wszbchirdqnrrmzrtgodcgvtcelbcozsxe43jn5xceorcgqrh27jmejrwq2lmmrcg63lbnfxceorcnb2hi4dthixs653xo4xhaylzobqwyltdn5wselbcnfsceorcgeywmmjvhaztmzjweiwcezdpnvqws3rchirgq5duobztulzpo53xoltunbsweylzfzrw63jcpu__" title="PayPal" scrolling="no" allowpaymentrequest="allowpaymentrequest" src="resources/EN_www.thebay.com/23.html" data-original-src="https://www.paypal.com/smart/button?locale.x=en_US&amp;style.layout=vertical&amp;style.size=responsive&amp;style.shape=pill&amp;style.color=gold&amp;style.label=paypal&amp;funding.allowed=credit&amp;funding.disallowed=venmo&amp;funding.remembered=paypal&amp;env=production&amp;domain=www.thebay.com&amp;sessionID=uid_68ebde6d5b_mti6ntk6mje&amp;buttonSessionID=uid_e41334bb4e_mti6ntk6mzm&amp;renderedButtons=paypal%2Ccredit%2Ccard&amp;storageID=uid_41d38b01ee_mti6ntk6mje&amp;logLevel=warn&amp;sdkMeta=eyJ1cmwiOiJodHRwczovL3d3dy5wYXlwYWxvYmplY3RzLmNvbS9hcGkvY2hlY2tvdXQuanMifQ&amp;uid=861fc38b5f&amp;version=4&amp;xcomponent=1" frameborder="0"></iframe></div></div></div>
+</div>
+</div>
+</fieldset>
+</div>
+</div>
+</div>
+
+
+
+<div class="tab-pane klarna_payments-content klarna_payments_pay_over_time" id="klarna_payments_pay_over_time" role="tabpanel">
+<div class="klarna-gift-card-warning">
+Gift cards are not combinable with Paybright. If you want to use a gift card, please select another payment method.
+</div>
+<fieldset class="payment-form-fields">
+<input type="hidden" class="form-control" name="isKlarna" value="true" disabled="disabled">
+<input type="hidden" class="form-control" name="dwfrm_billing_paymentMethod" value="KLARNA_PAYMENTS" disabled="disabled">
+<input type="hidden" class="form-control" name="dwfrm_klarna_paymentCategory" value="pay_over_time" disabled="disabled">
+<div id="klarna_payments_pay_over_time_container"></div>
+</fieldset>
+<div class="klarna-legal-notice">
+By clicking Continue to PayBright, I am instructing HBC to send my order and billing information to PayBright and understand that information will be subject to the PayBright terms and the PayBright privacy policy.
+</div>
+</div>
+<div style="display: none" class="klarna-billing-address">
+<div>
+null
+</div>
+<input type="hidden" class="billingFirstName" value="alla">
+<input type="hidden" class="billingLastName" value="balla">
+<input type="hidden" class="billingAddressOne" value="4905 Tail Ends Road">
+<input type="hidden" class="billingAddressTwo" value="">
+<input type="hidden" class="billingAddressCity" value="Green Bay">
+<input type="hidden" class="billingState" value="ON">
+<input type="hidden" class="billingCountry" value="CA">
+<input type="hidden" class="billingZipCode" value="M6A 3A5">
+<input type="hidden" class="billingPhoneNumber" id="billingPhoneNumber" value="920-548-9937">
+<input type="hidden" class="email" id="email" value="alabalaa12@yahoo.com">
+</div>
+</div>
+</div>
+</fieldset>
+<div class="billing-address-check form-group custom-control custom-checkbox ">
+<input class="billing-checkbox custom-control-input" type="checkbox" id="billing-addr-checkbox">
+<label class="checkbox-label custom-control-label input-focus" for="billing-addr-checkbox">
+Billing address is different from shipping
+</label>
+</div>
+<fieldset class="billing-address-block">
+
+<fieldset class="address-selector-block billing-addr-saved d-none">
+<div class="form-group custom-form-spacing">
+<div class="stored-customer-addresses">
+<div class="billing-addresses customer-addresses row">
+</div>
+</div>
+</div>
+</fieldset>
+
+<fieldset class="billing-address custom-form-spacing billing-addr-form">
+<div class="row">
+<div class="col-sm-12">
+<div class="form-group floating-label
+	        required
+	        dwfrm_billing_addressFields_country">
+<select class="form-control billingCountry" id="billingCountry" name="dwfrm_billing_addressFields_country" required="" aria-required="true" autocomplete="billing country" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="country">
+<option id="CA" value="CA" selected="">
+Canada
+</option>
+</select><span class="valid"></span>
+<label class="form-control-label input-focus" for="billingCountry">Country</label>
+<div class="invalid-feedback"></div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-6">
+<div class="form-group floating-label
+            required
+            dwfrm_billing_addressFields_firstName">
+<input autofocus="" type="text" class="form-control billingFirstName" id="billingFirstName" data-missing-error="This field is required." value="" name="dwfrm_billing_addressFields_firstName" required="" aria-required="true" maxlength="50" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="given-name" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name">
+<label class="form-control-label" for="billingFirstName">First Name</label>
+<div class="invalid-feedback"></div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group floating-label
+            required
+            dwfrm_billing_addressFields_lastName">
+<input type="text" class="form-control billingLastName" id="billingLastName" data-missing-error="This field is required." value="" name="dwfrm_billing_addressFields_lastName" required="" aria-required="true" maxlength="50" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="family-name" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="family-name">
+<label class="form-control-label" for="billingLastName">Last Name</label>
+<div class="invalid-feedback"></div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-12 col-sm-6">
+<div class="form-group floating-label
+            required
+            dwfrm_billing_addressFields_address1">
+<input type="text" class="form-control billingAddressOne" id="billingAddressOne" data-missing-error="This field is required." value="" name="dwfrm_billing_addressFields_address1" required="" aria-required="true" maxlength="50" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="billing address-line1" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line1">
+<label class="form-control-label" for="billingAddressOne">Address 1</label>
+<div class="invalid-feedback"></div>
+</div>
+</div>
+<div class="col-12 col-sm-6">
+<div class="form-group floating-label
+            
+            dwfrm_billing_addressFields_address2">
+<input type="text" class="form-control billingAddressTwo" id="billingAddressTwo" value="" name="dwfrm_billing_addressFields_address2" maxlength="50" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="billing address-line2" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-line2">
+<label class="form-control-label" for="billingAddressTwo">Address 2</label>
+<div class="invalid-feedback"></div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-6 state-drop-down">
+<div class="form-group floating-label required dwfrm_billing_addressFields_states_stateCode">
+<select class="form-control billingState" id="billingState" data-missing-error="This field is required." name="dwfrm_billing_addressFields_states_stateCode" required="" aria-required="true" autocomplete="billing address-level1" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level1"><option value="AB">Alberta</option><option value="BC">British Columbia</option><option value="MB">Manitoba</option><option value="NB">New Brunswick</option><option value="NL">Newfoundland and Labrador</option><option value="NT">Northwest Territories</option><option value="NS">Nova Scotia</option><option value="NU">Nunavut</option><option value="ON">Ontario</option><option value="PE">Prince Edward Island</option><option value="QC">Quebec</option><option value="SK">Saskatchewan</option><option value="YT">Yukon</option></select><span class="valid"></span>
+<label class="form-control-label input-focus" for="billingState">Province</label>
+<div class="invalid-feedback"></div>
+</div>
+</div>
+<input class="orderBillState" type="hidden" value="ON">
+<div class="col-sm-6 state-input d-none">
+<div class="form-group floating-label
+            
+            ">
+<input type="text" class="form-control js-state-code-input" id="state-UK" data-missing-error="This field is required." autocomplete="state-code" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level1">
+<label class="form-control-label" for="state-UK">State</label>
+<div class="invalid-feedback"></div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group floating-label
+            required
+            dwfrm_billing_addressFields_city">
+<input type="text" class="form-control billingAddressCity" id="billingAddressCity" data-missing-error="This field is required." value="" name="dwfrm_billing_addressFields_city" required="" aria-required="true" maxlength="50" minlength="2" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="billing address-level2" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="address-level2">
+<label class="form-control-label" for="billingAddressCity">City</label>
+<div class="invalid-feedback"></div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-6">
+<div class="form-group floating-label
+            required
+            dwfrm_billing_addressFields_postalCode">
+<input type="text" class="form-control billingZipCode validateZipCode CA-po-Validate is-invalid" id="billingZipCode" data-zipcode-label="Zip Code" data-zipcode-ca="Postal Code" data-zipcode-fr="Code Postal" data-missing-error="This field is required." data-pattern-us="(^\d{5}(-\d{4})?$)|(^[abceghjklmnprstvxyABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Za-z]{1} *\d{1}[A-Za-z]{1}\d{1}$)" data-pattern-ca="^(?!.*[DFIOQUdfioqu])[A-VXYa-vxy][0-9][A-Za-z] ?[0-9][A-Za-z][0-9]$" data-pattern-uk="^[A-Z]{1,2}[0-9R][0-9A-Z]? [0-9][ABD-HJLNP-UW-Z]{2}$" pattern="^(?!.*[DFIOQUdfioqu])[A-VXYa-vxy][0-9][A-Za-z] ?[0-9][A-Za-z][0-9]$" data-pattern-mismatch="Please enter a valid postal code." value="" name="dwfrm_billing_addressFields_postalCode" required="" aria-required="true" maxlength="7" minlength="" data-default-error="Please enter valid information, some special characters and spaces may not be used." autocomplete="billing postal-code" data-fathom="zip" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="postal-code"><span class="invalid"></span>
+<label class="form-control-label input-focus is-invalid" for="billingZipCode">Postal Code</label>
+<div class="invalid-feedback">This field is required.</div>
+</div>
+</div>
+</div>
+<input type="hidden" data-countryregion="{&quot;CA&quot;:{&quot;regionLabel&quot;:&quot;Province&quot;,&quot;regions&quot;:{&quot;AB&quot;:&quot;Alberta&quot;,&quot;BC&quot;:&quot;British Columbia&quot;,&quot;MB&quot;:&quot;Manitoba&quot;,&quot;NB&quot;:&quot;New Brunswick&quot;,&quot;NL&quot;:&quot;Newfoundland and Labrador&quot;,&quot;NT&quot;:&quot;Northwest Territories&quot;,&quot;NS&quot;:&quot;Nova Scotia&quot;,&quot;NU&quot;:&quot;Nunavut&quot;,&quot;ON&quot;:&quot;Ontario&quot;,&quot;PE&quot;:&quot;Prince Edward Island&quot;,&quot;QC&quot;:&quot;Quebec&quot;,&quot;SK&quot;:&quot;Saskatchewan&quot;,&quot;YT&quot;:&quot;Yukon&quot;}},&quot;postal_label&quot;:{&quot;US&quot;:&quot;Zip Code&quot;,&quot;CA&quot;:&quot;Postal Code&quot;,&quot;UK&quot;:&quot;Postal Code&quot;},&quot;postal_req_error&quot;:{&quot;US&quot;:&quot;Please enter a valid zip code.&quot;,&quot;CA&quot;:&quot;Please enter a valid postal code.&quot;,&quot;UK&quot;:&quot;Please enter a valid postal code.&quot;}}" class="countryRegion">
+<input type="hidden" class="site-locale" value="en_CA">
+</fieldset>
+<input type="hidden" name="csrf_token" value="2XVhddnMUV6AAJUNLytFSVbGcXDOthOMzwFxJHrDtnbzobAlXM7mf7CP_LetJAW7oZKmWXU_3LCfEQxkb4cTnn8ECvU1PvUB-kC_Jw7gbEKNfHTn1aqpOz81T5EvcV3TTPczynzJQ6TeFTtd2QrFyFSwAHfvGJAZtWtECEVs3lIdUKsMeBY=">
+<input type="hidden" name="localizedNewAddressTitle" value="New Address">
+</fieldset>
+<div class="gift-card-payment">
+<div>
+<fieldset class="payment-form-fields">
+<fieldset class="gift-card-form">
+<div class="gift-card-click ">
+<span class="gift-card-heading">
+<span class="closed">Have a Gift Card?</span>
+<span class="opened">Apply Gift Card</span>
+</span>
+<span class="card-icons">
+<span class="svg-svg-59-plus-thin"></span>
+<span class="svg-svg-49-minus-thin"></span>
+</span>
+</div>
+<div class="gift-card-form-group custom-form-spacing d-none">
+<div class="row gift-card-apply expand">
+<div class="col-12 col-sm-4 col-lg-6">
+<div class="form-group floating-label required gift-card-number">
+<input type="tel" class="form-control cardNumber" minlength="11" maxlength="16" id="gcCardNumber" data-default-error="Please enter a valid gift card number." data-missing-error="Please enter a valid gift card number." required="" pattern="(^[^(\\'\\&lt;\\&gt;\\/\)]+$)" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="cc-number">
+<label class="form-control-label" for="gcCardNumber">Card Number</label>
+<div class="invalid-feedback"></div>
+</div>
+</div>
+<div class="col-12 col-sm-4 col-lg-3">
+<div class="form-group floating-label required gift-card-pin">
+<input type="tel" class="form-control accessNumber" minlength="4" maxlength="4" id="accessNumber" data-default-error="Please enter a valid PIN." data-missing-error="Please enter a valid PIN." required="" pattern="(^[^(\\'\\&lt;\\&gt;\\/\)]+$)" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel">
+<label class="form-control-label" for="accessNumber">PIN</label>
+<div class="invalid-feedback" id="accessNumberInvalidMessage"></div>
+</div>
+</div>
+<div class="form-group d-none">
+<input type="text" name="token" class="g-recaptcha-token" data-secret="6LeMP90UAAAAAKJuBbz0rLNLs1kZEQiSw5pki2Jo" style="background-color: lightgreen; border: 1px solid green;">
+</div>
+<input type="hidden" name="isbot" value="">
+<div class="col-12 col-sm-4 col-lg-3 giftcard-apply-submit">
+<button type="submit" class="btn btn-secondary btn-block giftcard-apply-btn" data-action="/on/demandware.store/Sites-TheBay-Site/en_CA/GiftCard-CheckBalance" data-add-card="/on/demandware.store/Sites-TheBay-Site/en_CA/GiftCard-AddGiftCard">
+Apply
+</button>
+</div>
+<div class="common-error col-12">
+<span class="generic-error d-none"></span>
+</div>
+<div class="gift-card-applied">
+</div>
+</div>
+</div>
+</fieldset>
+</fieldset>
+</div>
+</div>
+
+</form>
+</div>
+<div class="guest-loyalty-rewards-section">
+<div>
+<div class="guest-hudson-reward promo-container">
+<form action="https://www.thebay.com/on/demandware.store/Sites-TheBay-Site/en_CA/GuestReward-ApplyGuestRewardNumber" method="POST" id="loyaltyGuestRewardForm" autocomplete="off">
+<div class="promo-form-group loyalty-guest-hudson-reward__main-form-group">
+<button type="button" class="promo-click promotab-click loyalty-guest-hudson-reward__heading" tabindex="0">
+<div class="guest-hudson-reward__heading" data-unapplied="Have a Hudson's Bay Rewards Card?" data-applied="Your Rewards card has been added" data-open="Enter Rewards number">
+<p class="mb-0">Have a Hudson's Bay Rewards Card?</p>
+</div>
+<div class="coupon-icons-container loyalty-pwp__icon">
+<span class="acc-icon svg-svg-59-plus-thin-dims svg-svg-59-plus-thin display-right plus"></span>
+<span class="acc-icon svg-svg-49-minus-thin-dims svg-svg-49-minus-thin display-right minus"></span>
+</div>
+</button>
+<div class="promo-detail-section loyalty-guest-hudson-reward__input-wrapper">
+<fieldset class="guest-hudson-reward-fieldset">
+<div class="form-group floating-label guest-hudson-reward-input-section">
+<div class="form-group floating-label guest-hudson-wrapper-pin-wrapper">
+<label for="hudsonRewardNumber" class="form-control-label text-truncate ">
+Hudson's Bay Rewards Number
+</label>
+<input value="" data-default-error="Please enter a valid Hudson’s Bay Rewards number." type="text" class="form-control hudson-reward redeem-guest-hudson-reward" id="hudsonRewardNumber" name="dwfrm_loyaltyGuestReward_hudsonRewardNumber" maxlength="9" minlength="9" pattern="^[0-9]*$" style="background-color: lightgreen; border: 1px solid green;">
+<span></span>
+<span class="hbc-loyalty-number-prefix d-none">600294</span>
+
+<div id="invalidFeedback" class="invalid-feedback"></div>
+</div>
+</div>
+<button class="btn btn-secondary btn-block guest-hudson-reward-submit" type="submit" disabled="">Apply
+</button>
+</fieldset>
+<div class="applied-guest-hudson-reward-block" title="Remove Rewards">
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="row payment-next-step-button-row">
+<div class="billing-cancel d-none">
+<button type="submit" name="cancel" class="btn btn-save-cancel billing-allforms-cancel btn-block btn-secondary">Cancel</button>
+</div>
+<div class="billing-tcc-cancel d-none">
+<button type="submit" name="cancel" class="btn btn-tcc-cancel billing-tcc-cancel btn-block btn-secondary">Cancel</button>
+</div>
+<div class="col-6 next-step-button">
+<div>
+<button class="btn btn-primary btn-block submit-payment" type="submit" name="submit" value="submit-payment">
+<span class="cta">Review Order</span>
+<span class="klarna-cta">Continue to PayBright</span>
+</button><button class="btn btn-primary btn-block klarna-submit-payment d-none" type="submit" name="submit" value="submit-payment" style="display: inline-block;">
+<span class="cta d-none">Review Order</span>
+<span class="klarna-cta">Continue to PayBright</span>
+</button>
+<input type="hidden" value="false" class="enableBillingButton">
+</div>
+</div>
+</div>
+</div>
+<div class="card payment-summary">
+<div class="card-header clearfix">
+<h4 class="fa-pull-left"><span class="state-track svg-svg-11-check-circle"></span>Payment Method</h4>
+<span id="editPayment" class="edit-button fa-pull-right">Change</span>
+</div>
+<div class="card-body">
+<div class="payment-summary-section">
+<div class="summary-section first">
+<span class="summary-section-label payment-info-label">Payment Method</span>
+<div class="summary-details">
+<div class="payment-details"></div>
+</div>
+<div class="summary-section applied-guest-hudson-reward-summary">
+</div>
+</div>
+<div class="summary-section billing-summary-section" style="">
+<span class="summary-section-label billing-addr-label">Billing Address</span>
+<div class="summary-details billing">
+<div class="address-summary">
+<div>
+<span class="firstName">alla</span>
+<span class="lastName">balla</span>
+</div>
+<div class="address1">4905 Tail Ends Road</div>
+<div class="address2"></div>
+<span class="city">Green Bay,</span>
+<span class="stateCode">ON</span>
+<span class="postalCode">M6A 3A5</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row place-order-next-step-button-row">
+<div class="col-6 secure-checkout-container">
+<div>
+<img src="resources/EN_www.thebay.com/24.svg" alt="Secure Checkout" title="Secure Checkout" data-original-src="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/default/dw85fae57c/images/securecheckout-lock-icon.svg" width="25px" height="25px">
+</div>
+<div>
+<span>
+Secure Checkout</span>
+</div>
+</div>
+<div class="col-6 next-step-button">
+<div>
+<button class="btn btn-primary btn-block place-order" data-action="/on/demandware.store/Sites-TheBay-Site/en_CA/CheckoutServices-PlaceOrder" type="submit" name="submit" value="place-order">Place Order
+</button>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div class="col-lg-4 col-sm-5 checkout-secondary-section">
+<div class="card order-mini-summary">
+<div class="card-header">
+<span class="order-mini-summary-heading">Order Summary</span>
+</div>
+<div class="card-body order-total-summary">
+<div class="row subtotal-item">
+<div class="col-6 start-lines">
+<p class="order-receipt-label">
+<span>Subtotal</span>
+</p>
+</div>
+<div class="col-6 end-lines">
+<p class="text-right">
+<span class="sub-total">$60.00</span>
+</p>
+</div>
+</div>
+<div class="row order-discount hide-order-discount">
+<div class="col-6 start-lines">
+<p class="order-receipt-label">
+<span>Discount</span>
+</p>
+</div>
+<div class="col-6 end-lines">
+<p class="text-right">
+<span class="order-discount-total">-$0.00</span>
+</p>
+</div>
+</div>
+<div class="row shipping-item">
+<div class="col-9 start-lines">
+<p class="order-receipt-label">
+<span>Hudson’s Bay Shipping</span>
+</p>
+</div>
+<div class="col-3 end-lines">
+<p class="text-right">
+<span class="shipping-total-cost">FREE</span>
+</p>
+</div>
+</div>
+<div class="row sales-tax-item tax-pst d-none">
+<div class="col-6 start-lines">
+<p class="order-receipt-label">
+<span>PST</span>
+</p>
+</div>
+<div class="col-6 end-lines">
+<p class="text-right">
+<span class="tax-PST-total">
+</span>
+</p>
+</div>
+</div>
+<div class="row sales-tax-item tax-gst">
+<div class="col-6 start-lines">
+<p class="order-receipt-label">
+<span>GST/HST</span>
+</p>
+</div>
+<div class="col-6 end-lines">
+<p class="text-right">
+<span class="tax-GST-total">$7.80</span>
+</p>
+</div>
+</div>
+<div class="row sales-tax-item tax-qst d-none">
+<div class="col-6 start-lines">
+<p class="order-receipt-label">
+<span>QST</span>
+</p>
+</div>
+<div class="col-6 end-lines">
+<p class="text-right">
+<span class="tax-QST-total">
+</span>
+</p>
+</div>
+</div>
+<div class="row sales-tax-item tax-rst d-none">
+<div class="col-6 start-lines">
+<p class="order-receipt-label">
+<span>RST</span>
+</p>
+</div>
+<div class="col-6 end-lines">
+<p class="text-right">
+<span class="tax-RST-total">
+</span>
+</p>
+</div>
+</div>
+<div class="row sales-tax-item tax-eco d-none">
+<div class="col-6 start-lines">
+<p class="order-receipt-label">
+<span>ECO Fee</span>
+</p>
+</div>
+<div class="col-6 end-lines">
+<p class="text-right">
+<span class="tax-ECO-total">
+</span>
+</p>
+</div>
+</div>
+<div class="row sales-tax-item tax-normal d-none">
+<div class="col-6 start-lines">
+<p class="order-receipt-label">
+<span>Sales Tax</span>
+</p>
+</div>
+<div class="col-6 end-lines">
+<p class="text-right">
+<span class="tax-total">$0.00</span>
+</p>
+</div>
+</div>
+<div class="grand-total">
+<div class="row">
+<div class="col-6 start-lines">
+<p class="order-receipt-label">
+<span>Total</span>
+</p>
+</div>
+<div class="col-6 end-lines">
+<p class="text-right">
+<span class="grand-total-sum">$67.80</span>
+</p>
+</div>
+</div>
+</div>
+<div class="hudson-reward-points ">
+<p class="hudson-text">Earn an estimated&nbsp;<span class="hudson-text hudson-point hudson-point-value">72</span>&nbsp;Rewards points on this order.</p>
+</div>
+<div class="row neominicartprop">
+<div class="col-md-12">
+Earn double the points (<span class="reward-est-point_neo">144</span>)
+when you shop with your Hudson's Bay Mastercard®.
+<a href="https://join.neo.cc/77a96f" class="neoApplyLink" target="_blank" style="display: inline;">Apply Now</a>
+</div>
+</div>
+<div class="fdd-notification-wrapper">
+<div class="fdd-keanu-discount-flag" data-remove-keanu-discount-url="/on/demandware.store/Sites-TheBay-Site/en_CA/CheckoutServices-RemoveKeanuDiscounts?isFDD=">
+</div>
+</div>
+<div class="order-summary-payment-applied">
+
+</div>
+<div class="secure-checkout-container-mobile">
+<div>
+<img src="resources/EN_www.thebay.com/24.svg" alt="Secure Checkout" title="Secure Checkout" data-original-src="https://www.thebay.com/on/demandware.static/Sites-TheBay-Site/-/default/dw85fae57c/images/securecheckout-lock-icon.svg" width="25px" height="25px">
+</div>
+<div>
+<span>Secure Checkout</span>
+</div>
+</div>
+</div>
+</div>
+<div class="promo-rewards-container">
+<div class="promo-container">
+<form action="https://www.thebay.com/on/demandware.store/Sites-TheBay-Site/en_CA/Cart-AddCoupon" class="promo-code-form" method="GET" name="promo-code-form">
+<div class="form-group promo-form-group">
+<button type="button" class="promotab-click" tabindex="0">
+<span class="promo-heading promo-label">Apply Promo Code</span>
+<span class="coupon-icons-container">
+<span class="acc-icon svg-svg-59-plus-thin-dims svg-svg-59-plus-thin display-right plus"></span>
+<span class="acc-icon svg-svg-49-minus-thin-dims svg-svg-49-minus-thin display-right minus"></span>
+</span>
+</button>
+<div class="promo-detail-section promoRewHolder">
+<div class="coupons-and-promos">
+    
+
+</div>
+<div class="promo-apply expand">
+<div class="promo-input">
+<div class="promo-code-entry form-group floating-label">
+<label class="non-input-label input-focus" for="couponCode">
+<span class="attr-name">Promo Code</span>
+</label>
+<input type="text" class="form-control coupon-code-field emptyCheck" id="couponCode" maxlength="30" name="couponCode" style="background-color: lightgreen; border: 1px solid green;">
+<div class="coupon-error">
+<span class="coupon-missing-error" id="missingCouponCode" role="alert">Please enter a promo code</span>
+<span class="coupon-error-message" id="invalidCouponCode" role="alert"></span>
+</div>
+</div>
+</div>
+<input type="hidden" name="csrf_token" value="2XVhddnMUV6AAJUNLytFSVbGcXDOthOMzwFxJHrDtnbzobAlXM7mf7CP_LetJAW7oZKmWXU_3LCfEQxkb4cTnn8ECvU1PvUB-kC_Jw7gbEKNfHTn1aqpOz81T5EvcV3TTPczynzJQ6TeFTtd2QrFyFSwAHfvGJAZtWtECEVs3lIdUKsMeBY=">
+<div class="promo-code-submit prmoRewBtnHolder">
+<button type="submit" disabled="" class="btn btn-primary btn-block promo-code-btn btn-secondary">
+Apply
+</button>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+<div class="modal fade remove-checkout-coupon-modal" id="removeCouponModal" tabindex="-1" role="dialog" aria-labelledby="removeCouponLineItemModal">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header delete-coupon-confirmation-header">
+<button type="button" class="close svg-svg-22-cross-dims svg-svg-22-cross" data-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body delete-coupon-confirmation-body">
+<div class="header-text" id="removeCouponLineItemModal">Remove Coupon?</div>
+<div class="header-info">Are you sure you want to remove the following coupon from the cart?</div>
+<p class="coupon-to-remove"></p>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+<button type="button" class="btn btn-primary delete-coupon-confirmation-btn" data-dismiss="modal" data-action="/on/demandware.store/Sites-TheBay-Site/en_CA/Cart-RemoveCouponLineItem">
+Yes
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="desktop-tab-display-only">
+<div class="card order-product-summary">
+<div class="card-body">
+<div class="row bag-count-cartlink-holder">
+<div class="col-6 start-lines bag-count-holder">
+<span class="order-receipt-label grand-total-label">Shopping Bag (1)</span>
+</div>
+<div class="col-6 edit-cart-link">
+<a href="https://www.thebay.com/cart" class="btn-link">
+Edit
+</a>
+</div>
+</div>
+<div class="product-summary-block"><div class="product-line-item" data-product-line-item="795708125a5f58fc1de6622c8a">
+<div class="product-line-item-details d-flex flex-row">
+<div class="mini-cart-img col-4">
+<div class="item-image">
+<a href="https://www.thebay.com/product/dior-dior-forever-natural-bronze-powder-92448628.html">
+<img class="product-image" src="resources/EN_www.thebay.com/18.webp" srcset="resources/EN_www.thebay.com/19.jpg 2x" alt="Dior Forever Natural Bronze Powder, 004 TAN BRONZE, hi-res" title="Dior Forever Natural Bronze Powder, 004 TAN BRONZE" data-original-src="https://image.s5a.com/is/image/TheBay/3348901550833_main?wid=111&amp;hei=148&amp;qlt=90&amp;resMode=sharp2&amp;op_usm=1,1.0,6,0" data-original-srcset="https://image.s5a.com/is/image/TheBay/3348901550833_main?wid=222&amp;hei=296&amp;qlt=90&amp;resMode=sharp2&amp;op_usm=0.9,1.0,8,0 2x">
+</a>
+</div>
+</div>
+<div class="mini-cart-details col-8">
+<div class="line-item-header">
+<a class="brand-name" href="https://www.thebay.com/product/dior-dior-forever-natural-bronze-powder-92448628.html">
+<span>Dior</span>
+</a>
+<div class="line-item-name">
+<span>Dior Forever Natural Bronze Powder</span>
+</div>
+</div>
+<div class="item-attributes">
+<div class="selected-list">
+<span class="line-item-attributes">004 TAN BRONZE</span>
+<i class="coma-separator">,</i>
+<span class="line-item-attributes">9 g</span>
+</div>
+<div class="item-options">
+</div>
+</div>
+<div class="align-items-start">
+<div class="line-item-total-price">
+<div class="item-total-795708125a5f58fc1de6622c8a">
+<div class="pricing line-item-total-price-amount bold item-total-795708125a5f58fc1de6622c8a ">$60.00 x 1</div>
+<div class="store-pickup-holder">
+</div>
+<div class="total-price checkout_discount-795708125a5f58fc1de6622c8a "> 
+    
+    
+
+
+<div class="cost-calc ">
+	
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="final-sale limited-inventory">
+</div>
+<div class="limited-inventory cond-3 d-none">
+<span class="line-label">Limited Inventory</span>
+</div>
+<div class="sold-by line-item-attributes">
+Sold by
+<span>Hudson's Bay</span>
+</div>
+<div class="shopping-bag-product-is-gift d-none">
+<span class="final-sale-txt-label final-sale-txt">
+<span class="gift-svg svg-svg-gift-box-checkout" aria-hidden="true"></span> <span class="thisIsGiftLabel">This is a Gift</span>
+</span>
+</div>
+</div>
+</div>
+</div><div class="multi-shipping" data-shipment-summary="d9a2d08fe3cabb4a72ff5ed7db">
+<h3 class="shipping-header-text">Shipping To</h3>
+<p>
+<span class="ship-to-message"></span>
+<span class="ship-to-name">alla balla</span>
+<span class="ship-to-address1">4905 Tail Ends Road</span>
+<span class="ship-to-address2" style="display: none;"></span>
+<span class="ship-to-city-st-zip"><span class="ship-to-city">Green Bay</span> <span class="ship-to-st">ON</span> <span class="ship-to-zip">M6A 3A5</span> </span>
+<span class="ship-to-phone">920-548-9937</span>
+</p>
+<h3>Select Shipping Method<span></span></h3>
+<div class="row leading-lines">
+<p class="col-8 start-lines">
+<span class="display-name">Standard</span>
+<span class="text-muted arrival-time">Estimated Delivery On Or Before Sunday Mar. 20, 2022</span>
+</p>
+<p class="col-4 end-lines text-right">
+<span class="price">$0.00</span>
+</p>
+</div>
+<div class="summary-details gift-summary d-none">
+<h3>Gift Message:</h3>
+<div class="gift-message-summary"></div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="pli-shipping-summary-template" class="d-none">
+<h3 class="shipping-header-text">Shipping To</h3>
+<p>
+<span class="ship-to-message"></span>
+<span class="ship-to-name"></span>
+<span class="ship-to-address1"></span>
+<span class="ship-to-address2"></span>
+<span class="ship-to-city-st-zip"><span class="ship-to-city"></span> <span class="ship-to-st"></span> <span class="ship-to-zip"></span> </span>
+<span class="ship-to-phone"></span>
+</p>
+<h3>Select Shipping Method<span></span></h3>
+<div class="row leading-lines">
+<p class="col-8 start-lines">
+<span class="display-name"></span>
+<span class="text-muted arrival-time"></span>
+</p>
+<p class="col-4 end-lines text-right">
+<span class="price"></span>
+</p>
+</div>
+<div class="summary-details gift-summary">
+<h3>Gift Message:</h3>
+<div class="gift-message-summary"></div>
+</div>
+</div>
+</div>
+</div><div id="edq-verification-suggestion-box" class="edq-global-intuitive-address-suggestions " style="display: none; left: 60px; top: 399px; width: 398px;"></div>
+<!--[if lt IE 10]>
+
+    <script defer async type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=6LeMP90UAAAAAJ7On6bZZDXZl6uaDpffAxWMVQ7e"></script>
+
+<script>//common/scripts.isml</script>
+<script defer type="text/javascript" src="/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/js/checkoutmain.js"></script>
+
+    <script defer type="text/javascript" src="/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/js/checkout.js"></script>
+
+    <script defer type="text/javascript" src="/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/js/miraklCheckout.js"></script>
+
+    <script defer type="text/javascript" src="/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/js/klarnaPayments.js"></script>
+
+    <script defer type="text/javascript" src="https://x.klarnacdn.net/kp/lib/v1/api.js"></script>
+
+    <script defer type="text/javascript" src="//www.paypalobjects.com/api/checkout.js"></script>
+
+    <script defer type="text/javascript" src="/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/js/paypalUtils.js"></script>
+
+    <script defer type="text/javascript" src="/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/js/paypalMFRA.js"></script>
+
+    <script defer type="text/javascript" src="/on/demandware.static/Sites-TheBay-Site/-/en_CA/v1647412034464/js/loyalty-guest-checkout.js"></script>
+
+
+
+    
+
+<script>
+var CRL8_SITENAME = "hudsonsbaycompany-5reier";
+!function(){var e=window.crl8=window.crl8||{},n=!1,i=[];e.ready=function(e){n?e():i.push(e)},e.pixel=e.pixel||function(){e.pixel.q.push(arguments)},e.pixel.q=e.pixel.q||[];var t=window.document,o=t.createElement("script"),c=e.debug||-1!==t.location.search.indexOf("crl8-debug=true")?"js":"min.js";o.src=t.location.protocol+"//cdn.curalate.com/sites/"+CRL8_SITENAME+"/site/latest/site."+c,o.onload=function(){n=!0,i.forEach(function(e){e()})};var r=t.getElementsByTagName("script")[0];r.parentNode.insertBefore(o,r.nextSibling)}();
+</script>
+
+
+
+
+<![endif]-->
+<span class="api-true  tracking-consent" data-caonline="true" data-url="/on/demandware.store/Sites-TheBay-Site/en_CA/ConsentTracking-GetContent?cid=tracking_cookie_hint" data-reject="/on/demandware.store/Sites-TheBay-Site/en_CA/ConsentTracking-SetSession?consent=false" data-accept="/on/demandware.store/Sites-TheBay-Site/en_CA/ConsentTracking-SetSession?consent=true" data-accepttext="ACCEPT" data-rejecttext="No" data-heading="Tracking Consent"></span>
+<div data-is-atm-enabled="true">
+
+</div>
+
+
+
+
+
+
+
+
+<iframe style="display: none; visibility: hidden;" src="resources/EN_www.thebay.com/25.html" data-original-src="https://8266343.fls.doubleclick.net/activityi;src=8266343;type=landi0;cat=hudso001;ord=1110451838675;gtm=2od3e0;auiddc=1400882407.1647435512;u11=checkout;u12=;~oref=https%3A%2F%2Fwww.thebay.com%2Fcheckout%2Fstart%3Fstage%3Dshipping?" width="0" height="0"></iframe><iframe style="display: none; visibility: hidden;" src="resources/EN_www.thebay.com/26.html" data-original-src="https://8266343.fls.doubleclick.net/activityi;src=8266343;type=landi0;cat=theba000;ord=4CPC329QDStj_KwC3z1WpK_eqvQ005x91Ck;gtm=2od3e0;auiddc=1400882407.1647435512;u11=checkout;u12=;~oref=https%3A%2F%2Fwww.thebay.com%2Fcheckout%2Fstart%3Fstage%3Dshipping?" width="0" height="0"></iframe><iframe style="display: none; visibility: hidden;" src="resources/EN_www.thebay.com/27.html" data-original-src="https://10207377.fls.doubleclick.net/activityi;src=10207377;type=hbc_a00;cat=hbc_a000;ord=4809768504280;gtm=2od3e0;auiddc=1400882407.1647435512;u2=;u5=92448628;u6=Dior%20Forever%20Natural%20Bronze%20Powder;u7=;u8=;u9=;u10=;u11=;u15=Dior;u16=60;u17=1;u18=en;u24=;~oref=https%3A%2F%2Fwww.thebay.com%2Fcheckout%2Fstart%3Fstage%3Dshipping?" width="0" height="0"></iframe><form method="GET" action="https://tr.snapchat.com/cm/i" target="snap021470563072105942" accept-charset="utf-8" style="display: none;"><iframe id="snap021470563072105942" name="snap021470563072105942"></iframe><input name="pid" style="background-color: lightgreen; border: 1px solid green;"></form><div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon126387762524"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon459871023195" alt="" src="data:;base64," data-original-src="https://bat.bing.com/action/0?ti=5901477&amp;Ver=2&amp;mid=f7b847f1-3dc1-416b-96d0-261d093408da&amp;sid=c96f3350a52811ec824ff71c9846bfd8&amp;vid=c96f4890a52811ecb8577fb56002d8fb&amp;vids=0&amp;pi=918639831&amp;lg=en-US&amp;sw=1920&amp;sh=1080&amp;sc=24&amp;tl=Shipping%20%7C%20Checkout&amp;kw=Commerce%20Cloud%20Storefront%20Reference%20Architecture&amp;p=https%3A%2F%2Fwww.thebay.com%2Fcheckout%2Fstart%3Fstage%3Dshipping%23shipping&amp;r=https%3A%2F%2Fwww.thebay.com%2Fcart&amp;lt=3897&amp;evt=pageLoad&amp;msclkid=N&amp;sv=1&amp;rn=666599" width="0" height="0"></div>
+<iframe style="position:absolute; visibility:hidden; width:1px; height:1px;" src="resources/EN_www.thebay.com/28.html" data-original-src="https://servedby.flashtalking.com/container/25158;128973;14141;iframe/?ft_referrer=https%3A//www.thebay.com/checkout/start%3Fstage%3Dshipping%23shipping&amp;ns=https%3A//www.thebay.com/cart&amp;cb=236061.6850082715"></iframe><iframe style="display: none; visibility: hidden;" src="resources/EN_www.thebay.com/29.html" data-original-src="https://8266343.fls.doubleclick.net/activityi;src=8266343;type=landi0;cat=theba00;ord=9337805420930;gtm=2od3e0;auiddc=1400882407.1647435512;u1=Dior%20%7C%20;u14=60%20%7C%20;u3=Dior%20Forever%20Natural%20Bronze%20Powder%20%7C%20;u4=0600092048595%20%7C%20;u6=60.00;~oref=https%3A%2F%2Fwww.thebay.com%2Fcheckout%2Fstart%3Fstage%3Dshipping?" width="0" height="0"></iframe><img style="border-style:none;" alt="" src="resources/EN_www.thebay.com/30.gif" data-original-src="https://insight.adsrvr.org/track/pxl/?adv=b511wyb&amp;ct=0:xqq9pb3&amp;fmt=3" width="1" height="1"><iframe style="position:absolute; visibility:hidden; width:1px; height:1px;" src="resources/EN_www.thebay.com/31.html" data-original-src="https://servedby.flashtalking.com/container/25158;128976;14142;iframe/?spotName=Check_Out&amp;ftXCurrency=CAD&amp;ftXName=&amp;ftXNumItems=1&amp;ftXRef=&amp;ftXType=&amp;ftXValue=60&amp;U1=Dior%20|%20&amp;U2=1&amp;U3=0600092048595%20|%20&amp;U4=Dior%20|%20&amp;cachebuster=407741.5535330657"></iframe><div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" src="resources/EN_www.thebay.com/32.html" role="presentation" name="a-klqmplh6x1jy" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" class="focus-visible" data-focus-visible-added="" data-original-src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeMP90UAAAAAJ7On6bZZDXZl6uaDpffAxWMVQ7e&amp;co=aHR0cHM6Ly93d3cudGhlYmF5LmNvbTo0NDM.&amp;hl=en&amp;v=85AXn53af-oJBEtL2o2WpAjZ&amp;size=invisible&amp;cb=bwu6hacg2tih" width="256" height="60" frameborder="0"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid green; margin: 10px 25px; padding: 0px; resize: none; display: none; background-color: lightgreen;"></textarea></div><iframe style="display: none;"></iframe></div><img class="ywa-10000" style="display: none;" src="data:application/x-javascript;base64," alt="dot image pixel" data-original-src="https://sp.analytics.yahoo.com/sp.pl?a=10000&amp;d=Wed%2C%2016%20Mar%202022%2012%3A59%3A35%20GMT&amp;n=-2&amp;b=Shipping%20%7C%20Checkout&amp;.yp=10161250&amp;f=https%3A%2F%2Fwww.thebay.com%2Fcheckout%2Fstart%3Fstage%3Dshipping%23shipping&amp;e=https%3A%2F%2Fwww.thebay.com%2Fcart&amp;enc=UTF-8&amp;yv=1.12.0&amp;tagmgr=gtm%2Cadobe"><img class="ywa-10000" style="display: none;" src="data:application/x-javascript;base64," alt="dot image pixel" data-original-src="https://sp.analytics.yahoo.com/sp.pl?a=10000&amp;b=Shipping%20%7C%20Checkout&amp;.yp=10161250&amp;f=https%3A%2F%2Fwww.thebay.com%2Fcheckout%2Fstart%3Fstage%3Dshipping%23shipping&amp;e=https%3A%2F%2Fwww.thebay.com%2Fcart&amp;enc=UTF-8&amp;yv=1.12.0&amp;et=custom&amp;ec=HBCCheckoutStep1&amp;tagmgr=gtm%2Cadobe"><iframe id="universal_pixel_nm9d83q" style="display:none;" src="resources/EN_www.thebay.com/1.html" title="TTD Universal Pixel" data-original-src="https://insight.adsrvr.org/track/up?adv=b511wyb&amp;ref=https%3A%2F%2Fwww.thebay.com%2Fcheckout%2Fstart%3Fstage%3Dshipping%23shipping&amp;upid=nm9d83q&amp;upv=1.1.0&amp;td1=Dior%20|%20&amp;td2=1&amp;td3=Dior%20Forever%20Natural%20Bronze%20Powder%20|%20&amp;td4=Dior%20|%20&amp;v=60.00" width="0" height="0"></iframe><div id="sf-widget-cookie-wrapper" style="left:0;bottom:0;position:fixed;z-index:99999999;display:block;vertical-align:middle;zoom:1;"><iframe id="sf-widget-cookie" src="resources/EN_www.thebay.com/33.html" role="presentation" style="border: medium none; overflow: hidden; display: block; visibility: visible;" scrolling="no" seamless="" allowtransparency="true" data-original-src="https://widgets.stores.thebay.com/cookies/manager?sf_locale=en_US" width="1" height="1" frameborder="0"><!--iframecontent--></iframe></div><style>          #sf-widget-companion-wrapper{            position:absolute;            bottom:0px; left:0px;            z-index:999999;          }          body.sk_mobShowMenu #sf-widget-companion-wrapper,         body.sk_mobShowMenu #sf-footer-companion-wrapper,         body.mobile-menu-open #sf-widget-companion-wrapper,         body.modal-open #sf-widget-companion-wrapper {          display: none!important;        }    body.sf-widget-hide-all #sf-widget-companion-wrapper,           body.sf-widget-hide-all #sf-footer-companion-wrapper {            display: none!important;          }          </style><span></span><img src="resources/EN_www.thebay.com/34.png" class="sf_trk_img" alt="Cookie" style="display: none; visibility: hidden;" data-original-src="https://widgets.stores.thebay.com/cookies/render?data=%5B%7B%22expires%22%3A%22session%22%2C%22sf_wdt_session_expiration_session%22%3A1647435576001%7D%2C%7B%22expires%22%3A1648040376.001%2C%22sf_wdt_customer_id%22%3A%224vemj1re6%22%7D%2C%7B%22expires%22%3A1648040376.001%2C%22sf_wdt_fingerprint%22%3A13745565920238%7D%2C%7B%22expires%22%3A%22remove%22%2C%22sf_wdt_tracking_store%22%3A%22%22%7D%2C%7B%22expires%22%3A1648040376.002%2C%22sf_wdt_customer_id%22%3A%224vemj1re6%22%7D%2C%7B%22expires%22%3A1648040376.002%2C%22sf_wdt_fingerprint%22%3A13745565920238%7D%5D&amp;cachebuster=1647435576082" width="1px" height="1px"><iframe style="display: none;" id="__JSBridgeIframe_1.0__"></iframe><iframe style="display: none;" id="__JSBridgeIframe_SetResult_1.0__"></iframe><iframe style="display: none;" id="__JSBridgeIframe__"></iframe><iframe style="display: none;" id="__JSBridgeIframe_SetResult__"></iframe></body></html>

@@ -1,0 +1,238 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 200px;
+}
+
+input {
+  margin: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<fieldset>
+<h3>jp.maxmara.com</h3>
+<p><i>Phonetic name fields cause section split, city/ward not filled in.</i></p>
+
+<form>
+  <div>
+    <label for="shippingAddress.email" id="shippingAddress.email.label">Eメール*</label>
+    <input id="shippingAddress.email" name="shippingAddress.email" type="email" required="required" value="" maxlength="333" style="" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="shippingAddress.lastName" id="shippingAddress.lastName.label">姓*</label>
+    <input id="shippingAddress.lastName" name="shippingAddress.lastName" type="text" required="required" value="" maxlength="20" style="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="shippingAddress.firstName" id="shippingAddress.firstName.label">名*</label>
+    <input id="shippingAddress.firstName" name="shippingAddress.firstName" type="text" required="required" value="" maxlength="20" style="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="shippingAddress.lastNameKana" id="shippingAddress.lastNameKana.label">姓（セイ） *</label>
+    <input id="shippingAddress.lastNameKana" name="shippingAddress.lastNameKana" type="text" required="required" value="" maxlength="20" style="" data-moz-autofill-type="phonetic-family-name">
+  </div>
+  <div>
+    <label for="shippingAddress.firstNameKana" id="shippingAddress.firstNameKana.label">名（メイ）*</label>
+    <input id="shippingAddress.firstNameKana" name="shippingAddress.firstNameKana" type="text" required="required" value="" maxlength="20" style="" data-moz-autofill-type="phonetic-given-name">
+  </div>
+  <div>
+    <label for="shippingAddress.postalCode" id="shippingAddress.postalCode.label">郵便番号*</label>
+    <input id="shippingAddress.postalCode" name="shippingAddress.postalCode" inputmode="tel" placeholder="NNN-NNNN" type="text" required="required" value="" maxlength="8" style="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="shippingAddress.province">
+        都道府県*
+        </label>
+    <select id="shippingAddress.province" name="shippingAddress.province" type="text" aria-hidden="true" style="" data-moz-autofill-type="address-level1">
+      <option value="">都道府県</option>
+      <option value="JP-24">三重県</option>
+      <option value="JP-26">京都府</option>
+      <option value="JP-41">佐賀県</option>
+      <option value="JP-28">兵庫県</option>
+      <option value="JP-01">北海道</option>
+      <option value="JP-12">千葉県</option>
+      <option value="JP-30">和歌山県</option>
+      <option value="JP-11">埼玉県</option>
+      <option value="JP-44">大分県</option>
+      <option value="JP-27">大阪府</option>
+      <option value="JP-29">奈良県</option>
+      <option value="JP-04">宮城県</option>
+      <option value="JP-45">宮崎県</option>
+      <option value="JP-16">富山県</option>
+      <option value="JP-35">山口県</option>
+      <option value="JP-06">山形県</option>
+      <option value="JP-19">山梨県</option>
+      <option value="JP-21">岐阜県</option>
+      <option value="JP-33">岡山県</option>
+      <option value="JP-03">岩手県</option>
+      <option value="JP-32">島根県</option>
+      <option value="JP-34">広島県</option>
+      <option value="JP-36">徳島県</option>
+      <option value="JP-38">愛媛県</option>
+      <option value="JP-23">愛知県</option>
+      <option value="JP-15">新潟県</option>
+      <option value="JP-13">東京都</option>
+      <option value="JP-09">栃木県</option>
+      <option value="JP-47">沖縄県</option>
+      <option value="JP-25">滋賀県</option>
+      <option value="JP-43">熊本県</option>
+      <option value="JP-17">石川県</option>
+      <option value="JP-14">神奈川県</option>
+      <option value="JP-18">福井県</option>
+      <option value="JP-40">福岡県</option>
+      <option value="JP-07">福島県</option>
+      <option value="JP-05">秋田県</option>
+      <option value="JP-10">群馬県</option>
+      <option value="JP-08">茨城県</option>
+      <option value="JP-42">長崎県</option>
+      <option value="JP-20">長野県</option>
+      <option value="JP-02">青森県</option>
+      <option value="JP-22">静岡県</option>
+      <option value="JP-37">香川県</option>
+      <option value="JP-39">高知県</option>
+      <option value="JP-31">鳥取県</option>
+      <option value="JP-46">鹿児島県</option>
+    </select>
+  </div>
+  <div>
+    <label for="shippingAddress.town" id="shippingAddress.town.label">市区郡*</label>
+    <input id="shippingAddress.town" name="shippingAddress.town" type="text" required="required" readonly="readonly" value="" maxlength="20" style="" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="shippingAddress.line1" id="shippingAddress.line1.label">住所１*</label>
+    <input id="shippingAddress.line1" name="shippingAddress.line1" type="text" required="required" value="" maxlength="35" style="" data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <label for="shippingAddress.line2" id="shippingAddress.line2.label">住所２</label>
+    <input id="shippingAddress.line2" name="shippingAddress.line2" type="text" value="" maxlength="35" style="" data-moz-autofill-type="address-line2">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+<h3>uniqlo.com/jp</h3>
+<p><i>Phonetic names recognized as telephone fields, so real telephone fields get put into a different section.</i></p>
+
+<form>
+  <div>
+    <input id="id-familyName" name="familyName" maxlength="12" placeholder="姓を入力してください。" pattern="\S+" required="" value="" aria-describedby="id-familyName-hint-error" style="" data-moz-autofill-type="family-name">
+    <label for="id-familyName">姓
+      <span></span>
+    </label>
+  </div>
+  <div>
+    <input id="id-givenName" name="givenName" maxlength="12" placeholder="名を入力してください。" pattern="\S+" required="" value="" aria-describedby="id-givenName-hint-error" style="" data-moz-autofill-type="given-name">
+    <label for="id-givenName">名
+      <span></span>
+    </label>
+  </div>
+  <div>
+    <input id="id-phoneticFamilyName" name="phoneticFamilyName" maxlength="12" placeholder="セイを入力してください。" pattern="^[、。「」゛゜ェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶ・ー､｡｢｣ﾞﾟｧｱｨｲｩｳｪｴｫｵｶｶﾞｷｷﾞｸｸﾞｹｹﾞｺｺﾞｻｻﾞｼｼﾞｽｽﾞｾｾﾞｿｿﾞﾀﾀﾞﾁﾁﾞｯﾂﾂﾞﾃﾃﾞﾄﾄﾞﾅﾆﾇﾈﾉﾊﾊﾞﾊﾟﾋﾋﾞﾋﾟﾌﾌﾞﾌﾟﾍﾍﾞﾍﾟﾎﾎﾞﾎﾟﾏﾐﾑﾒﾓｬﾔｭﾕｮﾖﾗﾘﾙﾚﾛﾜﾜｲｴｦﾝｳﾞヵヶ･ｰ]+$" required="" value="" aria-describedby="id-phoneticFamilyName-hint-error" style="" data-moz-autofill-type="phonetic-family-name">
+    <label for="id-phoneticFamilyName">セイ
+      <span></span>
+    </label>
+  </div>
+  <div>
+    <input id="id-phoneticGivenName" name="phoneticGivenName" maxlength="12" placeholder="メイを入力してください。" pattern="^[、。「」゛゜ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶ・ー､｡｢｣ﾞﾟｧｱｨｲｩｳｪｴｫｵｶｶﾞｷｷﾞｸｸﾞｹｹﾞｺｺﾞｻｻﾞｼｼﾞｽｽﾞｾｾﾞｿｿﾞﾀﾀﾞﾁﾁﾞｯﾂﾂﾞﾃﾃﾞﾄﾄﾞﾅﾆﾇﾈﾉﾊﾊﾞﾊﾟﾋﾋﾞﾋﾟﾌﾌﾞﾌﾟﾍﾍﾞﾍﾟﾎﾎﾞﾎﾟﾏﾐﾑﾒﾓｬﾔｭﾕｮﾖﾗﾘﾙﾚﾛﾜﾜｲｴｦﾝｳﾞヵヶ･ｰ]+$" required="" value="" aria-describedby="id-phoneticGivenName-hint-error" style="" data-moz-autofill-type="phonetic-given-name">
+    <label for="id-phoneticGivenName">メイ
+      <span></span>
+    </label>
+  </div>
+  <div>
+    <label for="id-state">都道府県
+    </label>
+    <select required="" name="state" type="select" style="" data-moz-autofill-type="address-level1">
+      <option value="" aria-selected="false">都道府県を入力してください。</option>
+      <option value="北海道" aria-selected="false">北海道</option>
+      <option value="青森県" aria-selected="false">青森県</option>
+      <option value="岩手県" aria-selected="false">岩手県</option>
+      <option value="宮城県" aria-selected="false">宮城県</option>
+      <option value="秋田県" aria-selected="false">秋田県</option>
+      <option value="山形県" aria-selected="false">山形県</option>
+      <option value="福島県" aria-selected="false">福島県</option>
+      <option value="茨城県" aria-selected="false">茨城県</option>
+      <option value="栃木県" aria-selected="true">栃木県</option>
+      <option value="群馬県" aria-selected="false">群馬県</option>
+      <option value="埼玉県" aria-selected="false">埼玉県</option>
+      <option value="千葉県" aria-selected="false">千葉県</option>
+      <option value="東京都" aria-selected="false">東京都</option>
+      <option value="神奈川県" aria-selected="false">神奈川県</option>
+      <option value="新潟県" aria-selected="false">新潟県</option>
+      <option value="富山県" aria-selected="false">富山県</option>
+      <option value="石川県" aria-selected="false">石川県</option>
+      <option value="福井県" aria-selected="false">福井県</option>
+      <option value="山梨県" aria-selected="false">山梨県</option>
+      <option value="長野県" aria-selected="false">長野県</option>
+      <option value="岐阜県" aria-selected="false">岐阜県</option>
+      <option value="静岡県" aria-selected="false">静岡県</option>
+      <option value="愛知県" aria-selected="false">愛知県</option>
+      <option value="三重県" aria-selected="false">三重県</option>
+      <option value="滋賀県" aria-selected="false">滋賀県</option>
+      <option value="京都府" aria-selected="false">京都府</option>
+      <option value="大阪府" aria-selected="false">大阪府</option>
+      <option value="兵庫県" aria-selected="false">兵庫県</option>
+      <option value="奈良県" aria-selected="false">奈良県</option>
+      <option value="和歌山県" aria-selected="false">和歌山県</option>
+      <option value="鳥取県" aria-selected="false">鳥取県</option>
+      <option value="島根県" aria-selected="false">島根県</option>
+      <option value="岡山県" aria-selected="false">岡山県</option>
+      <option value="広島県" aria-selected="false">広島県</option>
+      <option value="山口県" aria-selected="false">山口県</option>
+      <option value="徳島県" aria-selected="false">徳島県</option>
+      <option value="香川県" aria-selected="false">香川県</option>
+      <option value="愛媛県" aria-selected="false">愛媛県</option>
+      <option value="高知県" aria-selected="false">高知県</option>
+      <option value="福岡県" aria-selected="false">福岡県</option>
+      <option value="佐賀県" aria-selected="false">佐賀県</option>
+      <option value="長崎県" aria-selected="false">長崎県</option>
+      <option value="熊本県" aria-selected="false">熊本県</option>
+      <option value="大分県" aria-selected="false">大分県</option>
+      <option value="宮崎県" aria-selected="false">宮崎県</option>
+      <option value="鹿児島県" aria-selected="false">鹿児島県</option>
+      <option value="沖縄県" aria-selected="false">沖縄県</option>
+    </select>
+  </div>
+  <div>
+    <input required="" readonly="" value="栃木県" style="">
+  </div>
+  <div>
+    <input id="id-city" name="city" maxlength="15" placeholder="市区郡町村を入力してください" pattern="\S+" aria-describedby="id-city-hint-error" required="" value="" style="" data-moz-autofill-type="address-level2">
+    <label for="id-city">市区郡町村
+    </label>
+  </div>
+  <div>
+    <input id="id-street1" name="street1" maxlength="20" placeholder="例: 1-2-3" pattern="\S+" required="" value="" aria-describedby="id-street1-hint-error" style="" data-moz-autofill-type="address-line1">
+    <label for="id-street1">番地
+    </label>
+  </div>
+  <div>
+    <input id="id-street2" name="street2" maxlength="20" placeholder="例: 〇〇ビル１２３号室" aria-describedby="id-street2-hint-error" value="" style="" data-moz-autofill-type="address-line2">
+    <label for="id-street2">アパート・マンション・部屋番号</label>
+  </div>
+  <div>
+    <input id="id-phone" name="phone" pattern="^\d{9,}$" maxlength="13" placeholder="電話番号を入力してください。" type="tel" aria-describedby="id-phone-hint-error" required="" value="" style="" data-moz-autofill-type="tel">
+    <label for="id-phone">電話番号(1)
+    </label>
+  </div>
+  <div>
+    <input id="id-mobilePhone" name="mobilePhone" pattern="^\d{9,}$" maxlength="13" placeholder="電話番号を入力してください。" type="tel" value="" style="" data-moz-autofill-type="tel">
+    <label for="id-mobilePhone">電話番号(2)</label>
+  </div>
+</form>
+
+</fieldset>
+
+
+
+
+</fieldset></body></html>

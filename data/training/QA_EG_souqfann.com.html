@@ -1,0 +1,783 @@
+<html lang="en" style="--theme-primary-color: #3db4b7; --theme-secondary-color: #dfdfdf; --theme-accent-color: #3db4b7; --theme-primary-dark: #36a2a4; --theme-background-color: white; --theme-background-secondary-color: #F2F2F2; --theme-font-family: 'SouqFann-Font', sans-serif;"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; media-src data:; style-src data: 'unsafe-inline'; font-src data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Mon, 27 Apr 2026 13:44:08 GMT"><link rel="original" href="https://souqfann.com/checkout"><style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285705em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  top: 0.25em;
+}
+.svg-inline--fa.fa-fw {
+  width: var(--fa-fw-width, 1.25em);
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-counter-scale, 0.25));
+          transform: scale(var(--fa-counter-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: 0.625em;
+  line-height: 0.1em;
+  vertical-align: 0.225em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+  line-height: 0.0833333337em;
+  vertical-align: 0.125em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-xl {
+  font-size: 1.5em;
+  line-height: 0.0416666682em;
+  vertical-align: -0.125em;
+}
+
+.fa-2xl {
+  font-size: 2em;
+  line-height: 0.03125em;
+  vertical-align: -0.1875em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: var(--fa-li-margin, 2.5em);
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: calc(var(--fa-li-width, 2em) * -1);
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.08em);
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+}
+
+.fa-pull-left {
+  float: left;
+  margin-right: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right {
+  float: right;
+  margin-left: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  -webkit-animation-name: fa-beat;
+          animation-name: fa-beat;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  -webkit-animation-name: fa-bounce;
+          animation-name: fa-bounce;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  -webkit-animation-name: fa-fade;
+          animation-name: fa-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  -webkit-animation-name: fa-beat-fade;
+          animation-name: fa-beat-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  -webkit-animation-name: fa-flip;
+          animation-name: fa-flip;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  -webkit-animation-name: fa-shake;
+          animation-name: fa-shake;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-delay: var(--fa-animation-delay, 0);
+          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 2s);
+          animation-duration: var(--fa-animation-duration, 2s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
+          animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
+    -webkit-animation-delay: -1ms;
+            animation-delay: -1ms;
+    -webkit-animation-duration: 1ms;
+            animation-duration: 1ms;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    transition-delay: 0s;
+    transition-duration: 0s;
+  }
+}
+@-webkit-keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@-webkit-keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@-webkit-keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@-webkit-keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@-webkit-keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@-webkit-keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  -webkit-transform: rotate(var(--fa-rotate-angle, none));
+          transform: rotate(var(--fa-rotate-angle, none));
+}
+
+.fa-stack {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--fa-stack-z-index, auto);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.sr-only,
+.fa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse,
+.fa-duotone.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}</style><link type="text/css" rel="stylesheet" href="https://souqfann.com/oyGvbPlkdd0WcwJpRA5D20VXm03EK4I6LIq6fLXbEzDc3d6bKb99D59OA6RcgQSl75SFZaUKljj7yD-K6eZ3xTBo3hboWRI8e17F_nIxx4AvdmGWE174PHGHm0NrA6EluclNTIvUJEZP62keSjTLydLGDg_RGKUYV6iSsSJRJyh-cSzB1dT7393o3zcBs-oAKgmkv2bG2sh8Pz_kc5YYY_qvHoc0LvhqZIFDhVXQloeKEmbRnZBC13eplIxwCoVFLP9PIgFORXxoc4DZBLKZjltoeh1HW7U4qOqCsI_aTkJ4BNczR8hZOroJGSILXfeHGY3NxbWZztvhap0yL5_xfjYqTXCViKyIzK8xZeHZlFzYkjQyfV2nKOIaAz46KWVbc6qQQ1JiolggmK8"><meta name="viewport" content="width=device-width"><title>Checkout - Souq Fann</title><link rel="preload" as="image" imagesrcset="/images/souq-fann-en.svg 640w, /images/souq-fann-en.svg 750w, /images/souq-fann-en.svg 828w, /images/souq-fann-en.svg 1080w, /images/souq-fann-en.svg 1200w, /images/souq-fann-en.svg 1920w, /images/souq-fann-en.svg 2048w, /images/souq-fann-en.svg 3840w" imagesizes="100vw"><link rel="preload" as="image" imagesrcset="https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 640w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 750w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 828w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 1080w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 1200w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 1920w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 2048w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 3840w" imagesizes="100vw"><link rel="preload" as="image" imagesrcset="https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 640w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 750w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 828w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 1080w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 1200w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 1920w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 2048w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 3840w" imagesizes="100vw"><meta property="og:type" content="website"><meta property="og:site_name" content="Souq Fann"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ar_JO"><meta property="fb:pages" content="362874360777140"><meta property="fb:app_id" content="878218992338009"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@souqfanncom"><meta property="twitter:domain" content="souqfann.com"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="p:domain_verify" content="e9a94d908f1c2439bfdb9bf7dd046eac"><meta property="og:title" content="Checkout - Souq Fann"><meta property="og:image" content="https://images.souqfann.com/thumb/max-1600-auto-100-jpeg/products/6128/2500-1312-810-og-image---souq-fann.jpg"><meta property="og:url" content="https://souqfann.com/checkout"><meta property="twitter:url" content="https://souqfann.com/checkout"><meta property="twitter:title" content="Checkout - Souq Fann"><meta property="twitter:image" content="https://images.souqfann.com/thumb/max-1600-auto-100-jpeg/products/6128/2500-1312-810-og-image---souq-fann.jpg"><meta property="twitter:image:alt" content="Checkout - Souq Fann"><meta name="robots" content="noindex, nofollow"><link href="https://souqfann.com/checkout" rel="canonical"><link href="https://souqfann.com/checkout" rel="alternate" hreflang="en"><link href="https://souqfann.com/ar/checkout" rel="alternate" hreflang="ar"><link href="https://souqfann.com/checkout" rel="alternate" hreflang="x-default"><link rel="apple-touch-icon" sizes="180x180" href="https://souqfann.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://souqfann.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://souqfann.com/favicon-16x16.png"><link rel="manifest" href="https://souqfann.com/site.webmanifest"><link rel="preload" as="image" imagesrcset="/_next/image?url=%2Fgif%2FEmpty-Address.gif&amp;w=540&amp;q=75 1x, /_next/image?url=%2Fgif%2FEmpty-Address.gif&amp;w=1080&amp;q=75 2x"><meta name="next-head-count" content="35"><link rel="preconnect" href="https://api2.souqfann.com"><link rel="preconnect" href="https://images.souqfann.com/thumb/"><link rel="preconnect" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://www.facebook.com"><link rel="preconnect" href="https://connect.facebook.net"><link rel="preconnect" href="https://googleads.g.doubleclick.net"><link rel="preconnect" href="https://www.google.com"><link rel="preconnect" href="https://www.google.jo"><link rel="preconnect" href="https://stats.g.doubleclick.net"><link rel="preconnect" href="https://www.google-analytics.com"><meta name="theme-color" content="var(--theme-primary-color)"><meta property="csp-nonce" content="MC41czV2NXZ0bmxpMjE3"><link rel="apple-touch-icon" href="https://souqfann.com/images/apple-touch-icon.png"><link rel="icon" type="image/png" href="https://souqfann.com/images/favicon.png"><link rel="preload" as="image" href="https://souqfann.com/images/souq-fann-en.svg"><link rel="preload" href="https://souqfann.com/_next/static/css/06d2810980e302a8.css" as="style"><link rel="stylesheet" href="https://souqfann.com/_next/static/css/06d2810980e302a8.css" data-n-g=""><link rel="preload" href="https://souqfann.com/_next/static/css/cb1a9760455ab30c.css" as="style"><link rel="preload" href="https://souqfann.com/_next/static/css/1d91cf29fd8237c9.css" as="style"><link rel="preload" href="https://souqfann.com/_next/static/css/9b3e04417356912f.css" as="style"><link rel="stylesheet" href="https://souqfann.com/_next/static/css/9b3e04417356912f.css"><link rel="preload" href="https://souqfann.com/_next/static/css/b7b1e27879a4cc1e.css" as="style"><link rel="stylesheet" href="https://souqfann.com/_next/static/css/b7b1e27879a4cc1e.css"><link rel="preload" href="https://souqfann.com/_next/static/css/185934b6728fb94a.css" as="style"><link rel="stylesheet" href="https://souqfann.com/_next/static/css/185934b6728fb94a.css"><link rel="preload" href="https://souqfann.com/_next/static/css/566387c2c14ee2dc.css" as="style"><link rel="stylesheet" href="https://souqfann.com/_next/static/css/566387c2c14ee2dc.css"><link rel="preload" href="https://souqfann.com/_next/static/css/4133ac9ae7671d20.css" as="style"><link rel="stylesheet" href="https://souqfann.com/_next/static/css/4133ac9ae7671d20.css"><link rel="preload" href="https://souqfann.com/_next/static/css/d1472ae622e5aad7.css" as="style"><link rel="stylesheet" href="https://souqfann.com/_next/static/css/d1472ae622e5aad7.css"><link rel="preload" href="https://souqfann.com/_next/static/css/8dae3f98e3fa99ba.css" as="style"><link rel="stylesheet" href="https://souqfann.com/_next/static/css/8dae3f98e3fa99ba.css"><style data-n-href="/_next/static/css/979e08015f8a3da6.css">.product-card_productCard__3eHNU{display:flex;flex-direction:column;position:relative;overflow:hidden}.product-card_productCard__3eHNU .product-card_productTitle__Uav3N{font-size:1rem;font-weight:700;margin-top:15px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.product-card_productCard__3eHNU .product-card_sellerTitle__PN_8r{min-height:20.8px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.product-card_productCard__3eHNU h4{font-size:1.1rem;margin:0}.product-card_productCard__3eHNU a{font-size:1rem;color:#252525}.product-card_productCard__3eHNU img{border-radius:6px;width:100%;height:100%}.product-card_productCard__3eHNU .product-card_freeShipping__oE468{color:red;font-size:12px;margin-top:5px}.product-card_productCard__3eHNU .product-card_freeShipping__oE468>svg{width:12px;margin-inline-end:5px}.product-card_productCard__3eHNU .product-card_priceDiv__MVL_1{margin-top:16px;font-weight:700}.product-card_productCard__3eHNU .product-card_priceDiv__MVL_1 .product-card_price__LcoQ1{margin-right:10px;color:var(--theme-primary-color)}.product-card_productCard__3eHNU .product-card_priceDiv__MVL_1 .product-card_salePrice__waG5i{font-size:1rem;text-decoration:line-through;color:#252525}.product-card_productCard__3eHNU .product-card_favoriteBtn__SHSwI{position:absolute;width:30px;height:30px;border:1.30769px solid #fff;background:#fff;border-radius:50%;box-shadow:0 2.61538px 5.23077px rgba(0,0,0,.19);display:flex;align-items:center;justify-content:center;top:10px;right:10px;font-size:16px;color:var(--theme-primary-color);text-align:center;z-index:4}.product-card_productCard__3eHNU .product-card_label__l94qI{position:absolute;top:10px;left:10px;padding:0 5px;border-radius:4.83px;font-size:12.01px;color:#fff;line-height:20px;height:20px;text-align:center;z-index:40}.product-card_productCard__3eHNU .product-card_labelSh__hYcn7{margin-top:3px;background-color:#d4e9d7;width:100px;border-radius:4.83px;font-size:11px;color:#000;line-height:20px;text-align:center;font-weight:700}.product-card_productCard__3eHNU .product-card_productImage__N6n1M{position:relative;background-color:var(--theme-background-secondary-color);cursor:pointer;border:1px solid #eefcfd;border-radius:6px}.product-card_productCard__3eHNU .product-card_productImage__N6n1M:hover .product-card_hiddenImage__Qoj_S{opacity:1}.product-card_productCard__3eHNU .product-card_productImage__N6n1M .product-card_hiddenImage__Qoj_S{position:absolute;width:100%;height:100%;top:0;z-index:3;opacity:0;transition:opacity .5s ease-in-out;border-radius:6px}.product-card_productCard__3eHNU .product-card_productImage__N6n1M .product-card_height__tgCUc{width:100%;height:100%;min-height:60vw}@media only screen and (max-width:600px){.product-card_productCard__3eHNU .product-card_productImage__N6n1M .product-card_height__tgCUc{min-height:38vw}}@media only screen and (min-width:600px){.product-card_productCard__3eHNU .product-card_productImage__N6n1M .product-card_height__tgCUc{min-height:30vw}}@media only screen and (min-width:900px){.product-card_productCard__3eHNU .product-card_productImage__N6n1M .product-card_height__tgCUc{min-height:215px}}@media only screen and (min-width:1000px){.product-card_productCard__3eHNU .product-card_productImage__N6n1M .product-card_height__tgCUc{min-height:240px}}@media only screen and (min-width:1400px){.product-card_productCard__3eHNU .product-card_productImage__N6n1M .product-card_height__tgCUc{min-height:330px}}.product-card_stockContainer__64yMG{display:flex;justify-content:space-between;grid-gap:1rem;gap:1rem;padding:.5rem;border-radius:4px;background-color:#f8f9fa;margin-top:10px}.product-card_stockItem__ATAc_{display:flex;align-items:center;font-size:12px;grid-gap:.5rem;gap:.5rem}.product-card_stockLabel__xgrmb{color:#6c757d;font-weight:600}.product-card_stockValue__DrG_d{color:#2c3e50;font-weight:500}@keyframes react-loading-skeleton{to{transform:translateX(100%)}}.react-loading-skeleton{--base-color:#ebebeb;--highlight-color:#f5f5f5;--animation-duration:1.5s;--animation-direction:normal;--pseudo-element-display:block;background-color:var(--base-color);width:100%;border-radius:.25rem;display:inline-flex;line-height:1;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;overflow:hidden}.react-loading-skeleton:after{content:" ";display:var(--pseudo-element-display);position:absolute;top:0;left:0;right:0;height:100%;background-repeat:no-repeat;background-image:var(
+    --custom-highlight-background,linear-gradient(90deg,var(--base-color) 0,var(--highlight-color) 50%,var(--base-color) 100%)
+  );transform:translateX(-100%);animation-name:react-loading-skeleton;animation-direction:var(--animation-direction);animation-duration:var(--animation-duration);animation-timing-function:ease-in-out;animation-iteration-count:infinite}@media (prefers-reduced-motion){.react-loading-skeleton{--pseudo-element-display:none}}.style_height__BFJv3{width:100%;height:100%;min-height:60vw;margin-bottom:15px}@media only screen and (max-width:600px){.style_height__BFJv3{min-height:60vw}}@media only screen and (min-width:600px){.style_height__BFJv3{min-height:33vw}}@media only screen and (min-width:900px){.style_height__BFJv3{min-height:180px}}@media only screen and (min-width:1000px){.style_height__BFJv3{min-height:190px}}@media only screen and (min-width:1200px){.style_height__BFJv3{min-height:300px}}.style_checkout__GFSPW{min-height:40vw}@media(min-width:50em){.style_checkout__GFSPW{min-height:30vw}}@media(min-width:55em){.style_checkout__GFSPW{min-height:15vw}}@media(min-width:87.5em){.style_checkout__GFSPW{min-height:9vw}}.style_gridHeight__tKdrr{min-height:68vw}@media(min-width:30em){.style_gridHeight__tKdrr{min-height:46vw}}@media(min-width:50em){.style_gridHeight__tKdrr{min-height:35vw}}@media(min-width:87.5em){.style_gridHeight__tKdrr{min-height:22vw}}.swipe_container__70fDY{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;width:100%}@media(min-width:768px){.swipe_container__70fDY{width:750px}}@media(min-width:992px){.swipe_container__70fDY{width:970px}}@media(min-width:1200px){.swipe_container__70fDY{width:1318px}}.swipe_container__70fDY.swipe_margin__MbkKx{margin-top:40px}.swipe_container__70fDY.swipe_margin__MbkKx.swipe_relatedProduct__mYtg5{margin:80px auto 40px;background-color:#fff}.swipe_container__70fDY.swipe_margin__MbkKx.swipe_relatedProduct__mYtg5 .swipe_available__jMvDT{font-weight:700;font-size:24px;line-height:28px;color:#1b5455;margin-bottom:20px}.swipe_mTop__LvxId{margin-top:3rem}.swipe_mBottom__yYc3O{margin-bottom:3rem}.swipe_mZero__sEL7P{margin-bottom:0}.swipe_containerDevF__ojA4G{display:flex;justify-content:center}@media(max-width:800px){.swipe_containerDevF__ojA4G{grid-column-gap:1rem;-moz-column-gap:1rem;column-gap:1rem;display:grid;grid-template-columns:auto auto auto}}.swipe_containerDev__T42Rr{display:flex;justify-content:center}.swipe_cBackground__f0q3w{width:20%;margin:10px;text-align:center;background-color:#fafafa}.swipe_cFont__4pnkm{font-size:14px;font-weight:700;color:#000}.swipe_fDev__OzeeQ{margin:10px;text-align:center;width:130px}@media(max-width:800px){.swipe_fDev__OzeeQ{width:90px;text-align:center}}.swipe_fFont__9zE9m{font-size:14px;font-weight:700}.swipe_showMoreFont__yPtAq{font-size:16px;font-weight:700}@media(max-width:800px){.swipe_showMoreFont__yPtAq{font-size:12px}}.swipe_textCenter__4bOL9{text-align:center;margin-top:50px}.products_card__mer1R{border:1px solid #eee;margin-bottom:1.25rem;padding:1.25rem 1rem;box-shadow:0 1px 4px 0 rgba(0,0,0,.05);border-radius:12px;display:flex;flex-direction:column;transition:box-shadow .2s ease}.products_card__mer1R .products_freeShipping__0DWKZ{display:flex;grid-gap:14px;gap:14px;background:hsla(54,84%,71%,.502);padding:19px;margin:0 0 10px;border-radius:8px;font-weight:700;font-size:18px}.products_card__mer1R .products_freeShipping__0DWKZ>svg{width:1.2rem;margin-inline-end:5px}.products_card__mer1R .products_headerBold__MqG4E{font-size:1.2rem;font-weight:700}.products_card__mer1R .products_note__YjmzJ{padding:10px 12px;margin-top:8px;width:100%;min-height:2.5rem;resize:none;border:1px solid #e0e0e0;border-radius:8px;font-size:.9rem;line-height:1.5;transition:border-color .2s ease;outline:none}.products_card__mer1R .products_note__YjmzJ:focus{border-color:var(--theme-primary-color)}.products_card__mer1R .products_note__YjmzJ::-moz-placeholder{color:#aaa;font-size:.85rem}.products_card__mer1R .products_note__YjmzJ:-ms-input-placeholder{color:#aaa;font-size:.85rem}.products_card__mer1R .products_note__YjmzJ::placeholder{color:#aaa;font-size:.85rem}.products_card__mer1R .products_cardFooter__u1ePB{display:flex;flex-direction:column;align-items:flex-end;grid-row-gap:.4rem;row-gap:.4rem;margin-top:1rem;padding-top:1rem;border-top:1px solid #f0f0f0}.products_card__mer1R .products_cardFooter__u1ePB>div{display:flex;grid-column-gap:.5rem;-moz-column-gap:.5rem;column-gap:.5rem;font-size:.9rem;color:#555}.products_card__mer1R .products_cardFooter__u1ePB>div>span{font-weight:600;color:#222}.products_card__mer1R .products_cardFooter__u1ePB>div:last-child{font-size:1rem;font-weight:700;color:#111;margin-top:.25rem}.products_card__mer1R .products_cardFooter__u1ePB>div:last-child>span{color:#111}.products_checkoutCartEmpty__M7bNR{width:100%;display:flex;flex-direction:column;grid-row-gap:20px;row-gap:20px;align-items:center;margin-bottom:20px}.products_centerAlign__RreEh{padding-bottom:.75rem;margin-bottom:.75rem;margin-top:.25rem;border-bottom:1px solid #f0f0f0}.products_centerAlign__RreEh .products_sellerData__mGMRD{display:flex;grid-column-gap:1rem;-moz-column-gap:1rem;column-gap:1rem;align-items:center}.products_centerAlign__RreEh .products_sellerImage___tVgg{position:relative;display:block;width:48px;height:48px;border-radius:50%;border:1px solid #eefcfd;overflow:hidden;flex-shrink:0}.products_centerAlign__RreEh .products_sellerImage___tVgg img{border-radius:50%}.products_centerAlign__RreEh .products_header__S3owE{text-transform:uppercase;font-size:1rem;font-weight:600}.products_checkoutProductContainer__R8rtb{display:flex;flex-direction:column;grid-row-gap:2rem;row-gap:2rem}.products_checkoutProductContainer__R8rtb.products_padding__lyZZS{padding:10px 10px 100px;overflow:auto}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn{font-size:1rem;display:grid;height:-moz-fit-content;height:fit-content;grid-template-areas:"image data data delete" "image qty . price";grid-auto-columns:1fr 2fr 2fr .5fr;grid-column-gap:.5rem;-moz-column-gap:.5rem;column-gap:.5rem;grid-row-gap:.5rem;row-gap:.5rem;border-bottom:1px solid #f0f0f0;padding-bottom:1.25rem}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_productImage__5LCFy{grid-area:image;position:relative;display:block;width:80px;height:80px;border-radius:10px;border:1px solid #eee;overflow:hidden}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_productImage__5LCFy img{border-radius:10px}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutProductData__m2X_c{grid-area:data;display:grid;grid-template-areas:"title" "seller" "options";grid-row-gap:.5rem;row-gap:.5rem}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutProductData__m2X_c .products_title__ASbL1{color:#252525}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutProductData__m2X_c .products_options__k00Ys{display:flex;grid-column-gap:2rem;-moz-column-gap:2rem;column-gap:2rem;font-size:.8rem}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutProductData__m2X_c .products_options__k00Ys>div{background-color:#f3f3f5;padding:.2rem .4rem;border-radius:10px;color:#a89e94}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutProductData__m2X_c .products_options__k00Ys>div>span{color:#252525}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutQuantity__1O6eD{grid-area:qty;display:flex;align-items:center;align-self:center;width:100px}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutQuantity__1O6eD .products_qtyNumber__qBS9a{border:1px solid #ddd;color:#222;width:100%;text-align:center;border-radius:6px;padding:4px 6px;font-size:.9rem;background:#fafafa;outline:none;cursor:pointer}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutQuantity__1O6eD .products_qtyNumber__qBS9a:focus{border-color:var(--theme-primary-color)}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutQuantity__1O6eD .products_qtyLoading__7mTOB{opacity:.5;cursor:not-allowed;pointer-events:none}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutQuantity__1O6eD .products_qtySpinner__tSHwU{display:inline-block;width:14px;height:14px;margin-inline-end:6px;border:2px solid #ddd;border-top:2px solid var(--theme-primary-color);border-radius:50%;animation:products_qtySpin__ZuOB4 .6s linear infinite;flex-shrink:0}@keyframes products_qtySpin__ZuOB4{to{transform:rotate(1turn)}}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_priceContainer__RmQ2F{grid-area:price;display:flex;justify-content:flex-end;align-items:center;align-self:center}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_priceContainer__RmQ2F .products_checkoutPrice__7iyBQ.products_red__RUJ6W{color:var(--theme-primary-color)}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_priceContainer__RmQ2F .products_salePrice__I5Oo_{text-decoration:line-through;color:#252525;font-size:.8rem}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutRemove__MVFHQ{width:10%;color:#f2f2f2;cursor:pointer;text-align:center}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutRemove__MVFHQ:hover{color:var(--theme-primary-color)}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn.products_paddingZero__vjcjN{padding-left:0;padding-right:0}@media(min-width:50em){.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn{grid-column-gap:.75rem;-moz-column-gap:.75rem;column-gap:.75rem;grid-auto-columns:90px 2fr 2fr .5fr}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_productImage__5LCFy{width:90px;height:90px}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutQuantity__1O6eD{width:90px}}@media(min-width:55em){.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn{grid-column-gap:1rem;-moz-column-gap:1rem;column-gap:1rem;grid-auto-columns:100px 2fr 2fr .5fr}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_productImage__5LCFy{width:100px;height:100px}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn .products_checkoutQuantity__1O6eD{width:100px}.products_checkoutProductContainer__R8rtb .products_checkoutProduct__y_0hn.products_checkout__stU1T{font-size:1.05rem}}.products_disShipping__Rr0jm{font-size:13px;font-weight:600;background-color:#fff0f0;border:1px solid #ffd4d4;padding:6px 12px;margin-bottom:5px;border-radius:8px;color:#c0392b;margin-top:10px}.checkout_checkoutLayout__SFaFk{display:grid;margin-top:30px!important;grid-template-columns:100%;min-height:100vh;padding:0 .75rem}.checkout_checkoutLayout__SFaFk>div{position:relative}@media(min-width:50em){.checkout_checkoutLayout__SFaFk{margin:2rem auto auto;grid-template-columns:1fr 240px;grid-column-gap:1.25rem;-moz-column-gap:1.25rem;column-gap:1.25rem;max-width:1200px;padding:0 1rem}}@media(min-width:55em){.checkout_checkoutLayout__SFaFk{grid-template-columns:1fr 320px;grid-column-gap:2rem;-moz-column-gap:2rem;column-gap:2rem;padding:0 1.5rem}}@media(min-width:87.5em){.checkout_checkoutLayout__SFaFk{grid-template-columns:1fr 420px;grid-column-gap:3rem;-moz-column-gap:3rem;column-gap:3rem;max-width:1400px;padding:0 2rem}}.checkout_checkoutLayout__SFaFk .checkout_fresnelGreaterThanOrEqualXl__OFr2s{padding-inline-end:0}.checkout_freeBox__bHCCd{width:100%;padding:24px 20px;box-shadow:0 1px 4px 0 rgba(0,0,0,.06);border:1px solid #f0f0f0;border-radius:10px;display:flex;flex-direction:column;grid-row-gap:1.5rem;row-gap:1.5rem;height:100%}</style><style data-n-href="/_next/static/css/dd17d2f539a5cb58.css" media="x">.details-style_details__auFgA{max-width:2000px;margin:auto}.details-style_details__auFgA .details-style_detailsCard__Szli_{position:relative}@media(min-width:55em){.details-style_details__auFgA .details-style_detailsCard__Szli_{padding-top:25px}}.details-style_details__auFgA .details-style_labelSh__VmoZ0{margin:3px 0 10px;background-color:#d4e9d7;width:100px;border-radius:4.83px;font-size:11px;color:#000;line-height:20px;text-align:center;font-weight:700}.details-style_details__auFgA .details-style_labelUniqe__Jipli{display:flex;align-items:center;font-size:14px;color:#a61a2e;font-weight:700;margin-top:10px}@media(min-width:40em){.details-style_details__auFgA .details-style_labelUniqe__Jipli{margin-top:0}}.details-style_details__auFgA .details-style_noStock__r2inH{font-size:14px;font-weight:700;background-color:#fff9b5;padding:5px 10px;margin-bottom:5px;border-radius:4px;color:#606060;margin-top:10px}.details-style_details__auFgA .details-style_disShipping__pW7xo{font-size:14px;font-weight:700;background-color:#ffb5b5;padding:5px 10px;margin-bottom:5px;border-radius:4px;color:#606060;margin-top:10px}.details-style_details__auFgA .details-style_customizeMessage__Pv4Pb{display:flex;justify-content:space-between;margin-bottom:7px}.details-style_details__auFgA .details-style_customizeP__FDGRc{color:var(--theme-primary-color)}.details-style_details__auFgA .details-style_customizePC__9kLl9{font-size:14px;font-weight:700}.details-style_details__auFgA .details-style_customizeCon__Am2NW{display:flex;flex-direction:column;color:#7e859b;font-size:12px}.details-style_details__auFgA .details-style_detailsContainer__rDy0I{padding:0;border-radius:20px;margin:0 auto 30px!important}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productImage__ilHAu{width:55%;margin-top:50px;min-height:500px}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd{display:flex;width:45%;flex-direction:column;align-self:flex-start;padding:38px 27px 18px 45px;grid-row-gap:5px;row-gap:5px}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_productDetailTitle__3coCl{font-size:1.3rem;margin:0;font-weight:700;min-height:40px}@media(min-width:40em){.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_productDetailTitle__3coCl{font-size:1.5rem}}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_freeShipping__1guhy{color:red}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_freeShipping__1guhy>svg{width:1rem}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_priceContainer__iwwel{align-items:center;font-weight:700;grid-template-areas:"price hand";justify-content:space-between;min-height:40px}@media(min-width:40em){.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_priceContainer__iwwel{display:flex}}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_priceContainer__iwwel>div{grid-area:price}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_priceContainer__iwwel .details-style_price__sdHJY{color:var(--theme-primary-color);font-size:1.4rem}@media(min-width:40em){.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_priceContainer__iwwel .details-style_price__sdHJY{font-size:1.5rem}}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_priceContainer__iwwel .details-style_hand__iwuRQ{grid-area:hand;display:flex;flex-direction:row;align-items:flex-start}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_priceContainer__iwwel .details-style_hand__iwuRQ>div{margin:0}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_priceContainer__iwwel .details-style_hand__iwuRQ>span{color:#252525;margin-inline:.5rem}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_priceContainer__iwwel .details-style_salePrice___98on{font-size:1.1rem;color:#353535;text-decoration:line-through;grid-area:sale;margin-inline-start:1rem}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_priceContainer__iwwel .details-style_salePrice___98on:lang(ar){margin-inline-end:1rem}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_seller__Aks_F{display:flex;justify-content:space-between;min-height:30px}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_seller__Aks_F button{font-size:1.4rem}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd p{line-height:28px;font-size:1.1rem;white-space:break-spaces}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd p>.details-style_hidden__wDk0a{display:none}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd p button{font-size:1.1rem;margin-left:5px;color:var(--theme-primary-color);text-decoration:underline;cursor:pointer}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_note__ql7v8{padding:16px;font-size:1rem;background:#fef9f0;border-radius:4px;line-height:22px;margin-bottom:1em}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_note__ql7v8 p{color:#252525;font-size:1rem}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_note__ql7v8 span{margin-bottom:11px;color:#252525;font-weight:700;font-size:1.5rem}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_productspecspan__PIlSa{font-weight:500;font-size:16px;margin-right:10px}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_productspecspan__PIlSa span{color:#6b6b6b}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_detailsBtn__rKH5C{display:flex;flex-direction:column;grid-row-gap:20px;row-gap:20px;grid-column-gap:20px;-moz-column-gap:20px;column-gap:20px;min-height:175px;margin-top:20px}@media(min-width:87.5em){.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_detailsBtn__rKH5C{display:grid;align-items:center;grid-template-columns:1fr;grid-template-rows:1fr 1fr 1fr;grid-template-areas:"qty" "add-to-cart" "buynow"}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_detailsBtn__rKH5C.details-style_hiddenQty__hjTKl{height:120px;grid-template-rows:1fr 1fr;grid-template-areas:"add-to-cart" "buynow"}}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_detailsBtn__rKH5C button{min-height:48px;height:48px}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_whatsapp__rk8p2{grid-area:whatsapp;text-align:center;justify-self:flex-end}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_whatsapp__rk8p2 a{color:#36dd5b;text-decoration:underline;font-weight:700;font-size:1.1rem;height:100%;display:block}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_label__iIKxH{font-weight:600}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd .details-style_label-quantity__dssTa{color:red;font-weight:400}@media(max-width:767px){.details-style_details__auFgA .details-style_detailsContainer__rDy0I{width:100%}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd{padding-right:15px;padding-left:15px}}@media(max-width:1000px){.details-style_details__auFgA .details-style_detailsContainer__rDy0I{flex-wrap:wrap}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productImage__ilHAu{width:100%;margin-top:0;min-height:360px}.details-style_details__auFgA .details-style_detailsContainer__rDy0I .details-style_productData__FEXNd{width:100%}}@media(min-width:55em){.details-style_details__auFgA .details-style_detailsContainer__rDy0I{margin:auto;display:flex;background:#fff}}.details-style_b__mMotx{margin-top:22px;align-items:center}.details-style_b__mMotx .details-style_wishList__yHTEM{width:48px;height:48px;border-radius:50%;background-color:#fff7f0;color:#ffa451;display:flex;justify-content:center;align-items:center;font-size:22px;cursor:pointer}.details-style_b__mMotx .details-style_wishList__yHTEM.details-style_active__bH7sQ{color:#00bcd4}.details-style_b__mMotx .details-style_button__JXIcq{font-weight:600;font-size:1rem}.details-style_b__mMotx .details-style_btnOptions__AO_uB{width:50%;border-radius:5px}.details-style_b__mMotx .details-style_buy__o5rxT{background-color:#000}.details-style_b__mMotx .details-style_quantity__4z4om{width:25%!important}.details-style_b__mMotx>div{margin:0}@media(max-width:1200px){.details-style_b__mMotx>div{width:100%}}@media(max-width:700px){.details-style_b__mMotx .details-style_wishList__yHTEM{display:none}.details-style_b__mMotx .details-style_quantity__4z4om{width:40%!important}.details-style_b__mMotx .details-style_add-to__GHMSb{width:100%}.details-style_b__mMotx .details-style_buy__o5rxT{display:none}}.details-style_sellerSection__L6GbM{min-height:500px;background:var(--theme-background-color)}.details-style_circle__1GmP2{width:40px;height:40px;background-color:#e7e2e2;border-radius:50%;display:flex;justify-content:center;align-items:center;z-index:1}.details-style_center__NOZwb{display:flex;flex-direction:column;justify-content:center;align-items:center;width:50%}.details-style_dis__mtBh5{display:flex;margin-top:15px}.details-style_progressContainer__2v9Ti{display:flex;justify-content:center;position:relative;margin-top:20px;max-width:100%;width:650px}.details-style_progressContainer__2v9Ti:before{content:"";background-color:#e7e2e2;position:absolute;top:15%;height:4px;width:70%}.details-style_HMargin__m5oTg{margin-bottom:10px;letter-spacing:1px}.details-style_attribute__5I_mY{display:flex;align-items:center}.details-style_icon__xlUzQ>svg{width:25px;height:25px}</style><style data-n-href="/_next/static/css/f16242566c47ae6e.css" media="x">.rc-slider{position:relative;height:14px;padding:5px 0;width:100%;border-radius:6px;touch-action:none}.rc-slider,.rc-slider *{box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0)}.rc-slider-rail{width:100%;background-color:#e9e9e9}.rc-slider-rail,.rc-slider-track{position:absolute;height:4px;border-radius:6px}.rc-slider-track{left:0;background-color:#abe2fb}.rc-slider-handle{position:absolute;width:14px;height:14px;cursor:pointer;cursor:-webkit-grab;margin-top:-5px;cursor:grab;border-radius:50%;border:2px solid #96dbfa;background-color:#fff;touch-action:pan-x}.rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging{border-color:#57c5f7;box-shadow:0 0 0 5px #96dbfa}.rc-slider-handle:focus{outline:none}.rc-slider-handle-click-focused:focus{border-color:#96dbfa;box-shadow:unset}.rc-slider-handle:hover{border-color:#57c5f7}.rc-slider-handle:active{border-color:#57c5f7;box-shadow:0 0 5px #57c5f7;cursor:grabbing}.rc-slider-mark{position:absolute;top:18px;left:0;width:100%;font-size:12px}.rc-slider-mark-text{position:absolute;display:inline-block;vertical-align:middle;text-align:center;cursor:pointer;color:#999}.rc-slider-mark-text-active{color:#666}.rc-slider-step{position:absolute;width:100%;height:4px;background:transparent}.rc-slider-dot{position:absolute;bottom:-2px;margin-left:-4px;width:8px;height:8px;border:2px solid #e9e9e9;background-color:#fff;cursor:pointer;border-radius:50%;vertical-align:middle}.rc-slider-dot-active{border-color:#96dbfa}.rc-slider-dot-reverse{margin-right:-4px}.rc-slider-disabled{background-color:#e9e9e9}.rc-slider-disabled .rc-slider-track{background-color:#ccc}.rc-slider-disabled .rc-slider-dot,.rc-slider-disabled .rc-slider-handle{border-color:#ccc;box-shadow:none;background-color:#fff;cursor:not-allowed}.rc-slider-disabled .rc-slider-dot,.rc-slider-disabled .rc-slider-mark-text{cursor:not-allowed!important}.rc-slider-vertical{width:14px;height:100%;padding:0 5px}.rc-slider-vertical .rc-slider-rail{height:100%;width:4px}.rc-slider-vertical .rc-slider-track{left:5px;bottom:0;width:4px}.rc-slider-vertical .rc-slider-handle{margin-left:-5px;touch-action:pan-y}.rc-slider-vertical .rc-slider-mark{top:0;left:18px;height:100%}.rc-slider-vertical .rc-slider-step{height:100%;width:4px}.rc-slider-vertical .rc-slider-dot{left:2px;margin-bottom:-4px}.rc-slider-vertical .rc-slider-dot:first-child,.rc-slider-vertical .rc-slider-dot:last-child{margin-bottom:-4px}.rc-slider-tooltip-zoom-down-appear,.rc-slider-tooltip-zoom-down-enter,.rc-slider-tooltip-zoom-down-leave{animation-duration:.3s;animation-fill-mode:both;display:block!important;animation-play-state:paused}.rc-slider-tooltip-zoom-down-appear.rc-slider-tooltip-zoom-down-appear-active,.rc-slider-tooltip-zoom-down-enter.rc-slider-tooltip-zoom-down-enter-active{animation-name:rcSliderTooltipZoomDownIn;animation-play-state:running}.rc-slider-tooltip-zoom-down-leave.rc-slider-tooltip-zoom-down-leave-active{animation-name:rcSliderTooltipZoomDownOut;animation-play-state:running}.rc-slider-tooltip-zoom-down-appear,.rc-slider-tooltip-zoom-down-enter{transform:scale(0);animation-timing-function:cubic-bezier(.23,1,.32,1)}.rc-slider-tooltip-zoom-down-leave{animation-timing-function:cubic-bezier(.755,.05,.855,.06)}@keyframes rcSliderTooltipZoomDownIn{0%{opacity:0;transform-origin:50% 100%;transform:scale(0)}to{transform-origin:50% 100%;transform:scale(1)}}@keyframes rcSliderTooltipZoomDownOut{0%{transform-origin:50% 100%;transform:scale(1)}to{opacity:0;transform-origin:50% 100%;transform:scale(0)}}.rc-slider-tooltip{position:absolute;left:-9999px;top:-9999px;visibility:visible}.rc-slider-tooltip,.rc-slider-tooltip *{box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0)}.rc-slider-tooltip-hidden{display:none}.rc-slider-tooltip-placement-top{padding:4px 0 8px}.rc-slider-tooltip-inner{padding:6px 2px;min-width:24px;height:24px;font-size:12px;line-height:1;color:#fff;text-align:center;text-decoration:none;background-color:#6c6c6c;border-radius:6px;box-shadow:0 0 4px #d9d9d9}.rc-slider-tooltip-arrow{position:absolute;width:0;height:0;border-color:transparent;border-style:solid}.rc-slider-tooltip-placement-top .rc-slider-tooltip-arrow{bottom:4px;left:50%;margin-left:-4px;border-width:4px 4px 0;border-top-color:#6c6c6c}</style><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/70debc1d3a16fe4f.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/bc07708712004b44.css"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/sell-87534a4c4f2e1003.js"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/wishlist-dcf2085c068cfcb3.js"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/collection-c9322b7b4aecf556.js"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/category/%5B...slug%5D-5deb36ccdbfc6b81.js"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/collection/%5Bslug%5D-60c77f0373afc5a8.js"><style id="theme-specific-styles">
+      :root {
+        /* Slider heights */
+        --theme-slider-height-desktop: 480px;
+        --theme-slider-height-tablet: 350px;
+        --theme-slider-height-mobile: 250px;
+        
+        /* Navigation settings */
+        --theme-nav-mobile-breakpoint: 768px;
+        --theme-nav-height: 65px;
+        --theme-nav-logo-height: 40px;
+        --theme-nav-logo-width: 120px;
+        
+        /* Header and navbar settings */
+        --theme-header-height: 160px;
+        --theme-navbar-height: 27.8px;
+        --theme-navbar-font-size: 14px;
+        --theme-navbar-bg-color: #000000;
+        
+        /* ThemeSwitcher settings */
+        --theme-switcher-margin: 0 5px;
+        --theme-switcher-mobile-padding: 15px 0;
+        --theme-mobile-border-color: #dfdfdf;
+        
+        /* Color settings */
+        --theme-primary-color-rgb: 61, 180, 183;
+        --theme-primary-color-dark: #339ea1;
+      }
+    </style><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/a3778476f1db72cb.css"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/login-720a0d81a6c05bb9.js"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/register-5be34ac2fe2b59c7.js"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/04a6357f2f13821b.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/785d6ebcfe9227f4.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/68bf7d769e770bd4.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/e5dfe1ea9f55122a.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/235604b56beae7ec.css"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/about-92097d75d5d917f4.js"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/contact-us-987a21c162880fdf.js"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/customer-faq-ef3fe9c2be38c03b.js"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/57b44961ee5d42b5.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/bb314b5403bf150b.css"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/products/%5Bslug%5D/%5Bid%5D-1b7c7424d28d9b20.js"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/92fd38523f742551.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/7790edda63749a46.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/6eecbf6c0264f2c2.css"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/vendor-faq-a891d7dbd1592fd4.js"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/p/%5Bslug%5D-a562c1c7d01b9155.js"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/c85490e8e7544e4e.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/26018dcb82f913da.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/8864a231d917cf90.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/567c9fbae53b4576.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/a284484969267b07.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/a28dae03dc321535.css"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/products-0ccf836ee394f769.js"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/e05a381e231b35c7.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/77ab7e38c50da270.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/5803fdc95d5a94f3.css"><link as="script" rel="prefetch" href="https://souqfann.com/_next/static/chunks/pages/request-password-reset-682a397f2c47111f.js"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/5192635ab2c153c3.css"><link rel="stylesheet" type="text/css" href="https://souqfann.com/_next/static/css/e9dc0ee9ef0835b1.css"></head><body style="overflow-y: auto;" class="souqfann-theme"><div id="__next" data-reactroot=""><div style="min-height: 120px;" class="for-desktop-menu"><div class="fresnel-container fresnel-greaterThanOrEqual-xl for-mobile-hidden"><div class="navbar_headerContainer__Yvksg"><div style="background-color: rgb(37, 37, 37);"><div class="container-fluid navbar_navbar__TIvVT"><div class="navbar_fadeList__QW3cp"><div class="navbar_textWrapper__KQhFG"><span class="navbar_listItem__oV67q" style="opacity: 0; visibility: hidden;">70% of each product's value goes to support sellers</span><span class="navbar_listItem__oV67q" style="opacity: 0; visibility: hidden;">You're a part of drawing a smile on someone's face</span><span class="navbar_listItem__oV67q" style="opacity: 0; visibility: hidden;">Made in Jordan</span><span class="navbar_listItem__oV67q" style="opacity: 0; visibility: hidden;">Delivery within 24 hours in Amman</span><span class="navbar_listItem__oV67q" style="opacity: 1; visibility: visible;">Worldwide delivery</span><span class="navbar_listItem__oV67q" style="opacity: 0; visibility: hidden;">Easy return</span></div></div><div class="navbar_header__m2WJe"><a target="_blank" href="https://blog.souqfann.com">Blog</a><div><div class="navbar_currency__LKC92"><button aria-label="currency">USD</button><ul class=""><li><button aria-label="usd">USD</button></li><li><button aria-label="jod">JOD</button></li><li><button aria-label="eur">EUR</button></li><li><button aria-label="sar">SAR</button></li><li><button aria-label="aed">AED</button></li></ul></div><div class="navbar_language__0vNyB"><a href="https://souqfann.com/ar/checkout">عربي</a></div></div></div></div></div><nav class="container-fluid navbar_nav__j2Pau" role="navigation" aria-label="Main Navigation"><a class="navbar_logo__5eJnh  navbar_logoLoaded__VOL8H" aria-label="Souq Fann - Go to Homepage" title="Souq Fann" href="https://souqfann.com/"><span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 33.3333% 0px 0px;"></span><img alt="Souq Fann logo" sizes="100vw" srcset="https://souqfann.com/images/souq-fann-en.svg 640w, https://souqfann.com/images/souq-fann-en.svg 750w, https://souqfann.com/images/souq-fann-en.svg 828w, https://souqfann.com/images/souq-fann-en.svg 1080w, https://souqfann.com/images/souq-fann-en.svg 1200w, https://souqfann.com/images/souq-fann-en.svg 1920w, https://souqfann.com/images/souq-fann-en.svg 2048w, https://souqfann.com/images/souq-fann-en.svg 3840w" src="https://souqfann.com/images/souq-fann-en.svg" decoding="async" data-nimg="responsive" class="" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></a><form class="navbar_search__Ci83K"><input type="search" placeholder="What are you looking for?" value="" data-moz-autofill-inspect-id="5d2e6670-4a54-44e5-9da6-435b799f53e6" style=""><div></div><button aria-label="search" class="navbar_searchBtn__WUKaX"><i class="icon-search"></i></button></form><div class="navbar_links__tMXcO" role="toolbar" aria-label="User Actions"><a class="navbar_sellLink__Ga6VU" aria-label="Sell with Us" title="Sell with Us" href="https://souqfann.com/sell"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg><span>Sell with Us</span></a><a href="https://souqfann.com/login">Login</a><a href="https://souqfann.com/register">Sign Up</a><a class="navbar_wishlistLink__Ufyzh" aria-label="Wishlist" title="Wishlist" href="https://souqfann.com/wishlist"><i aria-hidden="true"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></i><span class="navbar_linkLabel__z4PaV">Wishlist</span></a><div class="navbar_cart__mqo8o"><i class="icon-cart" aria-hidden="true"></i><div class="navbar_badge__TNgZD" aria-live="polite"><span>1</span></div></div></div></nav><nav id="ssssswe" class="container-fluid borderAfter"><ul class="navbar_categories__f0RRB"><li class="navbar_category__jE2XN "><a href="https://souqfann.com/collection">Gifts</a><ul class="navbar_dropdown__1usNP"><li><a href="https://souqfann.com/collection">All categories</a></li><li><a href="https://souqfann.com/category/corporategifts">Corporate gifts</a></li><li><ul><li><a href="https://souqfann.com/collection/souqfann-gifts">Shop Online Gifts</a></li><li><a href="https://souqfann.com/collection/gifts-for-him">Gifts For Men </a></li><li><a href="https://souqfann.com/collection/gifts-for-her">Gifts for Women </a></li><li><a href="https://souqfann.com/collection/valentine">The perfect unique gift that says I love you!</a></li><li><a href="https://souqfann.com/collection/mother">Mother's Day Gifts</a></li><li><a href="https://souqfann.com/collection/ramadan">Ramadan Products</a></li></ul></li></ul></li><li class="navbar_category__jE2XN "><a href="https://souqfann.com/category/beauty-self-care">Beauty &amp; Self-care</a><ul class="navbar_dropdown__1usNP"><li><a href="https://souqfann.com/category/beauty-self-care">All categories</a></li><li><ul><li><a href="https://souqfann.com/category/beauty-self-care/self-care-products-relaxation">Self-care Products &amp; Relaxation</a></li><li><a href="https://souqfann.com/category/beauty-self-care/natural-soaps">Natural Soaps</a></li></ul></li></ul></li><li class="navbar_category__jE2XN "><a href="https://souqfann.com/category/jewelry-accessories">Accessories &amp; Jewelry </a><ul class="navbar_dropdown__1usNP"><li><a href="https://souqfann.com/category/jewelry-accessories">All categories</a></li><li><ul><li><a href="https://souqfann.com/category/jewelry-accessories/hair-accessories">Hair Accessories</a></li><li><a href="https://souqfann.com/category/jewelry-accessories/shemagh-keffeyieh">Shemagh/ Keffeyieh</a></li><li><a href="https://souqfann.com/category/jewelry-accessories/bracelets">Braceletes</a></li><li><a href="https://souqfann.com/category/jewelry-accessories/rings">Rings</a></li><li><a href="https://souqfann.com/category/jewelry-accessories/earrings">Earrings</a></li><li><a href="https://souqfann.com/category/jewelry-accessories/necklaces">Necklaces</a></li><li><a href="https://souqfann.com/category/jewelry-accessories/hats-gloves">Hats and Gloves</a></li><li><a href="https://souqfann.com/category/jewelry-accessories/pendants">Pendants</a></li><li><a href="https://souqfann.com/category/jewelry-accessories/broach">Brooches</a></li><li><a href="https://souqfann.com/category/jewelry-accessories/compact-mirrors">Compact Mirrors </a></li><li><a href="https://souqfann.com/category/jewelry-accessories/accessories-sets">Accessories Sets </a></li><li><a href="https://souqfann.com/category/jewelry-accessories/shawls-scarves">Shawls</a></li><li><a href="https://souqfann.com/category/jewelry-accessories/belts">Belts</a></li></ul></li></ul></li><li class="navbar_category__jE2XN "><a href="https://souqfann.com/category/home-accessories-living">Home Accessories &amp; Living</a><ul class="navbar_dropdown__1usNP"><li><a href="https://souqfann.com/category/home-accessories-living">All categories</a></li><li><ul><li><a href="https://souqfann.com/category/home-accessories-living/boxes">Boxes &amp; Storage Boxes</a></li><li><a href="https://souqfann.com/category/home-accessories-living/home-accessories">Home Accessories</a></li><li><a href="https://souqfann.com/category/home-accessories-living/rugs-doormats">Rugs &amp; Doormats</a></li><li><a href="https://souqfann.com/category/home-accessories-living/lighting-lamps">Lighting &amp; Lamps</a></li><li><a href="https://souqfann.com/category/home-accessories-living/cushions-cushion-covers">Cushions &amp; Cushions Covers </a></li><li><a href="https://souqfann.com/category/home-accessories-living/wall-decorations-mirrors">Wall decorations &amp; Mirrors </a></li><li><a href="https://souqfann.com/category/home-accessories-living/furniture">Furniture</a></li><li><a href="https://souqfann.com/category/home-accessories-living/candles-candle-holders">Candles &amp; Candle holders</a></li><li><a href="https://souqfann.com/category/home-accessories-living/paintings">Paintings</a></li><li><a href="https://souqfann.com/category/home-accessories-living/plants-plant-pots">Plants</a></li></ul></li></ul></li><li class="navbar_category__jE2XN "><a href="https://souqfann.com/category/stationery">Stationery</a><ul class="navbar_dropdown__1usNP"><li><a href="https://souqfann.com/category/stationery">All categories</a></li><li><ul><li><a href="https://souqfann.com/category/stationery/books">Books &amp; Stories</a></li><li><a href="https://souqfann.com/category/stationery/notebooks">Notebooks</a></li><li><a href="https://souqfann.com/category/stationery/bookmarks">Bookmarks</a></li><li><a href="https://souqfann.com/category/stationery/cards-stickers">Cards &amp; Stickers</a></li><li><a href="https://souqfann.com/category/stationery/pen-holders">Pen Holders and Pencil Cases</a></li><li><a href="https://souqfann.com/category/stationery/keychains">Keychains and Magnets</a></li></ul></li></ul></li><li class="navbar_category__jE2XN "><a href="https://souqfann.com/category/clothing">Clothing </a><ul class="navbar_dropdown__1usNP"><li><a href="https://souqfann.com/category/clothing">All categories</a></li><li><ul><li><a href="https://souqfann.com/category/clothing/menswear">Menswear</a></li><li><a href="https://souqfann.com/category/clothing/women-clothing">Women Clothing</a></li><li><a href="https://souqfann.com/category/clothing/kids-wear">Kids Clothing</a></li><li><a href="https://souqfann.com/category/clothing/socks">Socks</a></li></ul></li></ul></li><li class="navbar_category__jE2XN "><a href="https://souqfann.com/category/kitchen-dining">Kitchen &amp; Dining</a><ul class="navbar_dropdown__1usNP"><li><a href="https://souqfann.com/category/kitchen-dining">All categories</a></li><li><ul><li><a href="https://souqfann.com/category/kitchen-dining/tea-coffee-sets">Tea &amp; Coffee Sets</a></li><li><a href="https://souqfann.com/category/kitchen-dining/accessories">Kitchen Accessories </a></li><li><a href="https://souqfann.com/category/kitchen-dining/mugs">Mugs</a></li><li><a href="https://souqfann.com/category/kitchen-dining/serving-trivets">Serving Trivets</a></li><li><a href="https://souqfann.com/category/kitchen-dining/coasters">Coasters</a></li><li><a href="https://souqfann.com/category/kitchen-dining/tablecloths-napkins">Table Cloths &amp; Napkins </a></li><li><a href="https://souqfann.com/category/kitchen-dining/plates-bowls">Plates &amp; Bowls </a></li><li><a href="https://souqfann.com/category/kitchen-dining/containers">Containers</a></li><li><a href="https://souqfann.com/category/kitchen-dining/food">Food</a></li></ul></li></ul></li><li class="navbar_category__jE2XN "><a href="https://souqfann.com/category/bags-wallets">Bags &amp; Wallets</a><ul class="navbar_dropdown__1usNP"><li><a href="https://souqfann.com/category/bags-wallets">All categories</a></li><li><ul><li><a href="https://souqfann.com/category/bags-wallets/handbags">Handbags</a></li><li><a href="https://souqfann.com/category/bags-wallets/mobile-covers">Mobile Covers</a></li><li><a href="https://souqfann.com/category/bags-wallets/purses">Wallets &amp; Purses</a></li><li><a href="https://souqfann.com/category/bags-wallets/laptop-bags">Laptop Bags</a></li></ul></li></ul></li><li class="navbar_category__jE2XN "><a href="https://souqfann.com/category/green-products">Green Products</a><ul class="navbar_dropdown__1usNP"><li><a href="https://souqfann.com/category/green-products">All categories</a></li><li><ul><li><a href="https://souqfann.com/category/green-products/recycled-products">Recycled Products</a></li></ul></li></ul></li><li class="navbar_category__jE2XN "><a href="https://souqfann.com/category/entertainment"> Entertainment</a><ul class="navbar_dropdown__1usNP"><li><a href="https://souqfann.com/category/entertainment">All categories</a></li><li><ul><li><a href="https://souqfann.com/category/entertainment/games-toys">Toys</a></li><li><a href="https://souqfann.com/category/entertainment/board-games">Board Games</a></li></ul></li></ul></li><li class="navbar_category__jE2XN "><a href="https://souqfann.com/category/corporategifts">Corporate gifts </a></li></ul></nav></div></div><div class="fresnel-container fresnel-at-sm for-mobile-menu"><div style="background-color: rgb(37, 37, 37);"><div class="container-fluid navbar_navbar__TIvVT"><div class="navbar_fadeList__QW3cp"><div class="navbar_textWrapper__KQhFG"><span class="navbar_listItem__oV67q" style="opacity: 0; visibility: hidden;">70% of each product's value goes to support sellers</span><span class="navbar_listItem__oV67q" style="opacity: 0; visibility: hidden;">You're a part of drawing a smile on someone's face</span><span class="navbar_listItem__oV67q" style="opacity: 0; visibility: hidden;">Made in Jordan</span><span class="navbar_listItem__oV67q" style="opacity: 0; visibility: hidden;">Delivery within 24 hours in Amman</span><span class="navbar_listItem__oV67q" style="opacity: 1; visibility: visible;">Worldwide delivery</span><span class="navbar_listItem__oV67q" style="opacity: 0; visibility: hidden;">Easy return</span></div></div><div class="navbar_header__m2WJe"><a target="_blank" href="https://blog.souqfann.com">Blog</a><div><div class="navbar_currency__LKC92"><button aria-label="currency">USD</button><ul class=""><li><button aria-label="usd">USD</button></li><li><button aria-label="jod">JOD</button></li><li><button aria-label="eur">EUR</button></li><li><button aria-label="sar">SAR</button></li><li><button aria-label="aed">AED</button></li></ul></div><div class="navbar_language__0vNyB"><a href="https://souqfann.com/ar/checkout">عربي</a></div></div></div></div></div><div class="mobile_headerContainer__a49QT for-mobile-layout"><div class="mobile_header__XtZEe"><div class="mobile_links__L52JV"><button aria-label="open button" class="mobile_menuBtn__JtxwB"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars icon-w" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></button><button class="mobile_searchOpen__41QCo" aria-label="search"><i class="icon-search mobile_black__KVMq_"></i></button></div><a class="mobile_logo__s8Vf3" href="https://souqfann.com/"><span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 27.5862% 0px 0px;"></span><img alt="Souq Fann logo" sizes="100vw" srcset="https://souqfann.com/images/souq-fann-en.svg 640w, https://souqfann.com/images/souq-fann-en.svg 750w, https://souqfann.com/images/souq-fann-en.svg 828w, https://souqfann.com/images/souq-fann-en.svg 1080w, https://souqfann.com/images/souq-fann-en.svg 1200w, https://souqfann.com/images/souq-fann-en.svg 1920w, https://souqfann.com/images/souq-fann-en.svg 2048w, https://souqfann.com/images/souq-fann-en.svg 3840w" src="https://souqfann.com/images/souq-fann-en.svg" decoding="async" data-nimg="responsive" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></a><div class="mobile_search__aNkWz "><form class="mobile_searchContainer__bTFDS"><input type="search" placeholder="What are you looking for?" data-moz-autofill-inspect-id="923ec181-8693-4914-9a1d-d919f8f4ee3f" style=""></form><button aria-label="search" class="mobile_searchBtn__8ytdz"><i class="icon-search"></i></button></div><div class="mobile_links__L52JV"><a aria-label="wishlist" href="https://souqfann.com/wishlist"><i class="icon-favourite-empty mobile_black__KVMq_"></i></a><button aria-label="open cart" class="mobile_cart__7pMgc"><i class="icon-cart mobile_black__KVMq_"></i><span class="mobile_badge__aRxVM">1</span></button></div></div><div class=" for-mobile-layout mobile_categoriesContainer__DuO5n "><div class="mobile_categories__v_csp slide-in-left" id="category" style="overflow-y: auto;"><div class="mobile_login__IMvjF"><button style="display: block;" aria-label="back"><i class="icon-back-empty"></i></button><div><a href="https://souqfann.com/login">Login  </a><span> or </span><a href="https://souqfann.com/register">  Sign Up  </a></div></div><div class=" "><div class="mobile_subMenuContainer__pCzlQ"><div><span>Gifts</span></div><div class="mobile_arrow__2Jgqd"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" class="svg-inline--fa fa-angle-right icon-w" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></div></div><div class="mobile_categoriesMenu__vGiBC  " id="subcategory"><div class="mobile_login__IMvjF mobile_subBack__LNbgQ" style="background-size: cover; background-repeat: no-repeat; background-position: center center;"><div class="mobile_subMenu__M6rrh"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg><span>Gifts</span></div></div><a href="https://souqfann.com/collection"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Shop Online Gifts</div></div></div></a><a href="https://souqfann.com/collection"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Gifts For Men </div></div></div></a><a href="https://souqfann.com/collection"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Gifts for Women </div></div></div></a><a href="https://souqfann.com/collection"><div class="mobile_subMenuContainer__pCzlQ"><div><div>The perfect unique gift that says I love you!</div></div></div></a><a href="https://souqfann.com/collection"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Mother's Day Gifts</div></div></div></a><a href="https://souqfann.com/collection"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Ramadan Products</div></div></div></a></div></div><div class=" "><div class="mobile_subMenuContainer__pCzlQ"><div><span>Beauty &amp; Self-care</span></div><div class="mobile_arrow__2Jgqd"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" class="svg-inline--fa fa-angle-right icon-w" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></div></div><div class="mobile_categoriesMenu__vGiBC  " id="subcategory"><div class="mobile_login__IMvjF mobile_subBack__LNbgQ" style="background-size: cover; background-repeat: no-repeat; background-position: center center;"><div class="mobile_subMenu__M6rrh"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg><span>Beauty &amp; Self-care</span></div></div><a href="https://souqfann.com/category/beauty-self-care/self-care-products-relaxation"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Self-care Products &amp; Relaxation</div></div></div></a><a href="https://souqfann.com/category/beauty-self-care/natural-soaps"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Natural Soaps</div></div></div></a></div></div><div class=" "><div class="mobile_subMenuContainer__pCzlQ"><div><span>Accessories &amp; Jewelry </span></div><div class="mobile_arrow__2Jgqd"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" class="svg-inline--fa fa-angle-right icon-w" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></div></div><div class="mobile_categoriesMenu__vGiBC  " id="subcategory"><div class="mobile_login__IMvjF mobile_subBack__LNbgQ" style="background-size: cover; background-repeat: no-repeat; background-position: center center;"><div class="mobile_subMenu__M6rrh"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg><span>Accessories &amp; Jewelry </span></div></div><a href="https://souqfann.com/category/jewelry-accessories/hair-accessories"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Hair Accessories</div></div></div></a><a href="https://souqfann.com/category/jewelry-accessories/shemagh-keffeyieh"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Shemagh/ Keffeyieh</div></div></div></a><a href="https://souqfann.com/category/jewelry-accessories/bracelets"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Braceletes</div></div></div></a><a href="https://souqfann.com/category/jewelry-accessories/rings"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Rings</div></div></div></a><a href="https://souqfann.com/category/jewelry-accessories/earrings"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Earrings</div></div></div></a><a href="https://souqfann.com/category/jewelry-accessories/necklaces"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Necklaces</div></div></div></a><a href="https://souqfann.com/category/jewelry-accessories/hats-gloves"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Hats and Gloves</div></div></div></a><a href="https://souqfann.com/category/jewelry-accessories/pendants"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Pendants</div></div></div></a><a href="https://souqfann.com/category/jewelry-accessories/broach"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Brooches</div></div></div></a><a href="https://souqfann.com/category/jewelry-accessories/compact-mirrors"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Compact Mirrors </div></div></div></a><a href="https://souqfann.com/category/jewelry-accessories/accessories-sets"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Accessories Sets </div></div></div></a><a href="https://souqfann.com/category/jewelry-accessories/shawls-scarves"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Shawls</div></div></div></a><a href="https://souqfann.com/category/jewelry-accessories/belts"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Belts</div></div></div></a></div></div><div class=" "><div class="mobile_subMenuContainer__pCzlQ"><div><span>Home Accessories &amp; Living</span></div><div class="mobile_arrow__2Jgqd"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" class="svg-inline--fa fa-angle-right icon-w" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></div></div><div class="mobile_categoriesMenu__vGiBC  " id="subcategory"><div class="mobile_login__IMvjF mobile_subBack__LNbgQ" style="background-size: cover; background-repeat: no-repeat; background-position: center center;"><div class="mobile_subMenu__M6rrh"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg><span>Home Accessories &amp; Living</span></div></div><a href="https://souqfann.com/category/home-accessories-living/boxes"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Boxes &amp; Storage Boxes</div></div></div></a><a href="https://souqfann.com/category/home-accessories-living/home-accessories"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Home Accessories</div></div></div></a><a href="https://souqfann.com/category/home-accessories-living/rugs-doormats"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Rugs &amp; Doormats</div></div></div></a><a href="https://souqfann.com/category/home-accessories-living/lighting-lamps"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Lighting &amp; Lamps</div></div></div></a><a href="https://souqfann.com/category/home-accessories-living/cushions-cushion-covers"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Cushions &amp; Cushions Covers </div></div></div></a><a href="https://souqfann.com/category/home-accessories-living/wall-decorations-mirrors"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Wall decorations &amp; Mirrors </div></div></div></a><a href="https://souqfann.com/category/home-accessories-living/furniture"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Furniture</div></div></div></a><a href="https://souqfann.com/category/home-accessories-living/candles-candle-holders"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Candles &amp; Candle holders</div></div></div></a><a href="https://souqfann.com/category/home-accessories-living/paintings"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Paintings</div></div></div></a><a href="https://souqfann.com/category/home-accessories-living/plants-plant-pots"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Plants</div></div></div></a></div></div><div class=" "><div class="mobile_subMenuContainer__pCzlQ"><div><span>Stationery</span></div><div class="mobile_arrow__2Jgqd"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" class="svg-inline--fa fa-angle-right icon-w" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></div></div><div class="mobile_categoriesMenu__vGiBC  " id="subcategory"><div class="mobile_login__IMvjF mobile_subBack__LNbgQ" style="background-size: cover; background-repeat: no-repeat; background-position: center center;"><div class="mobile_subMenu__M6rrh"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg><span>Stationery</span></div></div><a href="https://souqfann.com/category/stationery/books"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Books &amp; Stories</div></div></div></a><a href="https://souqfann.com/category/stationery/notebooks"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Notebooks</div></div></div></a><a href="https://souqfann.com/category/stationery/bookmarks"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Bookmarks</div></div></div></a><a href="https://souqfann.com/category/stationery/cards-stickers"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Cards &amp; Stickers</div></div></div></a><a href="https://souqfann.com/category/stationery/pen-holders"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Pen Holders and Pencil Cases</div></div></div></a><a href="https://souqfann.com/category/stationery/keychains"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Keychains and Magnets</div></div></div></a></div></div><div class=" "><div class="mobile_subMenuContainer__pCzlQ"><div><span>Clothing </span></div><div class="mobile_arrow__2Jgqd"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" class="svg-inline--fa fa-angle-right icon-w" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></div></div><div class="mobile_categoriesMenu__vGiBC  " id="subcategory"><div class="mobile_login__IMvjF mobile_subBack__LNbgQ" style="background-size: cover; background-repeat: no-repeat; background-position: center center;"><div class="mobile_subMenu__M6rrh"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg><span>Clothing </span></div></div><a href="https://souqfann.com/category/clothing/menswear"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Menswear</div></div></div></a><a href="https://souqfann.com/category/clothing/women-clothing"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Women Clothing</div></div></div></a><a href="https://souqfann.com/category/clothing/kids-wear"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Kids Clothing</div></div></div></a><a href="https://souqfann.com/category/clothing/socks"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Socks</div></div></div></a></div></div><div class=" "><div class="mobile_subMenuContainer__pCzlQ"><div><span>Kitchen &amp; Dining</span></div><div class="mobile_arrow__2Jgqd"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" class="svg-inline--fa fa-angle-right icon-w" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></div></div><div class="mobile_categoriesMenu__vGiBC  " id="subcategory"><div class="mobile_login__IMvjF mobile_subBack__LNbgQ" style="background-size: cover; background-repeat: no-repeat; background-position: center center;"><div class="mobile_subMenu__M6rrh"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg><span>Kitchen &amp; Dining</span></div></div><a href="https://souqfann.com/category/kitchen-dining/tea-coffee-sets"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Tea &amp; Coffee Sets</div></div></div></a><a href="https://souqfann.com/category/kitchen-dining/accessories"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Kitchen Accessories </div></div></div></a><a href="https://souqfann.com/category/kitchen-dining/mugs"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Mugs</div></div></div></a><a href="https://souqfann.com/category/kitchen-dining/serving-trivets"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Serving Trivets</div></div></div></a><a href="https://souqfann.com/category/kitchen-dining/coasters"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Coasters</div></div></div></a><a href="https://souqfann.com/category/kitchen-dining/tablecloths-napkins"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Table Cloths &amp; Napkins </div></div></div></a><a href="https://souqfann.com/category/kitchen-dining/plates-bowls"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Plates &amp; Bowls </div></div></div></a><a href="https://souqfann.com/category/kitchen-dining/containers"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Containers</div></div></div></a><a href="https://souqfann.com/category/kitchen-dining/food"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Food</div></div></div></a></div></div><div class=" "><div class="mobile_subMenuContainer__pCzlQ"><div><span>Bags &amp; Wallets</span></div><div class="mobile_arrow__2Jgqd"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" class="svg-inline--fa fa-angle-right icon-w" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></div></div><div class="mobile_categoriesMenu__vGiBC  " id="subcategory"><div class="mobile_login__IMvjF mobile_subBack__LNbgQ" style="background-size: cover; background-repeat: no-repeat; background-position: center center;"><div class="mobile_subMenu__M6rrh"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg><span>Bags &amp; Wallets</span></div></div><a href="https://souqfann.com/category/bags-wallets/handbags"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Handbags</div></div></div></a><a href="https://souqfann.com/category/bags-wallets/mobile-covers"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Mobile Covers</div></div></div></a><a href="https://souqfann.com/category/bags-wallets/purses"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Wallets &amp; Purses</div></div></div></a><a href="https://souqfann.com/category/bags-wallets/laptop-bags"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Laptop Bags</div></div></div></a></div></div><div class=" "><div class="mobile_subMenuContainer__pCzlQ"><div><span>Green Products</span></div><div class="mobile_arrow__2Jgqd"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" class="svg-inline--fa fa-angle-right icon-w" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></div></div><div class="mobile_categoriesMenu__vGiBC  " id="subcategory"><div class="mobile_login__IMvjF mobile_subBack__LNbgQ" style="background-size: cover; background-repeat: no-repeat; background-position: center center;"><div class="mobile_subMenu__M6rrh"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg><span>Green Products</span></div></div><a href="https://souqfann.com/category/green-products/recycled-products"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Recycled Products</div></div></div></a></div></div><div class=" "><div class="mobile_subMenuContainer__pCzlQ"><div><span> Entertainment</span></div><div class="mobile_arrow__2Jgqd"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" class="svg-inline--fa fa-angle-right icon-w" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></div></div><div class="mobile_categoriesMenu__vGiBC  " id="subcategory"><div class="mobile_login__IMvjF mobile_subBack__LNbgQ" style="background-size: cover; background-repeat: no-repeat; background-position: center center;"><div class="mobile_subMenu__M6rrh"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg><span> Entertainment</span></div></div><a href="https://souqfann.com/category/entertainment/games-toys"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Toys</div></div></div></a><a href="https://souqfann.com/category/entertainment/board-games"><div class="mobile_subMenuContainer__pCzlQ"><div><div>Board Games</div></div></div></a></div></div><div class=" "><a href="https://souqfann.com/category/corporategifts"><div class="mobile_subMenuContainer__pCzlQ"><div><span>Corporate gifts </span></div><div class="mobile_arrow__2Jgqd"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" class="svg-inline--fa fa-angle-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></div></div></a></div><div class="mobile_categoriesMenu__vGiBC
+                           "><div class="mobile_subMenuContainer__pCzlQ"><a href="https://souqfann.com/profile/orders">My Orders</a></div><div class="mobile_subMenuContainer__pCzlQ"><a href="https://souqfann.com/profile/edit">Edit Profile</a></div><div class="mobile_subMenuContainer__pCzlQ"><a href="https://souqfann.com/profile/change-password">Change Password</a></div><div class="mobile_subMenuContainer__pCzlQ"><a href="https://souqfann.com/profile/manage-address">Manage My Addresses</a></div><div class="mobile_subMenuContainer__pCzlQ"><button aria-label="open menu">Log Out</button></div></div></div></div></div></div></div><div class="style_loadingModal__G7lar  fade-in"><div class="style_ldsdualring__oMjDt"></div></div><div class="Toastify"></div><div class="relative"><div class="checkout_checkoutLayout__SFaFk relative"><div><div class="offset-padding-x-1"><div class="products_card__mer1R"><span class="products_headerBold__MqG4E">Order From:</span><div class="products_centerAlign__RreEh"><div class="products_sellerData__mGMRD"><div class="products_sellerImage___tVgg"><span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img alt="Souqfann" sizes="100vw" srcset="https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 640w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 750w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 828w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 1080w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 1200w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 1920w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 2048w, https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann 3840w" src="https://images.souqfann.com/thumb/fit-60-60-100-webp/souq fann" decoding="async" data-nimg="responsive" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></div><div class="flexBetween width-100"><h2 class="products_header__S3owE">Souqfann</h2><h2 class="products_header__S3owE">1 Items</h2></div></div></div><div class="products_checkoutProductContainer__R8rtb false"><div><div class="products_checkoutProduct__y_0hn products_checkout__stU1T"><div class="products_productImage__5LCFy"><span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img alt="Natural Deodorant with Natural Butters – Lavenar Organics - Women" sizes="100vw" srcset="https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 640w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 750w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 828w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 1080w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 1200w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 1920w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 2048w, https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg 3840w" src="https://images.souqfann.com/thumb/fit-120-120-100-webp/products/7750/2160-2160-402-freepik--talk--86201.jpeg" decoding="async" data-nimg="responsive" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></div><div class="products_checkoutProductData__m2X_c"><a class="products_title__ASbL1" href="https://souqfann.com/products/natural-deodorant-with-natural-butters-lavenar-organics/7750">Natural Deodorant with Natural Butters – Lavenar Organics - Women</a><div class="products_options__k00Ys"><div>For:<span>Women</span></div></div></div><div class="products_checkoutQuantity__1O6eD"><select class="products_qtyNumber__qBS9a" data-moz-autofill-inspect-id="ccf97c5d-43a9-411f-9fdd-ccd37c68635d" style=""><option value="1" selected="">1</option><option value="2">2</option></select></div><div class="products_priceContainer__RmQ2F"><span class="products_checkoutPrice__7iyBQ ">7.25USD</span></div><button class="icon-delete"></button></div></div></div><div style="margin-top: 4px;"><label for="noteTextarea" style="font-size: 0.9rem; font-weight: 500; color: rgb(68, 68, 68);">Note:</label><textarea placeholder="Write your note here..." rows="1" class="products_note__YjmzJ" style=""></textarea></div><div class="products_cardFooter__u1ePB"><div><span>Sub Total:</span> 7.25 USD</div><div><span>Shipping Cost:</span> 0.00 USD</div><div><span>Tax:</span> 0.35 USD</div><div><span>Total:</span> 7.59 USD</div></div></div></div><div class="address_stepContainer__AtLi3"><span class="address_step__D8Mbh">1</span><h4>Select Your Address</h4></div><div><div class="address_address__u8PaF"><form><div class="flex flexCenter flexColumn height-auto"><div style="max-width: 272px; max-height: 250px;"><span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;" alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27522%27%20height=%27500%27/%3e"></span><img srcset="https://souqfann.com/_next/image?url=%2Fgif%2FEmpty-Address.gif&amp;w=540&amp;q=75 1x, https://souqfann.com/_next/image?url=%2Fgif%2FEmpty-Address.gif&amp;w=1080&amp;q=75 2x" src="https://souqfann.com/_next/image?url=%2Fgif%2FEmpty-Address.gif&amp;w=1080&amp;q=75" decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span></div><p>You haven't added any addresses yet.</p></div></form><div class="form_form__tuTco fade-in"><div class="box slide-in-top"><div class="modalHeader"><h3 class="header">Add Your Address</h3><button aria-label="close"><i class="icon-close"></i></button></div><div class="form_flex__izUvB form_paddingZero__VeaAj"><form id="addressForm" class="form form_paddingForm__tPb9P" novalidate="" abineguid="66B142C675E04869867B79308DE45988"><div class="equalColumns"><div style="display: flex; flex-direction: column; gap: 0px; margin-bottom: 0px;"><label id="first_name-label" for="-input" style="display: block; font-size: 0.9rem; font-weight: 600; color: rgb(51, 51, 51); margin-bottom: 0.5rem; line-height: 1.4;">First Name <span style="color: rgb(220, 53, 69); font-weight: 400; margin-left: 2px;" title="Required">*</span></label><input id="first_name-input" name="first_name" type="text" class="" value="" data-moz-autofill-inspect-id="139c7425-8616-4a20-b6d2-1ff2267acd2e" data-moz-autofill-type="given-name" style=""></div><div style="display: flex; flex-direction: column; gap: 0px; margin-bottom: 0px;"><label id="last_name-label" for="-input" style="display: block; font-size: 0.9rem; font-weight: 600; color: rgb(51, 51, 51); margin-bottom: 0.5rem; line-height: 1.4;">Last Name <span style="color: rgb(220, 53, 69); font-weight: 400; margin-left: 2px;" title="Required">*</span></label><input id="last_name-input" name="last_name" type="text" class="" value="" data-moz-autofill-inspect-id="8f7c6025-4578-47cd-93c9-4da2f7a5a83d" data-moz-autofill-type="family-name" style=""></div></div><div class="equalColumns"><div><label for="country" style="display: block; font-size: 0.9rem; font-weight: 600; color: rgb(51, 51, 51); margin-bottom: 0.5rem;">Country <span style="color: rgb(220, 53, 69); font-weight: 400;" title="Required">*</span></label><select name="country" data-moz-autofill-inspect-id="dc6a51d9-b008-42bc-aab7-29ad82e106cd" data-moz-autofill-type="country" style=""><option value="KA" name="KA">Abkhazia</option><option value="AF" name="AF">Afghanistan</option><option value="AX" name="AX">Aland Islands</option><option value="AL" name="AL">Albania</option><option value="DZ" name="DZ">Algeria</option><option value="AS" name="AS">American Samoa</option><option value="AD" name="AD">Andorra</option><option value="AO" name="AO">Angola</option><option value="AI" name="AI">Anguilla</option><option value="AQ" name="AQ">Antarctica</option><option value="AG" name="AG">Antigua and Barbuda</option><option value="AR" name="AR">Argentina</option><option value="AM" name="AM">Armenia</option><option value="AW" name="AW">Aruba</option><option value="" name="">Ascension Islands</option><option value="AU" name="AU">Australia</option><option value="AT" name="AT">Austria</option><option value="AZ" name="AZ">Azerbaijan</option><option value="" name="">Azores</option><option value="BS" name="BS">Bahamas</option><option value="BH" name="BH">Bahrain</option><option value="BD" name="BD">Bangladesh</option><option value="BB" name="BB">Barbados</option><option value="BY" name="BY">Belarus</option><option value="BE" name="BE">Belgium</option><option value="BZ" name="BZ">Belize</option><option value="BJ" name="BJ">Benin</option><option value="BM" name="BM">Bermuda</option><option value="BT" name="BT">Bhutan</option><option value="BO" name="BO">Bolivia</option><option value="BQ" name="BQ">Bonaire</option><option value="BA" name="BA">Bosnia and Herzegovina</option><option value="BW" name="BW">Botswana</option><option value="BV" name="BV">Bouvet Island</option><option value="BR" name="BR">Brazil</option><option value="IO" name="IO">British Indian Ocean Territory</option><option value="BN" name="BN">Brunei Darussalam</option><option value="BG" name="BG">Bulgaria</option><option value="BF" name="BF">Burkina Faso</option><option value="" name="">Burma</option><option value="BI" name="BI">Burundi</option><option value="KH" name="KH">Cambodia</option><option value="CM" name="CM">Cameroon</option><option value="CA" name="CA">Canada</option><option value="" name="">Canary Islands</option><option value="CV" name="CV">Cape Verde</option><option value="KY" name="KY">Cayman Islands</option><option value="CF" name="CF">Central African Republic</option><option value="TD" name="TD">Chad</option><option value="" name="">Channel Islands</option><option value="CL" name="CL">Chile</option><option value="CN" name="CN">China</option><option value="CX" name="CX">Christmas Island</option><option value="CC" name="CC">Cocos (Keeling) Islands</option><option value="CO" name="CO">Colombia</option><option value="KM" name="KM">Comoros</option><option value="CG" name="CG">Congo</option><option value="CK" name="CK">Cook Islands</option><option value="CR" name="CR">Costa Rica</option><option value="CI" name="CI">Côte d'Ivoire</option><option value="HR" name="HR">Croatia</option><option value="CU" name="CU">Cuba</option><option value="CY" name="CY">Cyprus</option><option value="CZ" name="CZ">Czech Republic</option><option value="" name="">Dem Rep of The Congo</option><option value="KP" name="KP">Democratic People's Republic of Korea</option><option value="DK" name="DK">Denmark</option><option value="DJ" name="DJ">Djibouti</option><option value="DM" name="DM">Dominica</option><option value="DO" name="DO">Dominican Republic</option><option value="" name="">East Timor</option><option value="EC" name="EC">Ecuador</option><option value="EG" name="EG">Egypt</option><option value="SV" name="SV">El Salvador</option><option value="GQ" name="GQ">Equatorial Guinea</option><option value="ER" name="ER">Eritrea</option><option value="EE" name="EE">Estonia</option><option value="ET" name="ET">Ethiopia</option><option value="FK" name="FK">Falkland Islands (Malvinas)</option><option value="FO" name="FO">Faroe Islands</option><option value="FJ" name="FJ">Fiji</option><option value="FI" name="FI">Finland</option><option value="FR" name="FR">France</option><option value="GF" name="GF">French Guiana</option><option value="PF" name="PF">French Polynesia</option><option value="GA" name="GA">Gabon</option><option value="GM" name="GM">Gambia</option><option value="GE" name="GE">Georgia</option><option value="DE" name="DE">Germany</option><option value="GH" name="GH">Ghana</option><option value="GI" name="GI">Gibraltar</option><option value="GR" name="GR">Greece</option><option value="GL" name="GL">Greenland</option><option value="" name="">Grenada</option><option value="GP" name="GP">Guadeloupe</option><option value="GU" name="GU">Guam</option><option value="GT" name="GT">Guatemala</option><option value="GG" name="GG">Guernsey</option><option value="GN" name="GN">Guinea</option><option value="GW" name="GW">Guinea-Bissau</option><option value="GY" name="GY">Guyana</option><option value="HT" name="HT">Haiti</option><option value="HN" name="HN">Honduras</option><option value="HK" name="HK">Hong Kong</option><option value="HU" name="HU">Hungary</option><option value="IS" name="IS">Iceland</option><option value="IN" name="IN">India</option><option value="ID" name="ID">Indonesia</option><option value="IR" name="IR">Iran</option><option value="IQ" name="IQ">Iraq</option><option value="IE" name="IE">Ireland</option><option value="IM" name="IM">Isle of Man</option><option value="IT" name="IT">Italy</option><option value="JM" name="JM">Jamaica</option><option value="JP" name="JP">Japan</option><option value="JE" name="JE">Jersey</option><option value="JO" name="JO">Jordan</option><option value="KZ" name="KZ">Kazakhstan</option><option value="KE" name="KE">Kenya</option><option value="KI" name="KI">Kiribati</option><option value="" name="">Korea, North</option><option value="" name="">Korea, South</option><option value="XK" name="XK">Kosovo</option><option value="KW" name="KW">Kuwait</option><option value="KG" name="KG">Kyrgyzstan</option><option value="LA" name="LA">Lao People's Democratic Republic</option><option value="" name="">Laos</option><option value="LV" name="LV">Latvia</option><option value="LB" name="LB">Lebanon</option><option value="LS" name="LS">Lesotho</option><option value="LR" name="LR">Liberia</option><option value="LY" name="LY">Libya</option><option value="LI" name="LI">Liechtenstein</option><option value="LT" name="LT">Lithuania</option><option value="LU" name="LU">Luxembourg</option><option value="MO" name="MO">Macao</option><option value="MK" name="MK">Macedonia</option><option value="MG" name="MG">Madagascar</option><option value="" name="">Madeira IS</option><option value="MW" name="MW">Malawi</option><option value="MY" name="MY">Malaysia</option><option value="MV" name="MV">Maldives</option><option value="ML" name="ML">Mali</option><option value="MT" name="MT">Malta</option><option value="MH" name="MH">Marshall Islands</option><option value="MQ" name="MQ">Martinique</option><option value="MR" name="MR">Mauritania</option><option value="MU" name="MU">Mauritius</option><option value="YT" name="YT">Mayotte</option><option value="MX" name="MX">Mexico</option><option value="FM" name="FM">Micronesia</option><option value="MD" name="MD">Moldova</option><option value="MC" name="MC">Monaco</option><option value="MN" name="MN">Mongolia</option><option value="ME" name="ME">Montenegro</option><option value="MS" name="MS">Montserrat</option><option value="MA" name="MA">Morocco</option><option value="MZ" name="MZ">Mozambique</option><option value="MM" name="MM">Myanmar</option><option value="NA" name="NA">Namibia</option><option value="NR" name="NR">Nauru</option><option value="NP" name="NP">Nepal</option><option value="NL" name="NL">Netherlands</option><option value="" name="">Netherlands Antilles</option><option value="NC" name="NC">New Caledonia</option><option value="NZ" name="NZ">New Zealand</option><option value="NI" name="NI">Nicaragua</option><option value="NE" name="NE">Niger</option><option value="NG" name="NG">Nigeria</option><option value="NU" name="NU">Niue</option><option value="NF" name="NF">Norfolk Island</option><option value="" name="">Northern Ireland</option><option value="MP" name="MP">Northern Mariana Islands</option><option value="NO" name="NO">Norway</option><option value="OM" name="OM">Oman</option><option value="PK" name="PK">Pakistan</option><option value="PW" name="PW">Palau</option><option value="PS" name="PS">Palestine</option><option value="PA" name="PA">Panama</option><option value="PG" name="PG">Papua New Guinea</option><option value="PY" name="PY">Paraguay</option><option value="PE" name="PE">Peru</option><option value="PH" name="PH">Philippines</option><option value="PN" name="PN">Pitcairn</option><option value="PL" name="PL">Poland</option><option value="PT" name="PT">Portugal</option><option value="PR" name="PR">Puerto Rico</option><option value="QA" name="QA">Qatar</option><option value="KR" name="KR">Republic of Korea</option><option value="" name="">Reunion IS</option><option value="RO" name="RO">Romania</option><option value="" name="">Russia</option><option value="RU" name="RU">Russian Federation</option><option value="RW" name="RW">Rwanda</option><option value="SH" name="SH">Saint Helena</option><option value="KN" name="KN">Saint Kitts and Nevis</option><option value="LC" name="LC">Saint Lucia</option><option value="MF" name="MF">Saint Martin (French part)</option><option value="PM" name="PM">Saint Pierre and Miquelon</option><option value="VC" name="VC">Saint Vincent and the Grenadines</option><option value="WS" name="WS">Samoa</option><option value="SM" name="SM">San Marino</option><option value="" name="">Sandwich Island</option><option value="ST" name="ST">Sao Tome and Principe</option><option value="SA" name="SA">Saudi Arabia</option><option value="" name="">Scotland</option><option value="SN" name="SN">Senegal</option><option value="RS" name="RS">Serbia</option><option value="SC" name="SC">Seychelles</option><option value="SL" name="SL">Sierra Leone</option><option value="SG" name="SG">Singapore</option><option value="SX" name="SX">Sint Maarten (Dutch part)</option><option value="SK" name="SK">Slovakia</option><option value="SI" name="SI">Slovenia</option><option value="SB" name="SB">Solomon Islands</option><option value="SO" name="SO">Somalia</option><option value="ZA" name="ZA">South Africa</option><option value="" name="">South Georgia</option><option value="GS" name="GS">South Georgia and the South Sandwich Islands</option><option value="SS" name="SS">South Sudan</option><option value="ES" name="ES">Spain</option><option value="LK" name="LK">Sri Lanka</option><option value="" name="">ST Kitts &amp; Nevis</option><option value="" name="">ST Lucia</option><option value="" name="">ST Pierre&amp; Miquelon</option><option value="" name="">ST Vincent &amp; Grenadine</option><option value="SD" name="SD">Sudan</option><option value="SR" name="SR">Suriname</option><option value="SJ" name="SJ">Svalbard and Jan Mayen</option><option value="SZ" name="SZ">Swaziland</option><option value="SE" name="SE">Sweden</option><option value="CH" name="CH">Switzerland</option><option value="SY" name="SY">Syria</option><option value="TW" name="TW">Taiwan</option><option value="TJ" name="TJ">Tajikistan</option><option value="TZ" name="TZ">Tanzania</option><option value="TH" name="TH">Thailand</option><option value="TL" name="TL">Timor-Leste</option><option value="TG" name="TG">Togo</option><option value="TK" name="TK">Tokelau</option><option value="TO" name="TO">Tonga</option><option value="TT" name="TT">Trinidad and Tobago</option><option value="TN" name="TN">Tunisia</option><option value="TR" name="TR">Turkey</option><option value="TM" name="TM">Turkmenistan</option><option value="TC" name="TC">Turks and Caicos Islands</option><option value="TV" name="TV">Tuvalu</option><option value="UG" name="UG">Uganda</option><option value="UA" name="UA">Ukraine</option><option value="AE" name="AE">United Arab Emirates</option><option value="GB" name="GB">United Kingdom</option><option value="UM" name="UM">United States Minor Outlying Islands</option><option value="US" name="US">United States of America</option><option value="UY" name="UY">Uruguay</option><option value="UZ" name="UZ">Uzbekistan</option><option value="VU" name="VU">Vanuatu</option><option value="" name="">Vatican City</option><option value="VE" name="VE">Venezuela</option><option value="VN" name="VN">Vietnam</option><option value="VG" name="VG">Virgin Islands - British</option><option value="VI" name="VI">Virgin Islands - U.S.</option><option value="" name="">Wales</option><option value="WF" name="WF">Wallis and Futuna</option><option value="EH" name="EH">Western Sahara</option><option value="YE" name="YE">Yemen</option><option value="" name="">Yugoslavia</option><option value="ZM" name="ZM">Zambia</option><option value="ZW" name="ZW">Zimbabwe</option></select></div><div><label for="city" style="display: block; font-size: 0.9rem; font-weight: 600; color: rgb(51, 51, 51); margin-bottom: 0.5rem;">City <span style="color: rgb(220, 53, 69); font-weight: 400;" title="Required">*</span></label><select class="inputInside" name="city" id="city" data-moz-autofill-inspect-id="cbbbf618-0bbb-41c7-b982-9e86596fc356" data-moz-autofill-type="address-level2" style=""><option value="" disabled="" hidden="">Choose Here</option><option value="215615">Ajloun</option><option value="15001">Amman</option><option value="215019">Aqaba</option><option value="215020">Irbid</option><option value="215613">Jerash</option><option value="215616">karak</option><option value="215618">Maan</option><option value="215617">Madaba</option><option value="215619">Mafraq</option><option value="215612">Salt</option><option value="215614">Tafilah</option><option value="215021">Zarqa</option></select></div></div><div class="equalColumns"><div style="display: flex; flex-direction: column; gap: 0px; margin-bottom: 0px;"><label id="email-label" for="-input" style="display: block; font-size: 0.9rem; font-weight: 600; color: rgb(51, 51, 51); margin-bottom: 0.5rem; line-height: 1.4;">Email <span style="color: rgb(220, 53, 69); font-weight: 400; margin-left: 2px;" title="Required">*</span></label><input id="email-input" name="email" type="email" class="" value="" data-moz-autofill-inspect-id="93817053-d42a-4800-b8c0-e7c29c4f407d" data-moz-autofill-type="email" style=""><div id="pwm-inline-icon-27625" class="pwm-field-icon" style="position: absolute !important; width: 18px !important; height: 18px !important; min-height: 0px !important; min-width: 0px !important; z-index: 2147483645 !important; box-shadow: none !important; box-sizing: content-box !important; background: none !important; border: medium !important; padding: 0px !important; cursor: pointer !important; outline: none !important; margin-top: 41.1667px; margin-left: 257.8px;"><svg style="display: inline-block !important; width: 16px !important; height: 16px !important; fill: rgb(230, 0, 23) !important; margin-top: 0.5px !important; position: absolute !important; top: 0px !important; left: 0px !important;" viewBox="0 0 40 64"><g><path d="m20,28.12a33.78,33.78 0 0 1 13.36,2.74a22.18,22.18 0 0 1 0.64,5.32c0,9.43 -5.66,17.81 -14,20.94c-8.34,-3.13 -14,-11.51 -14,-20.94a22.2,22.2 0 0 1 0.64,-5.32a33.78,33.78 0 0 1 13.36,-2.74m0,-28.12c-8.82,0 -14,7.36 -14,16.41l0,5.16c2,-1.2 2,-1.49 5,-2.08l0,-3.08c0,-6.21 2.9,-11.41 8.81,-11.41l0.19,0c6.6,0 9,4.77 9,11.41l0,3.08c3,0.58 3,0.88 5,2.08l0,-5.16c0,-9 -5.18,-16.41 -14,-16.41l0,0zm0,22c-6.39,0 -12.77,0.67 -18.47,4a31.6,31.6 0 0 0 -1.53,9.74c0,13.64 8.52,25 20,28.26c11.48,-3.27 20,-14.63 20,-28.26a31.66,31.66 0 0 0 -1.54,-9.77c-5.69,-3.3 -12.08,-4 -18.47,-4l0,0l0.01,0.03z"></path><path d="m21.23,39.5a2.81,2.81 0 0 0 1.77,-2.59a2.94,2.94 0 0 0 -3,-2.93a3,3 0 0 0 -3,3a2.66,2.66 0 0 0 1.77,2.48l-1.77,4.54l6,0l-1.77,-4.5z"></path></g></svg></div></div><div><div class="form_phone__dPNKo"><div><label for="country_phone" style="display: block; font-size: 0.9rem; font-weight: 600; color: rgb(51, 51, 51); margin-bottom: 0.5rem;">Phone Number</label><div style="display: flex; flex-direction: column; gap: 0px; margin-bottom: 0px;"><input id="country_phone-input" name="country_phone" type="text" placeholder="00962" class="" value="" data-moz-autofill-inspect-id="23a36c76-f7ff-4660-accf-16ba1ddf47c2" data-moz-autofill-type="tel-country-code" style=""></div></div><div style="display: flex; flex-direction: column; gap: 0px; margin-bottom: 0px;"><input id="phone-input" name="phone" type="text" placeholder="790000000" class="" value="" data-moz-autofill-inspect-id="22dd2cb0-8a35-4988-9100-3cdaedee1c08" data-moz-autofill-type="tel-national" style=""></div></div></div></div><div style="display: flex; flex-direction: column; gap: 0px; margin-bottom: 0px;"><label id="address-label" for="-input" style="display: block; font-size: 0.9rem; font-weight: 600; color: rgb(51, 51, 51); margin-bottom: 0.5rem; line-height: 1.4;">Address Details (Street name, Building…etc) <span style="color: rgb(220, 53, 69); font-weight: 400; margin-left: 2px;" title="Required">*</span></label><textarea id="address-input" name="address" maxlength="500" style="" data-moz-autofill-type="street-address"></textarea></div></form><div class="flex flexGap form_addressBtn__vxEwz"><button aria-label="cancel" type="reset" class="btnSecondary" style="border-radius: 10px; padding: 0.7rem 1.5rem; font-weight: 600; font-size: 0.95rem; flex: 1 1 0%;">Cancel</button><button aria-label="save address" form="addressForm" type="submit" class="btnPrimary loading" style="border-radius: 10px; padding: 0.7rem 1.5rem; font-weight: 600; font-size: 0.95rem; flex: 2 1 0%;">Save</button></div></div></div></div><div class="fresnel-container fresnel-greaterThanOrEqual-xl "><button aria-label="submit" type="submit" class="btnPrimary address_btn___CLWH loading">Continue to Payment</button></div></div></div><div class="fresnel-container fresnel-at-sm sticky stickyBottom"></div></div><div class="fresnel-container fresnel-greaterThanOrEqual-xl w-25 checkout_fresnelGreaterThanOrEqualXl__OFr2s"><div class="summary_summary__ss8cY "><h4>Order Summary</h4><div><span>Sub Total</span><span>USD 7.25</span></div><div><span>Shipping Cost</span><span>USD 0.00</span></div><div><span>Tax</span><span>USD0.35</span></div><div><span>Total</span><span class="text-main font-bold">USD 7.59</span></div><p style="font-size: 13px; color: rgb(68, 68, 68); margin: -10px 0px 0px;">Please note that your order may be subject to import duties and taxes, once it reaches your destination country. These charges are your responsibility as the customer and Souq Fann is not responsible for them.</p></div></div></div></div></div><next-route-announcer><p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;">/checkout</p></next-route-announcer><bmf-tjunmifabvis></bmf-tjunmifabvis><style></style><div class="abineContentPanel" style="background-color: transparent !important; margin: 0px !important; padding: 0px !important; display: none; opacity: 1 !important; z-index: 2147483647 !important; position: absolute !important; top: 20px !important; right: 20px !important; overflow: hidden !important; border-width: 0px !important; visibility: visible !important; background-position: 0% 0%; background-repeat: repeat; background-attachment: scroll; background-image: none; background-size: auto; background-origin: padding-box; background-clip: border-box;"><iframe class="abineContentFrame" width="310px" allowtransparency="true" frameborder="0" height="0px" scrolling="no" src="moz-extension://e26e1b0b-6868-4e71-849a-a71ef885b7bc/html/inlineForm.html?abine30189797doNotRemove" id="abine30189797doNotRemove" position="undefined" style="display:block !important;position:relative !important;background:transparent !important;border-width:0px !important;left:0px !important;top:0px !important;visibility:visible !important;opacity:1 !important;filter:alpha(opacity:100) !important;margin:0 !important;padding:0 !important;height:0px !important;width:310px" data-moz-autofill-inspect-id="79e82aea-cac2-49a3-9162-728c8bef63a3"></iframe></div></body></html>

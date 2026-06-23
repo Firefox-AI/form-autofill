@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<input autocomplete="off" name="utf8" type="hidden" value="✓"/><input autocomplete="off" name="authenticity_token" type="hidden" value="JBtKFGnJnL9TP6zznxHRYp3117jxAyTqM98hVyxSht8Rr0qwo3ThpMgYtx7JnIOdkqnmM6K1wm7sKlpI40PIKg"/> <div class="control-group mb5"> <label class="control-label" for="user_username">Username</label> <div class="controls"> <input autofocus="autofocus" class="text_area" data-moz-autofill-type="loginname" id="user_username" minlength="3" name="user[username]" ng-model="username" required="required" type="text"/> <span class="text-danger" ng-messages="signup_form['user[username]'].$error"> <span ng-message="required">Required</span> <span ng-message="minlength">Too short(less than 3 characters)</span> </span> <span class="text-success" ng-show="signup_form['user[username]'].$valid">OK</span> </div> </div> <div class="control-group mb5"> <label class="control-label" for="user_email">E-mail</label> <div class="controls"> <input class="text_area" data-moz-autofill-type="email" id="user_email" name="user[email]" ng-model="email" required="required" type="email" value=""/> <span class="text-danger" ng-messages="signup_form['user[email]'].$error"> <span ng-message="required">Required</span> <span ng-message="email">Invalid E-Mail address</span> </span> <span class="text-success" ng-show="signup_form['user[email]'].$valid">OK</span> </div> </div> <div class="control-group mb5"> <label class="control-label" for="user_password">Password</label> <div class="controls"> <input autocomplete="off" class="text_area" id="user_password" minlength="8" name="user[password]" ng-model="password" required="required" type="password"/> <span class="text-danger" ng-messages="signup_form['user[password]'].$error"> <span ng-message="required">Required</span> <span ng-message="minlength">Too short(less than 8 characters)</span> </span> <span class="text-success" ng-show="signup_form['user[password]'].$valid">OK</span> </div> </div> <div class="mb15"> <label for="user_password_confirmation">Password confirmation</label> <br/> <input autocomplete="off" id="user_password_confirmation" minlength="8" name="user[password_confirmation]" ng-model="password_confirmation" required="required" type="password" ui-validate="'$value==password'" ui-validate-watch="'password'"/> <span class="text-danger" ng-messages="signup_form['user[password_confirmation]'].$error"> <span ng-message="required">Required</span> <span ng-message="validator">Password does not match.</span> </span> <span class="text-success" ng-show="signup_form['user[password_confirmation]'].$valid">OK</span> </div> <div><input class="btn btn-primary" data-disable-with="Sign Up" name="commit" ng-disabled="signup_form.$invalid" type="submit" value="Sign Up"/></div>
+</form>
+
+</fieldset></body></html>

@@ -1,0 +1,233 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style>
+fieldset {
+  margin-top: 30px;
+}
+
+form {
+  margin-right: 200px;
+}
+
+input {
+  margin: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<form method="post">
+
+<fieldset>
+<h3>leenbakker.nl</h3>
+
+<form>
+  <div>
+    <div role="group">
+      <label for="firstName" id="firstName-label">Je naam</label>
+      <input autocomplete="given-name" name="firstName" type="text" placeholder="Voornaam" id="firstName" value=""  data-moz-autofill-type="given-name">
+    </div>
+    <div role="group">
+      <label for="lastName" id="lastName-label">Achternaam</label>
+      <input autocomplete="family-name" name="lastName" type="text" placeholder="Achternaam" id="lastName" value=""  data-moz-autofill-type="family-name">
+    </div>
+  </div>
+  <div role="group">
+    <label for="dateOfBirth" id="dateOfBirth-label">Geboortedatum</label>
+    <input autocomplete="bday" name="dateOfBirth" type="text" placeholder="Bv.: 01-01-1990" id="dateOfBirth" value=""  data-moz-autofill-type="bday">
+  </div>
+  <div role="group">
+    <label for="email1" id="email1-label">E-mail</label>
+    <input autocomplete="email" name="email1" type="text" placeholder="Bv.: naam@domein.nl" id="email1" value=""  data-moz-autofill-type="email">
+  </div>
+  <div role="group">
+    <label for="phone1" id="phone1-label">Telefoon</label>
+    <div>
+      <span>🇳🇱</span>
+      <input autocomplete="tel" name="phone1" type="tel" placeholder="Bv.: 06 11223344" inputmode="numeric" pattern="[0-9]*" id="phone1" value=""  data-moz-autofill-type="tel">
+    </div>
+  </div>
+  <div role="group">
+    <label for="zipCode" id="zipCode-label">Postcode</label>
+    <input autocomplete="postal-code" name="zipCode" type="text" placeholder="Bv.: 1234AB" id="zipCode" value=""  data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <div role="group">
+      <label for="houseNumber" id="houseNumber-label">Huisnummer</label>
+      <input autocomplete="address-line-2" name="houseNumber" type="text" placeholder="Bv.: 12" inputmode="numeric" pattern="[0-9]*" id="houseNumber" value=""  data-moz-autofill-type="address-housenumber">
+    </div>
+    <div role="group">
+      <label for="houseNumberSuffix" id="houseNumberSuffix-label">Toevoeging</label>
+      <input autocomplete="address-line-3" name="houseNumberSuffix" type="text" placeholder="Bv.: A" id="houseNumberSuffix" value=""  data-moz-autofill-type="address-extra-housesuffix">
+    </div>
+  </div>
+</form>
+</fieldset>
+
+<fieldset>
+<h3>plnts.nl</h3>
+
+<form>
+  <div>
+    <h3>Shipping address</h3>
+    <div>
+      <input type="text" placeholder="First name" name="firstname" autocomplete="given-name" value=""  data-moz-autofill-type="given-name">
+      <input type="text" placeholder="Last name" name="lastname" autocomplete="family-name" value=""  data-moz-autofill-type="family-name">
+      <input type="email" placeholder="Email" name="email" autocomplete="email" value=""  data-moz-autofill-type="email">
+      <input type="tel" placeholder="Telephone number" name="telephone" autocomplete="tel" value=""  data-moz-autofill-type="tel">
+      <select name="country" autocomplete="country"  data-moz-autofill-type="country">
+        <option value="">Select a country</option>
+        <option value="AT">Austria</option>
+        <option value="BE">Belgium</option>
+        <option value="BG">Bulgaria</option>
+        <option value="HR">Croatia</option>
+        <option value="CY">Cyprus</option>
+        <option value="CZ">Czechia</option>
+        <option value="DK">Denmark</option>
+        <option value="EE">Estonia</option>
+        <option value="FI">Finland</option>
+        <option value="FR">France</option>
+        <option value="DE">Germany</option>
+        <option value="GR">Greece</option>
+        <option value="HU">Hungary</option>
+        <option value="IE">Ireland</option>
+        <option value="IT">Italy</option>
+        <option value="LV">Latvia</option>
+        <option value="LT">Lithuania</option>
+        <option value="LU">Luxembourg</option>
+        <option value="MT">Malta</option>
+        <option value="NL">Netherlands</option>
+        <option value="PL">Poland</option>
+        <option value="PT">Portugal</option>
+        <option value="RO">Romania</option>
+        <option value="SK">Slovakia</option>
+        <option value="SI">Slovenia</option>
+        <option value="ES">Spain</option>
+        <option value="SE">Sweden</option>
+        <option value="CH">Switzerland</option>
+      </select>
+      <option value="">No region / state available</option>
+      <input type="text" placeholder="Postal/ZIP code" name="postcode" autocomplete="nope"  data-moz-autofill-type="postal-code">
+      <input type="text" placeholder="House number" name="houseNr" maxlength="49" autocomplete="nope"  pattern="^(\d*-?)\d+" data-moz-autofill-type="address-housenumber">
+      <input type="text" placeholder="House number extension" name="houseNrExt" maxlength="49" autocomplete="nope" value=""  data-moz-autofill-type="address-extra-housesuffix">
+      <label>Street
+        <input type="text" placeholder="Street name" name="street" maxlength="49" autocomplete="nope" value="" disabled=""  data-moz-autofill-type="address-streetname">
+        <button>Edit</button>
+      </label>
+      <input type="text" placeholder="City" name="city" autocomplete="nope" value="" disabled=""  data-moz-autofill-type="address-level2">
+      <input type="text" placeholder="Apartment, suite, unit, etc." name="streetAddition" maxlength="49" autocomplete="nope"  data-moz-autofill-type="apartment">
+    </div>
+  </div>
+</form>
+</fieldset>
+
+<fieldset>
+
+<h3>www.ah.nl</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <label for="emailAddress">
+      <span>E-mailadres</span>
+    </label>
+    <input id="emailAddress" placeholder="E-mailadres" aria-label="E-mailadres" type="email" autocomplete="email" aria-required="true" name="emailAddress"  data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label>
+      <span>Wachtwoord</span>
+      <span>Kies een wachtwoord van minimaal 10 tekens</span>
+    </label>
+  </div>
+  <div>
+    <input id="password.init" placeholder="Kies wachtwoord" aria-label="Kies wachtwoord, gebruik minimaal 10 tekens" aria-required="true" type="password" name="password.init">
+  </div>
+  <div>
+    <input id="password.confirm" placeholder="Herhaal wachtwoord" aria-label="Herhaal wachtwoord" aria-required="true" type="password" name="password.confirm">
+  </div>
+  <div>
+    <label>
+      <span>Naam</span>
+    </label>
+    <input id="name.first" placeholder="Voornaam" aria-label="Voornaam" aria-required="true" name="name.first"  data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <input id="name.last" placeholder="Achternaam" aria-label="Achternaam" aria-required="true" name="name.last"  data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label>
+      <span>Geboortedatum</span>
+    </label>
+    <input id="birthday.day" placeholder="DD" inputmode="numeric" type="text" min="1" max="31" minlength="1" maxlength="2" autocomplete="bday-day" aria-label="Dag, formaat DD" aria-required="true" name="birthday.day"  data-moz-autofill-type="bday-day">
+  </div>
+  <div>
+    <input id="birthday.month" placeholder="MM" inputmode="numeric" type="text" min="1" max="12" minlength="1" maxlength="2" autocomplete="bday-month" aria-label="Maand, formaat MM" aria-required="true" name="birthday.month"  data-moz-autofill-type="bday-month">
+  </div>
+  <div>
+    <input id="birthday.year" placeholder="JJJJ" inputmode="numeric" type="text" min="1900" max="2025" minlength="4" maxlength="4" autocomplete="bday-year" aria-label="Jaar, formaat JJJJ" aria-required="true" name="birthday.year"  data-moz-autofill-type="bday-year">
+  </div>
+  <div>
+    <label>
+      <span>Mobiel telefoonnummer</span>
+      <span>Zo kunnen we je account beter beveiligen, en controle codes via sms versturen tijdens het inloggen.</span>
+    </label>
+    <input id="phone.number" placeholder="+31(0)6" aria-label="Mobiel telefoonnummer" type="tel" autocomplete="tel-national" aria-required="true" name="phone.number"  data-moz-autofill-type="tel">
+  </div>
+</form>
+
+</fieldset>
+
+<fieldset>
+
+<h3>www.aliexpress.com</h3>
+<p><i></i></p>
+
+<form>
+  <div>
+    <input aria-label="select" role="combobox" tabindex="0" aria-expanded="false" aria-disabled="false" height="100%" size="1" autocomplete="off" value="">
+  </div>
+  <div>
+    <label>
+      <i></i>
+    </label>
+  </div>
+  <div>
+    <input placeholder="Voornaam*" height="100%" autocomplete="off" value="" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <input placeholder="Achternaam*" height="100%" autocomplete="off" value="" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <input height="100%" autocomplete="off" value="+31" data-moz-autofill-type="tel-country-code">
+  </div>
+  <div>
+    <input placeholder="Telefoonnummer" height="100%" autocomplete="off" value="" data-moz-autofill-type="tel-national">
+  </div>
+  <div>
+    <input role="combobox" aria-autocomplete="list" aria-disabled="false" aria-expanded="false" placeholder="Zoek postcode op via postcode, straat of adres" height="100%" autocomplete="off" value=""  data-moz-autofill-type="postal-code-lookup">
+  </div>
+  <div>
+    <input role="combobox" aria-autocomplete="list" aria-disabled="false" aria-expanded="false" placeholder="Postcode bijv. &quot;1111 AA“" height="100%" autocomplete="off" value="" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <input placeholder="Straatnaam" height="100%" autocomplete="off" value="" data-moz-autofill-type="address-streetname">
+  </div>
+  <div>
+    <input placeholder="Huisnummer en toevoeging* bijv. &quot;10-C&quot;." height="100%" autocomplete="off" value=""
+           data-moz-autofill-type="address-housenumber">
+  </div>
+  <div>
+    <input aria-label="select" role="combobox" tabindex="0" aria-expanded="false" aria-disabled="false" height="100%" size="1" autocomplete="off" value="">
+  </div>
+  <div>
+    <input aria-label="select" role="combobox" tabindex="0" aria-expanded="false" aria-disabled="false" height="100%" size="1" autocomplete="off" value="">
+  </div>
+  <div>
+    <input role="combobox" aria-autocomplete="list" aria-disabled="false" aria-expanded="false" placeholder="Street &amp; Apartment" height="100%" autocomplete="off" value="" data-moz-autofill-type="apartment">
+  </div>
+</form>
+
+</fieldset>
+

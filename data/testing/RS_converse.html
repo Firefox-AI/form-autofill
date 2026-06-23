@@ -1,0 +1,465 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<form class="form form-shipping-address" id="co-shipping-form" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}" data-hasrequired="* Obavezna polja">
+    <!-- ko foreach: getRegion('before-fields') -->
+    <!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} --><!-- /ko -->
+<!-- /ko -->
+    <!--/ko-->
+    <div id="shipping-new-address-form" class="fieldset address">
+        <!-- ko foreach: getRegion('additional-fieldsets') -->
+        <!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.firstname">
+
+    <label class="label" data-bind="attr: { for: element.uid }" for="M342KEV"><!-- ko if: element.label --><span data-bind="i18n: element.label">Ime</span><!-- /ko --></label>
+
+    <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+        <!-- ko ifnot: element.hasAddons() -->
+            <!-- ko template: element.elementTmpl -->
+<input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="firstname" aria-required="true" aria-invalid="false" id="M342KEV" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="given-name">
+<!-- /ko -->
+        <!-- /ko -->
+
+        <!-- ko if: element.hasAddons() --><!-- /ko -->
+
+        <!-- ko if: element.tooltip --><!-- /ko -->
+
+        <!-- ko if: element.notice --><!-- /ko -->
+
+        <!-- ko if: element.error() --><!-- /ko -->
+
+        <!-- ko if: element.warn() --><!-- /ko -->
+    </div>
+</div>
+<!-- /ko --><!-- /ko -->
+
+    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.lastname">
+
+    <label class="label" data-bind="attr: { for: element.uid }" for="UYE8T0A"><!-- ko if: element.label --><span data-bind="i18n: element.label">Prezime</span><!-- /ko --></label>
+
+    <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+        <!-- ko ifnot: element.hasAddons() -->
+            <!-- ko template: element.elementTmpl -->
+<input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="lastname" aria-required="true" aria-invalid="false" id="UYE8T0A" style="" data-moz-autofill-type="family-name">
+<!-- /ko -->
+        <!-- /ko -->
+
+        <!-- ko if: element.hasAddons() --><!-- /ko -->
+
+        <!-- ko if: element.tooltip --><!-- /ko -->
+
+        <!-- ko if: element.notice --><!-- /ko -->
+
+        <!-- ko if: element.error() --><!-- /ko -->
+
+        <!-- ko if: element.warn() --><!-- /ko -->
+    </div>
+</div>
+<!-- /ko --><!-- /ko -->
+
+    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="field" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.company">
+
+    <label class="label" data-bind="attr: { for: element.uid }" for="X659LPT"><!-- ko if: element.label --><span data-bind="i18n: element.label">Firma</span><!-- /ko --></label>
+
+    <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+        <!-- ko ifnot: element.hasAddons() -->
+            <!-- ko template: element.elementTmpl -->
+<input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="company" aria-invalid="false" id="X659LPT" style="" data-moz-autofill-type="organization">
+<!-- /ko -->
+        <!-- /ko -->
+
+        <!-- ko if: element.hasAddons() --><!-- /ko -->
+
+        <!-- ko if: element.tooltip --><!-- /ko -->
+
+        <!-- ko if: element.notice --><!-- /ko -->
+
+        <!-- ko if: element.error() --><!-- /ko -->
+
+        <!-- ko if: element.warn() --><!-- /ko -->
+    </div>
+</div>
+<!-- /ko --><!-- /ko -->
+
+    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<fieldset class="field street admin__control-fields required" data-bind="css: additionalClasses">
+    <legend class="label">
+        <span data-bind="i18n: element.label">Adresa ulice</span>
+    </legend>
+    <div class="control">
+        <!-- ko foreach: { data: elems, as: 'element' } -->
+
+            <!-- ko if: element.visible() -->
+
+                <!-- ko ifnot: (element.input_type == 'checkbox' || element.input_type == 'radio') -->
+                    <!-- ko template: $parent.fieldTemplate -->
+<div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.street.0">
+
+    <label class="label" data-bind="attr: { for: element.uid }" for="IJ4BF5D"><!-- ko if: element.label --><span data-bind="i18n: element.label">Adresa ulice: Line 1</span><!-- /ko --></label>
+
+    <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+        <!-- ko ifnot: element.hasAddons() -->
+            <!-- ko template: element.elementTmpl -->
+<input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="street[0]" aria-required="true" aria-invalid="false" id="IJ4BF5D" style="" data-moz-autofill-type="address-line1">
+<!-- /ko -->
+        <!-- /ko -->
+
+        <!-- ko if: element.hasAddons() --><!-- /ko -->
+
+        <!-- ko if: element.tooltip --><!-- /ko -->
+
+        <!-- ko if: element.notice --><!-- /ko -->
+
+        <!-- ko if: element.error() --><!-- /ko -->
+
+        <!-- ko if: element.warn() --><!-- /ko -->
+    </div>
+</div>
+<!-- /ko -->
+                <!-- /ko -->
+
+                <!-- ko if: (element.input_type == 'checkbox' || element.input_type == 'radio') --><!-- /ko -->
+
+            <!-- /ko -->
+
+        <!-- /ko -->
+
+        <!-- ko if: validateWholeGroup --><!-- /ko -->
+    </div>
+</fieldset>
+<!-- /ko --><!-- /ko -->
+
+    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.country_id">
+
+    <label class="label" data-bind="attr: { for: element.uid }" for="SFCF5YB"><!-- ko if: element.label --><span data-bind="i18n: element.label">Država</span><!-- /ko --></label>
+
+    <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+        <!-- ko ifnot: element.hasAddons() -->
+            <!-- ko template: element.elementTmpl -->
+<select class="select" data-bind="
+    attr: {
+        name: inputName,
+        id: uid,
+        disabled: disabled,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        placeholder: placeholder
+    },
+    hasFocus: focused,
+    optgroup: options,
+    value: value,
+    optionsCaption: caption,
+    optionsValue: 'value',
+    optionsText: 'label',
+    optionsAfterRender: function(option, item) {
+        if (item &amp;&amp; item.disabled) {
+            ko.applyBindingsToNode(option, {attr: {disabled: true}}, item);
+        }
+    }" name="country_id" id="SFCF5YB" aria-required="true" aria-invalid="false" style="" data-moz-autofill-type="country"><option data-title="Srbija" value="RS">Srbija</option></select>
+<!-- /ko -->
+        <!-- /ko -->
+
+        <!-- ko if: element.hasAddons() --><!-- /ko -->
+
+        <!-- ko if: element.tooltip --><!-- /ko -->
+
+        <!-- ko if: element.notice --><!-- /ko -->
+
+        <!-- ko if: element.error() --><!-- /ko -->
+
+        <!-- ko if: element.warn() --><!-- /ko -->
+    </div>
+</div>
+<!-- /ko --><!-- /ko -->
+
+    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="field" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" style="display: none;" name="shippingAddress.region_id">
+
+    <label class="label" data-bind="attr: { for: element.uid }" for="IS3TAY0"><!-- ko if: element.label --><span data-bind="i18n: element.label">Oblast</span><!-- /ko --></label>
+
+    <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+        <!-- ko ifnot: element.hasAddons() -->
+            <!-- ko template: element.elementTmpl -->
+<select class="select" data-bind="
+    attr: {
+        name: inputName,
+        id: uid,
+        disabled: disabled,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        placeholder: placeholder
+    },
+    hasFocus: focused,
+    optgroup: options,
+    value: value,
+    optionsCaption: caption,
+    optionsValue: 'value',
+    optionsText: 'label',
+    optionsAfterRender: function(option, item) {
+        if (item &amp;&amp; item.disabled) {
+            ko.applyBindingsToNode(option, {attr: {disabled: true}}, item);
+        }
+    }" name="region_id" id="IS3TAY0" aria-invalid="false" style="" data-moz-autofill-type="address-level1"></select>
+<!-- /ko -->
+        <!-- /ko -->
+
+        <!-- ko if: element.hasAddons() --><!-- /ko -->
+
+        <!-- ko if: element.tooltip --><!-- /ko -->
+
+        <!-- ko if: element.notice --><!-- /ko -->
+
+        <!-- ko if: element.error() --><!-- /ko -->
+
+        <!-- ko if: element.warn() --><!-- /ko -->
+    </div>
+</div>
+<!-- /ko --><!-- /ko -->
+
+    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="field" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" style="display: none;" name="shippingAddress.region">
+
+    <label class="label" data-bind="attr: { for: element.uid }" for="BMLGVV3"><!-- ko if: element.label --><span data-bind="i18n: element.label">Oblast</span><!-- /ko --></label>
+
+    <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+        <!-- ko ifnot: element.hasAddons() -->
+            <!-- ko template: element.elementTmpl -->
+<input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="region" aria-invalid="false" id="BMLGVV3" style="" data-moz-autofill-type="address-level1">
+<!-- /ko -->
+        <!-- /ko -->
+
+        <!-- ko if: element.hasAddons() --><!-- /ko -->
+
+        <!-- ko if: element.tooltip --><!-- /ko -->
+
+        <!-- ko if: element.notice --><!-- /ko -->
+
+        <!-- ko if: element.error() --><!-- /ko -->
+
+        <!-- ko if: element.warn() --><!-- /ko -->
+    </div>
+</div>
+<!-- /ko --><!-- /ko -->
+
+    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.city">
+
+    <label class="label" data-bind="attr: { for: element.uid }" for="QH0WUNV"><!-- ko if: element.label --><span data-bind="i18n: element.label">Grad</span><!-- /ko --></label>
+
+    <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+        <!-- ko ifnot: element.hasAddons() -->
+            <!-- ko template: element.elementTmpl -->
+<input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="city" aria-required="true" aria-invalid="false" id="QH0WUNV" style="" data-moz-autofill-type="address-level2">
+<!-- /ko -->
+        <!-- /ko -->
+
+        <!-- ko if: element.hasAddons() --><!-- /ko -->
+
+        <!-- ko if: element.tooltip --><!-- /ko -->
+
+        <!-- ko if: element.notice --><!-- /ko -->
+
+        <!-- ko if: element.error() --><!-- /ko -->
+
+        <!-- ko if: element.warn() --><!-- /ko -->
+    </div>
+</div>
+<!-- /ko --><!-- /ko -->
+
+    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="field _required _warn" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.postcode">
+
+    <label class="label" data-bind="attr: { for: element.uid }" for="TM6OCF7"><!-- ko if: element.label --><span data-bind="i18n: element.label">Poštanski broj</span><!-- /ko --></label>
+
+    <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+        <!-- ko ifnot: element.hasAddons() -->
+            <!-- ko template: element.elementTmpl -->
+<input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="postcode" aria-required="true" aria-invalid="false" id="TM6OCF7" style="" data-moz-autofill-type="postal-code">
+<!-- /ko -->
+        <!-- /ko -->
+
+        <!-- ko if: element.hasAddons() --><!-- /ko -->
+
+        <!-- ko if: element.tooltip --><!-- /ko -->
+
+        <!-- ko if: element.notice --><!-- /ko -->
+
+        <!-- ko if: element.error() --><!-- /ko -->
+
+        <!-- ko if: element.warn() -->
+            <div role="alert" class="message warning" data-bind="attr: { id: element.warningId }" generated="true">
+                <span data-bind="text: element.warn">Poštanski broj koji ste uneli nije ispravan. Primer ispravnog poštanskog broja: 12345. Ukoliko ste sigurni da ste uneli ispravan poštanski broj, ignorišite ovo obaveštenje.</span>
+            </div>
+        <!-- /ko -->
+    </div>
+</div>
+<!-- /ko --><!-- /ko -->
+
+    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.telephone">
+
+    <label class="label" data-bind="attr: { for: element.uid }" for="QDUWTEL"><!-- ko if: element.label --><span data-bind="i18n: element.label">Telefonski broj</span><!-- /ko --></label>
+
+    <div class="control _with-tooltip" data-bind="css: {'_with-tooltip': element.tooltip}">
+        <!-- ko ifnot: element.hasAddons() -->
+            <!-- ko template: element.elementTmpl -->
+<input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="telephone" aria-required="true" aria-invalid="false" id="QDUWTEL" style="background-color: rgb(255, 252, 200);" data-moz-autofill-type="tel">
+<!-- /ko -->
+        <!-- /ko -->
+
+        <!-- ko if: element.hasAddons() --><!-- /ko -->
+
+        <!-- ko if: element.tooltip -->
+            <!-- ko template: element.tooltipTpl -->
+ <div class="field-tooltip toggle">
+
+    <!-- ko if: (tooltip.link)--><!-- /ko -->
+
+     <span class="label" data-bind="attr: { id: $data.tooltipId ? $data.tooltipId : 'tooltip-label' }" id="tooltip-QDUWTEL"><!-- ko i18n: 'Tooltip' --><span>Tooltip</span><!-- /ko --></span>
+     <!-- ko if: (!tooltip.link)-->
+         <span class="field-tooltip-action action-help" tabindex="0" data-toggle="dropdown" data-bind="
+                mageInit: {'dropdown':{'activeClass': '_active', 'parent': '.field-tooltip.toggle'}},
+                attr: { 'aria-labelledby': $data.tooltipId ? $data.tooltipId : 'tooltip-label' }
+            " aria-labelledby="tooltip-QDUWTEL" aria-haspopup="true" aria-expanded="false" role="button">
+         </span>
+     <!-- /ko -->
+
+     <div class="field-tooltip-content" data-target="dropdown" data-bind="i18n: tooltip.description" aria-hidden="true">Za pitanja oko isporuke.</div>
+</div>
+<!-- /ko -->
+        <!-- /ko -->
+
+        <!-- ko if: element.notice --><!-- /ko -->
+
+        <!-- ko if: element.error() --><!-- /ko -->
+
+        <!-- ko if: element.warn() --><!-- /ko -->
+    </div>
+</div>
+<!-- /ko --><!-- /ko -->
+
+    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<input class="admin__control-text" type="hidden" data-bind="
+        value: value,
+        hasFocus: focused,
+        attr: {
+            name: inputName,
+            placeholder: placeholder,
+            'aria-describedby': noticeId,
+            id: uid
+    }" name="gls_parcel_shop_info" aria-describedby="notice-TROTITW" id="TROTITW">
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+        <!--/ko-->
+        <!-- ko if: (isCustomerLoggedIn) --><!-- /ko -->
+    </div>
+</form>
+</body></html>
+
