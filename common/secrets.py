@@ -77,9 +77,6 @@ def load_remote_env():
         envs = json.loads(raw_env)
         for k, v in envs.items():
             if not isinstance(v, str):
-                print(
-                    f"Secret {secret_id} key {k!r} must be a string, got {type(v).__name__}: {v!r}"
-                )
                 continue
             os.environ[k.upper()] = v
 

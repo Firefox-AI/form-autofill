@@ -76,12 +76,20 @@ from dotraining import (
     KAPPA,
     PRECISION,
     RECALL,
+    FIELD_ACCURACY,
+    LOCALE_ACCURACY,
+    LOCALE_SUPPORT,
+    ENGLISH_ACCURACY,
+    NON_ENGLISH_ACCURACY,
+    ENGLISH_COUNT,
+    NON_ENGLISH_COUNT,
 )
 
 # The headline scalar metrics logged to W&B and surfaced in the end step.
 # (Everything in the eval result except the nested classification report.)
 SUMMARY_METRIC_KEYS = [ACCURACY, F1, PRECISION, RECALL, KAPPA,
-                       "totalAccuracy", "closeAccuracy", "blankRate"]
+                       "totalAccuracy", "closeAccuracy", "blankRate",
+                       ENGLISH_ACCURACY, NON_ENGLISH_ACCURACY]
 
 # Image built from ml-services/ml_shared/dockers/metaflow_autofill_generation.
 # Swap the tag to your branch name to test a branch build, e.g.
@@ -108,6 +116,54 @@ def _unzip_to(blob, path):
     os.makedirs(path, exist_ok=True)
     with zipfile.ZipFile(io.BytesIO(blob)) as zf:
         zf.extractall(path)
+
+
+def _wandb_detail_payload(metrics, wandb):
+    """Build per-class and per-locale W&B metrics from an eval result.
+
+    Returns (scalars, tables): scalars are namespaced so each field/locale is a
+    chartable metric (e.g. ``per_class_f1/address-line1``,
+    ``locale_accuracy/en-US``); tables give a sortable single-run view.
+    """
+    aggregate_keys = {"accuracy", "macro avg", "weighted avg"}
+    report = metrics.get(CLASSIFICATION_REPORT, {}) or {}
+    field_acc = metrics.get(FIELD_ACCURACY, {}) or {}
+    locale_acc = metrics.get(LOCALE_ACCURACY, {}) or {}
+    locale_sup = metrics.get(LOCALE_SUPPORT, {}) or {}
+
+    scalars = {}
+    # Per-class scalars -- one chartable series per field type.
+    for field, acc in field_acc.items():
+        scalars[f"per_class_accuracy/{field}"] = acc
+    for field, stats in report.items():
+        if field in aggregate_keys or not isinstance(stats, dict):
+            continue
+        if "precision" in stats:
+            scalars[f"per_class_precision/{field}"] = stats["precision"]
+        if "recall" in stats:
+            scalars[f"per_class_recall/{field}"] = stats["recall"]
+        if "f1-score" in stats:
+            scalars[f"per_class_f1/{field}"] = stats["f1-score"]
+    # Per-locale accuracy + the English split.
+    for loc, acc in locale_acc.items():
+        scalars[f"locale_accuracy/{loc}"] = acc
+    scalars["accuracy_english"] = metrics.get(ENGLISH_ACCURACY, 0.0)
+    scalars["accuracy_non_english"] = metrics.get(NON_ENGLISH_ACCURACY, 0.0)
+
+    tables = {}
+    pc = wandb.Table(columns=["field", "support", "precision", "recall", "f1", "accuracy"])
+    for field in sorted(field_acc):
+        stats = report.get(field) if isinstance(report.get(field), dict) else {}
+        pc.add_data(field, stats.get("support", ""), stats.get("precision", ""),
+                    stats.get("recall", ""), stats.get("f1-score", ""), field_acc[field])
+    tables["per_class_metrics"] = pc
+
+    lt = wandb.Table(columns=["locale", "support", "accuracy"])
+    for loc in sorted(locale_acc, key=lambda k: locale_sup.get(k, 0), reverse=True):
+        lt.add_data(loc, locale_sup.get(loc, ""), locale_acc[loc])
+    tables["locale_accuracy_table"] = lt
+
+    return scalars, tables
 
 
 class AutofillFlow(FlowSpec):
@@ -139,6 +195,21 @@ class AutofillFlow(FlowSpec):
         help="Training dataset filename. Empty uses 'training<data_variant>.txt'; "
              "set e.g. 'training-supported-expanded.txt' to train on a different file.",
         default="",
+    )
+    english_only = Parameter(
+        "english_only",
+        help="Train/validate on English-locale rows only. Evaluation still runs on "
+             "the full test set so the English vs non-English split stays visible.",
+        default=False,
+        type=bool,
+    )
+    context_format = Parameter(
+        "context_format",
+        help="How prev/next-field context is encoded at load time: 'bb' keeps the "
+             "raw bb/aa per-word prefixes; 'sep' regroups them into [SEP]-delimited "
+             "sections; 'symbol' uses distinct single-token markers (• previous, "
+             "§ next). Reformatted on the fly; data files unchanged.",
+        default="bb",
     )
     eval_dataset = Parameter(
         "eval_dataset",
@@ -206,6 +277,8 @@ class AutofillFlow(FlowSpec):
             numEpochs=self.num_epochs,
             modelSuffix=self.model_suffix,
             trainFile=self.train_file,
+            englishOnly=self.english_only,
+            contextFormat=self.context_format,
             learningRate=self.learning_rate,
             trainBatchSize=self.train_batch_size,
             evalBatchSize=self.eval_batch_size,
@@ -234,15 +307,16 @@ class AutofillFlow(FlowSpec):
         train_file = self.train_file or f"training{self.data_variant}.txt"
         print(f"Training {self.model_name} -> {self.save_model_dir} "
               f"({self.num_epochs} epochs, variant '{self.data_variant}', "
-              f"train_file '{train_file}', "
+              f"train_file '{train_file}', english_only={self.english_only}, "
+              f"context_format={self.context_format}, "
               f"lora={self.use_lora}, lr={self.learning_rate or 'auto'}, "
               f"train_batch={self.train_batch_size})")
         self.next(self.train)
 
     @maybe_kubernetes(image=GPU_IMAGE,
                 gpu_vendor="nvidia",
-                gpu=1
-                )
+                gpu=1,
+              )
     @step
     def train(self):
         """Fine-tune the model and save it to the output-models directory."""
@@ -282,6 +356,10 @@ class AutofillFlow(FlowSpec):
         self.classification_report = self.metrics[CLASSIFICATION_REPORT]
         # Headline scalars, stored as their own artifacts and logged to W&B.
         self.summary_metrics = {k: self.metrics[k] for k in SUMMARY_METRIC_KEYS}
+        # Per-class and per-locale breakdowns, also kept as artifacts for `dump`.
+        self.field_accuracy = self.metrics[FIELD_ACCURACY]
+        self.locale_accuracy = self.metrics[LOCALE_ACCURACY]
+        self.locale_support = self.metrics[LOCALE_SUPPORT]
 
         if self.wandb_project:
             import wandb
@@ -296,9 +374,18 @@ class AutofillFlow(FlowSpec):
             )
             wandb.log(self.summary_metrics)
             wandb.summary.update(self.summary_metrics)
+            # Per-class (incl. address-line1) and per-locale metrics as chartable
+            # scalars + sortable tables.
+            detail_scalars, detail_tables = _wandb_detail_payload(self.metrics, wandb)
+            wandb.log({**detail_scalars, **detail_tables})
+            wandb.summary.update(detail_scalars)
             wandb.finish()
 
-        print(f"Accuracy: {self.metrics[ACCURACY]:.4f}  F1: {self.metrics[F1]:.4f}")
+        print(f"Accuracy: {self.metrics[ACCURACY]:.4f}  F1: {self.metrics[F1]:.4f}  "
+              f"English: {self.metrics[ENGLISH_ACCURACY]:.4f} "
+              f"({self.metrics[ENGLISH_COUNT]})  "
+              f"Non-English: {self.metrics[NON_ENGLISH_ACCURACY]:.4f} "
+              f"({self.metrics[NON_ENGLISH_COUNT]})")
         self.next(self.end)
 
     @step

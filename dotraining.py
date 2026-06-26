@@ -35,6 +35,101 @@ RECALL = "recall"
 F1 = "f1"
 ACCURACY = "accuracy"
 CLASSIFICATION_REPORT = "classification_report"
+# Per-class and locale breakdowns added to the eval metrics dict.
+FIELD_ACCURACY = "fieldAccuracy"
+LOCALE_ACCURACY = "localeAccuracy"
+LOCALE_SUPPORT = "localeSupport"
+ENGLISH_ACCURACY = "englishAccuracy"
+NON_ENGLISH_ACCURACY = "nonEnglishAccuracy"
+ENGLISH_COUNT = "englishCount"
+NON_ENGLISH_COUNT = "nonEnglishCount"
+
+# Locale tokens that we treat as English. QA data is keyed by country code and
+# the GEN/EN data by language, so this covers English-speaking countries plus
+# the bare "EN" language tag.
+ENGLISH_LOCALES = {"US", "GB", "UK", "AU", "NZ", "IE", "CA", "EN"}
+
+
+def classify_locale(filename):
+  """Best-effort (locale, language, is_english) parsed from a dataset filename.
+
+  Dataset rows are named by source, which encodes the locale a few ways:
+    GEN_<bcp47>_...  generated data, e.g. GEN_en-US_... / GEN_de-DE_...
+    QA_<CC>_...      QA data keyed by country code, e.g. QA_ES_... / QA_NZ_...
+    EN_... FR_... DE_...   language/locale prefix
+    <cc>.html        bare country file, e.g. us.html / nl.html
+  Anything unrecognized is bucketed as 'other' and treated as non-English.
+  """
+  name = (filename or "").strip()
+  parts = name.split("_")
+  head = parts[0]
+  if head == "GEN" and len(parts) >= 2:
+    tag = parts[1]
+    lang = tag.split("-")[0].lower()
+    return tag, lang, lang == "en"
+  if head == "QA" and len(parts) >= 2:
+    cc = parts[1].upper()
+    return "QA-" + cc, cc.lower(), cc in ENGLISH_LOCALES
+  if len(parts) >= 2 and head.isalpha() and head.isupper() and 2 <= len(head) <= 3:
+    # e.g. EN_..., FR_..., DE_...
+    return head, head.lower(), head in ENGLISH_LOCALES
+  # bare filename like us.html / nl.html / creditcards.html
+  stem = name.split(".")[0]
+  if 2 <= len(stem) <= 3 and stem.isalpha():
+    return stem.lower(), stem.lower(), stem.upper() in ENGLISH_LOCALES
+  return "other", "other", False
+
+
+# Supported context encodings for reformat_context (the --context_format flag).
+CONTEXT_FORMATS = ("bb", "sep", "symbol")
+
+# Single-token markers for the "symbol" format. Both are already single tokens
+# in the bert-base-uncased vocab (so no tokenizer/embedding changes are needed),
+# and using two distinct symbols gives the previous vs next sections their own
+# learned embeddings -- a directional signal a shared [SEP] can't provide.
+PREV_SYMBOL = "•"   # bullet: marks the start of the previous-field section
+NEXT_SYMBOL = "§"   # section sign: marks the start of the next-field section
+
+
+def reformat_context(text, fmt="bb"):
+  """Re-encode the bb/aa per-word context prefixes at load time.
+
+  The datasets encode the field's own tokens with no prefix, the *previous*
+  field's tokens with a 'bb' prefix, and the *next* field's tokens with an 'aa'
+  prefix, all whitespace-joined, e.g.:
+
+      street house number bblast bbname aapostcode aapostcode
+
+  WordPiece shreds 'bblast' into 'bb ##la ##st' -- which both inflates the
+  sequence (~3x) and hides the real word from the model. This regroups the
+  tokens by section and marks each section once, keeping the words plain so they
+  share their normal embeddings. Two encodings are offered:
+
+      sep:    <field tokens> [SEP] <previous tokens> [SEP] <next tokens>
+      symbol: <field tokens>  •  <previous tokens>  §  <next tokens>
+
+  'sep' uses one shared [SEP] for both boundaries (direction is positional);
+  'symbol' uses two distinct single-token markers so previous vs next each get
+  their own embedding. Both markers are always emitted so the sections stay
+  positionally distinguishable even when one is empty. fmt='bb' returns the text
+  unchanged (the original behavior). Applied on the fly; data files are not
+  modified.
+  """
+  if fmt == "bb":
+    return text
+  if fmt not in ("sep", "symbol"):
+    raise ValueError(f"Unknown context_format {fmt!r}; expected one of {CONTEXT_FORMATS}")
+  current, previous, nxt = [], [], []
+  for word in text.split():
+    if len(word) > 2 and word.startswith("bb"):
+      previous.append(word[2:])
+    elif len(word) > 2 and word.startswith("aa"):
+      nxt.append(word[2:])
+    else:
+      current.append(word)
+  prev_marker, next_marker = ("[SEP]", "[SEP]") if fmt == "sep" else (PREV_SYMBOL, NEXT_SYMBOL)
+  return (f"{' '.join(current)} {prev_marker} {' '.join(previous)} "
+          f"{next_marker} {' '.join(nxt)}")
 
 
 def compute_standard_metrics(y_test, y_pred, print_report=False):
@@ -144,6 +239,17 @@ class Config:
     # "training<dataVariant>.txt" is used; set it to train on a different file
     # such as "training-supported-expanded.txt".
     trainFile: str = ""
+
+    # When True, training/validation rows are filtered to English-only sources
+    # (see classify_locale). Evaluation still runs on the full test set so the
+    # English vs non-English breakdown remains visible.
+    englishOnly: bool = False
+
+    # How the bb/aa previous/next-field context tokens are encoded at load time
+    # (see reformat_context). "bb" keeps the raw per-word prefixes; "sep"
+    # regroups them into [SEP]-delimited sections with plain words. Applied to
+    # training, validation and evaluation so train/eval stay consistent.
+    contextFormat: str = "bb"
 
     # Training hyperparameters. Defaults match the HF Trainer defaults so that
     # leaving them unset reproduces the previous behavior. learningRate of 0.0
@@ -329,6 +435,8 @@ def wandb_config(cfg):
     "num_epochs": cfg.numEpochs,
     "model_suffix": cfg.modelSuffix,
     "train_file": cfg.trainFile,
+    "english_only": cfg.englishOnly,
+    "context_format": cfg.contextFormat,
     "learning_rate": cfg.learningRate,
     "train_batch_size": cfg.trainBatchSize,
     "eval_batch_size": cfg.evalBatchSize,
@@ -340,6 +448,8 @@ def wandb_config(cfg):
   }
 
 def readFile(filetype, cfg):
+  if cfg.contextFormat not in CONTEXT_FORMATS:
+    raise ValueError(f"Unknown context_format {cfg.contextFormat!r}; expected one of {CONTEXT_FORMATS}")
   list = []
 
   # Allow training to read from an explicit file (e.g. an expanded dataset);
@@ -355,9 +465,16 @@ def readFile(filetype, cfg):
   for line in lines:
     line = line.strip()
     lineData = line.split(",", ignoreLineCount + 1)
+    if cfg.englishOnly:
+      src = lineData[0] if len(lineData) > ignoreLineCount else ""
+      if not classify_locale(src)[2]:
+        continue
     print(lineData)
     try:
-      list.append({"label": int(lineData[ignoreLineCount]), "text": lineData[ignoreLineCount + 1]})
+      list.append({
+        "label": int(lineData[ignoreLineCount]),
+        "text": reformat_context(lineData[ignoreLineCount + 1], cfg.contextFormat),
+      })
     except Exception:
       print(filetype + ".txt : " + line)
       raise
@@ -515,10 +632,13 @@ def evaluate_model(cfg, filename="testing"):
   for line in lines:
     line = line.strip()
     lineData = line.split(",", ignoreLineCount + 1)
-    list.append(lineData[ignoreLineCount + 1])
+    raw_text = lineData[ignoreLineCount + 1]
+    # Re-encode bb/aa context the same way as training so eval stays consistent;
+    # autocomplete detection below still works off the raw text.
+    list.append(reformat_context(raw_text, cfg.contextFormat))
 
-    if lineData[ignoreLineCount + 1].startswith("a-c-"):
-      actype = lineData[ignoreLineCount + 1].split(" ", maxsplit=1)[0][4:]
+    if raw_text.startswith("a-c-"):
+      actype = raw_text.split(" ", maxsplit=1)[0][4:]
       if actype in fieldTypesDict:
         autocompleteList.append(actype)
       else:
@@ -544,6 +664,9 @@ def evaluate_model(cfg, filename="testing"):
   close = 0
   blank = 0
   fieldCorrect = {}
+  localeCorrect = {}            # locale -> [correct, total]
+  englishCorrect = [0, 0]       # [correct, total] for English-locale rows
+  nonEnglishCorrect = [0, 0]    # [correct, total] for everything else
 
   for result in zip(results, expectedList, autocompleteList, detailsList):
     actualresult = None
@@ -576,6 +699,16 @@ def evaluate_model(cfg, filename="testing"):
     if result[1] == "other" and actualresult != "other":
       blank += 1
 
+    # Accuracy by locale / language, with an English vs non-English split. The
+    # filename (detailsList[i][0]) encodes the source locale.
+    locale, _language, is_english = classify_locale(result[3][0])
+    lc = localeCorrect.setdefault(locale, [0, 0])
+    lc[0] += match
+    lc[1] += 1
+    bucket = englishCorrect if is_english else nonEnglishCorrect
+    bucket[0] += match
+    bucket[1] += 1
+
     probability = result[0]["score"]
     if ignoreLineCount == 2:
       print(result[3][0] + "," + result[3][1] + "  ", end="")
@@ -595,6 +728,16 @@ def evaluate_model(cfg, filename="testing"):
     fieldAccuracy[field] = fieldCorrect[field][0] / fieldCorrect[field][1]
     print("  " + field + " : " + str(fieldAccuracy[field]))
 
+  localeAccuracy = {loc: c / n for loc, (c, n) in localeCorrect.items()}
+  localeSupport = {loc: n for loc, (c, n) in localeCorrect.items()}
+  englishAccuracy = englishCorrect[0] / englishCorrect[1] if englishCorrect[1] else 0.0
+  nonEnglishAccuracy = nonEnglishCorrect[0] / nonEnglishCorrect[1] if nonEnglishCorrect[1] else 0.0
+  print("Locale Accuracy:")
+  for loc in sorted(localeAccuracy, key=lambda k: localeSupport[k], reverse=True):
+    print(f"  {loc} : {localeAccuracy[loc]:.4f} ({localeSupport[loc]})")
+  print(f"English Accuracy: {englishAccuracy:.4f} ({englishCorrect[1]})")
+  print(f"Non-English Accuracy: {nonEnglishAccuracy:.4f} ({nonEnglishCorrect[1]})")
+
   for result in zip(results, expectedList, autocompleteList):
     if result[1] == "other" and result[0] == "other" and result[2] is None:
       print("SPECIAL: " + result[0] + " " + result.probability + "\n");
@@ -611,7 +754,13 @@ def evaluate_model(cfg, filename="testing"):
     "totalAccuracy": totalAccuracy,
     "closeAccuracy": closeAccuracy,
     "blankRate": blankRate,
-    "fieldAccuracy": fieldAccuracy,
+    FIELD_ACCURACY: fieldAccuracy,
+    LOCALE_ACCURACY: localeAccuracy,
+    LOCALE_SUPPORT: localeSupport,
+    ENGLISH_ACCURACY: englishAccuracy,
+    NON_ENGLISH_ACCURACY: nonEnglishAccuracy,
+    ENGLISH_COUNT: englishCorrect[1],
+    NON_ENGLISH_COUNT: nonEnglishCorrect[1],
   })
   return metrics
 

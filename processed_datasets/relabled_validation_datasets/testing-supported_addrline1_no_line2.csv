@@ -1,0 +1,54 @@
+category,filename,line1_text,next_field_text
+A_no_second_line,QA_AR_www.carrefour.com.ar.html,street calle,number número
+A_no_second_line,QA_HU_www.electronic-star.hu.html,billing street invadr oxuser oxstreet utca,billing streetnr invadr oxuser oxstreetnr házszá
+A_no_second_line,QA_HU_www.electronic-star.hu.html,shipping street deladr oxaddress oxstreet utca utca utc,shipping streetnr deladr oxaddress oxstreetnr há
+A_no_second_line,QA_ES_es.shein.com.html,introduzca código postal calle dirección para encontrar,nombre calle número casa **textarea
+A_no_second_line,QA_RS_www.djaksport.com.html,rkxgwdm street street,ky89 yvw street number
+A_no_second_line,QA_AT_wifa.at.html,register shipping address street register shipping addr,register shipping address streetnumber register 
+A_no_second_line,QA_EG_www.ubuy.com.eg.html,billing address street billing address street street,billing customer address type billing customer a
+A_no_second_line,QA_GR_www.pet4u.gr.html,elm user data address διεύθυνση,elm user data address διεύθυνση γραμμή
+A_no_second_line,QA_BE_www.mediamarkt.be.html,billing street billing street street,billing house number billing house number house 
+A_no_second_line,QA_BE_www.mediamarkt.be.html,shipping street shipping street street,shipping house number shipping house number hous
+A_no_second_line,QA_BE_www.mediamarkt.be.html,loqate autocomplete loqate autocomplete input,billing zipcode billing zipcode postcode
+A_no_second_line,QA_AT_www.bipa.at.html,address street street house street house,address number
+A_no_second_line,QA_BR_shopee.com.br.html,street avenue rua avenida,number número
+A_no_second_line,QA_GR_www.outletcenter.gr.html,input payment address address address number,input payment city city city
+A_no_second_line,www.superpharm.pl.html,an6 rs4 street ulica,va7 yihq street domu
+A_no_second_line,EN_B404a.html,gqamurn street,blcrk street
+A_no_second_line,creditcards.html,street street,number number
+A_no_second_line,QA_FI_www.motonet.fi.html,billing street address street address katuosoite,billing city city postitoimipaikka
+A_no_second_line,QA_BE_www.leenbakker.be.html,street street kerkstraat straatnaam,city city antwerpen woonplaats
+A_no_second_line,QA_GR_www.public.gr.html,shippingstreet name alpheus street,shippingstreet number 152 number
+A_no_second_line,mx.html,street name street name calle,street number street number número exterior
+A_no_second_line,QA_FI_secure.bauhaus.fi.html,yy7 x03 street osoite,e439 street
+A_no_second_line,QA_KE_petsasa.co.ke.html,billing address billing address road street landmark se,billing state billing state your town city neare
+A_no_second_line,QA_RS_bazzar.rs.html,address street address street street,address house number address house number the ho
+A_no_second_line,QA_HU_checkout.intersport.hu.html,form input street shipping street utca utca,form input street shipping street házszám pont n
+A_no_second_line,QA_FR_www.calvinklein.fr.html,address1 checkout sform address1 rue rue rue,zip code checkout sform zip code code postal cod
+A_no_second_line,QA_ES_www.zooplus.es.html,street street nombre calle número,additional information additional information in
+A_no_second_line,QA_RO_www.olx.ro.html,invoice address line invoice address line adresă,custom city county bucuresti localitate **search
+A_no_second_line,QA_PL_www.zalando.pl.html,street address street address ulica numer domu numer mi,text w17kp coast fjord address form fields addit
+A_no_second_line,QA_AT_www.universal.at.html,street road,house number houser
+A_no_second_line,QA_RS_gigatron.rs.html,home address home address pretražite adresu find your a,number number buildings houses
+A_no_second_line,QA_BE_www.tuinadvies.be.html,contact address street contact address street street,contact address street number contact address st
+B_second_line_mislabeled,QA_AR_www.carrefour.com.ar.html,gated community street lote calle,gated community number sector número
+B_second_line_mislabeled,QA_UK_my.screwfix.com.html,firstline first line address,secondline second line second line
+B_second_line_mislabeled,QA_ES_www.planetahuerto.es.html,shipping address1 address1 dirección dirección,text field2 address2 casa apartamento etc opcion
+B_second_line_mislabeled,EN_B362b.html,dwfrm billing billing address address fields address1 d,dwfrm billing billing address address fields add
+B_second_line_mislabeled,QA_ES_www.ulta.com.html,address1 cbacab90f645f address1 address address,address2 d52e249aa80cf8 address2 apt suite floor
+B_second_line_mislabeled,QA_ES_www.newbalance.es.html,billingaddress1 dwfrm billing address fields address1 c,billingaddress2 dwfrm billing address fields add
+B_second_line_mislabeled,QA_IT_shop.samsung.com.html,46f195ff 114b 63c3 32dd f4ef185d59aa line1 indirizzo li,0aa44e40 676a 9c8c 7a03 584d4c963706 line2 numer
+B_second_line_mislabeled,QA_IT_shop.samsung.com.html,7d4d4b88 5c51 45e6 d4c8 1e4edcd483ea line1 indirizzo co,1e4c6181 9220 5b57 2e2f 8173df904af4 line2 numer
+B_second_line_mislabeled,QA_BE_nl.vidaxl.be.html,billing address one dwfrm billing address fields addres,billing address two dwfrm billing address fields
+B_second_line_mislabeled,QA_BE_nl.vidaxl.be.html,shipping address onedefault dwfrm shipping shipping add,shipping address twodefault dwfrm shipping shipp
+B_second_line_mislabeled,QA_BE_www.torfs.be.html,shipping address form address1 dwfrm shipping shipping ,shipping address form address2 dwfrm shipping sh
+B_second_line_mislabeled,QA_BE_www.aliexpress.com.html,street house apartment unit,apt suite unit etc
+B_second_line_mislabeled,QA_IT_www.amazon.it.html,address widgets enter address line1 address widgets ent,address widgets enter address line2 address widg
+B_second_line_mislabeled,QA_RS_www.sinsay.com.html,street name street name street mesto selo,street number street number number apartment hou
+B_second_line_mislabeled,QA_GR_www.stradivarius.com.html,search box search box street and number,flat and door flat and door apartment door somet
+B_second_line_mislabeled,QA_IT_checkout.bulgari.com.html,shipping address1 input text shipping address1 address ,shipping address2 input text shipping address2 a
+B_second_line_mislabeled,EN_B467a.html,shipping address shipping address house number and stre,shipping address shipping address apartment suit
+B_second_line_mislabeled,EN_B467a.html,billing address billing address house number and street,billing address billing address apartment suite 
+B_second_line_mislabeled,EN_B447a.html,address11 address11 shipping address,address21 address21
+B_second_line_mislabeled,EN_B447a.html,billing address1 billing address1 billing address,billing address2 billing address2
+B_second_line_mislabeled,QA_DK_www.zalando.dk.html,street address street address address line address line,text 5j5yk coast fjord address form fields addit

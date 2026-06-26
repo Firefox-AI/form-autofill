@@ -1,0 +1,88 @@
+category,filename,line1_text,next_field_text
+A_no_second_line,EN_www.jbox.com.html,billing street2 billing street,billing city billing city city
+A_no_second_line,EN_www.jbox.com.html,shipping street2 shipping street,shipping city shipping city city
+A_no_second_line,RU_36.html,paa street paa street улица,paa street number paa street number улица номер
+A_no_second_line,QA_AT_www.mueller.at.html,delivery address street street,delivery address house houser
+A_no_second_line,EN_www.store.volusion.com.html,street address2 billing address2 street address,city billing city city city
+A_no_second_line,EN_www.imaonlinestore.com.html,dnn ctr2165 dnnweb control container ctl00 checkout pay,dnn ctr2165 dnnweb control container ctl00 check
+A_no_second_line,EN_www.imaonlinestore.com.html,dnn ctr2165 dnnweb control container ctl00 checkout pay,dnn ctr2165 dnnweb control container ctl00 check
+A_no_second_line,QA_ES_www.santafixie.com.html,lt5 rne0 street dirección line,so4 x42 country país **select-one
+A_no_second_line,QA_ES_www.santafixie.com.html,ust8 street dirección line,exrdbs9 country país **select-one
+A_no_second_line,QA_BE_www.gamma.be.html,billing address street straat,billing address street number huisnummer
+A_no_second_line,EN_B131a.html,billing line1 be42e1bb 6a1f 4d7a a2a8 34a687e24488 bill,billing postal code ef888880 33c4 4f76 b348 3b45
+A_no_second_line,QA_CZ_www.sportisimo.cz.html,customer street customer street street and,customer city customer city the city
+A_no_second_line,QA_BR_www.netshoes.com.br.html,street name endereço,street number número
+A_no_second_line,id.html,guest additional address delivery guest additional addr,search zone shipping delivery typeahead shipping
+A_no_second_line,RS_exterra.html,billing address billing address ulica kućni broj ulica ,billing city billing city grad
+A_no_second_line,QA_PL_pl.ecco.com.html,delivery address street name delivery address street na,delivery address postal code delivery address po
+A_no_second_line,QA_AT_www.cyberport.at.html,billing form model address1 sample road street,billing form model street number 123 house numbe
+A_no_second_line,QA_BG_techmart.bg.html,address address address address,user street number user street number street num
+A_no_second_line,QA_GR_www.e-food.gr.html,address confirm form street address confirm form street,address edit form street number address edit for
+A_no_second_line,QA_DE_www.jack-wolfskin.de.html,jwsdw checkout billing address street name street straß,jwsdw checkout billing address house number hous
+A_no_second_line,QA_DE_www.jack-wolfskin.de.html,jwsdw checkout alt deliver address street name street s,jwsdw checkout alt deliver address house number 
+A_no_second_line,QA_HU_www.4home.hu.html,invoice street invoice street utca,invoice street number invoice street number házs
+A_no_second_line,QA_HU_www.4home.hu.html,delivery street delivery street utca,delivery street number delivery street number há
+A_no_second_line,QA_RS_www.lilly.rs.html,street street street street,street street number number
+A_no_second_line,QA_RU_www.maxidom.ru.html,register org street register org street улица,register org house register org house дом
+A_no_second_line,QA_SE_www.elgiganten.se.html,street street,zip postcode xxxxx **number
+A_no_second_line,QA_SE_www.elgiganten.se.html,street street,zip postcode xxxxx **number
+A_no_second_line,QA_DE_www.philips.de.html,delivery line1 delivery line1 adresse,delivery house number delivery house number haus
+A_no_second_line,QA_SK_www.kaufland.sk.html,address form delivery street address form delivery stre,address form delivery housenumber address form d
+A_no_second_line,QA_SK_www.kaufland.sk.html,address form billing street address form billing street,address form billing housenumber address form bi
+A_no_second_line,QA_SK_www.lidl.sk.html,street street street,house number house number house number
+A_no_second_line,QA_SK_www.lidl.sk.html,street street street,house number house number house number
+A_no_second_line,QA_AR_www.buscalibre.com.ar.html,direccion calle direccion calle calle avenida,direccion numero direccion numero numero
+A_no_second_line,QA_EG_uae.sharafdg.com.html,shipping address shipping address street name building ,please enter your address
+A_no_second_line,QA_FI_www.masku.com.html,address osoite osoite,postal code postinumero postinumero
+A_no_second_line,QA_AR_www.vea.com.ar.html,calle ejemplo calle calle,numero ejemplo número **number
+A_no_second_line,QA_HU_www.douglas.hu.html,r1u billing address street name utca utca utca,r1v billing address street number házszám házszá
+A_no_second_line,QA_MX_shopee.com.mx.html,nombre calle nombre calle,exterior exterior
+A_no_second_line,QA_RO_epantofi.ro.html,billing street street strada strada,billing street street numărul casei numărul case
+A_no_second_line,nl.html,street street straat,city city plaatsnaam
+A_no_second_line,QA_FI_www.veikonkone.fi.html,lb4 xbf2 street katuosoite,ttxdkov country maa **select-one
+A_no_second_line,QA_CZ_www.kaufland.cz.html,address form delivery street address form delivery stre,address form delivery housenumber address form d
+A_no_second_line,QA_FI_www.partioaitta.fi.html,invoice address street billing address view model invoi,invoice address street number billing address vi
+A_no_second_line,QA_ES_www.primor.eu.html,shipping street street dirección dirección,shipping country country país **select-one
+A_no_second_line,QA_PL_www.mohito.com.html,shipping street name street name ulica,shipping street number street number domu mieszk
+A_no_second_line,QA_IT_www.philips.it.html,delivery line1 delivery line1 indirizzo,delivery house number delivery house number nume
+A_no_second_line,QA_ID_www.ubuy.co.id.html,billing address street billing address street jalan,billing idnumber billing idnumber nomor pokok wa
+A_no_second_line,QA_BE_www.douglas.be.html,r18 billing address street name street street street,r19 billing address street number house number h
+A_no_second_line,QA_DK_www.dataworld.dk.html,wiz checkout ctl00 billing contact ctl00 cce contact ac,wiz checkout ctl00 billing contact ctl00 cce con
+A_no_second_line,b_duplicate_fields_3.html,address address,organization organization
+A_no_second_line,b_duplicate_fields_3.html,organization organization,city city
+A_no_second_line,b_label_rules_1.html,test1 sender address,test2 sender address
+A_no_second_line,b_parse_street_address_fields_6.html,straße nummer,
+A_no_second_line,b_duplicate_fields_2.html,address address,organization organization
+A_no_second_line,b_duplicate_fields_2.html,organization organization,city city
+A_no_second_line,b_parse_name_fields_9.html,address name endereço,house number número
+A_no_second_line,b_parse_tel_fields_1.html,address line1,tel **tel
+A_no_second_line,b_duplicate_fields_15.html,address address,postalcode postal code
+A_no_second_line,b_duplicate_fields_15.html,address address,postalcode postal code
+A_no_second_line,b_Staples_2.html,one auto complete address1 shipping address,email email address
+A_no_second_line,b_duplicate_fields_5.html,address address,organization organization
+A_no_second_line,b_duplicate_fields_5.html,organization organization,city city
+A_no_second_line,b_parse_street_address_fields_1.html,addr,addr
+A_no_second_line,b_parse_street_address_fields_1.html,addr,addr
+A_no_second_line,b_parse_street_address_fields_1.html,addr,
+A_no_second_line,b_duplicate_fields_4.html,address address,organization organization
+A_no_second_line,b_duplicate_fields_4.html,organization organization,city city
+A_no_second_line,b_duplicate_fields_8.html,address address,
+A_no_second_line,b_duplicate_fields_7.html,address address,
+A_no_second_line,b_parse_tel_fields_2.html,address line1,**tel
+A_no_second_line,b_Staples_1.html,one auto complete address1 shipping address,email email address
+A_no_second_line,b_duplicate_fields_1.html,address address,organization organization
+A_no_second_line,b_duplicate_fields_1.html,organization organization,city city
+A_no_second_line,b_country_rules_1.html,strasse,postal
+A_no_second_line,b_parse_street_address_fields_4.html,address line1,email
+B_second_line_mislabeled,EN_www.jbox.com.html,shipping street1 shipping street street address,shipping street2 shipping street
+B_second_line_mislabeled,QA_IT_www.adidas.it.html,shipping address address1 shipping address address1 ind,shipping address address2 shipping address addre
+B_second_line_mislabeled,QA_FR_www.aliexpress.us.html,street,apt suite unit etc optional please enter address
+B_second_line_mislabeled,QA_ES_www.calvinklein.es.html,address1 checkout sform address1 calle calle calle,address2 checkout sform address2 número casa núm
+B_second_line_mislabeled,id.html,guest address delivery guest address delivery masukkan ,guest additional address delivery guest addition
+B_second_line_mislabeled,QA_NZ_www.farmers.co.nz.html,webform address1 webform address1 start typing your add,webform address2 webform address2 suburb
+B_second_line_mislabeled,QA_NZ_www.farmers.co.nz.html,billing address1 billing address1 start typing your add,billing address2 billing address2 suburb
+B_second_line_mislabeled,QA_BE_nl.vidaxl.be.html,shipping address onedefault dwfrm shipping shipping add,shipping address twodefault dwfrm shipping shipp
+B_second_line_mislabeled,QA_BE_nl.vidaxl.be.html,billing address one dwfrm billing address fields addres,billing address two dwfrm billing address fields
+B_second_line_mislabeled,QA_GR_shopflix.gr.html,address1 step two home address address1 street road,address2 step two home address address2 number n
+B_second_line_mislabeled,QA_BE_be.tommy.com.html,address1 checkout sform address1 straat straat straat,address2 checkout sform address2 huisnummer toev
+B_second_line_mislabeled,QA_HU_checkout.myprotein.hu.html,delivery street name delivery address street name utcan,delivery address line delivery address address l

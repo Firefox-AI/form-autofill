@@ -1,0 +1,63 @@
+category,filename,line1_text,next_field_text
+A_no_second_line,QA_SK_www.conrad.sk.html,street street street,house number house number number descriptive
+A_no_second_line,es.html,street address nombre vía,street number número
+A_no_second_line,QA_RS_www.djaksport.com.html,orohcv0 street street,ivfpt street number
+A_no_second_line,QA_AT_www.holzkern.com.html,msu7583 street street,xp3 postcode postcode
+A_no_second_line,QA_AT_www.holzkern.com.html,yf7 street street,postcode postcode
+A_no_second_line,QA_BE_www.mediamarkt.be.html,loqate autocomplete loqate autocomplete input search ad,shipping zipcode shipping zipcode postcode
+A_no_second_line,QA_HU_pepita.hu.html,street street utca utca,house number house number házszám házszám
+A_no_second_line,QA_HU_pepita.hu.html,billing street billing street utca utca,billing house number billing house number házszá
+A_no_second_line,QA_TR_www.migros.com.tr.html,add delivery address modal street street street,location building number building
+A_no_second_line,QA_BG_zora.bg.html,checkout shipping address address street name checkout ,checkout shipping address address street number 
+A_no_second_line,QA_DE_www.hornbach.de.html,input street name street name street mandatory field,input street number street number mandatory fiel
+A_no_second_line,QA_ES_www.lampara.es.html,calle,duhkg5 firstname nombre
+A_no_second_line,creditcards.html,street street,name name
+A_no_second_line,nl.html,street street name street edit,city city
+A_no_second_line,nl.html,straatnaam,huisnummer toevoeging bijv
+A_no_second_line,QA_AT_www.hornbach.at.html,input street name street name street mandatory field,input street number street number mandatory fiel
+A_no_second_line,QA_BG_plesio.bg.html,delivery address delivery address address,delivery town delivery town city
+A_no_second_line,QA_ES_verdecora.es.html,delivery delivery dirección envío dirección envío,delivery firstname delivery firstname nombre nom
+A_no_second_line,QA_GR_www.skroutz.gr.html,ecommerce cart shipping address attributes street name ,ecommerce cart shipping address attributes stree
+A_no_second_line,QA_IT_www.eprice.it.html,reg indirizzo address,reg civico
+A_no_second_line,RS_converse.html,ij4 bf5 street adresa ulice line,sfcf5 country država **select-one
+A_no_second_line,general.html,billing address address one billing address address one,billing address address two billing address addr
+A_no_second_line,QA_AT_wifa.at.html,street strasse street,streetnumber hausnummer house number
+A_no_second_line,QA_SA_checkout.mumzworld.com.html,short address enter digit short address national short ,**tel
+A_no_second_line,QA_IT_www.douglas.it.html,r3h billing address street name address specify via via,r3i billing address street number house number h
+A_no_second_line,QA_GR_modivo.gr.html,billing street street street street,billing street street housing housing
+A_no_second_line,QA_AT_www.mediamarkt.at.html,shipping street shipping street street,shipping house number shipping house number hous
+A_no_second_line,QA_IT_www.efarma.com.html,nnjxk47 street enter location shipping address via squa,l17 uokl custom attributes house number house nu
+A_no_second_line,QA_IT_www.auto-doc.it.html,shipping street addresses shipping street via,shipping house number addresses shipping house n
+A_no_second_line,QA_AR_www.falabella.com.html,test input street ingresa nombre calle número calle,test input number ingresa número calle número
+A_no_second_line,QA_BE_www.lidl.be.html,street street straatnaam,house number house number huisnummer
+A_no_second_line,QA_FI_www.karkkainen.com.html,address line1 input address line1 katuosoite,country maa
+A_no_second_line,QA_RO_www.dedeman.ro.html,select street street strada strada **search,street number street number numar numar
+A_no_second_line,QA_RO_www.olx.ro.html,personal details address address line personal details ,personal details address city and county bucures
+B_second_line_mislabeled,QA_SA_babystore.ae.html,shipping address shipping address street address,shipping address shipping address apartment unit
+B_second_line_mislabeled,QA_NZ_www.thewarehouse.co.nz.html,shipping address onedefault dwfrm shipping shipping add,shipping address suitedefault dwfrm shipping shi
+B_second_line_mislabeled,QA_AT_www.bauhaus.at.html,form new deviating delivery address addresse line1 deli,form new deviating delivery address address line
+B_second_line_mislabeled,QA_AT_www.bauhaus.at.html,form new payment line1 payment line1 straße,form new payment line2 payment line2
+B_second_line_mislabeled,QA_SA_www.etam.sa.html,autofill address1 address1 العنوان,autofill address2 address2 الشقة الجناح إلخ
+B_second_line_mislabeled,QA_BE_www.calvinklein.be.html,address1 checkout sform address1 street street street,address2 checkout sform address2 house number an
+B_second_line_mislabeled,EN_B443a.html,billing address one dwfrm billing address fields addres,billing address two dwfrm billing address fields
+B_second_line_mislabeled,EN_B443a.html,shipping address one dwfrm shipping shipping address ad,shipping address two dwfrm shipping shipping add
+B_second_line_mislabeled,QA_IT_www.goldengoose.com.html,address1 address1 address line,address2 address2 house number
+B_second_line_mislabeled,QA_ES_www.lampara.es.html,rd3 lyma street calle número,yjev1 custom attributes additional information b
+B_second_line_mislabeled,QA_AT_secure.citizenbike.com.html,billing street1 address address line,billing street2 apt suite etc optional address l
+B_second_line_mislabeled,QA_CA_checkout.inkbox.com.html,shipping address1 address1 address address,text field349 address2 apartment suite etc optio
+B_second_line_mislabeled,QA_CA_checkout.inkbox.com.html,autofill address1 address1 address,autofill address2 address2 apartment suite etc
+B_second_line_mislabeled,QA_KE_pay.shopzetu.com.html,autofill address1 address1 address,autofill address2 address2 apartment suite etc
+B_second_line_mislabeled,EN_B484a.html,address line1 address line1 address address,address line2 address line2 address apt unit ste
+B_second_line_mislabeled,QA_FI_www.verkkokauppa.com.html,street address line1 street address line1 katuosoite,street address line2 street address line2 katuos
+B_second_line_mislabeled,QA_ES_womensecret.com.html,dwfrm expresscheckoutsingleshipping pseudo billing addr,dwfrm expresscheckoutsingleshipping pseudo billi
+B_second_line_mislabeled,QA_AE_www.ounass.ae.html,street street building name street delivery address,additional information additional information ap
+B_second_line_mislabeled,QA_IT_www.etro.com.html,address1 address1 indirizzo,address2 address2 indirizzo
+B_second_line_mislabeled,EN_B373a.html,bill address1 bill address1 billing address,bill address2 bill address2 apt suite floor opti
+B_second_line_mislabeled,QA_SA_checkout.mumzworld.com.html,form item street main street near city center street la,form item building number noor tower 3rd floor a
+B_second_line_mislabeled,EN_B419a.html,shipping address1 shippingline1 address,shipping address2 shippingline2 address
+B_second_line_mislabeled,EN_B419a.html,billing address1 billingline1 address,billing address2 billingline2 address
+B_second_line_mislabeled,EN_www.cdw.com.html,billing address editor address address1 billing address,billing address editor address address2 billing 
+B_second_line_mislabeled,QA_UK_secure.asos.com.html,address1 address,address2 optional address
+B_second_line_mislabeled,QA_IT_www.calvinklein.it.html,address1 checkout sform address1,address2 checkout sform address2 house number ho
+B_second_line_mislabeled,QA_IT_www.lego.com.html,address line1 address line1 house number address this r,address line2 address line2 apartment optional
+B_second_line_mislabeled,SE_tigerofsweden.html,shipping address onedefault dwfrm shipping shipping add,shipping address twodefault dwfrm shipping shipp
