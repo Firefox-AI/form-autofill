@@ -11,17 +11,15 @@
 <form method="post">
   <div>
     <label>Nome sulla carta
-    <input type="text" name="ccName" id="ccName" placeholder="Inserisci il nome completo" data-moz-autofill-type="cc-name">
+    <input type="text" name="cardholderName" id="iday" placeholder="Inserisci il nome completo" data-moz-autofill-type="cc-name">
     </label>
   </div>
   <div>
-    <label>Numero della carta
-    <input type="number" name="ccNumber" id="ccNumber" placeholder="0000 0000 0000 0000" data-moz-autofill-type="cc-number">
-    </label>
+    <input type="number" name="cardNo" id="idro" placeholder="0000 0000 0000 0000" aria-label="Numero della carta" data-moz-autofill-type="cc-number">
   </div>
   <div>
-    <label for="ccExpMonth">Mese di scadenza</label>
-    <select name="ccExpMonth" id="ccExpMonth" data-moz-autofill-type="cc-exp-month">
+    <label>Mese di scadenza
+    <select name="expMonth" id="idw6q" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
   <option>Gennaio</option>
   <option>Febbraio</option>
@@ -36,10 +34,11 @@
   <option>Novembre</option>
   <option>Dicembre</option>
 </select>
+    </label>
   </div>
   <div>
-    <span>Anno di scadenza</span>
-    <select name="ccExpYear" id="ccExpYear" data-moz-autofill-type="cc-exp-year">
+    <label>Anno di scadenza
+    <select name="expYear" id="idftdl" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -50,13 +49,15 @@
   <option>2029</option>
   <option>2030</option>
 </select>
+    </label>
   </div>
   <div>
-    <span>Codice di sicurezza</span>
-    <input type="number" name="ccCsc" id="ccCsc" placeholder="3 cifre sul retro" data-moz-autofill-type="cc-csc">
+    <label for="idtw4">Codice di sicurezza</label>
+    <input type="number" name="securityCode" id="idtw4" placeholder="3 cifre sul retro" data-moz-autofill-type="cc-csc">
   </div>
   <div>
-    <select name="ccType" id="ccType" aria-label="Tipo di carta" data-moz-autofill-type="cc-type">
+    <span>Tipo di carta</span>
+    <select name="ccType" id="idbgg1i" data-moz-autofill-type="cc-type">
   <option value=""></option>
   <option>Visa</option>
   <option>MasterCard</option>
@@ -65,18 +66,21 @@
 </select>
   </div>
   <div>
-    <input type="text" name="postalCode" id="postalCode" placeholder="00100" aria-label="Codice postale" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <input type="text" name="phoneticGivenName" id="phoneticGivenName" placeholder="Nome come pronunciato" aria-label="Nome (traslitterato)" data-moz-autofill-type="phonetic-given-name">
-  </div>
-  <div>
-    <label>Cognome (traslitterato)
-    <input type="text" name="phoneticName" id="phoneticName" placeholder="Cognome come pronunciato" data-moz-autofill-type="phonetic-name">
+    <label>Codice postale
+    <input type="text" name="zip" id="idljt5" placeholder="00100" data-moz-autofill-type="postal-code">
     </label>
   </div>
   <div>
-    <button name="field" id="field" type="submit">Submit</button>
+    <span>Nome (traslitterato)</span>
+    <input type="text" name="idsmn6" id="ids49" placeholder="Nome in caratteri latini" data-moz-autofill-type="phonetic-given-name">
+  </div>
+  <div>
+    <label>Cognome (traslitterato)
+    <input type="text" name="ido99cz" id="id9k8w" placeholder="Cognome in caratteri latini" data-moz-autofill-type="phonetic-name">
+    </label>
+  </div>
+  <div>
+    <button name="ide3ihd" id="id46" type="submit">Invia</button>
   </div>
 </form>
 

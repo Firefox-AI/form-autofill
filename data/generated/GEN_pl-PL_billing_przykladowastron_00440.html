@@ -5,37 +5,43 @@
 <body>
 
 <fieldset>
-<h3>przykladowa-strona.pl</h3>
+<h3>przykladowastrona.pl</h3>
 <p><i>Synthetic sample (LLM-augmented).</i></p>
 
 <form method="post">
   <div>
-    <span>Nazwa na karcie</span>
-    <input type="text" name="cc_name_2992" id="cc_name_8543" placeholder="Imię i nazwisko właściciela karty" data-moz-autofill-type="cc-name">
+    <label>Imię i nazwisko
+    <input type="text" name="cardholderName" id="idecuaj" placeholder="Jan Kowalski" data-moz-autofill-type="cc-name">
+    </label>
   </div>
   <div>
-    <span>Nazwa firmy (jeśli dotyczy)</span>
-    <input type="text" name="organization_7484" id="organization_1195" placeholder="Wpisz nazwę firmy" data-moz-autofill-type="organization">
+    <label>Nazwa firmy
+    <input type="text" name="organization" id="idey" placeholder="Nazwa Twojej firmy" data-moz-autofill-type="organization">
+    </label>
   </div>
   <div>
-    <span>Ulica i numer</span>
-    <input type="text" name="street_address_660" id="street_address_5321" placeholder="Wpisz ulicę i numer" data-moz-autofill-type="street-address">
+    <label>Ulica i numer
+    <input type="text" name="addr1" id="idfzs" placeholder="Ul. Kwiatowa 15" data-moz-autofill-type="address-line1">
+    </label>
   </div>
   <div>
-    <span>Dodatkowe informacje o adresie</span>
-    <input type="text" name="address_line2_141" id="address_line2_2550" placeholder="Mieszkanie, piętro itp." data-moz-autofill-type="address-line2">
+    <label>Mieszkanie (opcjonalnie)
+    <input type="text" name="unit" id="idmkl" placeholder="Nr mieszkania" data-moz-autofill-type="apartment">
+    </label>
   </div>
   <div>
-    <span>Kod pocztowy</span>
-    <input type="text" name="postal_code_5969" id="postal_code_839" placeholder="Wpisz kod pocztowy" data-moz-autofill-type="postal-code">
+    <label>Kod pocztowy
+    <input type="text" name="zip_code" id="id1tag" placeholder="00-000" data-moz-autofill-type="postal-code">
+    </label>
   </div>
   <div>
-    <span>Miejscowość</span>
-    <input type="text" name="address_level2_1150" id="address_level2_6431" placeholder="Wpisz miejscowość" data-moz-autofill-type="address-level2">
+    <label>Miasto
+    <input type="text" name="locality" id="idmi" placeholder="Warszawa" data-moz-autofill-type="address-level2">
+    </label>
   </div>
   <div>
-    <span>Województwo</span>
-    <select name="address_level1_4363" id="address_level1_2552" data-moz-autofill-type="address-level1">
+    <label>Województwo
+    <select name="county" id="idq6" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>Dolnośląskie</option>
   <option>Kujawsko-Pomorskie</option>
@@ -53,22 +59,24 @@
   <option>Wielkopolskie</option>
   <option>Zachodniopomorskie</option>
 </select>
+    </label>
   </div>
   <div>
-    <span>Kraj</span>
-    <select name="country_name_1524" id="country_name_6554" data-moz-autofill-type="country-name">
+    <label>Kraj
+    <select name="countryName" id="idnfy9" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Polska</option>
   <option>Niemcy</option>
-  <option>Czechy</option>
-  <option>Słowacja</option>
-  <option>Węgry</option>
   <option>Francja</option>
-  <option>Włochy</option>
-  <option>Hiszpania</option>
   <option>Wielka Brytania</option>
-  <option>Zjednoczone Emiraty Arabskie</option>
+  <option>Hiszpania</option>
+  <option>Włochy</option>
+  <option>Inne</option>
 </select>
+    </label>
+  </div>
+  <div>
+    <button name="id947dm" id="idsbbrq" type="submit">Submit</button>
   </div>
 </form>
 

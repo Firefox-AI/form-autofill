@@ -10,72 +10,85 @@
 
 <form method="post">
   <div>
-    <span>Nome no cartão</span>
-    <input type="text" name="ccName" id="ccName" placeholder="Nome completo como no cartão" data-moz-autofill-type="cc-name">
+    <label for="idbb">Nome no Cartão</label>
+    <input type="text" name="cardName" id="idbb" placeholder="Como está no cartão" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <span>Endereço</span>
-    <input type="text" name="streetAddress" id="streetAddress" placeholder="Rua, Avenida, etc." data-moz-autofill-type="street-address">
+    <label for="idpy0">Endereço</label>
+    <input type="text" name="address1" id="idpy0" placeholder="Rua, Avenida, etc." data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <span>Complemento</span>
-    <input type="text" name="addressLine2" id="addressLine2" placeholder="Apto, Bloco, etc." data-moz-autofill-type="address-line2">
+    <label for="idr6ljj">Complemento</label>
+    <input type="text" name="street2" id="idr6ljj" placeholder="Apartamento, Bloco, etc. (opcional)" data-moz-autofill-type="address-line2">
   </div>
   <div>
-    <span>CEP</span>
-    <input type="text" name="postalCode" id="postalCode" placeholder="00000-000" data-moz-autofill-type="postal-code">
+    <label for="idlpjiq">CEP</label>
+    <input type="text" name="postalCode" id="idlpjiq" placeholder="00000-000" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <span>Cidade</span>
-    <input type="text" name="addressLevel2" id="addressLevel2" placeholder="Cidade" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <span>Estado</span>
-    <select name="addressLevel1" id="addressLevel1" data-moz-autofill-type="address-level1">
+    <label for="ido9tg">Estado</label>
+    <select name="region" id="ido9tg" data-moz-autofill-type="address-level1">
   <option value=""></option>
-  <option>Acre</option>
-  <option>Alagoas</option>
-  <option>Amapá</option>
-  <option>Amazonas</option>
-  <option>Bahia</option>
-  <option>Ceará</option>
-  <option>Distrito Federal</option>
-  <option>Espírito Santo</option>
-  <option>Goiás</option>
-  <option>Maranhão</option>
-  <option>Mato Grosso</option>
-  <option>Mato Grosso do Sul</option>
-  <option>Minas Gerais</option>
-  <option>Pará</option>
-  <option>Paraíba</option>
-  <option>Paraná</option>
-  <option>Pernambuco</option>
-  <option>Piauí</option>
-  <option>Rio de Janeiro</option>
-  <option>Rio Grande do Norte</option>
-  <option>Rio Grande do Sul</option>
-  <option>Rondônia</option>
-  <option>Roraima</option>
-  <option>Santa Catarina</option>
   <option>São Paulo</option>
+  <option>Rio de Janeiro</option>
+  <option>Minas Gerais</option>
+  <option>Bahia</option>
+  <option>Paraná</option>
+  <option>Rio Grande do Sul</option>
+  <option>Ceará</option>
+  <option>Pernambuco</option>
   <option>Sergipe</option>
+  <option>Alagoas</option>
+  <option>Maranhão</option>
+  <option>Paraíba</option>
+  <option>Rio Grande do Norte</option>
   <option>Tocantins</option>
+  <option>Distrito Federal</option>
+  <option>Mato Grosso do Sul</option>
+  <option>Mato Grosso</option>
+  <option>Goiás</option>
+  <option>Amapá</option>
+  <option>Acre</option>
+  <option>Rondônia</option>
+  <option>Amazonas</option>
+  <option>Pará</option>
+  <option>Piauí</option>
+  <option>Espírito Santo</option>
+  <option>Santa Catarina</option>
+  <option>São Luís</option>
+  <option>Roraima</option>
 </select>
   </div>
   <div>
-    <span>País</span>
-    <select name="countryName" id="countryName" data-moz-autofill-type="country-name">
+    <label for="id244">Cidade</label>
+    <input type="text" name="locality" id="id244" placeholder="Nome da Cidade" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="idz6gf">País</label>
+    <select name="countryName" id="idz6gf" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Brasil</option>
+  <option>Argentina</option>
+  <option>Chile</option>
+  <option>Colômbia</option>
+  <option>Uruguai</option>
+  <option>Paraguai</option>
+  <option>Venezuela</option>
+  <option>Peru</option>
+  <option>Bolívia</option>
+  <option>Equador</option>
 </select>
   </div>
   <div>
-    <span>Número de Inscrição Estadual</span>
-    <input type="text" name="vatNumber" id="vatNumber" placeholder="Ex: 123456789" data-moz-autofill-type="vat-number">
+    <label for="ideb42f">Número de Inscrição Estadual</label>
+    <input type="text" name="vat" id="ideb42f" placeholder="Inscrição Estadual" data-moz-autofill-type="vat-number">
   </div>
   <div>
-    <span>Nome da Empresa</span>
-    <input type="text" name="organization" id="organization" placeholder="Nome da sua empresa" data-moz-autofill-type="organization">
+    <label for="idt83">Nome da Empresa</label>
+    <input type="text" name="company" id="idt83" placeholder="Razão social da empresa" data-moz-autofill-type="organization">
+  </div>
+  <div>
+    <button name="idbj1" id="idy3" type="submit">Submit</button>
   </div>
 </form>
 

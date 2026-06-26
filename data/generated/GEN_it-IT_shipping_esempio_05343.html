@@ -10,45 +10,40 @@
 
 <form method="post">
   <div>
-    <input type="text" name="name_163" id="name_6280" placeholder="Inserisci il tuo nome e cognome" aria-label="Nome e cognome" data-moz-autofill-type="name">
+    <label>Nome e cognome
+    <input type="text" name="fullName" id="idmo732" placeholder="Mario Rossi" data-moz-autofill-type="name">
+    </label>
   </div>
   <div>
-    <input type="text" name="street_3289" id="street_3772" placeholder="Inserisci il nome della via" aria-label="Via" data-moz-autofill-type="street">
+    <label for="idrrzk">Via e numero civico</label>
+    <input type="text" name="address1" id="idrrzk" placeholder="Via Roma 1" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <input type="text" name="address_housenumber_8705" id="address_housenumber_7774" placeholder="Inserisci il numero civico" aria-label="Numero civico" data-moz-autofill-type="address-housenumber">
+    <input type="text" name="zipCode" id="id6v" placeholder="00100" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="text" name="address_line2_9988" id="address_line2_7403" placeholder="Piano, interno, ecc." aria-label="Ulteriore indirizzo (opzionale)" data-moz-autofill-type="address-line2">
+    <label for="id9l">Città</label>
+    <input type="text" name="locality" id="id9l" placeholder="Roma" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <input type="text" name="postal_code_1389" id="postal_code_4636" placeholder="Inserisci il codice di avviamento postale" aria-label="CAP" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <input type="text" name="address_level2_4593" id="address_level2_4567" placeholder="Inserisci la città" aria-label="Città" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <select name="country_name_6623" id="country_name_2711" aria-label="Paese" data-moz-autofill-type="country-name">
+    <span>Paese</span>
+    <select name="country" id="idsum" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Italia</option>
   <option>Francia</option>
-  <option>Germania</option>
   <option>Spagna</option>
+  <option>Germania</option>
   <option>Regno Unito</option>
-  <option>Stati Uniti</option>
 </select>
   </div>
   <div>
-    <input type="text" name="floor_6006" id="floor_3382" placeholder="Es. 1, 2, seminterrato" aria-label="Piano (opzionale)" data-moz-autofill-type="floor">
+    <label for="idve">Indirizzo aggiuntivo (opzionale)</label>
+    <input type="text" name="address2" id="idve" placeholder="Piano 2" data-moz-autofill-type="address-line2">
   </div>
   <div>
-    <input type="text" name="apartment_1897" id="apartment_8527" placeholder="Es. A, B, C, 1" aria-label="Interno (opzionale)" data-moz-autofill-type="apartment">
-  </div>
-  <div>
-    <input type="password" name="field_5625" id="field_4063" aria-label="">
-  </div>
-  <div>
-    <button name="field_8548" id="field_825" type="submit">Submit</button>
+    <label>Interno (opzionale)
+    <input type="text" name="suite" id="idy1s" placeholder="A1" data-moz-autofill-type="apartment">
+    </label>
   </div>
 </form>
 

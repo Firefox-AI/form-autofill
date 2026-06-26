@@ -5,37 +5,29 @@
 <body>
 
 <fieldset>
-<h3>example.hu</h3>
+<h3>example.com</h3>
 <p><i>Synthetic sample (LLM-augmented).</i></p>
 
 <form method="post">
   <div>
-    <span>Név</span>
-    <input type="text" name="r:r:8:m:r:1:cr:1:c:pr:1:container:fs:i:input" id="idx7n1a" placeholder="Teljes név" data-moz-autofill-type="name">
+    <label for="idx7n1a">Név</label>
+    <input type="text" name="contactName" id="idx7n1a" placeholder="Kérem, adja meg a nevét" data-moz-autofill-type="name">
   </div>
   <div>
-    <span>Utca</span>
-    <input type="text" name="r:r:2:m:r:2:cr:2:c:pr:1:container:fs:i:input" id="id7bd" placeholder="Utca neve" data-moz-autofill-type="address-streetname">
+    <label for="iddo">Utca és házszám</label>
+    <input type="text" name="address9" id="iddo" placeholder="Kérem, adja meg az utcát és a házszámot" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <span>Házszám</span>
-    <input type="text" name="r:r:4:m:r:3:cr:1:c:pr:1:container:fs:i:input" id="id9a" placeholder="Házszám" data-moz-autofill-type="address-housenumber">
+    <label for="idiv">Irányítószám</label>
+    <input type="text" name="zipCode9" id="idiv" placeholder="Kérem, adja meg az irányítószámot" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <span>Kiegészítő cím</span>
-    <input type="text" name="r:r:3:m:r:4:cr:3:c:pr:1:container:fs:i:input" id="id27ga" placeholder="Emelet, ajtó stb." data-moz-autofill-type="address-line2">
+    <label for="idot">Város</label>
+    <input type="text" name="town" id="idot" placeholder="Kérem, válassza ki a várost" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <span>Irányítószám</span>
-    <input type="text" name="r:r:4:m:r:5:cr:2:c:pr:1:container:fs:i:input" id="id6sf" placeholder="Irányítószám" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <span>Település</span>
-    <input type="text" name="r:r:6:m:r:6:cr:3:c:pr:1:container:fs:i:input" id="idprq60" placeholder="Város vagy település neve" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <span>Ország</span>
-    <select name="r:r:3:m:r:7:cr:2:c:pr:1:container:fs:i:input" id="idct" data-moz-autofill-type="country-name">
+    <label for="idfu0p">Ország</label>
+    <select name="country" id="idfu0p" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Magyarország</option>
   <option>Ausztria</option>
@@ -45,7 +37,15 @@
 </select>
   </div>
   <div>
-    <button name="r:r:3:m:r:8:cr:2:c:pr:1:container:fs:i:input" id="idm0" type="submit">Submit</button>
+    <label for="id60ix">Megye</label>
+    <input type="text" name="suburb" id="id60ix" placeholder="Kérem, adja meg a megyét" data-moz-autofill-type="address-level3">
+  </div>
+  <div>
+    <label for="idct">Személyazonosító szám</label>
+    <input type="text" name="taxId" id="idct" placeholder="Kérem, adja meg a személyazonosító számot" data-moz-autofill-type="id-number">
+  </div>
+  <div>
+    <button name="idrhm" id="idtdkxl" type="submit">Küldés</button>
   </div>
 </form>
 

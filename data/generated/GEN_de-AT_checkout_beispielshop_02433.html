@@ -10,54 +10,53 @@
 
 <form method="post">
   <div>
-    <label for="id8l">Vorname</label>
-    <input type="text" name="r:r:5:m:r:1:cr:3:c:pr:1:container:fs:i:input" id="id8l" placeholder="Max" data-moz-autofill-type="given-name">
+    <span>Anrede</span>
+    <select name="salutation" id="id8l" data-moz-autofill-type="honorific-prefix">
+  <option value=""></option>
+  <option>Herr</option>
+  <option>Frau</option>
+  <option>Diverse</option>
+</select>
   </div>
   <div>
-    <label for="id5z4">Nachname</label>
-    <input type="text" name="r:r:1:m:r:2:cr:1:c:pr:1:container:fs:i:input" id="id5z4" placeholder="Mustermann" data-moz-autofill-type="family-name">
+    <span>Vorname</span>
+    <input type="text" name="firstName" id="idi5z" placeholder="Ihr Vorname" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <label for="idcqn">Straße und Hausnummer</label>
-    <input type="text" name="r:r:2:m:r:3:cr:3:c:pr:1:container:fs:i:input" id="idcqn" placeholder="Musterstraße 1" data-moz-autofill-type="street-address">
+    <span>Nachname</span>
+    <input type="text" name="surname" id="idlc" placeholder="Ihr Nachname" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <label for="idvv7">Stadt</label>
-    <input type="text" name="r:r:6:m:r:4:cr:2:c:pr:1:container:fs:i:input" id="idvv7" placeholder="Wien" data-moz-autofill-type="address-level2">
+    <span>Straße und Hausnummer</span>
+    <input type="text" name="addr" id="idu5j" placeholder="Straße und Hausnummer" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <label for="idcj87">Postleitzahl</label>
-    <input type="text" name="r:r:6:m:r:5:cr:2:c:pr:1:container:fs:i:input" id="idcj87" placeholder="1010" data-moz-autofill-type="postal-code">
+    <span>Stadt</span>
+    <input type="text" name="locality" id="idv7xv" placeholder="Stadt" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <label for="idn5iy">Land</label>
-    <select name="r:r:8:m:r:6:cr:3:c:pr:1:container:fs:i:input" id="idn5iy" data-moz-autofill-type="country-name">
+    <span>Postleitzahl</span>
+    <input type="text" name="postalCode" id="idj8" placeholder="Postleitzahl" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <span>Land</span>
+    <select name="countryName" id="idn5iy" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Österreich</option>
   <option>Deutschland</option>
   <option>Schweiz</option>
   <option>Italien</option>
   <option>Frankreich</option>
+  <option>Vereinigte Staaten</option>
 </select>
   </div>
   <div>
-    <label for="idzn7y">E-Mail-Adresse</label>
-    <input type="email" name="r:r:7:m:r:7:cr:2:c:pr:1:container:fs:i:input" id="idzn7y" placeholder="max@beispiel.at" data-moz-autofill-type="email">
+    <span>E-Mail-Adresse</span>
+    <input type="email" name="user_email" id="idrzn7" placeholder="Ihre E-Mail-Adresse" data-moz-autofill-type="email">
   </div>
   <div>
-    <label for="ido0">Telefonnummer</label>
-    <input type="tel" name="r:r:8:m:r:8:cr:3:c:pr:1:container:fs:i:input" id="ido0" placeholder="+43 123 456789" data-moz-autofill-type="tel">
-  </div>
-  <div>
-    <label for="idnixrt">Bundesland</label>
-    <select name="r:r:7:m:r:9:cr:2:c:pr:1:container:fs:i:input" id="idnixrt" data-moz-autofill-type="address-level1">
-  <option value=""></option>
-  <option>Wien</option>
-  <option>Niederösterreich</option>
-  <option>Oberösterreich</option>
-  <option>Steiermark</option>
-  <option>Tirol</option>
-</select>
+    <span>Telefonnummer</span>
+    <input type="tel" name="mobile" id="idgo00z" placeholder="Ihre Telefonnummer" data-moz-autofill-type="tel">
   </div>
 </form>
 

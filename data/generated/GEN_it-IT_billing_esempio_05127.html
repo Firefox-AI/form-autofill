@@ -10,32 +10,24 @@
 
 <form method="post">
   <div>
-    <label for="iduf">Nome sulla carta</label>
-    <input type="text" name="r:r:5:m:r:1:cr:2:c:pr:1:container:fs:i:input" id="iduf" placeholder="Nome e cognome" data-moz-autofill-type="cc-name">
+    <label for="idscuf">Nome sulla carta</label>
+    <input type="text" name="r:r:6:m:r:1:cr:3:c:pr:1:container:fs:i:input" id="idscuf" placeholder="Inserisci il nome come appare sulla carta" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <label for="idmav">Azienda (se applicabile)</label>
-    <input type="text" name="r:r:6:m:r:2:cr:1:c:pr:1:container:fs:i:input" id="idmav" placeholder="Nome dell&#x27;azienda" data-moz-autofill-type="organization">
+    <label for="idmav">Indirizzo</label>
+    <input type="text" name="r:r:6:m:r:2:cr:1:c:pr:1:container:fs:i:input" id="idmav" placeholder="Via e numero civico" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <label for="id2dbk8">Indirizzo</label>
-    <input type="text" name="r:r:1:m:r:3:cr:3:c:pr:1:container:fs:i:input" id="id2dbk8" placeholder="Via e numero civico" data-moz-autofill-type="street-address">
+    <label for="id2dbk8">Codice postale</label>
+    <input type="text" name="r:r:1:m:r:3:cr:3:c:pr:1:container:fs:i:input" id="id2dbk8" placeholder="Inserisci il codice postale" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <label for="id0w8o">Ulteriori indicazioni (opzionale)</label>
-    <input type="text" name="r:r:1:m:r:4:cr:2:c:pr:1:container:fs:i:input" id="id0w8o" placeholder="Piano, interno, ecc." data-moz-autofill-type="address-line2">
+    <label for="id0w8o">Città</label>
+    <input type="text" name="r:r:1:m:r:4:cr:2:c:pr:1:container:fs:i:input" id="id0w8o" placeholder="Inserisci la tua città" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <label for="idvtvy">Codice postale</label>
-    <input type="text" name="r:r:6:m:r:5:cr:3:c:pr:1:container:fs:i:input" id="idvtvy" placeholder="12345" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <label for="id1dlz">Città</label>
-    <input type="text" name="r:r:7:m:r:6:cr:1:c:pr:1:container:fs:i:input" id="id1dlz" placeholder="Nome della città" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <label for="idn87">Provincia</label>
-    <select name="r:r:3:m:r:7:cr:3:c:pr:1:container:fs:i:input" id="idn87" data-moz-autofill-type="address-level1">
+    <label for="idvtvy">Provincia</label>
+    <select name="r:r:6:m:r:5:cr:3:c:pr:1:container:fs:i:input" id="idvtvy" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>Roma</option>
   <option>Milano</option>
@@ -43,17 +35,13 @@
   <option>Torino</option>
   <option>Firenze</option>
   <option>Bologna</option>
-  <option>Genova</option>
   <option>Palermo</option>
-  <option>Verona</option>
-  <option>Messina</option>
-  <option>Padova</option>
-  <option>Trieste</option>
+  <option>Genova</option>
 </select>
   </div>
   <div>
-    <label for="idpndcb">Nazione</label>
-    <select name="r:r:4:m:r:8:cr:3:c:pr:1:container:fs:i:input" id="idpndcb" data-moz-autofill-type="country-name">
+    <label for="id1dlz">Nazione</label>
+    <select name="r:r:7:m:r:6:cr:1:c:pr:1:container:fs:i:input" id="id1dlz" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Italia</option>
   <option>Francia</option>
@@ -61,11 +49,15 @@
   <option>Spagna</option>
   <option>Regno Unito</option>
   <option>Stati Uniti</option>
-  <option>Canada</option>
-  <option>Australia</option>
-  <option>Brasile</option>
-  <option>Giappone</option>
 </select>
+  </div>
+  <div>
+    <label for="idn87">Azienda (opzionale)</label>
+    <input type="text" name="r:r:3:m:r:7:cr:3:c:pr:1:container:fs:i:input" id="idn87" placeholder="Nome della tua azienda" data-moz-autofill-type="organization">
+  </div>
+  <div>
+    <label for="idpndcb">Piano (opzionale)</label>
+    <input type="text" name="r:r:4:m:r:8:cr:3:c:pr:1:container:fs:i:input" id="idpndcb" placeholder="Indica il piano" data-moz-autofill-type="floor">
   </div>
   <div>
     <button name="r:r:9:m:r:9:cr:1:c:pr:1:container:fs:i:input" id="idvic" type="submit">Submit</button>

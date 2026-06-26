@@ -10,72 +10,70 @@
 
 <form method="post">
   <div>
-    <span>Kredi Kartı Adı</span>
-    <input type="text" name="r:r:5:m:r:1:cr:2:c:pr:1:container:fs:i:input" id="idkbj" placeholder="Kredi kartındaki isim" data-moz-autofill-type="cc-name">
+    <span>Kart Sahibinin Adı</span>
+    <input type="text" name="nameOnCard" id="idokbj" placeholder="Ad ve Soyadınızı girin" data-moz-autofill-type="cc-name">
   </div>
   <div>
     <span>Şirket Adı</span>
-    <input type="text" name="r:r:6:m:r:2:cr:2:c:pr:1:container:fs:i:input" id="idks" placeholder="Şirket adınızı girin" data-moz-autofill-type="organization">
+    <input type="text" name="organization" id="iddksg" placeholder="Şirketinizin adını girin" data-moz-autofill-type="organization">
   </div>
   <div>
-    <span>Cadde ve Sokak</span>
-    <input type="text" name="r:r:2:m:r:3:cr:1:c:pr:1:container:fs:i:input" id="idqk" placeholder="Cadde, sokak, vb." data-moz-autofill-type="street-address">
+    <span>Adres</span>
+    <input type="text" name="addressLine1" id="idqk" placeholder="Sokak, Cadde adı ve numarası" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <span>Apt./Daire No</span>
-    <input type="text" name="r:r:3:m:r:4:cr:3:c:pr:1:container:fs:i:input" id="id5s" placeholder="Daha fazla adres bilgisi (isteğe bağlı)" data-moz-autofill-type="address-line2">
+    <span>Apartman Dairesi</span>
+    <input type="text" name="apartment" id="id5s" placeholder="Daire numaranızı girin (varsa)" data-moz-autofill-type="apartment">
   </div>
   <div>
-    <span>Posta Kodu</span>
-    <input type="text" name="r:r:1:m:r:5:cr:2:c:pr:1:container:fs:i:input" id="id35ob" placeholder="Posta kodunu girin" data-moz-autofill-type="postal-code">
+    <span>Kat</span>
+    <input type="text" name="floor" id="idv35o" placeholder="Kat numaranızı girin (varsa)" data-moz-autofill-type="floor">
   </div>
   <div>
     <span>İlçe</span>
-    <select name="r:r:4:m:r:6:cr:1:c:pr:1:container:fs:i:input" id="id7oyg" data-moz-autofill-type="address-level2">
-  <option value=""></option>
-  <option>Kadıköy</option>
-  <option>Şişli</option>
-  <option>Beşiktaş</option>
-  <option>Çankaya</option>
-  <option>Beyoğlu</option>
-</select>
+    <input type="text" name="city" id="idbq7" placeholder="İlçenizi girin" data-moz-autofill-type="address-level2">
   </div>
   <div>
     <span>İl</span>
-    <select name="r:r:5:m:r:7:cr:1:c:pr:1:container:fs:i:input" id="idgp" data-moz-autofill-type="address-level1">
+    <select name="province" id="idgqpeg" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>İstanbul</option>
   <option>Ankara</option>
   <option>İzmir</option>
   <option>Bursa</option>
   <option>Antalya</option>
+  <option>Adana</option>
+  <option>Gaziantep</option>
+  <option>Konya</option>
+  <option>Mersin</option>
+  <option>Kayseri</option>
 </select>
   </div>
   <div>
+    <span>Posta Kodu</span>
+    <input type="text" name="zipCode" id="idny3hu" placeholder="Posta kodunuzu girin" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
     <span>Ülke</span>
-    <select name="r:r:7:m:r:8:cr:1:c:pr:1:container:fs:i:input" id="id3hubu" data-moz-autofill-type="country-name">
+    <select name="country" id="idnuxj" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Türkiye</option>
   <option>Almanya</option>
   <option>Fransa</option>
-  <option>İngiltere</option>
   <option>İtalya</option>
+  <option>İspanya</option>
+  <option>Amerika Birleşik Devletleri</option>
+  <option>Birleşik Krallık</option>
+  <option>Kanada</option>
 </select>
   </div>
   <div>
-    <span>Vergi Numarası</span>
-    <input type="text" name="r:r:4:m:r:9:cr:2:c:pr:1:container:fs:i:input" id="idj70v" placeholder="Vergi numaranızı girin" data-moz-autofill-type="vat-number">
-  </div>
-  <div>
     <span>Telefon Numarası</span>
-    <input type="tel" name="r:r:9:m:r:10:cr:2:c:pr:1:container:fs:i:input" id="idre" placeholder="Telefon numaranızı girin" data-moz-autofill-type="tel">
+    <input type="tel" name="tel" id="idv8uer" placeholder="Telefon numaranızı girin" data-moz-autofill-type="tel">
   </div>
   <div>
-    <span>Ekstra İsim</span>
-    <input type="text" name="r:r:3:m:r:11:cr:2:c:pr:1:container:fs:i:input" id="idrc2" placeholder="Ekstra isim (isteğe bağlı)" data-moz-autofill-type="cc-additional-name">
-  </div>
-  <div>
-    <button name="r:r:9:m:r:12:cr:3:c:pr:1:container:fs:i:input" id="id0lxe" type="submit">Submit</button>
+    <span>VAT Numarası</span>
+    <input type="text" name="vatId" id="idjz" placeholder="Vergi kimlik numaranızı girin" data-moz-autofill-type="vat-number">
   </div>
 </form>
 

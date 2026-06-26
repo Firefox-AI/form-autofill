@@ -10,14 +10,15 @@
 
 <form method="post">
   <div>
-    <input type="text" name="ccName" id="ccName" placeholder="Naam zoals op de kaart" aria-label="Kaartnaam" data-moz-autofill-type="cc-name">
+    <input type="text" name="cardName" id="id773h" placeholder="Bijv. J. de Vries" aria-label="Naam op de kaart" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <span>Kaartnummer</span>
-    <input type="number" name="ccNumber" id="ccNumber" placeholder="Voer uw kaartnummer in" data-moz-autofill-type="cc-number">
+    <label>Kaartnummer
+    <input type="number" name="ccNumber" id="idg5" placeholder="xxxx xxxx xxxx xxxx" data-moz-autofill-type="cc-number">
+    </label>
   </div>
   <div>
-    <select name="ccExpMonth" id="ccExpMonth" data-moz-autofill-type="cc-exp-month">
+    <select name="ccExpMonth" id="id7tys" aria-label="Maand van vervaldatum" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
   <option>Januari</option>
   <option>Februari</option>
@@ -34,8 +35,7 @@
 </select>
   </div>
   <div>
-    <label>Vervaldatum (jaar)
-    <select name="ccExpYear" id="ccExpYear" data-moz-autofill-type="cc-exp-year">
+    <select name="exp_year" id="id5l35" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -45,20 +45,15 @@
   <option>2028</option>
   <option>2029</option>
   <option>2030</option>
-  <option>2031</option>
-  <option>2032</option>
-  <option>2033</option>
-  <option>2034</option>
 </select>
-    </label>
   </div>
   <div>
-    <label for="ccCsc">CVC</label>
-    <input type="number" name="ccCsc" id="ccCsc" placeholder="3 cijfers op de achterkant" data-moz-autofill-type="cc-csc">
+    <span>CVC</span>
+    <input type="number" name="csc" id="idemij" placeholder="3 cijfers op de achterkant" data-moz-autofill-type="cc-csc">
   </div>
   <div>
-    <label for="ccType">Kaarttype</label>
-    <select name="ccType" id="ccType" data-moz-autofill-type="cc-type">
+    <label for="idjl">Kaarttype</label>
+    <select name="ccType" id="idjl" data-moz-autofill-type="cc-type">
   <option value=""></option>
   <option>Visa</option>
   <option>MasterCard</option>
@@ -67,15 +62,13 @@
 </select>
   </div>
   <div>
-    <label>Adres
-    <input type="text" name="addressLine1" id="addressLine1" placeholder="Straat en huisnummer" data-moz-autofill-type="address-line1">
+    <label for="idd6">Adres</label>
+    <input type="text" name="address" id="idd6" placeholder="Straat en huisnummer" data-moz-autofill-type="street-address">
+  </div>
+  <div>
+    <label>Postcode
+    <input type="text" name="postalCode" id="id6upnw" placeholder="1234 AB" data-moz-autofill-type="postal-code">
     </label>
-  </div>
-  <div>
-    <input type="text" name="postalCode" id="postalCode" placeholder="Bijv. 1234 AB" aria-label="Postcode" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <button name="field" id="field" type="submit">Submit</button>
   </div>
 </form>
 

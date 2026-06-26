@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<div data-bind="foreach: items"> <div class="gty-asset store-library cart-item clearfix"> <div class="image"> <figure> <img alt="Grace to You - Product" data-bind="attr: {src: '/media/ResourceImages/' + code() + '.jpg', alt: name() }" src="/media/ResourceImages/tagahawak.jpg"/> </figure> </div> <div class="details"> <div class="title"> <span data-bind="text:name"></span> </div> <div class="btn-group"> <a class="btn waves-effect" data-bind="click:remove" href="javascript:void(0);"><i class="fa fa-trash"></i><span>Delete</span></a> <a class="btn waves-effect" data-bind="click:moveToCart" href="javascript:void(0);" onclick="Materialize.toast('Item moved to Cart.', 5000)"><i class="mdi-action-shopping-cart"></i><span>Move to Cart</span></a> </div> </div> </div> </div> <ul class="collapsible" data-bind="visible:items().length &gt; 0" data-collapsible="accordion"> <li> <div class="collapsible-header button-like"> <i class="mdi-communication-email"></i>Email someone my wishlist </div> <div class="collapsible-body"> <section class="form-container email-wishlist"> <div class="input-field"> <input data-bind="textInput:recipientName" data-parsley-group="wishlist" data-parsley-required="" id="wishlist_toname" name="toname" type="text"/> <label for="wishlist_toname">Recipients Name</label> </div> <div class="input-field"> <input data-bind="textInput:recipientEmail" data-moz-autofill-type="email" data-parsley-group="wishlist" data-parsley-required="" data-parsley-type="email" id="wishlist_toemail" name="toemail" type="email"/> <label for="wishlist_toemail">Recipient's email address</label> </div> <div class="input-field"> <input data-bind="textInput:senderName" data-parsley-group="wishlist" data-parsley-required="" id="wishlist_fromname" name="fromname" type="text"/> <label data-bind="css:{active: senderName}" for="wishlist_fromname">Your name</label> </div> <div class="input-field"> <input data-bind="textInput:senderEmail" data-moz-autofill-type="email" data-parsley-group="wishlist" data-parsley-required="" data-parsley-type="email" id="wishlist_toemail" name="fromemail" type="email"/> <label data-bind="css:{active: senderEmail}" for="wishlist_toemail">Your email address</label> </div> <div class="input-field"> <textarea class="materialize-textarea" data-bind="textInput:wishListMessage" data-parsley-group="wishlist" id="wishlist_message" length="500" name="message" type="text"></textarea> <label for="wishlist_message">Enter a message</label> </div> <div class="input-field"> <input browser-default="" class="filled-in" data-bind="checked:isSendCcWishlist" id="chkCCWishlist" type="checkbox"/> <label for="chkCCWishlist">Send me a copy of this email</label> </div> <div class="cta"> <a class="btn black waves-effect waves-light" data-bind="click: sendWishListSequence"><i class="fa fa-send"></i><span>Send</span></a> </div> </section> </div> </li> </ul>
+</form>
+
+</fieldset></body></html>

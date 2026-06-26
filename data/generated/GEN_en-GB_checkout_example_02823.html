@@ -10,34 +10,57 @@
 
 <form method="post">
   <div>
-    <select name="r:r:7:m:r:1:cr:2:c:pr:1:container:fs:i:input" id="idrz2l1" data-moz-autofill-type="country">
+    <label for="id75rz">Country *</label>
+    <select name="countryCode" id="id75rz" data-moz-autofill-type="country">
   <option value=""></option>
   <option>United Kingdom</option>
   <option>Ireland</option>
   <option>Scotland</option>
   <option>Wales</option>
+  <option>Northern Ireland</option>
 </select>
   </div>
   <div>
-    <input type="text" name="r:r:1:m:r:2:cr:1:c:pr:1:container:fs:i:input" id="id1o4e" placeholder="Enter your full name" data-moz-autofill-type="name">
+    <label for="id1bi">Full Name *</label>
+    <input type="text" name="contactName" id="id1bi" placeholder="Enter your full name" data-moz-autofill-type="name">
   </div>
   <div>
-    <input type="text" name="r:r:6:m:r:3:cr:3:c:pr:1:container:fs:i:input" id="idyyu" placeholder="Enter your house number and street name" data-moz-autofill-type="address-line1">
+    <label for="ido4eu9">Address Line 1 *</label>
+    <input type="text" name="addr1" id="ido4eu9" placeholder="123 Main St" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <input type="text" name="r:r:5:m:r:4:cr:1:c:pr:1:container:fs:i:input" id="id3jc" placeholder="Optional: Apartment, suite, unit, etc." data-moz-autofill-type="address-line2">
+    <label for="idyusdi">Address Line 2</label>
+    <input type="text" name="addressLine2" id="idyusdi" placeholder="Flat, Suite, etc." data-moz-autofill-type="address-line2">
   </div>
   <div>
-    <input type="text" name="r:r:5:m:r:5:cr:1:c:pr:1:container:fs:i:input" id="id4y6bh" placeholder="Enter your city" data-moz-autofill-type="address-level2">
+    <label for="idctk">City *</label>
+    <input type="text" name="town" id="idctk" placeholder="London" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <input type="text" name="r:r:3:m:r:6:cr:2:c:pr:1:container:fs:i:input" id="id3qndm" placeholder="Enter your region or county" data-moz-autofill-type="address-level1">
+    <label for="idy6bhi">Region</label>
+    <select name="county" id="idy6bhi" data-moz-autofill-type="address-level1">
+  <option value=""></option>
+  <option>East Midlands</option>
+  <option>East of England</option>
+  <option>London</option>
+  <option>North East</option>
+  <option>North West</option>
+  <option>Northern Ireland</option>
+  <option>Scotland</option>
+  <option>South East</option>
+  <option>South West</option>
+  <option>Wales</option>
+  <option>West Midlands</option>
+  <option>Yorkshire and the Humber</option>
+</select>
   </div>
   <div>
-    <input type="text" name="r:r:5:m:r:7:cr:2:c:pr:1:container:fs:i:input" id="idgb" placeholder="Enter your postcode" data-moz-autofill-type="postal-code">
+    <label for="id3qndm">Postcode *</label>
+    <input type="text" name="postcode" id="id3qndm" placeholder="E.g. SW1A 1AA" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="tel" name="r:r:8:m:r:8:cr:1:c:pr:1:container:fs:i:input" id="id0am1" placeholder="e.g. 07700 900 982" data-moz-autofill-type="tel">
+    <label for="id7bgb4">Phone Number</label>
+    <input type="tel" name="phoneNumber" id="id7bgb4" placeholder="07700 900 982" data-moz-autofill-type="tel">
   </div>
 </form>
 

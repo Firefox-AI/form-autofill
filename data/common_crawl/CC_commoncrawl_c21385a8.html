@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<div class="form"> <label for="txtmailrecepient">E-Mail-Adresse des Empfängers *</label> <input class="form__input" data-moz-autofill-type="email" id="form__input-mail-receiver" maxlength="100" name="mailrecepient" ng-class="forms.recommendation.mailrecepient.$invalid &amp;&amp; forms.recommendation.submitted ? 'form__input--failure' : ''" ng-model="TAF.RecommendationItem.RecipientMailAddress" required="" type="email"/> <label for="txtareamessage">Ihre Nachricht</label> <textarea class="form__input form__textarea" id="form__input-message-recommendation" maxlength="500" name="form__input-message-recommendation" ng-model="TAF.RecommendationItem.Message" title="Ihre Nachricht"></textarea> <div class="grid grid--2-columns"> <div class="grid__column grid__column--xs-6 grid__column--sm-6 grid__column--md-1"> <label for="txtsendername">Ihr Name</label> <input class="form__input" id="form__input-name-recommendation" maxlength="100" name="filter__input-name-recommendation" ng-model="TAF.RecommendationItem.SenderName" title="Ihr Name" type="text"/> </div> <div class="grid__column grid__column--xs-6 grid__column--sm-6 grid__column--md-1"> <label for="txtmailsender">Ihre E-Mail-Adresse *</label> <input class="form__input" data-moz-autofill-type="email" id="form__input-mail-recommendation" maxlength="100" name="mailsender" ng-class="forms.recommendation.mailsender.$invalid &amp;&amp; forms.recommendation.submitted ? 'form__input--failure' : ''" ng-model="TAF.RecommendationItem.SenderMailAddress" required="" title="Ihre E-Mail (optional)" type="email"/> </div> </div> <div class="form__checkbox-container"> <div class="form__checkbox checkbox"> <div id="2877c1daa688456489c10daa499cae8d_verifyHuman_Recommendation"></div> <div id="2877c1daa688456489c10daa499cae8d_verifyBot_Recommendation" name="_verifyBot"></div> </div> </div> </div> <div class="form form--align-right"> <button class="form__button button button-grey" ng-click="TAF.PostRecommendation()" ng-disabled="TAF.ProcessPost" type="submit"> <div class="caritas-button-spinner" ng-show="TAF.ProcessPost"></div>Absenden </button> </div>
+</form>
+
+</fieldset></body></html>

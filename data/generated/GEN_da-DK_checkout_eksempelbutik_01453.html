@@ -10,65 +10,37 @@
 
 <form method="post">
   <div>
-    <label>Fornavn
-    <input type="text" name="given_name_1595" id="given_name_747" placeholder="Indtast dit fornavn" data-moz-autofill-type="given-name">
-    </label>
-  </div>
-  <div>
-    <label>Efternavn
-    <input type="text" name="family_name_5020" id="family_name_5220" placeholder="Indtast dit efternavn" data-moz-autofill-type="family-name">
-    </label>
-  </div>
-  <div>
-    <label>Adresse
-    <input type="text" name="street_address_2947" id="street_address_7942" placeholder="Indtast din adresse" data-moz-autofill-type="street-address">
-    </label>
-  </div>
-  <div>
-    <label>Adresse tilføjelse (valgfrit)
-    <input type="text" name="address_line2_7092" id="address_line2_3166" placeholder="F.eks. lejlighed eller etage" data-moz-autofill-type="address-line2">
-    </label>
-  </div>
-  <div>
-    <label>By
-    <input type="text" name="address_level2_2237" id="address_level2_9847" placeholder="Indtast din by" data-moz-autofill-type="address-level2">
-    </label>
-  </div>
-  <div>
-    <label>Postnummer
-    <input type="text" name="postal_code_695" id="postal_code_2343" placeholder="Indtast dit postnummer" data-moz-autofill-type="postal-code">
-    </label>
-  </div>
-  <div>
-    <label>Land
-    <select name="country_name_8335" id="country_name_1541" data-moz-autofill-type="country-name">
+    <label for="idtu">Titel</label>
+    <select name="title" id="idtu" data-moz-autofill-type="honorific-prefix">
   <option value=""></option>
-  <option>Danmark</option>
-  <option>Sverige</option>
-  <option>Norge</option>
-  <option>Finland</option>
-  <option>Island</option>
+  <option>Hr.</option>
+  <option>Fr.</option>
+  <option>Frøken</option>
 </select>
-    </label>
   </div>
   <div>
-    <label>E-mail
-    <input type="email" name="email_405" id="email_5740" placeholder="Indtast din e-mail adresse" data-moz-autofill-type="email">
-    </label>
+    <label for="id1lici">Fornavn</label>
+    <input type="text" name="fname" id="id1lici" placeholder="Indtast dit fornavn" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <label>Telefonnummer
-    <input type="tel" name="tel_6392" id="tel_7414" placeholder="Indtast dit telefonnummer" data-moz-autofill-type="tel">
-    </label>
+    <label for="idbw">Efternavn</label>
+    <input type="text" name="billing_last_name" id="idbw" placeholder="Indtast dit efternavn" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <label>Virksomhed (valgfrit)
-    <input type="text" name="organization_7712" id="organization_8804" placeholder="Indtast virksomhedsnavn" data-moz-autofill-type="organization">
-    </label>
+    <label for="id38quz">Virksomhed</label>
+    <input type="text" name="business" id="id38quz" placeholder="Indtast virksomhedens navn (valgfrit)" data-moz-autofill-type="organization">
   </div>
   <div>
-    <label>Region
-    <select name="address_level1_4312" id="address_level1_5235" data-moz-autofill-type="address-level1">
+    <label for="idy1v7f">Adresse</label>
+    <input type="text" name="address" id="idy1v7f" placeholder="Indtast din adresse" data-moz-autofill-type="street-address">
+  </div>
+  <div>
+    <label for="idt2pej">By</label>
+    <input type="text" name="locality" id="idt2pej" placeholder="Indtast din by" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="ide156">Region</label>
+    <select name="province" id="ide156" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>Hovedstaden</option>
   <option>Sjælland</option>
@@ -76,28 +48,33 @@
   <option>Midtjylland</option>
   <option>Nordjylland</option>
 </select>
-    </label>
   </div>
   <div>
-    <label>Fødselsår
-    <select name="bday_year_6551" id="bday_year_1678" data-moz-autofill-type="bday-year">
+    <label for="ideb0">Postnummer</label>
+    <input type="text" name="zip" id="ideb0" placeholder="Indtast dit postnummer" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="idxd2">Land</label>
+    <select name="country" id="idxd2" data-moz-autofill-type="country-name">
   <option value=""></option>
-  <option>2023</option>
-  <option>2022</option>
-  <option>2021</option>
-  <option>2020</option>
-  <option>2019</option>
-  <option>2018</option>
-  <option>2017</option>
-  <option>2016</option>
-  <option>2015</option>
-  <option>2014</option>
-  <option>2013</option>
-  <option>2012</option>
-  <option>2011</option>
-  <option>2010</option>
+  <option>Danmark</option>
+  <option>Sverige</option>
+  <option>Norge</option>
+  <option>Tyskland</option>
+  <option>Finland</option>
 </select>
-    </label>
+  </div>
+  <div>
+    <label for="ideied">E-mail</label>
+    <input type="email" name="user_email" id="ideied" placeholder="Indtast din e-mailadresse" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="id5s6b">Telefonnummer</label>
+    <input type="tel" name="mobile" id="id5s6b" placeholder="Indtast dit telefonnummer" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label for="idkffsv">CVR-nummer</label>
+    <input type="text" name="vat" id="idkffsv" placeholder="Indtast dit CVR-nummer (valgfrit)" data-moz-autofill-type="vat-number">
   </div>
 </form>
 

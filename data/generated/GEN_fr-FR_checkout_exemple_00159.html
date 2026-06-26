@@ -10,60 +10,74 @@
 
 <form method="post">
   <div>
-    <span>Titre</span>
-    <select name="r:r:4:m:r:1:cr:1:c:pr:1:container:fs:i:input" id="idudhcb" data-moz-autofill-type="honorific-prefix">
-  <option value=""></option>
-  <option>M.</option>
-  <option>Mme</option>
-  <option>Mlle</option>
-  <option>Dr</option>
-</select>
+    <label for="idd1u">Prénom</label>
+    <input type="text" name="firstName" id="idd1u" placeholder="Votre prénom" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <span>Prénom</span>
-    <input type="text" name="r:r:2:m:r:2:cr:2:c:pr:1:container:fs:i:input" id="idy7h" placeholder="Votre prénom" data-moz-autofill-type="given-name">
+    <label for="idcb">Nom de famille</label>
+    <input type="text" name="lastName" id="idcb" placeholder="Votre nom de famille" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <span>Nom</span>
-    <input type="text" name="r:r:8:m:r:3:cr:3:c:pr:1:container:fs:i:input" id="idxo" placeholder="Votre nom de famille" data-moz-autofill-type="family-name">
+    <label for="idmy7h5">Adresse</label>
+    <input type="text" name="address1" id="idmy7h5" placeholder="Adresse de livraison" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <span>Adresse</span>
-    <input type="text" name="r:r:3:m:r:4:cr:3:c:pr:1:container:fs:i:input" id="idi3" placeholder="Numéro et nom de rue" data-moz-autofill-type="street-address">
+    <label for="idojbi">Complément d&#x27;adresse (facultatif)</label>
+    <input type="text" name="address2" id="idojbi" placeholder="Appartement, bâtiment, etc." data-moz-autofill-type="address-line2">
   </div>
   <div>
-    <span>Complément d&#x27;adresse</span>
-    <input type="text" name="r:r:9:m:r:5:cr:1:c:pr:1:container:fs:i:input" id="idy1" placeholder="Appartement, étage, etc." data-moz-autofill-type="address-line2">
+    <label for="iday1">Ville</label>
+    <input type="text" name="town" id="iday1" placeholder="Votre ville" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <span>Ville</span>
-    <input type="text" name="r:r:8:m:r:6:cr:1:c:pr:1:container:fs:i:input" id="id8wq" placeholder="Votre ville" data-moz-autofill-type="address-level2">
+    <label for="idm8">Code postal</label>
+    <input type="text" name="postcode" id="idm8" placeholder="Votre code postal" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <span>Code postal</span>
-    <input type="text" name="r:r:1:m:r:7:cr:3:c:pr:1:container:fs:i:input" id="idmg" placeholder="Votre code postal" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <span>Pays</span>
-    <select name="r:r:9:m:r:8:cr:2:c:pr:1:container:fs:i:input" id="id771" data-moz-autofill-type="country-name">
+    <label for="idd86b">Pays</label>
+    <select name="countryName" id="idd86b" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>France</option>
   <option>Allemagne</option>
   <option>Belgique</option>
-  <option>Luxembourg</option>
   <option>Suisse</option>
+  <option>Espagne</option>
+  <option>Italie</option>
+  <option>Pays-Bas</option>
 </select>
   </div>
   <div>
-    <span>Adresse e-mail</span>
-    <input type="email" name="r:r:8:m:r:9:cr:3:c:pr:1:container:fs:i:input" id="idoahs" placeholder="Votre e-mail" data-moz-autofill-type="email">
+    <label for="id8v">E-mail</label>
+    <input type="email" name="emailAddress" id="id8v" placeholder="Votre adresse e-mail" data-moz-autofill-type="email">
   </div>
   <div>
-    <span>Téléphone</span>
-    <input type="tel" name="r:r:8:m:r:10:cr:1:c:pr:1:container:fs:i:input" id="idixb" placeholder="Votre numéro de téléphone" data-moz-autofill-type="tel">
+    <label for="id5xoah">Téléphone</label>
+    <input type="tel" name="telephone" id="id5xoah" placeholder="Numéro de téléphone" data-moz-autofill-type="tel">
   </div>
   <div>
-    <button name="r:r:2:m:r:11:cr:1:c:pr:1:container:fs:i:input" id="idvr3zu" type="submit">Submit</button>
+    <label for="idppixb">Numéro d&#x27;appartement</label>
+    <input type="text" name="suite" id="idppixb" placeholder="Numéro d&#x27;appartement" data-moz-autofill-type="apartment">
+  </div>
+  <div>
+    <label for="id5vr">Mois de naissance</label>
+    <select name="birthMonth" id="id5vr" data-moz-autofill-type="bday-month">
+  <option value=""></option>
+  <option>Janvier</option>
+  <option>Février</option>
+  <option>Mars</option>
+  <option>Avril</option>
+  <option>Mai</option>
+  <option>Juin</option>
+  <option>Juillet</option>
+  <option>Août</option>
+  <option>Septembre</option>
+  <option>Octobre</option>
+  <option>Novembre</option>
+  <option>Décembre</option>
+</select>
+  </div>
+  <div>
+    <button name="idzuns9" id="idbue" type="submit">Submit</button>
   </div>
 </form>
 

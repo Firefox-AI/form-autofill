@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>com</h3>
+<p><i>Common Crawl form, other context, unlabeled.</i></p>
+
+<form>
+<input id="view" name="view" type="hidden" value="list"/><div class="col-xs-12 col-sm-10 col-md-10 col-lg-10"><div class="row"><div class="col-lg-7 col-md-7 col-sm-12 col-xs-12"><div class="input-group"><span class="input-group-addon"><label class="label" for="lookfor" id="lookfor-label"><i class="fas fa-search fa-lg" role="presentation"></i><span aria-label="Look for" class="sr-only" role="presentation">Look for</span></label></span><input aria-labelledby="lookfor-label" aria-required="true" autocomplete="off" class="form-control" id="lookfor" name="lookfor" onfocus="$(this).select()" title="Enter one or more terms to search for. Surrounding a term with quotes will limit result to only those that exactly match the term." type="text"/></div></div><div class="col-lg-2 col-lg-offset-0 col-md-2 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-6 col-xs-offset-0"><select aria-label="Search Index" class="searchTypeHorizontal form-control catalogType" id="searchIndex" name="searchIndex" title="The method of searching."><option value="Keyword">Keyword</option><option value="Title">Title</option><option value="StartOfTitle">Start of Title</option><option value="Series">Series</option><option value="Author">Author</option><option value="Subject">Subject</option><option value="LocalCallNumber">Call Number</option><option id="advancedSearchLink" value="advanced">Advanced Search</option></select></div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><select aria-label="Collection to Search" class="searchSourceHorizontal form-control" id="searchSource" name="searchSource" onchange="AspenDiscovery.Searches.loadSearchTypes();" title="Select what to search. Items marked with a * will redirect you to one of our partner sites."><option data-advanced_search="1" data-advanced_search_label="Advanced Search" data-catalog_type="catalog" selected="selected" title="The Atkinson catalog." value="local">in Library Catalog</option><option data-advanced_search="1" data-advanced_search_label="Advanced Search" data-catalog_type="catalog" title="Digital Media available for use online and with portable devices" value="econtent">in Online Collection</option><option data-advanced_search="" data-advanced_search_label="Advanced Search" data-catalog_type="lists" title="User Lists" value="lists">in Lists</option></select></div></div></div><div class="col-xs-12 col-sm-2 col-md-2" id="horizontal-search-button-container"><div class="row"><div class="col-tn-6 col-xs-6 col-sm-12 col-md-12 text-center"><button class="btn btn-default" style="width: 95%" type="submit"><i class="fas fa-search fas-lg" role="presentation"></i><span id="horizontal-search-box-submit-text"> Search</span></button></div></div></div>
+</form>
+
+</fieldset></body></html>

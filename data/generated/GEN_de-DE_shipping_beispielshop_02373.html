@@ -10,110 +10,156 @@
 
 <form method="post">
   <div>
-    <input type="email" name="r:r:7:m:r:1:cr:1:c:pr:1:container:fs:i:input" id="idm6" aria-label="Gastbestellung (wir speichern Ihre Daten nicht)" data-moz-autofill-type="email">
+    <label for="idgm">Gastbestellung (wir speichern Ihre Daten nicht)</label>
+    <input type="email" name="user_email" id="idgm" data-moz-autofill-type="email">
   </div>
   <div>
-    <input type="text" name="r:r:4:m:r:2:cr:1:c:pr:1:container:fs:i:input" id="id99ovo" aria-label="Vorname (Neue Rechnungsadresse erstellen)" data-moz-autofill-type="given-name">
+    <label for="idaz9">Vorname (Rechnungsadresse)</label>
+    <input type="text" name="billing_first_name" id="idaz9" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <input type="text" name="r:r:3:m:r:3:cr:1:c:pr:1:container:fs:i:input" id="idudp" aria-label="Nachname (Neue Rechnungsadresse erstellen)" data-moz-autofill-type="family-name">
+    <label for="idvoj">Nachname (Rechnungsadresse)</label>
+    <input type="text" name="billing_last_name" id="idvoj" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <select name="r:r:8:m:r:4:cr:2:c:pr:1:container:fs:i:input" id="idkxa" aria-label="Land (Neue Rechnungsadresse erstellen)" data-moz-autofill-type="country-name">
+    <label for="idudp">Land (Rechnungsadresse)</label>
+    <select name="country" id="idudp" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Deutschland</option>
   <option>Österreich</option>
   <option>Schweiz</option>
+  <option>Belgien</option>
   <option>Niederlande</option>
 </select>
   </div>
   <div>
-    <input type="text" name="r:r:3:m:r:5:cr:2:c:pr:1:container:fs:i:input" id="id6n0z" aria-label="Adresse (Neue Rechnungsadresse erstellen)" data-moz-autofill-type="address-line1">
+    <label for="idjkxak">Straße und Hausnummer (Rechnungsadresse)</label>
+    <input type="text" name="street1" id="idjkxak" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <input type="text" name="r:r:2:m:r:6:cr:1:c:pr:1:container:fs:i:input" id="idwjjia" aria-label="Zusätzliche Adresse (Neue Rechnungsadresse erstellen)" data-moz-autofill-type="address-line2">
+    <label for="id6n0z">Wohnung, Suite, etc. (Rechnungsadresse)</label>
+    <input type="text" name="addr2" id="id6n0z" placeholder="Optional" data-moz-autofill-type="address-line2">
   </div>
   <div>
-    <input type="text" name="r:r:1:m:r:7:cr:3:c:pr:1:container:fs:i:input" id="id7f5is" aria-label="Stadt (Neue Rechnungsadresse erstellen)" data-moz-autofill-type="address-level2">
+    <label for="idl0">Stadt (Rechnungsadresse)</label>
+    <input type="text" name="locality" id="idl0" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <select name="r:r:6:m:r:8:cr:1:c:pr:1:container:fs:i:input" id="id4zi" aria-label="Bundesland (Neue Rechnungsadresse erstellen)" data-moz-autofill-type="address-level1">
+    <label for="idjia">Bundesland (Rechnungsadresse)</label>
+    <select name="region" id="idjia" data-moz-autofill-type="address-level1">
   <option value=""></option>
-  <option>Bayern</option>
   <option>Baden-Württemberg</option>
-  <option>Nordrhein-Westfalen</option>
+  <option>Bayern</option>
+  <option>Berlin</option>
+  <option>Brandenburg</option>
+  <option>Bremen</option>
+  <option>Hamburg</option>
   <option>Hessen</option>
+  <option>Mecklenburg-Vorpommern</option>
+  <option>Niedersachsen</option>
+  <option>Nordrhein-Westfalen</option>
+  <option>Rheinland-Pfalz</option>
+  <option>Saarland</option>
   <option>Sachsen</option>
+  <option>Sachsen-Anhalt</option>
+  <option>Schleswig-Holstein</option>
+  <option>Thüringen</option>
 </select>
   </div>
   <div>
-    <input type="text" name="r:r:3:m:r:9:cr:3:c:pr:1:container:fs:i:input" id="idnbmbz" aria-label="Postleitzahl (Neue Rechnungsadresse erstellen)" data-moz-autofill-type="postal-code">
+    <label for="id7f5is">Postleitzahl (Rechnungsadresse)</label>
+    <input type="text" name="zip" id="id7f5is" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="tel" name="r:r:5:m:r:10:cr:3:c:pr:1:container:fs:i:input" id="idt0qf" aria-label="Telefon (Geschäftlich)" data-moz-autofill-type="tel">
+    <label for="idp4z">Telefon (Geschäftlich)</label>
+    <input type="tel" name="phoneNumber" id="idp4z" data-moz-autofill-type="tel">
   </div>
   <div>
-    <input type="text" name="r:r:1:m:r:11:cr:2:c:pr:1:container:fs:i:input" id="idlu64" aria-label="Vorname (Neue Lieferadresse erstellen)" data-moz-autofill-type="given-name">
+    <label for="id3nb">Vorname (Lieferadresse)</label>
+    <input type="text" name="fname" id="id3nb" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <input type="text" name="r:r:5:m:r:12:cr:1:c:pr:1:container:fs:i:input" id="idwg" aria-label="Nachname (Neue Lieferadresse erstellen)" data-moz-autofill-type="family-name">
+    <label for="idbzt">Nachname (Lieferadresse)</label>
+    <input type="text" name="billing_last_name" id="idbzt" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <select name="r:r:3:m:r:13:cr:2:c:pr:1:container:fs:i:input" id="id8j6h1" aria-label="Land (Neue Lieferadresse erstellen)" data-moz-autofill-type="country-name">
+    <label for="id0qfb">Land (Lieferadresse)</label>
+    <select name="countryName" id="id0qfb" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Deutschland</option>
   <option>Österreich</option>
   <option>Schweiz</option>
+  <option>Belgien</option>
   <option>Niederlande</option>
 </select>
   </div>
   <div>
-    <input type="text" name="r:r:8:m:r:14:cr:1:c:pr:1:container:fs:i:input" id="idqt" aria-label="Adresse (Neue Lieferadresse erstellen)" data-moz-autofill-type="address-line1">
+    <label for="idlu64">Straße und Hausnummer (Lieferadresse)</label>
+    <input type="text" name="addr1" id="idlu64" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <input type="text" name="r:r:8:m:r:15:cr:2:c:pr:1:container:fs:i:input" id="id4xl" aria-label="Zusätzliche Adresse (Neue Lieferadresse erstellen)" data-moz-autofill-type="address-line2">
+    <label for="idfw">Wohnung, Suite, etc. (Lieferadresse)</label>
+    <input type="text" name="addr2" id="idfw" placeholder="Optional" data-moz-autofill-type="address-line2">
   </div>
   <div>
-    <input type="text" name="r:r:4:m:r:16:cr:1:c:pr:1:container:fs:i:input" id="idet" aria-label="Stadt (Neue Lieferadresse erstellen)" data-moz-autofill-type="address-level2">
+    <label for="id538">Stadt (Lieferadresse)</label>
+    <input type="text" name="city" id="id538" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <select name="r:r:5:m:r:17:cr:1:c:pr:1:container:fs:i:input" id="idf0p7" aria-label="Bundesland (Neue Lieferadresse erstellen)" data-moz-autofill-type="address-level1">
+    <label for="id13">Bundesland (Lieferadresse)</label>
+    <select name="province" id="id13" data-moz-autofill-type="address-level1">
   <option value=""></option>
-  <option>Bayern</option>
   <option>Baden-Württemberg</option>
-  <option>Nordrhein-Westfalen</option>
+  <option>Bayern</option>
+  <option>Berlin</option>
+  <option>Brandenburg</option>
+  <option>Bremen</option>
+  <option>Hamburg</option>
   <option>Hessen</option>
+  <option>Mecklenburg-Vorpommern</option>
+  <option>Niedersachsen</option>
+  <option>Nordrhein-Westfalen</option>
+  <option>Rheinland-Pfalz</option>
+  <option>Saarland</option>
   <option>Sachsen</option>
+  <option>Sachsen-Anhalt</option>
+  <option>Schleswig-Holstein</option>
+  <option>Thüringen</option>
 </select>
   </div>
   <div>
-    <input type="text" name="r:r:9:m:r:18:cr:3:c:pr:1:container:fs:i:input" id="id5u2" aria-label="Postleitzahl (Neue Lieferadresse erstellen)" data-moz-autofill-type="postal-code">
+    <label for="idqt">Postleitzahl (Lieferadresse)</label>
+    <input type="text" name="zipCode" id="idqt" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="tel" name="r:r:3:m:r:19:cr:2:c:pr:1:container:fs:i:input" id="id56x" aria-label="Telefon (Geschäftlich)" data-moz-autofill-type="tel">
+    <label for="idm4xl">Telefon (Geschäftlich)</label>
+    <input type="tel" name="mobile" id="idm4xl" data-moz-autofill-type="tel">
   </div>
   <div>
-    <input type="number" name="r:r:7:m:r:20:cr:1:c:pr:1:container:fs:i:input" id="idsj" aria-label="Kartennummer (Neue Karte hinzufügen)" data-moz-autofill-type="cc-number">
+    <label for="idget">Kreditkartennummer</label>
+    <input type="number" name="ccNumber" id="idget" data-moz-autofill-type="cc-number">
   </div>
   <div>
-    <select name="r:r:7:m:r:21:cr:1:c:pr:1:container:fs:i:input" id="idz5g" aria-label="Monat (Neue Karte hinzufügen)" data-moz-autofill-type="cc-exp-month">
+    <label for="id6wf">Ablaufmonat</label>
+    <select name="ccExpMonth" id="id6wf" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
-  <option>Januar</option>
-  <option>Februar</option>
-  <option>März</option>
-  <option>April</option>
-  <option>Mai</option>
-  <option>Juni</option>
-  <option>Juli</option>
-  <option>August</option>
-  <option>September</option>
-  <option>Oktober</option>
-  <option>November</option>
-  <option>Dezember</option>
+  <option>01</option>
+  <option>02</option>
+  <option>03</option>
+  <option>04</option>
+  <option>05</option>
+  <option>06</option>
+  <option>07</option>
+  <option>08</option>
+  <option>09</option>
+  <option>10</option>
+  <option>11</option>
+  <option>12</option>
 </select>
   </div>
   <div>
-    <select name="r:r:4:m:r:22:cr:2:c:pr:1:container:fs:i:input" id="idic09" aria-label="Jahr (Neue Karte hinzufügen)" data-moz-autofill-type="cc-exp-year">
+    <label for="id76k">Ablaufjahr</label>
+    <select name="ccExpYear" id="id76k" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -126,10 +172,12 @@
 </select>
   </div>
   <div>
-    <input type="number" name="r:r:1:m:r:23:cr:3:c:pr:1:container:fs:i:input" id="id9yz8f" aria-label="Sicherheitscode (Neue Karte hinzufügen)" data-moz-autofill-type="cc-csc">
+    <label for="id2jrp">Sicherheitscode (CVV)</label>
+    <input type="number" name="securityCode" id="id2jrp" data-moz-autofill-type="cc-csc">
   </div>
   <div>
-    <input type="email" name="r:r:4:m:r:24:cr:1:c:pr:1:container:fs:i:input" id="idg8htj" aria-label="E-Mail" data-moz-autofill-type="email">
+    <label for="id0pes">E-Mail</label>
+    <input type="email" name="user_email" id="id0pes" data-moz-autofill-type="email">
   </div>
 </form>
 

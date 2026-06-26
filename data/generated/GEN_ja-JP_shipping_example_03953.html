@@ -10,44 +10,38 @@
 
 <form method="post">
   <div>
-    <label for="id9rd">受取人名</label>
-    <input type="text" name="r:r:8:m:r:1:cr:1:c:pr:1:container:fs:i:input" id="id9rd" placeholder="山田 太郎" data-moz-autofill-type="name">
+    <span>お名前</span>
+    <input type="text" name="contactName" id="id9rd" placeholder="山田 太郎" data-moz-autofill-type="name">
   </div>
   <div>
-    <label for="idlc8qu">町名・番地</label>
-    <input type="text" name="r:r:8:m:r:2:cr:2:c:pr:1:container:fs:i:input" id="idlc8qu" placeholder="1-2-3" data-moz-autofill-type="street">
+    <span>住所（番地まで）</span>
+    <input type="text" name="street13" id="id8q" placeholder="1-2-3" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <label for="idb0sq4">号室</label>
-    <input type="text" name="r:r:2:m:r:3:cr:2:c:pr:1:container:fs:i:input" id="idb0sq4" placeholder="101" data-moz-autofill-type="address-housenumber">
+    <span>郵便番号</span>
+    <input type="text" name="postalCode7" id="id0s" placeholder="123-4567" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <label for="idj7">建物名</label>
-    <input type="text" name="r:r:3:m:r:4:cr:1:c:pr:1:container:fs:i:input" id="idj7" placeholder="グリーンハイツ" data-moz-autofill-type="address-line2">
+    <span>市区町村</span>
+    <input type="text" name="town" id="idngj" placeholder="東京都" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <label for="id366j5">郵便番号</label>
-    <input type="text" name="r:r:5:m:r:5:cr:3:c:pr:1:container:fs:i:input" id="id366j5" placeholder="123-4567" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <label for="idobf9">市区町村</label>
-    <input type="text" name="r:r:7:m:r:6:cr:3:c:pr:1:container:fs:i:input" id="idobf9" placeholder="東京都" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <label for="id7ah6z">国</label>
-    <select name="r:r:2:m:r:7:cr:1:c:pr:1:container:fs:i:input" id="id7ah6z" data-moz-autofill-type="country-name">
+    <span>国</span>
+    <select name="countryName" id="id366j5" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>日本</option>
   <option>アメリカ合衆国</option>
-  <option>中国</option>
-  <option>韓国</option>
-  <option>フランス</option>
+  <option>カナダ</option>
+  <option>オーストラリア</option>
   <option>イギリス</option>
 </select>
   </div>
   <div>
-    <label for="ideqx">階数</label>
-    <input type="text" name="r:r:6:m:r:8:cr:3:c:pr:1:container:fs:i:input" id="ideqx" placeholder="3階" data-moz-autofill-type="floor">
+    <span>丁目</span>
+    <input type="text" name="street2" id="idobf9" placeholder="4丁目" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <button name="idbz" id="idh6" type="submit">送信</button>
   </div>
 </form>
 

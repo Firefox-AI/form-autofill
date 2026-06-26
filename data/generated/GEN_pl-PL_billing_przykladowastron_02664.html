@@ -10,28 +10,23 @@
 
 <form method="post">
   <div>
-    <label for="cc_name_1482">Imię i nazwisko</label>
-    <input type="text" name="cc_name_4352" id="cc_name_1482" placeholder="Jan Kowalski" data-moz-autofill-type="cc-name">
+    <input type="text" name="cardName" id="idocx" placeholder="Jan Kowalski" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <label for="street_address_3688">Ulica i numer</label>
-    <input type="text" name="street_address_2950" id="street_address_3688" placeholder="ul. Główna 10" data-moz-autofill-type="street-address">
+    <label for="idvo1kv">Adres</label>
+    <input type="text" name="address" id="idvo1kv" placeholder="ul. Kwiatowa 15" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <label for="address_line2_6182">Dodatkowy adres</label>
-    <input type="text" name="address_line2_703" id="address_line2_6182" placeholder="Mieszkanie 2" data-moz-autofill-type="address-line2">
+    <label>Kod pocztowy
+    <input type="text" name="zip_code7" id="idym" placeholder="00-001" data-moz-autofill-type="postal-code">
+    </label>
   </div>
   <div>
-    <label for="postal_code_5599">Kod pocztowy</label>
-    <input type="text" name="postal_code_1304" id="postal_code_5599" placeholder="00-123" data-moz-autofill-type="postal-code">
+    <input type="text" name="city7" id="idhk" placeholder="Warszawa" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <label for="address_level2_6270">Miasto</label>
-    <input type="text" name="address_level2_9903" id="address_level2_6270" placeholder="Miasto" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <label for="address_level1_3719">Województwo</label>
-    <select name="address_level1_5558" id="address_level1_3719" data-moz-autofill-type="address-level1">
+    <span>Województwo</span>
+    <select name="region" id="idply" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>Dolnośląskie</option>
   <option>Kujawsko-Pomorskie</option>
@@ -51,21 +46,24 @@
 </select>
   </div>
   <div>
-    <label for="country_name_2679">Kraj</label>
-    <select name="country_name_7051" id="country_name_2679" data-moz-autofill-type="country-name">
+    <label for="idu2jz">Kraj</label>
+    <select name="country" id="idu2jz" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Polska</option>
   <option>Niemcy</option>
-  <option>Czechy</option>
   <option>Francja</option>
-  <option>Wielka Brytania</option>
   <option>Hiszpania</option>
   <option>Włochy</option>
+  <option>Czechy</option>
+  <option>Słowacja</option>
+  <option>Węgry</option>
 </select>
   </div>
   <div>
-    <label for="tel_5666">Numer telefonu</label>
-    <input type="tel" name="tel_9415" id="tel_5666" placeholder="123 456 789" data-moz-autofill-type="tel">
+    <input type="tel" name="phoneNumber" id="idyc" placeholder="(+48) 123 456 789" aria-label="Numer telefonu" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <button name="id9up6" id="idygv" type="submit">Submit</button>
   </div>
 </form>
 

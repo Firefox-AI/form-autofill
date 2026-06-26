@@ -10,79 +10,54 @@
 
 <form method="post">
   <div>
-    <span>Titre</span>
-    <select name="honorificPrefix" id="honorificPrefix" data-moz-autofill-type="honorific-prefix">
-  <option value=""></option>
-  <option>Monsieur</option>
-  <option>Madame</option>
-  <option>Mademoiselle</option>
-</select>
+    <label for="idc8o7c">Prénom</label>
+    <input type="text" name="billing_first_name" id="idc8o7c" placeholder="Votre prénom" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <span>Prénom</span>
-    <input type="text" name="givenName" id="givenName" placeholder="Entrez votre prénom" data-moz-autofill-type="given-name">
+    <label for="idb2">Nom de famille</label>
+    <input type="text" name="lastName" id="idb2" placeholder="Votre nom de famille" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <span>Nom de famille</span>
-    <input type="text" name="familyName" id="familyName" placeholder="Entrez votre nom" data-moz-autofill-type="family-name">
+    <label for="idux">Société (facultatif)</label>
+    <input type="text" name="companyName" id="idux" placeholder="Nom de votre société" data-moz-autofill-type="organization">
   </div>
   <div>
-    <span>Société (facultatif)</span>
-    <input type="text" name="organization" id="organization" placeholder="Entrez le nom de votre société" data-moz-autofill-type="organization">
+    <label for="id2k5my">Adresse</label>
+    <input type="text" name="addressLine1" id="id2k5my" placeholder="Numéro et nom de la rue" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <span>Adresse</span>
-    <input type="text" name="streetAddress" id="streetAddress" placeholder="123 Rue Exemples" data-moz-autofill-type="street-address">
+    <label for="idfadb">Appartement, suite (facultatif)</label>
+    <input type="text" name="flat" id="idfadb" placeholder="Numéro d&#x27;appartement ou de suite" data-moz-autofill-type="apartment">
   </div>
   <div>
-    <span>Ville</span>
-    <input type="text" name="addressLevel2" id="addressLevel2" placeholder="Entrez votre ville" data-moz-autofill-type="address-level2">
+    <label for="idue6">Ville</label>
+    <input type="text" name="city" id="idue6" placeholder="Votre ville" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <span>Région</span>
-    <select name="addressLevel1" id="addressLevel1" data-moz-autofill-type="address-level1">
-  <option value=""></option>
-  <option>Île-de-France</option>
-  <option>Provence-Alpes-Côte d&#x27;Azur</option>
-  <option>Auvergne-Rhône-Alpes</option>
-  <option>Nouvelle-Aquitaine</option>
-  <option>Occitanie</option>
-  <option>Hauts-de-France</option>
-  <option>Grand Est</option>
-  <option>Pays de la Loire</option>
-  <option>Bretagne</option>
-  <option>Normandie</option>
-  <option>Centre-Val de Loire</option>
-  <option>Bourgogne-Franche-Comté</option>
-  <option>Alsace</option>
-  <option>Corse</option>
-</select>
+    <label for="idngsu">Code postal</label>
+    <input type="text" name="postcode" id="idngsu" placeholder="Votre code postal" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <span>Code postal</span>
-    <input type="text" name="postalCode" id="postalCode" placeholder="75001" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <span>Pays</span>
-    <select name="countryName" id="countryName" data-moz-autofill-type="country-name">
+    <label for="idd5">Pays</label>
+    <select name="country" id="idd5" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>France</option>
+  <option>Allemagne</option>
   <option>Belgique</option>
   <option>Suisse</option>
-  <option>Luxembourg</option>
-  <option>Canada</option>
+  <option>Espagne</option>
+  <option>Italie</option>
+  <option>Pays-Bas</option>
+  <option>Royaume-Uni</option>
 </select>
   </div>
   <div>
-    <span>Adresse e-mail</span>
-    <input type="email" name="email" id="email" placeholder="exemple@domaine.com" data-moz-autofill-type="email">
+    <label for="idept84">Adresse e-mail</label>
+    <input type="email" name="email_address" id="idept84" placeholder="Votre adresse e-mail" data-moz-autofill-type="email">
   </div>
   <div>
-    <span>Téléphone</span>
-    <input type="tel" name="tel" id="tel" placeholder="06 12 34 56 78" data-moz-autofill-type="tel">
-  </div>
-  <div>
-    <button name="field" id="field" type="submit">Submit</button>
+    <label for="idwpbqm">Numéro de téléphone</label>
+    <input type="tel" name="telephone" id="idwpbqm" placeholder="Votre numéro de téléphone" data-moz-autofill-type="tel">
   </div>
 </form>
 

@@ -5,46 +5,50 @@
 <body>
 
 <fieldset>
-<h3>exemple.com</h3>
+<h3>exemple.cat</h3>
 <p><i>Synthetic sample (LLM-augmented).</i></p>
 
 <form method="post">
   <div>
+    <label for="idvj">Nom complet</label>
     <input type="text" name="r:r:8:m:r:1:cr:3:c:pr:1:container:fs:i:input" id="idvj" placeholder="Escriu el teu nom complet" data-moz-autofill-type="name">
   </div>
   <div>
-    <input type="text" name="r:r:7:m:r:2:cr:1:c:pr:1:container:fs:i:input" id="idg05" placeholder="Escriu el teu nom fonètic (opcional)" data-moz-autofill-type="phonetic-given-name">
+    <label for="idg05">Adreça</label>
+    <input type="text" name="r:r:7:m:r:2:cr:1:c:pr:1:container:fs:i:input" id="idg05" placeholder="Carrer, número" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <input type="text" name="r:r:5:m:r:3:cr:2:c:pr:1:container:fs:i:input" id="iddpokv" placeholder="Pis, escala, etc. (opcional)" data-moz-autofill-type="address-line2">
+    <label for="iddpokv">Codi Postal</label>
+    <input type="text" name="r:r:5:m:r:3:cr:2:c:pr:1:container:fs:i:input" id="iddpokv" placeholder="Codi postal" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="text" name="r:r:2:m:r:4:cr:2:c:pr:1:container:fs:i:input" id="idups" placeholder="Escriu el número de la teva casa" data-moz-autofill-type="address-housenumber">
+    <label for="idups">Ciutat</label>
+    <input type="text" name="r:r:2:m:r:4:cr:2:c:pr:1:container:fs:i:input" id="idups" placeholder="Escriu la teva ciutat" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <input type="text" name="r:r:6:m:r:5:cr:3:c:pr:1:container:fs:i:input" id="idj4" placeholder="Escriu el nom del carrer" data-moz-autofill-type="street">
-  </div>
-  <div>
-    <select name="r:r:5:m:r:6:cr:1:c:pr:1:container:fs:i:input" id="idkx" data-moz-autofill-type="address-level2">
-  <option value=""></option>
-  <option>Barcelona</option>
-  <option>Girona</option>
-  <option>Lleida</option>
-  <option>Tarragona</option>
-</select>
-  </div>
-  <div>
-    <input type="text" name="r:r:4:m:r:7:cr:2:c:pr:1:container:fs:i:input" id="ids5y3q" placeholder="Escriu el teu codi postal" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <select name="r:r:9:m:r:8:cr:2:c:pr:1:container:fs:i:input" id="idlq" data-moz-autofill-type="country-name">
+    <label for="idj4">País</label>
+    <select name="r:r:6:m:r:5:cr:3:c:pr:1:container:fs:i:input" id="idj4" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Espanya</option>
   <option>França</option>
   <option>Itàlia</option>
   <option>Portugal</option>
+  <option>Alemania</option>
   <option>Regne Unit</option>
+  <option>Bèlgica</option>
 </select>
+  </div>
+  <div>
+    <label for="idkx">Província</label>
+    <input type="text" name="r:r:5:m:r:6:cr:1:c:pr:1:container:fs:i:input" id="idkx" placeholder="Escriu la teva província" data-moz-autofill-type="address-level3">
+  </div>
+  <div>
+    <label for="ids5y3q">Extensió telefònica</label>
+    <input type="tel" name="r:r:4:m:r:7:cr:2:c:pr:1:container:fs:i:input" id="ids5y3q" placeholder="Opcional" data-moz-autofill-type="tel-extension">
+  </div>
+  <div>
+    <label for="idlq">Bloc</label>
+    <input type="text" name="r:r:9:m:r:8:cr:2:c:pr:1:container:fs:i:input" id="idlq" placeholder="Bloc (si escau)" data-moz-autofill-type="block">
   </div>
 </form>
 

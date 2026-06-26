@@ -10,14 +10,14 @@
 
 <form method="post">
   <div>
-    <label for="id1wmeb">Name auf der Kreditkarte</label>
-    <input type="text" name="id1yju6" id="id1wmeb" placeholder="Max Mustermann" data-moz-autofill-type="cc-name">
+    <label for="id1wmeb">Karteninhaber</label>
+    <input type="text" name="id1yju6" id="id1wmeb" placeholder="Vor- und Nachname" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <input type="number" name="idm7" id="idcm2vo" placeholder="1234 5678 9012 3456" aria-label="Kreditkartennummer" data-moz-autofill-type="cc-number">
+    <input type="number" name="idm7" id="idcm2vo" placeholder="XXXX XXXX XXXX XXXX" aria-label="Kreditkartennummer" data-moz-autofill-type="cc-number">
   </div>
   <div>
-    <label for="id6v681">Monat der Gültigkeit</label>
+    <label for="id6v681">Gültigkeitsmonat</label>
     <select name="idfo5rt" id="id6v681" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
   <option>Januar</option>
@@ -35,10 +35,9 @@
 </select>
   </div>
   <div>
-    <label for="idzn7">Jahr der Gültigkeit</label>
+    <label for="idzn7">Gültigkeitsjahr</label>
     <select name="idm3s73" id="idzn7" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
-  <option>2023</option>
   <option>2024</option>
   <option>2025</option>
   <option>2026</option>
@@ -48,11 +47,14 @@
   <option>2030</option>
   <option>2031</option>
   <option>2032</option>
+  <option>2033</option>
+  <option>2034</option>
+  <option>2035</option>
 </select>
   </div>
   <div>
-    <label>Sicherheitscode (CVC)
-    <input type="number" name="id4pjkk" id="id7sx" placeholder="123" data-moz-autofill-type="cc-csc">
+    <label>Prüfziffer (CVC)
+    <input type="number" name="id4pjkk" id="id7sx" placeholder="XXX" data-moz-autofill-type="cc-csc">
     </label>
   </div>
   <div>
@@ -62,11 +64,13 @@
   <option>Visa</option>
   <option>MasterCard</option>
   <option>American Express</option>
-  <option>Maestro</option>
+  <option>Diners Club</option>
+  <option>Discover</option>
+  <option>JCB</option>
 </select>
   </div>
   <div>
-    <button name="iddvr39" id="idxz7qo" type="submit">Zahlung abschicken</button>
+    <button name="iddvr39" id="idxz7qo" type="submit">Zahlung abschließen</button>
   </div>
 </form>
 

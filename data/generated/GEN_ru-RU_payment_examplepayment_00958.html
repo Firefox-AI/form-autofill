@@ -11,33 +11,43 @@
 <form method="post">
   <div>
     <label>Имя владельца карты
-    <input type="text" name="cc_name_3555" id="cc_name_948" placeholder="Ф.И.О. владельца карты" data-moz-autofill-type="cc-name">
+    <input type="text" name="cardholderName1" id="idro" placeholder="Ф.И.О. владельца карты" data-moz-autofill-type="cc-name">
     </label>
   </div>
   <div>
-    <label>Номер карты
-    <input type="number" name="cc_number_841" id="cc_number_395" placeholder="0000 0000 0000 0000" data-moz-autofill-type="cc-number">
-    </label>
+    <label for="id4ct">Номер карты</label>
+    <input type="number" name="cardNo" id="id4ct" placeholder="XXXX XXXX XXXX XXXX" data-moz-autofill-type="cc-number">
   </div>
   <div>
-    <select name="cc_exp_month_3885" id="cc_exp_month_2975" data-moz-autofill-type="cc-exp-month">
+    <select name="ccType4" id="idyet" data-moz-autofill-type="cc-type">
   <option value=""></option>
-  <option>Январь</option>
-  <option>Февраль</option>
-  <option>Март</option>
-  <option>Апрель</option>
-  <option>Май</option>
-  <option>Июнь</option>
-  <option>Июль</option>
-  <option>Август</option>
-  <option>Сентябрь</option>
-  <option>Октябрь</option>
-  <option>Ноябрь</option>
-  <option>Декабрь</option>
+  <option>Visa</option>
+  <option>MasterCard</option>
+  <option>Мир</option>
+  <option>American Express</option>
 </select>
   </div>
   <div>
-    <select name="cc_exp_year_8121" id="cc_exp_year_2922" aria-label="Год истечения" data-moz-autofill-type="cc-exp-year">
+    <span>Месяц окончания</span>
+    <select name="expMonth" id="idp91r" data-moz-autofill-type="cc-exp-month">
+  <option value=""></option>
+  <option>Янв</option>
+  <option>Фев</option>
+  <option>Мар</option>
+  <option>Апр</option>
+  <option>Май</option>
+  <option>Июн</option>
+  <option>Июл</option>
+  <option>Авг</option>
+  <option>Сен</option>
+  <option>Окт</option>
+  <option>Ноя</option>
+  <option>Дек</option>
+</select>
+  </div>
+  <div>
+    <label for="idgd74v">Год окончания</label>
+    <select name="expYear7" id="idgd74v" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -50,28 +60,17 @@
 </select>
   </div>
   <div>
-    <input type="number" name="cc_csc_682" id="cc_csc_9323" placeholder="3 или 4 цифры" aria-label="Код безопасности (CVC)" data-moz-autofill-type="cc-csc">
+    <input type="number" name="securityCode" id="id7d057" placeholder="3-значный код" data-moz-autofill-type="cc-csc">
   </div>
   <div>
-    <label for="cc_type_5281">Тип карты</label>
-    <select name="cc_type_5092" id="cc_type_5281" data-moz-autofill-type="cc-type">
-  <option value=""></option>
-  <option>Виза</option>
-  <option>Мастеркард</option>
-  <option>Мир</option>
-  <option>American Express</option>
-</select>
+    <span>Здание</span>
+    <input type="text" name="ids3zgk" id="id2g3" placeholder="Введите номер здания" data-moz-autofill-type="building">
   </div>
   <div>
-    <label>Здание
-    <input type="text" name="building_7272" id="building_2299" placeholder="Например, 1" data-moz-autofill-type="building">
-    </label>
+    <input type="text" name="floor" id="idowi0f" placeholder="Введите номер этажа" data-moz-autofill-type="floor">
   </div>
   <div>
-    <input type="text" name="floor_3777" id="floor_3671" placeholder="Например, 3" aria-label="Этаж" data-moz-autofill-type="floor">
-  </div>
-  <div>
-    <button name="field_6443" id="field_1280" type="submit">Отправить</button>
+    <button name="id5k61" id="idjkz" type="submit">Submit</button>
   </div>
 </form>
 

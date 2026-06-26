@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<fieldset> <legend class="text-extra-dark-gray margin-20px-bottom">Job Application Form</legend> </fieldset> <fieldset> <div class="two-cols"> <label class="ap-form-text" for="first_name"> Your Jobs Position <select id="Your_Jobs" name="Your_Jobs"> <option>Oracle APEX Developer</option> </select> </label> <label class="ap-form-text"> Upload Your Resume <input accept=".doc,.docx,.pdf" class="medium-input bg-white margin-25px-bottom required" id="Curriculum_Vitae" name="Curriculum_Vitae" type="file"/> </label> </div> <div class="two-cols"> <label class="ap-form-text"> Full name <input class="medium-input bg-white margin-25px-bottom required" data-moz-autofill-type="name" id="Family_name" name="Family_name" type="text"/> </label> <label class="ap-form-text"> Mobile Number <input class="medium-input bg-white margin-25px-bottom required" data-moz-autofill-type="tel" id="Phone" name="Phone" onkeypress="return isNumber(event)" type="tel"/> </label> </div> <div class="two-cols"> <label class="ap-form-text"> Email address <input class="medium-input bg-white margin-25px-bottom required" data-moz-autofill-type="email" id="Email" name="Email" type="email"/> </label> <label class="ap-form-text"> Relevant Experience <input class="medium-input bg-white margin-25px-bottom required" id="Relevant_Experience" name="Relevant_Experience" onkeypress="return isNumberAndDot(event)" type="text"/> </label> </div> <div class="two-cols"> <label class="ap-form-text"> Total Experience <input class="medium-input bg-white margin-25px-bottom required" id="Total_Experience" name="Total_Experience" onkeypress="return isNumberAndDot(event)" type="text"/> </label> <label class="ap-form-text required"> Location <select id="Other_Skills" name="Other_Skills"> <option>--</option> <option>Chennai</option> <option>Madurai</option> <option>Trichy</option> <option>Coimbatore</option> <option>Erode</option> <option>Hydrabad</option> <option>Banglore</option> <option>Mumbai</option> <option>Delhi</option> </select> </label> </div> </fieldset> <div class="btns text-extra-dark-gray"> <input style="display:none;" type="text" value=""/> <input class="text-extra-dark-gray" id="submit-btn" onclick="ftFormSubmit(event)" type="button" value="Submit Your Application"/> <div id="spinner"></div> </div>
+</form>
+
+</fieldset></body></html>

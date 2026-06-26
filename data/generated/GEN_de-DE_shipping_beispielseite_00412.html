@@ -10,18 +10,17 @@
 
 <form method="post">
   <div>
-    <input type="text" name="given_name_3790" id="given_name_5847" placeholder="Vorname" data-moz-autofill-type="given-name">
+    <input type="text" name="fname" id="idi9" placeholder="Vorname" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <span>Nachname</span>
-    <input type="text" name="family_name_2331" id="family_name_9184" data-moz-autofill-type="family-name">
+    <input type="text" name="lname" id="id9ntr0" aria-label="Nachname" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <input type="text" name="postal_code_2590" id="postal_code_7433" aria-label="Bitte geben Sie Ihre Postleitzahl oder Stadt ein und wählen Sie einen Abholpunkt aus der Liste der Vorschläge aus. Drücken Sie Enter, um Ihre Auswahl zu bestätigen." data-moz-autofill-type="postal-code">
+    <input type="text" name="zip" id="id2x7a" placeholder="Bitte geben Sie den Ort oder die Postleitzahl in das Suchfeld ein, wählen Sie einen Abholort aus der Liste von Vorschlägen und drücken Sie Enter, um Ihre Auswahl zu bestätigen" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <label>Bundesland
-    <select name="address_level2_3432" id="address_level2_5165" data-moz-autofill-type="address-level2">
+    <label for="id9k0xt">Bundesland</label>
+    <select name="locality" id="id9k0xt" data-moz-autofill-type="address-level2">
   <option value=""></option>
   <option>Baden-Württemberg</option>
   <option>Bayern</option>
@@ -40,36 +39,32 @@
   <option>Schleswig-Holstein</option>
   <option>Thüringen</option>
 </select>
-    </label>
   </div>
   <div>
-    <input type="text" name="address_line1_6914" id="address_line1_5334" placeholder="Straße und Hausnummer" data-moz-autofill-type="address-line1">
+    <label for="id47">Straße und Hausnummer</label>
+    <input type="text" name="addressLine1" id="id47" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <span>Gebäude / Stockwerk / Wohnung</span>
-    <input type="text" name="address_line2_5121" id="address_line2_5366" data-moz-autofill-type="address-line2">
+    <label for="idz6gis">Gebäude / Etage / Apartment</label>
+    <input type="text" name="addr2" id="idz6gis" data-moz-autofill-type="address-line2">
   </div>
   <div>
-    <input type="text" name="address_level2_6144" id="address_level2_8705" aria-label="Ort / Stadtteil" data-moz-autofill-type="address-level2">
+    <input type="text" name="town" id="id5cp0" placeholder="Ort / Gebiet / Platz" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <label for="country_6780">Land</label>
-    <select name="country_110" id="country_6780" data-moz-autofill-type="country">
+    <label>Land
+    <select name="country_id" id="idr6" data-moz-autofill-type="country">
   <option value=""></option>
   <option>Deutschland</option>
   <option>Österreich</option>
   <option>Schweiz</option>
-  <option>Belgien</option>
-  <option>Niederlande</option>
+  <option>Liechtenstein</option>
   <option>Luxemburg</option>
-  <option>Frankreich</option>
-  <option>Dänemark</option>
 </select>
+    </label>
   </div>
   <div>
-    <label>Telefonnummer
-    <input type="tel" name="tel_2809" id="tel_6983" placeholder="+49 123 4567890" data-moz-autofill-type="tel">
-    </label>
+    <input type="tel" name="phoneNumber" id="idkbvbf" placeholder="+49 123 4567890" aria-label="Telefonnummer" data-moz-autofill-type="tel">
   </div>
 </form>
 

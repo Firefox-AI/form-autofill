@@ -10,15 +10,15 @@
 
 <form method="post">
   <div>
-    <input type="text" name="ccName" id="ccName" placeholder="Adınızı ve Soyadınızı girin" data-moz-autofill-type="cc-name">
+    <input type="text" name="nameOnCard" id="idiu" placeholder="Ad ve Soyad" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <label>Kredi Kartı Numarası
-    <input type="number" name="ccNumber" id="ccNumber" placeholder="16 haneli kart numaranızı yazın" data-moz-autofill-type="cc-number">
-    </label>
+    <label for="id04fl">Kredi Kartı Numarası</label>
+    <input type="number" name="card_number" id="id04fl" placeholder="XXXX XXXX XXXX XXXX" data-moz-autofill-type="cc-number">
   </div>
   <div>
-    <select name="ccExpMonth" id="ccExpMonth" data-moz-autofill-type="cc-exp-month">
+    <label for="idab4">Son Kullanım Ayı</label>
+    <select name="ccExpMonth" id="idab4" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
   <option>Ocak</option>
   <option>Şubat</option>
@@ -35,8 +35,7 @@
 </select>
   </div>
   <div>
-    <span>Son Kullanma Yılı</span>
-    <select name="ccExpYear" id="ccExpYear" data-moz-autofill-type="cc-exp-year">
+    <select name="expYear" id="idwon" aria-label="Son Kullanım Yılı" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -49,13 +48,10 @@
 </select>
   </div>
   <div>
-    <label>Güvenlik Kodu (CVC)
-    <input type="number" name="ccCsc" id="ccCsc" placeholder="Kartın arkasındaki 3 haneli kod" data-moz-autofill-type="cc-csc">
-    </label>
+    <input type="number" name="cardCode" id="idcvnc" placeholder="XXX" data-moz-autofill-type="cc-csc">
   </div>
   <div>
-    <label for="ccType">Kart Tipi</label>
-    <select name="ccType" id="ccType" data-moz-autofill-type="cc-type">
+    <select name="ccType" id="idq3w3" aria-label="Kart Türü" data-moz-autofill-type="cc-type">
   <option value=""></option>
   <option>Visa</option>
   <option>MasterCard</option>
@@ -66,10 +62,11 @@
 </select>
   </div>
   <div>
-    <input type="text" name="addressLine1" id="addressLine1" placeholder="Fatura için adresinizi girin" data-moz-autofill-type="address-line1">
+    <label for="id6ds">Fatura Adresi</label>
+    <input type="text" name="addr" id="id6ds" placeholder="Sokak, Cadde, Apartman" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <button name="field" id="field" type="submit">Ödeme Yap</button>
+    <button name="idx69" id="id4620q" type="submit">Submit</button>
   </div>
 </form>
 

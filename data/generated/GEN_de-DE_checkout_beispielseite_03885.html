@@ -10,7 +10,8 @@
 
 <form method="post">
   <div>
-    <select name="r:r:5:m:r:1:cr:2:c:pr:1:container:fs:i:input" id="idcg2j" data-moz-autofill-type="cc-type">
+    <span>Kartentyp</span>
+    <select name="ccType" id="iducg2" data-moz-autofill-type="cc-type">
   <option value=""></option>
   <option>Visa</option>
   <option>MasterCard</option>
@@ -20,13 +21,16 @@
 </select>
   </div>
   <div>
-    <input type="number" name="r:r:1:m:r:2:cr:1:c:pr:1:container:fs:i:input" id="id82" placeholder="1234 5678 9012 3456" data-moz-autofill-type="cc-number">
+    <span>Kreditkartennummer</span>
+    <input type="number" name="ccNumber" id="idkd" placeholder="1234 5678 9012 3456" data-moz-autofill-type="cc-number">
   </div>
   <div>
-    <input type="text" name="r:r:9:m:r:3:cr:3:c:pr:1:container:fs:i:input" id="idiy" placeholder="Max Mustermann" data-moz-autofill-type="cc-name">
+    <span>Karteninhaber</span>
+    <input type="text" name="ccName" id="idiy" placeholder="Max Mustermann" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <select name="r:r:1:m:r:4:cr:2:c:pr:1:container:fs:i:input" id="idio" data-moz-autofill-type="cc-exp-month">
+    <span>Ablaufmonat</span>
+    <select name="exp_month" id="id3h" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
   <option>01</option>
   <option>02</option>
@@ -43,7 +47,8 @@
 </select>
   </div>
   <div>
-    <select name="r:r:5:m:r:5:cr:3:c:pr:1:container:fs:i:input" id="idda" data-moz-autofill-type="cc-exp-year">
+    <span>Ablaufjahr</span>
+    <select name="exp_year" id="idos7" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -56,38 +61,66 @@
 </select>
   </div>
   <div>
-    <input type="number" name="r:r:9:m:r:6:cr:2:c:pr:1:container:fs:i:input" id="idek1" placeholder="123" data-moz-autofill-type="cc-csc">
+    <span>Sicherheitscode (CVC)</span>
+    <input type="number" name="cvv" id="ida9" placeholder="123" data-moz-autofill-type="cc-csc">
   </div>
   <div>
-    <input type="text" name="r:r:6:m:r:7:cr:1:c:pr:1:container:fs:i:input" id="idlhr" placeholder="Musterstraße 1" data-moz-autofill-type="address-line1">
+    <span>Straße und Hausnummer</span>
+    <input type="text" name="addr1" id="idek1" placeholder="Musterstraße 1" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <input type="text" name="r:r:5:m:r:8:cr:2:c:pr:1:container:fs:i:input" id="idu7o" placeholder="z.B. Apartment 12" data-moz-autofill-type="address-line2">
+    <span>Adresszusatz</span>
+    <input type="text" name="addr2" id="idplh" placeholder="z.B. Apartment 12" data-moz-autofill-type="address-line2">
   </div>
   <div>
-    <input type="text" name="r:r:4:m:r:9:cr:3:c:pr:1:container:fs:i:input" id="idnxnm" placeholder="Mitte" data-moz-autofill-type="address-level2">
+    <span>Stadt</span>
+    <input type="text" name="town" id="idsiu7" placeholder="Musterstadt" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <input type="text" name="r:r:7:m:r:10:cr:2:c:pr:1:container:fs:i:input" id="id0iblu" placeholder="Berlin" data-moz-autofill-type="address-level1">
+    <span>Bundesland</span>
+    <select name="province" id="idqnx" data-moz-autofill-type="address-level1">
+  <option value=""></option>
+  <option>Baden-Württemberg</option>
+  <option>Bayern</option>
+  <option>Berlin</option>
+  <option>Brandenburg</option>
+  <option>Bremen</option>
+  <option>Hamburg</option>
+  <option>Hessen</option>
+  <option>Mecklenburg-Vorpommern</option>
+  <option>Niedersachsen</option>
+  <option>Nordrhein-Westfalen</option>
+  <option>Rheinland-Pfalz</option>
+  <option>Saarland</option>
+  <option>Sachsen</option>
+  <option>Sachsen-Anhalt</option>
+  <option>Schleswig-Holstein</option>
+  <option>Thüringen</option>
+</select>
   </div>
   <div>
-    <input type="number" name="r:r:6:m:r:11:cr:3:c:pr:1:container:fs:i:input" id="idhdv77" placeholder="10115" data-moz-autofill-type="postal-code">
+    <span>Postleitzahl</span>
+    <input type="number" name="zipCode" id="id123" placeholder="12345" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <select name="r:r:2:m:r:12:cr:1:c:pr:1:container:fs:i:input" id="idhy" data-moz-autofill-type="country">
+    <span>Land</span>
+    <select name="countryCode" id="idblu" data-moz-autofill-type="country">
   <option value=""></option>
   <option>Deutschland</option>
   <option>Österreich</option>
   <option>Schweiz</option>
   <option>Belgien</option>
   <option>Niederlande</option>
+  <option>Frankreich</option>
 </select>
   </div>
   <div>
-    <input type="text" name="r:r:7:m:r:13:cr:1:c:pr:1:container:fs:i:input" id="id76" placeholder="Musterfirma GmbH" data-moz-autofill-type="organization">
+    <span>Unternehmen</span>
+    <input type="text" name="organization" id="idhdv77" placeholder="Musterfirma GmbH" data-moz-autofill-type="organization">
   </div>
   <div>
-    <input type="email" name="r:r:2:m:r:14:cr:1:c:pr:1:container:fs:i:input" id="ida6" placeholder="beispiel@domain.de" data-moz-autofill-type="email">
+    <span>E-Mail-Adresse</span>
+    <input type="email" name="email" id="idchy" placeholder="Ihre E-Mail" data-moz-autofill-type="email">
   </div>
 </form>
 

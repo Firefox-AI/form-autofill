@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<div class="startLocation"><div><label class="element-invisible" for="startLocation">Starting Location</label> <fieldset class="js-form-item js-form-type-textfield form-type-textfield js-form-item-startaddress form-item-startaddress form-no-label form-group"> <input class="form-text form-control" data-moz-autofill-type="street-address" id="startLocation" maxlength="128" name="startAddress" placeholder="e.g. 1 Market St." size="60" type="text"/> </fieldset> </div> </div> <div class="endLocation"><div><label class="element-invisible" for="endLocation">Ending Location</label> <fieldset class="js-form-item js-form-type-textfield form-type-textfield js-form-item-endaddress form-item-endaddress form-no-label form-group"> <input class="form-text form-control" data-moz-autofill-type="street-address" id="endLocation" maxlength="128" name="endAddress" placeholder="e.g. Crissy Field" size="60" type="text"/> </fieldset> </div> </div> <label class="element-invisible">How I want to travel</label> <fieldset class="js-form-item js-form-type-select form-type-select js-form-item-mode form-item-mode form-no-label form-group"> <select class="form-select custom-select" name="mode"><option selected="selected" value="transit">Muni</option><option value="bicycling">Bike</option><option value="walking">Walk</option><option value="driving">Drive</option></select> </fieldset> <input class="form-control" id="inlineRadio2" name="serviceType" type="hidden" value="google"/> <input class="form-control" name="whichsite" type="hidden" value="new"/> <input class="form-control" id="startCityOrZip" name="startCityOrZip" type="hidden" value="San Francisco"/> <div class="control-group type--actions" id="submit-trip"><button class="btn btn-primary btn-large span12 button js-form-submit form-submit" name="op" onclick="ga('send', 'event', { eventCategory: 'Home page', eventAction: 'Click', eventLabel: 'Plan my trip'});" type="submit" value="Let's Go...">Let's Go...</button> </div>
+</form>
+
+</fieldset></body></html>

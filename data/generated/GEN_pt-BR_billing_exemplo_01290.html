@@ -10,33 +10,19 @@
 
 <form method="post">
   <div>
-    <label>Nome do Cartão
-    <input type="text" name="idbctn" id="id1cyyq" placeholder="Como está no cartão" data-moz-autofill-type="cc-name">
-    </label>
+    <input type="text" name="nameOnCard" id="idct" placeholder="Ex: Maria da Silva" aria-label="Nome do titular do cartão" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <label>Endereço
-    <input type="text" name="idhdiqq" id="idm9h" placeholder="Rua, Av., etc." data-moz-autofill-type="street-address">
-    </label>
+    <input type="text" name="streetAddress" id="id1cyyq" placeholder="Rua, Avenida, etc." aria-label="Endereço" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <label>Complemento
-    <input type="text" name="idjlc" id="idas" placeholder="Apto, Bloco, etc." data-moz-autofill-type="address-line2">
-    </label>
+    <input type="text" name="postcode" id="iddi" placeholder="00000-000" aria-label="CEP" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <label>CEP
-    <input type="text" name="id4rh" id="id02tdn" placeholder="00000-000" data-moz-autofill-type="postal-code">
-    </label>
+    <input type="text" name="town" id="idpm9h" placeholder="Ex: São Paulo" aria-label="Cidade" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <label>Cidade
-    <input type="text" name="idpj" id="id2i" placeholder="Digite sua cidade" data-moz-autofill-type="address-level2">
-    </label>
-  </div>
-  <div>
-    <label>Estado
-    <select name="idbv" id="idhns4b" data-moz-autofill-type="address-level1">
+    <select name="province" id="idlcg" aria-label="Estado" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>Acre</option>
   <option>Alagoas</option>
@@ -59,26 +45,25 @@
   <option>Rio de Janeiro</option>
   <option>Rio Grande do Norte</option>
   <option>Rio Grande do Sul</option>
-  <option>Rio Verde</option>
+  <option>Rondônia</option>
+  <option>Roraima</option>
   <option>Santa Catarina</option>
   <option>São Paulo</option>
   <option>Sergipe</option>
   <option>Tocantins</option>
 </select>
-    </label>
   </div>
   <div>
-    <label>País
-    <select name="id8z2" id="idge" data-moz-autofill-type="country-name">
+    <select name="country" id="idj4rh" aria-label="País" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Brasil</option>
 </select>
-    </label>
   </div>
   <div>
-    <label>Telefone
-    <input type="tel" name="id6f1" id="idw0s" placeholder="(00) 00000-0000" data-moz-autofill-type="tel">
-    </label>
+    <input type="tel" name="mobile" id="id2tdng" placeholder="(11) 91234-5678" aria-label="Telefone" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <button name="idje2" id="idebv" type="submit">Finalizar pagamento</button>
   </div>
 </form>
 

@@ -10,87 +10,70 @@
 
 <form method="post">
   <div>
-    <label for="given_name_7397">Forename</label>
-    <input type="text" name="given_name_7605" id="given_name_7397" data-moz-autofill-type="given-name">
+    <label for="idi62">Forename</label>
+    <input type="text" name="givenName" id="idi62" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <label>Surname
-    <input type="text" name="family_name_2330" id="family_name_2173" data-moz-autofill-type="family-name">
-    </label>
+    <label for="idpu">Surname</label>
+    <input type="text" name="lastName" id="idpu" placeholder="Surname" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <label>Email Address
-    <input type="email" name="email_8472" id="email_7305" data-moz-autofill-type="email">
-    </label>
+    <span>Email Address</span>
+    <input type="email" name="mail" id="id3hd" data-moz-autofill-type="email">
   </div>
   <div>
-    <label for="organization_6973">Company Name</label>
-    <input type="text" name="organization_1690" id="organization_6973" placeholder="Company Name" data-moz-autofill-type="organization">
+    <input type="text" name="company" id="id70l" placeholder="Company Name" data-moz-autofill-type="organization">
   </div>
   <div>
-    <label for="address_line1_4081">Street Address: Line 1</label>
-    <input type="text" name="address_line1_1464" id="address_line1_4081" placeholder="Street Address: Line 1" data-moz-autofill-type="address-line1">
+    <label for="idn8krz">Street Address: Line 1</label>
+    <input type="text" name="addressLine1" id="idn8krz" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <label for="address_line2_218">Street Address: Line 2</label>
-    <input type="text" name="address_line2_5472" id="address_line2_218" placeholder="e.g. Apartment, Suite, etc." data-moz-autofill-type="address-line2">
+    <input type="text" name="addressLine2" id="idq0d2" placeholder="e.g. Apartment, Suite, etc." aria-label="Street Address: Line 2" data-moz-autofill-type="address-line2">
   </div>
   <div>
-    <label>County
-    <select name="address_level1_7402" id="address_level1_2430" data-moz-autofill-type="address-level1">
+    <select name="region" id="id4ec" aria-label="County" data-moz-autofill-type="address-level1">
   <option value=""></option>
-  <option>Berkshire</option>
-  <option>Buckinghamshire</option>
-  <option>Cambridgeshire</option>
-  <option>Cheshire</option>
-  <option>Cornwall</option>
-  <option>Cumbria</option>
-  <option>Derbyshire</option>
-  <option>Devon</option>
-  <option>Dorset</option>
-  <option>Durham</option>
-  <option>East Sussex</option>
-  <option>Essex</option>
-  <option>Gloucestershire</option>
-  <option>Hampshire</option>
-  <option>Herefordshire</option>
-  <option>Hertfordshire</option>
-  <option>Isle of Wight</option>
-  <option>Kent</option>
-  <option>Lancashire</option>
-  <option>Leicestershire</option>
-  <option>Lincolnshire</option>
-  <option>Merseyside</option>
-  <option>Norfolk</option>
-  <option>Northamptonshire</option>
-  <option>Northumberland</option>
-  <option>Nottinghamshire</option>
-  <option>Oxfordshire</option>
-  <option>Shropshire</option>
-  <option>Somerset</option>
-  <option>South Yorkshire</option>
-  <option>Staffordshire</option>
-  <option>Suffolk</option>
-  <option>Surrey</option>
-  <option>Sussex</option>
-  <option>Warwickshire</option>
+  <option>Greater London</option>
   <option>West Midlands</option>
-  <option>West Sussex</option>
+  <option>Greater Manchester</option>
+  <option>Merseyside</option>
   <option>West Yorkshire</option>
-  <option>Wiltshire</option>
-  <option>Worcestershire</option>
+  <option>South Yorkshire</option>
+  <option>Tyne and Wear</option>
+  <option>Scotland</option>
+  <option>Wales</option>
+  <option>Northern Ireland</option>
 </select>
+  </div>
+  <div>
+    <span>County</span>
+    <select name="stateProvince5" id="id81" data-moz-autofill-type="address-level1">
+  <option value=""></option>
+  <option>Greater London</option>
+  <option>West Midlands</option>
+  <option>Greater Manchester</option>
+  <option>Merseyside</option>
+  <option>West Yorkshire</option>
+  <option>South Yorkshire</option>
+  <option>Tyne and Wear</option>
+  <option>Scotland</option>
+  <option>Wales</option>
+  <option>Northern Ireland</option>
+</select>
+  </div>
+  <div>
+    <label>Town/City
+    <input type="text" name="city3" id="idzygdn" data-moz-autofill-type="address-level2">
     </label>
   </div>
   <div>
-    <input type="text" name="address_level1_2124" id="address_level1_1118" aria-label="Town/City" data-moz-autofill-type="address-level1">
+    <label for="idnfz7e">Postcode</label>
+    <input type="text" name="postalCode" id="idnfz7e" placeholder="Postcode" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="text" name="address_level2_8642" id="address_level2_1033" placeholder="Postcode" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <label>Country of Residence
-    <select name="postal_code_9220" id="postal_code_3724" data-moz-autofill-type="postal-code">
+    <label>Country
+    <select name="countryCode" id="id4tl" data-moz-autofill-type="country">
   <option value=""></option>
   <option>United Kingdom</option>
   <option>Ireland</option>
@@ -100,72 +83,40 @@
   <option>Italy</option>
   <option>Netherlands</option>
   <option>Belgium</option>
-  <option>Australia</option>
-  <option>New Zealand</option>
-  <option>United States</option>
-  <option>Canada</option>
-  <option>India</option>
-  <option>China</option>
-  <option>Japan</option>
-  <option>Brazil</option>
-  <option>South Africa</option>
+  <option>Sweden</option>
+  <option>Norway</option>
 </select>
     </label>
   </div>
   <div>
-    <label>Contact Number
-    <input type="tel" name="country_9626" id="country_6935" data-moz-autofill-type="country">
+    <label for="idvh">Telephone Number</label>
+    <input type="tel" name="telephone4" id="idvh" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label for="id1x7">Credit Card Number</label>
+    <input type="number" name="ccExpMonth" id="id1x7" placeholder="Credit Card Number" data-moz-autofill-type="cc-exp-month">
+  </div>
+  <div>
+    <label>Expiry Date (MM/YY)
+    <input type="text" name="expMonth4" id="idujq7n" data-moz-autofill-type="cc-exp-month">
     </label>
   </div>
   <div>
-    <label for="tel_2172">Credit Card Number</label>
-    <input type="number" name="tel_3954" id="tel_2172" data-moz-autofill-type="tel">
+    <input type="text" name="ccExpMonth" id="idt11" placeholder="Expiration Date (MM/YY)" data-moz-autofill-type="cc-exp-month">
   </div>
   <div>
-    <label>Expiry Month
-    <select name="cc_exp_month_6807" id="cc_exp_month_3562" data-moz-autofill-type="cc-exp-month">
-  <option value=""></option>
-  <option>January</option>
-  <option>February</option>
-  <option>March</option>
-  <option>April</option>
-  <option>May</option>
-  <option>June</option>
-  <option>July</option>
-  <option>August</option>
-  <option>September</option>
-  <option>October</option>
-  <option>November</option>
-  <option>December</option>
-</select>
-    </label>
+    <span>Expiration Date (MM/YY)</span>
+    <input type="text" name="ccExpMonth6" id="id4a7ob" data-moz-autofill-type="cc-exp-month">
   </div>
   <div>
-    <label>Expiry Year
-    <select name="cc_exp_month_9604" id="cc_exp_month_2664" data-moz-autofill-type="cc-exp-month">
-  <option value=""></option>
-  <option>2023</option>
-  <option>2024</option>
-  <option>2025</option>
-  <option>2026</option>
-  <option>2027</option>
-  <option>2028</option>
-  <option>2029</option>
-  <option>2030</option>
-  <option>2031</option>
-  <option>2032</option>
-  <option>2033</option>
-  <option>2034</option>
-  <option>2035</option>
-</select>
-    </label>
+    <input type="text" name="ccExpMonth" id="id28a" placeholder="Expiration Date (MM/YY)" data-moz-autofill-type="cc-exp-month">
   </div>
   <div>
-    <input type="number" name="cc_exp_month_6519" id="cc_exp_month_7953" placeholder="CVV" data-moz-autofill-type="cc-exp-month">
+    <input type="number" name="cardCode" id="id91ej" aria-label="Security Code (CVV)" data-moz-autofill-type="cc-csc">
   </div>
   <div>
-    <label for="cc_exp_month_5085">Verification Code (CVV)</label>
-    <input type="number" name="cc_exp_month_2174" id="cc_exp_month_5085" placeholder="Verification Code (CVV)" data-moz-autofill-type="cc-exp-month">
+    <label for="idn7mmt">Security Code (CVV)</label>
+    <input type="number" name="cvv" id="idn7mmt" placeholder="Security Code (CVV)" data-moz-autofill-type="cc-csc">
   </div>
 </form>
 

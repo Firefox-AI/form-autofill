@@ -10,28 +10,24 @@
 
 <form method="post">
   <div>
-    <label for="id3v">Nombre del titular de la tarjeta</label>
-    <input type="text" name="idtm" id="id3v" placeholder="Nombre completo" data-moz-autofill-type="cc-name">
+    <span>Nombre en la tarjeta</span>
+    <input type="text" name="idtm" id="id3v" placeholder="Nombre completo como aparece en la tarjeta" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <label for="ide8">Dirección</label>
+    <span>Dirección</span>
     <input type="text" name="idm0o" id="ide8" placeholder="Calle y número" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <label for="idj27">Detalles adicionales</label>
-    <input type="text" name="idpxd" id="idj27" placeholder="Apartamento, bloque, etc." data-moz-autofill-type="address-line2">
+    <span>Código postal</span>
+    <input type="text" name="idpxd" id="idj27" placeholder="Código postal" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <label for="idoax">Código postal</label>
-    <input type="text" name="idgjd4w" id="idoax" placeholder="Código postal" data-moz-autofill-type="postal-code">
+    <span>Ciudad</span>
+    <input type="text" name="idgjd4w" id="idoax" placeholder="Ciudad" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <label for="id700ap">Ciudad</label>
-    <input type="text" name="iduagc" id="id700ap" placeholder="Ciudad" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <label for="idyurke">Provincia</label>
-    <select name="idhh7" id="idyurke" data-moz-autofill-type="address-level1">
+    <span>Provincia</span>
+    <select name="iduagc" id="id700ap" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>Andalucía</option>
   <option>Aragón</option>
@@ -49,30 +45,29 @@
   <option>Navarra</option>
   <option>La Rioja</option>
   <option>País Vasco</option>
+  <option>Ceuta</option>
+  <option>Melilla</option>
 </select>
   </div>
   <div>
-    <label for="idm7eq">País</label>
-    <select name="id5we" id="idm7eq" data-moz-autofill-type="country-name">
+    <span>País</span>
+    <select name="idhh7" id="idyurke" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>España</option>
   <option>Alemania</option>
   <option>Francia</option>
   <option>Italia</option>
   <option>Reino Unido</option>
-  <option>Portugal</option>
-  <option>Países Bajos</option>
-  <option>Bélgica</option>
-  <option>Suecia</option>
-  <option>Noruega</option>
+  <option>Estados Unidos</option>
+  <option>México</option>
 </select>
   </div>
   <div>
-    <label for="idv0w1">Teléfono</label>
-    <input type="tel" name="idwhcgf" id="idv0w1" placeholder="Número de teléfono" data-moz-autofill-type="tel">
+    <span>Teléfono</span>
+    <input type="tel" name="id5we" id="idm7eq" placeholder="Número de teléfono" data-moz-autofill-type="tel">
   </div>
   <div>
-    <button name="ido96sm" id="idja1u" type="submit">Submit</button>
+    <button name="idwhcgf" id="idv0w1" type="submit">Submit</button>
   </div>
 </form>
 

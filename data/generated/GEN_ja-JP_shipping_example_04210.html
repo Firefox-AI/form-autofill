@@ -10,46 +10,87 @@
 
 <form method="post">
   <div>
-    <label for="id9hty">氏名</label>
-    <input type="text" name="r:r:5:m:r:1:cr:1:c:pr:1:container:fs:i:input" id="id9hty" placeholder="山田 太郎" data-moz-autofill-type="name">
+    <label for="idax9h">氏名</label>
+    <input type="text" name="yourName" id="idax9h" placeholder="山田 太郎" data-moz-autofill-type="name">
   </div>
   <div>
-    <label for="idsc">都道府県</label>
-    <input type="text" name="r:r:4:m:r:2:cr:3:c:pr:1:container:fs:i:input" id="idsc" placeholder="東京都" data-moz-autofill-type="address-level2">
+    <label for="idoasc0">住所</label>
+    <input type="text" name="addr1" id="idoasc0" placeholder="1-2-3 渋谷区" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <input type="text" name="r:r:6:m:r:3:cr:2:c:pr:1:container:fs:i:input" id="idvycdf" placeholder="100-0001" aria-label="郵便番号" data-moz-autofill-type="postal-code">
+    <label for="idyvycd">郵便番号</label>
+    <input type="text" name="postalCode" id="idyvycd" placeholder="150-0002" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <label for="id08">市区町村</label>
-    <input type="text" name="r:r:6:m:r:4:cr:3:c:pr:1:container:fs:i:input" id="id08" placeholder="千代田区" data-moz-autofill-type="address-line2">
+    <label for="idpw">都道府県</label>
+    <select name="locality" id="idpw" data-moz-autofill-type="address-level2">
+  <option value=""></option>
+  <option>北海道</option>
+  <option>青森県</option>
+  <option>岩手県</option>
+  <option>宮城県</option>
+  <option>秋田県</option>
+  <option>山形県</option>
+  <option>福島県</option>
+  <option>茨城県</option>
+  <option>栃木県</option>
+  <option>群馬県</option>
+  <option>埼玉県</option>
+  <option>千葉県</option>
+  <option>東京都</option>
+  <option>神奈川県</option>
+  <option>新潟県</option>
+  <option>富山県</option>
+  <option>石川県</option>
+  <option>福井県</option>
+  <option>山梨県</option>
+  <option>長野県</option>
+  <option>岐阜県</option>
+  <option>静岡県</option>
+  <option>愛知県</option>
+  <option>三重県</option>
+  <option>滋賀県</option>
+  <option>京都府</option>
+  <option>大阪府</option>
+  <option>兵庫県</option>
+  <option>奈良県</option>
+  <option>和歌山県</option>
+  <option>鳥取県</option>
+  <option>島根県</option>
+  <option>岡山県</option>
+  <option>広島県</option>
+  <option>山口県</option>
+  <option>徳島県</option>
+  <option>香川県</option>
+  <option>愛媛県</option>
+  <option>高知県</option>
+  <option>福岡県</option>
+  <option>佐賀県</option>
+  <option>長崎県</option>
+  <option>熊本県</option>
+  <option>大分県</option>
+  <option>宮崎県</option>
+  <option>鹿児島県</option>
+  <option>沖縄県</option>
+</select>
   </div>
   <div>
-    <label for="idee">番地</label>
-    <input type="text" name="r:r:8:m:r:5:cr:2:c:pr:1:container:fs:i:input" id="idee" placeholder="1-2-3" data-moz-autofill-type="address-housenumber">
-  </div>
-  <div>
-    <label>町名
-    <input type="text" name="r:r:9:m:r:6:cr:3:c:pr:1:container:fs:i:input" id="id6dj" placeholder="丸の内" data-moz-autofill-type="street">
-    </label>
-  </div>
-  <div>
-    <input type="text" name="r:r:6:m:r:7:cr:1:c:pr:1:container:fs:i:input" id="idgso" placeholder="丸の内ビルディング" aria-label="建物名" data-moz-autofill-type="building">
-  </div>
-  <div>
-    <input type="text" name="r:r:4:m:r:8:cr:1:c:pr:1:container:fs:i:input" id="id0x" placeholder="101" data-moz-autofill-type="apartment">
-  </div>
-  <div>
-    <label>国
-    <select name="r:r:2:m:r:9:cr:2:c:pr:1:container:fs:i:input" id="idkoq9h" data-moz-autofill-type="country-name">
+    <label for="id820ce">国</label>
+    <select name="country" id="id820ce" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>日本</option>
-  <option>アメリカ合衆国</option>
-  <option>中国</option>
-  <option>韓国</option>
-  <option>フランス</option>
 </select>
-    </label>
+  </div>
+  <div>
+    <label for="id6dj">アパート名</label>
+    <input type="text" name="apt" id="id6dj" placeholder="例：サンシャインマンション" data-moz-autofill-type="apartment">
+  </div>
+  <div>
+    <label for="idcmgs">階数</label>
+    <input type="text" name="etage" id="idcmgs" placeholder="例：3階" data-moz-autofill-type="floor">
+  </div>
+  <div>
+    <button name="idqmf" id="id0x" type="submit">送信</button>
   </div>
 </form>
 

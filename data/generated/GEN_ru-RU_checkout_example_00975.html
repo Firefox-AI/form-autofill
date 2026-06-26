@@ -10,37 +10,28 @@
 
 <form method="post">
   <div>
-    <label for="iddp6">Форма обращения</label>
-    <select name="r:r:8:m:r:1:cr:3:c:pr:1:container:fs:i:input" id="iddp6" data-moz-autofill-type="honorific-prefix">
-  <option value=""></option>
-  <option>Г-жа</option>
-  <option>Г-н</option>
-  <option>Г-жа/Г-н</option>
-</select>
+    <span>Имя</span>
+    <input type="text" name="givenName" id="iddp6" placeholder="Ваше имя" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <label for="iduk">Имя</label>
-    <input type="text" name="r:r:6:m:r:2:cr:1:c:pr:1:container:fs:i:input" id="iduk" placeholder="Ваше имя" data-moz-autofill-type="given-name">
+    <span>Фамилия</span>
+    <input type="text" name="last_name" id="idduk" placeholder="Ваша фамилия" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <label for="id2d7l">Фамилия</label>
-    <input type="text" name="r:r:1:m:r:3:cr:3:c:pr:1:container:fs:i:input" id="id2d7l" placeholder="Ваша фамилия" data-moz-autofill-type="family-name">
+    <span>Улица и дом</span>
+    <input type="text" name="address1" id="id2d7l" placeholder="Улица, дом" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <label for="idhz1e">Улица, дом</label>
-    <input type="text" name="r:r:7:m:r:4:cr:3:c:pr:1:container:fs:i:input" id="idhz1e" placeholder="Уточните адрес доставки" data-moz-autofill-type="street-address">
+    <span>Город</span>
+    <input type="text" name="town" id="idhz1e" placeholder="Ваш город" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <label for="idxaknr">Город</label>
-    <input type="text" name="r:r:7:m:r:5:cr:3:c:pr:1:container:fs:i:input" id="idxaknr" placeholder="Город доставки" data-moz-autofill-type="address-level2">
+    <span>Почтовый индекс</span>
+    <input type="text" name="postcode" id="idxaknr" placeholder="Ваш почтовый индекс" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <label for="idzuag">Почтовый индекс</label>
-    <input type="text" name="r:r:2:m:r:6:cr:3:c:pr:1:container:fs:i:input" id="idzuag" placeholder="Ваш почтовый индекс" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <label for="idzs">Страна</label>
-    <select name="r:r:9:m:r:7:cr:1:c:pr:1:container:fs:i:input" id="idzs" data-moz-autofill-type="country-name">
+    <span>Страна</span>
+    <select name="country" id="idzuag" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Россия</option>
   <option>Беларусь</option>
@@ -50,12 +41,19 @@
 </select>
   </div>
   <div>
-    <label for="idso">Электронная почта</label>
-    <input type="email" name="r:r:8:m:r:8:cr:1:c:pr:1:container:fs:i:input" id="idso" placeholder="example@mail.com" data-moz-autofill-type="email">
+    <span>Электронная почта</span>
+    <input type="email" name="mail" id="idczs" placeholder="Ваш email" data-moz-autofill-type="email">
   </div>
   <div>
-    <label for="idk4vff">Телефон</label>
-    <input type="tel" name="r:r:4:m:r:9:cr:3:c:pr:1:container:fs:i:input" id="idk4vff" placeholder="Введите номер телефона" data-moz-autofill-type="tel">
+    <span>Телефон</span>
+    <input type="tel" name="mobile" id="iddso" placeholder="Ваш телефон" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <span>Квартира</span>
+    <input type="text" name="apartment" id="idk4vff" placeholder="Номер квартиры" data-moz-autofill-type="apartment">
+  </div>
+  <div>
+    <button name="idh44" id="id9x1" type="submit">Submit</button>
   </div>
 </form>
 

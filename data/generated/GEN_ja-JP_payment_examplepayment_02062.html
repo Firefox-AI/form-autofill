@@ -5,35 +5,38 @@
 <body>
 
 <fieldset>
-<h3>example-payment.com</h3>
+<h3>example-payment.jp</h3>
 <p><i>Synthetic sample (LLM-augmented).</i></p>
 
 <form method="post">
   <div>
-    <input type="text" name="ccName" id="ccName" placeholder="カードに記載されたお名前" aria-label="カード名義人" data-moz-autofill-type="cc-name">
+    <input type="text" name="nameOnCard" id="id0kkhw" placeholder="例: 山田 太郎" aria-label="カード名義人" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <input type="number" name="ccNumber" id="ccNumber" placeholder="1234 5678 9101 1121" data-moz-autofill-type="cc-number">
+    <span>カード番号</span>
+    <input type="number" name="card_number" id="idlo7jk" placeholder="1234 5678 9012 3456" data-moz-autofill-type="cc-number">
   </div>
   <div>
-    <select name="ccExpMonth" id="ccExpMonth" aria-label="有効期限（月）" data-moz-autofill-type="cc-exp-month">
+    <label for="idpc0fw">有効期限（月）</label>
+    <select name="ccExpMonth" id="idpc0fw" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
-  <option>1月</option>
-  <option>2月</option>
-  <option>3月</option>
-  <option>4月</option>
-  <option>5月</option>
-  <option>6月</option>
-  <option>7月</option>
-  <option>8月</option>
-  <option>9月</option>
-  <option>10月</option>
-  <option>11月</option>
-  <option>12月</option>
+  <option>01</option>
+  <option>02</option>
+  <option>03</option>
+  <option>04</option>
+  <option>05</option>
+  <option>06</option>
+  <option>07</option>
+  <option>08</option>
+  <option>09</option>
+  <option>10</option>
+  <option>11</option>
+  <option>12</option>
 </select>
   </div>
   <div>
-    <select name="ccExpYear" id="ccExpYear" aria-label="有効期限（年）" data-moz-autofill-type="cc-exp-year">
+    <label for="id28mf">有効期限（年）</label>
+    <select name="exp_year" id="id28mf" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -46,26 +49,25 @@
 </select>
   </div>
   <div>
-    <label for="ccCsc">セキュリティコード</label>
-    <input type="number" name="ccCsc" id="ccCsc" placeholder="3桁または4桁の数字" data-moz-autofill-type="cc-csc">
+    <label for="idmust">セキュリティコード</label>
+    <input type="number" name="cvv" id="idmust" placeholder="123" data-moz-autofill-type="cc-csc">
   </div>
   <div>
-    <label for="ccType">カードタイプ</label>
-    <select name="ccType" id="ccType" data-moz-autofill-type="cc-type">
+    <span>カードの種類</span>
+    <select name="ccType" id="idttbw" data-moz-autofill-type="cc-type">
   <option value=""></option>
   <option>Visa</option>
   <option>MasterCard</option>
-  <option>JCB</option>
   <option>American Express</option>
-  <option>Diners Club</option>
+  <option>JCB</option>
 </select>
   </div>
   <div>
-    <label for="addressLine1">住所</label>
-    <input type="text" name="addressLine1" id="addressLine1" placeholder="番地、町名など" data-moz-autofill-type="address-line1">
+    <label for="id1j4n8">住所</label>
+    <input type="text" name="addr" id="id1j4n8" placeholder="例: 1-2-3 新宿" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <button name="field" id="field" type="submit">送信</button>
+    <button name="idzz" id="idbytg" type="submit">送信</button>
   </div>
 </form>
 

@@ -11,43 +11,33 @@
 <form method="post">
   <div>
     <span>Nom sur la carte</span>
-    <input type="text" name="cc_name_9924" id="cc_name_8928" placeholder="Nom tel qu&#x27;il apparaît sur la carte" data-moz-autofill-type="cc-name">
+    <input type="text" name="cardholderName6" id="idic" placeholder="Nom tel qu&#x27;il apparaît sur la carte" data-moz-autofill-type="cc-name">
   </div>
   <div>
     <span>Numéro de carte</span>
-    <input type="number" name="cc_number_8489" id="cc_number_3783" placeholder="XXXX-XXXX-XXXX-XXXX" data-moz-autofill-type="cc-number">
-  </div>
-  <div>
-    <span>Type de carte</span>
-    <select name="cc_type_4964" id="cc_type_5582" data-moz-autofill-type="cc-type">
-  <option value=""></option>
-  <option>Visa</option>
-  <option>MasterCard</option>
-  <option>American Express</option>
-  <option>Discover</option>
-</select>
+    <input type="number" name="card_number" id="id5t2yr" placeholder="XXXX-XXXX-XXXX-XXXX" data-moz-autofill-type="cc-number">
   </div>
   <div>
     <span>Mois d&#x27;expiration</span>
-    <select name="cc_exp_month_1158" id="cc_exp_month_2181" data-moz-autofill-type="cc-exp-month">
+    <select name="expMonth2" id="idref1u" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
-  <option>01 - Janvier</option>
-  <option>02 - Février</option>
-  <option>03 - Mars</option>
-  <option>04 - Avril</option>
-  <option>05 - Mai</option>
-  <option>06 - Juin</option>
-  <option>07 - Juillet</option>
-  <option>08 - Août</option>
-  <option>09 - Septembre</option>
-  <option>10 - Octobre</option>
-  <option>11 - Novembre</option>
-  <option>12 - Décembre</option>
+  <option>Janvier</option>
+  <option>Février</option>
+  <option>Mars</option>
+  <option>Avril</option>
+  <option>Mai</option>
+  <option>Juin</option>
+  <option>Juillet</option>
+  <option>Août</option>
+  <option>Septembre</option>
+  <option>Octobre</option>
+  <option>Novembre</option>
+  <option>Décembre</option>
 </select>
   </div>
   <div>
     <span>Année d&#x27;expiration</span>
-    <select name="cc_exp_year_626" id="cc_exp_year_8960" data-moz-autofill-type="cc-exp-year">
+    <select name="exp_year" id="idh0c8l" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -57,15 +47,30 @@
   <option>2028</option>
   <option>2029</option>
   <option>2030</option>
+  <option>2031</option>
+  <option>2032</option>
+  <option>2033</option>
 </select>
   </div>
   <div>
-    <span>Code de sécurité (CVV)</span>
-    <input type="number" name="cc_csc_9203" id="cc_csc_9084" placeholder="3 chiffres au dos de la carte" data-moz-autofill-type="cc-csc">
+    <span>Cryptogramme visuel</span>
+    <input type="number" name="cvc" id="idn7" placeholder="3 chiffres au dos de la carte" data-moz-autofill-type="cc-csc">
+  </div>
+  <div>
+    <span>Type de carte</span>
+    <select name="ccType" id="idqroc" data-moz-autofill-type="cc-type">
+  <option value=""></option>
+  <option>Visa</option>
+  <option>MasterCard</option>
+  <option>American Express</option>
+  <option>Discover</option>
+  <option>Diners Club</option>
+  <option>JCB</option>
+</select>
   </div>
   <div>
     <span>Jour de naissance</span>
-    <select name="bday_day_4360" id="bday_day_7015" data-moz-autofill-type="bday-day">
+    <select name="dobDay" id="idgs8" data-moz-autofill-type="bday-day">
   <option value=""></option>
   <option>01</option>
   <option>02</option>
@@ -102,8 +107,38 @@
   </div>
   <div>
     <span>Année de naissance</span>
-    <select name="bday_year_242" id="bday_year_7053" data-moz-autofill-type="bday-year">
+    <select name="birthYear" id="idra" data-moz-autofill-type="bday-year">
   <option value=""></option>
+  <option>1950</option>
+  <option>1951</option>
+  <option>1952</option>
+  <option>1953</option>
+  <option>1954</option>
+  <option>1955</option>
+  <option>1956</option>
+  <option>1957</option>
+  <option>1958</option>
+  <option>1959</option>
+  <option>1960</option>
+  <option>1961</option>
+  <option>1962</option>
+  <option>1963</option>
+  <option>1964</option>
+  <option>1965</option>
+  <option>1966</option>
+  <option>1967</option>
+  <option>1968</option>
+  <option>1969</option>
+  <option>1970</option>
+  <option>1971</option>
+  <option>1972</option>
+  <option>1973</option>
+  <option>1974</option>
+  <option>1975</option>
+  <option>1976</option>
+  <option>1977</option>
+  <option>1978</option>
+  <option>1979</option>
   <option>1980</option>
   <option>1981</option>
   <option>1982</option>
@@ -131,6 +166,23 @@
   <option>2004</option>
   <option>2005</option>
   <option>2006</option>
+  <option>2007</option>
+  <option>2008</option>
+  <option>2009</option>
+  <option>2010</option>
+  <option>2011</option>
+  <option>2012</option>
+  <option>2013</option>
+  <option>2014</option>
+  <option>2015</option>
+  <option>2016</option>
+  <option>2017</option>
+  <option>2018</option>
+  <option>2019</option>
+  <option>2020</option>
+  <option>2021</option>
+  <option>2022</option>
+  <option>2023</option>
 </select>
   </div>
 </form>

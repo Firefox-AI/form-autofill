@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>in</h3>
+<p><i>Common Crawl form, other context, unlabeled.</i></p>
+
+<form>
+<div class="col-sm-12" id="inputFieldUsername" style="margin-bottom: 1.5vh;" title="Username"> <div class="input-group has-validation"> <span class="input-group-addon" id="inptgrp_addon_uname2"> <i class="bi bi-person"></i> </span> <input aria-describedby="inptgrp_addon_uname2" class="form-control" id="admin_username" name="admin_username" placeholder="Username" required="" type="text" value=""/> <div class="invalid-feedback"> A valid username is required! </div> </div> </div> <div class="col-sm-12" id="inputFieldPass2" style="margin-bottom: 1.5vh;" title="Password"> <div class="input-group has-validation"> <span class="input-group-addon" id="inptgrp_addon_pass2"> <i class="bi bi-key-fill"></i> </span> <input aria-describedby="inptgrp_addon_pass2" aria-label="Password" autocomplete="" class="form-control" id="admin_password" name="admin_password" placeholder="Password" required="" type="password"/> <div class="invalid-feedback"> A valid password is required! </div> </div> </div> <div class="col-sm-12" id="adminInputFieldCaptcha" style="margin-bottom: 1.5vh;" title="Word Verification"> <div class="input-group has-validation"> <span class="input-group-addon" id="inptgrp_addon_imgtxt1"> <i class="bi bi-person-check"></i> </span> <span class="input-group-text bg-white p-0" id="captchaImg2"> <img alt=" " src="https://alumni.mnit.ac.in/assets/captch_img/1730513360.2731.jpg" style="width: 200px; height: 45px; border: 0;"/> </span> <button class="btn mytheme-btn2" id="button-addon2" onclick="generateNewCaptcha2()" title="Can't read? Reload" type="button"> <i class="bi bi-arrow-clockwise"></i> </button> <input aria-describedby="inptgrp_addon_imgtxt2" aria-label="Image Text" class="form-control" id="captcha2" maxlength="5" minlength="5" name="captcha2" placeholder="Image Text" required="" type="text"/> <div class="invalid-feedback text-white"> A valid image text is required! </div> </div> <div class="invalid-feedback" id="captcha_error2"> A valid image text is required! </div> </div> <div class="col-sm-12 text-center"> <input class="btn mytheme-btn float-none mt-2" name="btnLogin" onclick="validateAdminlogin()" type="button" value="Login"/> </div>
+</form>
+
+</fieldset></body></html>

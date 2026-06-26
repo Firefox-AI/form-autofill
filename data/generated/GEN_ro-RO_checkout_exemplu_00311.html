@@ -5,75 +5,125 @@
 <body>
 
 <fieldset>
-<h3>exemplu.com</h3>
+<h3>exemplu.ro</h3>
 <p><i>Synthetic sample (LLM-augmented).</i></p>
 
 <form method="post">
   <div>
-    <label>Prenume
-    <input type="text" name="idus" id="idx5il" placeholder="Introduceți prenumele" data-moz-autofill-type="given-name">
-    </label>
+    <label for="idx5il">Prenume</label>
+    <input type="text" name="firstName" id="idx5il" placeholder="Introduceti prenumele" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <label>Nume
-    <input type="text" name="idsnr1" id="id3hqz" placeholder="Introduceți numele de familie" data-moz-autofill-type="family-name">
-    </label>
+    <label for="idr1v">Nume</label>
+    <input type="text" name="last_name" id="idr1v" placeholder="Introduceti numele de familie" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <label>Adresă
-    <input type="text" name="id3r" id="id3u8" placeholder="Strada și numărul" data-moz-autofill-type="street-address">
-    </label>
+    <label for="idze3r">Adresa</label>
+    <input type="text" name="street1" id="idze3r" placeholder="Strada și numărul" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <label>Detalii suplimentare (opțional)
-    <input type="text" name="id9wcs" id="idqdtj" placeholder="Apartament, etaj etc." data-moz-autofill-type="address-line2">
-    </label>
+    <label for="id8x9w">Județ</label>
+    <select name="province" id="id8x9w" data-moz-autofill-type="address-level1">
+  <option value=""></option>
+  <option>Alba</option>
+  <option>Arad</option>
+  <option>Arges</option>
+  <option>Bacau</option>
+  <option>Bihor</option>
+  <option>Bistrita-Nasaud</option>
+  <option>Botosani</option>
+  <option>Braila</option>
+  <option>Brasov</option>
+  <option>Buzau</option>
+  <option>Calarasi</option>
+  <option>Cluj</option>
+  <option>Constanta</option>
+  <option>Dambovita</option>
+  <option>Dolj</option>
+  <option>Galati</option>
+  <option>Giurgiu</option>
+  <option>Gorj</option>
+  <option>Harghita</option>
+  <option>Hunedoara</option>
+  <option>Ialomita</option>
+  <option>Iasi</option>
+  <option>Ilfov</option>
+  <option>Maramures</option>
+  <option>Mehedinti</option>
+  <option>Mures</option>
+  <option>Neamt</option>
+  <option>Olt</option>
+  <option>Prahova</option>
+  <option>Salaj</option>
+  <option>Satu Mare</option>
+  <option>Suceava</option>
+  <option>Teleorman</option>
+  <option>Timis</option>
+  <option>Tulcea</option>
+  <option>Vaslui</option>
+  <option>Vrancea</option>
+</select>
   </div>
   <div>
-    <label>Bloc (opțional)
-    <input type="text" name="idetkp" id="idjc" placeholder="Introduceți blocul" data-moz-autofill-type="block">
-    </label>
+    <label for="iddtjx">Oraș</label>
+    <input type="text" name="city6" id="iddtjx" placeholder="Introduceti orașul" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <label>Apartament (opțional)
-    <input type="text" name="id4qfwu" id="idooqc" placeholder="Introduceți numărul apartamentului" data-moz-autofill-type="apartment">
-    </label>
+    <label for="idtk">Cod poștal</label>
+    <input type="text" name="zip_code" id="idtk" placeholder="Introduceti codul poștal" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <label>Oraș
-    <input type="text" name="idybus" id="idzm3o" placeholder="Introduceți orașul" data-moz-autofill-type="address-level2">
-    </label>
-  </div>
-  <div>
-    <label>Cod poștal
-    <input type="text" name="iduj97b" id="idtxk2u" placeholder="Introduceți codul poștal" data-moz-autofill-type="postal-code">
-    </label>
-  </div>
-  <div>
-    <label>Țară
-    <select name="idn7p" id="idru" data-moz-autofill-type="country-name">
+    <label for="id04">Țară</label>
+    <select name="country3" id="id04" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>România</option>
   <option>Albania</option>
-  <option>Germania</option>
+  <option>Austria</option>
+  <option>Belgia</option>
+  <option>Bulgaria</option>
+  <option>Cehia</option>
+  <option>Croația</option>
+  <option>Danemarca</option>
+  <option>Estonia</option>
+  <option>Finlanda</option>
   <option>Franța</option>
+  <option>Germania</option>
+  <option>Grecia</option>
+  <option>Ungaria</option>
+  <option>Irlanda</option>
   <option>Italia</option>
+  <option>Latvia</option>
+  <option>Lituania</option>
+  <option>Luxemburg</option>
+  <option>Malta</option>
+  <option>Olanda</option>
+  <option>Polonia</option>
+  <option>Portugalia</option>
+  <option>Slovacia</option>
+  <option>Slovenia</option>
   <option>Spania</option>
+  <option>Suedia</option>
+  <option>Regatul Unit</option>
 </select>
-    </label>
   </div>
   <div>
-    <label>Email
-    <input type="email" name="idcdivd" id="idh1s" placeholder="Introduceți adresa de email" data-moz-autofill-type="email">
-    </label>
+    <label for="idooqc">Email</label>
+    <input type="email" name="email_address6" id="idooqc" placeholder="Introduceti adresa de email" data-moz-autofill-type="email">
   </div>
   <div>
-    <label>Număr de telefon
-    <input type="tel" name="idbcdro" id="idfabl" placeholder="Introduceți numărul de telefon" data-moz-autofill-type="tel">
-    </label>
+    <label for="idsszm">Număr de telefon</label>
+    <input type="tel" name="phoneNumber" id="idsszm" placeholder="Introduceti numărul de telefon" data-moz-autofill-type="tel">
   </div>
   <div>
-    <button name="idp4" id="idg27" type="submit">Trimite</button>
+    <label for="idj97b">Apartament</label>
+    <input type="text" name="unit8" id="idj97b" placeholder="Introduceti numărul apartamentului (opțional)" data-moz-autofill-type="apartment">
+  </div>
+  <div>
+    <label for="idn7p">Scara</label>
+    <input type="text" name="idtxk2u" id="idn7p" placeholder="Introduceti numărul scării (opțional)" data-moz-autofill-type="stair">
+  </div>
+  <div>
+    <button name="idru" id="idcdivd" type="submit">Plasează comanda</button>
   </div>
 </form>
 

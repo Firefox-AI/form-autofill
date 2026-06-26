@@ -10,53 +10,42 @@
 
 <form method="post">
   <div>
-    <span>Nome no Cartão</span>
-    <input type="text" name="ccName" id="ccName" placeholder="Informe o nome como aparece no cartão" data-moz-autofill-type="cc-name">
+    <input type="text" name="cardName" id="idd3bt" placeholder="Nome completo como no cartão" aria-label="Nome no Cartão" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <label>Endereço
-    <input type="text" name="streetAddress" id="streetAddress" placeholder="Rua, Av., etc." data-moz-autofill-type="street-address">
-    </label>
+    <input type="text" name="address" id="idky1q" placeholder="Rua, Avenida, etc." aria-label="Endereço" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <label>Complemento
-    <input type="text" name="addressLine2" id="addressLine2" placeholder="Apart., Bloco, etc. (opcional)" data-moz-autofill-type="address-line2">
-    </label>
+    <input type="text" name="zip" id="id80wzp" placeholder="Código Postal (ex: 1000-123)" aria-label="Código Postal" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="text" name="postalCode" id="postalCode" placeholder="Código Postal" data-moz-autofill-type="postal-code">
+    <input type="text" name="city" id="idp78qv" placeholder="Concelho" aria-label="Concelho" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <span>Concelho</span>
-    <select name="addressLevel2" id="addressLevel2" data-moz-autofill-type="address-level2">
+    <select name="region" id="iddj" aria-label="Distrito" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>Lisboa</option>
   <option>Porto</option>
-  <option>Braga</option>
   <option>Coimbra</option>
-  <option>Setúbal</option>
-  <option>Aveiro</option>
-  <option>Faro</option>
+  <option>Braga</option>
   <option>Évora</option>
+  <option>Setúbal</option>
+  <option>Leiria</option>
+  <option>Aveiro</option>
+  <option>Viana do Castelo</option>
+  <option>Bragança</option>
+  <option>Faro</option>
+  <option>Guarda</option>
+  <option>Castelo Branco</option>
+  <option>Santarém</option>
+  <option>Portalegre</option>
+  <option>Vila Real</option>
+  <option>Madeira</option>
+  <option>Açores</option>
 </select>
   </div>
   <div>
-    <label for="addressLevel1">Distrito</label>
-    <select name="addressLevel1" id="addressLevel1" data-moz-autofill-type="address-level1">
-  <option value=""></option>
-  <option>Lisboa</option>
-  <option>Porto</option>
-  <option>Braga</option>
-  <option>Coimbra</option>
-  <option>Setúbal</option>
-  <option>Aveiro</option>
-  <option>Faro</option>
-  <option>Évora</option>
-</select>
-  </div>
-  <div>
-    <label>País
-    <select name="countryName" id="countryName" data-moz-autofill-type="country-name">
+    <select name="country" id="idjz8" aria-label="País" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Portugal</option>
   <option>Espanha</option>
@@ -64,12 +53,17 @@
   <option>Alemanha</option>
   <option>Reino Unido</option>
   <option>Itália</option>
-  <option>Brasil</option>
+  <option>Bélgica</option>
+  <option>Países Baixos</option>
+  <option>Suiça</option>
+  <option>Outros</option>
 </select>
-    </label>
   </div>
   <div>
-    <input type="text" name="vatNumber" id="vatNumber" placeholder="Número de Identificação Fiscal (NIF)" aria-label="Nº de VAT" data-moz-autofill-type="vat-number">
+    <input type="text" name="vatNumber" id="id22hxy" placeholder="Número de identificação fiscal" aria-label="Número de IVA" data-moz-autofill-type="vat-number">
+  </div>
+  <div>
+    <button name="id5w" id="idid3e" type="submit">Enviar</button>
   </div>
 </form>
 

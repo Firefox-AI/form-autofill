@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<input id="captchaFlag" name="contactFrmHdn" type="hidden" value="leadFrm"/> <fieldset class="formRow"> <div class="formRow--item"> <label class="formRow--input-wrapper js-inputWrapper" for="firstname"> <input class="formRow--input js-input textBox" id="firstname" name="name" placeholder="Enter Full Name" required="required" type="text"/> </label> </div> </fieldset> <fieldset class="formRow"> <div class="formRow--item"> <label class="formRow--input-wrapper js-inputWrapper" for="email"> <input class="formRow--input js-input textBox" data-moz-autofill-type="email" id="email" name="email" placeholder="Enter Email Address" required="required" type="email"/> </label> </div> </fieldset> <fieldset class="formRow"> <div class="formRow--item"> <select class="textBox country" data-moz-autofill-type="country" name="country" onchange="getCountryCode(this);" required="required"> <option data-code="00" selected="" value="">Select Country</option> </select> </div> </fieldset> <fieldset class="formRow"> <div class="formRow--item phone-number country-code-wrap"> <input class="country-name" name="countryName" type="hidden"/> <label class="formRow--input-wrapper js-inputWrapper" for="phone"> <input class="formRow--input js-input textBox" data-moz-autofill-type="tel" id="phone" name="phone" placeholder="Phone Number *" required="required" type="text"/> </label> <span class="phone-code"> +00 </span> </div> </fieldset> <fieldset class="formRow"> <div class="formRow--item"> <textarea class="formRow--input" id="message" name="message" placeholder="Write Message" required="required"></textarea> </div> </fieldset> <span class="modal-footer-popup"> <img alt="" id="ajaxLoaderLeadFrm2" src="/images/ajax-loader.gif" style="display:none;margin: 15px auto;"/> <input id="leadFrmChk" type="hidden"/> <input class="no-thanks-button" type="button" value="No Thanks"/> <input class="call-button-popup" data-frm="leadFrm" id="call-button-popup" type="button" value="Call Me"/> </span>
+</form>
+
+</fieldset></body></html>

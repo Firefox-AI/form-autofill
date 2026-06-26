@@ -11,17 +11,27 @@
 <form method="post">
   <div>
     <span>Nom sur la carte</span>
-    <input type="text" name="ccName" id="ccName" placeholder="Jean Dupont" data-moz-autofill-type="cc-name">
+    <input type="text" name="nameOnCard" id="idqw" placeholder="Jean Dupont" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <span>Numéro de la carte</span>
-    <input type="number" name="ccNumber" id="ccNumber" placeholder="1234 5678 9012 3456" data-moz-autofill-type="cc-number">
+    <span>Type de carte</span>
+    <select name="ccType" id="id55x" data-moz-autofill-type="cc-type">
+  <option value=""></option>
+  <option>Visa</option>
+  <option>MasterCard</option>
+  <option>American Express</option>
+  <option>Discover</option>
+</select>
+  </div>
+  <div>
+    <span>Numéro de carte</span>
+    <input type="number" name="ccNumber" id="idgmx" placeholder="1234 5678 9012 3456" data-moz-autofill-type="cc-number">
   </div>
   <div>
     <span>Mois d&#x27;expiration</span>
-    <select name="ccExpMonth" id="ccExpMonth" data-moz-autofill-type="cc-exp-month">
+    <select name="expMonth" id="idue" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
-  <option>01 - Janv</option>
+  <option>01 - Jan</option>
   <option>02 - Fév</option>
   <option>03 - Mar</option>
   <option>04 - Avr</option>
@@ -37,7 +47,7 @@
   </div>
   <div>
     <span>Année d&#x27;expiration</span>
-    <select name="ccExpYear" id="ccExpYear" data-moz-autofill-type="cc-exp-year">
+    <select name="expYear" id="idn5o5" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -47,23 +57,11 @@
   <option>2028</option>
   <option>2029</option>
   <option>2030</option>
-  <option>2031</option>
-  <option>2032</option>
 </select>
   </div>
   <div>
-    <span>Code de sécurité (CVV)</span>
-    <input type="number" name="ccCsc" id="ccCsc" placeholder="123" data-moz-autofill-type="cc-csc">
-  </div>
-  <div>
-    <span>Type de carte</span>
-    <select name="ccType" id="ccType" data-moz-autofill-type="cc-type">
-  <option value=""></option>
-  <option>Visa</option>
-  <option>MasterCard</option>
-  <option>American Express</option>
-  <option>Discover</option>
-</select>
+    <span>Cryptogramme visuel</span>
+    <input type="number" name="cvc" id="idr9" placeholder="123" data-moz-autofill-type="cc-csc">
   </div>
 </form>
 

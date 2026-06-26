@@ -10,32 +10,43 @@
 
 <form method="post">
   <div>
-    <select name="honorificPrefix" id="honorificPrefix" aria-label="Пан або Пані" data-moz-autofill-type="honorific-prefix">
+    <label for="id7ab">Ім&#x27;я</label>
+    <input type="text" name="idcg" id="id7ab" placeholder="Ваше ім&#x27;я" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="idoi">Призвище</label>
+    <input type="text" name="idv6fw" id="idoi" placeholder="Ваше прізвище" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="id5x1t">Вулиця, номер будинку</label>
+    <input type="text" name="idekz" id="id5x1t" placeholder="Приклад: Вул. Шевченка, 15" data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <label for="idrwc">Додаткова адреса</label>
+    <input type="text" name="idvub" id="idrwc" placeholder="Квартира, офіс тощо" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <label for="idko">Номер квартири</label>
+    <input type="text" name="idpvkwi" id="idko" placeholder="Наприклад: 45" data-moz-autofill-type="apartment">
+  </div>
+  <div>
+    <label for="idatqb">Область</label>
+    <select name="idjsx" id="idatqb" data-moz-autofill-type="address-level2">
   <option value=""></option>
-  <option>Пан</option>
-  <option>Пані</option>
+  <option>Київська</option>
+  <option>Одеська</option>
+  <option>Дніпропетровська</option>
+  <option>Львівська</option>
+  <option>Харківська</option>
 </select>
   </div>
   <div>
-    <input type="text" name="givenName" id="givenName" placeholder="Ваше ім&#x27;я" aria-label="Ім&#x27;я" data-moz-autofill-type="given-name">
+    <label for="idnf">Поштовий індекс</label>
+    <input type="text" name="id04e" id="idnf" placeholder="Ваш поштовий індекс" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="text" name="familyName" id="familyName" placeholder="Ваше призвище" aria-label="Призвище" data-moz-autofill-type="family-name">
-  </div>
-  <div>
-    <input type="text" name="streetAddress" id="streetAddress" placeholder="Вулиця, будинок" aria-label="Вулиця та номер" data-moz-autofill-type="street-address">
-  </div>
-  <div>
-    <input type="text" name="addressLine2" id="addressLine2" placeholder="Квартира, поверх (необов&#x27;язково)" aria-label="Додаткова адреса" data-moz-autofill-type="address-line2">
-  </div>
-  <div>
-    <input type="text" name="addressLevel2" id="addressLevel2" placeholder="Ваше місто" aria-label="Місто" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <input type="text" name="postalCode" id="postalCode" placeholder="Ваш поштовий індекс" aria-label="Поштовий індекс" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <select name="countryName" id="countryName" aria-label="Країна" data-moz-autofill-type="country-name">
+    <label for="idr9">Країна</label>
+    <select name="id05r4b" id="idr9" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Україна</option>
   <option>Польща</option>
@@ -45,13 +56,12 @@
 </select>
   </div>
   <div>
-    <input type="email" name="email" id="email" placeholder="Ваш email" aria-label="Електронна пошта" data-moz-autofill-type="email">
+    <label for="idnu">Електронна пошта</label>
+    <input type="email" name="idatbt" id="idnu" placeholder="Ваш email" data-moz-autofill-type="email">
   </div>
   <div>
-    <input type="tel" name="tel" id="tel" placeholder="Ваш номер телефону" aria-label="Телефон" data-moz-autofill-type="tel">
-  </div>
-  <div>
-    <button name="field" id="field" type="submit">Submit</button>
+    <label for="idxcp3">Номер телефону</label>
+    <input type="tel" name="idyfo" id="idxcp3" placeholder="Ваш номер телефону" data-moz-autofill-type="tel">
   </div>
 </form>
 

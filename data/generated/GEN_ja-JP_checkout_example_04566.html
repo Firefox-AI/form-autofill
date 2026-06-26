@@ -5,73 +5,75 @@
 <body>
 
 <fieldset>
-<h3>example.co.jp</h3>
+<h3>example.com</h3>
 <p><i>Synthetic sample (LLM-augmented).</i></p>
 
 <form method="post">
   <div>
-    <label>敬称
-    <select name="idtac" id="idon" data-moz-autofill-type="honorific-prefix">
-  <option value=""></option>
-  <option>株式会社</option>
-  <option>様</option>
-  <option>先生</option>
-  <option>さん</option>
-  <option>君</option>
-</select>
-    </label>
+    <label for="idacdo">名</label>
+    <input type="text" name="firstName" id="idacdo" placeholder="山田" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <label>名
-    <input type="text" name="idhnw3m" id="id7skmi" placeholder="例: 太郎" data-moz-autofill-type="given-name">
-    </label>
+    <label for="idhnw3m">姓</label>
+    <input type="text" name="lname" id="idhnw3m" placeholder="太郎" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <label>姓
-    <input type="text" name="id5h1ik" id="idtiw" placeholder="例: 山田" data-moz-autofill-type="family-name">
-    </label>
+    <label for="idkmiz">住所</label>
+    <input type="text" name="street1" id="idkmiz" placeholder="1-2-3 田町" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <label>番地
-    <input type="text" name="idvy" id="id4vy" placeholder="例: 1-2-3" data-moz-autofill-type="street-address">
-    </label>
+    <label for="idkot">市区町村</label>
+    <input type="text" name="town7" id="idkot" placeholder="港区" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <label>建物名・部屋番号
-    <input type="text" name="idhe" id="id6h4fk" placeholder="例: ABCマンション101" data-moz-autofill-type="address-line2">
-    </label>
+    <label for="idvy">郵便番号</label>
+    <input type="text" name="zip_code6" id="idvy" placeholder="105-0001" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <label>市区町村
-    <input type="text" name="id5xsz" id="idkhhl6" placeholder="例: 渋谷区" data-moz-autofill-type="address-level2">
-    </label>
-  </div>
-  <div>
-    <label>郵便番号
-    <input type="text" name="id07" id="id3uoq6" placeholder="例: 150-0001" data-moz-autofill-type="postal-code">
-    </label>
-  </div>
-  <div>
-    <label>国
-    <select name="id9nu" id="idhs" data-moz-autofill-type="country-name">
+    <label for="idyhhe">国</label>
+    <select name="country" id="idyhhe" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>日本</option>
   <option>アメリカ</option>
-  <option>中国</option>
-  <option>韓国</option>
+  <option>カナダ</option>
+  <option>イギリス</option>
   <option>フランス</option>
+  <option>ドイツ</option>
+  <option>オーストラリア</option>
 </select>
-    </label>
   </div>
   <div>
-    <label>メールアドレス
-    <input type="email" name="id2gjv" id="idbw41z" placeholder="例: taro@example.co.jp" data-moz-autofill-type="email">
-    </label>
+    <label for="id4f">メールアドレス</label>
+    <input type="email" name="user_email" id="id4f" placeholder="example@example.com" data-moz-autofill-type="email">
   </div>
   <div>
-    <label>電話番号
-    <input type="tel" name="ids8r" id="idqbjn" placeholder="例: 03-1234-5678" data-moz-autofill-type="tel">
-    </label>
+    <label for="idz72k">電話番号</label>
+    <input type="tel" name="telephone6" id="idz72k" placeholder="090-1234-5678" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label for="id07">アパート名</label>
+    <input type="text" name="apt3" id="id07" placeholder="グリーンハイツ" data-moz-autofill-type="apartment">
+  </div>
+  <div>
+    <label for="iduoq6k">生年月日（月）</label>
+    <select name="dobMonth" id="iduoq6k" data-moz-autofill-type="bday-month">
+  <option value=""></option>
+  <option>1月</option>
+  <option>2月</option>
+  <option>3月</option>
+  <option>4月</option>
+  <option>5月</option>
+  <option>6月</option>
+  <option>7月</option>
+  <option>8月</option>
+  <option>9月</option>
+  <option>10月</option>
+  <option>11月</option>
+  <option>12月</option>
+</select>
+  </div>
+  <div>
+    <button name="iduhh" id="idx2gj" type="submit">Submit</button>
   </div>
 </form>
 

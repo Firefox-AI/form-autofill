@@ -10,42 +10,40 @@
 
 <form method="post">
   <div>
-    <span>Títol</span>
-    <select name="ideh010" id="id7a" data-moz-autofill-type="honorific-prefix">
+    <span>Nom</span>
+    <input type="text" name="firstName" id="idg7a70" placeholder="El teu nom" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="idtv">Cognom</label>
+    <input type="text" name="billing_last_name" id="idtv" placeholder="El teu cognom" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <label for="idiq">Adreça</label>
+    <input type="text" name="addressLine1" id="idiq" placeholder="Carrer, número, etc." data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <span>Pis, porta, etc.</span>
+    <input type="text" name="addressLine27" id="id9i2b6" placeholder="Pis o porta" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <select name="stateProvince" id="idb6jrw" aria-label="Província" data-moz-autofill-type="address-level1">
   <option value=""></option>
-  <option>Sr.</option>
-  <option>Sra.</option>
-  <option>Srta.</option>
+  <option>Barcelona</option>
+  <option>Girona</option>
+  <option>Lleida</option>
+  <option>Tarragona</option>
 </select>
   </div>
   <div>
-    <label>Nom
-    <input type="text" name="id9f6bt" id="idlwci" placeholder="El teu nom" data-moz-autofill-type="given-name">
-    </label>
+    <input type="text" name="locality" id="idmq" placeholder="La teva ciutat" aria-label="Ciutat" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <input type="text" name="idmd" id="idz9i2b" placeholder="El teu cognom" data-moz-autofill-type="family-name">
+    <span>Codi postal</span>
+    <input type="text" name="postalCode" id="idz2" placeholder="Codi postal" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <label for="idwz8x">Adreça</label>
-    <input type="text" name="id64b6j" id="idwz8x" placeholder="Carrer i número" data-moz-autofill-type="street-address">
-  </div>
-  <div>
-    <span>Pis/Bloc</span>
-    <input type="text" name="idqfs" id="idz2" placeholder="Opcional" data-moz-autofill-type="address-line2">
-  </div>
-  <div>
-    <label>Ciutat
-    <input type="text" name="idy1" id="idbgoe" placeholder="La teva ciutat" data-moz-autofill-type="address-level2">
-    </label>
-  </div>
-  <div>
-    <label for="idzcm">Codi postal</label>
-    <input type="text" name="idgv" id="idzcm" placeholder="Codi postal" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <span>País</span>
-    <select name="id2is6g" id="idz71" data-moz-autofill-type="country-name">
+    <label>País
+    <select name="country" id="idbgoe" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Espanya</option>
   <option>França</option>
@@ -53,16 +51,18 @@
   <option>Portugal</option>
   <option>Regne Unit</option>
 </select>
+    </label>
   </div>
   <div>
-    <input type="email" name="idnw" id="id4co" placeholder="El teu correu electrònic" data-moz-autofill-type="email">
+    <label for="idzcm">Correu electrònic</label>
+    <input type="email" name="mail6" id="idzcm" placeholder="exemple@domini.com" data-moz-autofill-type="email">
   </div>
   <div>
-    <label for="id9ly">Telèfon</label>
-    <input type="tel" name="idnttl" id="id9ly" placeholder="Telèfon de contacte" data-moz-autofill-type="tel">
+    <span>Telèfon</span>
+    <input type="tel" name="tel" id="idis6gm" placeholder="Número de telèfon" data-moz-autofill-type="tel">
   </div>
   <div>
-    <button name="idzeyc" id="id0p" type="submit">Finalitza la compra</button>
+    <input type="text" name="flat" id="idnw" placeholder="Número d&#x27;apartament" aria-label="Apartament" data-moz-autofill-type="apartment">
   </div>
 </form>
 

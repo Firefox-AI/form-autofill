@@ -5,36 +5,27 @@
 <body>
 
 <fieldset>
-<h3>esimerkki.fi</h3>
+<h3>esimerkki.com</h3>
 <p><i>Synthetic sample (LLM-augmented).</i></p>
 
 <form method="post">
   <div>
-    <input type="text" name="name_9595" id="name_7440" placeholder="Etunimi ja sukunimi" aria-label="Nimi" data-moz-autofill-type="name">
+    <input type="text" name="contactName" id="idhi6" placeholder="Etunimi ja sukunimi" aria-label="Nimi" data-moz-autofill-type="name">
   </div>
   <div>
-    <label>Osoite (valinnainen)
-    <input type="text" name="address_line2_3666" id="address_line2_2099" placeholder="Esimerkiksi pihalla oleva osoite" data-moz-autofill-type="address-line2">
-    </label>
+    <label for="idx9">Osoite</label>
+    <input type="text" name="streetAddress" id="idx9" placeholder="Kadun nimi ja numero" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <label for="address_housenumber_8474">Talon numero</label>
-    <input type="text" name="address_housenumber_2224" id="address_housenumber_8474" placeholder="Talonomero" data-moz-autofill-type="address-housenumber">
+    <input type="text" name="postcode" id="idpk6en" placeholder="Esim. 00100" aria-label="Postinumero" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <label for="street_1720">Katu</label>
-    <input type="text" name="street_3547" id="street_1720" placeholder="Katuosoite" data-moz-autofill-type="street">
+    <label for="idpoocb">Kaupunki</label>
+    <input type="text" name="city" id="idpoocb" placeholder="Kaupungin nimi" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <input type="text" name="postal_code_9229" id="postal_code_7876" placeholder="Postinumero" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <label for="address_level2_7396">Kaupunki</label>
-    <input type="text" name="address_level2_6690" id="address_level2_7396" placeholder="Kaupunki" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <label for="country_name_9775">Maa</label>
-    <select name="country_name_2905" id="country_name_9775" data-moz-autofill-type="country-name">
+    <label for="idhu">Maa</label>
+    <select name="country" id="idhu" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Suomi</option>
   <option>Ruotsi</option>
@@ -44,14 +35,13 @@
   <option>Saksa</option>
   <option>Ranska</option>
   <option>Iso-Britannia</option>
-  <option>USA</option>
+  <option>Yhdysvallat</option>
   <option>Kanada</option>
 </select>
   </div>
   <div>
-    <label>Lääni tai alue
-    <input type="text" name="address_level3_1357" id="address_level3_3656" placeholder="Läänin tai alueen nimi" data-moz-autofill-type="address-level3">
-    </label>
+    <label for="idtmu">Viitepiste (valinnainen)</label>
+    <input type="text" name="idyel3" id="idtmu" placeholder="Esim. lähellä 7-Eleveniä" data-moz-autofill-type="reference-point">
   </div>
 </form>
 

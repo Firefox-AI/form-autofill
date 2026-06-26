@@ -5,27 +5,24 @@
 <body>
 
 <fieldset>
-<h3>exemple.com</h3>
+<h3>exemple.fr</h3>
 <p><i>Synthetic sample (LLM-augmented).</i></p>
 
 <form method="post">
   <div>
-    <input type="text" name="idi9a" id="ide4f64" placeholder="Votre nom tel qu&#x27;il apparaît sur la carte" data-moz-autofill-type="cc-name">
+    <input type="text" name="cardholderName" id="id9a4" placeholder="Votre nom tel qu&#x27;il apparaît sur la carte" aria-label="Nom sur la carte" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <input type="text" name="idmrp" id="idac" placeholder="Numéro et nom de la rue" data-moz-autofill-type="street-address">
+    <input type="text" name="address" id="idf64pm" placeholder="Numéro et nom de la rue" aria-label="Adresse" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <input type="text" name="idbquvd" id="idd33" placeholder="Appartement, étage, etc. (optionnel)" data-moz-autofill-type="address-line2">
+    <input type="text" name="postalCode" id="iddac" placeholder="Votre code postal" aria-label="Code postal" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="text" name="id48" id="id332" placeholder="Votre code postal" data-moz-autofill-type="postal-code">
+    <input type="text" name="town" id="idqu" placeholder="Votre ville" aria-label="Ville" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <input type="text" name="idwi6i" id="id9gdim" placeholder="Votre ville" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <select name="idfwsm" id="id6en" data-moz-autofill-type="address-level1">
+    <select name="region" id="idjd" aria-label="Région" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>Île-de-France</option>
   <option>Provence-Alpes-Côte d&#x27;Azur</option>
@@ -34,9 +31,9 @@
   <option>Occitanie</option>
   <option>Hauts-de-France</option>
   <option>Grand Est</option>
+  <option>Pays de la Loire</option>
   <option>Bretagne</option>
   <option>Normandie</option>
-  <option>Pays de la Loire</option>
   <option>Centre-Val de Loire</option>
   <option>Bourgogne-Franche-Comté</option>
   <option>Alsace</option>
@@ -44,14 +41,17 @@
 </select>
   </div>
   <div>
-    <select name="id5qcdm" id="id5k" data-moz-autofill-type="country-name">
+    <select name="countryName" id="idh48k3" aria-label="Pays" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>France</option>
   <option>Belgique</option>
   <option>Suisse</option>
+  <option>Canada</option>
   <option>Luxembourg</option>
-  <option>Monaco</option>
 </select>
+  </div>
+  <div>
+    <button name="id2vwi6" id="idy9g" type="submit">Submit</button>
   </div>
 </form>
 

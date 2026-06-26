@@ -10,25 +10,22 @@
 
 <form method="post">
   <div>
-    <input type="text" name="r:r:2:m:r:1:cr:1:c:pr:1:container:fs:i:input" id="id18aj" placeholder="カードの名義人名を入力してください" aria-label="名義" data-moz-autofill-type="cc-name">
+    <input type="text" name="ccName6" id="id8ajcl" placeholder="カードに記載された名前" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <input type="text" name="r:r:1:m:r:2:cr:1:c:pr:1:container:fs:i:input" id="idmg" placeholder="会社名を入力してください" aria-label="会社名（任意）" data-moz-autofill-type="organization">
+    <label for="idmc">住所</label>
+    <input type="text" name="address1" id="idmc" placeholder="番地、建物名など" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <input type="text" name="r:r:4:m:r:3:cr:3:c:pr:1:container:fs:i:input" id="idf4" placeholder="例: 1-2-3 東大井" aria-label="住所" data-moz-autofill-type="street-address">
+    <span>郵便番号</span>
+    <input type="text" name="postcode" id="ida1" placeholder="例: 123-4567" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="text" name="r:r:7:m:r:4:cr:3:c:pr:1:container:fs:i:input" id="ida1" placeholder="アパートやマンション名を入力してください" aria-label="アパート・マンション名（任意）" data-moz-autofill-type="address-line2">
+    <input type="text" name="town" id="idyf1" placeholder="市や区など" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <input type="text" name="r:r:6:m:r:5:cr:2:c:pr:1:container:fs:i:input" id="idiyf1" placeholder="例: 123-4567" aria-label="郵便番号" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <input type="text" name="r:r:2:m:r:6:cr:2:c:pr:1:container:fs:i:input" id="idbeaw1" placeholder="市区町村名を入力してください" aria-label="市区町村" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <select name="r:r:2:m:r:7:cr:1:c:pr:1:container:fs:i:input" id="idkvbev" aria-label="都道府県" data-moz-autofill-type="address-level1">
+    <span>都道府県</span>
+    <select name="county" id="idea" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>北海道</option>
   <option>青森県</option>
@@ -80,22 +77,33 @@
 </select>
   </div>
   <div>
-    <select name="r:r:1:m:r:8:cr:2:c:pr:1:container:fs:i:input" id="idx7s" aria-label="国" data-moz-autofill-type="country-name">
+    <label for="id4kv">国</label>
+    <select name="countryName" id="id4kv" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>日本</option>
-  <option>アメリカ合衆国</option>
+  <option>アメリカ</option>
   <option>カナダ</option>
   <option>イギリス</option>
+  <option>オーストラリア</option>
   <option>フランス</option>
   <option>ドイツ</option>
-  <option>中国</option>
-  <option>韓国</option>
-  <option>オーストラリア</option>
-  <option>インド</option>
+  <option>その他</option>
 </select>
   </div>
   <div>
-    <input type="text" name="r:r:1:m:r:9:cr:3:c:pr:1:container:fs:i:input" id="id0f" placeholder="VAT番号を入力してください" aria-label="VAT番号（任意）" data-moz-autofill-type="vat-number">
+    <span>消費税番号</span>
+    <input type="text" name="vat" id="idawlx" placeholder="VAT番号を入力" data-moz-autofill-type="vat-number">
+  </div>
+  <div>
+    <label>会社名
+    <input type="text" name="organization1" id="idf4qjz" placeholder="法人名を入力" data-moz-autofill-type="organization">
+    </label>
+  </div>
+  <div>
+    <input type="text" name="floor" id="idpl5sd" placeholder="例: 5階" aria-label="階数" data-moz-autofill-type="floor">
+  </div>
+  <div>
+    <button name="idb66ol" id="idbz" type="submit">送信</button>
   </div>
 </form>
 

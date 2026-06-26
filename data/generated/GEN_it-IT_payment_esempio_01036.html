@@ -10,15 +10,13 @@
 
 <form method="post">
   <div>
-    <input type="text" name="ccName" id="ccName" placeholder="Nome e cognome" data-moz-autofill-type="cc-name">
+    <input type="text" name="ccName" id="id8e38" placeholder="Nome e cognome" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <label for="ccNumber">Numero della carta</label>
-    <input type="number" name="ccNumber" id="ccNumber" placeholder="XXXX XXXX XXXX XXXX" data-moz-autofill-type="cc-number">
+    <input type="number" name="ccNumber" id="idmi" placeholder="1234 5678 9012 3456" aria-label="Numero della carta" data-moz-autofill-type="cc-number">
   </div>
   <div>
-    <label for="ccExpMonth">Mese di scadenza</label>
-    <select name="ccExpMonth" id="ccExpMonth" data-moz-autofill-type="cc-exp-month">
+    <select name="expMonth" id="idkb7p" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
   <option>Gennaio</option>
   <option>Febbraio</option>
@@ -35,7 +33,8 @@
 </select>
   </div>
   <div>
-    <select name="ccExpYear" id="ccExpYear" aria-label="Anno di scadenza" data-moz-autofill-type="cc-exp-year">
+    <label>Anno di scadenza
+    <select name="expYear" id="id6on5" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -47,32 +46,32 @@
   <option>2030</option>
   <option>2031</option>
   <option>2032</option>
-  <option>2033</option>
-  <option>2034</option>
 </select>
+    </label>
   </div>
   <div>
-    <input type="number" name="ccCsc" id="ccCsc" placeholder="XXX" data-moz-autofill-type="cc-csc">
+    <label>Codice di sicurezza (CVC)
+    <input type="number" name="csc" id="idfqd9" placeholder="123" data-moz-autofill-type="cc-csc">
+    </label>
   </div>
   <div>
-    <label>Tipo di carta
-    <select name="ccType" id="ccType" data-moz-autofill-type="cc-type">
+    <span>Tipo di carta</span>
+    <select name="cardType" id="idns" data-moz-autofill-type="cc-type">
   <option value=""></option>
   <option>Visa</option>
   <option>MasterCard</option>
   <option>American Express</option>
   <option>Diners Club</option>
   <option>Discover</option>
-  <option>JCB</option>
 </select>
+  </div>
+  <div>
+    <label>Indirizzo di fatturazione
+    <input type="text" name="street" id="idksh3k" placeholder="Via e numero civico" data-moz-autofill-type="street-address">
     </label>
   </div>
   <div>
-    <span>Indirizzo</span>
-    <input type="text" name="addressLine1" id="addressLine1" placeholder="Via e numero civico" data-moz-autofill-type="address-line1">
-  </div>
-  <div>
-    <button name="field" id="field" type="submit">Submit</button>
+    <button name="idie" id="id20h" type="submit">Submit</button>
   </div>
 </form>
 

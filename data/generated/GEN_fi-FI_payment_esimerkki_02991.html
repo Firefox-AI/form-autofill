@@ -11,11 +11,11 @@
 <form method="post">
   <div>
     <label>Nimi kortilla
-    <input type="text" name="r:r:6:m:r:1:cr:1:c:pr:1:container:fs:i:input" id="idki" placeholder="Esimerkiksi: Maija Meikäläinen" data-moz-autofill-type="cc-name">
+    <input type="text" name="r:r:6:m:r:1:cr:1:c:pr:1:container:fs:i:input" id="idki" placeholder="Esim. Matti Meikäläinen" data-moz-autofill-type="cc-name">
     </label>
   </div>
   <div>
-    <label>Kortin numero
+    <label>Korttinumero
     <input type="number" name="r:r:4:m:r:2:cr:1:c:pr:1:container:fs:i:input" id="idfo6" placeholder="1234 5678 9012 3456" data-moz-autofill-type="cc-number">
     </label>
   </div>
@@ -53,12 +53,13 @@
   <option>2031</option>
   <option>2032</option>
   <option>2033</option>
+  <option>2034</option>
 </select>
     </label>
   </div>
   <div>
-    <label>CVV
-    <input type="number" name="r:r:6:m:r:5:cr:2:c:pr:1:container:fs:i:input" id="idill1t" placeholder="3-numeroista koodia" data-moz-autofill-type="cc-csc">
+    <label>CVV/CVC
+    <input type="number" name="r:r:6:m:r:5:cr:2:c:pr:1:container:fs:i:input" id="idill1t" placeholder="3- tai 4-numeroinen koodi" data-moz-autofill-type="cc-csc">
     </label>
   </div>
   <div>
@@ -69,18 +70,28 @@
   <option>MasterCard</option>
   <option>American Express</option>
   <option>Discover</option>
+  <option>Diners Club</option>
+  <option>JCB</option>
 </select>
     </label>
   </div>
   <div>
     <label>Osoite
-    <input type="text" name="r:r:3:m:r:7:cr:2:c:pr:1:container:fs:i:input" id="id7bg" placeholder="Katuosoite, talon numero" data-moz-autofill-type="address-line1">
+    <input type="text" name="r:r:3:m:r:7:cr:2:c:pr:1:container:fs:i:input" id="id7bg" placeholder="Esim. Pääkatu 1" data-moz-autofill-type="street-address">
     </label>
   </div>
   <div>
     <label>Postinumero
-    <input type="text" name="r:r:7:m:r:8:cr:3:c:pr:1:container:fs:i:input" id="idm3" placeholder="Postinumero (esim. 00100)" data-moz-autofill-type="postal-code">
+    <input type="text" name="r:r:7:m:r:8:cr:3:c:pr:1:container:fs:i:input" id="idm3" placeholder="Esim. 00100" data-moz-autofill-type="postal-code">
     </label>
+  </div>
+  <div>
+    <label>
+    <input type="password" name="r:r:4:m:r:9:cr:3:c:pr:1:container:fs:i:input" id="idol8cm">
+    </label>
+  </div>
+  <div>
+    <button name="r:r:3:m:r:10:cr:1:c:pr:1:container:fs:i:input" id="id5bf" type="submit">Submit</button>
   </div>
 </form>
 

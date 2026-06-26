@@ -10,39 +10,49 @@
 
 <form method="post">
   <div>
-    <input type="text" name="idyqwi4" id="idkg4r" placeholder="Inserisci il tuo nome completo" data-moz-autofill-type="name">
+    <label>Nome e cognome
+    <input type="text" name="name" id="idi4wk" placeholder="Inserisci il tuo nome e cognome" data-moz-autofill-type="name">
+    </label>
   </div>
   <div>
-    <input type="text" name="ido870" id="idrb" placeholder="Piano, interno, ecc." data-moz-autofill-type="address-line2">
+    <label>Indirizzo
+    <input type="text" name="address1" id="idruo87" placeholder="Via, Piazza, Viale, etc." data-moz-autofill-type="address-line1">
+    </label>
   </div>
   <div>
-    <input type="text" name="idz8" id="idua7w" placeholder="Inserisci il nome della via" data-moz-autofill-type="street">
+    <label>CAP
+    <input type="text" name="postcode" id="idrb" placeholder="Inserisci il tuo codice di avviamento postale" data-moz-autofill-type="postal-code">
+    </label>
   </div>
   <div>
-    <input type="text" name="idqnn" id="idar" placeholder="Inserisci il numero civico" data-moz-autofill-type="address-housenumber">
+    <label>Comune
+    <input type="text" name="city" id="id8wua7" placeholder="Inserisci il nome del tuo comune" data-moz-autofill-type="address-level2">
+    </label>
   </div>
   <div>
-    <input type="text" name="idavm" id="idwr0td" placeholder="Inserisci la città" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <input type="text" name="idyr5o0" id="id36" placeholder="Inserisci il codice postale" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <select name="idv5a" id="idbt" data-moz-autofill-type="country-name">
+    <label>Nazione
+    <select name="countryName" id="idqnn" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Italia</option>
-  <option>Francia</option>
   <option>Germania</option>
+  <option>Francia</option>
   <option>Spagna</option>
   <option>Regno Unito</option>
-  <option>Stati Uniti</option>
 </select>
+    </label>
   </div>
   <div>
-    <input type="text" name="idg28cj" id="id79lqk" placeholder="Inserisci il numero dell&#x27;appartamento" data-moz-autofill-type="apartment">
+    <label>Appartamento
+    <input type="text" name="flat" id="idar" placeholder="Numero dell&#x27;appartamento (opzionale)" data-moz-autofill-type="apartment">
+    </label>
   </div>
   <div>
-    <input type="text" name="idfmv" id="id41j5w" placeholder="Nome come appare sulla carta" data-moz-autofill-type="cc-additional-name">
+    <label>Provincia
+    <input type="text" name="neighborhood" id="idavm" placeholder="Inserisci la tua provincia" data-moz-autofill-type="address-level3">
+    </label>
+  </div>
+  <div>
+    <button name="idwr0td" id="idyr5o0" type="submit">Submit</button>
   </div>
 </form>
 

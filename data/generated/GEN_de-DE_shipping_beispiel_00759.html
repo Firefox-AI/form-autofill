@@ -10,7 +10,8 @@
 
 <form method="post">
   <div>
-    <select name="country_1681" id="country_5237" aria-label="Land" data-moz-autofill-type="country">
+    <label for="idb3">Land</label>
+    <select name="country" id="idb3" data-moz-autofill-type="country">
   <option value=""></option>
   <option>Deutschland</option>
   <option>Österreich</option>
@@ -44,7 +45,7 @@
   <option>Slowenien</option>
   <option>Serbien</option>
   <option>Albanien</option>
-  <option>Bosnien und Herzegowina</option>
+  <option>Bosnien-Herzegowina</option>
   <option>Mazedonien</option>
   <option>Ukraine</option>
   <option>Weißrussland</option>
@@ -56,25 +57,69 @@
   <option>Aserbaidschan</option>
   <option>Georgien</option>
   <option>Türkei</option>
+  <option>Kazakhstan</option>
+  <option>Usbekistan</option>
+  <option>Turkmenistan</option>
+  <option>Kirgistan</option>
+  <option>Mongolei</option>
+  <option>Indien</option>
+  <option>China</option>
+  <option>Japan</option>
+  <option>Südkorea</option>
+  <option>Vietnam</option>
+  <option>Indonesien</option>
+  <option>Malaysia</option>
+  <option>Singapur</option>
+  <option>Thailand</option>
+  <option>Philippinen</option>
+  <option>Sri Lanka</option>
+  <option>Bangladesch</option>
+  <option>Pakistan</option>
+  <option>Afghanistan</option>
+  <option>Irak</option>
+  <option>Iran</option>
+  <option>Saudi-Arabien</option>
+  <option>Vereinigte Arabische Emirate</option>
+  <option>Ägypten</option>
+  <option>Marokko</option>
+  <option>Südafrika</option>
+  <option>Nigeria</option>
+  <option>Tansania</option>
+  <option>Kenya</option>
+  <option>Uganda</option>
+  <option>Ghana</option>
+  <option>Zambia</option>
+  <option>Sambia</option>
+  <option>Ethiopien</option>
+  <option>Kamerun</option>
 </select>
   </div>
   <div>
-    <input type="text" name="given_name_3955" id="given_name_1235" aria-label="Vorname" data-moz-autofill-type="given-name">
+    <label>Vorname
+    <input type="text" name="billing_first_name" id="id6roo" placeholder="Geben Sie Ihren Vornamen ein" data-moz-autofill-type="given-name">
+    </label>
   </div>
   <div>
-    <input type="text" name="family_name_367" id="family_name_7529" aria-label="Nachname" data-moz-autofill-type="family-name">
+    <label for="idad">Nachname</label>
+    <input type="text" name="last_name" id="idad" placeholder="Geben Sie Ihren Nachnamen ein" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <input type="text" name="address_line1_9183" id="address_line1_9141" aria-label="Straße und Hausnummer" data-moz-autofill-type="address-line1">
+    <label>Adresse
+    <input type="text" name="addressLine1" id="id3mon" placeholder="Geben Sie Ihre Adresse ein" data-moz-autofill-type="address-line1">
+    </label>
   </div>
   <div>
-    <input type="text" name="address_line2_8905" id="address_line2_6154" placeholder="Z.B. Apartment, Suite, etc." aria-label="Zusätzliche Adresse (optional)" data-moz-autofill-type="address-line2">
+    <label>Adresse 2 (optional)
+    <input type="text" name="addr2" id="id6k6" placeholder="Zusätzliche Adressinformationen" data-moz-autofill-type="address-line2">
+    </label>
   </div>
   <div>
-    <input type="text" name="address_level2_8457" id="address_level2_4695" aria-label="Stadt" data-moz-autofill-type="address-level2">
+    <label for="idymyh">Stadt</label>
+    <input type="text" name="locality" id="idymyh" placeholder="Geben Sie Ihre Stadt ein" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <select name="address_level1_9976" id="address_level1_3703" aria-label="Bundesland" data-moz-autofill-type="address-level1">
+    <label for="idvai8">Bundesland</label>
+    <select name="state" id="idvai8" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>Baden-Württemberg</option>
   <option>Bayern</option>
@@ -95,19 +140,25 @@
 </select>
   </div>
   <div>
-    <input type="text" name="postal_code_9728" id="postal_code_3756" aria-label="Postleitzahl" data-moz-autofill-type="postal-code">
+    <label>Postleitzahl
+    <input type="text" name="zip" id="idta" placeholder="Geben Sie Ihre Postleitzahl ein" data-moz-autofill-type="postal-code">
+    </label>
   </div>
   <div>
-    <input type="email" name="email_4743" id="email_1023" aria-label="E-Mail-Adresse" data-moz-autofill-type="email">
+    <label for="idy4f">E-Mail-Adresse</label>
+    <input type="email" name="mail" id="idy4f" placeholder="Geben Sie Ihre E-Mail-Adresse ein" data-moz-autofill-type="email">
   </div>
   <div>
-    <input type="email" name="email_325" id="email_1025" aria-label="E-Mail-Adresse bestätigen" data-moz-autofill-type="email">
+    <label for="idqbf5x">Bestätigen Sie die E-Mail-Adresse</label>
+    <input type="email" name="mail3" id="idqbf5x" placeholder="Geben Sie Ihre E-Mail-Adresse erneut ein" data-moz-autofill-type="email">
   </div>
   <div>
-    <input type="tel" name="tel_country_code_9396" id="tel_country_code_2908" aria-label="+49" data-moz-autofill-type="tel-country-code">
+    <span>+49</span>
+    <input type="tel" name="countryCode" id="idi729" data-moz-autofill-type="tel-country-code">
   </div>
   <div>
-    <input type="tel" name="tel_national_4290" id="tel_national_7703" aria-label="Telefonnummer (erforderlich)" data-moz-autofill-type="tel-national">
+    <span>Telefonnummer (Pflichtfeld)</span>
+    <input type="tel" name="idjg" id="idpl" placeholder="Geben Sie Ihre Telefonnummer ein" data-moz-autofill-type="tel-national">
   </div>
 </form>
 

@@ -10,16 +10,20 @@
 
 <form method="post">
   <div>
-    <input type="text" name="givenName" id="givenName" aria-label="Vorname" data-moz-autofill-type="given-name">
+    <label for="idd4">Vorname</label>
+    <input type="text" name="billing_first_name" id="idd4" placeholder="Vorname" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <input type="text" name="familyName" id="familyName" aria-label="Nachname" data-moz-autofill-type="family-name">
+    <label for="id27">Nachname</label>
+    <input type="text" name="billing_last_name" id="id27" placeholder="Nachname" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <input type="text" name="postalCode" id="postalCode" aria-label="Geben Sie zunächst den Ort oder die Postleitzahl in die Suchleiste ein, wählen Sie einen Abholpunkt aus der Liste der Vorschläge aus und drücken Sie Enter, um Ihre Auswahl zu bestätigen." data-moz-autofill-type="postal-code">
+    <label for="idw2l">Geben Sie die Stadt oder die Postleitzahl in das Suchfeld ein, wählen Sie einen Abholort aus der Vorschlagsliste und drücken Sie die Eingabetaste, um Ihre Auswahl zu bestätigen.</label>
+    <input type="text" name="zip" id="idw2l" placeholder="Geben Sie die Stadt oder die Postleitzahl in das Suchfeld ein, wählen Sie einen Abholort aus der Vorschlagsliste und drücken Sie die Eingabetaste, um Ihre Auswahl zu bestätigen." data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <select name="addressLevel2" id="addressLevel2" aria-label="Bundesland" data-moz-autofill-type="address-level2">
+    <label for="idy9t4">Bundesland</label>
+    <select name="locality" id="idy9t4" data-moz-autofill-type="address-level2">
   <option value=""></option>
   <option>Baden-Württemberg</option>
   <option>Bayern</option>
@@ -40,16 +44,20 @@
 </select>
   </div>
   <div>
-    <input type="text" name="addressLine1" id="addressLine1" aria-label="Straße und Hausnummer" data-moz-autofill-type="address-line1">
+    <label for="id2oa">Straße und Hausnummer</label>
+    <input type="text" name="addr16" id="id2oa" placeholder="Straße und Hausnummer" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <input type="text" name="addressLine2" id="addressLine2" aria-label="Gebäude / Stockwerk / Wohnung" data-moz-autofill-type="address-line2">
+    <label for="idqp">Gebäude / Stockwerk / Wohnung</label>
+    <input type="text" name="addressLine2" id="idqp" placeholder="Gebäude / Stockwerk / Wohnung" data-moz-autofill-type="address-line2">
   </div>
   <div>
-    <input type="text" name="addressLevel2" id="addressLevel2" aria-label="Ort / Gebiet / Platz" data-moz-autofill-type="address-level2">
+    <label for="id88z">Ort / Gebiet / Platz</label>
+    <input type="text" name="city" id="id88z" placeholder="Ort / Gebiet / Platz" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <select name="country" id="country" aria-label="Land" data-moz-autofill-type="country">
+    <label for="idmf">Land</label>
+    <select name="country" id="idmf" data-moz-autofill-type="country">
   <option value=""></option>
   <option>Deutschland</option>
   <option>Österreich</option>
@@ -65,7 +73,8 @@
 </select>
   </div>
   <div>
-    <input type="tel" name="tel" id="tel" placeholder="+49 123 4567890" aria-label="Telefonnummer" data-moz-autofill-type="tel">
+    <label for="idwtul">Telefonnummer</label>
+    <input type="tel" name="telephone7" id="idwtul" placeholder="+49 123 4567890" data-moz-autofill-type="tel">
   </div>
 </form>
 

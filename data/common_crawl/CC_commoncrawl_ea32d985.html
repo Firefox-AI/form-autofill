@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<div class="row align-items-center mb-3"> <label class="form-label col-sm-4 mb-sm-0" for="frm-request-name">Name und Vorname *</label> <div class="col"> <input class="form-control" data-e2e="detail-requests-name" data-nette-rules='[{"op":":filled","msg":"product:request:invalidCustomerName"}]' id="frm-request-name" name="name" placeholder="Vor- und Nachname" required="" type="text"/> <input id="request-token" name="token" type="hidden" value=""/> <input name="action" type="hidden" value="submit"/> </div> </div> <div class="row align-items-center mb-3"> <label class="form-label col-sm-4 mb-sm-0" for="frm-request-email">E-mail: (wird nicht veröffentlicht) *</label> <div class="col"> <input class="form-control" data-e2e="detail-requests-email" data-moz-autofill-type="email" data-nette-rules='[{"op":":filled","msg":"product:request:invalidCustomerEmail"}]' id="frm-request-email" name="email" placeholder="E-Mail-Adresse eingeben" required="" type="email"/> </div> </div> <div class="row align-items-center mb-3"> <label class="form-label col-sm-4 mb-sm-0" for="frm-request-phone">Telefonnummer: (falls wir dich zurückrufen sollen) *</label> <div class="col"> <input class="form-control" data-e2e="detail-requests-telephone" data-moz-autofill-type="tel" data-nette-rules='[{"op":":filled","msg":"product:request:invalidcustomerPhone"}]' id="frm-request-phone" name="phone" placeholder="Telefonnummer eingeben" required="" type="text"/> </div> </div> <div class="mb-4"> <label class="form-label" for="frm-request-question">Deine Frage: *</label> <textarea class="form-control" data-e2e="detail-requests-text" data-nette-rules='[{"op":":filled","msg":"product:request:invalidQuestion"}]' id="frm-request-question" name="question" required=""></textarea> </div> <div class="mb-4"> Ich stimme zu </div> <hr class="mb-4"/> <div class="row justify-content-between align-items-end"> <div class="col-12 col-md-6"> <span class="icon-reply mb-2"> </span> <p class="h4"></p> </div> <div class="col-12 col-md-5 text-end"> <div class="mb-3"> <button class="btn btn-primary" data-e2e="detail-requests-submit" name="create" type="submit" value="Verschicken">Verschicken</button> </div> <p class="small">Ich stimme der <a href="/s/datenschutzerklaerung-207">Datenschutzerklärung</a> zu. </p> </div> </div> <input name="_form_" type="hidden" value="request"/>
+</form>
+
+</fieldset></body></html>

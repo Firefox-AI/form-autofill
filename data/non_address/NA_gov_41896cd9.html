@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>gov</h3>
+<p><i>Common Crawl form, other context, unlabeled.</i></p>
+
+<form>
+<div> <p>My Account allows searches and documents to be saved across any AM or AM Quartex powered site. My Account is a free and optional service provided by AM.</p> <br/> <p>Don't have an account? <a data-bind="attr:{'href': myaccountRegisterUrl}" href="#" target="_blank">Register for free</a></p> </div> <div class="form__group"> <label class="form-label" id="formLabelEmail">Email</label> <input aria-labelledby="formLabelEmail" autocomplete="email" class="form-field" data-bind="textInput: username, css: {'is-error': usernameErr }, enterkey: loginClick" id="formInputEmail" placeholder="Email Address" type="text"/> </div> <div class="form__group"> <label class="form-label" id="formLabelPassword">Password</label> <input aria-labelledby="formLabelPassword" autocomplete="current-password" class="form-field" data-bind="textInput: password, css: {'is-error': passwordErr }, enterkey: loginClick" placeholder="Password" type="password"/> </div> <div class="error"> <div class="notification notification--error" id="errorContainer" style="display:none;"> <div aria-atomic="true" aria-live="assertive" class="notification__text" data-bind="text: errMsg" id="errorMessage" role="alert"></div> </div> </div> <div> <a data-bind="click: forgottenPasswordClick" href="#">Forgotten Password?</a> </div>
+</form>
+
+</fieldset></body></html>

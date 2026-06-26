@@ -10,30 +10,34 @@
 
 <form method="post">
   <div>
-    <input type="text" name="r:r:9:m:r:1:cr:1:c:pr:1:container:fs:i:input" id="idee2" placeholder="Cardholder Name" data-moz-autofill-type="cc-name">
+    <span>Cardholder Name</span>
+    <input type="text" name="cardName" id="idee2" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <input type="number" name="r:r:2:m:r:2:cr:1:c:pr:1:container:fs:i:input" id="idxw" placeholder="Card Number" data-moz-autofill-type="cc-number">
+    <span>Card Number</span>
+    <input type="number" name="cardNumber" id="idbx" data-moz-autofill-type="cc-number">
   </div>
   <div>
-    <select name="r:r:3:m:r:3:cr:2:c:pr:1:container:fs:i:input" id="idddnug" data-moz-autofill-type="cc-exp-month">
+    <span>Expiration Month</span>
+    <select name="ccExpMonth" id="idt0d" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
-  <option>January</option>
-  <option>February</option>
-  <option>March</option>
-  <option>April</option>
-  <option>May</option>
-  <option>June</option>
-  <option>July</option>
-  <option>August</option>
-  <option>September</option>
-  <option>October</option>
-  <option>November</option>
-  <option>December</option>
+  <option>01 - January</option>
+  <option>02 - February</option>
+  <option>03 - March</option>
+  <option>04 - April</option>
+  <option>05 - May</option>
+  <option>06 - June</option>
+  <option>07 - July</option>
+  <option>08 - August</option>
+  <option>09 - September</option>
+  <option>10 - October</option>
+  <option>11 - November</option>
+  <option>12 - December</option>
 </select>
   </div>
   <div>
-    <select name="r:r:4:m:r:4:cr:3:c:pr:1:container:fs:i:input" id="idwh1" data-moz-autofill-type="cc-exp-year">
+    <span>Expiration Year</span>
+    <select name="expYear" id="idugp" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -45,40 +49,43 @@
   <option>2030</option>
   <option>2031</option>
   <option>2032</option>
-  <option>2033</option>
-  <option>2034</option>
-  <option>2035</option>
 </select>
   </div>
   <div>
-    <input type="number" name="r:r:1:m:r:5:cr:2:c:pr:1:container:fs:i:input" id="id60" placeholder="Security Code (CSC)" data-moz-autofill-type="cc-csc">
+    <span>CVV</span>
+    <input type="number" name="cardCode" id="idwh1" data-moz-autofill-type="cc-csc">
   </div>
   <div>
-    <select name="r:r:8:m:r:6:cr:1:c:pr:1:container:fs:i:input" id="id87tv" data-moz-autofill-type="country-name">
+    <span>Country</span>
+    <select name="country" id="idb605a" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>United States</option>
   <option>Canada</option>
-  <option>Mexico</option>
   <option>United Kingdom</option>
   <option>Australia</option>
   <option>Germany</option>
   <option>France</option>
-  <option>Spain</option>
-  <option>Italy</option>
-  <option>Other</option>
+  <option>Japan</option>
+  <option>China</option>
+  <option>India</option>
+  <option>Brazil</option>
 </select>
   </div>
   <div>
-    <input type="text" name="r:r:5:m:r:7:cr:1:c:pr:1:container:fs:i:input" id="idsp6" placeholder="Street Address, P.O. Box, Company Name, c/o" data-moz-autofill-type="address-line1">
+    <span>Street Address</span>
+    <input type="text" name="addr1" id="idvsdk" placeholder="123 Main St, P.O. Box, Company Name, c/o" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <input type="text" name="r:r:6:m:r:8:cr:1:c:pr:1:container:fs:i:input" id="idbk" placeholder="Apartment, Suite, Unit, Building, Floor, etc." data-moz-autofill-type="address-line2">
+    <span>Apartment, Suite, Unit</span>
+    <input type="text" name="addr2" id="id6vn" placeholder="Optional" data-moz-autofill-type="address-line2">
   </div>
   <div>
-    <input type="text" name="r:r:4:m:r:9:cr:3:c:pr:1:container:fs:i:input" id="id1snev" placeholder="City" data-moz-autofill-type="address-level2">
+    <span>City</span>
+    <input type="text" name="city" id="idkn" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <select name="r:r:3:m:r:10:cr:1:c:pr:1:container:fs:i:input" id="idtc" data-moz-autofill-type="address-level1">
+    <span>State</span>
+    <select name="stateProvince" id="id1snev" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>Alabama</option>
   <option>Alaska</option>
@@ -133,10 +140,12 @@
 </select>
   </div>
   <div>
-    <input type="number" name="r:r:1:m:r:11:cr:3:c:pr:1:container:fs:i:input" id="idwv" placeholder="ZIP/Postal Code" data-moz-autofill-type="postal-code">
+    <span>Zip Code</span>
+    <input type="number" name="zipCode" id="idft" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="tel" name="r:r:8:m:r:12:cr:3:c:pr:1:container:fs:i:input" id="id9w4fg" placeholder="Phone Number" data-moz-autofill-type="tel">
+    <span>Phone Number</span>
+    <input type="tel" name="phone" id="id7h" placeholder="(555) 555-5555" data-moz-autofill-type="tel">
   </div>
 </form>
 

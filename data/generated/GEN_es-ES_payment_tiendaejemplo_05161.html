@@ -5,21 +5,31 @@
 <body>
 
 <fieldset>
-<h3>tiendaejemplo.es</h3>
+<h3>tiendaejemplo.com</h3>
 <p><i>Synthetic sample (LLM-augmented).</i></p>
 
 <form method="post">
   <div>
     <label>Nombre en la tarjeta
-    <input type="text" name="idjq" id="idvzy" placeholder="Nombre y apellidos" data-moz-autofill-type="cc-name">
+    <input type="text" name="idjq" id="idvzy" placeholder="Ej: Juan Pérez" data-moz-autofill-type="cc-name">
     </label>
   </div>
   <div>
-    <input type="number" name="id6i1" id="id4y6" placeholder="1234 5678 9012 3456" aria-label="Número de tarjeta" data-moz-autofill-type="cc-number">
+    <select name="id6i1" id="id4y6" aria-label="Tipo de tarjeta" data-moz-autofill-type="cc-type">
+  <option value=""></option>
+  <option>Visa</option>
+  <option>MasterCard</option>
+  <option>American Express</option>
+  <option>Discover</option>
+</select>
+  </div>
+  <div>
+    <span>Número de tarjeta</span>
+    <input type="number" name="id8l6" id="id5i7" placeholder="1234 5678 9012 3456" data-moz-autofill-type="cc-number">
   </div>
   <div>
     <span>Mes de expiración</span>
-    <select name="id8l6" id="id5i7" data-moz-autofill-type="cc-exp-month">
+    <select name="idvnc" id="idwgv" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
   <option>Enero</option>
   <option>Febrero</option>
@@ -36,8 +46,7 @@
 </select>
   </div>
   <div>
-    <span>Año de expiración</span>
-    <select name="idvnc" id="idwgv" data-moz-autofill-type="cc-exp-year">
+    <select name="idt1v" id="idji" aria-label="Año de expiración" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -47,33 +56,22 @@
   <option>2028</option>
   <option>2029</option>
   <option>2030</option>
-  <option>2031</option>
-  <option>2032</option>
 </select>
   </div>
   <div>
-    <input type="number" name="idt1v" id="idji" placeholder="3 o 4 dígitos" aria-label="Código de seguridad" data-moz-autofill-type="cc-csc">
-  </div>
-  <div>
-    <select name="idtu" id="iddy" aria-label="Tipo de tarjeta" data-moz-autofill-type="cc-type">
-  <option value=""></option>
-  <option>Visa</option>
-  <option>MasterCard</option>
-  <option>American Express</option>
-  <option>Discover</option>
-</select>
+    <input type="number" name="idtu" id="iddy" placeholder="Tres cifras en la parte posterior" aria-label="Código de seguridad" data-moz-autofill-type="cc-csc">
   </div>
   <div>
     <span>Dirección</span>
-    <input type="text" name="idqpkk" id="iddm" placeholder="Calle, número" data-moz-autofill-type="address-line1">
+    <input type="text" name="idqpkk" id="iddm" placeholder="Calle, número, piso, etc." data-moz-autofill-type="street-address">
   </div>
   <div>
     <label for="idk2hz">Nombre fonético (opcional)</label>
-    <input type="text" name="idohp78" id="idk2hz" placeholder="Escriba su nombre como suena" data-moz-autofill-type="phonetic-name">
+    <input type="text" name="idohp78" id="idk2hz" placeholder="Pronunciación del nombre" data-moz-autofill-type="phonetic-name">
   </div>
   <div>
-    <label for="idqr">Instrucciones adicionales (opcional)</label>
-    <input type="text" name="idz9" id="idqr" placeholder="Ej. Apartamento, piso, etc." data-moz-autofill-type="address-extra">
+    <label for="idqr">Dirección adicional (opcional)</label>
+    <input type="text" name="idz9" id="idqr" placeholder="Ej: Apartamento, edificio, etc." data-moz-autofill-type="address-extra">
   </div>
 </form>
 

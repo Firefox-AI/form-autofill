@@ -10,22 +10,24 @@
 
 <form method="post">
   <div>
-    <input type="text" name="ccName" id="ccName" placeholder="Nom complet segons la targeta" data-moz-autofill-type="cc-name">
+    <span>Nom a la targeta de crèdit</span>
+    <input type="text" name="ccName" id="id80c" placeholder="Nom complet com apareix a la targeta" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <input type="text" name="streetAddress" id="streetAddress" placeholder="Carrer i número" data-moz-autofill-type="street-address">
+    <span>Direcció</span>
+    <input type="text" name="addr" id="ide7" placeholder="Carrer, número i, si cal, pis" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <input type="text" name="addressLine2" id="addressLine2" placeholder="Opcional" data-moz-autofill-type="address-line2">
+    <span>Codi postal</span>
+    <input type="text" name="postalCode" id="idmwi" placeholder="Codi postal" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="text" name="postalCode" id="postalCode" placeholder="Codi postal" data-moz-autofill-type="postal-code">
+    <span>Ciutat</span>
+    <input type="text" name="locality" id="idr8ob" placeholder="Ciutat" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <input type="text" name="addressLevel2" id="addressLevel2" placeholder="Ciutat" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <select name="addressLevel1" id="addressLevel1" data-moz-autofill-type="address-level1">
+    <span>Província</span>
+    <select name="region" id="id91jz" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>Barcelona</option>
   <option>Girona</option>
@@ -34,17 +36,14 @@
 </select>
   </div>
   <div>
-    <select name="countryName" id="countryName" data-moz-autofill-type="country-name">
+    <span>País</span>
+    <select name="country" id="id1b8qb" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Espanya</option>
   <option>França</option>
-  <option>Itàlia</option>
   <option>Portugal</option>
-  <option>Reino Unit</option>
+  <option>Itàlia</option>
 </select>
-  </div>
-  <div>
-    <button name="field" id="field" type="submit">Enviar</button>
   </div>
 </form>
 

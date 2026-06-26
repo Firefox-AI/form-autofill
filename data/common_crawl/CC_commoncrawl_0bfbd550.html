@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<h3>Neue Suche</h3> <div class="inputwrapper"> <label for="">Adresstyp:</label> <select name="adresstyp" onchange="document.forms['presse'].elements['kategorie'].options[0].selected=true;document.forms['presse'].submit();" size="1" type="text" value=""> <option value="">-Bitte wählen-</option> <option value="1001416">Gemeinde Bönningstedt</option> <option value="1001388">Notruf &amp; Gesundheitswesen</option> <option value="1001370">Bildung &amp; Soziales</option> <option value="1001336">Vereine &amp; Verbände</option> </select> </div> <div class="inputwrapper"> <label for="">Kategorie</label> <select name="kategorie" onchange="document.forms['presse'].elements['ort'].options[0].selected=true;document.forms['presse'].submit();" size="1" type="text" value=""> <option value="">-Bitte wählen-</option> </select> </div> <div class="inputwrapper"> <label for="">Ort:</label> <select data-moz-autofill-type="address-level2" name="ort" onchange="document.forms['presse'].submit();" size="1" type="text" value=""> <option value="">-alle Orte-</option> <option value="Bönningstedt">Bönningstedt</option> <option value="Ellerbek">Ellerbek</option> <option value="Hamburg">Hamburg</option> <option value="Pinneberg">Pinneberg</option> <option value="Quickborn">Quickborn</option> </select> </div> <div class="inputwrapper"> <label for="">Name</label> <input data-moz-autofill-type="name" name="search_string" size="14" type="text" value=""/> </div> <input name="id" type="hidden" value="614"/> <input name="site" type="hidden" value="boenningstedt"/> <input name="offset" type="hidden" value="0"/> <div class="inputwrapper" style="padding-top: 20px;"> <input class="button gray medium" id="medialiste_submit" type="submit" value="Suchen"/> </div>
+</form>
+
+</fieldset></body></html>

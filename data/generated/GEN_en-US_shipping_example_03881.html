@@ -10,55 +10,52 @@
 
 <form method="post">
   <div>
-    <span>First Name</span>
-    <input type="text" name="idwtb" id="id3t" data-moz-autofill-type="given-name">
+    <input type="text" name="firstName" id="idwtb" aria-label="First Name" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <label>Last Name
-    <input type="text" name="idj4b" id="id7k" data-moz-autofill-type="family-name">
-    </label>
+    <input type="text" name="lastName" id="idt9lj4" aria-label="Last Name" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <span>Address</span>
-    <input type="text" name="idgjz" id="idkwb" placeholder="Street and number" data-moz-autofill-type="street-address">
+    <input type="text" name="address" id="id7k" placeholder="Street and number" aria-label="Address" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <label>Zip Code
-    <input type="text" name="idaa" id="id1n8r" data-moz-autofill-type="postal-code">
-    </label>
+    <input type="text" name="zip" id="idgjz" aria-label="Zip Code" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="text" name="idi8" id="id74djw" placeholder="City" data-moz-autofill-type="address-level2">
+    <select name="city" id="idwb7" aria-label="State" data-moz-autofill-type="address-level2">
+  <option value=""></option>
+  <option>California</option>
+  <option>Texas</option>
+  <option>Florida</option>
+  <option>New York</option>
+  <option>Illinois</option>
+  <option>Pennsylvania</option>
+  <option>Ohio</option>
+  <option>Georgia</option>
+  <option>North Carolina</option>
+  <option>Michigan</option>
+</select>
   </div>
   <div>
-    <label for="idml0qt">Email Address</label>
-    <input type="email" name="idk8oyb" id="idml0qt" placeholder="Enter your email" data-moz-autofill-type="email">
+    <input type="text" name="email" id="idat" aria-label="City" data-moz-autofill-type="email">
   </div>
   <div>
-    <label>Phone Number
-    <input type="tel" name="idmcyws" id="idx7bb0" placeholder="Your contact number" data-moz-autofill-type="tel">
-    </label>
+    <input type="email" name="mobile" id="id8ru" placeholder="Enter your email address" aria-label="Email Address" data-moz-autofill-type="tel">
   </div>
   <div>
-    <label for="idl7">Company Name for Billing</label>
-    <input type="text" name="idkauq" id="idl7" data-moz-autofill-type="organization">
+    <input type="text" name="company" id="id8y7" aria-label="Billing Name" data-moz-autofill-type="organization">
   </div>
   <div>
-    <label for="idg36qi">Company VAT Number</label>
-    <input type="text" name="id3u" id="idg36qi" data-moz-autofill-type="vat-number">
+    <input type="text" name="vatNumber" id="idjw" aria-label="Company Name for Billing" data-moz-autofill-type="vat-number">
   </div>
   <div>
-    <label>Company Name for Cash Account
-    <input type="text" name="idabj" id="idso" data-moz-autofill-type="organization">
-    </label>
+    <input type="text" name="companyName" id="idk8oyb" aria-label="Name for Cash Account" data-moz-autofill-type="organization">
   </div>
   <div>
-    <label>Company VAT Number for Cash Account
-    <input type="text" name="id392" id="idms" data-moz-autofill-type="vat-number">
-    </label>
+    <input type="text" name="vatNumber" id="idl0q" aria-label="Company Name for Cash Account" data-moz-autofill-type="vat-number">
   </div>
   <div>
-    <input type="email" name="idgl5gi" id="idn8v" placeholder="Re-enter your email" data-moz-autofill-type="email">
+    <input type="email" name="mail" id="idzmcy" placeholder="Enter your email address" aria-label="Your Email" data-moz-autofill-type="email">
   </div>
 </form>
 

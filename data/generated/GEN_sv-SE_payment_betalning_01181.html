@@ -10,15 +10,15 @@
 
 <form method="post">
   <div>
-    <input type="text" name="ccName" id="ccName" placeholder="Skriv ditt namn här" data-moz-autofill-type="cc-name">
+    <input type="text" name="ccName" id="id2y5i" placeholder="Skriv ditt namn här" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <label for="ccNumber">Kortnummer</label>
-    <input type="number" name="ccNumber" id="ccNumber" placeholder="XXXX-XXXX-XXXX-XXXX" data-moz-autofill-type="cc-number">
+    <span>Kortnummer</span>
+    <input type="number" name="cardNo" id="ido6kto" placeholder="XXXX-XXXX-XXXX-XXXX" data-moz-autofill-type="cc-number">
   </div>
   <div>
-    <label for="ccExpMonth">Utgångsmånad</label>
-    <select name="ccExpMonth" id="ccExpMonth" data-moz-autofill-type="cc-exp-month">
+    <span>Utgångsmånad</span>
+    <select name="ccExpMonth" id="id3zu" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
   <option>Januari</option>
   <option>Februari</option>
@@ -35,7 +35,7 @@
 </select>
   </div>
   <div>
-    <select name="ccExpYear" id="ccExpYear" aria-label="Utgångsår" data-moz-autofill-type="cc-exp-year">
+    <select name="expYear" id="idrez" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -45,25 +45,22 @@
   <option>2028</option>
   <option>2029</option>
   <option>2030</option>
-  <option>2031</option>
-  <option>2032</option>
-  <option>2033</option>
-  <option>2034</option>
-  <option>2035</option>
 </select>
   </div>
   <div>
-    <input type="number" name="ccCsc" id="ccCsc" placeholder="3 siffror på baksidan av kortet" data-moz-autofill-type="cc-csc">
+    <label for="idk92sq">Säkerhetskod (CVV)</label>
+    <input type="number" name="securityCode" id="idk92sq" placeholder="Tre sista siffrorna på baksidan" data-moz-autofill-type="cc-csc">
   </div>
   <div>
-    <label for="ccType">Korttyp</label>
-    <select name="ccType" id="ccType" data-moz-autofill-type="cc-type">
+    <label>Korttyp
+    <select name="cardType" id="idi3lr8" data-moz-autofill-type="cc-type">
   <option value=""></option>
   <option>Visa</option>
   <option>Mastercard</option>
   <option>American Express</option>
-  <option>Discover</option>
+  <option>Diners Club</option>
 </select>
+    </label>
   </div>
 </form>
 

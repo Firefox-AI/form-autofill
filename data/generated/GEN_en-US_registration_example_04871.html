@@ -10,27 +10,28 @@
 
 <form method="post">
   <div>
-    <label for="givenName">First Name</label>
-    <input type="text" name="givenName" id="givenName" data-moz-autofill-type="given-name">
+    <label for="idfsxw">First Name</label>
+    <input type="text" name="billing_first_name" id="idfsxw" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <label>Last Name
-    <input type="text" name="familyName" id="familyName" data-moz-autofill-type="family-name">
-    </label>
+    <label for="ids5u0">Last Name</label>
+    <input type="text" name="lname" id="ids5u0" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <input type="email" name="email" id="email" placeholder="Email Address" data-moz-autofill-type="email">
+    <span>Email Address</span>
+    <input type="email" name="emailAddress" id="idg82" placeholder="your.email@example.com" data-moz-autofill-type="email">
   </div>
   <div>
     <span>Phone Number</span>
-    <input type="tel" name="tel" id="tel" data-moz-autofill-type="tel">
+    <input type="tel" name="telephone" id="id7hxl" placeholder="(123) 456-7890" data-moz-autofill-type="tel">
   </div>
   <div>
-    <input type="number" name="ccNumber" id="ccNumber" placeholder="Credit Card Number" data-moz-autofill-type="cc-number">
+    <span>Credit Card Number</span>
+    <input type="number" name="cardNumber" id="idb01bb" placeholder="1234 5678 9012 3456" data-moz-autofill-type="cc-number">
   </div>
   <div>
-    <label>Expiration Month
-    <select name="ccExpMonth" id="ccExpMonth" data-moz-autofill-type="cc-exp-month">
+    <span>Expiration Month</span>
+    <select name="ccExpMonth" id="id4tl" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
   <option>January</option>
   <option>February</option>
@@ -45,11 +46,10 @@
   <option>November</option>
   <option>December</option>
 </select>
-    </label>
   </div>
   <div>
-    <label for="ccExpMonth">Expiration Year</label>
-    <select name="ccExpMonth" id="ccExpMonth" data-moz-autofill-type="cc-exp-month">
+    <label>Expiration Year
+    <select name="ccExpMonth" id="idd1" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -62,20 +62,18 @@
   <option>2031</option>
   <option>2032</option>
   <option>2033</option>
-  <option>2034</option>
 </select>
-  </div>
-  <div>
-    <label for="ccCsc">Security Code (CVV)</label>
-    <input type="number" name="ccCsc" id="ccCsc" placeholder="Security Code (CVV)" data-moz-autofill-type="cc-csc">
-  </div>
-  <div>
-    <input type="text" name="ccName" id="ccName" placeholder="Cardholder Name" data-moz-autofill-type="cc-name">
-  </div>
-  <div>
-    <label>Postal Code
-    <input type="text" name="postalCode" id="postalCode" placeholder="Please enter a zipcode or city" data-moz-autofill-type="postal-code">
     </label>
+  </div>
+  <div>
+    <input type="number" name="cvc" id="idosxx" placeholder="123" data-moz-autofill-type="cc-csc">
+  </div>
+  <div>
+    <span>Name on Card</span>
+    <input type="text" name="nameOnCard" id="idn6i8i" data-moz-autofill-type="cc-name">
+  </div>
+  <div>
+    <input type="text" name="postalCode" id="idupqm" placeholder="Please enter your zip code" aria-label="Postal Code" data-moz-autofill-type="postal-code">
   </div>
 </form>
 

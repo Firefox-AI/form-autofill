@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<div class="form-group"> <label for="postal-code"> Geben Sie bitte Ihre Postleitzahl ein: </label> <input class="form-control form-control-sm" data-moz-autofill-type="postal-code" id="postal-code" oninput="new Setup().inputPostal()" onkeypress="return new Helpers().isNumber(event)" placeholder="z.B. 52052" type="number"/> </div> <div id="custom-services"> <p class="popup-title">Wählen Sie einen Service aus</p> <div class="row"> <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 service-type" id="Lieferung" onclick="new Setup().activeService('Lieferung')"> <div class="type-selector text-center"> <img alt="Liefer Service" src="/Content/Images/postal-code/Lieferservice.png"/> <p>Lieferservice</p> <span>Wir liefern bis an Ihre Tür</span> </div> </div> <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 service-type" id="Abholung" onclick="new Setup().activeService('Abholung')"> <div class="type-selector text-center"> <img alt="Abhol Service" src="/Content/Images/postal-code/Abholservice.png"/> <p>Abholservice</p> <span>Sie holen Ihren Einkauf selbst ab</span> </div> </div> <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 service-type" id="Versand" onclick="new Setup().activeService('Versand')"> <div class="type-selector text-center"> <img alt="Versand Service" src="/Content/Images/postal-code/versandt.png"/> <p>Versandservice</p> <span>Sie bekommen die Ware per Paketdienst</span> </div> </div> </div> </div> <div id="abholservice"> <p class="popup-title"> Wählen Sie eine Abholfiliale aus </p> <div class="row" id="abholservice-div"> </div> </div> <div class="modus" id="modus"> <p class="popup-title">Wählen Sie einen Shop Modus aus</p> <div class="modus-buttons" id="modus-buttons"> <a class="btn btn-secondary" id="einkaufsmodus" onclick="new Setup().changeModus('Einkaufsmodus')"> <img alt="Einkaufsmodus" src="/Content/Images/postal-code/einkauf.png"/> <p>Einkaufsmodus</p> </a> <a class="btn btn-secondary" id="angebotsmodus" onclick="new Setup().changeModus('Angebotsmodus')"> <img alt="Angebotsmodus" src="/Content/Images/postal-code/angebot.png"/> <p>Angebotsmodus</p> </a> </div> </div> <p></p> <div class="submit float-right" id="submit" onclick="new Setup().submit()"> <a class="btn btn-success">Zum Shop</a> </div>
+</form>
+
+</fieldset></body></html>

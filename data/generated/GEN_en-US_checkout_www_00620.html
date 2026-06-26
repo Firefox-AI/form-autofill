@@ -10,19 +10,23 @@
 
 <form method="post">
   <div>
-    <input type="text" name="postal_code_6849" id="postal_code_7004" placeholder="Enter Zip Code" data-moz-autofill-type="postal-code">
+    <input type="text" name="postcode" id="idqs4t" aria-label="Enter Zip Code" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="text" name="given_name_4597" id="given_name_4352" placeholder="First Name" data-moz-autofill-type="given-name">
+    <input type="text" name="fname" id="id5d" aria-label="First Name" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <input type="text" name="family_name_4862" id="family_name_8017" placeholder="Last Name" data-moz-autofill-type="family-name">
+    <span>Last Name</span>
+    <input type="text" name="billing_last_name" id="idxdp" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <input type="email" name="email_5175" id="email_7264" placeholder="Email" data-moz-autofill-type="email">
+    <label>Email
+    <input type="email" name="email" id="idrew" data-moz-autofill-type="email">
+    </label>
   </div>
   <div>
-    <select name="cc_type_3001" id="cc_type_273" data-moz-autofill-type="cc-type">
+    <label for="idin">Credit Card Type</label>
+    <select name="ccType" id="idin" data-moz-autofill-type="cc-type">
   <option value=""></option>
   <option>Visa</option>
   <option>MasterCard</option>
@@ -31,251 +35,424 @@
 </select>
   </div>
   <div>
-    <input type="number" name="cc_number_8056" id="cc_number_931" placeholder="Credit Card Number" data-moz-autofill-type="cc-number">
+    <input type="number" name="cardNumber" id="idfw2" aria-label="New Credit Card Number" data-moz-autofill-type="cc-number">
   </div>
   <div>
-    <input type="text" name="cc_name_750" id="cc_name_8499" placeholder="Name on Card" data-moz-autofill-type="cc-name">
+    <label for="idmgmz">Name on Card</label>
+    <input type="text" name="nameOnCard" id="idmgmz" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <input type="text" name="cc_exp_2254" id="cc_exp_6162" placeholder="MM/YYYY" data-moz-autofill-type="cc-exp">
+    <label for="idh0">Expiration Date (MM/YYYY)</label>
+    <input type="text" name="exp" id="idh0" placeholder="Expiration Date (MM/YYYY)" data-moz-autofill-type="cc-exp">
   </div>
   <div>
-    <input type="text" name="given_name_1038" id="given_name_4083" placeholder="Set as Default" data-moz-autofill-type="given-name">
+    <input type="text" name="givenName" id="idrpjo" aria-label="Set as Default" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <input type="text" name="family_name_8638" id="family_name_385" placeholder="Last Name" data-moz-autofill-type="family-name">
+    <span>Last</span>
+    <input type="text" name="last_name" id="idtai" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <input type="text" name="address_line1_9234" id="address_line1_9030" placeholder="Street Address" data-moz-autofill-type="address-line1">
+    <input type="text" name="street1" id="idg4k" aria-label="Street Address" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <input type="text" name="apartment_3901" id="apartment_4647" placeholder="Apt/Suite" data-moz-autofill-type="apartment">
+    <span>Apt/Suite</span>
+    <input type="text" name="apt" id="idupxl" data-moz-autofill-type="apartment">
   </div>
   <div>
-    <select name="address_level1_1349" id="address_level1_5977" data-moz-autofill-type="address-level1">
+    <label>State
+    <select name="stateProvince" id="id5r77d" data-moz-autofill-type="address-level1">
   <option value=""></option>
+  <option>Alabama</option>
+  <option>Alaska</option>
+  <option>Arizona</option>
+  <option>Arkansas</option>
   <option>California</option>
-  <option>Texas</option>
-  <option>New York</option>
+  <option>Colorado</option>
+  <option>Connecticut</option>
+  <option>Delaware</option>
   <option>Florida</option>
+  <option>Georgia</option>
+  <option>Hawaii</option>
+  <option>Idaho</option>
   <option>Illinois</option>
+  <option>Indiana</option>
+  <option>Iowa</option>
+  <option>Kansas</option>
+  <option>Kentucky</option>
+  <option>Louisiana</option>
+  <option>Maine</option>
+  <option>Maryland</option>
+  <option>Massachusetts</option>
+  <option>Michigan</option>
+  <option>Minnesota</option>
+  <option>Mississippi</option>
+  <option>Missouri</option>
+  <option>Montana</option>
+  <option>Nebraska</option>
+  <option>Nevada</option>
+  <option>New Hampshire</option>
+  <option>New Jersey</option>
+  <option>New Mexico</option>
+  <option>New York</option>
+  <option>North Carolina</option>
+  <option>North Dakota</option>
+  <option>Ohio</option>
+  <option>Oklahoma</option>
+  <option>Oregon</option>
   <option>Pennsylvania</option>
+  <option>Rhode Island</option>
+  <option>South Carolina</option>
+  <option>South Dakota</option>
+  <option>Tennessee</option>
+  <option>Texas</option>
+  <option>Utah</option>
+  <option>Vermont</option>
+  <option>Virginia</option>
+  <option>Washington</option>
+  <option>West Virginia</option>
+  <option>Wisconsin</option>
+  <option>Wyoming</option>
 </select>
+    </label>
   </div>
   <div>
-    <input type="text" name="postal_code_4279" id="postal_code_1611" placeholder="Zip Code" data-moz-autofill-type="postal-code">
+    <label>Zip Code
+    <input type="text" name="zip" id="ido9cc" data-moz-autofill-type="postal-code">
+    </label>
   </div>
   <div>
-    <input type="text" name="address_level2_2329" id="address_level2_3460" placeholder="City" data-moz-autofill-type="address-level2">
+    <label>City
+    <input type="text" name="city" id="idfjv" data-moz-autofill-type="address-level2">
+    </label>
   </div>
   <div>
-    <input type="tel" name="address_level1_7643" id="address_level1_1399" placeholder="Phone Number" data-moz-autofill-type="address-level1">
-  </div>
-  <div>
-    <input type="email" name="postal_code_2688" id="postal_code_1527" placeholder="Email" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <input type="text" name="tel_5960" id="tel_7463" placeholder="First" data-moz-autofill-type="tel">
-  </div>
-  <div>
-    <input type="text" name="email_2487" id="email_8301" placeholder="Last" data-moz-autofill-type="email">
-  </div>
-  <div>
-    <input type="text" name="given_name_5505" id="given_name_5777" placeholder="Street" data-moz-autofill-type="given-name">
-  </div>
-  <div>
-    <input type="text" name="family_name_3216" id="family_name_1805" placeholder="Apt/Suite" data-moz-autofill-type="family-name">
-  </div>
-  <div>
-    <select name="address_line1_3382" id="address_line1_6752" data-moz-autofill-type="address-line1">
+    <select name="region" id="idjff" data-moz-autofill-type="address-level1">
   <option value=""></option>
+  <option>Alabama</option>
+  <option>Alaska</option>
+  <option>Arizona</option>
+  <option>Arkansas</option>
   <option>California</option>
-  <option>Texas</option>
-  <option>New York</option>
+  <option>Colorado</option>
+  <option>Connecticut</option>
+  <option>Delaware</option>
   <option>Florida</option>
+  <option>Georgia</option>
+  <option>Hawaii</option>
+  <option>Idaho</option>
   <option>Illinois</option>
+  <option>Indiana</option>
+  <option>Iowa</option>
+  <option>Kansas</option>
+  <option>Kentucky</option>
+  <option>Louisiana</option>
+  <option>Maine</option>
+  <option>Maryland</option>
+  <option>Massachusetts</option>
+  <option>Michigan</option>
+  <option>Minnesota</option>
+  <option>Mississippi</option>
+  <option>Missouri</option>
+  <option>Montana</option>
+  <option>Nebraska</option>
+  <option>Nevada</option>
+  <option>New Hampshire</option>
+  <option>New Jersey</option>
+  <option>New Mexico</option>
+  <option>New York</option>
+  <option>North Carolina</option>
+  <option>North Dakota</option>
+  <option>Ohio</option>
+  <option>Oklahoma</option>
+  <option>Oregon</option>
   <option>Pennsylvania</option>
+  <option>Rhode Island</option>
+  <option>South Carolina</option>
+  <option>South Dakota</option>
+  <option>Tennessee</option>
+  <option>Texas</option>
+  <option>Utah</option>
+  <option>Vermont</option>
+  <option>Virginia</option>
+  <option>Washington</option>
+  <option>West Virginia</option>
+  <option>Wisconsin</option>
+  <option>Wyoming</option>
 </select>
   </div>
   <div>
-    <input type="text" name="address_line2_8086" id="address_line2_9017" placeholder="Zip" data-moz-autofill-type="address-line2">
+    <label for="id7a1">Zip Code</label>
+    <input type="text" name="postcode" id="id7a1" placeholder="Zip Code" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="text" name="address_level1_1427" id="address_level1_1971" placeholder="City" data-moz-autofill-type="address-level1">
+    <label>Phone Number
+    <input type="tel" name="phoneNumber" id="idwy02" data-moz-autofill-type="tel">
+    </label>
   </div>
   <div>
-    <select name="postal_code_6854" id="postal_code_7313" data-moz-autofill-type="postal-code">
+    <label for="idpzqi6">Email</label>
+    <input type="email" name="email" id="idpzqi6" placeholder="Email" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="id0xsly">First</label>
+    <input type="text" name="billing_first_name" id="id0xsly" placeholder="First" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label>Last
+    <input type="text" name="last_name" id="idtbzjh" data-moz-autofill-type="family-name">
+    </label>
+  </div>
+  <div>
+    <label for="idglq">Street Address</label>
+    <input type="text" name="address1" id="idglq" placeholder="Street Address" data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <label for="idcg9">Apt/Suite</label>
+    <input type="text" name="address2" id="idcg9" placeholder="Apt/Suite" data-moz-autofill-type="address-line2">
+  </div>
+  <div>
+    <label for="idtx">State</label>
+    <select name="region" id="idtx" data-moz-autofill-type="address-level1">
   <option value=""></option>
+  <option>Alabama</option>
+  <option>Alaska</option>
+  <option>Arizona</option>
+  <option>Arkansas</option>
   <option>California</option>
-  <option>Texas</option>
-  <option>New York</option>
+  <option>Colorado</option>
+  <option>Connecticut</option>
+  <option>Delaware</option>
   <option>Florida</option>
+  <option>Georgia</option>
+  <option>Hawaii</option>
+  <option>Idaho</option>
   <option>Illinois</option>
+  <option>Indiana</option>
+  <option>Iowa</option>
+  <option>Kansas</option>
+  <option>Kentucky</option>
+  <option>Louisiana</option>
+  <option>Maine</option>
+  <option>Maryland</option>
+  <option>Massachusetts</option>
+  <option>Michigan</option>
+  <option>Minnesota</option>
+  <option>Mississippi</option>
+  <option>Missouri</option>
+  <option>Montana</option>
+  <option>Nebraska</option>
+  <option>Nevada</option>
+  <option>New Hampshire</option>
+  <option>New Jersey</option>
+  <option>New Mexico</option>
+  <option>New York</option>
+  <option>North Carolina</option>
+  <option>North Dakota</option>
+  <option>Ohio</option>
+  <option>Oklahoma</option>
+  <option>Oregon</option>
   <option>Pennsylvania</option>
+  <option>Rhode Island</option>
+  <option>South Carolina</option>
+  <option>South Dakota</option>
+  <option>Tennessee</option>
+  <option>Texas</option>
+  <option>Utah</option>
+  <option>Vermont</option>
+  <option>Virginia</option>
+  <option>Washington</option>
+  <option>West Virginia</option>
+  <option>Wisconsin</option>
+  <option>Wyoming</option>
 </select>
   </div>
   <div>
-    <input type="text" name="address_level2_7517" id="address_level2_4481" placeholder="Zip" data-moz-autofill-type="address-level2">
+    <label for="idu1gia">Zip Code</label>
+    <input type="text" name="zip_code" id="idu1gia" placeholder="Zip Code" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <input type="tel" name="address_level1_4649" id="address_level1_4080" placeholder="Phone Number" data-moz-autofill-type="address-level1">
+    <label>City
+    <input type="text" name="locality" id="idpq71b" data-moz-autofill-type="address-level2">
+    </label>
   </div>
   <div>
-    <input type="email" name="postal_code_9675" id="postal_code_9322" placeholder="Email" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <input type="text" name="tel_2519" id="tel_3813" placeholder="Enter Zip Code" data-moz-autofill-type="tel">
-  </div>
-  <div>
-    <input type="text" name="email_1153" id="email_4619" placeholder="Please tell us a little about yourself to complete your Ace Rewards registration." data-moz-autofill-type="email">
-  </div>
-  <div>
-    <input type="text" name="postal_code_3575" id="postal_code_5109" placeholder="Last Name" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <input type="text" name="given_name_291" id="given_name_2193" placeholder="Street Address" data-moz-autofill-type="given-name">
-  </div>
-  <div>
-    <input type="text" name="family_name_7205" id="family_name_6854" placeholder="Zip Code" data-moz-autofill-type="family-name">
-  </div>
-  <div>
-    <input type="text" name="street_address_2425" id="street_address_9619" placeholder="City" data-moz-autofill-type="street-address">
-  </div>
-  <div>
-    <select name="postal_code_1696" id="postal_code_9846" data-moz-autofill-type="postal-code">
+    <label>State
+    <select name="region" id="idcy" data-moz-autofill-type="address-level1">
   <option value=""></option>
+  <option>Alabama</option>
+  <option>Alaska</option>
+  <option>Arizona</option>
+  <option>Arkansas</option>
   <option>California</option>
-  <option>Texas</option>
-  <option>New York</option>
+  <option>Colorado</option>
+  <option>Connecticut</option>
+  <option>Delaware</option>
   <option>Florida</option>
+  <option>Georgia</option>
+  <option>Hawaii</option>
+  <option>Idaho</option>
   <option>Illinois</option>
+  <option>Indiana</option>
+  <option>Iowa</option>
+  <option>Kansas</option>
+  <option>Kentucky</option>
+  <option>Louisiana</option>
+  <option>Maine</option>
+  <option>Maryland</option>
+  <option>Massachusetts</option>
+  <option>Michigan</option>
+  <option>Minnesota</option>
+  <option>Mississippi</option>
+  <option>Missouri</option>
+  <option>Montana</option>
+  <option>Nebraska</option>
+  <option>Nevada</option>
+  <option>New Hampshire</option>
+  <option>New Jersey</option>
+  <option>New Mexico</option>
+  <option>New York</option>
+  <option>North Carolina</option>
+  <option>North Dakota</option>
+  <option>Ohio</option>
+  <option>Oklahoma</option>
+  <option>Oregon</option>
   <option>Pennsylvania</option>
+  <option>Rhode Island</option>
+  <option>South Carolina</option>
+  <option>South Dakota</option>
+  <option>Tennessee</option>
+  <option>Texas</option>
+  <option>Utah</option>
+  <option>Vermont</option>
+  <option>Virginia</option>
+  <option>Washington</option>
+  <option>West Virginia</option>
+  <option>Wisconsin</option>
+  <option>Wyoming</option>
 </select>
+    </label>
   </div>
   <div>
-    <input type="tel" name="address_level2_7898" id="address_level2_2815" placeholder="Phone Number" data-moz-autofill-type="address-level2">
+    <label for="idzp3b">Zip Code</label>
+    <input type="text" name="postcode" id="idzp3b" placeholder="Zip Code" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <select name="address_level1_799" id="address_level1_1885" data-moz-autofill-type="address-level1">
+    <label for="ids3">Phone Number</label>
+    <input type="tel" name="mobile" id="ids3" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <input type="email" name="email" id="id92" placeholder="Email" data-moz-autofill-type="email">
+  </div>
+  <div>
+    <label for="idfy">Email</label>
+    <input type="email" name="zipCode" id="idfy" placeholder="Email" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <span>*</span>
+    <input type="text" name="billing_first_name" id="id13p2" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <label for="idp9tpc">*</label>
+    <input type="text" name="lname" id="idp9tpc" placeholder="*" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <span>*</span>
+    <input type="text" name="streetAddress" id="idpny" data-moz-autofill-type="street-address">
+  </div>
+  <div>
+    <input type="text" name="zipCode" id="idh8pbn" aria-label="*" data-moz-autofill-type="postal-code">
+  </div>
+  <div>
+    <label for="idds">Sign up for Email Updates</label>
+    <input type="email" name="town" id="idds" data-moz-autofill-type="address-level2">
+  </div>
+  <div>
+    <label for="idizvod">Schedule</label>
+    <input type="text" name="state" id="idizvod" placeholder="Schedule" data-moz-autofill-type="address-level1">
+  </div>
+  <div>
+    <label for="idokye">Last Name</label>
+    <input type="text" name="phone" id="idokye" placeholder="Last Name" data-moz-autofill-type="tel">
+  </div>
+  <div>
+    <label>Phone Number
+    <input type="tel" name="exp_month" id="idaj6" data-moz-autofill-type="cc-exp-month">
+    </label>
+  </div>
+  <div>
+    <input type="email" name="first_name" id="id9zyoh" placeholder="Email" data-moz-autofill-type="given-name">
+  </div>
+  <div>
+    <span>Street Address</span>
+    <input type="text" name="last_name" id="idard9" data-moz-autofill-type="family-name">
+  </div>
+  <div>
+    <span>City</span>
+    <input type="text" name="addr1" id="idzoin" data-moz-autofill-type="address-line1">
+  </div>
+  <div>
+    <label for="id29">State</label>
+    <select name="street2" id="id29" data-moz-autofill-type="address-line2">
   <option value=""></option>
-  <option>January</option>
-  <option>February</option>
-  <option>March</option>
-  <option>April</option>
-  <option>May</option>
-  <option>June</option>
-  <option>July</option>
-  <option>August</option>
-  <option>September</option>
-  <option>October</option>
-  <option>November</option>
-  <option>December</option>
-</select>
-  </div>
-  <div>
-    <input type="text" name="tel_4326" id="tel_5452" placeholder="Title Placeholder" data-moz-autofill-type="tel">
-  </div>
-  <div>
-    <input type="text" name="cc_exp_month_4027" id="cc_exp_month_6125" placeholder="Last Name" data-moz-autofill-type="cc-exp-month">
-  </div>
-  <div>
-    <input type="text" name="given_name_3039" id="given_name_9749" placeholder="Street" data-moz-autofill-type="given-name">
-  </div>
-  <div>
-    <input type="text" name="family_name_9271" id="family_name_8096" placeholder="Apt/Suite" data-moz-autofill-type="family-name">
-  </div>
-  <div>
-    <select name="address_line1_8162" id="address_line1_4687" data-moz-autofill-type="address-line1">
-  <option value=""></option>
+  <option>Alabama</option>
+  <option>Alaska</option>
+  <option>Arizona</option>
+  <option>Arkansas</option>
   <option>California</option>
-  <option>Texas</option>
-  <option>New York</option>
+  <option>Colorado</option>
+  <option>Connecticut</option>
+  <option>Delaware</option>
   <option>Florida</option>
+  <option>Georgia</option>
+  <option>Hawaii</option>
+  <option>Idaho</option>
   <option>Illinois</option>
+  <option>Indiana</option>
+  <option>Iowa</option>
+  <option>Kansas</option>
+  <option>Kentucky</option>
+  <option>Louisiana</option>
+  <option>Maine</option>
+  <option>Maryland</option>
+  <option>Massachusetts</option>
+  <option>Michigan</option>
+  <option>Minnesota</option>
+  <option>Mississippi</option>
+  <option>Missouri</option>
+  <option>Montana</option>
+  <option>Nebraska</option>
+  <option>Nevada</option>
+  <option>New Hampshire</option>
+  <option>New Jersey</option>
+  <option>New Mexico</option>
+  <option>New York</option>
+  <option>North Carolina</option>
+  <option>North Dakota</option>
+  <option>Ohio</option>
+  <option>Oklahoma</option>
+  <option>Oregon</option>
   <option>Pennsylvania</option>
+  <option>Rhode Island</option>
+  <option>South Carolina</option>
+  <option>South Dakota</option>
+  <option>Tennessee</option>
+  <option>Texas</option>
+  <option>Utah</option>
+  <option>Vermont</option>
+  <option>Virginia</option>
+  <option>Washington</option>
+  <option>West Virginia</option>
+  <option>Wisconsin</option>
+  <option>Wyoming</option>
 </select>
   </div>
   <div>
-    <input type="text" name="address_line2_8770" id="address_line2_8594" placeholder="Zip" data-moz-autofill-type="address-line2">
+    <label for="idpw6w1">Zip Code</label>
+    <input type="text" name="region" id="idpw6w1" data-moz-autofill-type="address-level1">
   </div>
   <div>
-    <input type="text" name="address_level1_956" id="address_level1_1709" placeholder="City" data-moz-autofill-type="address-level1">
-  </div>
-  <div>
-    <select name="postal_code_5554" id="postal_code_3686" data-moz-autofill-type="postal-code">
-  <option value=""></option>
-  <option>California</option>
-  <option>Texas</option>
-  <option>New York</option>
-  <option>Florida</option>
-  <option>Illinois</option>
-  <option>Pennsylvania</option>
-</select>
-  </div>
-  <div>
-    <input type="text" name="address_level2_9171" id="address_level2_721" placeholder="Zip" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <input type="tel" name="address_level1_810" id="address_level1_9943" placeholder="Phone Number" data-moz-autofill-type="address-level1">
-  </div>
-  <div>
-    <input type="email" name="postal_code_1654" id="postal_code_3979" placeholder="Email" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <input type="email" name="tel_1495" id="tel_2523" placeholder="Email" data-moz-autofill-type="tel">
-  </div>
-  <div>
-    <input type="email" name="email_5519" id="email_5588" placeholder="Email" data-moz-autofill-type="email">
-  </div>
-  <div>
-    <input type="text" name="email_4785" id="email_2684" placeholder="*" data-moz-autofill-type="email">
-  </div>
-  <div>
-    <input type="text" name="email_2601" id="email_1450" placeholder="*" data-moz-autofill-type="email">
-  </div>
-  <div>
-    <input type="text" name="given_name_1399" id="given_name_6247" placeholder="*" data-moz-autofill-type="given-name">
-  </div>
-  <div>
-    <input type="text" name="family_name_2194" id="family_name_8801" placeholder="*" data-moz-autofill-type="family-name">
-  </div>
-  <div>
-    <input type="email" name="postal_code_159" id="postal_code_7136" placeholder="Sign up for email updates" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <input type="text" name="postal_code_9978" id="postal_code_5612" placeholder="Schedule" data-moz-autofill-type="postal-code">
-  </div>
-  <div>
-    <input type="text" name="email_4371" id="email_5928" placeholder="Last Name" data-moz-autofill-type="email">
-  </div>
-  <div>
-    <input type="tel" name="given_name_9477" id="given_name_6335" placeholder="Phone number" data-moz-autofill-type="given-name">
-  </div>
-  <div>
-    <input type="email" name="family_name_6871" id="family_name_7371" placeholder="Email" data-moz-autofill-type="family-name">
-  </div>
-  <div>
-    <input type="text" name="tel_1552" id="tel_7754" placeholder="Street Address" data-moz-autofill-type="tel">
-  </div>
-  <div>
-    <input type="text" name="email_4013" id="email_6725" placeholder="City" data-moz-autofill-type="email">
-  </div>
-  <div>
-    <select name="street_address_4396" id="street_address_2219" data-moz-autofill-type="street-address">
-  <option value=""></option>
-  <option>California</option>
-  <option>Texas</option>
-  <option>New York</option>
-  <option>Florida</option>
-  <option>Illinois</option>
-  <option>Pennsylvania</option>
-</select>
-  </div>
-  <div>
-    <input type="text" name="address_level2_8402" id="address_level2_8918" placeholder="Zip Code" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <input type="text" name="address_level1_7097" id="address_level1_6896" placeholder="Enter Zip Code" data-moz-autofill-type="address-level1">
+    <input type="text" name="zip" id="id8toj" aria-label="Enter Zip Code" data-moz-autofill-type="postal-code">
   </div>
 </form>
 

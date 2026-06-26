@@ -10,14 +10,16 @@
 
 <form method="post">
   <div>
-    <label for="ccName">Kart Üzerindeki İsim</label>
-    <input type="text" name="ccName" id="ccName" placeholder="Adınız ve Soyadınız" data-moz-autofill-type="cc-name">
+    <label for="id3sw3v">Kart Üzerindeki İsim</label>
+    <input type="text" name="nameOnCard" id="id3sw3v" placeholder="Adınız ve Soyadınız" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <input type="number" name="ccNumber" id="ccNumber" placeholder="1234 5678 9012 3456" data-moz-autofill-type="cc-number">
+    <label>Kredi Kartı Numarası
+    <input type="number" name="card_number" id="idq4" placeholder="Kart numaranızı girin" data-moz-autofill-type="cc-number">
+    </label>
   </div>
   <div>
-    <select name="ccExpMonth" id="ccExpMonth" aria-label="Son Kullanma Ayı" data-moz-autofill-type="cc-exp-month">
+    <select name="ccExpMonth" id="id19" aria-label="Son Kullanma Ayı" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
   <option>Ocak</option>
   <option>Şubat</option>
@@ -34,7 +36,7 @@
 </select>
   </div>
   <div>
-    <select name="ccExpYear" id="ccExpYear" aria-label="Son Kullanma Yılı" data-moz-autofill-type="cc-exp-year">
+    <select name="exp_year" id="iddfsjb" data-moz-autofill-type="cc-exp-year">
   <option value=""></option>
   <option>2023</option>
   <option>2024</option>
@@ -47,16 +49,16 @@
 </select>
   </div>
   <div>
-    <label for="ccCsc">Güvenlik Kodu (CVC)</label>
-    <input type="number" name="ccCsc" id="ccCsc" placeholder="XXX" data-moz-autofill-type="cc-csc">
+    <label for="idzn">Güvenlik Kodu</label>
+    <input type="number" name="cvc" id="idzn" placeholder="Arka taraftaki 3 haneli kod" data-moz-autofill-type="cc-csc">
   </div>
   <div>
-    <label for="ccType">Kart Tipi</label>
-    <select name="ccType" id="ccType" data-moz-autofill-type="cc-type">
+    <select name="ccType" id="idmw" data-moz-autofill-type="cc-type">
   <option value=""></option>
   <option>Visa</option>
-  <option>MasterCard</option>
+  <option>Mastercard</option>
   <option>American Express</option>
+  <option>Diners Club</option>
   <option>Discover</option>
 </select>
   </div>

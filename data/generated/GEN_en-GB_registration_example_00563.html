@@ -27,19 +27,33 @@
   </div>
   <div>
     <span>Street Address</span>
-    <input type="text" name="idzuld" id="idat9" placeholder="123 Main Street" data-moz-autofill-type="street-address">
+    <input type="text" name="idzuld" id="idat9" placeholder="123 Example Street" data-moz-autofill-type="street-address">
   </div>
   <div>
     <span>Postcode</span>
-    <input type="text" name="idtbn" id="iduwfg" placeholder="E.g. SW1A 1AA" data-moz-autofill-type="postal-code">
+    <input type="text" name="idtbn" id="iduwfg" placeholder="E.g. AB12 3CD" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <span>City/Town</span>
+    <span>City or Town</span>
     <input type="text" name="idqga0" id="id7et3n" placeholder="Enter your city or town" data-moz-autofill-type="address-level2">
   </div>
   <div>
     <span>County</span>
-    <input type="text" name="idur" id="idfgb8" placeholder="Enter your county" data-moz-autofill-type="address-level1">
+    <select name="idur" id="idfgb8" data-moz-autofill-type="address-level1">
+  <option value=""></option>
+  <option>Bedfordshire</option>
+  <option>Birmingham</option>
+  <option>Camden</option>
+  <option>Devon</option>
+  <option>Essex</option>
+  <option>Glasgow</option>
+  <option>Hampshire</option>
+  <option>Kent</option>
+  <option>Manchester</option>
+  <option>Merseyside</option>
+  <option>Surrey</option>
+  <option>West Yorkshire</option>
+</select>
   </div>
   <div>
     <span>Country</span>
@@ -47,15 +61,17 @@
   <option value=""></option>
   <option>United Kingdom</option>
   <option>Ireland</option>
-  <option>Germany</option>
   <option>France</option>
+  <option>Germany</option>
   <option>Spain</option>
   <option>Italy</option>
+  <option>Netherlands</option>
+  <option>Sweden</option>
 </select>
   </div>
   <div>
     <span>Phone Number</span>
-    <input type="tel" name="iddc" id="id7v2it" placeholder="E.g. 020 7946 0958" data-moz-autofill-type="tel">
+    <input type="tel" name="iddc" id="id7v2it" placeholder="E.g. 020 1234 5678" data-moz-autofill-type="tel">
   </div>
   <div>
     <span>Credit Card Number</span>
@@ -66,25 +82,25 @@
     <input type="number" name="id86a" id="idm7s99" placeholder="Enter the 3-digit code" data-moz-autofill-type="cc-csc">
   </div>
   <div>
-    <span>Name on Card</span>
-    <input type="text" name="id8nau" id="idgz" placeholder="As it appears on the card" data-moz-autofill-type="cc-name">
+    <span>Cardholder Name</span>
+    <input type="text" name="id8nau" id="idgz" placeholder="Name on the card" data-moz-autofill-type="cc-name">
   </div>
   <div>
     <span>Expiry Month</span>
     <select name="idq3s" id="idm93i" data-moz-autofill-type="cc-exp-month">
   <option value=""></option>
-  <option>01 - January</option>
-  <option>02 - February</option>
-  <option>03 - March</option>
-  <option>04 - April</option>
-  <option>05 - May</option>
-  <option>06 - June</option>
-  <option>07 - July</option>
-  <option>08 - August</option>
-  <option>09 - September</option>
-  <option>10 - October</option>
-  <option>11 - November</option>
-  <option>12 - December</option>
+  <option>01</option>
+  <option>02</option>
+  <option>03</option>
+  <option>04</option>
+  <option>05</option>
+  <option>06</option>
+  <option>07</option>
+  <option>08</option>
+  <option>09</option>
+  <option>10</option>
+  <option>11</option>
+  <option>12</option>
 </select>
   </div>
   <div>
@@ -102,48 +118,64 @@
 </select>
   </div>
   <div>
-    <span>First Name (Duplicate)</span>
-    <input type="text" name="iddvma" id="iduccd" placeholder="Enter your first name again" data-moz-autofill-type="given-name">
+    <span>First Name (Billing)</span>
+    <input type="text" name="iddvma" id="iduccd" placeholder="Enter your first name" data-moz-autofill-type="given-name">
   </div>
   <div>
-    <span>Last Name (Duplicate)</span>
-    <input type="text" name="idnri" id="iduqfcr" placeholder="Enter your last name again" data-moz-autofill-type="family-name">
+    <span>Last Name (Billing)</span>
+    <input type="text" name="idnri" id="iduqfcr" placeholder="Enter your last name" data-moz-autofill-type="family-name">
   </div>
   <div>
-    <span>Company Name (Duplicate)</span>
-    <input type="text" name="idpb9" id="idl9x4" placeholder="Enter your company name again" data-moz-autofill-type="organization">
+    <span>Company Name (Billing)</span>
+    <input type="text" name="idpb9" id="idl9x4" placeholder="Enter your company name" data-moz-autofill-type="organization">
   </div>
   <div>
-    <span>Address Line 1</span>
-    <input type="text" name="idtg" id="idwr5o5" placeholder="E.g. Flat 1" data-moz-autofill-type="address-line1">
+    <span>Billing Address Line 1</span>
+    <input type="text" name="idtg" id="idwr5o5" placeholder="Street and number" data-moz-autofill-type="address-line1">
   </div>
   <div>
-    <span>Postcode (Duplicate)</span>
-    <input type="text" name="idoz" id="idm5c0l" placeholder="E.g. SW1A 1AA" data-moz-autofill-type="postal-code">
+    <span>Billing Postcode</span>
+    <input type="text" name="idoz" id="idm5c0l" placeholder="E.g. AB12 3CD" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <span>City/Town (Duplicate)</span>
-    <input type="text" name="idzgu" id="idgw" placeholder="Enter your city or town again" data-moz-autofill-type="address-level2">
+    <span>Billing City or Town</span>
+    <input type="text" name="idzgu" id="idgw" placeholder="Enter your city or town" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <span>County (Duplicate)</span>
-    <input type="text" name="idtaq0l" id="idpg" placeholder="Enter your county again" data-moz-autofill-type="address-level1">
+    <span>Billing County</span>
+    <select name="idtaq0l" id="idpg" data-moz-autofill-type="address-level1">
+  <option value=""></option>
+  <option>Bedfordshire</option>
+  <option>Birmingham</option>
+  <option>Camden</option>
+  <option>Devon</option>
+  <option>Essex</option>
+  <option>Glasgow</option>
+  <option>Hampshire</option>
+  <option>Kent</option>
+  <option>Manchester</option>
+  <option>Merseyside</option>
+  <option>Surrey</option>
+  <option>West Yorkshire</option>
+</select>
   </div>
   <div>
-    <span>Country (Duplicate)</span>
+    <span>Billing Country</span>
     <select name="id89d" id="idxbpcq" data-moz-autofill-type="country">
   <option value=""></option>
   <option>United Kingdom</option>
   <option>Ireland</option>
-  <option>Germany</option>
   <option>France</option>
+  <option>Germany</option>
   <option>Spain</option>
   <option>Italy</option>
+  <option>Netherlands</option>
+  <option>Sweden</option>
 </select>
   </div>
   <div>
-    <span>Phone Number (Duplicate)</span>
-    <input type="tel" name="idgg" id="iddv" placeholder="E.g. 020 7946 0958 again" data-moz-autofill-type="tel">
+    <span>Billing Phone Number</span>
+    <input type="tel" name="idgg" id="iddv" placeholder="E.g. 020 1234 5678" data-moz-autofill-type="tel">
   </div>
 </form>
 

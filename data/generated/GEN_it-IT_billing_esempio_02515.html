@@ -5,66 +5,65 @@
 <body>
 
 <fieldset>
-<h3>esempio.it</h3>
+<h3>esempio.com</h3>
 <p><i>Synthetic sample (LLM-augmented).</i></p>
 
 <form method="post">
   <div>
-    <label for="cc_name_3835">Nome sulla carta</label>
-    <input type="text" name="cc_name_5537" id="cc_name_3835" placeholder="Nome e cognome" data-moz-autofill-type="cc-name">
+    <span>Nome sulla carta</span>
+    <input type="text" name="nameOnCard" id="id3a1" placeholder="Inserisci il nome come appare sulla carta" data-moz-autofill-type="cc-name">
   </div>
   <div>
-    <label for="street_address_161">Indirizzo</label>
-    <input type="text" name="street_address_7597" id="street_address_161" placeholder="Via e numero civico" data-moz-autofill-type="street-address">
+    <span>Indirizzo</span>
+    <input type="text" name="streetAddress" id="id9c" placeholder="Via e numero civico" data-moz-autofill-type="street-address">
   </div>
   <div>
-    <label for="address_line2_9636">Ulteriori informazioni sull&#x27;indirizzo (opzionale)</label>
-    <input type="text" name="address_line2_7208" id="address_line2_9636" placeholder="Es: appartamento, piano, interno" data-moz-autofill-type="address-line2">
+    <span>CAP</span>
+    <input type="text" name="postcode" id="id4vd" placeholder="Codice di avviamento postale" data-moz-autofill-type="postal-code">
   </div>
   <div>
-    <label for="postal_code_1508">Codice postale</label>
-    <input type="text" name="postal_code_3546" id="postal_code_1508" placeholder="Inserisci il codice postale" data-moz-autofill-type="postal-code">
+    <span>Città</span>
+    <input type="text" name="locality" id="id988le" placeholder="Nome della città" data-moz-autofill-type="address-level2">
   </div>
   <div>
-    <label for="address_level2_797">Città</label>
-    <input type="text" name="address_level2_9293" id="address_level2_797" placeholder="Nome della città" data-moz-autofill-type="address-level2">
-  </div>
-  <div>
-    <label for="address_level1_3698">Provincia</label>
-    <select name="address_level1_7583" id="address_level1_3698" data-moz-autofill-type="address-level1">
+    <span>Provincia</span>
+    <select name="stateProvince" id="idzjqu" data-moz-autofill-type="address-level1">
   <option value=""></option>
   <option>Roma</option>
   <option>Milano</option>
+  <option>Napoli</option>
   <option>Torino</option>
   <option>Firenze</option>
   <option>Bologna</option>
-  <option>Napoli</option>
-  <option>Palermo</option>
   <option>Genova</option>
+  <option>Palermo</option>
+  <option>Bari</option>
+  <option>Verona</option>
 </select>
   </div>
   <div>
-    <label for="country_name_5523">Paese</label>
-    <select name="country_name_8029" id="country_name_5523" data-moz-autofill-type="country-name">
+    <span>Nazione</span>
+    <select name="country" id="id7ekm1" data-moz-autofill-type="country-name">
   <option value=""></option>
   <option>Italia</option>
-  <option>Spagna</option>
   <option>Francia</option>
   <option>Germania</option>
+  <option>Spagna</option>
   <option>Regno Unito</option>
   <option>Stati Uniti</option>
+  <option>Canada</option>
+  <option>Australia</option>
+  <option>Giappone</option>
+  <option>Cina</option>
 </select>
   </div>
   <div>
-    <label for="organization_9337">Nome dell&#x27;azienda (se applicabile)</label>
-    <input type="text" name="organization_980" id="organization_9337" placeholder="Nome della tua azienda" data-moz-autofill-type="organization">
+    <span>Azienda</span>
+    <input type="text" name="organization" id="idir" placeholder="Nome dell&#x27;azienda (se applicabile)" data-moz-autofill-type="organization">
   </div>
   <div>
-    <label for="tel_7642">Numero di telefono</label>
-    <input type="tel" name="tel_9091" id="tel_7642" placeholder="Es: +39 012 345 6789" data-moz-autofill-type="tel">
-  </div>
-  <div>
-    <button name="field_9254" id="field_8896" type="submit">Invia</button>
+    <span>Telefono</span>
+    <input type="tel" name="mobile" id="ideqmx" placeholder="Numero di telefono" data-moz-autofill-type="tel">
   </div>
 </form>
 
