@@ -16,6 +16,7 @@ from datasets import Dataset
 import os
 import sys
 import time
+import random
 import numpy as np
 import torch
 
@@ -130,6 +131,56 @@ def reformat_context(text, fmt="bb"):
   prev_marker, next_marker = ("[SEP]", "[SEP]") if fmt == "sep" else (PREV_SYMBOL, NEXT_SYMBOL)
   return (f"{' '.join(current)} {prev_marker} {' '.join(previous)} "
           f"{next_marker} {' '.join(nxt)}")
+
+
+# Seed for reproducible synthetic-data subsampling (so the kept rows are the
+# same across runs and comparable).
+SUBSAMPLE_SEED = 189
+
+
+def dataset_source(filename):
+  """Classify a dataset row by its source from the filename prefix.
+
+  'gen'  -> GEN_*  (generated/synthetic forms)
+  'cc'   -> CC_*   (generated credit-card forms)
+  'real' -> everything else (QA crawled sites, language/country, bare files)
+  """
+  head = (filename or "").split("_", 1)[0]
+  if head == "GEN":
+    return "gen"
+  if head == "CC":
+    return "cc"
+  return "real"
+
+
+def _subsample_sources(records, cfg):
+  """Subsample synthetic sources (gen/cc) down to a target ratio of real rows.
+
+  records is a list of (source, example) tuples. genToRealRatio / ccToRealRatio
+  cap that source at ratio * (#real rows); a ratio <= 0 disables subsampling for
+  that source (keep all). Only ever downsamples -- never upsamples. Real rows are
+  always kept. Reproducible via SUBSAMPLE_SEED.
+  """
+  ratios = {"gen": cfg.genToRealRatio, "cc": cfg.ccToRealRatio}
+  if all(r <= 0 for r in ratios.values()):
+    return records
+  by_src = {"gen": [], "cc": [], "real": []}
+  for src, rec in records:
+    by_src[src].append((src, rec))
+  n_real = len(by_src["real"])
+  rng = random.Random(SUBSAMPLE_SEED)
+  kept = list(by_src["real"])
+  for src in ("gen", "cc"):
+    rows = by_src[src]
+    ratio = ratios[src]
+    if ratio > 0:
+      target = int(ratio * n_real)
+      if len(rows) > target:
+        rows = rng.sample(rows, target)
+      print(f"  subsample {src}: {len(by_src[src])} -> {len(rows)} "
+            f"(ratio {ratio} x {n_real} real rows)")
+    kept.extend(rows)
+  return kept
 
 
 def compute_standard_metrics(y_test, y_pred, print_report=False):
@@ -250,6 +301,13 @@ class Config:
     # regroups them into [SEP]-delimited sections with plain words. Applied to
     # training, validation and evaluation so train/eval stay consistent.
     contextFormat: str = "bb"
+
+    # Cap synthetic training data relative to real (crawled) data to curb
+    # overfitting to templated synthetic forms. Each ratio bounds that source at
+    # ratio * (#real rows); <= 0 disables subsampling for that source (keep all).
+    # Applied to the training set only (see readFile / _subsample_sources).
+    genToRealRatio: float = 0.0   # GEN_* generated forms
+    ccToRealRatio: float = 0.0    # CC_* credit-card forms
 
     # Training hyperparameters. Defaults match the HF Trainer defaults so that
     # leaving them unset reproduces the previous behavior. learningRate of 0.0
@@ -437,6 +495,8 @@ def wandb_config(cfg):
     "train_file": cfg.trainFile,
     "english_only": cfg.englishOnly,
     "context_format": cfg.contextFormat,
+    "gen_to_real_ratio": cfg.genToRealRatio,
+    "cc_to_real_ratio": cfg.ccToRealRatio,
     "learning_rate": cfg.learningRate,
     "train_batch_size": cfg.trainBatchSize,
     "eval_batch_size": cfg.evalBatchSize,
@@ -450,7 +510,6 @@ def wandb_config(cfg):
 def readFile(filetype, cfg):
   if cfg.contextFormat not in CONTEXT_FORMATS:
     raise ValueError(f"Unknown context_format {cfg.contextFormat!r}; expected one of {CONTEXT_FORMATS}")
-  list = []
 
   # Allow training to read from an explicit file (e.g. an expanded dataset);
   # otherwise derive the name from the filetype and data variant.
@@ -462,23 +521,29 @@ def readFile(filetype, cfg):
   file = open(dataset_path(filename), encoding="utf-8")
   lines = file.readlines()
 
+  records = []  # (source, {"label", "text"})
   for line in lines:
     line = line.strip()
     lineData = line.split(",", ignoreLineCount + 1)
-    if cfg.englishOnly:
-      src = lineData[0] if len(lineData) > ignoreLineCount else ""
-      if not classify_locale(src)[2]:
-        continue
-    print(lineData)
+    src = lineData[0] if len(lineData) > ignoreLineCount else ""
+    if cfg.englishOnly and not classify_locale(src)[2]:
+      continue
     try:
-      list.append({
+      rec = {
         "label": int(lineData[ignoreLineCount]),
         "text": reformat_context(lineData[ignoreLineCount + 1], cfg.contextFormat),
-      })
+      }
     except Exception:
       print(filetype + ".txt : " + line)
       raise
-  dataset = Dataset.from_list(list)
+    records.append((dataset_source(src), rec))
+
+  # Only the training set is rebalanced; validation/testing keep their full
+  # distribution so eval/model-selection stay comparable across runs.
+  if filetype == "training":
+    records = _subsample_sources(records, cfg)
+
+  dataset = Dataset.from_list([rec for _src, rec in records])
   return dataset
 
 def select_device():

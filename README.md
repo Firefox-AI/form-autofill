@@ -1,5 +1,6 @@
-Instructions on how to run are in dotraining.py 
+Tools for training the local Auto Form Fill model. 
 
+Instructions on how to run are in autofill_flow.py
 
 
 Quantizing and evaluating a trained model

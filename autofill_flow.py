@@ -211,6 +211,21 @@ class AutofillFlow(FlowSpec):
              "§ next). Reformatted on the fly; data files unchanged.",
         default="bb",
     )
+    gen_to_real_ratio = Parameter(
+        "gen_to_real_ratio",
+        help="Cap GEN_* (synthetic) training rows at this ratio of real rows to "
+             "reduce overfit, e.g. 1.0 = at most 1x as many GEN as real. "
+             "<=0 keeps all. Subsamples on the fly; data files unchanged.",
+        default=0.0,
+        type=float,
+    )
+    cc_to_real_ratio = Parameter(
+        "cc_to_real_ratio",
+        help="Cap CC_* (common crawl) training rows at this ratio of real rows. "
+             "<=0 keeps all. Subsamples on the fly; data files unchanged.",
+        default=0.0,
+        type=float,
+    )
     eval_dataset = Parameter(
         "eval_dataset",
         help="Base name of the dataset to evaluate against (e.g. 'testing' or 'together').",
@@ -279,6 +294,8 @@ class AutofillFlow(FlowSpec):
             trainFile=self.train_file,
             englishOnly=self.english_only,
             contextFormat=self.context_format,
+            genToRealRatio=self.gen_to_real_ratio,
+            ccToRealRatio=self.cc_to_real_ratio,
             learningRate=self.learning_rate,
             trainBatchSize=self.train_batch_size,
             evalBatchSize=self.eval_batch_size,
@@ -309,6 +326,7 @@ class AutofillFlow(FlowSpec):
               f"({self.num_epochs} epochs, variant '{self.data_variant}', "
               f"train_file '{train_file}', english_only={self.english_only}, "
               f"context_format={self.context_format}, "
+              f"gen_ratio={self.gen_to_real_ratio}, cc_ratio={self.cc_to_real_ratio}, "
               f"lora={self.use_lora}, lr={self.learning_rate or 'auto'}, "
               f"train_batch={self.train_batch_size})")
         self.next(self.train)
