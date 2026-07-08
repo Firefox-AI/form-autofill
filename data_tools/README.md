@@ -153,7 +153,7 @@ accuracy and the most common mislabels. Read-only — never modifies data.
 python evaluate_labels.py --n 100                              # 100 from each dir
 python evaluate_labels.py --n 120 --require-type address-line1 \
        --dump /tmp/verdicts.jsonl                              # focus one field type
-```
+```	
 
 Key flags: `--n` (forms per dir), `--model` (default `gpt-4o`), `--concurrency`,
 `--seed`, `--require-type` (only audit forms containing this token), `--dump`

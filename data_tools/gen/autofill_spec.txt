@@ -173,6 +173,10 @@ username
 
         Each individual line of the street address. These should only be present if the street-address is not present.
 
+There are a couple of types beyond that that are more rare
+address-housenumber: the street number by itself 
+address-extra-housesuffix: Which is mainly used in Netherlands for the street number suffix (the 'A' or 'B' after a house number)
+
 address-level4
 
     The finest-grained administrative level, in addresses which have four levels.
@@ -299,6 +303,7 @@ The address levels are:
 
 The postcode is separate. Note that you can actually use just the postcode and address-line1 to successfully deliver mail in the UK, so they should be the only mandatory items, but usually people tend to provide more details.
 China
+
 
 China can use as many as three administrative levels: the province, the city, and the district.
 

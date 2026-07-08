@@ -32,6 +32,9 @@ from gen.validate import ELEMENTS, NONFILL, valid_types
 PRICING = {
     "gpt-4o-mini": (0.15, 0.60),
     "gpt-4o": (2.50, 10.00),
+    "gpt-4.1": (2.00, 8.00),
+    "o4-mini": (1.10, 4.40),
+    "o3": (10.00, 40.00),
 }
 
 # Only transient failures are retried. Auth/permission/bad-request (4xx other
@@ -148,18 +151,25 @@ def _build_user_prompt(params: GenParams) -> str:
     stop=stop_after_attempt(5),
     reraise=True,
 )
+def _is_reasoning_model(model: str) -> bool:
+    return model.startswith(("o1", "o3", "o4"))
+
+
 async def _chat_json(client: AsyncOpenAI, model: str, system: str, user: str,
                      schema: dict, seed: int, usage: Usage) -> dict:
-    resp = await client.chat.completions.create(
+    kwargs = dict(
         model=model,
         seed=seed,
-        temperature=0.85,
         messages=[
             {"role": "system", "content": system},
             {"role": "user", "content": user},
         ],
         response_format={"type": "json_schema", "json_schema": schema},
     )
+    # Reasoning models (o-series) only allow the default temperature.
+    if not _is_reasoning_model(model):
+        kwargs["temperature"] = 0.85
+    resp = await client.chat.completions.create(**kwargs)
     usage.add(resp.usage)
     return json.loads(resp.choices[0].message.content)
 
@@ -305,6 +315,10 @@ _LABEL_SYSTEM = (
     "message/comment boxes, newsletter checkboxes, search filters, etc.\n"
     "- A login/username field that is an email address is 'email'; a non-email "
     "account name is 'loginname'.\n"
+    "- Name: use 'given-name' + 'family-name' ONLY when the form has SEPARATE "
+    "first-name and last-name fields. A SINGLE name field with a generic label "
+    "('Name', 'Nombre', 'Nome', 'Full name', 'Your name') and no separate "
+    "surname field is a full name -> 'name', not 'given-name'.\n"
     "- Address lines: decide by whether the form has a SECOND address line — "
     "either another street line OR an 'Apartment / Suite / Unit / Flat / Floor' "
     "field. If there IS a second line, label the FIRST as 'address-line1' and the "
@@ -397,9 +411,33 @@ _AUDIT_SYSTEM_TEMPLATE = (
     "reference-point). Treat these as CORRECT when they accurately describe the "
     "field — do NOT mark a field incorrect merely because its token is not in the "
     "specification text.\n"
-    "- Mark 'incorrect' only when the token does not match the field's meaning; "
-    "then put the token you would assign in 'suggested'. Use 'unsure' when the "
-    "context is too ambiguous to tell. For 'correct'/'unsure', set suggested to ''.\n"
+    "- COMBINED vs SPLIT fields — a form may use ONE combined field OR separate "
+    "component fields, and BOTH are correct. Never suggest splitting a combined "
+    "field or combining components:\n"
+    "    * name (full) vs given-name + family-name (+ additional-name): if the "
+    "form has separate first/last-name fields, keep them (do not suggest 'name'); "
+    "if it has a single full-name field, keep 'name' (do not suggest 'given-name').\n"
+    "    * street-address (single) vs address-line1 + address-line2: a lone "
+    "combined street field is 'street-address'; only when a second line "
+    "(address-line2/apartment/floor) is present is the first 'address-line1'.\n"
+    "    * bday (full date) vs bday-day / bday-month / bday-year: a single date "
+    "field is 'bday'; separate day/month/year inputs are the components.\n"
+    "    * tel (full number) vs tel-country-code / tel-area-code / tel-local / "
+    "tel-national: a single phone field is 'tel'; separate parts are components.\n"
+    "- CLOSE MATCHES — treat these as interchangeable and DO NOT flag: "
+    "street-address / address-line1 / street; address-line2 / apartment; "
+    "country / country-name; postal-code / postal-code-and-city.\n"
+    "- Use the element and options: a dropdown of months (01-12 or January…"
+    "December, or name like ExpMonth) is 'cc-exp-month'; a dropdown of years "
+    "(2020…2030 or ExpYear) is 'cc-exp-year'; use 'cc-exp' ONLY for a single "
+    "combined MM/YY field. The same logic applies to bday-month/bday-year/bday. "
+    "A shared group label like 'Expiration Date' on two separate selects does NOT "
+    "make them a combined field.\n"
+    "- Mark 'incorrect' only when the token does not match the field's meaning, "
+    "AND you can name a DIFFERENT, better token — put that in 'suggested'. It must "
+    "NOT equal the assigned token. If you cannot name a better token, answer "
+    "'correct' (or 'unsure' if the context is too ambiguous). For 'correct'/"
+    "'unsure', set suggested to ''.\n"
     "- Return exactly one entry per provided index."
 )
 
@@ -416,11 +454,14 @@ async def audit_form_labels(client: AsyncOpenAI, model: str, spec: str,
         return []
     lines = [f"form language hint: {lang or 'unknown'}", "Fields:"]
     for f in fields:
+        opts = f.get("options") or ""
+        opts = f" | options=[{opts[:120]}]" if opts else ""
         lines.append(
             f"  - index={f['index']} | assigned_token={f['autofill_type']} "
+            f"| element={f.get('element', '?')} "
             f"| label={(f.get('label') or '')[:100]!r} "
             f"| placeholder={(f.get('placeholder') or '')[:60]!r} "
-            f"| name={(f.get('name') or '')[:60]!r}"
+            f"| name={(f.get('name') or '')[:60]!r}{opts}"
         )
     system = _AUDIT_SYSTEM_TEMPLATE.format(spec=spec)
     result = await _chat_json(

@@ -27,7 +27,39 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
 from gen.llm import Usage, audit_form_labels
+from gen.params import SECOND_LINE_TOKENS
 from gen.validate import LABEL_ATTR
+
+
+def apply_address_scheme(fields: list[dict], verdicts: list[dict]) -> list[dict]:
+    """Deterministic post-process of the GPT-4 verdicts for the primary address
+    field, matching the generator/labeler convention: the primary address field
+    is 'address-line1' when a second line (address-line2/apartment/…) is adjacent
+    to it, else 'street-address'.
+
+    Uses the IMMEDIATE NEIGHBORS (previous/next labeled field) rather than the
+    whole form, so a form with multiple address sections is corrected per section
+    (e.g. a shipping block with line1+line2 next to a single billing field).
+    """
+    types = [f["autofill_type"] for f in fields]   # in document order
+    n = len(types)
+    vmap = {v["index"]: v for v in verdicts}
+    for k, f in enumerate(fields):
+        if types[k] not in ("address-line1", "street-address"):
+            continue
+        neighbors = ([types[k - 1]] if k > 0 else []) + ([types[k + 1]] if k < n - 1 else [])
+        has_second = any(nb in SECOND_LINE_TOKENS for nb in neighbors)
+        correct = "address-line1" if has_second else "street-address"
+        v = vmap.get(f["index"])
+        if v is None:
+            v = {"index": f["index"]}
+            verdicts.append(v)
+            vmap[f["index"]] = v
+        if types[k] == correct:
+            v["verdict"], v["suggested"] = "correct", ""
+        else:
+            v["verdict"], v["suggested"] = "incorrect", correct
+    return verdicts
 
 REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
 SPEC_PATH = os.path.join(REPO_ROOT, "gen", "autofill_spec.txt")
@@ -47,25 +79,34 @@ def lang_from_name(fname: str) -> str:
 
 
 def _field_label(el, soup) -> str:
-    """Best visible label for a field, scoped to its own container so we never
-    grab unrelated page text (e.g. the form's synthetic-sample note)."""
+    """Best visible label for a field. Ordered from most- to least-reliable so a
+    section heading in an ancestor can't override the field's own label/
+    placeholder (which caused e.g. a 'First name' field to be read as its
+    section's 'Street Edit' heading)."""
+    # 1. Explicit <label for=id> association.
     fid = el.get("id")
     if fid:
         lf = soup.find("label", attrs={"for": fid})
         if lf and lf.get_text(strip=True):
             return lf.get_text(" ", strip=True)
+    # 2. Wrapping <label>.
     par = el.find_parent("label")
     if par and par.get_text(strip=True):
         return par.get_text(" ", strip=True)
-    # A <label>/<span> within the field's immediate container.
-    container = el.find_parent(["div", "p", "td", "li", "fieldset"])
-    if container:
-        for tag in container.find_all(["label", "span"]):
-            t = tag.get_text(" ", strip=True)
-            if t:
-                return t[:120]
-    if el.get("aria-label"):
-        return el.get("aria-label")
+    # 3. The field's OWN attributes — specific and reliable.
+    for attr in ("placeholder", "aria-label", "title"):
+        if el.get(attr) and el.get(attr).strip():
+            return el.get(attr).strip()
+    # 4. A <label>/<span> in the field's IMMEDIATE wrapper — but only when that
+    #    wrapper holds a single field, so the label is unambiguously this field's.
+    #    This handles both "label then input" and "input then label" layouts
+    #    without grabbing a neighbor's label (which caused an off-by-one when
+    #    labels followed inputs) or a section heading from a big ancestor.
+    parent = el.parent
+    if parent is not None and len(parent.find_all(["input", "select", "textarea"])) <= 1:
+        lab = parent.find(["label", "span"])
+        if lab and lab.get_text(strip=True):
+            return lab.get_text(" ", strip=True)[:120]
     return ""
 
 
@@ -73,17 +114,59 @@ def extract_labeled_fields(soup) -> list[dict]:
     """Pull each labeled element with its best visible context, in order."""
     fields = []
     for i, el in enumerate(soup.select(f"[{LABEL_ATTR}]")):
+        element = el.name
+        if el.name == "input":
+            element = "input:" + (el.get("type") or "text").lower()
+        options = ""
+        if el.name == "select":
+            opts = [o.get_text(strip=True)
+                    for o in el.find_all("option") if o.get_text(strip=True)]
+            options = ", ".join(opts[:14])   # first 14 only, to bound prompt size
         fields.append({
             "index": i,
             "autofill_type": el.get(LABEL_ATTR),
             "label": _field_label(el, soup),
             "placeholder": el.get("placeholder", ""),
             "name": el.get("name", ""),
+            "element": element,
+            "options": options,
         })
     return fields
 
 
-async def audit_dir(client, model, spec, name, paths, usage, sem) -> dict:
+_NAME_COMPONENTS = ("given-name", "family-name", "additional-name")
+
+
+def apply_name_scheme(fields: list[dict], verdicts: list[dict]) -> list[dict]:
+    """Reconcile the combined 'name' vs split given/family-name convention, both
+    directions:
+      - split components (given/family) are correct when the form splits the name
+        (has both) -> don't 'correct' them to the combined 'name';
+      - a standalone 'name' field is a correct full-name field when NO name
+        component is adjacent to it -> don't 'correct' it into a component.
+    A form can contain both a split section and standalone name fields (e.g. a
+    recipient name), so the split check is form-level and the standalone check is
+    neighbor-based.
+    """
+    types = [f["autofill_type"] for f in fields]
+    n = len(types)
+    form_split = "given-name" in types and "family-name" in types
+    vmap = {v["index"]: v for v in verdicts}
+    for k, f in enumerate(fields):
+        v = vmap.get(f["index"])
+        if not v or v.get("verdict") != "incorrect":
+            continue
+        t, s = types[k], (v.get("suggested") or "")
+        if t in _NAME_COMPONENTS and s == "name" and form_split:
+            v["verdict"], v["suggested"] = "correct", ""
+        elif t == "name" and s in _NAME_COMPONENTS:
+            neigh = [types[j] for j in (k - 1, k + 1) if 0 <= j < n]
+            if not any(nb in _NAME_COMPONENTS for nb in neigh):
+                v["verdict"], v["suggested"] = "correct", ""
+    return verdicts
+
+
+async def audit_dir(client, model, spec, name, paths, usage, sem, overrides=True) -> dict:
     results = {"name": name, "forms": 0, "fields": 0,
                "correct": 0, "incorrect": 0, "unsure": 0,
                "mislabels": collections.Counter(), "examples": [], "records": []}
@@ -102,6 +185,9 @@ async def audit_dir(client, model, spec, name, paths, usage, sem) -> dict:
             except Exception as exc:  # noqa: BLE001
                 print(f"  ! {os.path.basename(path)}: {type(exc).__name__}: {exc}")
                 return None
+            if overrides:   # deterministic convention overrides (off to test prompt alone)
+                verdicts = apply_address_scheme(fields, verdicts)
+                verdicts = apply_name_scheme(fields, verdicts)
             by_idx = {f["index"]: f for f in fields}
             return os.path.basename(path), by_idx, verdicts
 
@@ -118,7 +204,8 @@ async def audit_dir(client, model, spec, name, paths, usage, sem) -> dict:
             results["fields"] += 1
             results[v["verdict"]] = results.get(v["verdict"], 0) + 1
             results["records"].append({
-                "dir": name, "file": fname, "assigned": f["autofill_type"],
+                "dir": name, "file": fname, "index": v["index"],
+                "assigned": f["autofill_type"],
                 "label": f["label"], "placeholder": f["placeholder"],
                 "verdict": v["verdict"], "suggested": v.get("suggested", ""),
             })
@@ -158,8 +245,9 @@ async def run(args) -> int:
     from openai import AsyncOpenAI
     client = AsyncOpenAI()
 
+    dirs = {os.path.basename(os.path.normpath(args.dir)): args.dir} if args.dir else DIRS
     all_results = []
-    for name, d in DIRS.items():
+    for name, d in dirs.items():
         files = sorted(glob.glob(os.path.join(d, "*.html")))
         if not files:
             print(f"[{name}] no files found in {d}, skipping")
@@ -172,7 +260,8 @@ async def run(args) -> int:
         sample = rng.sample(files, k=min(args.n, len(files)))
         print(f"[{name}] auditing {len(sample)} of {len(files)} forms...")
         all_results.append(
-            await audit_dir(client, args.model, spec, name, sample, usage, sem))
+            await audit_dir(client, args.model, spec, name, sample, usage, sem,
+                            overrides=args.overrides))
 
     print("\n" + "=" * 60)
     for r in all_results:
@@ -193,7 +282,14 @@ async def run(args) -> int:
 def parse_args(argv) -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--n", type=int, default=100, help="forms to sample per directory")
+    p.add_argument("--n", type=int, default=100,
+                   help="forms to sample per directory (use a large value to audit all)")
+    p.add_argument("--no-overrides", dest="overrides", action="store_false", default=True,
+                   help="disable the deterministic address/name convention overrides "
+                        "(to test whether the prompt+model handle them alone)")
+    p.add_argument("--dir", default=None,
+                   help="audit this single directory of labeled HTML instead of the "
+                        "built-in generated/common_crawl dirs")
     p.add_argument("--model", default="gpt-4o", help="judge model")
     p.add_argument("--concurrency", type=int, default=12)
     p.add_argument("--seed", type=int, default=42)

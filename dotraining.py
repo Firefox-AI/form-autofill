@@ -19,6 +19,7 @@ import time
 import random
 import numpy as np
 import torch
+import torch.nn.functional as F
 
 from sklearn.metrics import (
     accuracy_score,
@@ -317,6 +318,12 @@ class Config:
     evalBatchSize: int = 8
     weightDecay: float = 0.0
 
+    # Close-label smoothing: leak this fraction of the target mass onto a class's
+    # fieldNamesCloseDict neighbors, so predicting a "close" type is penalized less
+    # than a genuinely wrong one. 0.0 (default) reproduces plain cross-entropy;
+    # 0.1-0.2 is a good range. Aims to lift both Total and Close accuracy.
+    closeLabelEps: float = 0.0
+
     # LoRA / parameter-efficient fine-tuning. When useLora is set, the model is
     # wrapped with a PEFT LoRA adapter for training and the adapter is merged
     # back into the base weights before saving (so eval/inference is unchanged).
@@ -485,6 +492,49 @@ def dataset_path(filename):
     )
   return filename
 
+def build_close_targets(label2id, close_dict, num_labels, eps, symmetric=True):
+  """Soft-target matrix (num_labels x num_labels): row i is the target
+  distribution for true class i. The true class keeps (1-eps); the remaining eps
+  is split over its fieldNamesCloseDict neighbors. Classes with no close entry
+  stay one-hot. Sized to num_labels and indexed by the model's own label ids."""
+  S = torch.zeros(num_labels, num_labels)
+  close = {k: set(v) for k, v in close_dict.items()}
+  if symmetric:                       # fieldNamesCloseDict isn't fully symmetric
+    for a, vs in list(close.items()):
+      for b in vs:
+        close.setdefault(b, set()).add(a)
+  for name, i in label2id.items():
+    if not (0 <= i < num_labels):
+      continue
+    cs = [label2id[c] for c in close.get(name, ())
+          if c in label2id and 0 <= label2id[c] < num_labels]
+    if cs:
+      S[i, i] = 1.0 - eps
+      for c in cs:
+        S[i, c] = eps / len(cs)
+    else:
+      S[i, i] = 1.0
+  return S
+
+
+class CloseAwareTrainer(Trainer):
+  """Trainer with similarity-aware soft-label cross-entropy. Predicting a class
+  that is 'close' (per fieldNamesCloseDict) to the true one incurs less loss than
+  predicting a far, wrong class."""
+
+  def __init__(self, *args, soft_targets=None, **kwargs):
+    super().__init__(*args, **kwargs)
+    self.soft_targets = soft_targets      # (num_labels, num_labels) CPU tensor
+
+  def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
+    labels = inputs.pop("labels")
+    outputs = model(**inputs)
+    logp = F.log_softmax(outputs.logits, dim=-1)
+    target = self.soft_targets.to(logp.device)[labels]        # (batch, num_labels)
+    loss = -(target * logp).sum(dim=-1).mean()
+    return (loss, outputs) if return_outputs else loss
+
+
 def wandb_config(cfg):
   """The hyperparameters logged to W&B run config (what sweeps compare on)."""
   return {
@@ -501,6 +551,7 @@ def wandb_config(cfg):
     "train_batch_size": cfg.trainBatchSize,
     "eval_batch_size": cfg.evalBatchSize,
     "weight_decay": cfg.weightDecay,
+    "close_label_eps": cfg.closeLabelEps,
     "use_lora": cfg.useLora,
     "lora_r": cfg.loraR,
     "lora_alpha": cfg.loraAlpha,
@@ -650,7 +701,7 @@ def train(cfg):
       run_name=cfg.wandbRunName or None,
   )
 
-  trainer = Trainer(
+  trainer_kwargs = dict(
       model=model,
       args=training_args,
       train_dataset=train_ds,
@@ -659,6 +710,15 @@ def train(cfg):
       data_collator=data_collator,
       compute_metrics=compute_metrics,
   )
+  if cfg.closeLabelEps > 0:
+      # Similarity-aware soft-label loss: 'close' predictions cost less than wrong ones.
+      soft_targets = build_close_targets(
+          fieldTypesDict, fieldNamesCloseDict,
+          num_labels=model.config.num_labels, eps=cfg.closeLabelEps)
+      print(f"Using close-aware soft-label loss (eps={cfg.closeLabelEps}).")
+      trainer = CloseAwareTrainer(**trainer_kwargs, soft_targets=soft_targets)
+  else:
+      trainer = Trainer(**trainer_kwargs)
 
   trainer.train()
 
