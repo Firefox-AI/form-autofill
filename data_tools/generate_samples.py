@@ -98,19 +98,20 @@ def extract_anchor_fields(html: str) -> list[dict]:
 
 
 def carry_forward_anchor(spec: dict, anchor_fields: list[dict]) -> dict:
-    """Force the verified anchor types onto the mutated spec, by position.
+    """Reconcile the mutated spec with the anchor's field types.
 
-    Guarantees label correctness regardless of what the LLM returned. We align
-    to the anchor length and keep only those positions.
+    We keep the anchor's type for a field ONLY when the LLM echoed that same type
+    at the same position (positions still aligned). If they disagree, the LLM
+    reordered/added/dropped a field, so forcing the anchor type would staple it
+    onto a label describing a DIFFERENT field (e.g. a 'Bundesland' label tagged
+    address-level2). In that case we trust the LLM's own field, whose type and
+    label are paired and consistent (and enum-constrained; the verify pass is the
+    backstop). This eliminated the position-desync mislabels seen in mutation mode.
+
+    In practice that means trusting the LLM's returned fields as-is: where
+    positions are still aligned its echoed type already equals the anchor's;
+    where they aren't, its own type is the one consistent with its label.
     """
-    fields = spec.get("fields", [])
-    n = min(len(fields), len(anchor_fields))
-    aligned = []
-    for i in range(n):
-        f = dict(fields[i])
-        f["autofill_type"] = anchor_fields[i]["autofill_type"]
-        aligned.append(f)
-    spec["fields"] = aligned
     return spec
 
 
