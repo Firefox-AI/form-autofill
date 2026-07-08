@@ -1199,7 +1199,7 @@ wp-modal-block > .wp-modal-content {
 
         <div class="form-row prefecture  text ng-hide" ng-class="[Control.Form.PrefectureError ? 'x-invalid' : '', Model.Data.Config.IsPrefectureRequired ? 'mandatory' : '', Model.Data.Config.IsPrefectureAutofill ? 'select' : 'text']" ng-show="Model.Data.Config.IsPrefectureVisible">
             <div class="select-wrapper ng-hide" ng-show="Model.Data.Config.IsPrefectureAutofill">
-                <select ng-model="Control.Form.Prefecture" ng-disabled="!Control.Form.Country || !Model.Data.Prefectures[0]" ng-change="Control.validateField('Control.Form.Prefecture');Control.getServiceData('prefecture',true)" title="Please select your Prefecture" data-vtest="checkoutShippingPrefectureSelect" class="ng-pristine ng-untouched ng-valid" data-moz-autofill-inspect-id="fd88c2f2-9530-4c6f-a0d2-a674b2337920" data-moz-autofill-type="country" style="">
+                <select ng-model="Control.Form.Prefecture" ng-disabled="!Control.Form.Country || !Model.Data.Prefectures[0]" ng-change="Control.validateField('Control.Form.Prefecture');Control.getServiceData('prefecture',true)" title="Please select your Prefecture" data-vtest="checkoutShippingPrefectureSelect" class="ng-pristine ng-untouched ng-valid" data-moz-autofill-inspect-id="fd88c2f2-9530-4c6f-a0d2-a674b2337920" data-moz-autofill-type="address-level1" style="">
                     <option value="">Please select your Prefecture</option>
                     <!-- ngRepeat: prefecture in Model.Data.Prefectures -->
                 </select>
@@ -1308,7 +1308,7 @@ wp-modal-block > .wp-modal-content {
 
         <div class="form-row city pull-right  mandatory text x-invalid" ng-class="[Control.Form.CityError  ? 'x-invalid' : '', Model.Data.Config.IsCityRequired ? 'mandatory' : '', Model.Data.Config.IsCityAutofill ? 'select' : 'text']" ng-show="Model.Data.Config.IsCityVisible">
             <div class="select-wrapper ng-hide" ng-show="Model.Data.Config.IsCityAutofill">
-                <select ng-model="Control.Form.City" ng-disabled="(Model.Data.Config.IsPrefectureAutofill &amp;&amp; Model.Data.Config.IsPrefectureVisible &amp;&amp; !Control.Form.Prefecture) || !Model.Data.Cities[0]" ng-change="Control.validateField('Control.Form.City');Control.getServiceData('city',true)" data-vtest="checkoutShippingCitySelect" class="ng-pristine ng-untouched ng-valid" data-moz-autofill-inspect-id="30c7cdd9-222f-4ae7-854f-4eac0e9cf94b" data-moz-autofill-type="address-level1" style="">
+                <select ng-model="Control.Form.City" ng-disabled="(Model.Data.Config.IsPrefectureAutofill &amp;&amp; Model.Data.Config.IsPrefectureVisible &amp;&amp; !Control.Form.Prefecture) || !Model.Data.Cities[0]" ng-change="Control.validateField('Control.Form.City');Control.getServiceData('city',true)" data-vtest="checkoutShippingCitySelect" class="ng-pristine ng-untouched ng-valid" data-moz-autofill-inspect-id="30c7cdd9-222f-4ae7-854f-4eac0e9cf94b" data-moz-autofill-type="address-level2" style="">
                     <option value="">Please select your city</option>
                     <!-- ngRepeat: city in Model.Data.Cities -->
                 </select>
@@ -1324,7 +1324,7 @@ wp-modal-block > .wp-modal-content {
 
         <div class="form-row area mandatory text x-invalid" ng-class="[Control.Form.AreaError  ? 'x-invalid' : '', Model.Data.Config.IsAreaRequired ? 'mandatory' : '', Model.Data.Config.IsAreaAutofill ? 'select' : 'text']" ng-show="Model.Data.Config.IsAreaVisible">
             <div class="select-wrapper ng-hide" ng-show="Model.Data.Config.IsAreaAutofill">
-                <select ng-model="Control.Form.Area" ng-disabled="!Control.Form.City || !Model.Data.Areas[0]" ng-change="Control.validateField('Control.Form.Area');Control.getServiceData('area',true);Control.applyChanges('area');" data-vtest="checkoutShippingAreaSelect" class="ng-pristine ng-untouched ng-valid" data-moz-autofill-inspect-id="99238432-95eb-4306-9b7a-66873dbb1ee0" data-moz-autofill-type="address-level2" style="">
+                <select ng-model="Control.Form.Area" ng-disabled="!Control.Form.City || !Model.Data.Areas[0]" ng-change="Control.validateField('Control.Form.Area');Control.getServiceData('area',true);Control.applyChanges('area');" data-vtest="checkoutShippingAreaSelect" class="ng-pristine ng-untouched ng-valid" data-moz-autofill-inspect-id="99238432-95eb-4306-9b7a-66873dbb1ee0" data-moz-autofill-type="address-level3" style="">
                     <option value="">Please select your area</option>
                     <!-- ngRepeat: area in Model.Data.Areas -->
                 </select>
@@ -1674,7 +1674,7 @@ wp-modal-block > .wp-modal-content {
 
             <div class="form-row city pull-right  mandatory text x-invalid" ng-class="[Control.Form.CityError  ? 'x-invalid' : '', Model.Data.Config.IsCityRequired ? 'mandatory' : '', Model.Data.Config.IsCityAutofill ? 'select' : 'text']" ng-show="Model.Data.Config.IsCityVisible">
                 <div class="select-wrapper ng-hide" ng-show="Model.Data.Config.IsCityAutofill">
-                    <select ng-model="Control.Form.City" title="Please select your city" ng-disabled="(Model.Data.Config.IsPrefectureAutofill &amp;&amp; Model.Data.Config.IsPrefectureVisible &amp;&amp; !Control.Form.Prefecture) || !Model.Data.Cities[0]" ng-change="Control.validateField('Control.Form.City');Control.getServiceData('city',true)" data-vtest="checkoutBillingCitySelect" class="ng-pristine ng-untouched ng-valid" data-moz-autofill-inspect-id="b309e17c-b6cf-4097-865b-883dbbde96e0" data-moz-autofill-type="address-level1" style="">
+                    <select ng-model="Control.Form.City" title="Please select your city" ng-disabled="(Model.Data.Config.IsPrefectureAutofill &amp;&amp; Model.Data.Config.IsPrefectureVisible &amp;&amp; !Control.Form.Prefecture) || !Model.Data.Cities[0]" ng-change="Control.validateField('Control.Form.City');Control.getServiceData('city',true)" data-vtest="checkoutBillingCitySelect" class="ng-pristine ng-untouched ng-valid" data-moz-autofill-inspect-id="b309e17c-b6cf-4097-865b-883dbbde96e0" data-moz-autofill-type="address-level2" style="">
                         <option value="">Please select your city</option>
                         <!-- ngRepeat: city in Model.Data.Cities -->
                     </select>

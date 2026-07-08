@@ -972,7 +972,7 @@
 
         <div class="form-row address2 ng-hide" ng-class="[Control.Form.Address2Error ? 'x-invalid' : '', Model.Data.Config.IsAddressLine2Required ? 'mandatory' : '']" ng-show="Model.Data.Config.IsAddressLine2Visible">
             <div class="input-wrapper">
-                <input type="text" autocomplete="shipping" title="Διεύθυνση 2" data-fieldname="Address2" maxlength="300" data-validate="true" data-vtest="checkoutShippingAddressInput2" placeholder=" " ng-model="Control.Form.Address2" ng-blur="Control.applyChanges()" class="ng-pristine ng-untouched ng-valid ng-valid-maxlength" data-moz-autofill-inspect-id="abead796-2b4b-49b9-97c2-ba47a14a1e66" style="" data-moz-autofill-type="address-streetname">
+                <input type="text" autocomplete="shipping" title="Διεύθυνση 2" data-fieldname="Address2" maxlength="300" data-validate="true" data-vtest="checkoutShippingAddressInput2" placeholder=" " ng-model="Control.Form.Address2" ng-blur="Control.applyChanges()" class="ng-pristine ng-untouched ng-valid ng-valid-maxlength" data-moz-autofill-inspect-id="abead796-2b4b-49b9-97c2-ba47a14a1e66" style="" data-moz-autofill-type="address-line2">
                 <label class="ng-binding">Διεύθυνση 2</label>
             </div>
             <div class="error-wrapper">
@@ -1055,7 +1055,7 @@
 
         <div class="form-row area mandatory text" ng-class="[Control.Form.AreaError  ? 'x-invalid' : '', Model.Data.Config.IsAreaRequired ? 'mandatory' : '', Model.Data.Config.IsAreaAutofill ? 'select' : 'text']" ng-show="Model.Data.Config.IsAreaVisible">
             <div class="select-wrapper ng-hide" ng-show="Model.Data.Config.IsAreaAutofill">
-                <select ng-model="Control.Form.Area" ng-disabled="!Control.Form.City || !Model.Data.Areas[0]" ng-change="Control.validateField('Control.Form.Area');Control.getServiceData('area',true);Control.applyChanges('area');" data-vtest="checkoutShippingAreaSelect" class="ng-pristine ng-untouched ng-valid" data-moz-autofill-inspect-id="b0aa3032-a991-4336-8fb6-d7cbf4f0ad41" data-moz-autofill-type="address-level2" style="">
+                <select ng-model="Control.Form.Area" ng-disabled="!Control.Form.City || !Model.Data.Areas[0]" ng-change="Control.validateField('Control.Form.Area');Control.getServiceData('area',true);Control.applyChanges('area');" data-vtest="checkoutShippingAreaSelect" class="ng-pristine ng-untouched ng-valid" data-moz-autofill-inspect-id="b0aa3032-a991-4336-8fb6-d7cbf4f0ad41" data-moz-autofill-type="address-level1" style="">
                     <option value="" class="ng-binding">Επιλέξτε την περιοχή σας</option>
                     <!-- ngRepeat: area in Model.Data.Areas -->
                 </select>
@@ -1383,7 +1383,7 @@
 
             <div class="form-row address2 ng-hide" ng-class="[Control.Form.Address2Error ? 'x-invalid' : '', Model.Data.Config.IsAddressLine2Required ? 'mandatory' : '']" ng-show="Model.Data.Config.IsAddressLine2Visible">
                 <div class="input-wrapper">
-                    <input type="text" autocomplete="billing" title="Διεύθυνση 2" data-fieldname="Address2" maxlength="300" data-validate="true" data-vtest="checkoutBillingAddressInput2" placeholder=" " ng-model="Control.Form.Address2" ng-blur="Control.applyChanges()" class="ng-pristine ng-untouched ng-valid ng-valid-maxlength" data-moz-autofill-inspect-id="183a6cc3-c3aa-4347-af0d-2114e9577105" style="" data-moz-autofill-type="address-streetname">
+                    <input type="text" autocomplete="billing" title="Διεύθυνση 2" data-fieldname="Address2" maxlength="300" data-validate="true" data-vtest="checkoutBillingAddressInput2" placeholder=" " ng-model="Control.Form.Address2" ng-blur="Control.applyChanges()" class="ng-pristine ng-untouched ng-valid ng-valid-maxlength" data-moz-autofill-inspect-id="183a6cc3-c3aa-4347-af0d-2114e9577105" style="" data-moz-autofill-type="address-line2">
                     <label class="ng-binding">Διεύθυνση 2</label>
                 </div>
                 <div class="error-wrapper">
