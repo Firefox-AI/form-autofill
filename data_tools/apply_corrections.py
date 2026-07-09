@@ -101,12 +101,24 @@ def main(argv=None) -> int:
     p.add_argument("--dump", required=True, help="verdict JSONL from evaluate_labels.py --dump")
     p.add_argument("--dir", required=True, help="directory of the source HTML forms")
     p.add_argument("--dry-run", action="store_true", help="report changes without writing")
+    p.add_argument("--exclude", nargs="*", default=[],
+                   help="basenames to leave untouched (no corrections applied)")
+    p.add_argument("--exclude-file", default=None,
+                   help="file with one basename per line to leave untouched")
     args = p.parse_args(argv if argv is not None else sys.argv[1:])
+
+    exclude = set(args.exclude)
+    if args.exclude_file:
+        exclude |= {ln.strip() for ln in open(args.exclude_file) if ln.strip()}
 
     by_file = applicable_corrections(args.dump)
     pairs = collections.Counter()
     files_changed = fields_changed = skipped_mismatch = skipped_value = 0
+    excluded = 0
     for fname, corrs in sorted(by_file.items()):
+        if fname in exclude:
+            excluded += 1
+            continue
         status, applied = apply_to_file(os.path.join(args.dir, fname), corrs, args.dry_run)
         if status == "mismatch":
             skipped_mismatch += 1
@@ -124,7 +136,8 @@ def main(argv=None) -> int:
     print(f"=== corrections {mode} ===")
     print(f"files with corrections: {len(by_file)} | files changed: {files_changed} "
           f"| fields changed: {fields_changed}")
-    print(f"skipped (value drift): {skipped_value} | skipped files (count mismatch): {skipped_mismatch}")
+    print(f"skipped (value drift): {skipped_value} | skipped files (count mismatch): {skipped_mismatch}"
+          + (f" | excluded files: {excluded}" if exclude else ""))
     print("top corrections (assigned -> suggested):")
     for (a, s), n in pairs.most_common(15):
         print(f"   {n:4d}  {a} -> {s}")
