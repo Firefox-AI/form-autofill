@@ -492,7 +492,7 @@ def dataset_path(filename):
     )
   return filename
 
-def build_close_targets(label2id, close_dict, num_labels, eps, symmetric=True):
+def build_close_targets(label2id, close_dict, num_labels, eps, symmetric=False):
   """Soft-target matrix (num_labels x num_labels): row i is the target
   distribution for true class i. The true class keeps (1-eps); the remaining eps
   is split over its fieldNamesCloseDict neighbors. Classes with no close entry

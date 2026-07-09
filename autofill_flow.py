@@ -284,6 +284,13 @@ class AutofillFlow(FlowSpec):
         default=0.1,
         type=float,
     )
+    close_label_eps = Parameter(
+        "close_label_eps",
+        help="Close Label EPS",
+        default=0,
+        type=float,
+    )
+
 
     def _config(self):
         cfg = Config(
@@ -304,6 +311,7 @@ class AutofillFlow(FlowSpec):
             loraR=self.lora_r,
             loraAlpha=self.lora_alpha,
             loraDropout=self.lora_dropout,
+            closeLabelEps=self.close_label_eps
         )
         if self.wandb_project:
             # One W&B run per Metaflow run, shared across the train and eval
