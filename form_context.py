@@ -172,6 +172,11 @@ def first_stage_probs(texts, cfg, batch_size=64):
   path raises KeyError mapping index 0. The raw softmax over output neurons is
   exactly what we want for features; baseline names come from id2label.
   """
+  if getattr(cfg, "contextFormat", "bb") == "triple":
+    raise NotImplementedError(
+        "The two-stage form_context flow does not support "
+        "context_format='triple': its custom shared-encoder model is not a "
+        "standard AutoModelForSequenceClassification and cannot be loaded here.")
   import torch
   from transformers import AutoModelForSequenceClassification, AutoTokenizer
   tokenizer = AutoTokenizer.from_pretrained(cfg.saveModelDir)

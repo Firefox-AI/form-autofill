@@ -1,15 +1,21 @@
 from dataclasses import dataclass, field
 
 from transformers import (
+    AutoModel,
     AutoModelForSequenceClassification,
     AutoTokenizer,
     DataCollatorWithPadding,
+    PretrainedConfig,
+    PreTrainedModel,
     TrainingArguments,
     Trainer,
     pipeline,
     set_seed,
     AutoConfig
 )
+from transformers.modeling_outputs import SequenceClassifierOutput
+
+import torch.nn as nn
 
 from datasets import Dataset
 
@@ -83,7 +89,21 @@ def classify_locale(filename):
 
 
 # Supported context encodings for reformat_context (the --context_format flag).
-CONTEXT_FORMATS = ("bb", "sep", "symbol")
+# "bb"/"sep"/"symbol" are single-string re-encodings fed to a standard
+# AutoModelForSequenceClassification. "triple" is a different model architecture
+# entirely: the current/previous/next tokens are split into three separate
+# strings (aa/bb prefixes removed), each run through a shared base transformer,
+# and the three pooled outputs fused by an MLP head (see
+# TripleEncoderForSequenceClassification). "triple" is only supported by the
+# train / evaluate_model / infer paths in this file -- not the pipeline-based
+# ONNX export, quantization, or two-stage form_context flow.
+CONTEXT_FORMATS = ("bb", "sep", "symbol", "triple")
+
+# Pooling modes for the single-sequence path (context_format bb/sep/symbol);
+# see Config.pooling. "cls" uses the base model's standard classification head
+# (the [CLS]/pooler token); "mean" uses a custom head over attention-masked
+# mean-pooled token embeddings. Ignored for "triple" (always mean-pools).
+POOLING_MODES = ("cls", "mean")
 
 # Single-token markers for the "symbol" format. Both are already single tokens
 # in the bert-base-uncased vocab (so no tokenizer/embedding changes are needed),
@@ -91,6 +111,46 @@ CONTEXT_FORMATS = ("bb", "sep", "symbol")
 # learned embeddings -- a directional signal a shared [SEP] can't provide.
 PREV_SYMBOL = "•"   # bullet: marks the start of the previous-field section
 NEXT_SYMBOL = "§"   # section sign: marks the start of the next-field section
+
+
+def _split_context_words(text):
+  """Bucket a raw context string into (current, previous, next) word lists.
+
+  The datasets encode the field's own tokens with no prefix, the *previous*
+  field's tokens with a 'bb' prefix, and the *next* field's tokens with an 'aa'
+  prefix, all whitespace-joined, e.g.:
+
+      street house number bblast bbname aapostcode aapostcode
+
+  The 'bb'/'aa' prefixes are stripped so the words keep their normal (plain)
+  form. Shared by reformat_context (single-string encodings) and split_context
+  (the three-string 'triple' encoding).
+  """
+  current, previous, nxt = [], [], []
+  for word in text.split():
+    if len(word) > 2 and word.startswith("bb"):
+      previous.append(word[2:])
+    elif len(word) > 2 and word.startswith("aa"):
+      nxt.append(word[2:])
+    else:
+      current.append(word)
+  return current, previous, nxt
+
+
+def split_context(text):
+  """Split a raw context string into three plain strings for the 'triple' format.
+
+  Returns (current, previous, next) as whitespace-joined strings with the
+  'bb'/'aa' per-word prefixes removed, e.g.:
+
+      "street house number bblast bbname aapostcode aapostcode"
+        -> ("street house number", "last name", "postcode postcode")
+
+  Each string is encoded independently by the shared base transformer in
+  TripleEncoderForSequenceClassification. Empty sections yield "".
+  """
+  current, previous, nxt = _split_context_words(text)
+  return " ".join(current), " ".join(previous), " ".join(nxt)
 
 
 def reformat_context(text, fmt="bb"):
@@ -114,21 +174,16 @@ def reformat_context(text, fmt="bb"):
   'symbol' uses two distinct single-token markers so previous vs next each get
   their own embedding. Both markers are always emitted so the sections stay
   positionally distinguishable even when one is empty. fmt='bb' returns the text
-  unchanged (the original behavior). Applied on the fly; data files are not
-  modified.
+  unchanged (the original behavior). fmt='triple' also returns the text
+  unchanged here -- that format splits into three strings via split_context in
+  readFile / eval rather than producing a single sequence. Applied on the fly;
+  data files are not modified.
   """
-  if fmt == "bb":
+  if fmt in ("bb", "triple"):
     return text
   if fmt not in ("sep", "symbol"):
     raise ValueError(f"Unknown context_format {fmt!r}; expected one of {CONTEXT_FORMATS}")
-  current, previous, nxt = [], [], []
-  for word in text.split():
-    if len(word) > 2 and word.startswith("bb"):
-      previous.append(word[2:])
-    elif len(word) > 2 and word.startswith("aa"):
-      nxt.append(word[2:])
-    else:
-      current.append(word)
+  current, previous, nxt = _split_context_words(text)
   prev_marker, next_marker = ("[SEP]", "[SEP]") if fmt == "sep" else (PREV_SYMBOL, NEXT_SYMBOL)
   return (f"{' '.join(current)} {prev_marker} {' '.join(previous)} "
           f"{next_marker} {' '.join(nxt)}")
@@ -303,6 +358,29 @@ class Config:
     # training, validation and evaluation so train/eval stay consistent.
     contextFormat: str = "bb"
 
+    # Pooling for the single-sequence path (context_format bb/sep/symbol):
+    # "cls" (default) uses the base model's standard classification head (the
+    # [CLS]/pooler token); "mean" uses a custom head over attention-masked
+    # mean-pooled token embeddings -- a better match for encoders pretrained
+    # with mean pooling (e.g. sentence-transformers models). Ignored when
+    # contextFormat="triple" (that architecture always mean-pools).
+    pooling: str = "cls"
+
+    # Shrink the base encoder to this many evenly-spaced transformer layers
+    # before fine-tuning (e.g. 4 keeps ~[0,4,7,11] of a 12-layer model). 0
+    # (default) keeps all layers. Applies to the standard, mean, and triple
+    # paths -- the smaller depth is saved so eval/reload rebuilds it. Combine
+    # with vocab pruning (prune_vocab.py) to approach TinyBERT size.
+    encoderLayers: int = 0
+
+    # Separate learning rate for the classification head (the triple fusion
+    # head / mean pooler+classifier / standard classifier), leaving the
+    # pretrained encoder on the main learningRate. 0.0 (default) uses a single
+    # LR for everything. A higher head LR (e.g. 1e-3) lets the randomly
+    # initialized head converge without pushing the encoder off its pretrained
+    # weights -- most useful for the triple head.
+    headLearningRate: float = 0.0
+
     # Cap synthetic training data relative to real (crawled) data to curb
     # overfitting to templated synthetic forms. Each ratio bounds that source at
     # ratio * (#real rows); <= 0 disables subsampling for that source (keep all).
@@ -317,6 +395,12 @@ class Config:
     trainBatchSize: int = 8
     evalBatchSize: int = 8
     weightDecay: float = 0.0
+    # Fraction of total training steps spent linearly warming the learning rate
+    # up from 0 before it decays. 0.0 (default) reproduces the previous
+    # no-warmup behavior. A small value (~0.06-0.1) eases in a randomly
+    # initialized head (e.g. the context_format='triple' fusion head) so its
+    # early gradients don't disturb the pretrained encoder.
+    warmupRatio: float = 0.0
 
     # Close-label smoothing: leak this fraction of the target mass onto a class's
     # fieldNamesCloseDict neighbors, so predicting a "close" type is penalized less
@@ -535,6 +619,285 @@ class CloseAwareTrainer(Trainer):
     return (loss, outputs) if return_outputs else loss
 
 
+# ---- Triple-encoder architecture (context_format="triple") ----------------
+#
+# A different model from the single-sequence formats: the current / previous /
+# next tokens are split into three separate strings (see split_context), each
+# encoded independently by ONE shared base transformer, and the three pooled
+# outputs are fused by an MLP head into the classification. This is not a
+# standard HF sequence-classification model, so it is trained/evaluated through
+# the custom paths in this file rather than pipeline() / optimum / form_context.
+
+def masked_mean_pool(last_hidden_state, attention_mask):
+  """Attention-mask-weighted mean over tokens (excludes padding).
+
+  last_hidden_state: (B, T, H); attention_mask: (B, T) -> pooled (B, H). Shared
+  by the triple-encoder and the mean-pooling single-sequence model.
+  """
+  mask = attention_mask.unsqueeze(-1).type_as(last_hidden_state)  # (B, T, 1)
+  summed = (last_hidden_state * mask).sum(dim=1)                   # (B, H)
+  counts = mask.sum(dim=1).clamp(min=1e-9)                         # (B, 1)
+  return summed / counts
+
+
+def select_encoder_layers(encoder, num_keep):
+  """Keep `num_keep` evenly-spaced transformer layers (incl. first & last), in place.
+
+  Shrinks a pretrained BERT/XLM-R-style encoder (a `.encoder.layer` ModuleList)
+  before fine-tuning, to cut size and latency. Evenly-spaced selection keeps the
+  first (lexical) and last (task-level; the mean-pool reads it) layers. Updates
+  config.num_hidden_layers so the smaller architecture round-trips through
+  save/load. Returns the kept indices, or None if num_keep is falsy or >= depth
+  (left unchanged).
+  """
+  base = getattr(encoder, "base_model", encoder)
+  enc = getattr(base, "encoder", None)
+  layers = getattr(enc, "layer", None)
+  if layers is None:
+    raise ValueError(
+        f"Could not locate transformer layers (.encoder.layer) on "
+        f"{type(base).__name__}; layer-drop supports BERT/XLM-R-style encoders.")
+  total = len(layers)
+  if not num_keep or num_keep <= 0 or num_keep >= total:
+    return None
+  if num_keep == 1:
+    idx = [total - 1]
+  else:
+    idx = sorted({round(i * (total - 1) / (num_keep - 1)) for i in range(num_keep)})
+  enc.layer = nn.ModuleList([layers[i] for i in idx])
+  base.config.num_hidden_layers = len(idx)
+  return idx
+
+
+def _resolve_encoder_config(config):
+  """AutoConfig for the shared encoder of the custom triple/mean models.
+
+  Prefers the encoder config stored on our config (so a pruned vocab or dropped
+  layers round-trip through save/load without re-fetching the base model);
+  falls back to fetching base_model_name for older saved configs.
+  """
+  enc = getattr(config, "encoder_config", None)
+  if enc:
+    enc = dict(enc)
+    model_type = enc.pop("model_type", None)
+    return AutoConfig.for_model(model_type, **enc)
+  return AutoConfig.from_pretrained(config.base_model_name)
+
+
+class TripleEncoderConfig(PretrainedConfig):
+  """Config for TripleEncoderForSequenceClassification.
+
+  `base_model_name` names the shared encoder (e.g. the TinyBERT checkpoint);
+  `encoder_config` is that encoder's resolved config dict (captured at build
+  time so a pruned vocab / dropped layers round-trip without re-fetching the
+  base); `hidden_dropout` is the dropout in the fusion head. num_labels /
+  id2label / label2id are handled by PretrainedConfig so the saved model carries
+  the field names, exactly like the standard classifier.
+  """
+  model_type = "triple_encoder"
+
+  def __init__(self, base_model_name=DEFAULT_MODEL_NAME, encoder_config=None,
+               hidden_dropout=0.1, **kwargs):
+    super().__init__(**kwargs)
+    self.base_model_name = base_model_name
+    self.encoder_config = encoder_config
+    self.hidden_dropout = hidden_dropout
+
+
+class TripleEncoderForSequenceClassification(PreTrainedModel):
+  """Shared-encoder triple model with an MLP fusion head.
+
+  forward() takes the three tokenized sections (current/previous/next), runs the
+  shared encoder over each, attention-mask-mean-pools each to a fixed vector,
+  concatenates the three (3H), then:
+
+      3H -> Linear(3H, H) -> GELU -> dropout -> Linear(H, num_labels)
+
+  Returns a SequenceClassifierOutput so it plugs into the HF Trainer (and
+  CloseAwareTrainer, which reads outputs.logits) unchanged. labels is optional
+  so the loss-popping path in CloseAwareTrainer works too.
+  """
+  config_class = TripleEncoderConfig
+
+  def __init__(self, config):
+    super().__init__(config)
+    # Build the encoder architecture (no weights) from the stored/base encoder
+    # config; from_base_pretrained() swaps in pretrained weights for training,
+    # and from_pretrained() fills them from the saved state_dict on reload.
+    enc_cfg = _resolve_encoder_config(config)
+    self.encoder = AutoModel.from_config(enc_cfg)
+    hidden = enc_cfg.hidden_size
+    self.dropout = nn.Dropout(config.hidden_dropout)
+    self.fusion = nn.Linear(3 * hidden, hidden)
+    self.act = nn.GELU()
+    self.classifier = nn.Linear(hidden, config.num_labels)
+    self.post_init()
+
+  @classmethod
+  def from_base_pretrained(cls, base_model_name, num_labels, id2label=None,
+                           label2id=None, hidden_dropout=0.1, encoder_layers=0):
+    """Construct for training: random fusion head + pretrained shared encoder.
+
+    encoder_layers > 0 drops the encoder down to that many evenly-spaced layers
+    before training (see select_encoder_layers).
+    """
+    encoder = AutoModel.from_pretrained(base_model_name)
+    total = encoder.config.num_hidden_layers
+    kept = select_encoder_layers(encoder, encoder_layers)
+    if kept is not None:
+      print(f"  layer-drop: {total} -> {len(kept)} encoder layers {kept}")
+    config = cls.config_class(
+        base_model_name=base_model_name,
+        encoder_config=encoder.config.to_dict(),
+        hidden_dropout=hidden_dropout,
+        num_labels=num_labels,
+        id2label=id2label,
+        label2id=label2id,
+    )
+    model = cls(config)
+    # Replace the freshly-initialized encoder with the pretrained weights.
+    model.encoder = encoder
+    return model
+
+  def _encode(self, input_ids, attention_mask):
+    out = self.encoder(input_ids=input_ids, attention_mask=attention_mask)
+    return masked_mean_pool(out.last_hidden_state, attention_mask)
+
+  def forward(self, input_ids_current=None, attention_mask_current=None,
+              input_ids_previous=None, attention_mask_previous=None,
+              input_ids_next=None, attention_mask_next=None, labels=None,
+              **kwargs):
+    cur = self._encode(input_ids_current, attention_mask_current)
+    prev = self._encode(input_ids_previous, attention_mask_previous)
+    nxt = self._encode(input_ids_next, attention_mask_next)
+    fused = torch.cat([cur, prev, nxt], dim=-1)              # (B, 3H)
+    hidden = self.dropout(self.act(self.fusion(fused)))
+    logits = self.classifier(hidden)
+    loss = None
+    if labels is not None:
+      loss = F.cross_entropy(logits, labels)
+    return SequenceClassifierOutput(loss=loss, logits=logits)
+
+
+# Register so AutoConfig / AutoModelForSequenceClassification can round-trip the
+# saved model. Guarded because re-import (e.g. in the same process) would raise.
+try:
+  AutoConfig.register("triple_encoder", TripleEncoderConfig)
+  AutoModelForSequenceClassification.register(
+      TripleEncoderConfig, TripleEncoderForSequenceClassification)
+except (ValueError, KeyError):
+  pass
+
+
+class TripleDataCollator:
+  """Dynamic-pads the three tokenized sections independently.
+
+  Mirrors DataCollatorWithPadding but for the triple format: each feature
+  carries input_ids_/attention_mask_ for current/previous/next; each section is
+  padded to its own per-batch max via tokenizer.pad. Non-tensor columns (the raw
+  text_* fields) are ignored, so remove_unused_columns can stay off.
+  """
+
+  def __init__(self, tokenizer):
+    self.tokenizer = tokenizer
+
+  def __call__(self, features):
+    batch = {}
+    for section in ("current", "previous", "next"):
+      group = [{"input_ids": f[f"input_ids_{section}"],
+                "attention_mask": f[f"attention_mask_{section}"]} for f in features]
+      padded = self.tokenizer.pad(group, return_tensors="pt")
+      batch[f"input_ids_{section}"] = padded["input_ids"]
+      batch[f"attention_mask_{section}"] = padded["attention_mask"]
+    if "label" in features[0]:
+      batch["labels"] = torch.tensor([f["label"] for f in features], dtype=torch.long)
+    return batch
+
+
+# ---- Mean-pooling single-sequence model (pooling="mean") ------------------
+#
+# Same single input as the standard AutoModelForSequenceClassification path,
+# but the classification head reads an attention-masked mean of the token
+# embeddings instead of the base model's [CLS]/pooler token. This matches how
+# sentence-transformers encoders were pretrained. The forward uses the standard
+# input_ids/attention_mask/labels names, so it reuses the ordinary
+# tokenization, DataCollatorWithPadding, pipeline() eval, and infer() paths.
+# The head mirrors the BERT pooler+classifier (dense+tanh -> dropout ->
+# classifier) so the only difference from the CLS baseline is the pooling.
+
+class MeanPoolConfig(PretrainedConfig):
+  """Config for MeanPoolForSequenceClassification (see POOLING_MODES).
+
+  Stores the resolved `encoder_config` for the same round-trip reasons as
+  TripleEncoderConfig (pruned vocab / dropped layers).
+  """
+  model_type = "mean_pool_encoder"
+
+  def __init__(self, base_model_name=DEFAULT_MODEL_NAME, encoder_config=None,
+               hidden_dropout=0.1, **kwargs):
+    super().__init__(**kwargs)
+    self.base_model_name = base_model_name
+    self.encoder_config = encoder_config
+    self.hidden_dropout = hidden_dropout
+
+
+class MeanPoolForSequenceClassification(PreTrainedModel):
+  config_class = MeanPoolConfig
+
+  def __init__(self, config):
+    super().__init__(config)
+    enc_cfg = _resolve_encoder_config(config)
+    self.encoder = AutoModel.from_config(enc_cfg)
+    hidden = enc_cfg.hidden_size
+    self.pooler = nn.Linear(hidden, hidden)      # mirrors the BERT pooler dense
+    self.act = nn.Tanh()
+    self.dropout = nn.Dropout(config.hidden_dropout)
+    self.classifier = nn.Linear(hidden, config.num_labels)
+    self.post_init()
+
+  @classmethod
+  def from_base_pretrained(cls, base_model_name, num_labels, id2label=None,
+                           label2id=None, hidden_dropout=0.1, encoder_layers=0):
+    """Construct for training: random head + pretrained shared encoder.
+
+    encoder_layers > 0 drops the encoder to that many evenly-spaced layers first.
+    """
+    encoder = AutoModel.from_pretrained(base_model_name)
+    total = encoder.config.num_hidden_layers
+    kept = select_encoder_layers(encoder, encoder_layers)
+    if kept is not None:
+      print(f"  layer-drop: {total} -> {len(kept)} encoder layers {kept}")
+    config = cls.config_class(
+        base_model_name=base_model_name,
+        encoder_config=encoder.config.to_dict(),
+        hidden_dropout=hidden_dropout,
+        num_labels=num_labels,
+        id2label=id2label,
+        label2id=label2id,
+    )
+    model = cls(config)
+    model.encoder = encoder
+    return model
+
+  def forward(self, input_ids=None, attention_mask=None, labels=None, **kwargs):
+    out = self.encoder(input_ids=input_ids, attention_mask=attention_mask)
+    pooled = masked_mean_pool(out.last_hidden_state, attention_mask)
+    hidden = self.dropout(self.act(self.pooler(pooled)))
+    logits = self.classifier(hidden)
+    loss = None
+    if labels is not None:
+      loss = F.cross_entropy(logits, labels)
+    return SequenceClassifierOutput(loss=loss, logits=logits)
+
+
+try:
+  AutoConfig.register("mean_pool_encoder", MeanPoolConfig)
+  AutoModelForSequenceClassification.register(
+      MeanPoolConfig, MeanPoolForSequenceClassification)
+except (ValueError, KeyError):
+  pass
+
+
 def wandb_config(cfg):
   """The hyperparameters logged to W&B run config (what sweeps compare on)."""
   return {
@@ -545,12 +908,16 @@ def wandb_config(cfg):
     "train_file": cfg.trainFile,
     "english_only": cfg.englishOnly,
     "context_format": cfg.contextFormat,
+    "pooling": cfg.pooling,
+    "encoder_layers": cfg.encoderLayers,
+    "head_learning_rate": cfg.headLearningRate,
     "gen_to_real_ratio": cfg.genToRealRatio,
     "cc_to_real_ratio": cfg.ccToRealRatio,
     "learning_rate": cfg.learningRate,
     "train_batch_size": cfg.trainBatchSize,
     "eval_batch_size": cfg.evalBatchSize,
     "weight_decay": cfg.weightDecay,
+    "warmup_ratio": cfg.warmupRatio,
     "close_label_eps": cfg.closeLabelEps,
     "use_lora": cfg.useLora,
     "lora_r": cfg.loraR,
@@ -580,10 +947,21 @@ def readFile(filetype, cfg):
     if cfg.englishOnly and not classify_locale(src)[2]:
       continue
     try:
-      rec = {
-        "label": int(lineData[ignoreLineCount]),
-        "text": reformat_context(lineData[ignoreLineCount + 1], cfg.contextFormat),
-      }
+      raw = lineData[ignoreLineCount + 1]
+      if cfg.contextFormat == "triple":
+        # Three separate strings (aa/bb removed); tokenized per-section in train.
+        cur, prev, nxt = split_context(raw)
+        rec = {
+          "label": int(lineData[ignoreLineCount]),
+          "text_current": cur,
+          "text_previous": prev,
+          "text_next": nxt,
+        }
+      else:
+        rec = {
+          "label": int(lineData[ignoreLineCount]),
+          "text": reformat_context(raw, cfg.contextFormat),
+        }
     except Exception:
       print(filetype + ".txt : " + line)
       raise
@@ -618,21 +996,74 @@ def select_device():
     os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
   return device
 
+def build_optimizer(model, encoder, base_lr, head_lr, weight_decay):
+  """AdamW with the encoder on base_lr and the classification head on head_lr.
+
+  `encoder` is the shared transformer module; every other trainable parameter is
+  treated as head. Within each group, bias / LayerNorm parameters are excluded
+  from weight decay, matching the HF Trainer's default grouping. Empty groups are
+  dropped so AdamW doesn't choke.
+  """
+  no_decay = ("bias", "LayerNorm.weight", "layer_norm.weight", "norm.weight")
+  enc_ids = {id(p) for p in encoder.parameters()}
+  buckets = {"enc_decay": [], "enc_nodecay": [], "head_decay": [], "head_nodecay": []}
+  for name, p in model.named_parameters():
+    if not p.requires_grad:
+      continue
+    where = "enc" if id(p) in enc_ids else "head"
+    decay = "nodecay" if any(nd in name for nd in no_decay) else "decay"
+    buckets[f"{where}_{decay}"].append(p)
+  specs = [
+      ("enc_decay", base_lr, weight_decay),
+      ("enc_nodecay", base_lr, 0.0),
+      ("head_decay", head_lr, weight_decay),
+      ("head_nodecay", head_lr, 0.0),
+  ]
+  groups = [{"params": buckets[k], "lr": lr, "weight_decay": wd}
+            for k, lr, wd in specs if buckets[k]]
+  from torch.optim import AdamW
+  return AdamW(groups, lr=base_lr)
+
+
 def train(cfg):
   device = select_device()
   print(f"Training on device: {device}")
+  is_triple = cfg.contextFormat == "triple"
+  if cfg.pooling not in POOLING_MODES:
+      raise ValueError(f"Unknown pooling {cfg.pooling!r}; expected one of {POOLING_MODES}")
+  # 'pooling' only applies to the single-sequence path; triple always mean-pools.
+  use_mean = (not is_triple) and cfg.pooling == "mean"
+  if (is_triple or use_mean) and cfg.useLora:
+      raise ValueError(
+          "LoRA is only supported with the standard CLS classification head "
+          "(context_format in bb/sep/symbol and pooling='cls'). The "
+          f"{'triple-encoder' if is_triple else 'mean-pooling'} model is a "
+          "custom architecture without the SEQ_CLS head PEFT expects.")
   tokenizer = AutoTokenizer.from_pretrained(cfg.modelName)
 
   def preprocess_function(examples):
       return tokenizer(examples["text"], truncation=True, max_length=512)
 
+  def preprocess_triple(examples):
+      out = {}
+      for section, col in (("current", "text_current"),
+                           ("previous", "text_previous"),
+                           ("next", "text_next")):
+          enc = tokenizer(examples[col], truncation=True, max_length=512)
+          out[f"input_ids_{section}"] = enc["input_ids"]
+          out[f"attention_mask_{section}"] = enc["attention_mask"]
+      return out
+
+  preprocess = preprocess_triple if is_triple else preprocess_function
+
   ds = readFile("training", cfg)
-  train_ds = ds.map(preprocess_function, batched=True)
+  train_ds = ds.map(preprocess, batched=True)
 
   ds = readFile("validation", cfg)
-  validate_ds = ds.map(preprocess_function, batched=True)
+  validate_ds = ds.map(preprocess, batched=True)
 
-  data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
+  data_collator = (TripleDataCollator(tokenizer) if is_triple
+                   else DataCollatorWithPadding(tokenizer=tokenizer))
 
   def compute_metrics(eval_pred):
       predictions, labels = eval_pred
@@ -642,10 +1073,32 @@ def train(cfg):
       # newer huggingface_hub (the removed HfFolder API).
       return {"accuracy": float(np.mean(predictions == labels))}
 
-  model = AutoModelForSequenceClassification.from_pretrained(
-      cfg.modelName, num_labels=len(fieldTypesDict), ignore_mismatched_sizes=True,
-      id2label=fieldTypesReversedDict, label2id=fieldTypesDict
-  )
+  if is_triple:
+      # Shared-encoder triple model: pretrained encoder + randomly-init MLP head.
+      model = TripleEncoderForSequenceClassification.from_base_pretrained(
+          cfg.modelName, num_labels=len(fieldTypesDict),
+          id2label=fieldTypesReversedDict, label2id=fieldTypesDict,
+          encoder_layers=cfg.encoderLayers)
+      encoder = model.encoder
+  elif use_mean:
+      # Single-sequence, but classify off mean-pooled tokens instead of [CLS].
+      model = MeanPoolForSequenceClassification.from_base_pretrained(
+          cfg.modelName, num_labels=len(fieldTypesDict),
+          id2label=fieldTypesReversedDict, label2id=fieldTypesDict,
+          encoder_layers=cfg.encoderLayers)
+      encoder = model.encoder
+  else:
+      model = AutoModelForSequenceClassification.from_pretrained(
+          cfg.modelName, num_labels=len(fieldTypesDict), ignore_mismatched_sizes=True,
+          id2label=fieldTypesReversedDict, label2id=fieldTypesDict
+      )
+      # Standard HF classifier: drop layers on the base encoder in place (config
+      # num_hidden_layers is updated, so save/reload rebuilds the smaller model).
+      total = model.config.num_hidden_layers
+      kept = select_encoder_layers(model, cfg.encoderLayers)
+      if kept is not None:
+          print(f"  layer-drop: {total} -> {len(kept)} encoder layers {kept}")
+      encoder = model.base_model
 
   if cfg.useLora:
       from peft import LoraConfig, get_peft_model, TaskType
@@ -691,6 +1144,7 @@ def train(cfg):
       per_device_eval_batch_size=cfg.evalBatchSize,
       num_train_epochs=cfg.numEpochs,
       weight_decay=cfg.weightDecay,
+      warmup_ratio=cfg.warmupRatio,
       # The Trainer auto-selects CUDA/MPS when available; this only forces CPU
       # when select_device() resolved to it (e.g. AUTOFILL_DEVICE=cpu).
       use_cpu=(device == "cpu"),
@@ -699,6 +1153,9 @@ def train(cfg):
       load_best_model_at_end=True,
       report_to=report_to,
       run_name=cfg.wandbRunName or None,
+      # The triple model's forward takes per-section columns and its collator
+      # reads the raw text_* columns off each feature, so keep all columns.
+      remove_unused_columns=(not is_triple),
   )
 
   trainer_kwargs = dict(
@@ -710,6 +1167,13 @@ def train(cfg):
       data_collator=data_collator,
       compute_metrics=compute_metrics,
   )
+  if cfg.headLearningRate > 0:
+      # Discriminative LR: encoder on `lr`, classification head on headLearningRate.
+      # `encoder` was captured above per model type. Trainer builds the scheduler
+      # from this optimizer, so warmup_ratio still applies to both groups.
+      optimizer = build_optimizer(model, encoder, lr, cfg.headLearningRate, cfg.weightDecay)
+      print(f"Using separate head LR: encoder={lr}, head={cfg.headLearningRate}.")
+      trainer_kwargs["optimizers"] = (optimizer, None)
   if cfg.closeLabelEps > 0:
       # Similarity-aware soft-label loss: 'close' predictions cost less than wrong ones.
       soft_targets = build_close_targets(
@@ -723,9 +1187,10 @@ def train(cfg):
   trainer.train()
 
   if cfg.useLora:
-      # Merge the LoRA adapter into the base weights so the saved model is a
-      # plain AutoModelForSequenceClassification. This keeps the evaluate /
-      # inference path unchanged -- no PEFT needed to load the result.
+      # (Not reached for context_format='triple'; guarded above.) Merge the LoRA
+      # adapter into the base weights so the saved model is a plain
+      # AutoModelForSequenceClassification. This keeps the evaluate / inference
+      # path unchanged -- no PEFT needed to load the result.
       merged = trainer.model.merge_and_unload()
       trainer.model = merged
 
@@ -738,12 +1203,53 @@ def train(cfg):
 
   return cfg.saveModelDir
 
+def _triple_classify(texts, cfg, batch_size=64):
+  """Inference for context_format='triple', mirroring the HF text-classification
+  pipeline output: a list of {"label", "score"} dicts (one per input).
+
+  The saved TripleEncoderForSequenceClassification is not a standard HF
+  classifier, so it can't go through pipeline(). This loads it once, splits each
+  raw text into (current, previous, next) via split_context, tokenizes each
+  section, runs the shared encoder + fusion head, and returns the argmax label
+  (via id2label) with its softmax probability -- so evaluate_model's downstream
+  scoring/printing is unchanged.
+  """
+  device = select_device()
+  tokenizer = AutoTokenizer.from_pretrained(cfg.modelName)
+  model = TripleEncoderForSequenceClassification.from_pretrained(cfg.saveModelDir)
+  model.to(device)
+  model.eval()
+  # Saved id2label keys arrive as strings from JSON; normalize to ints.
+  id2label = {int(k): v for k, v in model.config.id2label.items()}
+
+  results = []
+  with torch.no_grad():
+    for start in range(0, len(texts), batch_size):
+      batch = texts[start:start + batch_size]
+      splits = [split_context(t) for t in batch]
+      enc = {}
+      for i, section in enumerate(("current", "previous", "next")):
+        tok = tokenizer([s[i] for s in splits], truncation=True, max_length=512,
+                        padding=True, return_tensors="pt")
+        enc[f"input_ids_{section}"] = tok["input_ids"].to(device)
+        enc[f"attention_mask_{section}"] = tok["attention_mask"].to(device)
+      probs = F.softmax(model(**enc).logits, dim=-1)
+      scores, idxs = probs.max(dim=-1)
+      for idx, score in zip(idxs.tolist(), scores.tolist()):
+        results.append({"label": id2label[idx], "score": float(score)})
+  return results
+
+
 def evaluate_model(cfg, filename="testing"):
   # Without an explicit device the pipeline runs on CPU; select_device() routes
   # it to CUDA/MPS when available (override with AUTOFILL_DEVICE).
   device = select_device()
   print(f"Evaluating on device: {device}")
-  classifier = pipeline("text-classification", model=cfg.saveModelDir, truncation=True, max_length=512, device=device)
+  is_triple = cfg.contextFormat == "triple"
+  # The triple model isn't pipeline-loadable; it uses the custom path below.
+  classifier = None if is_triple else pipeline(
+      "text-classification", model=cfg.saveModelDir, truncation=True,
+      max_length=512, device=device)
 
   list = []
   expectedList = []
@@ -783,7 +1289,9 @@ def evaluate_model(cfg, filename="testing"):
   for l in list:
     print(l)
 
-  results = classifier(list, truncation=True)
+  # For 'triple', `list` holds the raw text (reformat_context is a no-op for it);
+  # _triple_classify splits each row itself. Both paths yield {"label","score"}.
+  results = _triple_classify(list, cfg) if is_triple else classifier(list, truncation=True)
 
   correct = 0
   close = 0
@@ -890,9 +1398,12 @@ def evaluate_model(cfg, filename="testing"):
   return metrics
 
 def infer(text, cfg):
-  classifier = pipeline("text-classification", model=cfg.saveModelDir)
-
-  results = classifier([text])
+  if cfg.contextFormat == "triple":
+    # Custom triple-encoder path (not pipeline-loadable).
+    results = _triple_classify([text], cfg)
+  else:
+    classifier = pipeline("text-classification", model=cfg.saveModelDir)
+    results = classifier([text])
   for result in results:
     print(result)
 
