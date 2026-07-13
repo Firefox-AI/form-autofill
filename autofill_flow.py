@@ -208,8 +208,23 @@ class AutofillFlow(FlowSpec):
         help="How prev/next-field context is encoded at load time: 'bb' keeps the "
              "raw bb/aa per-word prefixes; 'sep' regroups them into [SEP]-delimited "
              "sections; 'symbol' uses distinct single-token markers (• previous, "
-             "§ next). Reformatted on the fly; data files unchanged.",
+             "§ next). 'triple' is a different architecture: current/previous/next "
+             "are split into three strings, each run through a shared base "
+             "transformer, and the three outputs fused by an MLP head. 'triple' is "
+             "supported for train/test only -- not ONNX export, quantization, or "
+             "the two-stage form_context flow. Reformatted on the fly; data files "
+             "unchanged.",
         default="bb",
+    )
+    pooling = Parameter(
+        "pooling",
+        help="Pooling for the single-sequence path (context_format bb/sep/symbol): "
+             "'cls' (default) uses the base model's standard [CLS]/pooler "
+             "classification head; 'mean' classifies off attention-masked "
+             "mean-pooled token embeddings, which matches encoders pretrained with "
+             "mean pooling (e.g. sentence-transformers). Ignored for "
+             "context_format='triple' (always mean-pools).",
+        default="cls",
     )
     gen_to_real_ratio = Parameter(
         "gen_to_real_ratio",
@@ -242,6 +257,43 @@ class AutofillFlow(FlowSpec):
         default=0.0,
         type=float,
     )
+    head_learning_rate = Parameter(
+        "head_learning_rate",
+        help="Separate learning rate for the classification head (triple fusion "
+             "head / mean pooler+classifier / standard classifier); the encoder "
+             "stays on --learning_rate. 0 = single LR for everything. A higher "
+             "value (e.g. 0.001) speeds a randomly-initialized head without "
+             "disturbing the pretrained encoder; most useful for --context_format "
+             "triple.",
+        default=0.0,
+        type=float,
+    )
+    encoder_layers = Parameter(
+        "encoder_layers",
+        help="Shrink the base encoder to this many evenly-spaced transformer "
+             "layers before fine-tuning (e.g. 4 of 12). 0 = keep all. Cuts model "
+             "size/latency; the reduced depth is saved so eval reloads it. "
+             "Combine with prune_vocab.py for a much smaller model.",
+        default=0,
+        type=int,
+    )
+    head_interactions = Parameter(
+        "head_interactions",
+        help="Triple head only: also feed neighbor difference features "
+             "(cur-prev, cur-next) to the fusion (5 sections instead of 3). "
+             "Adds an explicit 'how does this field differ from its neighbors' "
+             "signal. Default off.",
+        default=False,
+        type=bool,
+    )
+    head_proj_dim = Parameter(
+        "head_proj_dim",
+        help="Triple head only: insert a shared Linear(H->d) that projects each "
+             "pooled section to this many dims before fusion (a regularizing "
+             "bottleneck; smaller cached per-field vectors at serving). 0 = off.",
+        default=0,
+        type=int,
+    )
     train_batch_size = Parameter(
         "train_batch_size",
         help="Per-device training batch size.",
@@ -257,6 +309,15 @@ class AutofillFlow(FlowSpec):
     weight_decay = Parameter(
         "weight_decay",
         help="Weight decay.",
+        default=0.0,
+        type=float,
+    )
+    warmup_ratio = Parameter(
+        "warmup_ratio",
+        help="Fraction of total training steps to linearly warm the learning "
+             "rate up from 0 (e.g. 0.1). 0 = no warmup. Helps ease in a "
+             "randomly-initialized head such as the context_format='triple' "
+             "fusion head.",
         default=0.0,
         type=float,
     )
@@ -284,6 +345,13 @@ class AutofillFlow(FlowSpec):
         default=0.1,
         type=float,
     )
+    close_label_eps = Parameter(
+        "close_label_eps",
+        help="Close Label EPS",
+        default=0,
+        type=float,
+    )
+
 
     def _config(self):
         cfg = Config(
@@ -294,16 +362,23 @@ class AutofillFlow(FlowSpec):
             trainFile=self.train_file,
             englishOnly=self.english_only,
             contextFormat=self.context_format,
+            pooling=self.pooling,
+            encoderLayers=self.encoder_layers,
+            headLearningRate=self.head_learning_rate,
+            headInteractions=self.head_interactions,
+            headProjDim=self.head_proj_dim,
             genToRealRatio=self.gen_to_real_ratio,
             ccToRealRatio=self.cc_to_real_ratio,
             learningRate=self.learning_rate,
             trainBatchSize=self.train_batch_size,
             evalBatchSize=self.eval_batch_size,
             weightDecay=self.weight_decay,
+            warmupRatio=self.warmup_ratio,
             useLora=self.use_lora,
             loraR=self.lora_r,
             loraAlpha=self.lora_alpha,
             loraDropout=self.lora_dropout,
+            closeLabelEps=self.close_label_eps
         )
         if self.wandb_project:
             # One W&B run per Metaflow run, shared across the train and eval
