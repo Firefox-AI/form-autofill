@@ -60,14 +60,21 @@ def pooled(session, in_names, tok, texts, batch):
   return np.concatenate(out, axis=0)
 
 
-def evaluate(onnx_path, rows, tok, head, batch):
+def evaluate(onnx_path, rows, tok, head, hj, batch):
   sess = ort.InferenceSession(onnx_path, providers=["CPUExecutionProvider"])
   in_names = [i.name for i in sess.get_inputs()]
-  cur = pooled(sess, in_names, tok, [r[1] for r in rows], batch)
-  prev = pooled(sess, in_names, tok, [r[2] for r in rows], batch)
-  nxt = pooled(sess, in_names, tok, [r[3] for r in rows], batch)
-  fused = torch.from_numpy(np.concatenate([cur, prev, nxt], axis=-1))
+  cur = torch.from_numpy(pooled(sess, in_names, tok, [r[1] for r in rows], batch))
+  prev = torch.from_numpy(pooled(sess, in_names, tok, [r[2] for r in rows], batch))
+  nxt = torch.from_numpy(pooled(sess, in_names, tok, [r[3] for r in rows], batch))
   with torch.no_grad():
+    if "proj.weight" in head:                              # optional shared projection
+      cur = F.linear(cur, head["proj.weight"], head["proj.bias"])
+      prev = F.linear(prev, head["proj.weight"], head["proj.bias"])
+      nxt = F.linear(nxt, head["proj.weight"], head["proj.bias"])
+    sections = [cur, prev, nxt]
+    if hj.get("head_interactions"):                        # neighbor difference features
+      sections += [cur - prev, cur - nxt]
+    fused = torch.cat(sections, dim=-1)
     h = F.gelu(F.linear(fused, head["fusion.weight"], head["fusion.bias"]))
     logits = F.linear(h, head["classifier.weight"], head["classifier.bias"])
   pred = logits.argmax(-1).tolist()
@@ -100,6 +107,8 @@ def main():
   onnx_dir = os.path.join(enc_dir, "onnx")
   tok = AutoTokenizer.from_pretrained(enc_dir)
   head = load_file(os.path.join(args.split_dir, "head", "head.safetensors"))
+  with open(os.path.join(args.split_dir, "head", "head.json"), encoding="utf-8") as fh:
+    hj = json.load(fh)
   rows = read_rows(args.test_file)
   print(f"{len(rows)} test rows | variants: {args.variants}\n")
   print(f'{"variant":24s} {"size(MB)":9s} {"total":8s} {"close":8s}')
@@ -110,7 +119,7 @@ def main():
     if not os.path.exists(p):
       print(f"{v:24s}  (missing)")
       continue
-    total, close = evaluate(p, rows, tok, head, args.batch_size)
+    total, close = evaluate(p, rows, tok, head, hj, args.batch_size)
     if base is None:
       base = total
     mb = os.path.getsize(p) / 1e6

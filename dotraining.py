@@ -381,6 +381,14 @@ class Config:
     # weights -- most useful for the triple head.
     headLearningRate: float = 0.0
 
+    # Triple-head variants (context_format='triple' only; both default off = the
+    # original 3H->H->num_labels head). headInteractions also feeds neighbor
+    # difference features (cur-prev, cur-next) to the fusion; headProjDim > 0
+    # inserts a shared Linear(H->d) that projects each pooled section to d dims
+    # before fusion (a regularizing bottleneck; smaller cached per-field vectors).
+    headInteractions: bool = False
+    headProjDim: int = 0
+
     # Cap synthetic training data relative to real (crawled) data to curb
     # overfitting to templated synthetic forms. Each ratio bounds that source at
     # ratio * (#real rows); <= 0 disables subsampling for that source (keep all).
@@ -697,11 +705,19 @@ class TripleEncoderConfig(PretrainedConfig):
   model_type = "triple_encoder"
 
   def __init__(self, base_model_name=DEFAULT_MODEL_NAME, encoder_config=None,
-               hidden_dropout=0.1, **kwargs):
+               hidden_dropout=0.1, head_interactions=False, head_proj_dim=0, **kwargs):
     super().__init__(**kwargs)
     self.base_model_name = base_model_name
     self.encoder_config = encoder_config
     self.hidden_dropout = hidden_dropout
+    # Head variants (both default off -> the original 3H->H->num_labels head):
+    #   head_interactions: also feed neighbor differences (cur-prev, cur-next),
+    #     so the fusion sees 5 sections instead of 3.
+    #   head_proj_dim > 0: a SHARED Linear(H -> d) projects each pooled section
+    #     before fusion, so the head (and cached per-field embeddings) work in d
+    #     dims instead of H.
+    self.head_interactions = head_interactions
+    self.head_proj_dim = head_proj_dim
 
 
 class TripleEncoderForSequenceClassification(PreTrainedModel):
@@ -727,19 +743,28 @@ class TripleEncoderForSequenceClassification(PreTrainedModel):
     enc_cfg = _resolve_encoder_config(config)
     self.encoder = AutoModel.from_config(enc_cfg)
     hidden = enc_cfg.hidden_size
+    # Optional shared per-section projection H -> d; d is the head's working dim.
+    self.head_proj_dim = int(getattr(config, "head_proj_dim", 0) or 0)
+    self.proj = nn.Linear(hidden, self.head_proj_dim) if self.head_proj_dim > 0 else None
+    d = self.head_proj_dim if self.head_proj_dim > 0 else hidden
+    # Fusion input sections: [cur, prev, next] (+ [cur-prev, cur-next] if enabled).
+    self.head_interactions = bool(getattr(config, "head_interactions", False))
+    n_sections = 5 if self.head_interactions else 3
     self.dropout = nn.Dropout(config.hidden_dropout)
-    self.fusion = nn.Linear(3 * hidden, hidden)
+    self.fusion = nn.Linear(n_sections * d, d)
     self.act = nn.GELU()
-    self.classifier = nn.Linear(hidden, config.num_labels)
+    self.classifier = nn.Linear(d, config.num_labels)
     self.post_init()
 
   @classmethod
   def from_base_pretrained(cls, base_model_name, num_labels, id2label=None,
-                           label2id=None, hidden_dropout=0.1, encoder_layers=0):
+                           label2id=None, hidden_dropout=0.1, encoder_layers=0,
+                           head_interactions=False, head_proj_dim=0):
     """Construct for training: random fusion head + pretrained shared encoder.
 
     encoder_layers > 0 drops the encoder down to that many evenly-spaced layers
-    before training (see select_encoder_layers).
+    before training (see select_encoder_layers). head_interactions / head_proj_dim
+    select the head variant (see TripleEncoderConfig).
     """
     encoder = AutoModel.from_pretrained(base_model_name)
     total = encoder.config.num_hidden_layers
@@ -750,6 +775,8 @@ class TripleEncoderForSequenceClassification(PreTrainedModel):
         base_model_name=base_model_name,
         encoder_config=encoder.config.to_dict(),
         hidden_dropout=hidden_dropout,
+        head_interactions=head_interactions,
+        head_proj_dim=head_proj_dim,
         num_labels=num_labels,
         id2label=id2label,
         label2id=label2id,
@@ -770,7 +797,12 @@ class TripleEncoderForSequenceClassification(PreTrainedModel):
     cur = self._encode(input_ids_current, attention_mask_current)
     prev = self._encode(input_ids_previous, attention_mask_previous)
     nxt = self._encode(input_ids_next, attention_mask_next)
-    fused = torch.cat([cur, prev, nxt], dim=-1)              # (B, 3H)
+    if self.proj is not None:                               # shared H -> d projection
+      cur, prev, nxt = self.proj(cur), self.proj(prev), self.proj(nxt)
+    sections = [cur, prev, nxt]
+    if self.head_interactions:                              # neighbor difference features
+      sections += [cur - prev, cur - nxt]
+    fused = torch.cat(sections, dim=-1)                     # (B, n_sections * d)
     hidden = self.dropout(self.act(self.fusion(fused)))
     logits = self.classifier(hidden)
     loss = None
@@ -911,6 +943,8 @@ def wandb_config(cfg):
     "pooling": cfg.pooling,
     "encoder_layers": cfg.encoderLayers,
     "head_learning_rate": cfg.headLearningRate,
+    "head_interactions": cfg.headInteractions,
+    "head_proj_dim": cfg.headProjDim,
     "gen_to_real_ratio": cfg.genToRealRatio,
     "cc_to_real_ratio": cfg.ccToRealRatio,
     "learning_rate": cfg.learningRate,
@@ -1078,7 +1112,8 @@ def train(cfg):
       model = TripleEncoderForSequenceClassification.from_base_pretrained(
           cfg.modelName, num_labels=len(fieldTypesDict),
           id2label=fieldTypesReversedDict, label2id=fieldTypesDict,
-          encoder_layers=cfg.encoderLayers)
+          encoder_layers=cfg.encoderLayers,
+          head_interactions=cfg.headInteractions, head_proj_dim=cfg.headProjDim)
       encoder = model.encoder
   elif use_mean:
       # Single-sequence, but classify off mean-pooled tokens instead of [CLS].

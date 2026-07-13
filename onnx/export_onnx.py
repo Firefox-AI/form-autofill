@@ -67,23 +67,34 @@ def main():
 
     model_path = os.path.join(args.output, "model.onnx")
     if args.legacy:
-        # Direct legacy export of a plain encoder -> last_hidden_state. Avoids
-        # optimum/torch's dynamo exporter (broken for BertModel on torch>=2.9).
+        # Direct legacy export via the TorchScript exporter (dynamo=False). Avoids
+        # optimum/torch's dynamo exporter, which is broken for BERT-family graphs
+        # on torch>=2.9 (runtime shape errors / failed quantizer shape-inference).
+        # feature-extraction -> AutoModel (last_hidden_state, for the triple
+        # encoder); anything else -> AutoModelForSequenceClassification (logits).
         import inspect
         import torch
-        from transformers import AutoModel
         os.makedirs(args.output, exist_ok=True)
-        model = AutoModel.from_pretrained(args.model_dir).eval()
+        if args.task == "feature-extraction":
+            from transformers import AutoModel
+            model = AutoModel.from_pretrained(args.model_dir).eval()
+            out_name = "last_hidden_state"
+            out_dyn = {0: "batch", 1: "seq"}
+        else:
+            from transformers import AutoModelForSequenceClassification
+            model = AutoModelForSequenceClassification.from_pretrained(args.model_dir).eval()
+            out_name = "logits"
+            out_dyn = {0: "batch"}                 # [batch, num_labels], no seq dim
         names, inputs = ["input_ids", "attention_mask"], [
             torch.ones(1, 8, dtype=torch.long), torch.ones(1, 8, dtype=torch.long)]
         if "token_type_ids" in inspect.signature(model.forward).parameters:
             names.append("token_type_ids")
             inputs.append(torch.zeros(1, 8, dtype=torch.long))
         dynamic = {n: {0: "batch", 1: "seq"} for n in names}
-        dynamic["last_hidden_state"] = {0: "batch", 1: "seq"}
+        dynamic[out_name] = out_dyn
         torch.onnx.export(
             model, tuple(inputs), model_path, input_names=names,
-            output_names=["last_hidden_state"], dynamic_axes=dynamic,
+            output_names=[out_name], dynamic_axes=dynamic,
             opset_version=args.opset, dynamo=False)
     else:
         try:

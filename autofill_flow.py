@@ -277,6 +277,23 @@ class AutofillFlow(FlowSpec):
         default=0,
         type=int,
     )
+    head_interactions = Parameter(
+        "head_interactions",
+        help="Triple head only: also feed neighbor difference features "
+             "(cur-prev, cur-next) to the fusion (5 sections instead of 3). "
+             "Adds an explicit 'how does this field differ from its neighbors' "
+             "signal. Default off.",
+        default=False,
+        type=bool,
+    )
+    head_proj_dim = Parameter(
+        "head_proj_dim",
+        help="Triple head only: insert a shared Linear(H->d) that projects each "
+             "pooled section to this many dims before fusion (a regularizing "
+             "bottleneck; smaller cached per-field vectors at serving). 0 = off.",
+        default=0,
+        type=int,
+    )
     train_batch_size = Parameter(
         "train_batch_size",
         help="Per-device training batch size.",
@@ -348,6 +365,8 @@ class AutofillFlow(FlowSpec):
             pooling=self.pooling,
             encoderLayers=self.encoder_layers,
             headLearningRate=self.head_learning_rate,
+            headInteractions=self.head_interactions,
+            headProjDim=self.head_proj_dim,
             genToRealRatio=self.gen_to_real_ratio,
             ccToRealRatio=self.cc_to_real_ratio,
             learningRate=self.learning_rate,

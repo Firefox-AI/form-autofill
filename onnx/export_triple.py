@@ -72,8 +72,11 @@ def main():
 
   model = TripleEncoderForSequenceClassification.from_pretrained(args.model_dir)
   model.eval()
-  hidden = model.classifier.in_features
+  d = model.classifier.in_features                       # head working dim (H, or proj dim)
+  hidden = model.proj.in_features if model.proj is not None else d
   num_labels = model.classifier.out_features
+  interactions = bool(getattr(model, "head_interactions", False))
+  proj_dim = model.proj.out_features if model.proj is not None else 0
   id2label = {int(k): v for k, v in model.config.id2label.items()}
 
   enc_dir = os.path.join(args.output, "encoder")
@@ -86,32 +89,54 @@ def main():
   AutoTokenizer.from_pretrained(args.model_dir).save_pretrained(enc_dir)
   print(f"wrote encoder -> {enc_dir}")
 
-  # 2) Head weights + contract.
+  # 2) Head weights + contract. Handles the head variants: an optional shared
+  # projection (proj.*) and neighbor-difference interaction features.
   from safetensors.torch import save_file
-  save_file({
+  tensors = {
       "fusion.weight": model.fusion.weight.data.contiguous(),
       "fusion.bias": model.fusion.bias.data.contiguous(),
       "classifier.weight": model.classifier.weight.data.contiguous(),
       "classifier.bias": model.classifier.bias.data.contiguous(),
-  }, os.path.join(head_dir, "head.safetensors"))
+  }
+  if model.proj is not None:
+    tensors["proj.weight"] = model.proj.weight.data.contiguous()
+    tensors["proj.bias"] = model.proj.bias.data.contiguous()
+  save_file(tensors, os.path.join(head_dir, "head.safetensors"))
+
+  sections = ["current", "previous", "next"]
+  if interactions:
+    # differences taken in section_dim space (after the optional projection)
+    sections += ["current-minus-previous", "current-minus-next"]
+  pipeline = ["pool: masked_mean over encoder last_hidden_state -> H"]
+  if proj_dim:
+    pipeline.append(f"proj: shared Linear(H->{proj_dim}) applied to each pooled section")
+  pipeline += [
+      f"concat {len(sections)} sections -> {model.fusion.in_features}",
+      f"fusion: Linear({model.fusion.in_features}->{d})", "gelu",
+      f"classifier: Linear({d}->num_labels)"]
   head_json = {
       "hidden_size": hidden,
+      "section_dim": d,
       "num_labels": num_labels,
-      "input_dim": 3 * hidden,
-      "input_order": ["current", "previous", "next"],
+      "head_interactions": interactions,
+      "head_proj_dim": proj_dim,
+      "input_order": sections,
+      "input_dim": model.fusion.in_features,
       "pooling": "masked_mean",
       "activation": "gelu_erf",
-      "pipeline": ["fusion: Linear(3H->H)", "gelu", "classifier: Linear(H->num_labels)"],
+      "pipeline": pipeline,
       "id2label": id2label,
       "base_model_name": model.config.base_model_name,
   }
   with open(os.path.join(head_dir, "head.json"), "w", encoding="utf-8") as fh:
     json.dump(head_json, fh, indent=2, ensure_ascii=False)
-  print(f"wrote head weights + head.json -> {head_dir}")
+  print(f"wrote head weights + head.json -> {head_dir} "
+        f"(interactions={interactions}, proj_dim={proj_dim}, fusion_in={model.fusion.in_features})")
 
-  # 3) Optional: head.onnx (tiny; only if torch.onnx export works in this env).
+  # 3) Optional: head.onnx (fusion+classifier over the assembled concat; the
+  # engine pools/projects/assembles the concat first). Only if torch.onnx works.
   head = _Head(model.fusion, model.act, model.classifier).eval()
-  dummy = torch.zeros(1, 3 * hidden)
+  dummy = torch.zeros(1, model.fusion.in_features)
   try:
     torch.onnx.export(
         head, dummy, os.path.join(head_dir, "head.onnx"),
