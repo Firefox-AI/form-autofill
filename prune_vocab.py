@@ -96,6 +96,53 @@ def remap_post_processor(pp, old2new):
     entry["ids"] = [old2new[i] for i in entry["ids"]]
 
 
+def _find_metaspace(pre_tokenizer):
+  """Return the Metaspace pre-tokenizer dict (top-level or nested in a
+  Sequence), or None if the tokenizer isn't a Metaspace/SentencePiece one."""
+  if not pre_tokenizer:
+    return None
+  if pre_tokenizer.get("type") == "Metaspace":
+    return pre_tokenizer
+  if pre_tokenizer.get("type") == "Sequence":
+    for pt in pre_tokenizer.get("pretokenizers", []):
+      if pt.get("type") == "Metaspace":
+        return pt
+  return None
+
+
+def make_transformersjs_compatible(spec):
+  """Rewrite a Metaspace/SentencePiece pre-tokenizer into the single-`Metaspace`
+  form that transformers.js reproduces correctly, in place on `spec`.
+
+  Newer `tokenizers` serialize the XLM-R/SentencePiece pre-tokenizer as
+  `Sequence[WhitespaceSplit, Metaspace(prepend_scheme="always")]` WITHOUT
+  `add_prefix_space`. transformers.js (as of 3.5.1, vendored in Firefox) only
+  prepends the leading `▁` metaspace marker when `add_prefix_space` is truthy,
+  and the WhitespaceSplit strips the spaces that would otherwise produce the
+  internal `▁`. The result: transformers.js tokenizes word-initial tokens to the
+  bare (`name`) vocab entry instead of the word-initial (`▁name`) one, so the
+  encoder -- indexed to the `▁`-prefixed ids -- gets the wrong embeddings.
+
+  Collapsing to a single `Metaspace` with `add_prefix_space: true` makes
+  transformers.js match the HF (Python) tokenization exactly, and leaves the HF
+  tokenization itself unchanged (verified byte-identical), so training/offline
+  ids are unaffected. No-op for non-Metaspace tokenizers (e.g. WordPiece)."""
+  ms = _find_metaspace(spec.get("pre_tokenizer"))
+  if ms is None:
+    return
+  fixed = {
+      "type": "Metaspace",
+      "replacement": ms.get("replacement", "▁"),
+      "prepend_scheme": ms.get("prepend_scheme", "always"),
+      "split": ms.get("split", True),
+      "add_prefix_space": True,
+  }
+  spec["pre_tokenizer"] = fixed
+  # Keep the decoder consistent with the pre-tokenizer.
+  if (spec.get("decoder") or {}).get("type") == "Metaspace":
+    spec["decoder"] = {**fixed, "type": "Metaspace"}
+
+
 def build_pruned_tokenizer(tokenizer, kept, old2new):
   """Rebuild the fast tokenizer over the reduced, reindexed vocabulary."""
   from tokenizers import Tokenizer
@@ -107,6 +154,9 @@ def build_pruned_tokenizer(tokenizer, kept, old2new):
   for added in spec.get("added_tokens", []):
     added["id"] = old2new[added["id"]]
   remap_post_processor(spec.get("post_processor"), old2new)
+  # Ensure the pruned tokenizer.json tokenizes identically under transformers.js
+  # (Firefox) and HF Python -- see make_transformersjs_compatible.
+  make_transformersjs_compatible(spec)
 
   new_backend = Tokenizer.from_str(json.dumps(spec))
   # Carry over the special-token strings so the wrapper resolves them by name.
