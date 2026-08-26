@@ -30,7 +30,13 @@ TJS_REF="${TRANSFORMERS_JS_REF:-3.8.1}"
 # Encoder is a feature extractor (no classifier head), so no per-channel/label
 # assumptions; keep the same 8-bit-friendly per-channel default as the classifier path.
 QUANT_MODES="${QUANT_MODES:-fp16 q8 int8 uint8 q4 q4f16 bnb4}"
-QUANT_EXTRA="${QUANT_EXTRA:---per_channel}"
+# --reduce_range is REQUIRED alongside --per_channel: full-scale +-127 weights
+# saturate the int16 accumulator in ORT's VPMADDUBSW path on AVX2-without-VNNI.
+# Being a feature extractor does not help -- the saturation is in the encoder's
+# own MatMulInteger nodes, and with no argmax to absorb it the pooled embedding
+# drifts continuously and the fp32 fusion head amplifies it. See Bug 2064781 and
+# the longer note in quantize_and_eval.sh.
+QUANT_EXTRA="${QUANT_EXTRA:---per_channel --reduce_range}"
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 NAME="autofill-tiny-supported-${RUN_ID}"
@@ -69,6 +75,14 @@ rm -rf "${ENC}/onnx"
 echo "==> [5/5] Quantizing encoder: ${QUANT_MODES} ${QUANT_EXTRA}"
 ( cd "$TJS_DIR" && "$VENV_PY" -m scripts.quantize \
     --input_folder "${ENC}/onnx" --output_folder "${ENC}/onnx" --modes ${QUANT_MODES} ${QUANT_EXTRA} )
+
+# Verify the weights rather than trusting that --reduce_range was passed.
+echo "==> Verifying int8 weight range (Bug 2064781)"
+for variant in model_quantized.onnx model_int8.onnx; do
+    if [ -f "${ENC}/onnx/${variant}" ]; then
+        "$VENV_PY" "${REPO}/check_int8_range.py" "${ENC}/onnx/${variant}"
+    fi
+done
 
 echo "==> Done."
 echo "    encoder ONNX + quantized variants: ${ENC}/onnx/model*.onnx"

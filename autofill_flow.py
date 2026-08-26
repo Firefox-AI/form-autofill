@@ -352,6 +352,15 @@ class AutofillFlow(FlowSpec):
         type=float,
     )
 
+    strip_type_marker = Parameter(
+        "strip_type_marker",
+        help="Strip the '**'<type> marker from context text (train/val/test) so a "
+             "retrained model matches Firefox inference, which drops the '**' "
+             "(keeping only the type word). See dotraining.strip_type_marker.",
+        default=False,
+        type=bool,
+    )
+
 
     def _config(self):
         cfg = Config(
@@ -378,7 +387,8 @@ class AutofillFlow(FlowSpec):
             loraR=self.lora_r,
             loraAlpha=self.lora_alpha,
             loraDropout=self.lora_dropout,
-            closeLabelEps=self.close_label_eps
+            closeLabelEps=self.close_label_eps,
+            stripTypeMarker=self.strip_type_marker,
         )
         if self.wandb_project:
             # One W&B run per Metaflow run, shared across the train and eval

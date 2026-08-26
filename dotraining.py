@@ -20,6 +20,7 @@ import torch.nn as nn
 from datasets import Dataset
 
 import os
+import re
 import sys
 import time
 import random
@@ -187,6 +188,37 @@ def reformat_context(text, fmt="bb"):
   prev_marker, next_marker = ("[SEP]", "[SEP]") if fmt == "sep" else (PREV_SYMBOL, NEXT_SYMBOL)
   return (f"{' '.join(current)} {prev_marker} {' '.join(previous)} "
           f"{next_marker} {' '.join(nxt)}")
+
+
+# Firefox's WORD_RE is /\s*([\p{L}\p{N}]+)/u; marker types are ASCII input-type
+# names, so [a-z0-9]+ reproduces its splitting (e.g. 'select-one' -> select, one).
+_MARKER_WORD = re.compile(r"[a-z0-9]+")
+
+
+def strip_type_marker(text, cfg):
+  """Rewrite the '**'<type> marker to exactly what Firefox inference produces,
+  when cfg.stripTypeMarker is set.
+
+  The training .txt stores the literal marker ('**select-one', and baked into
+  neighbours as 'aa**select-one'/'bb**email'). Firefox never sends that: the
+  marker is tokenized by FormAutofillHeuristics.tokenizeWords, whose WORD_RE
+  (/\\s*([\\p{L}\\p{N}]+)/u) drops the '**', SPLITS on '-', and keeps only words
+  >= 3 chars -- so '**select-one' -> 'select one' and '**email' -> 'email'.
+  Neighbours re-apply the aa/bb prefix per word: 'aa**select-one' ->
+  'aaselect aaone'. Reproducing that exactly makes train/validation/test match
+  shipped inference. Only tokens containing '**' are touched; every other token
+  (already tokenized and >= 3 chars by the data generator) passes through.
+  """
+  if not cfg.stripTypeMarker or "**" not in text:
+    return text
+  out = []
+  for tok in text.split():
+    if "**" not in tok:
+      out.append(tok)
+      continue
+    prefix, _, typ = tok.partition("**")   # prefix is '', 'aa' or 'bb'
+    out.extend(prefix + w for w in _MARKER_WORD.findall(typ) if len(w) >= 3)
+  return " ".join(out)
 
 
 # Seed for reproducible synthetic-data subsampling (so the kept rows are the
@@ -415,6 +447,14 @@ class Config:
     # than a genuinely wrong one. 0.0 (default) reproduces plain cross-entropy;
     # 0.1-0.2 is a good range. Aims to lift both Total and Close accuracy.
     closeLabelEps: float = 0.0
+
+    # Rewrite the '**'<type> marker in context text at load time (train/val/test)
+    # to exactly what Firefox inference produces: its WORD_RE drops the '**',
+    # splits hyphens and keeps >=3-char words ('**email'->'email',
+    # '**select-one'->'select one'). The training .txt stores the literal marker,
+    # so the shipped model sees tokens the browser never sends. Set True to retrain
+    # a model that matches shipped inference. See strip_type_marker.
+    stripTypeMarker: bool = False
 
     # LoRA / parameter-efficient fine-tuning. When useLora is set, the model is
     # wrapped with a PEFT LoRA adapter for training and the adapter is merged
@@ -953,6 +993,7 @@ def wandb_config(cfg):
     "weight_decay": cfg.weightDecay,
     "warmup_ratio": cfg.warmupRatio,
     "close_label_eps": cfg.closeLabelEps,
+    "strip_type_marker": cfg.stripTypeMarker,
     "use_lora": cfg.useLora,
     "lora_r": cfg.loraR,
     "lora_alpha": cfg.loraAlpha,
@@ -981,7 +1022,7 @@ def readFile(filetype, cfg):
     if cfg.englishOnly and not classify_locale(src)[2]:
       continue
     try:
-      raw = lineData[ignoreLineCount + 1]
+      raw = strip_type_marker(lineData[ignoreLineCount + 1], cfg)
       if cfg.contextFormat == "triple":
         # Three separate strings (aa/bb removed); tokenized per-section in train.
         cur, prev, nxt = split_context(raw)
@@ -1298,7 +1339,7 @@ def evaluate_model(cfg, filename="testing"):
   for line in lines:
     line = line.strip()
     lineData = line.split(",", ignoreLineCount + 1)
-    raw_text = lineData[ignoreLineCount + 1]
+    raw_text = strip_type_marker(lineData[ignoreLineCount + 1], cfg)
     # Re-encode bb/aa context the same way as training so eval stays consistent;
     # autocomplete detection below still works off the raw text.
     list.append(reformat_context(raw_text, cfg.contextFormat))

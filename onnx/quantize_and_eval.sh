@@ -30,7 +30,14 @@ QUANT_MODES="${QUANT_MODES:-fp16 q8 int8 uint8 q4 q4f16 bnb4}"
 # dramatically improves their accuracy vs the per-tensor default -- it gives each
 # output channel its own scale instead of one scale per weight tensor. Override
 # with QUANT_EXTRA="" to reproduce the old per-tensor behavior.
-QUANT_EXTRA="${QUANT_EXTRA:---per_channel}"
+#
+# --reduce_range is REQUIRED whenever --per_channel is used. Per-channel maps
+# every column's max to full-scale +-127; on x86-64 with AVX2 but no VNNI, ORT's
+# MLAS kernel accumulates adjacent u8*s8 products into int16 via VPMADDUBSW, and
+# 2*255*127 = 64770 silently saturates. reduce_range caps weights at 7 bits
+# (+-64), so 2*255*64 = 32640 stays inside int16. Costs ~1 bit of weight
+# precision; measured accuracy impact is negligible. See Bug 2064781.
+QUANT_EXTRA="${QUANT_EXTRA:---per_channel --reduce_range}"
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 NAME="autofill-tiny-supported-${RUN_ID}"
@@ -67,6 +74,14 @@ rm -rf "${QDIR}/onnx"
 echo "==> [4/5] Quantizing: ${QUANT_MODES} ${QUANT_EXTRA}"
 ( cd "$TJS_DIR" && "$VENV_PY" -m scripts.quantize \
     --input_folder "${QDIR}/onnx" --output_folder "${QDIR}/onnx" --modes ${QUANT_MODES} ${QUANT_EXTRA} )
+
+# Verify the weights rather than trusting that --reduce_range was passed.
+echo "==> Verifying int8 weight range (Bug 2064781)"
+for variant in model_quantized.onnx model_int8.onnx; do
+    if [ -f "${QDIR}/onnx/${variant}" ]; then
+        "$VENV_PY" "${REPO}/check_int8_range.py" "${QDIR}/onnx/${variant}"
+    fi
+done
 
 echo "==> [5/5] Evaluating variants against ${TEST_FILE}"
 "$VENV_PY" "${REPO}/eval_quantized.py" \
