@@ -3,3 +3,27 @@ outputs
 output-models
 *.pyc
 **/__pycache__/
+
+# secrets
+.env
+**/.env
+
+# scratch / regenerable datasets + run-staging (derived from datasets/vN/)
+data_tools/ffgen/
+processed_datasets_baseline/
+processed_datasets_optrange/
+data/non_address_labeled/
+/training-*.txt
+/validation-*.txt
+/testing-*.txt
+
+# model outputs / temp artifacts
+autofill-tiny-supported/
+triple_results/
+triple_results.zip
+sym_shape_infer_temp.onnx
+*.data
+
+# IDE / metaflow
+.idea/
+.metaflow/
