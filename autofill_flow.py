@@ -241,6 +241,14 @@ class AutofillFlow(FlowSpec):
         default=0.0,
         type=float,
     )
+    subsample_validation = Parameter(
+        "subsample_validation",
+        help="Apply the gen/cc subsampling ratios to the VALIDATION set too (not "
+             "just training), so validation reflects the reduced-synthetic mix and "
+             "is a better real-site proxy. Testing is GEN-free, so unaffected.",
+        default=False,
+        type=bool,
+    )
     eval_dataset = Parameter(
         "eval_dataset",
         help="Base name of the dataset to evaluate against (e.g. 'testing' or 'together').",
@@ -293,6 +301,51 @@ class AutofillFlow(FlowSpec):
              "bottleneck; smaller cached per-field vectors at serving). 0 = off.",
         default=0,
         type=int,
+    )
+    window_size = Parameter(
+        "window_size",
+        help="Attention head only (context_format='attention'): number of "
+             "neighbor fields per side in the window. Must be <= the window the "
+             "data was exported at; smaller values drop farther neighbors.",
+        default=3,
+        type=int,
+    )
+    num_heads = Parameter(
+        "num_heads",
+        help="Attention head only: number of attention heads (1 = single-head). "
+             "hidden size must be divisible by this.",
+        default=1,
+        type=int,
+    )
+    pos_encoding = Parameter(
+        "pos_encoding",
+        help="Attention head only: positional encoding over the window -- "
+             "'learned' (absolute per-slot embedding), 'rope' (rotary, relative "
+             "offset), or 'none'.",
+        default="learned",
+    )
+    window_fusion = Parameter(
+        "window_fusion",
+        help="context_format='attention' only: 'attention' (learned attention "
+             "over the window) or 'concat' (the triple add/subtract MLP "
+             "generalized to +-window_size; uses head_interactions/head_proj_dim).",
+        default="attention",
+    )
+    head_full_current = Parameter(
+        "head_full_current",
+        help="Attention head with a bottleneck (head_proj_dim>0): keep the "
+             "current field at full hidden width into the fusion; only the "
+             "neighbor attention is bottlenecked. No effect without head_proj_dim.",
+        default=False,
+        type=bool,
+    )
+    head_concat_current = Parameter(
+        "head_concat_current",
+        help="Attention head: if False, classify from the attention context "
+             "only (the current field still participates as a key/value via "
+             "self-attention); no explicit concat of the current embedding.",
+        default=True,
+        type=bool,
     )
     train_batch_size = Parameter(
         "train_batch_size",
@@ -376,8 +429,15 @@ class AutofillFlow(FlowSpec):
             headLearningRate=self.head_learning_rate,
             headInteractions=self.head_interactions,
             headProjDim=self.head_proj_dim,
+            windowSize=self.window_size,
+            numHeads=self.num_heads,
+            posEncoding=self.pos_encoding,
+            windowFusion=self.window_fusion,
+            headFullCurrent=self.head_full_current,
+            headConcatCurrent=self.head_concat_current,
             genToRealRatio=self.gen_to_real_ratio,
             ccToRealRatio=self.cc_to_real_ratio,
+            subsampleValidation=self.subsample_validation,
             learningRate=self.learning_rate,
             trainBatchSize=self.train_batch_size,
             evalBatchSize=self.eval_batch_size,

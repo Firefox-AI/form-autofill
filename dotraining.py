@@ -98,7 +98,7 @@ def classify_locale(filename):
 # TripleEncoderForSequenceClassification). "triple" is only supported by the
 # train / evaluate_model / infer paths in this file -- not the pipeline-based
 # ONNX export, quantization, or two-stage form_context flow.
-CONTEXT_FORMATS = ("bb", "sep", "symbol", "triple")
+CONTEXT_FORMATS = ("bb", "sep", "symbol", "triple", "attention")
 
 # Pooling modes for the single-sequence path (context_format bb/sep/symbol);
 # see Config.pooling. "cls" uses the base model's standard classification head
@@ -154,6 +154,41 @@ def split_context(text):
   return " ".join(current), " ".join(previous), " ".join(nxt)
 
 
+# Wide-window context (context_format="attention"). Firefox emits neighbor tokens
+# prefixed with "~<offset>" (e.g. "~-2foo", "~1bar"); the current field's tokens
+# are unprefixed. See FormAutofillHeuristics tokenizeElements (contextWindow>=2).
+_WIDE_TOKEN = re.compile(r"^~(-?\d+)(.*)$")
+
+
+def wide_section_name(offset):
+  """Column-name suffix for a neighbor offset: 0->current, -2->prev2, 1->next1."""
+  if offset == 0:
+    return "current"
+  return f"prev{-offset}" if offset < 0 else f"next{offset}"
+
+
+def parse_wide_context(text, window):
+  """Bucket a "~<offset>" wide-context string into per-offset strings.
+
+  Returns a dict keyed by wide_section_name(offset) for offset in
+  [-window..window]; neighbor tokens beyond `window` are dropped, so data
+  exported at a large window can be trained/evaluated at a smaller one.
+  """
+  buckets = {d: [] for d in range(-window, window + 1)}
+  for word in text.split():
+    if word.startswith("~"):
+      m = _WIDE_TOKEN.match(word)
+      if not m:
+        continue
+      d = int(m.group(1))
+      if d != 0 and -window <= d <= window:
+        buckets[d].append(m.group(2))
+      # offsets outside the window are intentionally dropped
+    else:
+      buckets[0].append(word)
+  return {wide_section_name(d): " ".join(buckets[d]) for d in buckets}
+
+
 def reformat_context(text, fmt="bb"):
   """Re-encode the bb/aa per-word context prefixes at load time.
 
@@ -180,7 +215,7 @@ def reformat_context(text, fmt="bb"):
   readFile / eval rather than producing a single sequence. Applied on the fly;
   data files are not modified.
   """
-  if fmt in ("bb", "triple"):
+  if fmt in ("bb", "triple", "attention"):
     return text
   if fmt not in ("sep", "symbol"):
     raise ValueError(f"Unknown context_format {fmt!r}; expected one of {CONTEXT_FORMATS}")
@@ -421,12 +456,42 @@ class Config:
     headInteractions: bool = False
     headProjDim: int = 0
 
+    # Attention-head variant (context_format='attention'). The shared encoder
+    # pools each field in a +-windowSize neighbor window; a single (or numHeads)
+    # scaled-dot-product attention head, with a learned per-offset positional
+    # embedding, attends from the current field over the window, and the classifier
+    # reads [current, attended-context]. windowSize can be <= the window the data
+    # was exported at (parse_wide_context drops farther neighbors).
+    windowSize: int = 3
+    numHeads: int = 1
+    # Positional encoding for the attention head over the neighbor window:
+    #   "learned" - a learned absolute per-slot embedding added before attention;
+    #   "rope"    - rotary embeddings applied to q/k (encodes relative offset,
+    #               i.e. neighbor distance, directly in the attention score);
+    #   "none"    - no positional information.
+    posEncoding: str = "learned"
+    # How the attention model combines the window: "attention" (learned attention)
+    # or "concat" (the triple add/subtract MLP generalized to +-windowSize;
+    # honors headInteractions for cur-e_d diffs and headProjDim for a bottleneck).
+    windowFusion: str = "attention"
+    # With a head bottleneck (headProjDim>0), keep the current field at full
+    # hidden width into the fusion; only the neighbor attention is bottlenecked.
+    headFullCurrent: bool = False
+    # Attention only: if False, classify from the attention context alone (no
+    # explicit concat of the current field's embedding).
+    headConcatCurrent: bool = True
+
     # Cap synthetic training data relative to real (crawled) data to curb
     # overfitting to templated synthetic forms. Each ratio bounds that source at
     # ratio * (#real rows); <= 0 disables subsampling for that source (keep all).
     # Applied to the training set only (see readFile / _subsample_sources).
     genToRealRatio: float = 0.0   # GEN_* generated forms
     ccToRealRatio: float = 0.0    # CC_* credit-card forms
+    # By default the gen/cc subsampling is applied to TRAINING only (validation
+    # keeps its full distribution). Set True to ALSO subsample validation with the
+    # same ratios -- makes validation a less-synthetic, more real-site-like proxy
+    # (testing is already GEN-free, so it is unaffected).
+    subsampleValidation: bool = False
 
     # Training hyperparameters. Defaults match the HF Trainer defaults so that
     # leaving them unset reproduces the previous behavior. learningRate of 0.0
@@ -886,6 +951,233 @@ class TripleDataCollator:
     return batch
 
 
+# ---- Wide-window attention model (context_format="attention") -------------
+#
+# Generalizes the triple model to +-windowSize neighbors. The shared encoder
+# mean-pools each field in the window to a vector; a learned per-offset positional
+# embedding is added; a (single- or multi-head) scaled-dot-product attention head
+# attends FROM the current field OVER the whole window; the classifier reads
+# [current_embedding, attended_context]. Replaces the triple's fixed add/subtract
+# interaction features with learned attention.
+
+def wide_offsets(window):
+  """Offsets in slot order (-window..window); the current field is offset 0."""
+  return list(range(-window, window + 1))
+
+
+POS_ENCODINGS = ("learned", "rope", "none")
+
+
+def _rotate_half(x):
+  x1, x2 = x.chunk(2, dim=-1)
+  return torch.cat((-x2, x1), dim=-1)
+
+
+def _apply_rope(x, cos, sin):
+  return x * cos + _rotate_half(x) * sin
+
+
+class WindowAttentionConfig(PretrainedConfig):
+  model_type = "window_attention"
+
+  def __init__(self, base_model_name=DEFAULT_MODEL_NAME, encoder_config=None,
+               hidden_dropout=0.1, window_size=3, num_heads=1,
+               pos_encoding="learned", window_fusion="attention",
+               head_interactions=False, head_proj_dim=0, head_full_current=False,
+               head_concat_current=True, **kwargs):
+    super().__init__(**kwargs)
+    self.base_model_name = base_model_name
+    self.encoder_config = encoder_config
+    self.hidden_dropout = hidden_dropout
+    self.window_size = window_size
+    self.num_heads = num_heads
+    self.pos_encoding = pos_encoding
+    # "attention" (learned attention over the window) or "concat" (the triple
+    # add/subtract MLP generalized to +-window: concat all sections, plus
+    # difference features cur-e_d when head_interactions, through an MLP).
+    self.window_fusion = window_fusion
+    self.head_interactions = head_interactions
+    self.head_proj_dim = head_proj_dim
+    # With a bottleneck, keep the current field at full hidden width into the
+    # fusion (only neighbors are projected). No effect without head_proj_dim.
+    self.head_full_current = head_full_current
+    # If False, classify from the attention context only (no concat of current).
+    self.head_concat_current = head_concat_current
+
+
+class WindowAttentionForSequenceClassification(PreTrainedModel):
+  """Shared-encoder model with a windowed attention fusion head."""
+  config_class = WindowAttentionConfig
+
+  def __init__(self, config):
+    super().__init__(config)
+    enc_cfg = _resolve_encoder_config(config)
+    self.encoder = AutoModel.from_config(enc_cfg)
+    hidden = enc_cfg.hidden_size
+    self.window_size = W = int(config.window_size)
+    self.n_sections = 2 * W + 1
+    self.window_fusion = getattr(config, "window_fusion", "attention")
+    self.head_interactions = bool(getattr(config, "head_interactions", False))
+    # Optional shared H->d bottleneck applied to each pooled section (fewer head
+    # params / smaller cached vectors). d is the head's working width.
+    self.head_proj_dim = int(getattr(config, "head_proj_dim", 0) or 0)
+    self.proj = nn.Linear(hidden, self.head_proj_dim) if self.head_proj_dim > 0 else None
+    d = self.head_proj_dim if self.head_proj_dim > 0 else hidden
+    # When set (with a bottleneck), the CURRENT field bypasses the projection and
+    # enters the fusion at full hidden width -- only the neighbor attention is
+    # bottlenecked. Keeps the dominant own-field signal full-resolution while the
+    # from-scratch neighbor head stays lean.
+    self.head_full_current = bool(getattr(config, "head_full_current", False)) and self.proj is not None
+    cur_dim = hidden if self.head_full_current else d
+    # If False, the classifier reads ONLY the attended context (the current field
+    # still participates as a key/value via self-attention); no explicit concat
+    # of the current embedding. Attention fusion only.
+    self.head_concat_current = bool(getattr(config, "head_concat_current", True))
+    self.dropout = nn.Dropout(config.hidden_dropout)
+    self.act = nn.GELU()
+    if self.window_fusion == "attention":
+      self.num_heads = int(getattr(config, "num_heads", 1) or 1)
+      if d % self.num_heads:
+        raise ValueError(f"working dim {d} not divisible by num_heads {self.num_heads}")
+      self.pos_encoding = getattr(config, "pos_encoding", "learned")
+      if self.pos_encoding not in POS_ENCODINGS:
+        raise ValueError(f"Unknown pos_encoding {self.pos_encoding!r}; expected {POS_ENCODINGS}")
+      head_dim = d // self.num_heads
+      if self.pos_encoding == "learned":
+        self.pos = nn.Embedding(self.n_sections, d)
+      elif self.pos_encoding == "rope":
+        if head_dim % 2:
+          raise ValueError(f"rope needs an even head_dim, got {head_dim}")
+        inv_freq = 1.0 / (10000 ** (torch.arange(0, head_dim, 2).float() / head_dim))
+        self.register_buffer("rope_inv_freq", inv_freq, persistent=False)
+      self.q = nn.Linear(d, d)
+      self.k = nn.Linear(d, d)
+      self.v = nn.Linear(d, d)
+      fusion_in = (cur_dim + d) if self.head_concat_current else d
+      self.fusion = nn.Linear(fusion_in, d)     # [current, ctx] or ctx-only
+    elif self.window_fusion == "concat":
+      # Triple add/subtract MLP generalized to +-W: concat all sections (+ the
+      # difference features cur - e_d for d != 0 when head_interactions). With
+      # head_full_current the current section enters at full hidden width.
+      n_neighbors = self.n_sections - 1
+      n_diff = n_neighbors if self.head_interactions else 0
+      in_dim = cur_dim + (n_neighbors + n_diff) * d
+      self.fusion = nn.Linear(in_dim, d)
+    else:
+      raise ValueError(f"Unknown window_fusion {self.window_fusion!r}")
+    self.classifier = nn.Linear(d, config.num_labels)
+    self.post_init()
+
+  @classmethod
+  def from_base_pretrained(cls, base_model_name, num_labels, id2label=None,
+                           label2id=None, hidden_dropout=0.1, encoder_layers=0,
+                           window_size=3, num_heads=1, pos_encoding="learned",
+                           window_fusion="attention", head_interactions=False,
+                           head_proj_dim=0, head_full_current=False,
+                           head_concat_current=True):
+    encoder = AutoModel.from_pretrained(base_model_name)
+    total = encoder.config.num_hidden_layers
+    kept = select_encoder_layers(encoder, encoder_layers)
+    if kept is not None:
+      print(f"  layer-drop: {total} -> {len(kept)} encoder layers {kept}")
+    config = cls.config_class(
+        base_model_name=base_model_name,
+        encoder_config=encoder.config.to_dict(),
+        hidden_dropout=hidden_dropout,
+        window_size=window_size,
+        num_heads=num_heads,
+        pos_encoding=pos_encoding,
+        window_fusion=window_fusion,
+        head_interactions=head_interactions,
+        head_proj_dim=head_proj_dim,
+        head_full_current=head_full_current,
+        head_concat_current=head_concat_current,
+        num_labels=num_labels,
+        id2label=id2label,
+        label2id=label2id,
+    )
+    model = cls(config)
+    model.encoder = encoder
+    return model
+
+  def _encode(self, input_ids, attention_mask):
+    out = self.encoder(input_ids=input_ids, attention_mask=attention_mask)
+    return masked_mean_pool(out.last_hidden_state, attention_mask)
+
+  def forward(self, labels=None, **kwargs):
+    W = self.window_size
+    embs_full = []  # per-slot pooled embeddings at full hidden width
+    for d in wide_offsets(W):
+      name = wide_section_name(d)
+      embs_full.append(self._encode(kwargs[f"input_ids_{name}"], kwargs[f"attention_mask_{name}"]))
+    # Projected (bottlenecked) copies for the neighbor attention/fusion math.
+    embs = [self.proj(e) for e in embs_full] if self.proj is not None else embs_full
+    # The current field feeds the fusion at full width when head_full_current,
+    # else at the (possibly bottlenecked) working width.
+    cur_head = embs_full[W] if self.head_full_current else embs[W]
+
+    if self.window_fusion == "concat":
+      sections = [cur_head] + [embs[i] for i in range(len(embs)) if i != W]
+      if self.head_interactions:                 # diffs computed in the working dim
+        sections += [embs[W] - embs[i] for i in range(len(embs)) if i != W]
+      hidden = self.dropout(self.act(self.fusion(torch.cat(sections, dim=-1))))
+    else:  # attention (over the projected/working-dim sections)
+      cur = embs[W]
+      seq = torch.stack(embs, dim=1)                     # (B, S, d)
+      B, S, d = seq.shape
+      nh, hd = self.num_heads, d // self.num_heads
+      kv_in = seq
+      if self.pos_encoding == "learned":
+        kv_in = seq + self.pos(torch.arange(S, device=seq.device))
+      q = self.q(cur).view(B, nh, 1, hd)
+      k = self.k(kv_in).view(B, S, nh, hd).transpose(1, 2)
+      v = self.v(kv_in).view(B, S, nh, hd).transpose(1, 2)
+      if self.pos_encoding == "rope":
+        ang = torch.outer(torch.arange(S, device=seq.device).float(), self.rope_inv_freq)
+        emb = torch.cat([ang, ang], dim=-1)
+        cos, sin = emb.cos(), emb.sin()
+        q = _apply_rope(q, cos[W].view(1, 1, 1, hd), sin[W].view(1, 1, 1, hd))
+        k = _apply_rope(k, cos.view(1, 1, S, hd), sin.view(1, 1, S, hd))
+      scores = (q @ k.transpose(-1, -2)) / (hd ** 0.5)
+      ctx = (scores.softmax(-1) @ v).transpose(1, 2).reshape(B, d)
+      # current enters the fusion at full width (cur_head) when head_full_current;
+      # with head_concat_current=False the classifier reads only the attended ctx.
+      fused_in = torch.cat([cur_head, ctx], dim=-1) if self.head_concat_current else ctx
+      hidden = self.dropout(self.act(self.fusion(fused_in)))
+
+    logits = self.classifier(hidden)
+    loss = F.cross_entropy(logits, labels) if labels is not None else None
+    return SequenceClassifierOutput(loss=loss, logits=logits)
+
+
+try:
+  AutoConfig.register("window_attention", WindowAttentionConfig)
+  AutoModelForSequenceClassification.register(
+      WindowAttentionConfig, WindowAttentionForSequenceClassification)
+except (ValueError, KeyError):
+  pass
+
+
+class WindowDataCollator:
+  """Dynamic-pads each of the 2*window+1 tokenized sections independently."""
+
+  def __init__(self, tokenizer, window):
+    self.tokenizer = tokenizer
+    self.sections = [wide_section_name(d) for d in wide_offsets(window)]
+
+  def __call__(self, features):
+    batch = {}
+    for section in self.sections:
+      group = [{"input_ids": f[f"input_ids_{section}"],
+                "attention_mask": f[f"attention_mask_{section}"]} for f in features]
+      padded = self.tokenizer.pad(group, return_tensors="pt")
+      batch[f"input_ids_{section}"] = padded["input_ids"]
+      batch[f"attention_mask_{section}"] = padded["attention_mask"]
+    if "label" in features[0]:
+      batch["labels"] = torch.tensor([f["label"] for f in features], dtype=torch.long)
+    return batch
+
+
 # ---- Mean-pooling single-sequence model (pooling="mean") ------------------
 #
 # Same single input as the standard AutoModelForSequenceClassification path,
@@ -1032,6 +1324,11 @@ def readFile(filetype, cfg):
           "text_previous": prev,
           "text_next": nxt,
         }
+      elif cfg.contextFormat == "attention":
+        # Wide "~<offset>" window split into 2*windowSize+1 per-offset strings.
+        rec = {"label": int(lineData[ignoreLineCount])}
+        for name, txt in parse_wide_context(raw, cfg.windowSize).items():
+          rec[f"text_{name}"] = txt
       else:
         rec = {
           "label": int(lineData[ignoreLineCount]),
@@ -1042,9 +1339,11 @@ def readFile(filetype, cfg):
       raise
     records.append((dataset_source(src), rec))
 
-  # Only the training set is rebalanced; validation/testing keep their full
-  # distribution so eval/model-selection stay comparable across runs.
-  if filetype == "training":
+  # Training is always rebalanced. Validation is rebalanced too when
+  # subsampleValidation is set (so it reflects the same reduced-synthetic mix and
+  # acts as a better real-site proxy); otherwise it keeps its full distribution.
+  # Testing always keeps its full distribution.
+  if filetype == "training" or (filetype == "validation" and cfg.subsampleValidation):
     records = _subsample_sources(records, cfg)
 
   dataset = Dataset.from_list([rec for _src, rec in records])
@@ -1104,11 +1403,12 @@ def train(cfg):
   device = select_device()
   print(f"Training on device: {device}")
   is_triple = cfg.contextFormat == "triple"
+  is_attention = cfg.contextFormat == "attention"
   if cfg.pooling not in POOLING_MODES:
       raise ValueError(f"Unknown pooling {cfg.pooling!r}; expected one of {POOLING_MODES}")
-  # 'pooling' only applies to the single-sequence path; triple always mean-pools.
-  use_mean = (not is_triple) and cfg.pooling == "mean"
-  if (is_triple or use_mean) and cfg.useLora:
+  # 'pooling' only applies to the single-sequence path; triple/attention always mean-pool.
+  use_mean = (not is_triple and not is_attention) and cfg.pooling == "mean"
+  if (is_triple or is_attention or use_mean) and cfg.useLora:
       raise ValueError(
           "LoRA is only supported with the standard CLS classification head "
           "(context_format in bb/sep/symbol and pooling='cls'). The "
@@ -1129,7 +1429,21 @@ def train(cfg):
           out[f"attention_mask_{section}"] = enc["attention_mask"]
       return out
 
-  preprocess = preprocess_triple if is_triple else preprocess_function
+  def preprocess_attention(examples):
+      out = {}
+      for d in wide_offsets(cfg.windowSize):
+          name = wide_section_name(d)
+          enc = tokenizer(examples[f"text_{name}"], truncation=True, max_length=512)
+          out[f"input_ids_{name}"] = enc["input_ids"]
+          out[f"attention_mask_{name}"] = enc["attention_mask"]
+      return out
+
+  if is_attention:
+      preprocess = preprocess_attention
+  elif is_triple:
+      preprocess = preprocess_triple
+  else:
+      preprocess = preprocess_function
 
   ds = readFile("training", cfg)
   train_ds = ds.map(preprocess, batched=True)
@@ -1137,8 +1451,12 @@ def train(cfg):
   ds = readFile("validation", cfg)
   validate_ds = ds.map(preprocess, batched=True)
 
-  data_collator = (TripleDataCollator(tokenizer) if is_triple
-                   else DataCollatorWithPadding(tokenizer=tokenizer))
+  if is_attention:
+      data_collator = WindowDataCollator(tokenizer, cfg.windowSize)
+  elif is_triple:
+      data_collator = TripleDataCollator(tokenizer)
+  else:
+      data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
   def compute_metrics(eval_pred):
       predictions, labels = eval_pred
@@ -1155,6 +1473,16 @@ def train(cfg):
           id2label=fieldTypesReversedDict, label2id=fieldTypesDict,
           encoder_layers=cfg.encoderLayers,
           head_interactions=cfg.headInteractions, head_proj_dim=cfg.headProjDim)
+      encoder = model.encoder
+  elif is_attention:
+      model = WindowAttentionForSequenceClassification.from_base_pretrained(
+          cfg.modelName, num_labels=len(fieldTypesDict),
+          id2label=fieldTypesReversedDict, label2id=fieldTypesDict,
+          encoder_layers=cfg.encoderLayers,
+          window_size=cfg.windowSize, num_heads=cfg.numHeads,
+          pos_encoding=cfg.posEncoding, window_fusion=cfg.windowFusion,
+          head_interactions=cfg.headInteractions, head_proj_dim=cfg.headProjDim,
+          head_full_current=cfg.headFullCurrent, head_concat_current=cfg.headConcatCurrent)
       encoder = model.encoder
   elif use_mean:
       # Single-sequence, but classify off mean-pooled tokens instead of [CLS].
@@ -1231,7 +1559,7 @@ def train(cfg):
       run_name=cfg.wandbRunName or None,
       # The triple model's forward takes per-section columns and its collator
       # reads the raw text_* columns off each feature, so keep all columns.
-      remove_unused_columns=(not is_triple),
+      remove_unused_columns=(not is_triple and not is_attention),
   )
 
   trainer_kwargs = dict(
@@ -1316,14 +1644,49 @@ def _triple_classify(texts, cfg, batch_size=64):
   return results
 
 
+def _window_classify(texts, cfg, batch_size=64):
+  """Inference for context_format='attention', mirroring _triple_classify.
+
+  Loads the saved WindowAttentionForSequenceClassification, splits each raw
+  "~<offset>" context into its 2*window+1 sections via parse_wide_context (using
+  the MODEL's own window_size), tokenizes each, and returns {"label","score"}.
+  """
+  device = select_device()
+  tokenizer = AutoTokenizer.from_pretrained(cfg.modelName)
+  model = WindowAttentionForSequenceClassification.from_pretrained(cfg.saveModelDir)
+  model.to(device)
+  model.eval()
+  window = int(model.config.window_size)
+  id2label = {int(k): v for k, v in model.config.id2label.items()}
+  sections = [wide_section_name(d) for d in wide_offsets(window)]
+
+  results = []
+  with torch.no_grad():
+    for start in range(0, len(texts), batch_size):
+      batch = texts[start:start + batch_size]
+      parsed = [parse_wide_context(t, window) for t in batch]
+      enc = {}
+      for name in sections:
+        tok = tokenizer([p[name] for p in parsed], truncation=True, max_length=512,
+                        padding=True, return_tensors="pt")
+        enc[f"input_ids_{name}"] = tok["input_ids"].to(device)
+        enc[f"attention_mask_{name}"] = tok["attention_mask"].to(device)
+      probs = F.softmax(model(**enc).logits, dim=-1)
+      scores, idxs = probs.max(dim=-1)
+      for idx, score in zip(idxs.tolist(), scores.tolist()):
+        results.append({"label": id2label[idx], "score": float(score)})
+  return results
+
+
 def evaluate_model(cfg, filename="testing"):
   # Without an explicit device the pipeline runs on CPU; select_device() routes
   # it to CUDA/MPS when available (override with AUTOFILL_DEVICE).
   device = select_device()
   print(f"Evaluating on device: {device}")
   is_triple = cfg.contextFormat == "triple"
-  # The triple model isn't pipeline-loadable; it uses the custom path below.
-  classifier = None if is_triple else pipeline(
+  is_attention = cfg.contextFormat == "attention"
+  # The triple/attention models aren't pipeline-loadable; custom paths below.
+  classifier = None if (is_triple or is_attention) else pipeline(
       "text-classification", model=cfg.saveModelDir, truncation=True,
       max_length=512, device=device)
 
@@ -1367,7 +1730,12 @@ def evaluate_model(cfg, filename="testing"):
 
   # For 'triple', `list` holds the raw text (reformat_context is a no-op for it);
   # _triple_classify splits each row itself. Both paths yield {"label","score"}.
-  results = _triple_classify(list, cfg) if is_triple else classifier(list, truncation=True)
+  if is_attention:
+    results = _window_classify(list, cfg)
+  elif is_triple:
+    results = _triple_classify(list, cfg)
+  else:
+    results = classifier(list, truncation=True)
 
   correct = 0
   close = 0

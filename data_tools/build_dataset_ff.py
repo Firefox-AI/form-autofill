@@ -58,9 +58,12 @@ def main():
     extra_prefs = json.loads(os.environ.get("FF_EXTRA_PREFS", "{}"))
     if extra_prefs:
         print(f"extra ml_prefs: {extra_prefs}", flush=True)
-    fx = FirefoxDriver(model="", auth_config={},
-        firefox_bin=None if not os.environ.get("FIREFOX_BIN") else __import__("pathlib").Path(os.environ["FIREFOX_BIN"]),
-        headless=True, log_level="WARNING", ml_prefs=extra_prefs)
+    def make_driver():
+        return FirefoxDriver(model="", auth_config={},
+            firefox_bin=None if not os.environ.get("FIREFOX_BIN") else __import__("pathlib").Path(os.environ["FIREFOX_BIN"]),
+            headless=True, log_level="WARNING", ml_prefs=extra_prefs)
+
+    fx = make_driver()
 
     paths = []
     for d in args.input:
@@ -87,7 +90,7 @@ def main():
                 covered.add(ln.split(",", 1)[0])
         print(f"resume: {len(covered)} files already covered, skipping them", flush=True)
     fh = open(args.output, "a" if covered else "w", encoding="utf-8")
-    nrows, wait = 0, True
+    nrows, wait, skipped = 0, True, 0
     for n, path in enumerate(paths, 1):
         if os.path.basename(path) in covered:
             continue
@@ -95,7 +98,25 @@ def main():
         by_key = defaultdict(list)
         for k, t in raw_ground_truth(raw):
             by_key[k].append(t)
-        res = detect(H.strip_autocomplete(raw), wait); wait = False
+        # A single page can hang navigation (300s selenium timeout) or otherwise
+        # error; skip it rather than aborting the whole run. It stays uncovered,
+        # so a later --resume pass with a fresh browser can retry it.
+        try:
+            res = detect(H.strip_autocomplete(raw), wait); wait = False
+        except Exception as exc:
+            skipped += 1
+            print(f"  SKIP {os.path.basename(path)}: {type(exc).__name__}: "
+                  f"{str(exc).splitlines()[0][:100]}", flush=True)
+            # A timeout can leave the browser session wedged, which would make
+            # every subsequent file burn the full timeout too. Restart it so one
+            # bad page can't cascade.
+            try:
+                fx.close()
+            except Exception:
+                pass
+            fx = make_driver()
+            wait = True  # fresh browser needs the first-use ML warm-up wait again
+            continue
         seen = defaultdict(int)
         fname = os.path.basename(path)
         for fd in res["fields"]:
@@ -126,7 +147,8 @@ def main():
         fx.close()
     except Exception:
         pass
-    print(f"{len(paths)} files -> {nrows} rows -> {args.output}")
+    print(f"{len(paths)} files -> {nrows} rows -> {args.output} "
+          f"({skipped} skipped due to errors)")
 
 
 if __name__ == "__main__":
