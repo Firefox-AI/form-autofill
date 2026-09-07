@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<div class="appModal__row"> <div :class="`${ errors.firstname ? 'has--error' : '' }`" class="appModal__part"> <label for="firstname">Nombre <i>*</i></label> <input data-moz-autofill-type="given-name" placeholder="e.g. Jane" type="text" v-model="form.firstname"/> <span class="errors" v-if="errors.firstname">{{ errors.firstname }}</span> </div> <div :class="`${ errors.firstname ? 'has--error' : '' }`" class="appModal__part"> <label for="lastname">Apellido <i>*</i></label> <input data-moz-autofill-type="family-name" placeholder="e.g. Cooper" type="text" v-model="form.lastname"/> <span class="errors" v-if="errors.lastname">{{ errors.lastname }}</span> </div> </div> <div :class="`${ errors.firstname ? 'has--error' : '' }`" class="appModal__part"> <label for="email">Correo electrónico<i>*</i></label> <input data-moz-autofill-type="email" placeholder="e.g. yourname@example.com" type="email" v-model="form.email"/> <span class="errors" v-if="errors.email">{{ errors.email }}</span> </div> <div :class="`${ errors.firstname ? 'has--error' : '' }`" class="appModal__part"> <label for="password">Contraseña <i>*</i></label> <div class="appModal__part__holder"> <input placeholder="Ingrese una contraseña segura" type="password" v-model="form.password"/> <i class="password--show"> <span class="icon-Hide-3"></span> </i> </div> <span class="errors" v-if="errors.password">{{ errors.password }}</span> </div> <div class="appModal__passCheck" v-if="form.password.length &gt; 1"> <div :class="`${ passCheck.passLength ? 'passed' : 'notValid' }`" class="pass--length"> <p><span class="icon-check"></span></p> Debe tener al menos 8 caracteres de longitud. </div> <div :class="`${ passCheck.passNumAndLetters ? 'passed' : 'notValid' }`" class="pass--numletters"> <p><span class="icon-check"></span></p> Debe contener números y letras. </div> <div :class="`${ passCheck.passNoSpaces ? 'passed' : 'notValid' }`" lass="pass--nospace"> <p><span class="icon-check"></span></p> No puede comenzar ni terminar con un espacio </div> </div> <div :class="`${ errors.firstname ? 'has--error' : '' }`" class="appModal__part"> <label for="confirm">Confirmar contraseña <i>*</i></label> <div class="appModal__part__holder"> <input placeholder="Vuelva a ingresar su contraseña" type="password" v-model="form.password_confirm"/> <i class="password--show"> <span class="icon-Hide-3"></span> </i> </div> <span class="errors" v-if="errors.password_confirm">{{ errors.password_confirm }}</span> </div> <button class="btn btn--blue" type="submit">Crear una cuenta</button> <div class="appModal__already"> ¿Ya tienes una cuenta? <a href="/auth/login">Acceso</a> </div> <div class="appModal__private"> Haz clic en "Comenzar" para aceptar los Términos de servicio de Noticel y reconocer que la <a href="#">Política de privacidad</a> de Noticel se aplica a ti. </div>
+</form>
+
+</fieldset></body></html>

@@ -37,16 +37,32 @@ from build_error_report import load_close_pairs
 ATTR_RE = re.compile(r'(data-moz-autofill-type\s*=\s*)(["\'])(.*?)\2')
 
 
-def applicable_corrections(dump_path: str) -> dict:
-    """file -> {field_index: (assigned, suggested)} for corrections worth applying."""
+def _records_from_jsonl(path: str):
+    for line in open(path, encoding="utf-8"):
+        line = line.strip()
+        if line:
+            yield json.loads(line)
+
+
+def _records_from_csv(path: str):
+    import csv as _csv
+    for r in _csv.DictReader(open(path, encoding="utf-8")):
+        r["index"] = int(r["index"])
+        r.setdefault("verdict", "incorrect")  # reviewed CSV holds only actionable rows
+        yield r
+
+
+def _build(records) -> dict:
+    """file -> {field_index: (assigned, suggested)} for corrections worth applying.
+
+    Same safety gates whether the source is the raw JSONL dump or a hand-reviewed
+    CSV: only clean, single-token, in-taxonomy relabels that differ from the
+    assigned token, aren't password-related, and aren't fieldNamesCloseDict
+    close-matches."""
     valid = set(load_taxonomy())
     close = load_close_pairs()
     by_file: dict[str, dict] = collections.defaultdict(dict)
-    for line in open(dump_path, encoding="utf-8"):
-        line = line.strip()
-        if not line:
-            continue
-        r = json.loads(line)
+    for r in records:
         if r.get("verdict") != "incorrect":
             continue
         a = r["assigned"]
@@ -61,6 +77,10 @@ def applicable_corrections(dump_path: str) -> dict:
             continue
         by_file[r["file"]][r["index"]] = (a, s)
     return by_file
+
+
+def applicable_corrections(dump_path: str) -> dict:
+    return _build(_records_from_jsonl(dump_path))
 
 
 def apply_to_file(path: str, corrections: dict, dry_run: bool):
@@ -98,7 +118,9 @@ def apply_to_file(path: str, corrections: dict, dry_run: bool):
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--dump", required=True, help="verdict JSONL from evaluate_labels.py --dump")
+    src = p.add_mutually_exclusive_group(required=True)
+    src.add_argument("--dump", help="verdict JSONL from evaluate_labels.py --dump")
+    src.add_argument("--csv", help="reviewed corrections CSV from evaluate_labels.py --csv")
     p.add_argument("--dir", required=True, help="directory of the source HTML forms")
     p.add_argument("--dry-run", action="store_true", help="report changes without writing")
     p.add_argument("--exclude", nargs="*", default=[],
@@ -111,7 +133,8 @@ def main(argv=None) -> int:
     if args.exclude_file:
         exclude |= {ln.strip() for ln in open(args.exclude_file) if ln.strip()}
 
-    by_file = applicable_corrections(args.dump)
+    by_file = (_build(_records_from_csv(args.csv)) if args.csv
+               else applicable_corrections(args.dump))
     pairs = collections.Counter()
     files_changed = fields_changed = skipped_mismatch = skipped_value = 0
     excluded = 0

@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<div class="standard-form__row"> <label class="standard-form__label" for="booking-number">Número da reserva: *</label> <input class="standard-form__input" data-msg-pattern="Lamentamos, mas não reconhecemos o número da reserva. Tente novamente usando este formato: 1234-5678-AA-9." data-rule-pattern="([0-9]{4}-[0-9]{4}-[A-Za-z]{2}-[0-9]{1})|([0-9]{4}[0-9]{4}[A-Za-z]{2}[0-9]{1})" id="InputBookingNumber" maxlength="14" name="InputBookingNumber" onblur="ValidateInputNumber();" required="" type="text"/> <i class="icon icon--tick-circled" id="input-booking-tick"></i> <label class="error_bookings" for="InputBookingNumber" id="InputBookingNumber-error"></label> </div> <div class="standard-form__row"> <label class="standard-form__label" for="booking-surname">O seu apelido: *</label> <input class="standard-form__input" data-moz-autofill-type="family-name" id="InputSurname" maxlength="65" name="InputSurname" onblur="ValidateSurname();" required="" type="text"/> <i class="icon icon--tick-circled" id="input-surname-tick"></i> <label class="error_bookings" for="InputSurname" id="InputSurname-error"></label> </div> <div class="standard-form__row"> <label class="standard-form__label" for="booking-email">Endereço de e-mail *</label> <input class="standard-form__input" data-moz-autofill-type="email" data-msg="Introduza o endereço de e-mail" data-msg-email="Lamentamos, mas não reconhecemos o seu endereço de e-mail. Tente novamente usando este formato: hello@example.com" id="InputEmailAddress" maxlength="65" name="InputEmailAddress" onblur="ValidateBookingEmail();" required="" type="email"/> <i class="icon icon--tick-circled" id="input-emailAddress-tick"></i> <label class="error_bookings" for="InputEmailAddress" id="InputEmailAddress-error"></label> </div> <div class="standard-form__actions"> <button class="standard-form__submit" id="findbook_btn" type="submit">Encontrar reserva</button> <a class="standard-form__submit standard-form__submit--tertiary" href="/sua-conta-avis/gerir-a-reserva/fatura-aluguer">Solicitar fatura do aluguer</a> </div>
+</form>
+
+</fieldset></body></html>

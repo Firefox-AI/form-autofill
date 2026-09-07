@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<h4 class="ec-auth__title">Crear cuenta</h4> <div class="alert alert-danger" id="msg_register" role="alert" style="display: none;"><p id="msg_register_p"></p></div> <div class="ec-form-group"> <label>Tipo de documento</label> <select class="ec-input" id="selectDocument"> <option selected="" value="dni">DNI (8 dígitos)</option> <option value="ruc">RUC (11 dígitos)</option> </select> </div> <div class="ec-form-group"> <label>Número de documento</label> <div style="position:relative;"> <input autocomplete="off" class="ec-input" data-moz-autofill-type="id-number" id="ruc_reg" maxlength="11" name="ruc" oninput="inputDocument()" placeholder="Ingrese su documento" required="" type="number"/> <span class="ec-input-counter" id="counter">0/8</span> </div> </div> <div class="ec-form-group"> <label>Nombres</label> <input autocomplete="off" class="ec-input" data-moz-autofill-type="name" id="name_reg" name="name" placeholder="Tu nombre completo" required="" type="text"/> </div> <div class="ec-form-group"> <label>Correo electrónico</label> <input autocomplete="off" class="ec-input" data-moz-autofill-type="email" id="email_reg" name="email" placeholder="tu@email.com" required="" type="email"/> </div> <div class="ec-form-group"> <label>Contraseña</label> <input autocomplete="off" class="ec-input" id="pwd_reg" name="pswd" placeholder="Crea una contraseña" required="" type="password"/> </div> <div class="ec-form-group"> <label>Confirmar contraseña</label> <input autocomplete="off" class="ec-input" id="pwd_repeat_reg" name="pswd_rpt" placeholder="Repite tu contraseña" required="" type="password"/> </div> <button class="ec-btn ec-btn--primary ec-btn--full" type="submit">Registrarse</button>
+</form>
+
+</fieldset></body></html>

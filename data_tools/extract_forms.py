@@ -58,6 +58,10 @@ def parse_args(argv) -> argparse.Namespace:
                         "(otherwise excluded by --min-fields)")
     p.add_argument("--single-input-fraction", type=float, default=0.10,
                    help="max fraction of collected forms allowed to be single-input")
+    p.add_argument("--exclude-address", action="store_true",
+                   help="drop forms that contain any physical-address field "
+                        "(use with name-oriented --require-any to collect "
+                        "name-centric forms rather than address/checkout forms)")
     p.add_argument("--out", required=True, help="output CSV path")
     return p.parse_args(argv)
 
@@ -89,6 +93,7 @@ def main(argv=None) -> int:
         max_html_chars=args.max_html_chars,
         allow_single_input=args.allow_single_input,
         single_input_fraction=args.single_input_fraction,
+        exclude_address=args.exclude_address,
     )
 
     print(f"Scanning {len(warc_paths)} WARC file(s) for up to {cfg.max_forms} "

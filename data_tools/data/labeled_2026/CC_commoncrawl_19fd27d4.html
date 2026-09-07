@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<label for="emailInfoEmail">E-Mail des Empfängers:</label> <input class="inputEmailInfo" data-moz-autofill-type="email" id="emailInfoEmail" ng-model="emailinfo.recipientEmail" required="" type="email"/><br/> <label for="emailInfoSenderName">Ihr Name:</label> <input class="inputEmailInfo" data-moz-autofill-type="name" id="emailInfoSenderName" ng-model="emailinfo.senderName" required="" type="text"/><br/> <label for="emailInfoSenderEmail">Ihre E-Mail:</label> <input class="inputEmailInfo" data-moz-autofill-type="email" id="emailInfoSenderEmail" ng-model="emailinfo.senderEmail" required="" type="email"/><br/> <label for="emailInfoSubject">Betreff:</label> <input class="inputEmailInfo" id="emailInfoSubject" ng-model="emailinfo.subject" required="" type="text"/><br/> <div key="model.key" on-create="setWidgetId(widgetId)" on-expire="cbExpiration()" on-success="setResponse(response)" theme="light" vc-recaptcha=""></div> <div id="errorCaptchaMsg"></div> <button class="btn" style="margin-top: 5px;" type="submit">Absenden</button>
+</form>
+
+</fieldset></body></html>

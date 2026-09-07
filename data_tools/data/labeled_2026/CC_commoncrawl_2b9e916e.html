@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<fieldset> <label class="text-black font-normal body-tiny mb-2 block" for="first-name">First name*</label> <input class="w-full border border-greyscale-grey rounded-sm p-3 body-tiny" data-moz-autofill-type="given-name" id="first-name" name="first-name" placeholder="First name" required="" type="text" x-model="data.collection_owner_first_name"/> </fieldset> <fieldset class="mt-6"> <label class="text-black font-normal body-tiny mb-2 block" for="last-name">Last name*</label> <input class="w-full border border-greyscale-grey rounded-sm p-3 body-tiny" data-moz-autofill-type="family-name" id="last-name" name="last-name" placeholder="Last name" required="" type="text" x-model="data.collection_owner_last_name"/> </fieldset> <fieldset class="mt-6"> <label class="text-black font-normal body-tiny mb-2 block" for="email">Email*</label> <input class="w-full border border-greyscale-grey rounded-sm p-3 body-tiny" data-moz-autofill-type="email" id="email" name="email" placeholder="Enter your email address" required="" type="email" x-model="data.collection_owner_email"/> </fieldset> <fieldset class="mt-6"> <label class="text-black font-normal body-tiny mb-2 block" for="company">Company*</label> <input class="w-full border border-greyscale-grey rounded-sm p-3 body-tiny" data-moz-autofill-type="organization" id="company" name="company" placeholder="Company" required="" type="text" x-model="data.collection_owner_company"/> </fieldset> <fieldset class="mt-6"> <label class="text-black font-normal body-tiny mb-2 block" for="collection-name">Collection name*</label> <input class="w-full border border-greyscale-grey rounded-sm p-3 body-tiny" id="collection-name" name="collectionName" placeholder="Enter your collection name" required="" type="text" x-model="data.collection_name"/> </fieldset> <input id="countryName" name="countryName" type="hidden" value="United Kingdom" x-model="data.collection_owner_country"/> <div class="text-red-100 body-extra-small mt-4" x-show="hasErrors" x-text="errorMessage"></div> <div class="mt-6"> <button class="btn-primary dark w-full disabled:opacity-50 disabled:cursor-not-allowed" type="submit"> Create Collection </button> </div>
+</form>
+
+</fieldset></body></html>

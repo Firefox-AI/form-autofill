@@ -1,0 +1,15 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+
+<fieldset>
+<h3>common-crawl</h3>
+<p><i>Common Crawl form, LLM-labeled.</i></p>
+
+<form>
+<div class="enq-row enq-row-2"> <div class="enq-field"> <label for="enqName">Full name <span class="enq-req">*</span></label> <input data-moz-autofill-type="name" id="enqName" name="name" placeholder="Your full name" required="" type="text"/> </div> <div class="enq-field"> <label for="enqCountry">Country <span class="enq-req">*</span></label> <input data-moz-autofill-type="country" id="enqCountry" name="country" placeholder="e.g. United Kingdom" required="" type="text"/> </div> </div> <div class="enq-field"> <label for="enqEmail">Email address <span class="enq-req">*</span></label> <input data-moz-autofill-type="email" id="enqEmail" name="email" placeholder="your@email.com" required="" type="email"/> </div> <div class="enq-field"> <label for="enqDates">Preferred travel dates <span class="enq-req">*</span></label> <input id="enqDates" name="dates" placeholder="e.g. July 2026 or flexible" required="" type="text"/> </div> <div class="enq-row enq-row-2"> <div class="enq-field"> <label for="enqAdults">Adults <span class="enq-req">*</span></label> <div class="enq-stepper"> <button onclick="stepperChange('enqAdults',-1)" type="button">−</button> <input id="enqAdults" max="20" min="1" name="adults" readonly="" type="number" value="2"/> <button onclick="stepperChange('enqAdults',1)" type="button">+</button> </div> </div> <div class="enq-field"> <label for="enqChildren">Children</label> <div class="enq-stepper"> <button onclick="stepperChange('enqChildren',-1)" type="button">−</button> <input id="enqChildren" max="10" min="0" name="children" readonly="" type="number" value="0"/> <button onclick="stepperChange('enqChildren',1)" type="button">+</button> </div> </div> </div> <div class="enq-field"> <label for="enqComments">Additional details or special requests</label> <textarea id="enqComments" name="comments" placeholder="Any special requirements, questions, or details about your trip..." rows="3"></textarea> </div> <input id="enqSafariField" name="safari" type="hidden" value="Homepage enquiry"/> <input id="enqTypeField" name="enquiry_type" type="hidden" value="Homepage enquiry"/> <button class="enq-submit" type="submit">Send Enquiry →</button> <p class="enq-note">We respond within 24 hours · No obligation · Free consultation</p>
+</form>
+
+</fieldset></body></html>

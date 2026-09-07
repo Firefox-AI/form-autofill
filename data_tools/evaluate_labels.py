@@ -189,13 +189,14 @@ async def audit_dir(client, model, spec, name, paths, usage, sem, overrides=True
                 verdicts = apply_address_scheme(fields, verdicts)
                 verdicts = apply_name_scheme(fields, verdicts)
             by_idx = {f["index"]: f for f in fields}
-            return os.path.basename(path), by_idx, verdicts
+            return path, by_idx, verdicts
 
     outs = await asyncio.gather(*(one(p) for p in paths))
     for out in outs:
         if not out:
             continue
-        fname, by_idx, verdicts = out
+        fpath, by_idx, verdicts = out
+        fname = os.path.basename(fpath)
         results["forms"] += 1
         for v in verdicts:
             f = by_idx.get(v["index"])
@@ -207,7 +208,9 @@ async def audit_dir(client, model, spec, name, paths, usage, sem, overrides=True
                 "dir": name, "file": fname, "index": v["index"],
                 "assigned": f["autofill_type"],
                 "label": f["label"], "placeholder": f["placeholder"],
+                "name": f.get("name", ""),
                 "verdict": v["verdict"], "suggested": v.get("suggested", ""),
+                "html_path": os.path.abspath(fpath),
             })
             if v["verdict"] == "incorrect":
                 pair = (f["autofill_type"], v.get("suggested", "") or "?")
@@ -276,6 +279,24 @@ async def run(args) -> int:
                 for rec in r["records"]:
                     fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
         print(f"per-field verdicts written to {args.dump}")
+
+    if args.csv:
+        import csv as _csv
+        cols = ["file", "index", "assigned", "suggested", "verdict",
+                "label", "placeholder", "name", "html_path"]
+        n_written = 0
+        with open(args.csv, "w", newline="", encoding="utf-8") as fh:
+            w = _csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
+            w.writeheader()
+            for r in all_results:
+                for rec in r["records"]:
+                    # actionable = model flagged incorrect with a real, different token
+                    s = (rec.get("suggested") or "").strip()
+                    if rec["verdict"] == "incorrect" and s and s != rec["assigned"]:
+                        w.writerow(rec)
+                        n_written += 1
+        print(f"{n_written} actionable corrections written to {args.csv} "
+              f"(review, then: apply_corrections.py --csv {args.csv})")
     return 0
 
 
@@ -294,6 +315,9 @@ def parse_args(argv) -> argparse.Namespace:
     p.add_argument("--concurrency", type=int, default=12)
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--dump", default=None, help="write per-field verdicts to this jsonl")
+    p.add_argument("--csv", default=None,
+                   help="write a reviewable corrections CSV (actionable 'incorrect' "
+                        "verdicts only: assigned -> suggested). Feeds apply_corrections.py --csv")
     p.add_argument("--require-type", default=None,
                    help="only audit forms that contain this autofill token")
     return p.parse_args(argv)
