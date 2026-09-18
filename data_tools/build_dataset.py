@@ -34,6 +34,40 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ff_preprocess import fillable_fields, tokenize_elements
 
+# Label normalization -- an exact copy of getAdjustedFieldName
+# (FormAutofillMLTest.sys.mjs / form_autofill_accuracy.adjusted_field_name),
+# which the Firefox-driven builder (build_dataset_ff.py) applies before writing
+# the label column: a "supported" type is kept, else mapped to its nominal
+# supported type, else "" -> the "--NONE--"/other negative class. Without this,
+# e.g. a "floor" field (which FF labels address-line2) or "country-name"
+# (-> country) would get the wrong label and diverge from the FF dataset.
+SUPPORTED_FIELDS = {
+    "given-name", "family-name", "name", "additional-name", "street-address",
+    "address-line1", "address-line2", "address-line3", "address-level1",
+    "address-level2", "address-level3", "address-housenumber",
+    "address-extra-housesuffix", "postal-code", "country", "tel",
+    "tel-country-code", "tel-national", "tel-area-code", "tel-local",
+    "tel-local-prefix", "tel-local-suffix", "tel-extension", "organization",
+    "bday", "bday-day", "bday-month", "bday-year", "email", "cc-name",
+    "cc-given-name", "cc-additional-name", "cc-family-name", "cc-number",
+    "cc-exp", "cc-exp-month", "cc-exp-year", "cc-csc", "cc-type", "sex",
+}
+NOMINAL_MAP = {
+    "phonetic-given-name": "given-name", "phonetic-family-name": "family-name",
+    "phonetic-name": "name", "address-lookup": "street-address",
+    "street": "street-address", "address-streetname": "address-line1",
+    "postal-code-lookup": "postal-code", "postal-code-and-city": "postal-code",
+    "postal-code-or-suburb": "postal-code", "country-name": "country",
+    "apartment": "address-line2", "floor": "address-line2",
+    "stair": "address-line2", "building": "address-line2",
+}
+
+
+def adjusted_field_name(raw):
+    if raw in SUPPORTED_FIELDS:
+        return raw
+    return NOMINAL_MAP.get(raw, "")
+
 
 def load_field_types(dotraining_path):
     """Parse fieldTypesDict (name->id) from dotraining.py without importing it
@@ -60,8 +94,9 @@ def build(paths, field_types, type_marker):
         ml = tokenize_elements(soup, type_marker=type_marker)
         for el, data in zip(fields, ml):
             raw = el.get("data-moz-autofill-type")
-            if raw and raw in field_types:
-                name, label = raw, field_types[raw]
+            adj = adjusted_field_name(raw) if raw else ""
+            if adj and adj in field_types:
+                name, label = adj, field_types[adj]
             else:
                 name, label = "--NONE--", other_id
             yield f"{fname},{name},{label},{data}"

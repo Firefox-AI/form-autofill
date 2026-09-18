@@ -241,6 +241,14 @@ class AutofillFlow(FlowSpec):
         default=0.0,
         type=float,
     )
+    gen_cc_to_real_ratio = Parameter(
+        "gen_cc_to_real_ratio",
+        help="Cap GEN_* forms that contain a cc-* field at this ratio of real rows "
+             "(<=0 keeps all). Lets you protect credit-card synthetic while "
+             "gen_to_real_ratio cuts the mostly-non-cc rest of GEN.",
+        default=0.0,
+        type=float,
+    )
     subsample_validation = Parameter(
         "subsample_validation",
         help="Apply the gen/cc subsampling ratios to the VALIDATION set too (not "
@@ -437,6 +445,7 @@ class AutofillFlow(FlowSpec):
             headConcatCurrent=self.head_concat_current,
             genToRealRatio=self.gen_to_real_ratio,
             ccToRealRatio=self.cc_to_real_ratio,
+            genCcToRealRatio=self.gen_cc_to_real_ratio,
             subsampleValidation=self.subsample_validation,
             learningRate=self.learning_rate,
             trainBatchSize=self.train_batch_size,

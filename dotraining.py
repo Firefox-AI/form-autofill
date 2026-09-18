@@ -284,16 +284,17 @@ def _subsample_sources(records, cfg):
   that source (keep all). Only ever downsamples -- never upsamples. Real rows are
   always kept. Reproducible via SUBSAMPLE_SEED.
   """
-  ratios = {"gen": cfg.genToRealRatio, "cc": cfg.ccToRealRatio}
+  ratios = {"gen": cfg.genToRealRatio, "cc": cfg.ccToRealRatio,
+            "gen-cc": cfg.genCcToRealRatio}
   if all(r <= 0 for r in ratios.values()):
     return records
-  by_src = {"gen": [], "cc": [], "real": []}
+  by_src = {"gen": [], "cc": [], "gen-cc": [], "real": []}
   for src, rec in records:
     by_src[src].append((src, rec))
   n_real = len(by_src["real"])
   rng = random.Random(SUBSAMPLE_SEED)
   kept = list(by_src["real"])
-  for src in ("gen", "cc"):
+  for src in ("gen", "cc", "gen-cc"):
     rows = by_src[src]
     ratio = ratios[src]
     if ratio > 0:
@@ -485,8 +486,10 @@ class Config:
     # overfitting to templated synthetic forms. Each ratio bounds that source at
     # ratio * (#real rows); <= 0 disables subsampling for that source (keep all).
     # Applied to the training set only (see readFile / _subsample_sources).
-    genToRealRatio: float = 0.0   # GEN_* generated forms
-    ccToRealRatio: float = 0.0    # CC_* credit-card forms
+    genToRealRatio: float = 0.0   # GEN_* generated forms (non-cc, when genCcToRealRatio set)
+    ccToRealRatio: float = 0.0    # CC_* common-crawl forms
+    genCcToRealRatio: float = 0.0  # GEN_* forms containing a cc-* field (credit-card synthetic).
+                                   # <=0 keeps all -> protect CC signal while genToRealRatio cuts the rest.
     # By default the gen/cc subsampling is applied to TRAINING only (validation
     # keeps its full distribution). Set True to ALSO subsample validation with the
     # same ratios -- makes validation a less-synthetic, more real-site-like proxy
@@ -1306,6 +1309,16 @@ def readFile(filetype, cfg):
   file = open(dataset_path(filename), encoding="utf-8")
   lines = file.readlines()
 
+  # First pass: GEN forms that contain any credit-card field. Credit-card labels
+  # are ~80-95% synthetic, so cutting GEN uniformly starves them; tagging these
+  # forms as a separate "gen-cc" source lets genCcToRealRatio keep them while
+  # genToRealRatio still cuts the (mostly non-cc) rest of GEN. Label name = col 1.
+  gen_cc_files = set()
+  for line in lines:
+    d = line.strip().split(",", ignoreLineCount + 1)
+    if len(d) > 1 and (d[0] or "").split("_", 1)[0] == "GEN" and d[1].startswith("cc-"):
+      gen_cc_files.add(d[0])
+
   records = []  # (source, {"label", "text"})
   for line in lines:
     line = line.strip()
@@ -1337,7 +1350,10 @@ def readFile(filetype, cfg):
     except Exception:
       print(filetype + ".txt : " + line)
       raise
-    records.append((dataset_source(src), rec))
+    source = dataset_source(src)
+    if source == "gen" and src in gen_cc_files:
+      source = "gen-cc"
+    records.append((source, rec))
 
   # Training is always rebalanced. Validation is rebalanced too when
   # subsampleValidation is set (so it reflects the same reduced-synthetic mix and
