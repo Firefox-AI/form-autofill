@@ -302,6 +302,15 @@ class AutofillFlow(FlowSpec):
         default=False,
         type=bool,
     )
+    hint_embed = Parameter(
+        "hint_embed",
+        help="Triple head only: concatenate per-section regex-hint one-hots "
+             "(current/previous/next) to the fused vector just before the "
+             "classifier, reading the hint from the '**hint<class>' token in a "
+             "-relabelhint dataset and stripping it from the text. Default off.",
+        default=False,
+        type=bool,
+    )
     head_proj_dim = Parameter(
         "head_proj_dim",
         help="Triple head only: insert a shared Linear(H->d) that projects each "
@@ -437,6 +446,7 @@ class AutofillFlow(FlowSpec):
             headLearningRate=self.head_learning_rate,
             headInteractions=self.head_interactions,
             headProjDim=self.head_proj_dim,
+            hintEmbed=self.hint_embed,
             windowSize=self.window_size,
             numHeads=self.num_heads,
             posEncoding=self.pos_encoding,

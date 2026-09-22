@@ -313,14 +313,31 @@ def fillable_fields(soup) -> list:
     return out
 
 
+def hint_token(fieldname: str) -> str:
+    """Regex-heuristic hint as a single mlData token: '**hint<class>' with
+    hyphens stripped so it survives WORD_RE at inference (postal-code ->
+    '**hintpostalcode'); '' / silent regex -> '**hintnone'."""
+    fn = (fieldname or "").replace("-", "")
+    return "**hint" + (fn if fn and fn != "NONE" else "none")
+
+
 def tokenize_elements(soup, type_marker: str = "inference",
-                      features=DEFAULT_ML_FEATURES) -> list[str]:
+                      features=DEFAULT_ML_FEATURES, hints=None) -> list[str]:
     """FF tokenizeElements: each field's own words + bb-prefixed previous +
     aa-prefixed next, whitespace-joined. Returns one mlData string per field,
-    in document order."""
+    in document order.
+
+    `hints`, when given, is a per-field regex-heuristic hint token (aligned to
+    fillable_fields order) prepended to that field's own word list *before*
+    neighbor baking, so a field also sees its neighbors' hints as bb/aa tokens.
+    """
     fields = fillable_fields(soup)
     per_field_words = [tokenize_attributes(el, soup, type_marker, features)
                        for el in fields]
+    if hints is not None:
+        for i, h in enumerate(hints):
+            if h:
+                per_field_words[i] = [h] + per_field_words[i]
     out = []
     for i, words in enumerate(per_field_words):
         combined = list(words)

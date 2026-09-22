@@ -456,6 +456,11 @@ class Config:
     # before fusion (a regularizing bottleneck; smaller cached per-field vectors).
     headInteractions: bool = False
     headProjDim: int = 0
+    # Triple head only: concatenate per-section regex-hint one-hots (current/
+    # previous/next) to the fused vector just before the classifier, instead of
+    # (or in addition to) the '**hint' text token. Reads the hint from the
+    # '**hint<class>' token in the -relabelhint data and strips it from the text.
+    hintEmbed: bool = False
 
     # Attention-head variant (context_format='attention'). The shared encoder
     # pools each field in a +-windowSize neighbor window; a single (or numHeads)
@@ -653,6 +658,34 @@ fieldTypesDict = {
 }
 fieldTypesReversedDict = {v: k for k,v in fieldTypesDict.items()}
 
+# ---- Regex-hint one-hot vocab (context_format='triple' + hintEmbed) --------
+# Maps a "**hint<class>" mlData token (hyphen-stripped class) to a label id used
+# to build the per-section one-hot the triple head concatenates before its
+# classifier. An extra trailing id encodes "no/none hint". See build_dataset.py
+# (--hint) and the client-side FormAutofillHeuristics regex_hint feature.
+_HINT_STRIPPED_TO_ID = {name.replace("-", ""): idx for name, idx in fieldTypesDict.items()}
+HINT_NONE_ID = len(fieldTypesDict)              # extra one-hot slot for "none"
+HINT_NUM_CLASSES = len(fieldTypesDict) + 1
+
+def hint_id_from_token(token):
+  """'**hintpostalcode' -> its label id; '**hintnone'/''/unknown -> HINT_NONE_ID."""
+  if not token or not token.startswith("**hint"):
+    return HINT_NONE_ID
+  stripped = token[len("**hint"):]
+  if stripped == "none":
+    return HINT_NONE_ID
+  return _HINT_STRIPPED_TO_ID.get(stripped, HINT_NONE_ID)
+
+def pop_hint(section):
+  """Split a leading '**hint...' token off a triple section string.
+  Returns (section_without_hint, hint_id)."""
+  if not section:
+    return section, HINT_NONE_ID
+  first, sep, rest = section.partition(" ")
+  if first.startswith("**hint"):
+    return rest, hint_id_from_token(first)
+  return section, HINT_NONE_ID
+
 fieldNamesCloseDict = {
   "street-address": ["address-line1", "street"],
   "address-line1": ["street-address", "street"],
@@ -813,11 +846,15 @@ class TripleEncoderConfig(PretrainedConfig):
   model_type = "triple_encoder"
 
   def __init__(self, base_model_name=DEFAULT_MODEL_NAME, encoder_config=None,
-               hidden_dropout=0.1, head_interactions=False, head_proj_dim=0, **kwargs):
+               hidden_dropout=0.1, head_interactions=False, head_proj_dim=0,
+               hint_classes=0, **kwargs):
     super().__init__(**kwargs)
     self.base_model_name = base_model_name
     self.encoder_config = encoder_config
     self.hidden_dropout = hidden_dropout
+    # hint_classes > 0: concatenate per-section regex-hint one-hots (current/
+    # previous/next, each this wide) to the fused vector before the classifier.
+    self.hint_classes = hint_classes
     # Head variants (both default off -> the original 3H->H->num_labels head):
     #   head_interactions: also feed neighbor differences (cur-prev, cur-next),
     #     so the fusion sees 5 sections instead of 3.
@@ -861,13 +898,18 @@ class TripleEncoderForSequenceClassification(PreTrainedModel):
     self.dropout = nn.Dropout(config.hidden_dropout)
     self.fusion = nn.Linear(n_sections * d, d)
     self.act = nn.GELU()
-    self.classifier = nn.Linear(d, config.num_labels)
+    # Optional regex-hint one-hots (current/previous/next) concatenated to the
+    # fused vector just before the classifier -- a direct categorical prior that
+    # bypasses encoder dilution (see hintEmbed / HINT_NUM_CLASSES).
+    self.hint_classes = int(getattr(config, "hint_classes", 0) or 0)
+    clf_in = d + (3 * self.hint_classes if self.hint_classes > 0 else 0)
+    self.classifier = nn.Linear(clf_in, config.num_labels)
     self.post_init()
 
   @classmethod
   def from_base_pretrained(cls, base_model_name, num_labels, id2label=None,
                            label2id=None, hidden_dropout=0.1, encoder_layers=0,
-                           head_interactions=False, head_proj_dim=0):
+                           head_interactions=False, head_proj_dim=0, hint_classes=0):
     """Construct for training: random fusion head + pretrained shared encoder.
 
     encoder_layers > 0 drops the encoder down to that many evenly-spaced layers
@@ -885,6 +927,7 @@ class TripleEncoderForSequenceClassification(PreTrainedModel):
         hidden_dropout=hidden_dropout,
         head_interactions=head_interactions,
         head_proj_dim=head_proj_dim,
+        hint_classes=hint_classes,
         num_labels=num_labels,
         id2label=id2label,
         label2id=label2id,
@@ -901,6 +944,7 @@ class TripleEncoderForSequenceClassification(PreTrainedModel):
   def forward(self, input_ids_current=None, attention_mask_current=None,
               input_ids_previous=None, attention_mask_previous=None,
               input_ids_next=None, attention_mask_next=None, labels=None,
+              hint_current=None, hint_previous=None, hint_next=None,
               **kwargs):
     cur = self._encode(input_ids_current, attention_mask_current)
     prev = self._encode(input_ids_previous, attention_mask_previous)
@@ -912,6 +956,11 @@ class TripleEncoderForSequenceClassification(PreTrainedModel):
       sections += [cur - prev, cur - nxt]
     fused = torch.cat(sections, dim=-1)                     # (B, n_sections * d)
     hidden = self.dropout(self.act(self.fusion(fused)))
+    if self.hint_classes > 0:                               # concat regex-hint one-hots
+      hints = [hint_current, hint_previous, hint_next]
+      onehots = [F.one_hot(h.to(hidden.device), self.hint_classes).to(hidden.dtype)
+                 for h in hints]
+      hidden = torch.cat([hidden, *onehots], dim=-1)
     logits = self.classifier(hidden)
     loss = None
     if labels is not None:
@@ -949,6 +998,10 @@ class TripleDataCollator:
       padded = self.tokenizer.pad(group, return_tensors="pt")
       batch[f"input_ids_{section}"] = padded["input_ids"]
       batch[f"attention_mask_{section}"] = padded["attention_mask"]
+    if "hint_current" in features[0]:                       # hintEmbed one-hot ids
+      for section in ("current", "previous", "next"):
+        batch[f"hint_{section}"] = torch.tensor(
+            [f[f"hint_{section}"] for f in features], dtype=torch.long)
     if "label" in features[0]:
       batch["labels"] = torch.tensor([f["label"] for f in features], dtype=torch.long)
     return batch
@@ -1331,12 +1384,18 @@ def readFile(filetype, cfg):
       if cfg.contextFormat == "triple":
         # Three separate strings (aa/bb removed); tokenized per-section in train.
         cur, prev, nxt = split_context(raw)
-        rec = {
-          "label": int(lineData[ignoreLineCount]),
-          "text_current": cur,
-          "text_previous": prev,
-          "text_next": nxt,
-        }
+        rec = {"label": int(lineData[ignoreLineCount])}
+        if cfg.hintEmbed:
+          # Pull each section's leading '**hint<class>' token into a one-hot id
+          # and remove it from the text, so the hint reaches the head only via
+          # the categorical path (not the encoder).
+          cur, hc = pop_hint(cur)
+          prev, hp = pop_hint(prev)
+          nxt, hn = pop_hint(nxt)
+          rec["hint_current"], rec["hint_previous"], rec["hint_next"] = hc, hp, hn
+        rec["text_current"] = cur
+        rec["text_previous"] = prev
+        rec["text_next"] = nxt
       elif cfg.contextFormat == "attention":
         # Wide "~<offset>" window split into 2*windowSize+1 per-offset strings.
         rec = {"label": int(lineData[ignoreLineCount])}
@@ -1488,7 +1547,8 @@ def train(cfg):
           cfg.modelName, num_labels=len(fieldTypesDict),
           id2label=fieldTypesReversedDict, label2id=fieldTypesDict,
           encoder_layers=cfg.encoderLayers,
-          head_interactions=cfg.headInteractions, head_proj_dim=cfg.headProjDim)
+          head_interactions=cfg.headInteractions, head_proj_dim=cfg.headProjDim,
+          hint_classes=(HINT_NUM_CLASSES if cfg.hintEmbed else 0))
       encoder = model.encoder
   elif is_attention:
       model = WindowAttentionForSequenceClassification.from_base_pretrained(
@@ -1642,17 +1702,31 @@ def _triple_classify(texts, cfg, batch_size=64):
   # Saved id2label keys arrive as strings from JSON; normalize to ints.
   id2label = {int(k): v for k, v in model.config.id2label.items()}
 
+  hint_enabled = int(getattr(model.config, "hint_classes", 0) or 0) > 0
   results = []
   with torch.no_grad():
     for start in range(0, len(texts), batch_size):
       batch = texts[start:start + batch_size]
       splits = [split_context(t) for t in batch]
+      hints = {"current": [], "previous": [], "next": []}
+      if hint_enabled:
+        # Match training: pop each section's leading '**hint' token into a
+        # one-hot id and drop it from the text before tokenizing.
+        popped = []
+        for cur, prev, nxt in splits:
+          c, hc = pop_hint(cur); p, hp = pop_hint(prev); n, hn = pop_hint(nxt)
+          popped.append((c, p, n))
+          hints["current"].append(hc); hints["previous"].append(hp); hints["next"].append(hn)
+        splits = popped
       enc = {}
       for i, section in enumerate(("current", "previous", "next")):
         tok = tokenizer([s[i] for s in splits], truncation=True, max_length=512,
                         padding=True, return_tensors="pt")
         enc[f"input_ids_{section}"] = tok["input_ids"].to(device)
         enc[f"attention_mask_{section}"] = tok["attention_mask"].to(device)
+      if hint_enabled:
+        for section in ("current", "previous", "next"):
+          enc[f"hint_{section}"] = torch.tensor(hints[section], dtype=torch.long).to(device)
       probs = F.softmax(model(**enc).logits, dim=-1)
       scores, idxs = probs.max(dim=-1)
       for idx, score in zip(idxs.tolist(), scores.tolist()):

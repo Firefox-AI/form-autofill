@@ -26,6 +26,7 @@ from __future__ import annotations
 import argparse
 import ast
 import os
+import random
 import re
 import sys
 
@@ -79,9 +80,34 @@ def load_field_types(dotraining_path):
     return ast.literal_eval(m.group(1))
 
 
-def build(paths, field_types, type_marker):
-    """Yield '<file>,<fieldname>,<label>,<mlData>' rows for every fillable field."""
+# Classes whose regex hint is noisy or hurt the model (batch 16b per-class
+# analysis): suppress the hint for these (emit '**hintnone') so the model does
+# not copy a low-precision / harmful regex prediction. Keeps the high-precision
+# + address-disambiguation hints that help.
+DEFAULT_HINT_SUPPRESS = {
+    "cc-number", "cc-exp", "cc-exp-month", "cc-exp-year", "cc-csc",
+    "tel-national", "tel-area-code", "tel-local", "tel-local-prefix",
+    "tel-local-suffix", "tel-extension", "address-housenumber",
+    "address-level3", "address-extra-housesuffix", "additional-name",
+}
+
+
+def build(paths, field_types, type_marker, hint=False, hint_dropout=0.0, seed=1234,
+          hint_suppress=None):
+    """Yield '<file>,<fieldname>,<label>,<mlData>' rows for every fillable field.
+
+    With hint=True, prepend each field's regex-heuristic recommendation as a
+    '**hint<class>' token (see ff_preprocess.hint_token / heuristics_regexp),
+    normalized through the same adjusted_field_name pipeline as the label.
+    hint_dropout in (0,1] randomly blanks the hint to '**hintnone' (static
+    regularization so the model does not blindly copy the regex)."""
     other_id = field_types.get("other", 1)
+    rnd = random.Random(seed)
+    suppress = set(hint_suppress) if hint_suppress is not None else set()
+    regex_hint = None
+    if hint:
+        from heuristics_regexp import regex_hint as regex_hint  # noqa: F811
+        from ff_preprocess import hint_token
     for path in paths:
         fname = os.path.basename(path)
         try:
@@ -91,7 +117,19 @@ def build(paths, field_types, type_marker):
         fields = fillable_fields(soup)
         if not fields:
             continue
-        ml = tokenize_elements(soup, type_marker=type_marker)
+        hints = None
+        if hint:
+            hints = []
+            for el in fields:
+                raw = regex_hint(el, soup)
+                adj = adjusted_field_name(raw) if raw else ""
+                cls = adj if adj and adj in field_types else ""
+                if cls in suppress:            # class-selective: drop noisy-class hints
+                    cls = ""
+                if hint_dropout and rnd.random() < hint_dropout:
+                    cls = ""
+                hints.append(hint_token(cls))
+        ml = tokenize_elements(soup, type_marker=type_marker, hints=hints)
         for el, data in zip(fields, ml):
             raw = el.get("data-moz-autofill-type")
             adj = adjusted_field_name(raw) if raw else ""
@@ -110,14 +148,32 @@ def main(argv=None):
                     help="'training' keeps literal '**<type>' markers (default, matches the "
                          "existing .txt); 'inference' strips them via WORD_RE.")
     ap.add_argument("--dotraining", default=os.path.join(os.path.dirname(__file__), "..", "dotraining.py"))
+    ap.add_argument("--hint", action="store_true",
+                    help="Prepend the regex-heuristic recommendation as a '**hint<class>' "
+                         "token per field (see heuristics_regexp).")
+    ap.add_argument("--hint-dropout", type=float, default=0.0,
+                    help="With --hint, randomly blank the hint to '**hintnone' at this "
+                         "rate (static regularization; default 0).")
+    ap.add_argument("--seed", type=int, default=1234, help="RNG seed for --hint-dropout.")
+    ap.add_argument("--hint-suppress", default=None,
+                    help="Comma-separated classes whose regex hint to suppress (emit "
+                         "'**hintnone'); 'default' uses DEFAULT_HINT_SUPPRESS (noisy classes "
+                         "from the batch-16b analysis).")
     args = ap.parse_args(argv if argv is not None else sys.argv[1:])
+    suppress = None
+    if args.hint_suppress == "default":
+        suppress = DEFAULT_HINT_SUPPRESS
+    elif args.hint_suppress:
+        suppress = {c.strip() for c in args.hint_suppress.split(",") if c.strip()}
 
     field_types = load_field_types(args.dotraining)
     import glob
     paths = []
     for d in args.input:
         paths += sorted(glob.glob(os.path.join(d, "*.html")))
-    rows = list(build(paths, field_types, args.type_marker))
+    rows = list(build(paths, field_types, args.type_marker,
+                      hint=args.hint, hint_dropout=args.hint_dropout, seed=args.seed,
+                      hint_suppress=suppress))
     os.makedirs(os.path.dirname(os.path.abspath(args.output)) or ".", exist_ok=True)
     with open(args.output, "w", encoding="utf-8") as fh:
         fh.write("\n".join(rows) + ("\n" if rows else ""))
