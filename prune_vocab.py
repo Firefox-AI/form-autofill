@@ -85,6 +85,32 @@ def collect_used_ids(tokenizer, texts, min_count):
   return {tok_id for tok_id, c in counts.items() if c >= min_count}
 
 
+# Unicode blocks for --keep-scripts: force-retain every base-vocab token whose
+# characters fall here (plus its pretrained embedding), so coverage of a script
+# is complete and independent of how much of that language is in the corpus.
+_SCRIPT_RANGES = {
+  "cjk": [(0x3400, 0x4DBF), (0x4E00, 0x9FFF), (0xF900, 0xFAFF),
+          (0x3040, 0x309F), (0x30A0, 0x30FF)],   # kanji/kana too (ja)
+  "hangul": [(0x1100, 0x11FF), (0x3130, 0x318F), (0xA960, 0xA97F), (0xAC00, 0xD7A3)],
+  "devanagari": [(0x0900, 0x097F)],
+  "arabic": [(0x0600, 0x06FF), (0x0750, 0x077F), (0xFB50, 0xFDFF), (0xFE70, 0xFEFF)],
+  "cyrillic": [(0x0400, 0x04FF), (0x0500, 0x052F)],
+  "malayalam": [(0x0D00, 0x0D7F)],
+}
+
+
+def collect_script_ids(vocab, script_names):
+  """Vocab ids whose piece contains a char in any requested script block."""
+  ranges = [r for name in script_names for r in _SCRIPT_RANGES.get(name, [])]
+  if not ranges:
+    return set()
+  def in_script(ch):
+    o = ord(ch)
+    return any(lo <= o <= hi for lo, hi in ranges)
+  return {i for i, (piece, _s) in enumerate(vocab)
+          if any(in_script(c) for c in piece)}
+
+
 def remap_post_processor(pp, old2new):
   """Rewrite special-token id references inside a (possibly nested) post-processor."""
   if not pp:
@@ -191,6 +217,10 @@ def main():
   ap.add_argument("--out", required=True, help="Directory to write the pruned model + tokenizer.")
   ap.add_argument("--min-count", type=int, default=1,
                   help="Keep tokens occurring at least this many times (default 1 = all seen).")
+  ap.add_argument("--keep-scripts", default="",
+                  help="Comma list of Unicode scripts to fully retain regardless of corpus "
+                       "(cjk,hangul,devanagari,arabic,cyrillic,malayalam) -- gives complete "
+                       "coverage + pretrained embeddings for those scripts.")
   args = ap.parse_args()
 
   tokenizer = AutoTokenizer.from_pretrained(args.model)
@@ -206,11 +236,15 @@ def main():
   always = set(tokenizer.all_special_ids)
   always |= set(tokenizer.added_tokens_decoder.keys())
   always |= {i for i, (piece, _score) in enumerate(vocab) if _BYTE_TOKEN.match(piece)}
-  kept = sorted((used | always) & set(range(old_size)))
+  # Force-keep whole target scripts (complete coverage, corpus-independent).
+  scripts = [s.strip() for s in (args.keep_scripts or "").split(",") if s.strip()]
+  script_ids = collect_script_ids(vocab, scripts)
+  kept = sorted((used | always | script_ids) & set(range(old_size)))
   old2new = {old: new for new, old in enumerate(kept)}
 
   print(f"vocab: {old_size} -> {len(kept)} kept "
-        f"({len(used)} used in corpus, {len(always)} always-kept specials/bytes)")
+        f"({len(used)} used in corpus, {len(always)} specials/bytes, "
+        f"{len(script_ids)} script-block [{','.join(scripts) or 'none'}])")
 
   # Slice the embedding rows and re-index the model.
   emb = model.get_input_embeddings()

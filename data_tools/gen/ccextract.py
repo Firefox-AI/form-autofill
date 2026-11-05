@@ -49,6 +49,15 @@ FORM_KEYWORDS = (
     "endereço", "endereco", "morada",                         # Portuguese
     "dirección", "direccion", "calle",                        # Spanish
     "住所", "郵便番号", "都道府県",                              # Japanese
+    "code postal", "ville", "rue",                            # French
+    "posta kodu", "şehir", "adres",                           # Turkish (adres also pl/nl)
+    "kod pocztowy", "ulica", "miasto", "miejscowość",         # Polish
+    "адрес", "индекс", "город", "улица", "почтовый",          # Russian
+    "주소", "우편번호",                                        # Korean
+    "地址", "邮编", "邮政编码", "郵遞區號",                      # Chinese (CN + TW)
+    "पता", "पिन",                                             # Hindi
+    "آدرس", "کد پستی",                                        # Persian
+    "വിലാസം", "പിന്‍കോഡ്",                                     # Malayalam
     # --- Credit card / payment ---
     "credit card", "card number", "cardnumber",
     "cc-number", "cc-csc", "cc-exp", "cardnum", "cvv", "cvc",  # EN + autocomplete

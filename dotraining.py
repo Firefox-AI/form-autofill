@@ -1631,6 +1631,11 @@ def train(cfg):
       eval_strategy="epoch",
       save_strategy="epoch",
       load_best_model_at_end=True,
+      # Select the best checkpoint by ACCURACY, not the default eval_loss: loss
+      # overfits early (bottoms ~ep2-4) while accuracy keeps climbing to ~ep6+,
+      # so the loss-based default was saving an undertrained checkpoint.
+      metric_for_best_model="accuracy",
+      greater_is_better=True,
       report_to=report_to,
       run_name=cfg.wandbRunName or None,
       # The triple model's forward takes per-section columns and its collator
