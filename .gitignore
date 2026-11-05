@@ -27,3 +27,6 @@ sym_shape_infer_temp.onnx
 # IDE / metaflow
 .idea/
 .metaflow/
+
+# archived / stale artifacts
+old/
