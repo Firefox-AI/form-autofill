@@ -1,3 +1,4 @@
+import hashlib
 from dataclasses import dataclass, field
 
 from transformers import (
@@ -501,6 +502,16 @@ class Config:
     # (testing is already GEN-free, so it is unaffected).
     subsampleValidation: bool = False
 
+    # K-fold cross-validation. When numFolds > 0, there is NO separate validation
+    # file: the TRAINING pool is split into numFolds folds grouped BY FORM (all
+    # fields of a form share a fold, so no within-form leakage), and this run
+    # trains on every fold except foldIndex and validates on foldIndex. The test
+    # set is untouched. Run foldIndex 0..numFolds-1 to get out-of-fold predictions
+    # for every training row (see oof_outliers.py) -> flags likely mislabeled rows.
+    numFolds: int = 0
+    foldIndex: int = 0
+    foldSeed: int = 20261106
+
     # Training hyperparameters. Defaults match the HF Trainer defaults so that
     # leaving them unset reproduces the previous behavior. learningRate of 0.0
     # means "auto": the HF default (5e-5), or 2e-4 when LoRA is enabled.
@@ -547,7 +558,8 @@ class Config:
     @property
     def modelExtra(self) -> str:
         base = "supported" if self.dataVariant.startswith("-supported") else "all"
-        return base + self.modelSuffix
+        fold = f"-fold{self.foldIndex}of{self.numFolds}" if self.numFolds > 0 else ""
+        return base + self.modelSuffix + fold
 
     @property
     def saveModelName(self) -> str:
@@ -1348,13 +1360,25 @@ def wandb_config(cfg):
     "lora_dropout": cfg.loraDropout,
   }
 
+def fold_of(src, cfg):
+  """Deterministic fold for a form, grouped BY FORM (src = filename) so all of a
+  form's fields land in the same fold -> no within-form leakage across folds.
+  Stable across processes (md5), so oof_outliers.py reproduces the same split."""
+  h = hashlib.md5(f"{cfg.foldSeed}:{src}".encode("utf-8")).hexdigest()
+  return int(h, 16) % cfg.numFolds
+
+
 def readFile(filetype, cfg):
   if cfg.contextFormat not in CONTEXT_FORMATS:
     raise ValueError(f"Unknown context_format {cfg.contextFormat!r}; expected one of {CONTEXT_FORMATS}")
 
   # Allow training to read from an explicit file (e.g. an expanded dataset);
   # otherwise derive the name from the filetype and data variant.
-  if filetype == "training" and cfg.trainFile:
+  # K-fold: train and val both draw from the TRAINING pool (there is no separate
+  # validation file); the fold filter below splits them. Testing is untouched.
+  if cfg.numFolds > 0 and filetype in ("training", "validation"):
+    filename = cfg.trainFile or ("training" + cfg.dataVariant + ".txt")
+  elif filetype == "training" and cfg.trainFile:
     filename = cfg.trainFile
   else:
     filename = filetype + cfg.dataVariant + ".txt"
@@ -1379,6 +1403,12 @@ def readFile(filetype, cfg):
     src = lineData[0] if len(lineData) > ignoreLineCount else ""
     if cfg.englishOnly and not classify_locale(src)[2]:
       continue
+    # K-fold split (form-grouped): training = all folds but foldIndex; the
+    # "validation" read keeps ONLY foldIndex (the held-out fold).
+    if cfg.numFolds > 0 and filetype in ("training", "validation"):
+      in_held_out = fold_of(src, cfg) == cfg.foldIndex
+      if (filetype == "validation") != in_held_out:
+        continue
     try:
       raw = strip_type_marker(lineData[ignoreLineCount + 1], cfg)
       if cfg.contextFormat == "triple":

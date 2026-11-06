@@ -70,10 +70,12 @@ OPTIONAL_FIELDS: dict[str, list[tuple[str, float]]] = {
     # field to address-line1 via _apply_address_scheme; their combined rate sets
     # the address-line1-vs-street-address mix (~half, matching the dataset).
     "checkout": [("organization", 0.3), ("address-line2", 0.3), ("apartment", 0.2),
-                 ("honorific-prefix", 0.2), ("address-level1", 0.3)],
+                 ("honorific-prefix", 0.2), ("address-level1", 0.3),
+                 ("address-line3", 0.12)],
     "registration": [("organization", 0.25), ("sex", 0.2), ("nickname", 0.2)],
     "billing": [("vat-number", 0.4), ("organization", 0.35), ("tel", 0.3),
-                ("address-line2", 0.3), ("apartment", 0.2)],
+                ("address-line2", 0.3), ("apartment", 0.2),
+                ("address-line3", 0.12)],
     "shipping": [("address-line2", 0.3), ("apartment", 0.35), ("floor", 0.3),
                  ("building", 0.2), ("reference-point", 0.2), ("address-level3", 0.25)],
     "payment": [("street-address", 0.2), ("postal-code", 0.2)],
@@ -91,6 +93,18 @@ RARE_TYPES = [
     "phonetic-family-name", "phonetic-name", "address-streetname",
     "address-extra", "honorific-suffix", "organization-title",
     "tel-country-code", "tel-area-code", "tel-extension", "cc-additional-name",
+]
+
+# Realistic multi-input phone layouts. When a form has a single `tel`, we
+# sometimes replace it with one of these coherent groups so the model sees
+# split-phone forms -- Common Crawl almost never provides these as separate
+# inputs, so synthetic is effectively the only source (see mine_target_fields).
+PHONE_SPLIT_SCHEMES = [
+    ["tel-area-code", "tel-local-prefix", "tel-local-suffix"],  # US 3-box: (415) 555-1234
+    ["tel-country-code", "tel-area-code", "tel-local"],         # +1 415 5551234
+    ["tel-area-code", "tel-local"],                             # 415 5551234
+    ["tel-national", "tel-extension"],                          # number + ext.
+    ["tel-country-code", "tel-national"],                       # +1 4155551234
 ]
 
 # Types best rendered as <select> rather than free text.
@@ -155,6 +169,14 @@ def sample_params(index: int, master_seed: int) -> GenParams:
     for opt, prob in OPTIONAL_FIELDS.get(purpose, []):
         if rng.random() < prob and opt not in types:
             types.append(opt)
+
+    # ~12% of tel-bearing forms: split the single phone field into its parts
+    # (area/local/country/extension) as a coherent adjacent group, so the model
+    # gets split-phone signal that crawled data lacks.
+    if "tel" in types and rng.random() < 0.12:
+        scheme = rng.choice(PHONE_SPLIT_SCHEMES)
+        i = types.index("tel")
+        types[i:i + 1] = [t for t in scheme if t not in types]
 
     # Inject rare types into ~35% of forms (1-2 of them) to rebalance.
     rare_injected: list[str] = []

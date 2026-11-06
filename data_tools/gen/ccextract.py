@@ -11,7 +11,10 @@ the format label_common_crawl.py consumes.
 
 from __future__ import annotations
 
+import hashlib
+import os
 import re
+import sys
 from dataclasses import dataclass, field
 from urllib.parse import urlparse
 
@@ -144,18 +147,36 @@ class ExtractConfig:
     tlds: tuple[str, ...] | None = None        # None = allow any TLD
     require_any: tuple[str, ...] = ()          # keep form only if it contains one
     per_page_limit: int = 5                    # cap forms taken from one page
+    per_domain_limit: int = 0                  # cap forms taken from one domain (0 = no cap)
     max_html_chars: int = 50000                # skip forms whose cleaned HTML exceeds this
     allow_single_input: bool = False           # also keep forms with exactly 1 field
     single_input_fraction: float = 0.10        # ...but cap them at this fraction of max_forms
     exclude_address: bool = False              # drop forms that contain any address-type field
+    # Targeted mining: keep a form only if the ported regex labeler assigns one
+    # of these normalized field types to some field (e.g. for under-covered
+    # fields: address-line2/3, address-housenumber). Empty = no field-type gate.
+    require_field_types: tuple[str, ...] = ()
+    # Dedup: skip any form whose sha1(inner_html)[:8] is in this set. Matches the
+    # downstream CC_<domain>_<hash>.html naming (label_common_crawl), so seeding
+    # it from existing filenames avoids re-pulling forms we already have.
+    exclude_hashes: frozenset = frozenset()
 
     def __post_init__(self):
         self.languages = tuple(l.split("-")[0].lower() for l in self.languages)
+        if not isinstance(self.exclude_hashes, frozenset):
+            self.exclude_hashes = frozenset(self.exclude_hashes)
 
 
 def tld_of(url: str) -> str:
     host = urlparse(url).netloc
     return host.rsplit(".", 1)[-1].lower() if "." in host else ""
+
+
+def domain_of(url: str) -> str:
+    """Host without a leading 'www.', lowercased — the key for per-domain caps
+    (groups www.x.com and x.com; keeps distinct subdomains separate)."""
+    host = urlparse(url).netloc.lower()
+    return host[4:] if host.startswith("www.") else host
 
 
 def detect_language(html_tag, page_text: str) -> str:
@@ -173,6 +194,69 @@ def detect_language(html_tag, page_text: str) -> str:
 
 def _form_text(form_html: str) -> str:
     return form_html.lower()
+
+
+def form_hash(inner_html: str) -> str:
+    """Identity hash for a cleaned form, matching the CC_<domain>_<hash>.html
+    naming in label_common_crawl (sha1 of the inner HTML, first 8 hex)."""
+    return hashlib.sha1(inner_html.encode("utf-8", "ignore")).hexdigest()[:8]
+
+
+def load_existing_hashes(html_globs=(), csv_paths=()) -> set:
+    """Collect form hashes already present, to seed ExtractConfig.exclude_hashes.
+
+    Reads the <hash> straight out of existing CC_<domain>_<hash>.html filenames,
+    and (for prior extraction CSVs that aren't yet saved as files) recomputes it
+    from the 'form' column. Both use the same sha1(inner)[:8] key as mining.
+    """
+    import csv
+    import glob
+    hashes: set = set()
+    for pattern in html_globs:
+        for path in glob.glob(pattern):
+            stem = os.path.basename(path)
+            if stem.endswith(".html"):
+                stem = stem[:-5]
+            tail = stem.rsplit("_", 1)[-1]
+            if len(tail) == 8 and all(c in "0123456789abcdef" for c in tail):
+                hashes.add(tail)
+    for cp in csv_paths:
+        with open(cp, encoding="utf-8") as fh:
+            for row in csv.DictReader(fh):
+                if row.get("form"):
+                    hashes.add(form_hash(row["form"]))
+    return hashes
+
+
+# Lazily-initialized (fillable_fields, regex_hint, norm) so importing ccextract
+# stays cheap for callers that don't use require_field_types.
+_LABELER = None
+
+
+def _form_field_types(inner_soup) -> set:
+    """Normalized regex field-type labels present in a form (ported Firefox
+    heuristic). Used by the require_field_types gate for targeted mining."""
+    global _LABELER
+    if _LABELER is None:
+        sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+        from ff_preprocess import fillable_fields
+        from heuristics_regexp import regex_hint
+        from build_dataset import load_field_types, adjusted_field_name
+        ft = load_field_types(
+            os.path.join(os.path.dirname(__file__), "..", "..", "dotraining.py"))
+
+        def _norm(raw):
+            a = adjusted_field_name(raw) if raw else ""
+            return a if a and a in ft else ""
+
+        _LABELER = (fillable_fields, regex_hint, _norm)
+    fillable_fields, regex_hint, _norm = _LABELER
+    types = set()
+    for el in fillable_fields(inner_soup):
+        t = _norm(regex_hint(el, inner_soup))
+        if t:
+            types.add(t)
+    return types
 
 
 def iter_warc_forms(warc_path: str, cfg: ExtractConfig):
@@ -220,6 +304,10 @@ def iter_warc_forms(warc_path: str, cfg: ExtractConfig):
                 if cfg.require_any and not any(
                         kw in _form_text(inner) for kw in cfg.require_any):
                     continue
+                # Dedup against forms we already have (cheap string hash first).
+                fhash = form_hash(inner)
+                if fhash in cfg.exclude_hashes:
+                    continue
                 inner_soup = BeautifulSoup(inner, "html.parser")
                 if cfg.exclude_address and form_has_address_field(inner_soup):
                     continue
@@ -227,6 +315,11 @@ def iter_warc_forms(warc_path: str, cfg: ExtractConfig):
                 in_range = cfg.min_fields <= n_fields <= cfg.max_fields
                 single_ok = cfg.allow_single_input and n_fields == 1
                 if not (in_range or single_ok):
+                    continue
+                # Targeted mining: keep only forms that actually contain one of
+                # the requested field types (per the ported regex labeler).
+                if cfg.require_field_types and not (
+                        _form_field_types(inner_soup) & set(cfg.require_field_types)):
                     continue
                 taken += 1
                 yield {
@@ -237,6 +330,7 @@ def iter_warc_forms(warc_path: str, cfg: ExtractConfig):
                     "form_index": fi,
                     "num_fields": n_fields,
                     "form": inner,
+                    "form_hash": fhash,
                 }
 
 
@@ -262,10 +356,17 @@ def extract_forms(warc_paths: list[str], cfg: ExtractConfig,
     single_cap = (int(cfg.max_forms * cfg.single_input_fraction)
                   if cfg.allow_single_input else 0)
     single_count = 0
+    per_domain: dict[str, int] = {}
     for path in warc_paths:
         if len(rows) >= cfg.max_forms:
             break
         for row in iter_warc_forms(path, cfg):
+            # Cap forms per domain so one big site can't dominate the sample.
+            if cfg.per_domain_limit:
+                dom = domain_of(row["url"])
+                if per_domain.get(dom, 0) >= cfg.per_domain_limit:
+                    continue
+                per_domain[dom] = per_domain.get(dom, 0) + 1
             if row["num_fields"] == 1:
                 if single_count >= single_cap:
                     continue

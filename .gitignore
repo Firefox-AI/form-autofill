@@ -28,5 +28,5 @@ sym_shape_infer_temp.onnx
 .idea/
 .metaflow/
 
-# archived / stale artifacts
-old/
+# archived / stale artifacts (hidden so Metaflow packaging skips it)
+.old/

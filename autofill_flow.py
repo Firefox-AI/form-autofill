@@ -203,6 +203,23 @@ class AutofillFlow(FlowSpec):
         default=False,
         type=bool,
     )
+    num_folds = Parameter(
+        "num_folds",
+        help="K-fold cross-validation. >0 means no separate validation file: the "
+             "training pool is split into K form-grouped folds; this run trains on "
+             "all but --fold_index and validates on it. Test set untouched. Run "
+             "fold_index 0..K-1 for out-of-fold predictions (oof_outliers.py).",
+        default=0,
+        type=int,
+    )
+    fold_index = Parameter(
+        "fold_index", help="Which fold (0..num_folds-1) is held out for validation.",
+        default=0, type=int,
+    )
+    fold_seed = Parameter(
+        "fold_seed", help="Seed for the deterministic form->fold assignment.",
+        default=20261106, type=int,
+    )
     context_format = Parameter(
         "context_format",
         help="How prev/next-field context is encoded at load time: 'bb' keeps the "
@@ -440,6 +457,9 @@ class AutofillFlow(FlowSpec):
             modelSuffix=self.model_suffix,
             trainFile=self.train_file,
             englishOnly=self.english_only,
+            numFolds=self.num_folds,
+            foldIndex=self.fold_index,
+            foldSeed=self.fold_seed,
             contextFormat=self.context_format,
             pooling=self.pooling,
             encoderLayers=self.encoder_layers,

@@ -15,6 +15,7 @@ from openai import AsyncOpenAI
 from openai import (
     APIConnectionError,
     APITimeoutError,
+    BadRequestError,
     InternalServerError,
     RateLimitError,
 )
@@ -35,6 +36,9 @@ PRICING = {
     "gpt-4.1": (2.00, 8.00),
     "o4-mini": (1.10, 4.40),
     "o3": (10.00, 40.00),
+    # GPT-5.6 family (reasoning). Terra = "mini" tier, Sol = flagship.
+    "gpt-5.6-terra": (2.00, 12.00),
+    "gpt-5.6-sol": (4.00, 20.00),
 }
 
 # Only transient failures are retried. Auth/permission/bad-request (4xx other
@@ -166,10 +170,19 @@ async def _chat_json(client: AsyncOpenAI, model: str, system: str, user: str,
         ],
         response_format={"type": "json_schema", "json_schema": schema},
     )
-    # Reasoning models (o-series) only allow the default temperature.
+    # Reasoning models (o-series, and the gpt-5/gpt-6 reasoning family) only allow
+    # the default temperature. Try with a custom temperature, and if the model
+    # rejects it, drop it and retry -- robust to models we haven't catalogued.
     if not _is_reasoning_model(model):
         kwargs["temperature"] = 0.85
-    resp = await client.chat.completions.create(**kwargs)
+    try:
+        resp = await client.chat.completions.create(**kwargs)
+    except BadRequestError as e:
+        if "temperature" in str(e):
+            kwargs.pop("temperature", None)
+            resp = await client.chat.completions.create(**kwargs)
+        else:
+            raise
     usage.add(resp.usage)
     return json.loads(resp.choices[0].message.content)
 
