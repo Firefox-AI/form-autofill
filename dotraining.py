@@ -442,6 +442,17 @@ class Config:
     # with vocab pruning (prune_vocab.py) to approach TinyBERT size.
     encoderLayers: int = 0
 
+    # Force-retain the top N transformer layers when encoderLayers > 0, evenly
+    # spacing the rest over the lower layers (see select_encoder_layers). 0
+    # (default) = pure evenly-spaced. E.g. encoderLayers=5, keepTopLayers=2 on a
+    # 12-layer base -> [0,4,9,10,11] (keeps the top two) vs [0,3,6,8,11]. Triple path.
+    keepTopLayers: int = 0
+
+    # Explicit encoder-layer selection (comma-separated base-layer indices, e.g.
+    # "0,1,4,7,11"). Overrides encoderLayers/keepTopLayers when set -- keeps exactly
+    # those layers. Triple path. Empty (default) = use encoderLayers/keepTopLayers.
+    encoderLayerIds: str = ""
+
     # Separate learning rate for the classification head (the triple fusion
     # head / mean pooler+classifier / standard classifier), leaving the
     # pretrained encoder on the main learningRate. 0.0 (default) uses a single
@@ -512,6 +523,21 @@ class Config:
     foldIndex: int = 0
     foldSeed: int = 20261106
 
+    # Learning-curve subsampling: keep only this fraction of the TRAINING split,
+    # grouped BY FORM (deterministic hash of src), so a form's fields stay
+    # together. Applies to the train rows ONLY -- the validation fold and the test
+    # set are kept full, so accuracy at 100%/75%/50%/25% is measured on the SAME
+    # held-out data and the points are directly comparable. 1.0 (default) = no-op.
+    trainFraction: float = 1.0
+    trainFracSeed: int = 20261107
+
+    # Group folds & the learning-curve subsample BY DOMAIN for forms that have a
+    # known domain (de_domain_map.json: DE_<hash> -> registrable domain), instead
+    # of by form. Forms absent from the map (English/CC/GEN, and older German
+    # without a recoverable domain) keep form-level grouping. Removes same-domain
+    # near-duplicate leakage from the German validation fold. Default off.
+    groupByDomain: bool = False
+
     # Training hyperparameters. Defaults match the HF Trainer defaults so that
     # leaving them unset reproduces the previous behavior. learningRate of 0.0
     # means "auto": the HF default (5e-5), or 2e-4 when LoRA is enabled.
@@ -559,7 +585,8 @@ class Config:
     def modelExtra(self) -> str:
         base = "supported" if self.dataVariant.startswith("-supported") else "all"
         fold = f"-fold{self.foldIndex}of{self.numFolds}" if self.numFolds > 0 else ""
-        return base + self.modelSuffix + fold
+        frac = f"-frac{int(round(self.trainFraction * 100))}" if self.trainFraction < 1.0 else ""
+        return base + self.modelSuffix + fold + frac
 
     @property
     def saveModelName(self) -> str:
@@ -801,7 +828,7 @@ def masked_mean_pool(last_hidden_state, attention_mask):
   return summed / counts
 
 
-def select_encoder_layers(encoder, num_keep):
+def select_encoder_layers(encoder, num_keep, keep_top=0, layer_ids=None):
   """Keep `num_keep` evenly-spaced transformer layers (incl. first & last), in place.
 
   Shrinks a pretrained BERT/XLM-R-style encoder (a `.encoder.layer` ModuleList)
@@ -810,6 +837,11 @@ def select_encoder_layers(encoder, num_keep):
   config.num_hidden_layers so the smaller architecture round-trips through
   save/load. Returns the kept indices, or None if num_keep is falsy or >= depth
   (left unchanged).
+
+  keep_top > 0 force-retains the top `keep_top` layers (the final, most
+  task-specific ones) and evenly-spaces the remaining (num_keep - keep_top) over
+  the lower layers. E.g. num_keep=5, keep_top=2 on 12 layers -> [0,4,9,10,11]
+  (vs the plain evenly-spaced [0,3,6,8,11], which keeps only the single top layer).
   """
   base = getattr(encoder, "base_model", encoder)
   enc = getattr(base, "encoder", None)
@@ -819,9 +851,29 @@ def select_encoder_layers(encoder, num_keep):
         f"Could not locate transformer layers (.encoder.layer) on "
         f"{type(base).__name__}; layer-drop supports BERT/XLM-R-style encoders.")
   total = len(layers)
+  if layer_ids:
+    # Explicit layer selection: keep exactly these base-layer indices (sorted).
+    idx = sorted({i for i in layer_ids if 0 <= i < total})
+    if not idx or len(idx) >= total:
+      return None
+    enc.layer = nn.ModuleList([layers[i] for i in idx])
+    base.config.num_hidden_layers = len(idx)
+    return idx
   if not num_keep or num_keep <= 0 or num_keep >= total:
     return None
-  if num_keep == 1:
+  if keep_top and keep_top > 0:
+    keep_top = min(keep_top, num_keep)
+    pinned = list(range(total - keep_top, total))          # the top-k layers
+    lower_n = num_keep - keep_top
+    lower_max = total - keep_top - 1                        # highest non-pinned index
+    if lower_n <= 0:
+      lower = []
+    elif lower_n == 1:
+      lower = [0]
+    else:
+      lower = sorted({round(i * lower_max / (lower_n - 1)) for i in range(lower_n)})
+    idx = sorted(set(lower) | set(pinned))
+  elif num_keep == 1:
     idx = [total - 1]
   else:
     idx = sorted({round(i * (total - 1) / (num_keep - 1)) for i in range(num_keep)})
@@ -921,16 +973,18 @@ class TripleEncoderForSequenceClassification(PreTrainedModel):
   @classmethod
   def from_base_pretrained(cls, base_model_name, num_labels, id2label=None,
                            label2id=None, hidden_dropout=0.1, encoder_layers=0,
-                           head_interactions=False, head_proj_dim=0, hint_classes=0):
+                           head_interactions=False, head_proj_dim=0, hint_classes=0,
+                           keep_top_layers=0, layer_ids=None):
     """Construct for training: random fusion head + pretrained shared encoder.
 
     encoder_layers > 0 drops the encoder down to that many evenly-spaced layers
-    before training (see select_encoder_layers). head_interactions / head_proj_dim
-    select the head variant (see TripleEncoderConfig).
+    before training (see select_encoder_layers); keep_top_layers > 0 force-retains
+    the top layers; layer_ids (explicit list) overrides both. head_interactions /
+    head_proj_dim select the head variant.
     """
     encoder = AutoModel.from_pretrained(base_model_name)
     total = encoder.config.num_hidden_layers
-    kept = select_encoder_layers(encoder, encoder_layers)
+    kept = select_encoder_layers(encoder, encoder_layers, keep_top_layers, layer_ids)
     if kept is not None:
       print(f"  layer-drop: {total} -> {len(kept)} encoder layers {kept}")
     config = cls.config_class(
@@ -1289,14 +1343,16 @@ class MeanPoolForSequenceClassification(PreTrainedModel):
 
   @classmethod
   def from_base_pretrained(cls, base_model_name, num_labels, id2label=None,
-                           label2id=None, hidden_dropout=0.1, encoder_layers=0):
+                           label2id=None, hidden_dropout=0.1, encoder_layers=0,
+                           keep_top_layers=0):
     """Construct for training: random head + pretrained shared encoder.
 
-    encoder_layers > 0 drops the encoder to that many evenly-spaced layers first.
+    encoder_layers > 0 drops the encoder to that many evenly-spaced layers first;
+    keep_top_layers > 0 force-retains the top layers (see select_encoder_layers).
     """
     encoder = AutoModel.from_pretrained(base_model_name)
     total = encoder.config.num_hidden_layers
-    kept = select_encoder_layers(encoder, encoder_layers)
+    kept = select_encoder_layers(encoder, encoder_layers, keep_top_layers)
     if kept is not None:
       print(f"  layer-drop: {total} -> {len(kept)} encoder layers {kept}")
     config = cls.config_class(
@@ -1360,12 +1416,49 @@ def wandb_config(cfg):
     "lora_dropout": cfg.loraDropout,
   }
 
+_DOMAIN_MAP = None
+def _domain_map():
+  """Lazy-load de_domain_map.json (DE_<hash> -> domain). Missing file -> {} (so
+  group_by_domain degrades to form-level grouping rather than crashing)."""
+  global _DOMAIN_MAP
+  if _DOMAIN_MAP is None:
+    try:
+      import json
+      _DOMAIN_MAP = json.load(open(dataset_path("de_domain_map.json"), encoding="utf-8"))
+    except Exception:
+      _DOMAIN_MAP = {}
+  return _DOMAIN_MAP
+
+
+def group_key(src, cfg):
+  """Grouping key for fold / subsample assignment. Normally the form (src); when
+  cfg.groupByDomain is set, forms with a known domain are keyed by that domain so
+  all of a domain's forms share a fold/tier (no same-domain leakage into val)."""
+  if getattr(cfg, "groupByDomain", False):
+    dom = _domain_map().get(src)
+    if dom:
+      return "dom:" + dom
+  return src
+
+
 def fold_of(src, cfg):
   """Deterministic fold for a form, grouped BY FORM (src = filename) so all of a
   form's fields land in the same fold -> no within-form leakage across folds.
-  Stable across processes (md5), so oof_outliers.py reproduces the same split."""
-  h = hashlib.md5(f"{cfg.foldSeed}:{src}".encode("utf-8")).hexdigest()
+  With group_by_domain, same-domain forms share a fold too. Stable across
+  processes (md5), so oof_outliers.py reproduces the same split."""
+  h = hashlib.md5(f"{cfg.foldSeed}:{group_key(src, cfg)}".encode("utf-8")).hexdigest()
   return int(h, 16) % cfg.numFolds
+
+
+def keep_fraction(src, cfg):
+  """True if this form falls within the learning-curve subsample. Deterministic
+  per-form hash mapped to [0,1); kept when below cfg.trainFraction. Nested:
+  the 25% set is a subset of the 50% set is a subset of the 100% set, so smaller
+  fractions never add forms the bigger ones lacked."""
+  if cfg.trainFraction >= 1.0:
+    return True
+  h = hashlib.md5(f"{cfg.trainFracSeed}:{group_key(src, cfg)}".encode("utf-8")).hexdigest()
+  return (int(h[:8], 16) / 0x100000000) < cfg.trainFraction
 
 
 def readFile(filetype, cfg):
@@ -1409,6 +1502,10 @@ def readFile(filetype, cfg):
       in_held_out = fold_of(src, cfg) == cfg.foldIndex
       if (filetype == "validation") != in_held_out:
         continue
+    # Learning-curve subsample: thin the TRAIN split only (not validation/test),
+    # so every fraction is evaluated on the same held-out fold.
+    if filetype == "training" and not keep_fraction(src, cfg):
+      continue
     try:
       raw = strip_type_marker(lineData[ignoreLineCount + 1], cfg)
       if cfg.contextFormat == "triple":
@@ -1576,7 +1673,9 @@ def train(cfg):
       model = TripleEncoderForSequenceClassification.from_base_pretrained(
           cfg.modelName, num_labels=len(fieldTypesDict),
           id2label=fieldTypesReversedDict, label2id=fieldTypesDict,
-          encoder_layers=cfg.encoderLayers,
+          encoder_layers=cfg.encoderLayers, keep_top_layers=cfg.keepTopLayers,
+          layer_ids=([int(x) for x in cfg.encoderLayerIds.split(",") if x.strip()]
+                     or None) if cfg.encoderLayerIds else None,
           head_interactions=cfg.headInteractions, head_proj_dim=cfg.headProjDim,
           hint_classes=(HINT_NUM_CLASSES if cfg.hintEmbed else 0))
       encoder = model.encoder

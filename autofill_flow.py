@@ -220,6 +220,20 @@ class AutofillFlow(FlowSpec):
         "fold_seed", help="Seed for the deterministic form->fold assignment.",
         default=20261106, type=int,
     )
+    train_fraction = Parameter(
+        "train_fraction",
+        help="Learning-curve subsample: keep this fraction (0-1] of the TRAIN "
+             "split, grouped by form. Validation fold and test stay full, so "
+             "100/75/50/25%% runs share the same held-out eval. 1.0 = no-op.",
+        default=1.0, type=float,
+    )
+    group_by_domain = Parameter(
+        "group_by_domain",
+        help="Group folds + the %% subsample BY DOMAIN for forms with a known "
+             "domain (de_domain_map.json), else by form. Removes same-domain "
+             "near-duplicate leakage from the German validation fold.",
+        default=False, type=bool,
+    )
     context_format = Parameter(
         "context_format",
         help="How prev/next-field context is encoded at load time: 'bb' keeps the "
@@ -309,6 +323,21 @@ class AutofillFlow(FlowSpec):
              "Combine with prune_vocab.py for a much smaller model.",
         default=0,
         type=int,
+    )
+    keep_top_layers = Parameter(
+        "keep_top_layers",
+        help="With encoder_layers>0, force-retain the top N layers and evenly-space "
+             "the rest over the lower layers (triple path). 0 = pure evenly-spaced. "
+             "E.g. encoder_layers=5 keep_top_layers=2 -> [0,4,9,10,11] (keeps top two).",
+        default=0,
+        type=int,
+    )
+    encoder_layer_ids = Parameter(
+        "encoder_layer_ids",
+        help="Explicit comma-separated base-layer indices to keep (e.g. '0,1,4,7,11'), "
+             "overriding encoder_layers/keep_top_layers (triple path). Empty = off.",
+        default="",
+        type=str,
     )
     head_interactions = Parameter(
         "head_interactions",
@@ -460,9 +489,13 @@ class AutofillFlow(FlowSpec):
             numFolds=self.num_folds,
             foldIndex=self.fold_index,
             foldSeed=self.fold_seed,
+            trainFraction=self.train_fraction,
+            groupByDomain=self.group_by_domain,
             contextFormat=self.context_format,
             pooling=self.pooling,
             encoderLayers=self.encoder_layers,
+            keepTopLayers=self.keep_top_layers,
+            encoderLayerIds=self.encoder_layer_ids,
             headLearningRate=self.head_learning_rate,
             headInteractions=self.head_interactions,
             headProjDim=self.head_proj_dim,

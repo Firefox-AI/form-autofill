@@ -52,6 +52,9 @@ for i in range(args.folds):
     model_dir = cfg.saveModelDir
     if not os.path.isdir(model_dir):
         sys.exit(f"missing fold model: {model_dir} (train fold {i} first)")
+    # triple's tokenizer loads from cfg.modelName -> point it at the fold dir
+    # (its own tokenizer), not the default base, so vocab/ids match the weights.
+    cfg.modelName = model_dir
     held = [r for r in all_rows if fold_of(r["src"], cfg) == i]
     texts = [reformat_context(strip_type_marker(r["raw"], cfg), args.context) for r in held]
     print(f"fold {i}: {len(held)} held-out rows, model {model_dir}", file=sys.stderr, flush=True)

@@ -483,3 +483,28 @@ Watch: tail-language accuracy (esp ru/zh/nl) vs baseline on the gold test set.
 FF-vs-Python note: Firefox ml_driver is the more accurate converter (real DOM: visibility/label/grouping);
 Python port approximates it (diverges on complex full pages, muted for form-fragments). FF unusable in this
 env; do an authoritative FF rebuild if weakmulti proves out.
+
+### 18. Vocab pruning runs (prune_vocab.py)
+The multilingual base (`paraphrase-multilingual-MiniLM-L12-v2`, 250,002 tokens / 250k x 384 embedding) is
+pruned to only the tokens the datasets actually use, plus specials/byte-fallback, plus a language-frequency
+top-up. Keeps the embedding table small (it dominates the int8 size). `prune_vocab.py` prints the exact
+breakdown each run.
+- `--min-count N`: keep base tokens that occur >= N times when tokenizing the corpus (bb/sep/symbol + the
+  three triple sections of every row).
+- `--keep-top-tokens en:N,de:N`: fold in the top-N wordfreq words per language (tokenized to base ids),
+  CORPUS-INDEPENDENT. This fixes the k-fold flaw where a held-out validation slice OF the training pool had
+  all its tokens in-vocab (no OOV -> optimistic val). Prune the TRAIN file only (never the test file) so the
+  test set keeps honest OOV.
+
+SHIPPED multilingual base -> `rolf-mozilla/minilm-pruned-notest-relabel` (~18.5k vocab; used by the v0.2.6 bb
+and v0.3.4 hybrid releases).
+
+EN+DE base -> `rolf-mozilla/minilm-pruned-ende`. First pass was 12,994 (no lang top-up, exposed the val-OOV
+flaw). FINAL (shipped EN+DE models): **16,816** vocab, built TRAIN-ONLY from `training-ende.txt` with
+`--min-count 2 --keep-top-tokens en:8000,de:8000`. Verified breakdown (union = 16,816):
+  - corpus tokens (>= 2x): 12,830
+  - specials + byte-fallback: 5
+  - EN/DE lang-top folded: 9,596  (EN 5,902 + DE 5,248 - 1,554 shared); of these 3,984 are NET-NEW beyond
+    the corpus set (the rest already appeared >= 2x).
+Final embedding table: 16,816 x 384. Recompute/verify: `prune_vocab.py` with the args above prints
+`vocab: 250002 -> 16816 kept (12830 used in corpus, 5 specials/bytes, 0 script-block, 9596 lang-top [en:8000,de:8000])`.

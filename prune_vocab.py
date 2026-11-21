@@ -111,6 +111,22 @@ def collect_script_ids(vocab, script_names):
           if any(in_script(c) for c in piece)}
 
 
+def collect_top_lang_ids(tokenizer, spec):
+  """Token ids composing each language's top-N frequent words (via wordfreq),
+  so common language subwords survive pruning regardless of the corpus. `spec`
+  is 'lang:N,lang:N' (e.g. 'en:8000,de:8000'); empty -> no-op."""
+  spec = (spec or "").strip()
+  if not spec:
+    return set()
+  from wordfreq import top_n_list
+  ids = set()
+  for part in spec.split(","):
+    lang, n = part.split(":")
+    for word in top_n_list(lang.strip(), int(n)):
+      ids.update(tokenizer(word, add_special_tokens=False)["input_ids"])
+  return ids
+
+
 def remap_post_processor(pp, old2new):
   """Rewrite special-token id references inside a (possibly nested) post-processor."""
   if not pp:
@@ -221,6 +237,11 @@ def main():
                   help="Comma list of Unicode scripts to fully retain regardless of corpus "
                        "(cjk,hangul,devanagari,arabic,cyrillic,malayalam) -- gives complete "
                        "coverage + pretrained embeddings for those scripts.")
+  ap.add_argument("--keep-top-tokens", default="",
+                  help="Fold in the subword tokens of each language's top-N frequent words "
+                       "(via wordfreq), e.g. 'en:8000,de:8000'. Keeps common language subwords "
+                       "even if absent/rare in the corpus -> better generalization to unseen "
+                       "forms and realistic OOV only on genuinely rare tokens.")
   args = ap.parse_args()
 
   tokenizer = AutoTokenizer.from_pretrained(args.model)
@@ -239,12 +260,15 @@ def main():
   # Force-keep whole target scripts (complete coverage, corpus-independent).
   scripts = [s.strip() for s in (args.keep_scripts or "").split(",") if s.strip()]
   script_ids = collect_script_ids(vocab, scripts)
-  kept = sorted((used | always | script_ids) & set(range(old_size)))
+  # Fold in common language subwords (generalization), corpus-independent.
+  top_ids = collect_top_lang_ids(tokenizer, args.keep_top_tokens)
+  kept = sorted((used | always | script_ids | top_ids) & set(range(old_size)))
   old2new = {old: new for new, old in enumerate(kept)}
 
   print(f"vocab: {old_size} -> {len(kept)} kept "
         f"({len(used)} used in corpus, {len(always)} specials/bytes, "
-        f"{len(script_ids)} script-block [{','.join(scripts) or 'none'}])")
+        f"{len(script_ids)} script-block [{','.join(scripts) or 'none'}], "
+        f"{len(top_ids)} lang-top [{args.keep_top_tokens or 'none'}])")
 
   # Slice the embedding rows and re-index the model.
   emb = model.get_input_embeddings()

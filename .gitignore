@@ -30,3 +30,4 @@ sym_shape_infer_temp.onnx
 
 # archived / stale artifacts (hidden so Metaflow packaging skips it)
 .old/
+data/cc_german_2026/
